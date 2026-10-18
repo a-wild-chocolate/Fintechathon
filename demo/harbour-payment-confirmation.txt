@@ -1,0 +1,7 @@
+DEMO DOCUMENT — synthetic buyer email, not a bank receipt.
+Order: TF-26104 / Harbour Supplies
+Subject: Partial payment schedule
+
+We plan to pay USD 6,000 on 29 October 2026 toward the USD 12,000 outstanding balance. The remaining USD 6,000 has no agreed payment date. Please confirm the receiving account before payment. This email records a payment promise; it does not confirm receipt.
+
+中文说明：客户计划于 2026 年 10 月 29 日支付 6,000 美元，剩余 6,000 美元尚未约定付款日期。本邮件属于付款承诺，不是银行到账凭证。

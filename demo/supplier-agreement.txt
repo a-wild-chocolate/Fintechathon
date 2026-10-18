@@ -1,0 +1,7 @@
+DEMO DOCUMENT — Supplier extension agreement
+Order: TF-26104
+Amount: CNY 160,000
+Original due date: 2026-10-22
+Agreed due date: 2026-11-01
+Additional fee: CNY 0
+Supplier confirms the revised payment date for the full outstanding amount.

@@ -1,0 +1,11 @@
+From: accounts@harbour.example
+Subject: Partial payment for TF-26104
+
+Dear StarSail team,
+
+Some items in order TF-26104 are under quality review. We will pay the undisputed portion first. The remaining balance will be settled once the review is complete.
+
+Please coordinate with our accounts team on the payment arrangements.
+
+Best regards,
+Harbour Supplies

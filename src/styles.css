@@ -1,0 +1,1488 @@
+/* TradeX workspace and linked financial views. */
+:root {
+  color-scheme: light;
+}
+body {
+  margin: 0;
+  background: #f4f6f8;
+}
+
+#tradeflow-export-preview {
+  --tf-bg: light-dark(#f4f6f8, #161d23);
+  --tf-panel: light-dark(#fff, #202931);
+  --tf-text: light-dark(#182c38, #e6edf2);
+  --tf-sub: light-dark(#677985, #a3b2bd);
+  --tf-line: light-dark(#e4e9ed, #36434d);
+  --tf-accent: light-dark(#076e65, #78d8c8);
+  --tf-soft: light-dark(#eaf6f2, #253f3a);
+  --tf-warn: light-dark(#976219, #eac081);
+  --tf-warnbg: light-dark(#fff7e9, #3c3325);
+  --tf-dark: light-dark(#133d38, #a7e5d9);
+  --tf-on: light-dark(#fff, #142f29);
+  font:
+    14px/1.55 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    sans-serif;
+  color: var(--tf-text);
+  background: var(--tf-bg);
+  border: 1px solid var(--tf-line);
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: left;
+}
+#tradeflow-export-preview * {
+  box-sizing: border-box;
+}
+#tradeflow-export-preview button,
+#tradeflow-export-preview input,
+#tradeflow-export-preview select {
+  font: inherit;
+}
+#tradeflow-export-preview button {
+  cursor: pointer;
+}
+#tradeflow-export-preview button:focus-visible,
+#tradeflow-export-preview input:focus-visible,
+#tradeflow-export-preview select:focus-visible {
+  outline: 2px solid var(--tf-accent);
+  outline-offset: 3px;
+}
+#tradeflow-export-preview button {
+  color: inherit;
+}
+#tradeflow-export-preview h2,
+#tradeflow-export-preview h3,
+#tradeflow-export-preview p {
+  margin: 0;
+}
+#tradeflow-export-preview h2 {
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+#tradeflow-export-preview h3 {
+  font-size: 15px;
+  font-weight: 600;
+}
+#tradeflow-export-preview .tf-small {
+  font-size: 12px;
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .tf-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  background: var(--tf-panel);
+  border-bottom: 1px solid var(--tf-line);
+  flex-wrap: wrap;
+}
+#tradeflow-export-preview .tf-brand {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  color: var(--tf-accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#tradeflow-export-preview .tf-logo {
+  background: var(--tf-dark);
+  color: var(--tf-on);
+  padding: 2px 9px;
+  border-radius: 9px;
+  font-size: 20px;
+}
+#tradeflow-export-preview .tf-company {
+  border-left: 1px solid var(--tf-line);
+  padding-left: 16px;
+  font-size: 13px;
+}
+#tradeflow-export-preview .tf-sample {
+  font-size: 11px;
+  border-radius: 5px;
+  padding: 3px 7px;
+  color: var(--tf-warn);
+  background: var(--tf-warnbg);
+}
+#tradeflow-export-preview .tf-topnote {
+  margin-left: auto;
+  padding-right: 70px;
+}
+#tradeflow-export-preview .tf-shell {
+  display: grid;
+  grid-template-columns: 142px minmax(0, 1fr);
+}
+#tradeflow-export-preview .tf-nav {
+  background: var(--tf-panel);
+  padding: 24px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  border-right: 1px solid var(--tf-line);
+}
+#tradeflow-export-preview .tf-nav button {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  padding: 10px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  text-align: left;
+  font-size: 13px;
+}
+#tradeflow-export-preview .tf-nav button[aria-current="page"] {
+  color: var(--tf-accent);
+  background: var(--tf-soft);
+  font-weight: 600;
+}
+#tradeflow-export-preview .tf-nav svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+#tradeflow-export-preview .tf-navfooter {
+  margin-top: auto;
+  padding: 30px 8px 0;
+  font-size: 11px;
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .tf-main {
+  min-width: 0;
+  padding: 24px;
+}
+#tradeflow-export-preview .tf-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+#tradeflow-export-preview .tf-heading p {
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .tf-button {
+  border: 1px solid var(--tf-line);
+  padding: 7px 11px;
+  border-radius: 7px;
+  background: var(--tf-panel);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  min-height: 34px;
+}
+#tradeflow-export-preview .tf-button svg {
+  width: 14px;
+  height: 14px;
+}
+#tradeflow-export-preview .tf-button.primary {
+  background: var(--tf-dark);
+  color: var(--tf-on);
+  border-color: var(--tf-dark);
+}
+#tradeflow-export-preview .tf-button:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+#tradeflow-export-preview .tf-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 18px;
+  align-items: start;
+}
+#tradeflow-export-preview .tf-content {
+  min-width: 0;
+  display: grid;
+  gap: 16px;
+}
+#tradeflow-export-preview .tf-panel {
+  background: var(--tf-panel);
+  border: 1px solid var(--tf-line);
+  border-radius: 10px;
+  padding: 16px;
+  min-width: 0;
+}
+#tradeflow-export-preview .tf-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+#tradeflow-export-preview .tf-value {
+  font-size: 26px;
+  letter-spacing: -0.6px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+  margin: 7px 0 3px;
+}
+#tradeflow-export-preview .tf-panelhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+#tradeflow-export-preview .tf-link {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: var(--tf-accent);
+  font-size: 12px;
+  text-align: left;
+  text-decoration: none;
+}
+#tradeflow-export-preview .tf-alert {
+  background: var(--tf-warnbg);
+  border-radius: 8px;
+  padding: 13px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+#tradeflow-export-preview .tf-alert p {
+  font-size: 12px;
+  margin-top: 3px;
+  color: var(--tf-warn);
+}
+#tradeflow-export-preview .tf-alert strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+#tradeflow-export-preview .tf-chart {
+  width: 100%;
+  height: 190px;
+  display: block;
+}
+#tradeflow-export-preview .tf-chart text {
+  fill: var(--tf-sub);
+  font:
+    11px -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+#tradeflow-export-preview .tf-scenario {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+#tradeflow-export-preview .tf-scenario select {
+  border: 1px solid var(--tf-line);
+  color: var(--tf-text);
+  border-radius: 6px;
+  background: var(--tf-panel);
+  padding: 5px;
+  font-size: 12px;
+  max-width: 100%;
+}
+#tradeflow-export-preview .tf-chartfoot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: var(--tf-sub);
+  margin-top: 5px;
+}
+#tradeflow-export-preview .tf-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--tf-accent);
+  margin-right: 4px;
+}
+#tradeflow-export-preview .tf-order {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--tf-line);
+  align-items: center;
+}
+#tradeflow-export-preview .tf-order:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+#tradeflow-export-preview .tf-order:first-child {
+  padding-top: 0;
+}
+#tradeflow-export-preview .tf-order strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+#tradeflow-export-preview .tf-order .tf-small {
+  margin-top: 3px;
+}
+#tradeflow-export-preview .tf-badge {
+  font-size: 11px;
+  padding: 3px 7px;
+  background: var(--tf-soft);
+  color: var(--tf-accent);
+  border-radius: 4px;
+  display: inline-block;
+}
+#tradeflow-export-preview .tf-badge.warn {
+  background: var(--tf-warnbg);
+  color: var(--tf-warn);
+}
+#tradeflow-export-preview .tf-orderaction {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 6px;
+}
+#tradeflow-export-preview .tf-side {
+  background: var(--tf-panel);
+  border: 1px solid var(--tf-line);
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 0;
+}
+#tradeflow-export-preview .tf-sidehead {
+  padding: 15px;
+  border-bottom: 1px solid var(--tf-line);
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+#tradeflow-export-preview .tf-aiicon {
+  color: var(--tf-accent);
+  background: var(--tf-soft);
+  border-radius: 8px;
+  padding: 7px;
+  display: flex;
+}
+#tradeflow-export-preview .tf-aiicon svg {
+  height: 17px;
+  width: 17px;
+}
+#tradeflow-export-preview .tf-sidebody {
+  padding: 14px;
+  display: grid;
+  gap: 14px;
+}
+#tradeflow-export-preview .tf-context {
+  padding: 10px;
+  background: var(--tf-bg);
+  border-radius: 7px;
+  border-left: 2px solid var(--tf-accent);
+  font-size: 12px;
+}
+#tradeflow-export-preview .tf-answer {
+  font-size: 13px;
+  display: grid;
+  gap: 12px;
+}
+#tradeflow-export-preview .tf-answer p {
+  margin: 0;
+}
+#tradeflow-export-preview .tf-evidence {
+  font-size: 11px;
+  padding: 7px 9px;
+  background: var(--tf-bg);
+  border-radius: 6px;
+}
+#tradeflow-export-preview .tf-agentactions {
+  display: grid;
+  gap: 8px;
+}
+#tradeflow-export-preview .tf-agentactions button {
+  text-align: left;
+  justify-content: flex-start;
+}
+#tradeflow-export-preview .tf-note {
+  font-size: 11px;
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .tf-inputrow {
+  display: flex;
+  gap: 5px;
+  border-top: 1px solid var(--tf-line);
+  padding: 12px;
+  align-items: flex-end;
+}
+#tradeflow-export-preview .tf-inputrow input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: var(--tf-bg);
+  color: var(--tf-text);
+  padding: 9px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+#tradeflow-export-preview .tf-flow {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .tf-flow span {
+  background: var(--tf-bg);
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+#tradeflow-export-preview .tf-tablewrap {
+  overflow: auto;
+}
+#tradeflow-export-preview table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+#tradeflow-export-preview th {
+  text-align: left;
+  color: var(--tf-sub);
+  font-weight: 400;
+}
+#tradeflow-export-preview th,
+#tradeflow-export-preview td {
+  padding: 10px 5px;
+  border-bottom: 1px solid var(--tf-line);
+}
+#tradeflow-export-preview td:last-child {
+  text-align: right;
+}
+#tradeflow-export-preview .tf-details {
+  display: grid;
+  gap: 12px;
+  font-size: 13px;
+}
+#tradeflow-export-preview .tf-detailrow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+#tradeflow-export-preview .tf-detailrow span {
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .tf-empty {
+  padding: 16px 0;
+  color: var(--tf-sub);
+  font-size: 13px;
+}
+#tradeflow-export-preview .tf-draft {
+  white-space: pre-wrap;
+  font-size: 12px;
+  background: var(--tf-bg);
+  padding: 12px;
+  border-radius: 7px;
+}
+#tradeflow-export-preview .tf-toast {
+  padding: 10px 16px;
+  font-size: 12px;
+  background: var(--tf-soft);
+  color: var(--tf-accent);
+  border-top: 1px solid var(--tf-line);
+}
+#tradeflow-export-preview [hidden] {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  #tradeflow-export-preview .tf-shell {
+    grid-template-columns: 1fr;
+  }
+  #tradeflow-export-preview .tf-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-right: 0;
+    border-bottom: 1px solid var(--tf-line);
+    padding: 10px 15px;
+  }
+  #tradeflow-export-preview .tf-navfooter {
+    display: none;
+  }
+  #tradeflow-export-preview .tf-main {
+    padding: 18px;
+  }
+  #tradeflow-export-preview .tf-topnote {
+    padding-right: 0;
+  }
+  #tradeflow-export-preview .tf-layout {
+    grid-template-columns: minmax(0, 1fr) 245px;
+  }
+}
+@media (max-width: 640px) {
+  #tradeflow-export-preview .tf-layout {
+    grid-template-columns: 1fr;
+  }
+  #tradeflow-export-preview .tf-top {
+    padding: 16px;
+    gap: 10px;
+  }
+  #tradeflow-export-preview .tf-company {
+    font-size: 12px;
+  }
+  #tradeflow-export-preview .tf-main {
+    padding: 14px;
+  }
+  #tradeflow-export-preview .tf-topnote {
+    display: none;
+  }
+  #tradeflow-export-preview .tf-nav {
+    gap: 2px;
+    padding: 8px;
+  }
+  #tradeflow-export-preview .tf-nav button {
+    padding: 9px 7px;
+  }
+  #tradeflow-export-preview .tf-nav button svg {
+    display: none;
+  }
+  #tradeflow-export-preview .tf-panel {
+    padding: 13px;
+  }
+  #tradeflow-export-preview h2 {
+    font-size: 21px;
+  }
+  #tradeflow-export-preview .tf-value {
+    font-size: 23px;
+  }
+  #tradeflow-export-preview .tf-alert {
+    flex-direction: column;
+  }
+  #tradeflow-export-preview .tf-order {
+    gap: 8px;
+  }
+  #tradeflow-export-preview .tf-heading {
+    align-items: flex-start;
+  }
+}
+@media (pointer: coarse) {
+  #tradeflow-export-preview button {
+    min-height: 44px;
+  }
+  #tradeflow-export-preview input,
+  #tradeflow-export-preview select {
+    font-size: 16px !important;
+  }
+}
+#tradeflow-export-preview .tf-languages {
+  margin-left: auto;
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--tf-line);
+  border-radius: 8px;
+  background: var(--tf-panel);
+  flex-shrink: 0;
+}
+#tradeflow-export-preview .tf-languages button {
+  border: 0;
+  border-radius: 5px;
+  padding: 5px 9px;
+  background: transparent;
+  color: var(--tf-sub);
+  font-size: 12px;
+  min-height: 30px;
+}
+#tradeflow-export-preview .tf-languages button[aria-pressed="true"] {
+  background: var(--tf-dark);
+  color: var(--tf-on);
+}
+#tradeflow-export-preview .tf-topnote {
+  margin-left: 0;
+  padding-right: 0;
+}
+#tradeflow-export-preview[lang="en"] .tf-shell {
+  grid-template-columns: 162px minmax(0, 1fr);
+}
+#tradeflow-export-preview[lang="en"] .tf-nav button {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+#tradeflow-export-preview[lang="en"] .tf-order {
+  grid-template-columns: minmax(0, 1fr);
+}
+#tradeflow-export-preview[lang="en"] .tf-orderaction {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#tradeflow-export-preview[lang="en"] .tf-alert {
+  flex-wrap: wrap;
+}
+#tradeflow-export-preview .tf-panelhead > * {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+@media (max-width: 900px) {
+  #tradeflow-export-preview[lang="en"] .tf-shell {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  #tradeflow-export-preview .tf-languages {
+    margin-left: 0;
+  }
+  #tradeflow-export-preview[lang="en"] .tf-heading {
+    flex-direction: column;
+  }
+}
+#tradeflow-export-preview .tf-ai-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 230px;
+  gap: 18px;
+  align-items: start;
+}
+#tradeflow-export-preview .tf-ai-conversation {
+  padding: 23px;
+  display: grid;
+  gap: 22px;
+}
+#tradeflow-export-preview .tf-ai-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--tf-accent);
+}
+#tradeflow-export-preview .tf-ai-brand svg {
+  width: 20px;
+  height: 20px;
+}
+#tradeflow-export-preview .tf-ai-welcome {
+  padding: 15px 0 3px;
+}
+#tradeflow-export-preview .tf-ai-welcome h2 {
+  font-size: 22px;
+}
+#tradeflow-export-preview .tf-ai-welcome p {
+  margin-top: 10px;
+  color: var(--tf-sub);
+  font-size: 13px;
+}
+#tradeflow-export-preview .tf-ai-prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+#tradeflow-export-preview .tf-ai-prompts button {
+  padding: 10px 12px;
+  border: 1px solid var(--tf-line);
+  border-radius: 8px;
+  background: var(--tf-panel);
+  text-align: left;
+  font-size: 12px;
+}
+#tradeflow-export-preview .tf-ai-reference {
+  display: grid;
+  gap: 14px;
+}
+#tradeflow-export-preview .tf-ai-source {
+  margin: 12px 0;
+  line-height: 2;
+  font-size: 12px;
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .tf-ai-user {
+  background: var(--tf-soft);
+  border-radius: 10px;
+  padding: 13px 16px;
+  margin-left: 25px;
+  font-size: 14px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+#tradeflow-export-preview .tf-ai-response {
+  display: grid;
+  gap: 14px;
+  padding-top: 20px;
+}
+#tradeflow-export-preview .tf-ai-response .tf-agentactions {
+  display: flex;
+  flex-wrap: wrap;
+}
+#tradeflow-export-preview .tf-ai-composer {
+  border: 1px solid var(--tf-line);
+  background: var(--tf-bg);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+#tradeflow-export-preview .tf-ai-composer label {
+  font-size: 12px;
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .tf-ai-composer select {
+  background: var(--tf-panel);
+  border: 1px solid var(--tf-line);
+  color: var(--tf-text);
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 5px;
+  max-width: 100%;
+}
+#tradeflow-export-preview .tf-ai-composer textarea {
+  font: inherit;
+  font-size: 14px;
+  width: 100%;
+  resize: vertical;
+  background: transparent;
+  border: 0;
+  color: var(--tf-text);
+  padding: 10px 0;
+  min-height: 85px;
+}
+#tradeflow-export-preview .tf-ai-composer textarea:focus-visible {
+  outline: 2px solid var(--tf-accent);
+  outline-offset: 3px;
+}
+#tradeflow-export-preview .tf-ai-send {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+@media (max-width: 740px) {
+  #tradeflow-export-preview .tf-ai-workspace {
+    grid-template-columns: 1fr;
+  }
+  #tradeflow-export-preview .tf-ai-conversation {
+    padding: 16px;
+  }
+  #tradeflow-export-preview .tf-ai-welcome h2 {
+    font-size: 20px;
+  }
+}
+
+#tradeflow-export-preview .tx-contextbar {
+  margin-bottom: 18px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  background: var(--tf-panel);
+  border: 1px solid var(--tf-line);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+#tradeflow-export-preview .tx-contextbar strong {
+  display: block;
+  font-size: 13px;
+}
+#tradeflow-export-preview .tx-steps {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .tx-steps button {
+  border: 0;
+  background: transparent;
+  padding: 6px;
+  color: var(--tf-sub);
+  border-radius: 5px;
+  font-size: 12px;
+}
+#tradeflow-export-preview .tx-steps button[aria-current="page"] {
+  background: var(--tf-soft);
+  color: var(--tf-accent);
+}
+#tradeflow-export-preview .tx-issues {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+#tradeflow-export-preview .tx-issues button {
+  padding: 16px;
+  text-align: left;
+  background: var(--tf-panel);
+  border: 1px solid var(--tf-line);
+  border-radius: 9px;
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+}
+#tradeflow-export-preview .tx-issues button[aria-pressed="true"] {
+  background: var(--tf-soft);
+  border-color: var(--tf-accent);
+}
+#tradeflow-export-preview .tx-issues strong {
+  font-size: 14px;
+  font-weight: 500;
+}
+#tradeflow-export-preview .tx-case {
+  padding: 23px;
+}
+#tradeflow-export-preview .tx-lead {
+  margin: 12px 0 20px;
+  color: var(--tf-sub);
+  font-size: 13px;
+}
+#tradeflow-export-preview .tx-cashchain {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 22px 0;
+}
+#tradeflow-export-preview .tx-cashchain > div {
+  background: var(--tf-bg);
+  padding: 15px;
+  border-radius: 7px;
+  display: grid;
+  gap: 7px;
+}
+#tradeflow-export-preview .tx-cashchain span,
+#tradeflow-export-preview .tx-cashchain small {
+  font-size: 12px;
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .tx-cashchain strong {
+  font-size: 25px;
+  font-weight: 500;
+}
+#tradeflow-export-preview .tx-next {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-top: 1px solid var(--tf-line);
+}
+#tradeflow-export-preview .tx-next p {
+  font-size: 13px;
+  color: var(--tf-sub);
+  margin-top: 6px;
+}
+#tradeflow-export-preview .tx-next button {
+  flex-shrink: 0;
+}
+#tradeflow-export-preview .tx-progress {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 16px;
+}
+#tradeflow-export-preview .tx-progress > span {
+  color: var(--tf-sub);
+}
+@media (max-width: 640px) {
+  #tradeflow-export-preview .tx-issues,
+  #tradeflow-export-preview .tx-cashchain {
+    grid-template-columns: 1fr;
+  }
+  #tradeflow-export-preview .tx-next {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #tradeflow-export-preview .tx-case {
+    padding: 16px;
+  }
+}
+
+#tradeflow-export-preview .tx-doc-intro {
+  display: grid;
+  gap: 12px;
+}
+#tradeflow-export-preview .tx-doc-intro .tf-panelhead {
+  margin-bottom: 0;
+}
+#tradeflow-export-preview .tx-doc-needs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+#tradeflow-export-preview .tx-doc-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+#tradeflow-export-preview .tx-doc-tabs button {
+  background: var(--tf-panel);
+  color: var(--tf-sub);
+  border: 1px solid var(--tf-line);
+  border-radius: 7px;
+  padding: 9px 12px;
+  font-size: 12px;
+}
+#tradeflow-export-preview .tx-doc-tabs button[aria-pressed="true"] {
+  background: var(--tf-dark);
+  color: var(--tf-on);
+}
+#tradeflow-export-preview .tx-doc-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 22px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--tf-line);
+}
+#tradeflow-export-preview .tx-doc-row:last-child {
+  border-bottom: 0;
+}
+#tradeflow-export-preview .tx-doc-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+#tradeflow-export-preview .tx-doc-description {
+  display: grid;
+  gap: 9px;
+  align-content: start;
+  font-size: 13px;
+}
+#tradeflow-export-preview .tx-doc-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  min-width: 0;
+}
+#tradeflow-export-preview .tx-doc-upload label {
+  font-size: 12px;
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .tx-doc-upload input {
+  max-width: 100%;
+  width: 100%;
+  color: var(--tf-text);
+  font-size: 12px;
+  border: 1px solid var(--tf-line);
+  border-radius: 6px;
+  padding: 7px;
+  background: var(--tf-bg);
+}
+#tradeflow-export-preview .tx-doc-upload input::file-selector-button {
+  border: 0;
+  border-radius: 4px;
+  padding: 7px;
+  background: var(--tf-dark);
+  color: var(--tf-on);
+  margin-right: 8px;
+}
+#tradeflow-export-preview .tx-doc-file {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+  width: 100%;
+  background: var(--tf-bg);
+  padding: 8px;
+  border-radius: 5px;
+}
+#tradeflow-export-preview .tx-doc-file span {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+#tradeflow-export-preview .tx-doc-file button {
+  flex-shrink: 0;
+}
+#tradeflow-export-preview .tx-doc-foot {
+  display: grid;
+  gap: 6px;
+  color: var(--tf-sub);
+  font-size: 12px;
+}
+@media (max-width: 640px) {
+  #tradeflow-export-preview .tx-doc-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+#tradeflow-export-preview .tx-flow-panel {
+  display: grid;
+  gap: 14px;
+}
+#tradeflow-export-preview .tx-flow-start {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+}
+#tradeflow-export-preview .tx-flow-steps {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  color: var(--tf-sub);
+  font-size: 12px;
+}
+#tradeflow-export-preview .tx-flow-steps span {
+  padding: 5px 8px;
+  background: var(--tf-bg);
+  border-radius: 5px;
+}
+#tradeflow-export-preview .tx-flow-steps span.active {
+  background: var(--tf-soft);
+  color: var(--tf-accent);
+}
+#tradeflow-export-preview .tx-extraction {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+#tradeflow-export-preview .tx-extraction blockquote {
+  margin: 12px 0;
+  padding: 16px;
+  background: var(--tf-bg);
+  border-left: 2px solid var(--tf-accent);
+  font-size: 13px;
+  line-height: 1.8;
+}
+#tradeflow-export-preview .tx-fields {
+  display: grid;
+  gap: 12px;
+}
+#tradeflow-export-preview .tx-fields label {
+  display: grid;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .tx-fields input:not([type="checkbox"]) {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--tf-line);
+  border-radius: 6px;
+  padding: 8px;
+  color: var(--tf-text);
+  background: var(--tf-panel);
+}
+#tradeflow-export-preview .tx-fields label.tx-confirm {
+  display: flex;
+  align-items: center;
+  color: var(--tf-text);
+}
+#tradeflow-export-preview .tx-update-summary {
+  display: grid;
+  gap: 10px;
+  background: var(--tf-soft);
+  padding: 16px;
+  border-radius: 8px;
+}
+#tradeflow-export-preview .tx-chat {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  background: var(--tf-panel);
+  border: 1px solid var(--tf-line);
+  border-radius: 12px;
+  padding: 24px;
+}
+#tradeflow-export-preview .tx-chat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: var(--tf-sub);
+  font-size: 12px;
+}
+#tradeflow-export-preview .tx-chat-top > div {
+  display: flex;
+  gap: 16px;
+}
+#tradeflow-export-preview .tx-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 30px 0;
+}
+#tradeflow-export-preview .tx-chat-empty {
+  text-align: center;
+  padding: 42px 10px 55px;
+}
+#tradeflow-export-preview .tx-chat-empty p {
+  color: var(--tf-sub);
+  font-size: 13px;
+  margin-top: 12px;
+}
+#tradeflow-export-preview .tx-chat-user {
+  align-self: flex-end;
+  max-width: 85%;
+  padding: 12px 16px;
+  background: var(--tf-soft);
+  border-radius: 14px 14px 3px 14px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+#tradeflow-export-preview .tx-chat-reply {
+  display: grid;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+#tradeflow-export-preview .tx-chat-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+#tradeflow-export-preview .tx-chat-hints {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+#tradeflow-export-preview .tx-chat-hints button {
+  padding: 7px 10px;
+  border: 1px solid var(--tf-line);
+  border-radius: 16px;
+  font-size: 12px;
+  background: var(--tf-panel);
+  color: var(--tf-sub);
+  text-align: left;
+}
+#tradeflow-export-preview .tx-composer form {
+  padding: 13px;
+  border: 1px solid var(--tf-line);
+  border-radius: 12px;
+  background: var(--tf-bg);
+}
+#tradeflow-export-preview .tx-composer textarea {
+  width: 100%;
+  font: inherit;
+  resize: vertical;
+  min-height: 80px;
+  border: 0;
+  background: transparent;
+  color: var(--tf-text);
+  padding: 3px;
+  box-sizing: border-box;
+}
+#tradeflow-export-preview .tx-send-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+@media (max-width: 640px) {
+  #tradeflow-export-preview .tx-extraction {
+    grid-template-columns: 1fr;
+  }
+  #tradeflow-export-preview .tx-chat {
+    padding: 15px;
+  }
+  #tradeflow-export-preview .tx-chat-user {
+    max-width: 95%;
+  }
+}
+
+#tradeflow-export-preview .tf-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+#tradeflow-export-preview .tf-layout.cx-with-ai {
+  grid-template-columns: minmax(0, 1fr) 246px;
+}
+#tradeflow-export-preview .tf-main {
+  padding: 22px 20px;
+}
+#tradeflow-export-preview .tf-chart {
+  height: 216px;
+}
+#tradeflow-export-preview .cx-context {
+  background: var(--tf-panel);
+  border: 1px solid var(--tf-line);
+  border-radius: 10px;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+#tradeflow-export-preview .cx-context-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--tf-line);
+}
+#tradeflow-export-preview .cx-context-top label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+#tradeflow-export-preview .cx-context select,
+#tradeflow-export-preview .cx-chart-controls select {
+  color: var(--tf-text);
+  background: var(--tf-bg);
+  border: 1px solid var(--tf-line);
+  border-radius: 6px;
+  padding: 6px;
+  max-width: 100%;
+  font-size: 12px;
+}
+#tradeflow-export-preview .cx-steps {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 8px;
+  gap: 3px;
+}
+#tradeflow-export-preview .cx-steps button {
+  border: 0;
+  background: transparent;
+  border-radius: 6px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 12px;
+  padding: 7px;
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .cx-steps button[aria-current="page"] {
+  background: var(--tf-soft);
+  color: var(--tf-accent);
+}
+#tradeflow-export-preview .cx-steps button span {
+  background: var(--tf-bg);
+  border-radius: 50%;
+  width: 21px;
+  height: 21px;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+}
+#tradeflow-export-preview .cx-arrow {
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .cx-hero {
+  padding: 20px;
+}
+#tradeflow-export-preview .cx-hero h2 {
+  font-size: 21px;
+  line-height: 1.5;
+}
+#tradeflow-export-preview .cx-lead {
+  font-size: 13px;
+  color: var(--tf-sub);
+  margin: 10px 0 16px;
+}
+#tradeflow-export-preview .cx-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  border-top: 1px solid var(--tf-line);
+  margin-top: 18px;
+  padding-top: 16px;
+}
+#tradeflow-export-preview .cx-metrics > div {
+  display: grid;
+  gap: 7px;
+}
+#tradeflow-export-preview .cx-metrics span {
+  font-size: 12px;
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .cx-metrics strong {
+  font-size: 23px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+#tradeflow-export-preview .cx-chart-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+#tradeflow-export-preview .cx-chart-controls label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  font-size: 12px;
+}
+#tradeflow-export-preview .cx-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 11px;
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .cx-current:before,
+#tradeflow-export-preview .cx-baseline:before {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  vertical-align: middle;
+  margin-right: 5px;
+  border-top: 2px solid var(--tf-accent);
+}
+#tradeflow-export-preview .cx-baseline:before {
+  border-top: 2px dashed var(--tf-sub);
+}
+#tradeflow-export-preview .cx-impact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 0;
+  font-size: 12px;
+}
+#tradeflow-export-preview .cx-impact strong {
+  font-size: 17px;
+  font-weight: 500;
+}
+#tradeflow-export-preview .cx-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+#tradeflow-export-preview .cx-next h3 {
+  margin: 5px 0;
+}
+#tradeflow-export-preview .cx-change {
+  background: var(--tf-soft);
+  color: var(--tf-accent);
+  padding: 12px 14px;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  font-size: 12px;
+}
+#tradeflow-export-preview .cx-timeline {
+  display: grid;
+  gap: 0;
+  margin: 14px 0 20px;
+}
+#tradeflow-export-preview .cx-timeline > div {
+  padding: 10px 0 10px 16px;
+  border-left: 2px solid var(--tf-line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 15px;
+  font-size: 13px;
+}
+#tradeflow-export-preview .cx-timeline span,
+#tradeflow-export-preview .cx-timeline small {
+  color: var(--tf-sub);
+  font-size: 12px;
+}
+#tradeflow-export-preview .cx-evidence-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--tf-line);
+  padding: 14px 0;
+  font-size: 13px;
+}
+#tradeflow-export-preview .cx-evidence-row strong {
+  font-weight: 500;
+}
+#tradeflow-export-preview .cx-evidence-row p {
+  margin-top: 5px;
+}
+#tradeflow-export-preview .cx-evidence-row button {
+  flex-shrink: 0;
+}
+#tradeflow-export-preview .cx-task {
+  display: grid;
+  gap: 12px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--tf-line);
+}
+#tradeflow-export-preview .cx-task > .tf-badge {
+  justify-self: start;
+}
+#tradeflow-export-preview .cx-confirm-next {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 1px solid var(--tf-line);
+  font-size: 12px;
+  color: var(--tf-sub);
+}
+#tradeflow-export-preview .tx-chat-top {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+#tradeflow-export-preview .tx-chat-top > div {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+#tradeflow-export-preview .tf-side .tf-answer p {
+  line-height: 1.8;
+}
+#tradeflow-export-preview .cx-source p {
+  margin-top: 8px;
+}
+@media (max-width: 760px) {
+  #tradeflow-export-preview .tf-layout.cx-with-ai {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  #tradeflow-export-preview .tf-main {
+    padding: 15px;
+  }
+  #tradeflow-export-preview .cx-hero h2 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 420px) {
+  #tradeflow-export-preview .cx-metrics {
+    grid-template-columns: 1fr;
+  }
+  #tradeflow-export-preview .cx-metrics > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  #tradeflow-export-preview .cx-metrics strong {
+    font-size: 21px;
+  }
+  #tradeflow-export-preview .cx-evidence-row {
+    flex-wrap: wrap;
+  }
+  #tradeflow-export-preview .cx-steps {
+    gap: 0;
+  }
+  #tradeflow-export-preview .cx-steps button {
+    padding: 6px 4px;
+  }
+  #tradeflow-export-preview .cx-arrow {
+    display: none;
+  }
+}
+
+#tradeflow-export-preview {
+  min-height: 100vh;
+  border: 0;
+  border-radius: 0;
+}
+#tradeflow-export-preview .tf-shell {
+  min-height: calc(100vh - 76px);
+}
+#tradeflow-export-preview .tf-main {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}

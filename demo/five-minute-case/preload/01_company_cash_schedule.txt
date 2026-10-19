@@ -1,0 +1,27 @@
+SYNTHETIC BUSINESS RECORD — StarSail Exports
+Company-wide cash planning sheet
+As of: 17 October 2026
+Business: Small Shenzhen B2B exporter of stationery; eight employees, one finance generalist.
+Prepared by: Mia Chen, owner, and Leo Lin, finance coordinator (fictional).
+
+OPENING POSITION
+CNY operating account available balance: 128,000.
+USD bank account balance displayed separately: 19,970.
+The owner reserves the USD balance for other overseas commitments and excludes its conversion from this CNY planning scenario. It is not added to the CNY opening balance. This is a planning constraint, not a statement that the dollars cannot legally be converted.
+
+CNY PLANNING SCHEDULE
+22 October 2026: supplier payment for TF-26104, outflow 160,000.
+29 October 2026: original expected buyer proceeds for TF-26104, inflow 80,000, subject to collection and conversion assumptions.
+6 November 2026: company-wide logistics and operating expenses, outflow 42,000.
+16 November 2026: scheduled collection from another existing customer order, inflow 120,000.
+26 November 2026: company-wide operating payment, outflow 38,000.
+6 December 2026: scheduled collection from another customer, inflow 65,000.
+
+The later collections are forecasts, not money already received. This scenario holds them at their scheduled dates while comparing changes to TF-26104.
+Daily planning period: 17 October through 11 December 2026, inclusive.
+Minimum CNY reserve used to identify a shortfall: zero.
+
+CONVERSION ASSUMPTION
+For this demonstration, the original USD 12,000 balance maps to CNY 80,000 net proceeds. Partial receipts use the same proportional assumption. This is a fixed planning assumption, not a current exchange-rate quote.
+
+Only opening balances and future movements appear in the schedule. Previously received customer deposits are already reflected in the opening position and are not added again.

@@ -1,3 +1,5 @@
+import { renderHumanQuestions } from './human-loop.js';
+import { renderAgentProgress, updateAgentProgress } from './agent-progress.js';
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeURL = value => /^https?:\/\//i.test(value || '') || /^\/api\//.test(value || '') ? escape(value) : '';
 export async function knowledgeAPI(path, options = {}) {
@@ -8,13 +10,13 @@ export async function knowledgeAPI(path, options = {}) {
 }
 const post = body => ({ method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
 
-export function createKnowledgeUI({ root, language, order, selectDocument, selectedDocument, rerender }) {
-  let documents = [], status = null, error = '', notice = '', filter = 'private', query = '', uploading = false;
+export function createKnowledgeUI({ root, language, order, selectDocument, selectedDocument, rerender, includeFeeOrder = () => true }) {
+  let documents = [], status = null, error = '', notice = '', filter = 'private', query = '', uploading = false, scopeOpen = false;
   const tr = (zh, en) => language() === 'en' ? en : zh;
   const processing = d => !['ready', 'lexical_ready', 'failed', 'embedding_failed'].includes(d.status);
   const labels = {
     queued: ['排队中', 'Queued'], running: ['解析中', 'Processing'], parsing: ['解析中', 'Parsing'],
-    ready: ['可检索', 'Searchable'], lexical_ready: ['关键词可检索', 'Keyword searchable'],
+    ready: ['可向 AI 提问', 'Ready for AI'], lexical_ready: ['可向 AI 提问 · 关键词检索', 'Ready for AI · Keyword search'],
     failed: ['处理失败', 'Processing failed'], embedding_failed: ['向量失败 · 关键词可用', 'Embedding failed · Keyword ready'],
   };
   const statusLabel = d => tr(...(labels[d.status] || ['处理中', 'Processing']));
@@ -30,30 +32,49 @@ export function createKnowledgeUI({ root, language, order, selectDocument, selec
       ${docs.length ? docs.map(d => `<article class="kb-document"><div><button class="kb-title" data-kb-open="${d.id}" data-user-content>${escape(title(d))}</button><p>${escape(d.tenant === 'public' ? tr('公共政策', 'Public policy') : d.metadata.order_id || tr('企业共用', 'Company-wide'))} · v${d.current_version || d.latest_version} · <span class="${processing(d) ? 'kb-working' : ''}">${statusLabel(d)}</span></p></div><button class="tf-link" data-kb-ask="${d.id}" ${!d.current_version ? 'disabled' : ''}>${tr('向 AI 提问', 'Ask AI')} ↗</button></article>`).join('') : `<p class="kb-empty">${tr('这里还没有资料。上传邮件、合同或条款，索引完成后即可提问。', 'No documents here yet. Upload an email, contract or terms, then ask about it once indexed.')}</p>`}`;
   }
   function view() {
-    return `<section class="tf-panel kb-library" data-user-content><div class="kb-heading"><div><span class="sx-eyebrow">${tr('资料 → 检索 → 引用', 'DOCUMENTS → RETRIEVAL → SOURCES')}</span><h2>${tr('让资料进入分析', 'Bring evidence into the conversation')}</h2><p>${tr('上传一次，订单和助手共用；回答可追溯到文件原文。', 'Upload once, use across orders and conversations, and trace answers to their sources.')}</p></div><a class="tf-link" href="/knowledge?lang=${language()}" target="_blank" rel="noopener">${tr('知识库工作台', 'Library workbench')} ↗</a></div>
-      <form id="kb-upload-form" class="kb-upload"><label>${tr('资料文件', 'Document')}<input id="kb-file" type="file" accept=".txt,.md,.eml,.pdf,.docx,.csv,.xlsx,.json" required></label><label>${tr('归属订单', 'Link to order')}<select id="kb-order"><option value="">${tr('企业共用', 'Company-wide')}</option><option value="TF-26104" ${order() === 'TF-26104' ? 'selected' : ''}>TF-26104 · Harbour Supplies</option><option value="TF-26091" ${order() === 'TF-26091' ? 'selected' : ''}>TF-26091 · Nordlicht</option></select></label><button class="tf-button primary" ${uploading ? 'disabled' : ''}>${uploading ? tr('正在上传…', 'Uploading…') : tr('上传资料', 'Upload document')}</button></form><p class="tf-note">${tr('TXT / EML / PDF / DOCX / CSV / XLSX / MD / JSON · 后台解析，扫描件需 OCR', 'TXT / EML / PDF / DOCX / CSV / XLSX / MD / JSON · Background indexing; scanned files need OCR')}</p>
+    return `<section class="tf-panel kb-library" data-user-content><div class="kb-heading"><div><span class="sx-eyebrow">${tr('资料 → 检索 → 引用', 'DOCUMENTS → RETRIEVAL → SOURCES')}</span><h2>${order() === 'TF-26091' ? tr('核对回款依据', 'Check the receipt evidence') : order() ? tr('从一封邮件开始', 'Start with a buyer email') : tr('业务资料，集中管理', 'Your business evidence, connected')}</h2><p>${tr('上传一次，订单和助手共用；回答可追溯到文件原文。', 'Upload once, use across orders and conversations, and trace answers to their sources.')}</p></div><a class="tf-link" href="/knowledge?lang=${language()}" target="_blank" rel="noopener">${tr('知识库工作台', 'Library workbench')} ↗</a></div>
+      <ol class="kb-journey" aria-label="${tr('资料处理流程', 'Evidence workflow')}"><li><b>1</b>${tr('上传资料', 'Upload')}</li><li><b>2</b>${tr('AI 检索与追问', 'Ask AI')}</li><li><b>3</b>${tr('确认后更新预测', 'Confirm & update')}</li></ol><form id="kb-upload-form" class="kb-upload"><label>${tr('资料文件', 'Document')}<input id="kb-file" type="file" accept=".txt,.md,.eml,.pdf,.docx,.csv,.xlsx,.json" required></label><label>${tr('归属订单', 'Link to order')}<select id="kb-order"><option value="">${tr('企业共用', 'Company-wide')}</option><option value="TF-26104" ${order() === 'TF-26104' ? 'selected' : ''}>TF-26104 · Harbour Supplies</option>${includeFeeOrder() ? `<option value="TF-26091" ${order() === 'TF-26091' ? 'selected' : ''}>TF-26091 · Nordlicht</option>` : ''}</select></label><button class="tf-button primary" ${uploading ? 'disabled' : ''}>${uploading ? tr('正在上传…', 'Uploading…') : tr('上传资料', 'Upload document')}</button></form><p class="tf-note">${tr('TXT / EML / PDF / DOCX / CSV / XLSX / MD / JSON · 后台解析，扫描件需 OCR', 'TXT / EML / PDF / DOCX / CSV / XLSX / MD / JSON · Background indexing; scanned files need OCR')}</p>
       <div class="kb-toolbar"><div class="kb-tabs"><button data-kb-filter="private" aria-pressed="${filter === 'private'}">${tr('企业资料', 'Company documents')}</button><button data-kb-filter="public" aria-pressed="${filter === 'public'}">${tr('公共政策', 'Trade policies')}</button></div><input id="kb-filter" aria-label="${tr('筛选资料', 'Filter documents')}" placeholder="${tr('按文件名或订单查找', 'Find a document or order')}" value="${escape(query)}"></div><div id="kb-library-live">${rows()}</div></section>`;
   }
   function composer() {
     const docs = documents.filter(d => d.current_version && (!order() || d.tenant === 'public' || !d.metadata.order_id || d.metadata.order_id === order()));
-    return `<div class="kb-context" data-user-content><span>↳ ${tr('检索范围', 'Search in')}</span><select id="kb-chat-document" aria-label="${tr('助手检索范围', 'Assistant search scope')}"><option value="">${order() ? tr('本订单 + 企业共用 + 公共政策', 'This order + shared files + policies') : tr('全部可用资料', 'All available documents')}</option>${docs.map(d => `<option value="${d.id}" ${selectedDocument() === d.id ? 'selected' : ''}>${escape(title(d))}</option>`).join('')}</select></div>`;
+    const selected = docs.find(d => d.id === selectedDocument());
+    return `<details class="kb-context" ${scopeOpen ? 'open' : ''}><summary><span>↳ ${tr('参考资料', 'Evidence')}</span><strong>${selected ? escape(title(selected)) : order() ? tr('当前订单与共用资料', 'Order and shared documents') : tr('全部可用资料', 'All available documents')}</strong><span class="kb-context-edit">${tr('更改', 'Change')}</span></summary><label for="kb-chat-document">${tr('选择资料范围', 'Choose which documents to use')}</label><select id="kb-chat-document" aria-label="${tr('助手检索范围', 'Assistant search scope')}"><option value="">${order() ? tr('本订单 + 企业共用 + 公共政策', 'This order + shared files + policies') : tr('全部可用资料', 'All available documents')}</option>${docs.map(d => `<option value="${d.id}" ${selectedDocument() === d.id ? 'selected' : ''}>${escape(title(d))}</option>`).join('')}</select></details>`;
+  }
+  function agentDetails(r) {
+    if (r.mode !== "multi_agent") return "";
+    const p = r.proposal;
+    return `${r.task_status === "failed" ? `<p class="kb-working">${escape(r.follow_up || tr("本轮分析未完成，已保留执行记录。", "This analysis is incomplete; its execution record is saved."))}</p>` : ""}${p && p.status === "needs_approval" ? `<section class="kb-proposal"><strong>${tr("确认预计付款安排", "Confirm expected payment")}</strong><span class="kb-proposal-order">${escape(p.order_id)}</span><dl class="kb-proposal-fields"><div><dt>${tr('预计收款', 'Expected receipt')}</dt><dd>USD ${escape(p.amount_usd)}</dd></div><div><dt>${tr('预计日期', 'Expected date')}</dt><dd>${escape(p.receipt_date)}</dd></div></dl><p>${tr("仅更新预计收款，不代表银行到账。结汇沿用演示订单假设。", "Updates the forecast only, not bank receipts. Conversion follows the demo order assumption.")}</p><button class="tf-button primary" data-agent-confirm="${escape(p.id)}">${tr("确认并更新看板", "Confirm and update dashboard")}</button></section>` : p?.status === "confirmed" ? `<p>${tr("付款字段已确认并同步。", "Payment fields confirmed and synced.")}</p>` : ""}`;
   }
   function answer(turn) {
     const r = turn.rag;
-    if (r.status === 'pending') return `<div class="kb-answer" data-user-content role="status">${tr('正在检索相关资料…', 'Searching relevant evidence…')}</div>`;
-    if (r.status === 'error') return `<div class="kb-answer" data-user-content><p>${tr('这次未能完成检索：', 'The search could not complete: ')}${escape(r.error)}</p><button class="tf-link" data-kb-retry="${turn.id}">${tr('重新提问', 'Try again')}</button></div>`;
-    return `<div class="kb-answer" data-user-content><span class="kb-answer-mode">${r.mode === 'model' ? escape(r.model) + ' · ' + tr('依据资料回答', 'Source-grounded answer') : tr('检索摘录 · 未连接生成模型', 'Retrieved excerpts · No generation model connected')}</span>${r.paragraphs.map(p => `<p class="kb-answer-text">${escape(p.text)} ${p.sources.map(id => `<button class="kb-citation" data-kb-cite="${turn.id}:${id}" aria-label="${tr('查看引用', 'View source')} ${id}">[${id}]</button>`).join(' ')}</p>`).join('')}${r.follow_up ? `<p class="tf-small">${escape(r.follow_up)}</p>` : ''}${r.sources.length ? `<details class="kb-sources" open><summary>${tr('引用来源', 'Sources')} · ${r.sources.length}</summary>${r.sources.map(s => `<button class="kb-source" data-kb-cite="${turn.id}:${s.id}"><span>[${s.id}] ${escape(s.title)}</span><small>v${s.version} · ${escape(s.locator)}${s.review_due ? ' · ' + tr('待复核', 'Review due') : ''}</small></button>`).join('')}</details>` : ''}</div>`;
+    if (r.status === 'pending') return `<div class="kb-answer" data-user-content data-progress-turn="${escape(turn.id)}">${renderAgentProgress(r.progress,language(),Boolean(turn.progressOpen))}</div>`;
+    if (r.status === 'error') return `<div class="kb-answer" data-user-content><p>${r.progress?.run_id ? tr('暂时无法读取分析状态：', 'Unable to read analysis status: ') : tr('未能开始分析：', 'Could not start analysis: ')}${escape(r.error)}</p><button class="tf-link" data-kb-retry="${turn.id}">${r.progress?.run_id ? tr('重新连接', 'Reconnect') : tr('重新提问', 'Try again')}</button></div>`;
+    const needsAnswer = r.questions?.length && !r.human_response;
+    const needsApproval = r.proposal?.status === 'needs_approval';
+    const paragraphs = r.paragraphs.map(p => `<p class="kb-answer-text">${escape(p.text)} ${p.sources.map(id => `<button class="kb-citation" data-kb-cite="${turn.id}:${id}" aria-label="${tr('查看引用', 'View source')} ${id}">[${id}]</button>`).join(' ')}</p>`).join('');
+    return `<div class="kb-answer" data-user-content data-progress-turn="${escape(turn.id)}">
+      ${renderHumanQuestions(turn,language())}${agentDetails(r)}
+      ${needsAnswer || needsApproval ? `<details class="kb-analysis"><summary>${tr('查看分析依据', 'Why this is needed')}</summary>${paragraphs}</details>` : paragraphs}
+      ${r.follow_up && r.task_status !== 'failed' && !needsAnswer && !needsApproval ? `<p class="tf-small">${escape(r.follow_up)}</p>` : ''}
+      ${r.mode === 'multi_agent' ? renderAgentProgress({trace:r.trace,status:r.task_status},language(),Boolean(turn.progressOpen)) : `<span class="kb-answer-mode">${r.mode === 'model' ? escape(r.model) : tr('资料检索摘录', 'Retrieved excerpts')}</span>`}
+      ${r.sources.length ? `<details class="kb-sources"><summary>${tr('引用来源', 'Sources')} · ${r.sources.length}</summary>${r.sources.map(s => `<button class="kb-source" data-kb-cite="${turn.id}:${s.id}"><span>[${s.id}] ${escape(s.title)}</span><small>v${s.version} · ${escape(s.locator)}${s.review_due ? ' · ' + tr('待复核', 'Review due') : ''}</small></button>`).join('')}</details>` : ''}</div>`;
   }
   async function refresh() {
+    const previous = JSON.stringify([documents, status, error, notice]);
     try {
       [documents, status] = await Promise.all([knowledgeAPI('/documents'), knowledgeAPI('/health')]);
       error = '';
     } catch (e) { error = tr('知识库未连接：', 'Library disconnected: ') + e.message; }
+    if (previous === JSON.stringify([documents, status, error, notice])) return;
     const live = root.querySelector('#kb-library-live');
     if (live) live.innerHTML = rows();
     // Only replace the scope control; never replace a user's unsent question.
     const context = root.querySelector('.kb-context');
-    if (context) context.outerHTML = composer();
+    if (context && !context.contains(document.activeElement)) {
+      scopeOpen = context.open;
+      context.outerHTML = composer();
+    }
   }
   async function upload(file, orderId = '') {
     const data = new FormData(); data.append('file', file); data.append('order_id', orderId);
@@ -62,6 +83,12 @@ export function createKnowledgeUI({ root, language, order, selectDocument, selec
     filter = 'private'; await refresh(); return record;
   }
   async function open(id, version, citation) {
+    if (citation?.kind === 'web') {
+      let dialog = document.getElementById('kb-viewer');
+      if (!dialog) { dialog = document.createElement('dialog'); dialog.id = 'kb-viewer'; dialog.className = 'kb-viewer'; document.body.append(dialog); }
+      dialog.innerHTML = `<div class="kb-heading"><h2>${escape(citation.title)}</h2><button id="kb-close" aria-label="${tr('关闭来源', 'Close source')}">×</button></div><p>${escape(citation.locator)}</p><blockquote>${escape(citation.excerpt || tr('无检索摘录，请阅读原文。', 'No search excerpt; open the source.'))}</blockquote>${safeURL(citation.source_url) ? `<a href="${safeURL(citation.source_url)}" target="_blank" rel="noopener">${tr('阅读来源', 'Read source')} ↗</a>` : ''}`;
+      dialog.querySelector('#kb-close').onclick = () => dialog.close(); dialog.showModal(); return;
+    }
     const doc = await knowledgeAPI('/documents/' + id + (version ? '/versions/' + version : ''));
     let dialog = document.getElementById('kb-viewer');
     if (!dialog) { dialog = document.createElement('dialog'); dialog.id = 'kb-viewer'; dialog.className = 'kb-viewer'; document.body.append(dialog); }
@@ -77,7 +104,12 @@ export function createKnowledgeUI({ root, language, order, selectDocument, selec
       if (b.dataset.kbAsk) selectDocument(documents.find(d => d.id === b.dataset.kbAsk), true);
     } catch (e) { error = e.message; rerender(); }
   });
-  root.addEventListener('change', e => { if (e.target.id === 'kb-chat-document') selectDocument(documents.find(d => d.id === e.target.value) || null, false); });
+  root.addEventListener('toggle', e => { if (e.target.matches('.kb-context')) scopeOpen = e.target.open; }, true);
+  root.addEventListener('change', e => { if (e.target.id === 'kb-chat-document') { scopeOpen = false;
+    selectDocument(documents.find(d => d.id === e.target.value) || null, false);
+    e.target.closest('.kb-context').outerHTML = composer();
+    root.querySelector('.kb-context summary').focus();
+  } });
   root.addEventListener('submit', async e => {
     if (e.target.id !== 'kb-upload-form') return;
     e.preventDefault(); if (uploading) return;
@@ -86,9 +118,27 @@ export function createKnowledgeUI({ root, language, order, selectDocument, selec
     try { await upload(file, orderId); e.target.reset(); } catch (e) { error = e.message; }
     uploading = false; rerender();
   });
-  return { view, composer, answer, upload, refresh, open };
+  function updateProgress(turn) {
+    const container = root.querySelector(`[data-progress-turn="${turn.id}"]`);
+    if (container) updateAgentProgress(container, turn.rag.progress, language(),Boolean(turn.progressOpen));
+  }
+  return { view, composer, answer, upload, refresh, open, updateProgress };
 }
 
-export async function askKnowledge({ question, language, document_id, order_id, history }) {
-  return knowledgeAPI('/assistant/chat', post({ question, language, document_id: document_id || null, order_id: order_id || null, history }));
+export async function watchAgentRun(runId, onProgress = () => {}) {
+  while (true) {
+    const run = await knowledgeAPI('/agents/runs/' + runId + '/progress');
+    onProgress(run);
+    if (run.result) return run.result;
+    if (run.status !== 'running') throw Error('Analysis interrupted. Start a new request to continue.');
+    await new Promise(resolve => setTimeout(resolve, 800));
+  }
+}
+
+export async function askKnowledge({ question, language, document_id, order_id, history, session_id, workspace, live, onProgress }) {
+  const body = { question, language, document_id: document_id || null, order_id: order_id || null, history, session_id, workspace };
+  if (!live) return knowledgeAPI('/assistant/chat', post(body));
+  const run = await knowledgeAPI('/assistant/runs', post(body));
+  onProgress?.(run);
+  return watchAgentRun(run.run_id, onProgress);
 }

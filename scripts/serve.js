@@ -15,6 +15,10 @@ const mime = {
 
 createServer(async (request, response) => {
   const pathname = new URL(request.url, "http://localhost").pathname;
+  if (pathname === "/" && process.env.TRADEX_DEMO_SESSION && new URL(request.url, "http://localhost").searchParams.get("setup") !== process.env.TRADEX_DEMO_SESSION) {
+    response.writeHead(302, { Location: "/?setup=" + encodeURIComponent(process.env.TRADEX_DEMO_SESSION) }).end();
+    return;
+  }
   if (pathname.startsWith('/api/') || pathname === '/knowledge') {
     const upstream = upstreamRequest({
       hostname: '127.0.0.1', port: Number(process.env.TRADEX_RAG_PORT || 8765),

@@ -1,6 +1,6 @@
 from contextlib import asynccontextmanager
 from pathlib import Path
-from fastapi import FastAPI,UploadFile,File,Form,Request
+from fastapi import FastAPI,UploadFile,File,Form,Request,BackgroundTasks
 from fastapi.responses import FileResponse,JSONResponse
 from pydantic import BaseModel,Field
 from typing import Literal
@@ -8,6 +8,9 @@ import httpx
 from .config import Settings
 from .service import Library,Conflict,NotFound,AccessDenied
 from .assistant import Assistant
+from .agents.runtime import AgentRuntime
+from .agents.human import HumanAnswer
+from .agents.workflows import Workspace
 
 class Query(BaseModel):
     query:str=Field(min_length=1,max_length=2000)
@@ -27,6 +30,12 @@ class ChatRequest(BaseModel):
     order_id:str|None=None
     market:str|None=None
     history:list[PriorTurn]=Field(default_factory=list,max_length=4)
+    session_id:str|None=None
+    workspace:Workspace|None=None
+class HumanReply(BaseModel):
+    answers:list[HumanAnswer]=Field(min_length=1,max_length=3)
+    language:Literal['zh','en']='zh'
+
 class LeaseRequest(BaseModel):seconds:int=Field(default=120,ge=1,le=3600)
 class SaveRequest(BaseModel):
     token:str
@@ -40,12 +49,18 @@ class TextUpload(BaseModel):
     text:str
     order_id:str|None=None
 
-def create_app(settings=None,library=None):
+class AgentToolRequest(BaseModel):
+    run_id:str
+    role:str
+    arguments:dict=Field(default_factory=dict)
+
+def create_app(settings=None,library=None,agent_model=None,agent_connector=None):
     settings=settings or Settings()
     @asynccontextmanager
     async def lifespan(app):
         app.state.library=library or Library(settings);app.state.library.start_worker()
         app.state.assistant=Assistant(app.state.library,settings)
+        app.state.agents=AgentRuntime(app.state.library,agent_model,agent_connector)
         yield
         app.state.library.close()
     app=FastAPI(title='TradeX Evidence Library',version='0.1.0',lifespan=lifespan)
@@ -58,12 +73,47 @@ def create_app(settings=None,library=None):
     @app.get('/api/health')
     def health():return app.state.library.stats(settings.tenant)
     @app.get('/api/assistant/status')
-    def assistant_status():return app.state.assistant.status()
+    def assistant_status():
+        return app.state.agents.status() if app.state.agents.enabled else app.state.assistant.status()
     @app.post('/api/assistant/chat')
     def chat(body:ChatRequest):
-        try:return app.state.assistant.answer(**body.model_dump())
+        try:
+            if app.state.agents.enabled:
+                return app.state.agents.answer(**body.model_dump())
+            return app.state.assistant.answer(**body.model_dump(exclude={'session_id', 'workspace'}))
         except httpx.HTTPError:
             return JSONResponse({'detail':'Model request failed. Check model configuration and retry.'},status_code=502)
+    @app.post('/api/assistant/runs', status_code=202)
+    def start_agent_run(body:ChatRequest, background:BackgroundTasks):
+        runtime=app.state.agents
+        if not runtime.enabled:
+            return JSONResponse({'detail':'Multi-agent service is not enabled.'},status_code=409)
+        prepared=runtime.prepare(**body.model_dump())
+        background.add_task(runtime.execute,*prepared)
+        return {'run_id':prepared[0],'session_id':prepared[1],'status':'running'}
+    @app.post('/api/agents/runs/{run_id}/answers', status_code=202)
+    def answer_agent_questions(run_id:str, body:HumanReply, background:BackgroundTasks):
+        runtime=app.state.agents
+        response, prepared=runtime.store.respond(run_id,settings.tenant,body.answers,body.language)
+        if prepared: background.add_task(runtime.execute,*prepared)
+        return response
+    @app.get('/api/agents/runs/{run_id}/progress')
+    def agent_progress(run_id:str):
+        run=app.state.agents.store.run(run_id,settings.tenant)
+        events=[{k:event[k] for k in ('event','agent','tool','status','timestamp') if k in event} for event in run['trace']]
+        return {'run_id':run_id,'session_id':run['session_id'],'status':run['status'],
+                'created_at':run['created_at'],'trace':events,'result':run['result']}
+    @app.get('/api/agents/status')
+    def agents_status():return app.state.agents.status()
+    @app.get('/api/agents/runs/{run_id}')
+    def agent_run(run_id:str):return app.state.agents.store.run(run_id,settings.tenant)
+    @app.get('/api/agents/workspace')
+    def agent_workspace():return {'workspace':app.state.agents.store.workspace(settings.tenant)}
+    @app.post('/api/agents/proposals/{proposal_id}/confirm')
+    def confirm_agent_proposal(proposal_id:str):return app.state.agents.workflows.confirm(proposal_id)
+    @app.post('/api/agent-tools/{name}')
+    def agent_tool(name:str,body:AgentToolRequest):
+        return app.state.agents.workflows.execute(name,body.run_id,body.role,body.arguments)
     @app.get('/api/documents')
     def documents():return app.state.library.list_documents(settings.tenant)
     @app.post('/api/uploads',status_code=202)

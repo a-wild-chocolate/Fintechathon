@@ -42,4 +42,63 @@ def ingestion_status()->list:
 def knowledge_events(after:int=0)->list:
     """Read persisted document events after a cursor for a trigger consumer; does not change finance state."""
     return request('GET','/api/events',params={'after':after})
+# Business workflow tools are called with host-injected run and role context.
+def workflow(name, run_id, role, arguments):
+    return request('POST', '/api/agent-tools/'+name, json={'run_id':run_id,'role':role,'arguments':arguments})
+
+@server.tool()
+def wf_status(run_id:str, role:str)->dict:
+    """Read current company forecast, pending receipt fields and confirmation state."""
+    return workflow('wf_status',run_id,role,{})
+
+@server.tool()
+def kb_search(run_id:str, role:str, query:str)->dict:
+    """Search evidence within the order/document selected for this conversation. Return numbered sources."""
+    return workflow('kb_search',run_id,role,{'query':query})
+
+@server.tool()
+def evidence_read(run_id:str, role:str, document_id:str)->dict:
+    """Read the selected document's current sections with version-specific citations."""
+    return workflow('evidence_read',run_id,role,{'document_id':document_id})
+
+@server.tool()
+def wf_reconcile(run_id:str, role:str, amount_usd:float|None=None, receipt_date:str|None=None, evidence_ids:list[int]|None=None)->dict:
+    """Prepare TF-26104 expected partial-payment fields. Missing amount/date remain null; no cash is committed."""
+    return workflow('wf_reconcile',run_id,role,{'amount_usd':amount_usd,'receipt_date':receipt_date,'evidence_ids':evidence_ids or []})
+
+@server.tool()
+def wf_cash(run_id:str, role:str, receipt_delay_days:int=0, supplier_extension_days:int=0, use_proposal:bool=False)->dict:
+    """Calculate 56-day CNY forecast and shortfalls from the company demo schedule or a pending proposal."""
+    return workflow('wf_cash',run_id,role,{'receipt_delay_days':receipt_delay_days,'supplier_extension_days':supplier_extension_days,'use_proposal':use_proposal})
+
+@server.tool()
+def wf_options(run_id:str, role:str, receipt_delay_days:int=0, supplier_extension_days:int=0, use_proposal:bool=False)->dict:
+    """Compare current and conditional payment-timing scenarios without changing records."""
+    return workflow('wf_options',run_id,role,{'receipt_delay_days':receipt_delay_days,'supplier_extension_days':supplier_extension_days,'use_proposal':use_proposal})
+
+@server.tool()
+def wf_draft(run_id:str, role:str, kind:str, text:str)->dict:
+    """Save a collection, negotiation or financing draft. This never sends it externally."""
+    return workflow('wf_draft',run_id,role,{'kind':kind,'text':text})
+
+@server.tool()
+def wf_financing(run_id:str, role:str, query:str)->dict:
+    """Retrieve sourced product requirements for a financing-material checklist; never predict approval."""
+    return workflow('wf_financing',run_id,role,{'query':query})
+
+@server.tool()
+def web_search(run_id:str, role:str, query:str)->dict:
+    """Search public trade policies and product rules. Use a generic public query without private customer details."""
+    return workflow('web_search',run_id,role,{'query':query})
+
+@server.tool()
+def web_fetch(run_id:str, role:str, url:str)->dict:
+    """Read a public page returned by web_search and preserve dated source text."""
+    return workflow('web_fetch',run_id,role,{'url':url})
+
+@server.tool()
+def sandbox_python(run_id:str, role:str, code:str, source_ids:list[int]|None=None)->dict:
+    """Run Python in an isolated container. Read /tmp/input.json (workspace and selected source excerpts); print results. Standard library only. Use wf_cash for authoritative finance calculations."""
+    return workflow('sandbox_python',run_id,role,{'code':code,'source_ids':source_ids or []})
+
 if __name__=='__main__':server.run()

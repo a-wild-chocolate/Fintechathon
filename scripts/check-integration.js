@@ -9,7 +9,7 @@ async function api(path, options = {}) {
   return data;
 }
 const json = body => ({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
-assert.equal((await api('/assistant/status')).mode, 'evidence', 'Run integration checks with TRADEX_CHAT_ENABLED=0 to avoid paid inference.');
+assert.equal((await api('/assistant/status')).mode, 'evidence', 'Run integration checks with TRADEX_AGENTS_ENABLED=0 and TRADEX_CHAT_ENABLED=0 to avoid paid inference.');
 const text = await readFile(new URL('../demo/harbour-payment-confirmation.txt', import.meta.url), 'utf8');
 const form = new FormData();
 form.append('file', new Blob([text], {type:'text/plain'}), 'integration-check.txt');
@@ -41,6 +41,7 @@ try {
   const wrongOrder=await fetch(base+'/api/assistant/chat',json({question:'payment',document_id:doc.document_id,order_id:'TF-26091'}));
   assert.equal(wrongOrder.status,400);
   const policies=(await api('/documents')).filter(d=>d.tenant==='public');
+  assert.ok(policies.length > 0, 'No public policies found. Run backend seed and drain before this check.');
   assert.ok(policies.every(d=>d.metadata.title_en));
   console.log('PASS: proxy, upload, async indexing, Chinese/English retrieval, citations, original version, order scope, English policy titles.');
 } finally {

@@ -1,3 +1,7 @@
+import { attachCashChart, cashAnalysisQuestion } from "./cash-chart.js";
+import { setupDocuments, parseSetupDocument } from "./onboarding.js";
+import { collectHumanAnswers, humanReplySummary } from './human-loop.js';
+import { restoreAgentTasks, archiveConversation, retainAgentTasks, rememberAgentSession } from './agent-tasks.js';
 import {
   translations,
   docGroups,
@@ -14,18 +18,22 @@ import {
   seriesFor,
   enrich,
   receiptCNY,
+  cashEvents,
 } from "./finance.js";
 import { samplePartialEmail, inspectPaymentEmail, readPaymentDetails, paymentProblem, partialReceipt } from "./partial-payment.js";
 import { loadWorkspace, saveWorkspace } from "./storage.js";
 import { followupView } from "./followups.js";
 import { renderIcons } from "./icons.js";
-import { createKnowledgeUI, askKnowledge } from "./knowledge.js";
+import { createKnowledgeUI, askKnowledge, knowledgeAPI, watchAgentRun } from "./knowledge.js";
 
 const root = document.getElementById("tradeflow-export-preview");
 
 const $ = (s) => root.querySelector(s);
 
 const $$ = (s) => [...root.querySelectorAll(s)];
+
+const setupMode = new URLSearchParams(location.search).has("setup");
+let setupPending = null, setupError = "", setupBusy = false;
 
 let state = {
   lang: "zh",
@@ -40,9 +48,11 @@ let state = {
   aiDraft: "",
 };
 
+let selectedCashMovement = null;
+let agentsEnabled = false;
 const orderId = () => state.context === 'company' ? '' : state.context === 'fee' ? 'TF-26091' : 'TF-26104';
 const knowledge = createKnowledgeUI({
-  root, language: () => state.lang, order: orderId,
+  root, language: () => state.lang, order: orderId, includeFeeOrder: () => !setupMode,
   selectedDocument: () => state.ragDocumentId || '', rerender: () => render(),
   selectDocument: (doc, openChat) => {
     state.ragDocumentId = doc?.id || '';
@@ -56,28 +66,169 @@ const knowledge = createKnowledgeUI({
   },
 });
 
+function applyAgentWorkspace(snapshot) {
+  if ((setupMode && !flow.setup?.complete) || !snapshot || snapshot.version < flow.version) return;
+  flow.version = snapshot.version;
+  flow.opening = snapshot.opening;
+  flow.supplierDay = snapshot.supplierDay;
+  flow.receiptDay = snapshot.receiptDay;
+  flow.partialReceipt = snapshot.amountUSD < 12000 ? partialReceipt({ amountUSD: snapshot.amountUSD }) : null;
+}
+async function refreshAgents() {
+  try {
+    const status = await knowledgeAPI('/agents/status');
+    agentsEnabled = status.mode === 'multi_agent';
+    if (agentsEnabled) {
+      const { workspace } = await knowledgeAPI('/agents/workspace');
+      applyAgentWorkspace(workspace); render(); persist();
+    }
+  } catch { agentsEnabled = false; }
+}
+const monitoringTurns = new Set();
 async function retrieveForTurn(turn) {
+  if (monitoringTurns.has(turn.id)) return;
+  monitoringTurns.add(turn.id);
   try {
     const history = flow.chat.filter(t => t !== turn && t.scope === turn.scope && t.rag?.status === 'done').slice(-4)
       .map(t => ({ question: t.question, answer: t.rag.paragraphs.map(p => p.text).join('\n').slice(0, 6000) }));
-    const result = await askKnowledge({ question: turn.question, language: turn.language,
-      document_id: turn.documentId, order_id: turn.orderId, history });
+    flow.agentSessions ||= {};
+    const sessionKey = JSON.stringify([turn.orderId, turn.documentId]);
+    const result = turn.rag.progress?.run_id
+      ? await watchAgentRun(turn.rag.progress.run_id, progress => { turn.rag.progress = progress; knowledge.updateProgress(turn); renderAgentTasks(); persist(); })
+      : await askKnowledge({ question: turn.question, language: turn.language,
+      document_id: turn.documentId, order_id: turn.orderId, history,
+      session_id: flow.agentSessions[sessionKey] || null,
+      live: agentsEnabled, onProgress: progress => {
+        turn.rag.progress = progress;
+        rememberAgentSession(turn, progress.session_id, flow.agentSessions);
+        knowledge.updateProgress(turn); renderAgentTasks(); persist();
+      },
+      workspace: { version: flow.version, opening: flow.opening, supplierDay: flow.supplierDay,
+        receiptDay: flow.receiptDay, amountUSD: flow.partialReceipt?.amountUSD || 12000 } });
+    rememberAgentSession(turn, result.session_id, flow.agentSessions);
+    if (result.mode === 'multi_agent') { agentsEnabled = true; applyAgentWorkspace(result.workspace); }
     turn.rag = { ...result, status: 'done' };
-  } catch (error) { turn.rag = { status: 'error', error: error.message }; }
-  render(); persist();
+    turn.unread = state.page !== 'assistant' || docScope() !== turn.scope || turn.archived;
+  } catch (error) { turn.rag = { status: 'error', error: error.message, progress: turn.rag.progress }; }
+  monitoringTurns.delete(turn.id);
+  if ((state.page === 'assistant' && docScope() === turn.scope) || state.page === 'home') render();
+  else renderAgentTasks();
+  persist();
 }
+function renderAgentTasks() {
+  const host = $('#tx-agent-tasks');
+  const tasks = flow.chat.filter(t => t.id && t.rag);
+  const pending = tasks.filter(t => t.rag.status === 'pending');
+  const unread = tasks.filter(t => t.unread);
+  host.hidden = !tasks.length;
+  if (!tasks.length) return;
+  const visible = [...new Set([...pending, ...tasks.slice(-8)])].reverse();
+  const label = t => t.rag.status === 'pending' ? bi('后台运行中', 'Running in background')
+    : t.rag.status === 'error' || t.rag.task_status === 'failed' ? bi('需要查看', 'Needs attention')
+    : t.rag.task_status === 'needs_information' ? bi('待补充信息', 'Needs information')
+    : t.rag.task_status === 'needs_approval' ? bi('待确认', 'Needs confirmation') : bi('结果已就绪', 'Result ready');
+  host.innerHTML = `<button class="tx-agent-task-toggle" data-agent-tasks-toggle aria-expanded="${!!state.agentTasksOpen}">✦ ${bi('AI 任务', 'AI tasks')} · ${pending.length ? bi(`${pending.length} 项运行中`, `${pending.length} running`) : unread.length ? bi(`${unread.length} 条新结果`, `${unread.length} new results`) : bi('查看结果', 'View results')}</button>${state.agentTasksOpen ? `<section class="tx-agent-task-list"><strong>${bi('切换页面后继续运行', 'Tasks continue across pages')}</strong>${visible.map(t => `<button data-agent-task="${t.id}"><span>${escapeHtml(t.orderId || bi('企业整体', 'Company'))} · ${label(t)}</span><strong>${escapeHtml(t.question)}</strong></button>`).join('')}</section>` : ''}`;
+}
+root.addEventListener('click', event => {
+  const toggle = event.target.closest('[data-agent-tasks-toggle]');
+  if (toggle) { state.agentTasksOpen = !state.agentTasksOpen; renderAgentTasks(); }
+  const button = event.target.closest('[data-agent-task]');
+  if (!button) return;
+  const turn = flow.chat.find(t => t.id === button.dataset.agentTask);
+  turn.archived = false; turn.unread = false;
+  const sessionId = turn.rag.session_id || turn.rag.progress?.session_id;
+  if (sessionId) {
+    flow.agentSessions ||= {};
+    flow.agentSessions[JSON.stringify([turn.orderId, turn.documentId])] = sessionId;
+  }
+  state.context = turn.scope; state.page = 'assistant'; state.ragDocumentId = turn.documentId || '';
+  state.agentTasksOpen = false;
+  render(); persist();
+});
+
+function saveHumanDraft(event) {
+  const form = event.target.closest('[data-human-form]');
+  if (!form) return;
+  const turn = flow.chat.find(t => t.id === form.dataset.humanForm);
+  const questionId = event.target.dataset.humanQuestion || event.target.dataset.humanComment;
+  if (!questionId) return;
+  turn.humanDraft ||= {};
+  const draft = turn.humanDraft[questionId] ||= {};
+  if (event.target.dataset.humanQuestion) draft.choice = event.target.value;
+  else draft.comment = event.target.value;
+  persist();
+}
+root.addEventListener('input', saveHumanDraft);
+root.addEventListener('change', saveHumanDraft);
+const humanSubmissions = new Set();
+async function submitHumanReply(turn, skipAll) {
+  if (humanSubmissions.has(turn.id) || turn.rag.human_response) return;
+  let answers;
+  try { answers = collectHumanAnswers(turn, skipAll); }
+  catch { turn.humanError = bi('请为每个问题选择、留言或选「暂不回答」。', 'For each question, choose an option, leave a note, or select Skip.'); render(); return; }
+  humanSubmissions.add(turn.id);
+  const form = root.querySelector(`[data-human-form="${turn.id}"]`);
+  for (const button of form.querySelectorAll('button')) button.disabled = true;
+  turn.humanError = '';
+  try {
+    const response = await knowledgeAPI(`/agents/runs/${turn.rag.run_id}/answers`, {
+      method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({answers,language:state.lang})
+    });
+    turn.rag.human_response = response;
+    const next = {id:crypto.randomUUID(),scope:turn.scope,orderId:turn.orderId,documentId:turn.documentId,archived:turn.archived,
+      language:state.lang,question:humanReplySummary(response,state.lang),snapshot:financialSnapshot(),
+      rag:{status:'pending',progress:response}};
+    flow.chat.push(next);
+    flow.agentSessions ||= {};
+    rememberAgentSession(next, response.session_id, flow.agentSessions);
+    persist(); render(); retrieveForTurn(next);
+  } catch (error) { turn.humanError = error.message; render(); }
+  humanSubmissions.delete(turn.id);
+}
+root.addEventListener('submit', event => {
+  const form = event.target.closest('[data-human-form]');
+  if (!form) return;
+  event.preventDefault();
+  submitHumanReply(flow.chat.find(t => t.id === form.dataset.humanForm), false);
+});
+root.addEventListener('click', event => {
+  const button = event.target.closest('[data-human-skip]');
+  if (button) submitHumanReply(flow.chat.find(t => t.id === button.dataset.humanSkip), true);
+});
+
 function startRetrieval(turn) {
   turn.id = crypto.randomUUID();
   turn.language = state.lang; turn.documentId = state.ragDocumentId || null; turn.orderId = orderId() || null;
   turn.rag = { status: 'pending' };
   retrieveForTurn(turn);
 }
+root.addEventListener('toggle', event => {
+  if (!event.target.matches('.kb-progress')) return;
+  const turnId = event.target.closest('[data-progress-turn]').dataset.progressTurn;
+  const turn = flow.chat.find(item => item.id === turnId);
+  if (turn.progressOpen === event.target.open) return;
+  turn.progressOpen = event.target.open;
+  persist();
+}, true);
+
 function ragReply(turn) {
   const finance = /资金|现金|缺口|cash|shortfall|liquidity/i.test(turn.question);
-  return `<div class="tx-chat-user" data-user-content>${escapeHtml(turn.question)}</div><div class="tx-chat-reply"><span class="sx-eyebrow">TradeX</span>${knowledge.answer(turn)}${finance ? `<div class="kb-finance-note">${bi('当前演示账本', 'Current demo ledger')} · v${turn.snapshot.v}<br>${bi('可用人民币：', 'Available CNY: ')}${money(turn.snapshot.opening)} · ${bi('56 天预计最大缺口：', '56-day projected peak shortfall: ')}${money(turn.snapshot.peak)}<br>${bi('由资金计算模块计算；资料检索不会改动账本。', 'Calculated by the cash engine; document retrieval does not change the ledger.')}</div>` : ''}</div>`;
+  return `<div class="tx-chat-user" data-user-content>${escapeHtml(turn.question)}</div><div class="tx-chat-reply"><span class="sx-eyebrow">TradeX</span>${knowledge.answer(turn)}${finance && turn.rag.status === "done" ? `<details class="kb-finance-note"><summary>${bi('当前演示账本', 'Current demo ledger')} · v${turn.snapshot.v}</summary><p>${bi('可用人民币：', 'Available CNY: ')}${money(turn.snapshot.opening)} · ${bi('56 天预计最大缺口：', '56-day projected peak shortfall: ')}${money(turn.snapshot.peak)}<br>${bi('由资金计算模块计算；资料检索不会改动账本。', 'Calculated by the cash engine; document retrieval does not change the ledger.')}</p></details>` : ''}</div>`;
 }
 root.addEventListener('click', async event => {
   const button = event.target.closest('button'); if (!button) return;
+  if (button.dataset.agentConfirm) {
+    button.disabled = true;
+    try {
+      const result = await knowledgeAPI('/agents/proposals/' + button.dataset.agentConfirm + '/confirm', { method: 'POST' });
+      applyAgentWorkspace(result.workspace);
+      for (const t of flow.chat) if (t.rag?.proposal?.id === result.proposal_id) t.rag.proposal.status = 'confirmed';
+      state.extended = false; state.delayed = false;
+      render(); persist();
+      toast(bi('预计收款与资金看板已更新；实际到账余额不变。', 'Receipt forecast and dashboard updated; actual bank cash is unchanged.'));
+      askAi(bi('我已确认付款字段，请重新分析资金影响并给出下一步建议。', 'I confirmed the payment fields. Analyze the updated cash impact and recommend next steps.'), state.context);
+    } catch (e) { toast(e.message); button.disabled = false; }
+  }
   if (button.dataset.kbCite) {
     const [turnId, sourceId] = button.dataset.kbCite.split(':');
     const source = flow.chat.find(t => t.id === turnId)?.rag?.sources.find(s => s.id === Number(sourceId));
@@ -85,7 +236,7 @@ root.addEventListener('click', async event => {
   }
   if (button.dataset.kbRetry) {
     const turn = flow.chat.find(t => t.id === button.dataset.kbRetry);
-    turn.rag = { status: 'pending' }; render(); retrieveForTurn(turn);
+    turn.rag = { status: 'pending', progress: turn.rag.progress }; render(); retrieveForTurn(turn);
   }
 });
 
@@ -189,7 +340,10 @@ root.addEventListener("click", (e) => {
     state.aiQuestionCustom = false;
   }
   if (a === "ai-new") {
-    flow.chat = flow.chat.filter((t) => t.scope !== docScope());
+    for (const key of Object.keys(flow.agentSessions || {})) {
+      if (JSON.parse(key)[0] === (orderId() || null)) delete flow.agentSessions[key];
+    }
+    archiveConversation(flow.chat, docScope());
     state.aiQuestion = "";
     state.aiDraft = "";
     state.aiQuestionCustom = false;
@@ -329,6 +483,7 @@ root.addEventListener("input", (e) => {
 const bi = (zh, en) => (state.lang === "en" ? en : zh);
 
 function selectCase(kind) {
+  selectedCashMovement = null;
   state.ragDocumentId = "";
   state.context = kind;
   state.aiQuestion = "";
@@ -413,8 +568,8 @@ function docStatus(d) {
 }
 
 function documentsView() {
-  if (activeJob()?.type === "partialPayment") return `${knowledge.view()}${partialConversation(activeJob())}`;
-  return `${knowledge.view()}<section class="tf-panel"><h1>${bi("继续处理订单资料", "Continue with order evidence")}</h1><p class="ow-intro">${bi("上传、字段确认和资金分析在同一条流程里完成。", "Upload, verify and assess cash impact in one workflow.")}</p><button class="tf-button primary" data-order-step="1">${bi("添加订单资料", "Add order evidence")} →</button></section><details class="sx-details"><summary>${bi("浏览全部资料类型", "Browse all document types")}</summary><div class="sx-detail-content">${docGroups
+  if (activeJob()?.type === "partialPayment") return `${knowledge.view()}<details class="sx-details"><summary>${bi("查看示例付款处理记录", "View guided sample history")}</summary>${partialConversation(activeJob())}</details>`;
+  return `${knowledge.view()}<details class="sx-details"><summary>${bi("浏览全部资料类型", "Browse all document types")}</summary><div class="sx-detail-content">${docGroups
     .map(
       ([id, zh, en]) =>
         `<details class="sx-doc-group"><summary>${bi(zh, en)}</summary>${docTypes
@@ -471,10 +626,80 @@ let flow = {
   version: 1,
   supplierDay: 5,
   receiptDay: 12,
-  opening: 128000,
+  opening: setupMode ? 0 : 128000,
+  setup: setupMode ? { records: {}, complete: false } : null,
   jobs: [],
   chat: [],
 };
+
+function renderSetup() {
+  const records = flow.setup.records;
+  const next = setupDocuments.find(item => !records[item.id]);
+  const count = Object.keys(records).length;
+  const fields = setupPending?.fields;
+  const labels = { opening: ["人民币期初余额", "Opening CNY"], usd: ["独立美元余额", "Separate USD balance"], order: ["订单编号", "Order ID"], outstanding: ["待收金额（USD）", "Outstanding USD"], receiptDay: ["预计回款日", "Expected receipt date"], payable: ["采购应付（CNY）", "Supplier payable CNY"], supplierDay: ["采购付款日", "Supplier due date"] };
+  $(".tf-heading").hidden = true;
+  $("#tx-case-ribbon").hidden = true;
+  $("#tx-agent-tasks").hidden = true;
+  $("#tx-notification-control").innerHTML = "";
+  $("#tx-notification-panel").hidden = true;
+  $(".tf-nav").innerHTML = `<button aria-current="page">${bi("建立工作台", "Set up workspace")}</button><button disabled>${bi("订单与资金看板", "Orders & cash")}</button><button disabled>${bi("AI 助手", "AI assistant")}</button>`;
+  $("#tf-content").innerHTML = `<section class="co-intro"><div><span class="sx-eyebrow">${bi("从零开始 · 演示企业", "START FROM ZERO · DEMO BUSINESS")}</span><h1>${bi("先有资料，再有判断。", "Start with evidence.")}</h1><p>${bi("没有预置订单、资金预测或 AI 结论。导入并确认三份资料，建立企业工作台。", "No preloaded orders, forecasts or AI answers. Import and confirm three records to build your workspace.")}</p></div></section>
+    <div class="setup-status"><span>${bi("已确认资料", "Confirmed records")} <strong>${count} / 3</strong></span><span>${bi("订单", "Orders")} <strong>${records.sales ? 1 : 0}</strong></span><span>${bi("人民币余额", "CNY balance")} <strong>${records.cash ? money(records.cash.fields.opening) : "—"}</strong></span></div>
+    <ol class="setup-steps">${setupDocuments.map((item,index) => `<li class="${records[item.id] ? 'done' : next?.id === item.id ? 'active' : ''}"><b>${records[item.id] ? '✓' : index+1}</b><span>${bi(...item.label)}</span></li>`).join('')}</ol>
+    <section class="tf-panel ow-entry"><span class="sx-eyebrow">${next ? bi(`第 ${count+1} 步`, `STEP ${count+1}`) : bi("基础资料已齐全", "BASELINE READY")}</span><h1>${next ? bi(...next.label) : bi("现在，可以看清资金安排了。", "Your cash picture is ready.")}</h1><p>${next ? bi(...next.purpose) : bi("将已确认的账户余额、订单和付款条款关联，计算首次资金缺口。", "Connect the confirmed balances, order and supplier terms to calculate the first cash shortfall.")}</p>
+    ${next ? `<button class="tf-link setup-download" data-setup-sample ${setupBusy ? "disabled" : ""}>${bi("读取本步示例文件", "Read the sample file")} ↗</button>${setupPending ? `<p class="tf-small" data-user-content>${escapeHtml(setupPending.file.name)}</p><dl class="setup-fields">${Object.entries(fields).map(([key,value]) => `<div><dt>${bi(...labels[key])}</dt><dd>${key.endsWith('Day') ? date(value) : typeof value === 'number' ? value.toLocaleString('en-US') : escapeHtml(value)}</dd></div>`).join('')}</dl><p class="tf-note">${bi("字段来自上传的文本；确认后保存原件并加入知识库。", "Fields come from the uploaded text. Confirm to save the source in the knowledge library.")}</p><div class="ow-entry-action"><button class="tf-button primary" data-setup-confirm ${setupBusy ? 'disabled' : ''}>${setupBusy ? bi("正在保存…", "Saving…") : bi("确认并导入", "Confirm & import")}</button><button class="tf-link" data-setup-reselect ${setupBusy ? 'disabled' : ''}>${bi("重新选文件", "Choose another file")}</button></div>` : `<label class="ow-file-label setup-file" for="setup-file">↑ ${bi("选择资料，读取字段", "Choose a file to read its fields")}</label><input id="setup-file" class="ow-file-input" type="file" accept=".txt" aria-label="${bi("上传基础资料", "Upload baseline record")}"><p class="tf-note">${bi("可上传示例 TXT，或直接读取示例文件；本步由程序读取字段。", "Upload the sample TXT or read it directly above. This step reads fields without an AI call.")}</p>`}` : `<button class="tf-button primary setup-open" data-setup-open>${bi("生成订单与资金看板", "Build orders & cash dashboard")} →</button>`}
+    <p class="setup-error" role="status">${escapeHtml(setupError)}</p></section>
+    ${count ? `<details class="sx-details"><summary>${bi("查看已导入资料", "View imported records")}</summary>${setupDocuments.filter(item=>records[item.id]).map(item=>`<p class="setup-record">✓ ${bi(...item.label)} · ${escapeHtml(records[item.id].filename)}</p>`).join('')}</details>` : ''}`;
+  localize();
+  $(".tf-company").textContent = bi("新企业工作台", "New business workspace");
+}
+
+root.addEventListener('change', async event => {
+  if (event.target.id !== 'setup-file') return;
+  const file = event.target.files[0];
+  if (!file) return;
+  const next = setupDocuments.find(item => !flow.setup.records[item.id]);
+  setupError = '';
+  try { setupPending = { kind: next.id, file, fields: parseSetupDocument(next.id, await file.text()) }; }
+  catch (error) { setupError = error.message; }
+  render();
+});
+root.addEventListener('click', async event => {
+  if (event.target.closest('[data-setup-sample]')) {
+    const next = setupDocuments.find(item => !flow.setup.records[item.id]);
+    setupError = ''; setupBusy = true; render();
+    try {
+      const response = await fetch('/demo/five-minute-case/preload/' + next.file);
+      if (!response.ok) throw Error('Could not load the sample file.');
+      const text = await response.text();
+      setupPending = { kind: next.id, file: new File([text], next.file, {type:'text/plain'}), fields: parseSetupDocument(next.id, text) };
+    } catch (error) { setupError = error.message; }
+    setupBusy = false; render();
+  }
+  if (event.target.closest('[data-setup-reselect]')) { setupPending = null; setupError = ''; render(); }
+  if (event.target.closest('[data-setup-confirm]')) {
+    setupBusy = true; setupError = ''; render();
+    try {
+      const pending = setupPending;
+      const doc = await knowledge.upload(pending.file, pending.kind === 'cash' ? '' : 'TF-26104');
+      flow.setup.records[pending.kind] = { fields: pending.fields, filename: pending.file.name, documentId: doc.document_id || doc.id };
+      setupPending = null; persist();
+    } catch (error) { setupError = error.message; }
+    setupBusy = false; render();
+  }
+  if (event.target.closest('[data-setup-open]')) {
+    const { cash, sales, supplier } = flow.setup.records;
+    flow.opening = cash.fields.opening;
+    flow.receiptDay = sales.fields.receiptDay;
+    flow.supplierDay = supplier.fields.supplierDay;
+    flow.feeRemaining = 0;
+    flow.setup.complete = true;
+    state.page = 'home'; state.context = 'company';
+    $(".tf-company").textContent = bi("星帆出口贸易 · 深圳", "StarSail Exports · Shenzhen");
+    persist(); render(); window.scrollTo({top:0});
+  }
+});
 
 function financialSnapshot() {
   const q = summary();
@@ -846,7 +1071,7 @@ function askButton(zh, en, question) {
 }
 
 function caseRibbon() {
-  return `<div class="co-breadcrumb ow-breadcrumb"><button class="tf-link" data-page="home">← ${bi("企业总览", "Company overview")}</button><span>/</span><select id="cx-order" aria-label="${bi("选择当前订单", "Select current order")}"><option value="buyer" ${docScope() === "buyer" ? "selected" : ""}>TF-26104 · Harbour Supplies</option><option value="fee" ${docScope() === "fee" ? "selected" : ""}>TF-26091 · Nordlicht GmbH</option></select></div>`;
+  return `<div class="co-breadcrumb ow-breadcrumb"><button class="tf-link" data-page="home">← ${bi("企业总览", "Company overview")}</button><span>/</span><select id="cx-order" aria-label="${bi("选择当前订单", "Select current order")}"><option value="buyer" ${docScope() === "buyer" ? "selected" : ""}>TF-26104 · Harbour Supplies</option>${setupMode ? "" : `<option value="fee" ${docScope() === "fee" ? "selected" : ""}>TF-26091 · Nordlicht GmbH</option>`}</select></div>`;
 }
 
 function changeNotice() {
@@ -909,7 +1134,7 @@ function orderUpload() {
       "Identify the USD 30 difference and who bears the transfer charge.",
     ],
   };
-  return `<section class="tf-panel ow-current"><span class="sx-eyebrow">${bi("第 1 步 / 补充资料", "STEP 1 / EVIDENCE")}</span><h1>${fee ? bi("先解释这笔回款差额", "Explain the receipt difference") : bi("补充最新的收付款资料", "Add the latest payment evidence")}</h1><p class="ow-intro">${fee ? bi("发票 USD 20,000，银行到账 USD 19,970。", "USD 20,000 invoiced; USD 19,970 received.") : bi(`客户尾款 USD 12,000，采购款 ¥160,000，当前付款日 ${date(flow.supplierDay)}。`, `USD 12,000 buyer balance; CNY 160,000 payable on ${date(flow.supplierDay)}.`)}</p><div class="ow-upload"><label for="ow-document-type">${bi("这次补充什么资料？", "What are you adding?")}</label><select id="ow-document-type">${(fee ? ["receiptEvidence"] : ["partialPayment", "buyerpromise", "extension"]).map((id) => `<option value="${id}" ${id === type ? "selected" : ""}>${bi(...templateLabels[id])}</option>`).join("")}</select><p>${bi(...descriptions[type])}</p><label class="ow-file-label" for="ow-file">↑ ${bi("选择资料文件", "Choose a document")}</label><input id="ow-file" class="ow-file-input" type="file" accept="${type === "partialPayment" ? ".txt,.eml" : ".pdf,.txt,.csv,.xlsx,.eml,.png,.jpg,.jpeg"}" aria-label="${bi("上传订单资料", "Upload order evidence")}"><span class="tf-note">${type === "partialPayment" ? bi("TXT / 纯文本 EML · 同步上传知识库", "TXT / plain-text EML · Uploaded to the knowledge library") : "PDF / TXT / CSV / XLSX / EML"}</span></div><div class="ow-footer"><p class="tf-note">${type === "partialPayment" ? bi("本地规则演示 · 示例邮件不含付款金额和日期", "Local demo · The sample omits the payment amount and date") : bi("交互演示 · 上传后使用示例字段模拟解析", "Interactive demo · Uploads use sample extraction fields")}</p><button class="tf-button primary" data-order-action="sample">${bi("使用示例继续", "Continue with sample")} →</button></div></section>`;
+  return `<section class="tf-panel ow-entry"><span class="sx-eyebrow">${bi("当前任务 · 补充付款依据", "NEXT STEP · ADD PAYMENT EVIDENCE")}</span><h1>${fee ? bi("这笔回款，为什么少了 USD 30？", "Why is this receipt USD 30 short?") : bi("补充客户的付款安排", "Add the buyer’s payment plan")}</h1><p>${fee ? bi("补充汇款凭证与费用条款，让 AI 帮你核对差额。", "Add the remittance record and fee terms to investigate the difference.") : bi("上传邮件，核对金额和日期，再更新资金预测。", "Upload the email, verify the amount and date, then update the forecast.")}</p><div class="ow-order-facts"><div><span>${bi("待收尾款", "Outstanding")}</span><strong>${fee ? "USD 30" : "USD 12,000"}</strong></div><div><span>${bi("采购款到期", "Supplier due")}</span><strong>${fee ? "—" : date(flow.supplierDay) + " · ¥160,000"}</strong></div></div><div class="ow-entry-action">${button("documents", "上传或选择订单资料", "Add order evidence", true)}</div></section><details class="sx-details ow-sample"><summary>${bi("使用示例体验完整流程", "Try the guided sample workflow")}</summary><div class="ow-sample-body"><div class="ow-upload"><label for="ow-document-type">${bi("这次补充什么资料？", "What are you adding?")}</label><select id="ow-document-type">${(fee ? ["receiptEvidence"] : ["partialPayment", "buyerpromise", "extension"]).map((id) => `<option value="${id}" ${id === type ? "selected" : ""}>${bi(...templateLabels[id])}</option>`).join("")}</select><p>${bi(...descriptions[type])}</p><label class="ow-file-label" for="ow-file">↑ ${bi("选择资料文件", "Choose a document")}</label><input id="ow-file" class="ow-file-input" type="file" accept="${type === "partialPayment" ? ".txt,.eml" : ".pdf,.txt,.csv,.xlsx,.eml,.png,.jpg,.jpeg"}" aria-label="${bi("上传订单资料", "Upload order evidence")}"><span class="tf-note">${type === "partialPayment" ? bi("TXT / 纯文本 EML · 同步上传知识库", "TXT / plain-text EML · Uploaded to the knowledge library") : "PDF / TXT / CSV / XLSX / EML"}</span></div><div class="ow-footer"><p class="tf-note">${type === "partialPayment" ? bi("本地规则演示 · 示例邮件不含付款金额和日期", "Local demo · The sample omits the payment amount and date") : bi("交互演示 · 上传后使用示例字段模拟解析", "Interactive demo · Uploads use sample extraction fields")}</p><button class="tf-button primary" data-order-action="sample">${bi("使用示例继续", "Continue with sample")} →</button></div></div></details>`;
 }
 
 function startOrderEvidence(type, name, local = false) {
@@ -949,7 +1174,7 @@ function orderVerification(job) {
     return `<section class="tf-panel ow-current"><span class="sx-eyebrow">${bi("第 2 步 / 提取字段", "STEP 2 / EXTRACTION")}</span><h1>${bi("正在整理这份资料", "Preparing your evidence")}</h1><p class="ow-intro" data-user-content>${escapeHtml(job.name)}</p><div class="ow-processing" role="status"><span></span>${bi("模拟解析资料，定位日期、金额和关联订单…", "Extracting sample dates, amounts and order references…")}</div>${job.status === "queued" ? `<button class="tf-button primary" data-flow-action="parse">${bi("继续解析", "Resume extraction")}</button>` : ""}</section>`;
   const confirmed = job.status === "confirmed",
     fee = job.type === "receiptEvidence";
-  return `<section class="tf-panel ow-current"><span class="sx-eyebrow">${bi("第 2 步 / 确认字段", "STEP 2 / VERIFY FIELDS")}</span><h1>${confirmed ? bi("已确认的字段", "Confirmed fields") : bi("核对后，再更新订单", "Verify before updating")}</h1><p class="ow-intro" data-user-content>${escapeHtml(job.name)} · ${bi("示例解析", "Sample extraction")}</p><div class="ow-source"><span>${bi("示例来源片段", "Sample source excerpt")}</span><blockquote>${orderSource(job)}</blockquote></div><div class="ow-fields"><label>${bi("关联订单", "Linked order")}<input value="${job.scope === "fee" ? "TF-26091" : "TF-26104"}" readonly></label>${fee ? `<label>${bi("银行净到账（USD）", "Net bank receipt (USD)")}<input value="19,970" readonly></label><label>${bi("银行手续费（USD）", "Bank charge (USD)")}<input value="30" readonly></label><label>${bi("费用承担方", "Charge responsibility")}<select id="ow-fee-party" ${confirmed ? "disabled" : ""}><option value="seller" ${job.feeParty !== "buyer" ? "selected" : ""}>${bi("卖方承担", "Seller")}</option><option value="buyer" ${job.feeParty === "buyer" ? "selected" : ""}>${bi("买方承担，仍需追收", "Buyer; balance remains due")}</option></select></label>` : `<label>${job.type === "extension" ? bi("采购付款日期", "Supplier payment date") : job.type === "buyerpromise" ? bi("预计结汇可用日", "Expected CNY availability") : bi("余额截至日", "Balance as-of date")}<input id="tx-field-date" type="date" min="2026-10-17" max="2026-12-11" value="${job.date}" ${confirmed ? "readonly" : ""}></label><label>${job.type === "buyerpromise" ? bi("尾款金额（USD）", "Buyer balance (USD)") : bi("金额（CNY）", "Amount (CNY)")}<input id="tx-field-amount" type="number" value="${job.amount}" ${job.type !== "balance" || confirmed ? "readonly" : ""}></label>`}</div>${confirmed ? `<div class="ow-footer"><button class="tf-link" data-order-action="edit">${bi("修改字段", "Revise fields")}</button><button class="tf-button primary" data-order-step="3">${bi("查看资金影响", "View cash impact")} →</button></div>` : `<label class="tx-confirm ow-confirm"><input id="tx-field-check" type="checkbox" ${job.approved ? "checked" : ""}>${bi("我已核对来源、字段与关联订单", "I checked the source, fields and linked order")}</label><div class="ow-footer"><button class="tf-link" data-flow-action="cancel">${bi("重新选择资料", "Choose another document")}</button><button class="tf-button primary" data-flow-action="confirm" ${job.approved ? "" : "disabled"}>${bi("确认并查看资金影响", "Confirm & view cash impact")} →</button></div>`}</section>`;
+  return `<section class="tf-panel ow-current"><span class="sx-eyebrow">${bi("第 2 步 / 确认字段", "STEP 2 / VERIFY FIELDS")}</span><h1>${confirmed ? bi("已确认的字段", "Confirmed fields") : bi("核对后，再更新订单", "Verify before updating")}</h1><p class="ow-intro" data-user-content>${escapeHtml(job.name)} · ${bi("示例解析", "Sample extraction")}</p><details class="ow-source"><summary>${bi("核对来源原文", "Review source excerpt")}</summary><blockquote>${orderSource(job)}</blockquote></details><div class="ow-fields"><label>${bi("关联订单", "Linked order")}<input value="${job.scope === "fee" ? "TF-26091" : "TF-26104"}" readonly></label>${fee ? `<label>${bi("银行净到账（USD）", "Net bank receipt (USD)")}<input value="19,970" readonly></label><label>${bi("银行手续费（USD）", "Bank charge (USD)")}<input value="30" readonly></label><label>${bi("费用承担方", "Charge responsibility")}<select id="ow-fee-party" ${confirmed ? "disabled" : ""}><option value="seller" ${job.feeParty !== "buyer" ? "selected" : ""}>${bi("卖方承担", "Seller")}</option><option value="buyer" ${job.feeParty === "buyer" ? "selected" : ""}>${bi("买方承担，仍需追收", "Buyer; balance remains due")}</option></select></label>` : `<label>${job.type === "extension" ? bi("采购付款日期", "Supplier payment date") : job.type === "buyerpromise" ? bi("预计结汇可用日", "Expected CNY availability") : bi("余额截至日", "Balance as-of date")}<input id="tx-field-date" type="date" min="2026-10-17" max="2026-12-11" value="${job.date}" ${confirmed ? "readonly" : ""}></label><label>${job.type === "buyerpromise" ? bi("尾款金额（USD）", "Buyer balance (USD)") : bi("金额（CNY）", "Amount (CNY)")}<input id="tx-field-amount" type="number" value="${job.amount}" ${job.type !== "balance" || confirmed ? "readonly" : ""}></label>`}</div>${confirmed ? `<div class="ow-footer"><button class="tf-link" data-order-action="edit">${bi("修改字段", "Revise fields")}</button><button class="tf-button primary" data-order-step="3">${bi("查看资金影响", "View cash impact")} →</button></div>` : `<label class="tx-confirm ow-confirm"><input id="tx-field-check" type="checkbox" ${job.approved ? "checked" : ""}>${bi("我已核对来源、字段与关联订单", "I checked the source, fields and linked order")}</label><div class="ow-footer"><button class="tf-link" data-flow-action="cancel">${bi("重新选择资料", "Choose another document")}</button><button class="tf-button primary" data-flow-action="confirm" ${job.approved ? "" : "disabled"}>${bi("确认并查看资金影响", "Confirm & view cash impact")} →</button></div>`}</section>`;
 }
 
 function orderImpact(job) {
@@ -998,8 +1223,12 @@ function orderImpact(job) {
           money(after.peak),
         ],
       ];
-  return `<section class="tf-panel ow-current"><span class="sx-eyebrow">${bi("第 3 步 / 资金影响", "STEP 3 / CASH IMPACT")}</span><h1>${bi("这份资料，改变了什么？", "What changed with this evidence?")}</h1><p class="ow-intro">${bi("字段已确认，订单与企业资金看板已同步。", "Fields confirmed. The order and company dashboard are updated.")}</p><div class="ow-change-table"><div class="ow-change-head"><span>${bi("变化项", "Item")}</span><span>${bi("确认前", "Before")}</span><span>${bi("确认后", "After")}</span></div>${changes.map(([label, a, b], index) => `<div><span>${label}</span><span>${a}</span><strong class="${!fee && index === changes.length - 1 && after.peak > 0 ? "ow-warning" : ""}">${b}</strong></div>`).join("")}</div>${fee ? `<p class="ow-impact-note">${job.feeAfter === 0 ? bi("USD 30 已归入卖方承担的手续费，应收差额已解释；不会新增一笔现金收入。", "USD 30 is allocated to seller-borne bank charges. The receivable difference is resolved, with no additional cash receipt.") : bi("费用由买方承担，USD 30 仍待追收；银行实际到账保持不变。", "The buyer bears the charge; USD 30 remains due. The actual bank receipt is unchanged.")}</p>` : `<svg id="tf-chart" class="tf-chart" role="img" aria-label="${bi("资料确认前后资金预测对比", "Cash forecast before and after confirmation")}"></svg><div class="cx-legend"><span class="cx-baseline">${bi("确认前", "Before")}</span><span class="cx-current">${bi("确认后", "After")}</span></div><p class="ow-impact-note">${job.type === "partialPayment" ? bi(`仅将 USD ${after.partialReceipt.amountUSD.toLocaleString("en-US")} 纳入预计回款，剩余 USD ${after.partialReceipt.remainingUSD.toLocaleString("en-US")} 未排期。结汇净额沿用原订单比例假设；应收总额和银行余额未改变。`, `Only USD ${after.partialReceipt.amountUSD.toLocaleString("en-US")} enters the receipt forecast. USD ${after.partialReceipt.remainingUSD.toLocaleString("en-US")} remains unscheduled. Net CNY uses the existing order assumption; total receivables and bank cash are unchanged.`) : job.type === "buyerpromise" ? bi("更新的是预计回款时间，客户尾款仍未实际到账。", "The expected receipt date changed; the buyer balance is still unpaid.") : bi("根据更新后的字段重新计算，资金曲线包含企业其他订单收支。", "Recalculated with the new fields, including cash movements from other orders.")}</p>`}<div class="ow-footer"><button class="tf-link" data-order-step="2">← ${bi("核对字段", "Review fields")}</button><button class="tf-button primary" data-order-action="analyze">${bi("让 AI 分析下一步", "Ask AI for next steps")} →</button></div></section>`;
+  return `<section class="tf-panel ow-current"><span class="sx-eyebrow">${bi("第 3 步 / 资金影响", "STEP 3 / CASH IMPACT")}</span><h1>${bi("这份资料，改变了什么？", "What changed with this evidence?")}</h1><p class="ow-intro">${bi("字段已确认，订单与企业资金看板已同步。", "Fields confirmed. The order and company dashboard are updated.")}</p><div class="ow-footer ow-impact-action"><button class="tf-link" data-order-step="2">← ${bi("核对字段", "Review fields")}</button><button class="tf-button primary" data-order-action="analyze">${bi("让 AI 分析下一步", "Ask AI for next steps")} →</button></div><div class="ow-change-table"><div class="ow-change-head"><span>${bi("变化项", "Item")}</span><span>${bi("确认前", "Before")}</span><span>${bi("确认后", "After")}</span></div>${changes.map(([label, a, b], index) => `<div><span>${label}</span><span>${a}</span><strong class="${!fee && index === changes.length - 1 && after.peak > 0 ? "ow-warning" : ""}">${b}</strong></div>`).join("")}</div>${fee ? `<p class="ow-impact-note">${job.feeAfter === 0 ? bi("USD 30 已归入卖方承担的手续费，应收差额已解释；不会新增一笔现金收入。", "USD 30 is allocated to seller-borne bank charges. The receivable difference is resolved, with no additional cash receipt.") : bi("费用由买方承担，USD 30 仍待追收；银行实际到账保持不变。", "The buyer bears the charge; USD 30 remains due. The actual bank receipt is unchanged.")}</p>` : `<details class="ow-chart-details" data-cash-chart><summary>${bi("查看资金曲线与计算口径", "Cash chart and assumptions")}</summary><svg id="tf-chart" class="tf-chart" role="img" aria-label="${bi("资料确认前后资金预测对比", "Cash forecast before and after confirmation")}"></svg><div class="cx-legend"><span class="cx-baseline">${bi("确认前", "Before")}</span><span class="cx-current">${bi("确认后", "After")}</span></div><p class="ow-impact-note">${job.type === "partialPayment" ? bi(`仅将 USD ${after.partialReceipt.amountUSD.toLocaleString("en-US")} 纳入预计回款，剩余 USD ${after.partialReceipt.remainingUSD.toLocaleString("en-US")} 未排期。结汇净额沿用原订单比例假设；应收总额和银行余额未改变。`, `Only USD ${after.partialReceipt.amountUSD.toLocaleString("en-US")} enters the receipt forecast. USD ${after.partialReceipt.remainingUSD.toLocaleString("en-US")} remains unscheduled. Net CNY uses the existing order assumption; total receivables and bank cash are unchanged.`) : job.type === "buyerpromise" ? bi("更新的是预计回款时间，客户尾款仍未实际到账。", "The expected receipt date changed; the buyer balance is still unpaid.") : bi("根据更新后的字段重新计算，资金曲线包含企业其他订单收支。", "Recalculated with the new fields, including cash movements from other orders.")}</p></details>`}</section>`;
 }
+
+root.addEventListener("toggle", event => {
+  if (event.target.matches("[data-cash-chart]") && event.target.open) chart();
+}, true);
 
 function overview() {
   const step = orderStep(),
@@ -1016,8 +1245,9 @@ function chartPanel() {
 function chart() {
   const svg = $("#tf-chart");
   if (!svg) return;
+  if (svg.parentElement.classList.contains("cash-chart-interactive")) svg.parentElement.replaceWith(svg);
   const w = Math.max(210, svg.getBoundingClientRect().width),
-    h = 216,
+    h = svg.getBoundingClientRect().height,
     L = 49,
     R = 12,
     T = 19,
@@ -1036,12 +1266,50 @@ function chart() {
         .join(" ");
   svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
   svg.innerHTML = `<title>${bi("人民币余额：当前预测与对比情景", "CNY balances: current and comparison forecasts")}</title>${[lo, 0, hi].map((v) => `<line x1="${L}" y1="${y(v)}" x2="${w - R}" y2="${y(v)}" stroke="var(--tf-line)"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${Math.round(v / 1000)}k</text>`).join("")}${[0, 18, 36, 55].map((d) => `<text x="${x(d)}" y="${h - 6}" text-anchor="${d === 0 ? "start" : d === 55 ? "end" : "middle"}">${date(d)}</text>`).join("")}<path d="${path(b)}" fill="none" stroke="var(--tf-sub)" stroke-width="1.5" stroke-dasharray="5 4"/><path d="${path(a)}" fill="none" stroke="var(--tf-accent)" stroke-width="2.5"/>${c.current.first !== null ? `<circle cx="${x(c.current.first)}" cy="${y(-c.current.gap)}" r="4" fill="var(--tf-warn)"/>` : ""}`;
+  attachCashChart(svg, { snapshot: c.current, points: a, baseline: b, comparisonLabel: c.label, language: state.lang, x, y, width: w, height: h, onSelect: openCashMovement });
 }
 
+
+function openCashMovement(event, snapshot) {
+  selectCase(event.orderId ? "buyer" : "company");
+  selectedCashMovement = { event, snapshot };
+  state.delayed = false;
+  state.extended = false;
+  state.page = event.orderId ? "orders" : "assistant";
+  if (!event.orderId) state.aiDraft = cashAnalysisQuestion(event, snapshot, state.lang);
+  render();
+  persist();
+  window.scrollTo({ top: 0 });
+}
+
+function cashMovementContext() {
+  if (!selectedCashMovement || state.context !== "buyer") return "";
+  const { event } = selectedCashMovement;
+  return `<aside class="cash-movement-context"><div><small>${bi("从资金曲线查看", "Selected from cash outlook")} · ${event.orderId}</small><p>${isoDay(event.day)} · ${bi(...event.label)} · ${event.amount < 0 ? "−" : "+"}${money(event.amount)}</p></div><button class="tf-button primary" data-analyze-cash>${bi("AI 分析资金影响", "Analyze cash impact")} →</button></aside>`;
+}
+
+root.addEventListener("click", event => {
+  if (!event.target.closest("[data-analyze-cash]")) return;
+  const { event: movement, snapshot } = selectedCashMovement;
+  askAi(cashAnalysisQuestion(movement, snapshot, state.lang), "buyer");
+});
+
 function orderView() {
-  const fee = docScope() === "fee",
-    s = financialSnapshot();
-  return `${changeNotice()}<section class="tf-panel"><div class="tf-panelhead"><h3>${caseName()}</h3><span class="tf-badge">${fee ? bi("已发运 · 差额待核实", "Shipped · Difference unresolved") : bi("备货中 · 尾款未到账", "Preparing goods · Balance unpaid")}</span></div>${fee ? reconcile() : `<div class="cx-timeline"><div><span>${bi("销售合同", "Sales contract")}</span><strong>${bi("尾款 USD 12,000", "USD 12,000 balance")}</strong><small>${bi("当前仍为应收款", "Still a receivable")}</small></div><div><span>${bi("采购付款", "Supplier payment")}</span><strong>${date(flow.supplierDay)} · ¥160,000</strong><small>${bi("已确认付款安排", "Confirmed payment schedule")}</small></div><div><span>${bi("预计结汇", "Expected conversion")}</span><strong>${date(flow.receiptDay)} · ${money(receiptCNY(flow))}</strong><small>${bi("情景假设，未到账", "Scenario assumption, not received")}</small></div></div><div class="tf-alert"><div><strong>${s.peak ? bi("付款与回款时间需要协调", "Payment and collection timing need coordination") : bi("当前情景未出现资金缺口", "No shortfall in the current scenario")}</strong><p>${bi("结合公司其他收支，56 天最高资金缺口为 ", "Including other company cash flows, the 56-day peak shortfall is ")}${money(s.peak)}。</p></div></div>`}<div class="tx-flow-start">${button("reconcile", "核对来源与字段", "Inspect sources & fields")}${button("cash", "查看资金影响", "See cash impact")}${askButton("分析这笔订单", "Analyze this order")}</div></section><section class="tf-panel"><h3>${bi("订单依据", "Order evidence")}</h3>${evidenceRows()}</section>`;
+  const fee = docScope() === "fee", s = financialSnapshot();
+  const resolved = fee && flow.feeRemaining === 0;
+  const title = fee
+    ? resolved ? bi("回款差额已核实", "Receipt difference resolved") : bi("核实 USD 30 的回款差额", "Resolve the USD 30 receipt difference")
+    : s.peak ? bi("协调付款与回款日期", "Align payment and collection dates") : bi("跟进客户回款", "Follow up the buyer’s payment");
+  const rows = fee ? [
+    [bi("发票金额", "Invoice amount"), "USD 20,000"],
+    [bi("银行实际到账", "Bank receipt"), "USD 19,970"],
+    [bi("待解释差额", "Unresolved balance"), `USD ${flow.feeRemaining}`],
+  ] : [
+    [bi("待收尾款", "Outstanding balance"), "USD 12,000"],
+    [bi("采购款到期", "Supplier payment"), `${date(flow.supplierDay)} · ¥160,000`],
+    [bi("预计结汇", "Expected net proceeds"), `${date(flow.receiptDay)} · ${money(receiptCNY(flow))}`],
+  ];
+  return `${cashMovementContext()}<section class="tf-panel ow-current"><span class="sx-eyebrow">${bi("当前待办", "NEXT ACTION")}</span><h1>${title}</h1><p class="ow-intro">${fee ? resolved ? bi("费用已归入卖方承担的手续费，银行到账金额不变。", "The difference is recorded as seller-borne fees; bank cash is unchanged.") : bi("补充汇款凭证和费用承担条款，确认差额来源。", "Add remittance evidence and fee terms to explain the difference.") : bi(`当前企业资金预测的最大缺口为 ${money(s.peak)}，预计回款尚未到账。`, `The company forecast shows a peak shortfall of ${money(s.peak)}; expected receipts remain unpaid.`)}</p><dl class="ow-fact-list">${rows.map(([label,value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join("")}</dl><div class="ow-entry-action">${fee ? button(resolved ? "reconcile" : "documents", resolved ? "查看确认字段" : "补充凭证", resolved ? "View confirmed fields" : "Add evidence", true) : button(s.peak ? "cash" : "assistant", s.peak ? "比较付款方案" : "分析回款安排", s.peak ? "Compare payment options" : "Analyze collection", true)}</div></section><details class="sx-details"><summary>${bi("订单资料与历史变更", "Order evidence and updates")}</summary>${changeNotice()}${evidenceRows()}<div class="ow-secondary">${button("reconcile", "核对来源与字段", "Review fields")}${askButton("分析这笔订单", "Analyze this order")}</div></details>`;
 }
 
 function evidenceRows() {
@@ -1103,33 +1371,40 @@ function taskView() {
   return `<div class="sx-journey"><span>01 ${bi("看清问题", "Understand")}</span><span>02 ${bi("比较方案", "Compare")}</span><span class="active">03 ${bi("跟进行动", "Follow up")}</span></div><section class="sx-focus"><span class="sx-eyebrow">${done ? bi("已确认", "Confirmed") : bi("等待供应商回复", "Awaiting supplier reply")}</span><h1>${done ? bi("付款日期已更新。", "Payment date updated.") : bi(`和供应商确认 ${date(target)} 付款。`, `Agree payment on ${date(target)}.`)}</h1><p class="sx-explanation">${bi("采购款 ¥160,000 · TF-26104 · 财务负责跟进", "CNY 160,000 · TF-26104 · Finance to follow up")}</p><div class="tf-draft">${bi(`希望将这笔订单的采购付款调整至 ${date(target)}，请确认是否同意，以及有无额外费用。`, `Could we move the supplier payment to ${date(target)}? Please confirm your agreement and any additional charges.`)}</div><p class="tf-note">${bi("协商草稿，尚未发送", "Draft for negotiation · Not sent")}</p><div class="sx-next"><p>${done ? bi("订单与资金预测已同步。", "The order and forecast are up to date.") : bi("收到确认后，核对新日期并更新资金安排。", "Once agreed, verify the new date and update the cash plan.")}</p>${done ? button("overview", "返回资金工作台", "Back to workspace", true) : `<button class="tf-button primary" data-connected="agreement">${bi("已收到确认，更新资料", "Agreement received · Update")} →</button>`}</div></section>`;
 }
 
+function conversationTurns(turns, renderTurn) {
+  const needsAction = (turn) => turn.rag?.status === "pending" ||
+    (turn.rag?.questions?.length && !turn.rag.human_response) ||
+    turn.rag?.proposal?.status === "needs_approval";
+  const earlier = turns.filter((turn, index) => index < turns.length - 1 && !needsAction(turn));
+  const current = turns.filter((turn, index) => index === turns.length - 1 || needsAction(turn));
+  return `${earlier.length ? `<details class="tx-history"><summary>${bi("之前的对话", "Earlier conversation")} · ${earlier.length}</summary><div class="tx-history-turns">${earlier.map(turn => renderTurn(turn, turns.indexOf(turn))).join("")}</div></details>` : ""}${current.map(turn => renderTurn(turn, turns.indexOf(turn))).join("")}`;
+}
+
 function aiPage() {
-  if (!state.ragDocumentId && activeJob()?.type === "partialPayment" && activeJob().status !== "confirmed") return partialConversation(activeJob());
+  if (!agentsEnabled && !state.ragDocumentId && activeJob()?.type === "partialPayment" && activeJob().status !== "confirmed") return partialConversation(activeJob());
   const turns = flow.chat.filter(
     (t) =>
-      t.scope === docScope() &&
+      !t.archived && t.scope === docScope() &&
       (state.page !== "overview" || t.snapshot.v === flow.version),
   );
-  return `<section class="tx-chat"><div class="tx-chat-top"><span>${bi("TradeX 已关联当前订单与资料", "TradeX has your order and evidence")}</span><button class="tf-link" data-action="ai-new">${bi("新对话", "New chat")}</button></div><div class="tx-messages" aria-live="polite">${
+  return `<section class="tx-chat"><div class="tx-chat-top"><span>${bi("AI 助手", "AI assistant")}</span><button class="tf-link" data-action="ai-new">${bi("新对话", "New chat")}</button></div><div class="tx-messages" aria-live="polite">${
     turns.length
-      ? turns
-          .map((t, i) => {
+      ? conversationTurns(turns, (t, i) => {
             const stale = t.snapshot.v !== flow.version,
               last = i === turns.length - 1;
             if (t.rag) return ragReply(t);
             return `<div class="tx-chat-user" data-user-content>${escapeHtml(t.question)}</div><div class="tx-chat-reply"><span class="sx-eyebrow">TradeX${stale ? " · " + bi("较早资料", "Earlier evidence") : ""}</span><p>${t.kind === "missing" ? bi("请补充客户的付款通知或供应商延期确认，在资料库核对日期后，资金预测会一起更新。", "Add the buyer’s payment notice or supplier agreement. Verify its dates in Documents to update the forecast.") : chatAnswer(t)}</p>${last && state.page !== "overview" ? `<div class="tx-chat-actions">${stale ? `<button class="tf-link" data-flow-action="reanalyze">${bi("资料有更新，重新分析", "Evidence changed · Reanalyze")} →</button>` : t.scope === "fee" || t.kind === "missing" || t.followupType === "receipt" ? button("documents", "去补充资料", "Add evidence") : t.kind === "delay" ? `<button class="tf-link" data-connected="delay">${bi("把这个假设放到资金看板", "View this scenario on the dashboard")} →</button>` : `<button class="tf-link" data-simple="compare">${bi("去比较付款方案", "Compare payment options")} →</button>`}</div>` : ""}<details class="sx-sources"><summary>${bi("分析依据", "Sources")}</summary><p class="tf-small">${caseName()} · ${bi("已确认资料", "Confirmed evidence")} v${t.snapshot.v}</p>${state.page === "overview" ? `<button class="tf-link" data-order-step="2">${bi("查看确认字段", "View confirmed fields")}</button>` : button("reconcile", "查看字段", "View fields")}</details>${last && state.page === "overview" && !stale && t.followupType === "receipt" ? `<button class="tf-link ow-ai-next" data-order-step="1">${bi("补充到账凭证", "Add bank evidence")} →</button>` : last && state.page === "overview" && !stale && t.scope === "buyer" && t.snapshot.peak > 0 ? `<button class="tf-link ow-ai-next" data-simple="compare">${bi("比较付款方案", "Compare payment options")} →</button>` : ""}</div>`;
           })
-          .join("")
       : `<div class="tx-chat-empty"><span class="sx-ai-mark">✦</span><h1>${bi("这笔订单，下一步怎么做？", "What comes next for this order?")}</h1><p>${bi("直接问，订单、资料和资金安排已经关联。", "Just ask. Your order, evidence and cash plan are connected.")}</p></div>`
-  }</div><div class="tx-composer">${knowledge.composer()}<div class="tx-chat-hints">${[bi("帮我分析当前付款风险", "Explain the current payment risk"), docScope() === "fee" ? (flow.feeRemaining === 0 ? bi("这次确认对资金有什么影响？", "How does this confirmation affect cash?") : bi("还缺哪些回款资料？", "What receipt evidence is missing?")) : bi("客户晚付 14 天会怎样？", "What if the buyer pays 14 days late?")].map((q) => `<button data-fill-question="${escapeHtml(q)}">${q}</button>`).join("")}</div><form id="tf-ai-form"><textarea id="tf-ai-question" rows="3" maxlength="300" aria-label="${bi("向 AI 助手提问", "Ask TradeX")}" placeholder="${bi("输入你的问题…", "Ask a question…")}">${escapeHtml(state.aiDraft || "")}</textarea><div class="tx-send-row"><span class="tf-note">${bi("已连接知识库 · 回答附来源", "Connected library · Answers with sources")}</span><button class="tf-button primary" type="button" data-action="ai-submit">${bi("发送", "Send")} ↑</button></div></form></div></section>`;
+  }</div><div class="tx-composer">${knowledge.composer()}<div class="tx-chat-hints" ${turns.length ? "hidden" : ""}>${[bi("帮我分析当前付款风险", "Explain the current payment risk"), docScope() === "fee" ? (flow.feeRemaining === 0 ? bi("这次确认对资金有什么影响？", "How does this confirmation affect cash?") : bi("还缺哪些回款资料？", "What receipt evidence is missing?")) : bi("客户晚付 14 天会怎样？", "What if the buyer pays 14 days late?")].map((q) => `<button data-fill-question="${escapeHtml(q)}">${q}</button>`).join("")}</div><form id="tf-ai-form"><textarea id="tf-ai-question" rows="3" maxlength="300" aria-label="${bi("向 AI 助手提问", "Ask TradeX")}" placeholder="${bi("输入你的问题…", "Ask a question…")}">${escapeHtml(state.aiDraft || "")}</textarea><div class="tx-send-row"><span class="tf-note">${bi("Enter 换行", "Enter for a new line")}</span><button class="tf-button primary" type="button" data-action="ai-submit">${bi("发送", "Send")} ↑</button></div></form></div></section>`;
 }
 
 function askAi(question, kind) {
-  if (!state.ragDocumentId && activeJob()?.type === "partialPayment" && activeJob().status !== "confirmed") {
+  if (!agentsEnabled && !state.ragDocumentId && activeJob()?.type === "partialPayment" && activeJob().status !== "confirmed") {
     clarifyPartialPayment(question);
     return;
   }
-  if (flow.chat.some(t => t.scope === (kind === 'company' ? 'company' : docScope()) && t.rag?.status === 'pending')) return;
+  if (flow.chat.some(t => !t.archived && t.scope === (kind === 'company' ? 'company' : docScope()) && t.rag?.status === 'pending')) return;
   if (kind === "company") {
     flow.chat.push({
       scope: "company",
@@ -1160,7 +1435,7 @@ function askAi(question, kind) {
     : s;
   flow.chat.push({
     scope: docScope(),
-    question: question.slice(0, 200),
+    question,
     kind: delay
       ? "delay"
       : /补充|missing/i.test(question)
@@ -1169,7 +1444,7 @@ function askAi(question, kind) {
     snapshot: snap,
   });
   startRetrieval(flow.chat.at(-1));
-  flow.chat = flow.chat.slice(-12);
+  flow.chat = retainAgentTasks(flow.chat);
   state.page = inOrderFlow ? "overview" : "assistant";
   state.aiDraft = "";
   render();
@@ -1200,6 +1475,8 @@ function commitJob() {
 }
 
 function render() {
+  if (setupMode && !flow.setup.complete) { renderSetup(); return; }
+  renderAgentTasks();
   const company = state.context === "company";
   const views = {
     home: companyHome,
@@ -1211,8 +1488,9 @@ function render() {
     tasks: taskView,
     assistant: company ? companyAi : aiPage,
   };
+  root.dataset.page = state.page;
   $("#tf-content").innerHTML = views[state.page]();
-  $(".tf-heading").hidden = ["home", "overview"].includes(state.page);
+  $(".tf-heading").hidden = ["home", "overview", "assistant"].includes(state.page);
   $("#tx-case-ribbon").hidden = company;
   $("#tx-case-ribbon").innerHTML = company ? "" : caseRibbon();
   const names = {
@@ -1488,12 +1766,14 @@ function partialConversation(job) {
   const hint = draft.amountUSD === null
     ? bi("本次先付 USD 6,000", "The buyer will pay USD 6,000 first")
     : bi("预计 2026-10-29 结汇后可用", "CNY will be available on 2026-10-29");
+  const history = `<div class="tx-chat-reply"><span class="sx-eyebrow">TradeX</span><p>${bi("这封邮件提出部分付款。已关联 Harbour Supplies 的 TF-26104，订单记录中的待收尾款是 USD 12,000。", "This email proposes a partial payment. It is linked to Harbour Supplies order TF-26104, which has USD 12,000 outstanding.")}${job.disputed ? bi(" 邮件同时提到争议处理，余款条件需要继续跟进。", " The email also mentions a dispute, so the release conditions for the remainder need follow-up.") : ""}</p><p>${paymentPrompt(job.extracted)}</p></div>
+      ${job.messages.map((m) => `<div class="tx-chat-user" data-user-content>${escapeHtml(m.question)}</div><div class="tx-chat-reply"><span class="sx-eyebrow">TradeX</span><p>${paymentPrompt(m.draft)}</p></div>`).join("")}`;
   return `<section class="tx-chat pp-chat">
     <div class="tx-chat-top"><span>${bi("第 2 步 / AI 补全付款信息", "STEP 2 / CLARIFY PAYMENT")}</span><span>TF-26104</span></div>
     <details class="pp-source"><summary>${bi("客户邮件", "Buyer email")} · <span data-user-content>${escapeHtml(job.name)}</span></summary><pre data-user-content>${escapeHtml(job.content)}</pre></details>
     <div class="tx-messages" aria-live="polite">
-      <div class="tx-chat-reply"><span class="sx-eyebrow">TradeX</span><p>${bi("这封邮件提出部分付款。已关联 Harbour Supplies 的 TF-26104，订单记录中的待收尾款是 USD 12,000。", "This email proposes a partial payment. It is linked to Harbour Supplies order TF-26104, which has USD 12,000 outstanding.")}${job.disputed ? bi(" 邮件同时提到争议处理，余款条件需要继续跟进。", " The email also mentions a dispute, so the release conditions for the remainder need follow-up.") : ""}</p><p>${paymentPrompt(job.extracted)}</p></div>
-      ${job.messages.map((m) => `<div class="tx-chat-user" data-user-content>${escapeHtml(m.question)}</div><div class="tx-chat-reply"><span class="sx-eyebrow">TradeX</span><p>${paymentPrompt(m.draft)}</p></div>`).join("")}
+      ${job.messages.length || ready ? `<details class="tx-history"><summary>${bi("之前的补充记录", "Earlier clarifications")}</summary><div class="tx-history-turns">${history}</div></details>` : ""}
+      ${ready ? "" : `<div class="tx-chat-reply"><span class="sx-eyebrow">TradeX</span><p>${paymentPrompt(draft)}</p></div>`}
       ${ready ? `<div class="pp-review"><h2>${confirmed ? bi("已确认的部分付款计划", "Confirmed partial-payment plan") : bi("确认这次付款计划", "Confirm this payment plan")}</h2><p class="tf-small">${bi("字段来自邮件及你的补充，确认前不改变资金预测。", "Fields come from the email and your clarification. The forecast changes only after confirmation.")}</p><div class="ow-fields"><label>${bi("本次付款（USD）", "This installment (USD)")}<input id="pp-amount" type="number" min="0.01" max="11999.99" step="0.01" value="${draft.amountUSD}" ${confirmed ? "readonly" : ""}></label><label>${bi("预计人民币可用日", "Expected CNY availability")}<input id="pp-date" type="date" min="2026-10-17" max="2026-12-11" value="${escapeHtml(draft.date)}" ${confirmed ? "readonly" : ""}></label></div><p class="pp-estimate" id="pp-estimate">${partialEstimate(estimate)}</p><p class="tf-note">${bi("沿用原订单 USD 12,000 对应净额 CNY 80,000 的比例假设。余款不设定到账日；总应收仍为 USD 12,000，实际银行余额不变。", "Net CNY follows the existing USD 12,000 / CNY 80,000 order assumption. The remainder has no receipt date. Total receivables stay at USD 12,000 and bank cash is unchanged.")}</p><p id="pp-error" class="pp-error" role="alert"></p><div class="ow-footer">${confirmed ? `<button class="tf-link" data-order-action="edit">${bi("修改计划", "Revise plan")}</button><button class="tf-button primary" data-order-step="3">${bi("查看资金影响", "View cash impact")} →</button>` : `<button class="tf-button primary" data-partial-action="confirm">${bi("确认并更新订单与现金流", "Confirm & update order and cash")} →</button>`}</div></div>` : ""}
     </div>
     ${ready ? "" : `<div class="tx-composer"><div class="tx-chat-hints"><button data-fill-question="${escapeHtml(hint)}">${bi("试填：", "Try: ")}${hint}</button></div><form id="tf-ai-form"><textarea id="tf-ai-question" rows="2" maxlength="300" aria-label="${bi("补充付款信息", "Clarify payment details")}" placeholder="${bi("回复金额或日期，例如：先付 USD 6,000…", "Reply with the amount or date, e.g. pay USD 6,000…")}">${escapeHtml(state.aiDraft || "")}</textarea><div class="tx-send-row"><span class="tf-note">${bi("本地规则演示 · 未连接模型", "Local rule-based demo · No live model")}</span><button type="button" class="tf-button primary" data-action="ai-submit">${bi("发送", "Send")} ↑</button></div></form></div>`}
@@ -1567,9 +1847,12 @@ if (saved) {
 state.page = "home";
 state.context = "company";
 state.notificationsOpen = false;
-for (const turn of flow.chat) if (turn.rag?.status === 'pending') turn.rag = { status: 'error', error: 'Request interrupted. Please retry.' };
+state.agentTasksOpen = false;
+const reconnectingTurns = restoreAgentTasks(flow.chat);
 render();
 knowledge.refresh();
+refreshAgents();
+for (const turn of reconnectingTurns) retrieveForTurn(turn);
 setInterval(() => knowledge.refresh(), 4000);
 new ResizeObserver(chart).observe($("#tf-content"));
 
@@ -1651,7 +1934,7 @@ function companyOrders(destination = "overview") {
       amount: "USD 12,000",
       label: bi("待收尾款", "Outstanding"),
     },
-    {
+    ...(!setupMode ? [{
       scope: "fee",
       initials: "NG",
       tone: "attention",
@@ -1669,7 +1952,7 @@ function companyOrders(destination = "overview") {
       ),
       amount: `USD ${flow.feeRemaining ?? 30}`,
       label: bi("待核差额", "Unresolved"),
-    },
+    }] : []),
   ];
   const visibleRows =
     destination === "overview"
@@ -1680,48 +1963,35 @@ function companyOrders(destination = "overview") {
 
 function companyHome() {
   const p = companyPosition();
-  const upcoming = [
-    {
-      day: flow.supplierDay,
-      label: bi("供应商付款", "Supplier payment"),
-      amount: "−¥160,000",
-      type: "out",
-    },
-    {
-      day: flow.receiptDay,
-      label: flow.partialReceipt ? bi("部分付款预计结汇", "Partial payment after FX") : bi("预计尾款结汇", "Expected receipt conversion"),
-      amount: "+" + money(receiptCNY(flow)),
-      type: "in",
-    },
-    {
-      day: 20,
-      label: bi("物流及经营支出", "Logistics & operating costs"),
-      amount: "−¥42,000",
-      type: "out",
-    },
-  ].sort((a, b) => a.day - b.day);
-  return `<section class="co-intro"><div><span class="sx-eyebrow">${bi("星帆出口贸易 / 资金工作台", "StarSail Exports / Cash workspace")}</span><h1>${bi("掌握资金，推进订单。", "Clear cash. Moving orders.")}</h1></div><span class="co-asof">${bi("2026年10月17日 · 示例企业", "17 Oct 2026 · Sample business")}</span></section>
+  const upcoming = cashEvents(currentBase()).slice(0, 3);
+  return `<section class="co-intro"><div><span class="sx-eyebrow">${bi("星帆出口贸易 / 资金工作台", "StarSail Exports / Cash workspace")}</span><h1>${bi("每笔订单，都有下一步。", "Every order. A clear next step.")}</h1></div><span class="co-asof">${bi("2026年10月17日 · 示例企业", "17 Oct 2026 · Sample business")}</span></section>
   <section class="co-cash-card" aria-label="${bi("企业资金概况", "Company cash position")}">
     <div class="co-balances"><article><span>${bi("可用人民币", "Available CNY")}</span><strong><small>¥</small>${flow.opening.toLocaleString("en-US")}</strong><p>${bi("用于境内经营付款", "Available for domestic payments")}</p></article><article><span>${bi("可用美元", "Available USD")}</span><strong><small>$</small>19,970</strong><p>${bi("美元账户 · 尚未结汇", "USD account · Not converted")}</p></article></div>
     <div class="co-cash-summary"><div><span>${bi("7 天内待付", "Due within 7 days")}</span><strong>${money(p.dueWeek)}</strong></div><div class="${p.peak ? "co-negative" : ""}"><span>${bi("56 天最大缺口", "56-day peak shortfall")}</span><strong>${money(p.peak)}</strong></div></div>
   </section>
-  <section class="co-insight ${p.peak ? "attention" : ""}"><span class="co-insight-icon" aria-hidden="true">${p.peak ? "!" : "↗"}</span><div><strong>${p.peak ? bi(`${date(p.first)} 预计出现资金缺口`, `Cash shortfall expected on ${date(p.first)}`) : bi("当前收付款计划下，预计无资金缺口", "No shortfall under the current cash plan")}</strong><p>${p.peak ? bi("先协调付款时间，再跟进客户回款。", "Review payment timing and follow up collections.") : bi(`未来 56 天最低余额 ${signedMoney(p.minimum)}，仍需按期收回客户尾款。`, `Lowest 56-day balance: ${signedMoney(p.minimum)}. Buyer receipts must arrive as planned.`)}</p></div><button class="tf-link" data-connected-question="${bi("帮我分析企业资金情况和优先处理的订单", "Analyze company cash and prioritize outstanding orders")}">${bi("问 AI", "Ask AI")} ↗</button></section>
-  <section class="co-order-section"><div class="co-section-title"><h2>${bi("需要处理的订单", "Orders needing attention")} <span>${flow.feeRemaining === 0 ? 1 : 2}</span></h2><p>${bi("选择订单，继续处理", "Select an order to continue")}</p></div>${companyOrders()}</section>
-  <section class="tf-panel co-chart"><div class="tf-panelhead"><div><h3>${bi("未来资金走势", "Cash outlook")}</h3><p class="tf-small">${bi("56 天 · 人民币余额预测", "56 days · Projected CNY balance")}</p></div><span class="co-chart-key">${bi("当前计划", "Current plan")}</span></div><svg id="tf-chart" class="tf-chart" role="img" aria-label="${bi("企业未来56天人民币资金走势", "Company CNY cash forecast over 56 days")}"></svg><div class="co-events">${upcoming.map((event) => `<div><span class="co-event-date">${date(event.day)}</span><span>${event.label}</span><strong class="${event.type}">${event.amount}</strong></div>`).join("")}</div><p class="tf-note">${bi("确认新的回款或付款资料后，订单、资金预测和 AI 分析同步更新。", "Confirmed receipt and payment records update orders, cash forecasts and AI context together.")}</p></section>`;
+  <section class="co-insight ${p.peak ? "attention" : ""}" aria-label="${bi("当前需要关注", "Needs your attention")}"><span class="co-insight-icon" aria-hidden="true">${p.peak ? "!" : "↗"}</span><div><strong>${p.peak ? bi(`${date(p.first)} 预计出现资金缺口`, `Cash shortfall expected on ${date(p.first)}`) : bi("当前收付款计划下，预计无资金缺口", "No shortfall under the current cash plan")}</strong><p>${p.peak ? bi("先协调付款时间，再跟进客户回款。", "Review payment timing and follow up collections.") : bi(`未来 56 天最低余额 ${signedMoney(p.minimum)}，仍需按期收回客户尾款。`, `Lowest 56-day balance: ${signedMoney(p.minimum)}. Buyer receipts must arrive as planned.`)}</p></div><button class="tf-link" data-connected-question="${bi("帮我分析企业资金情况和优先处理的订单", "Analyze company cash and prioritize outstanding orders")}">${bi("分析原因", "Explain this")} ↗</button></section>
+  <section class="co-order-section"><div class="co-section-title"><h2>${bi("需要处理的订单", "Orders needing attention")} <span>${(setupMode || flow.feeRemaining === 0) ? 1 : 2}</span></h2><p>${bi("从这笔订单开始", "Start with an order below")}</p></div>${companyOrders()}</section>
+  <section class="tf-panel co-chart"><div class="tf-panelhead"><div><h3>${bi("未来资金走势", "Cash outlook")}</h3><p class="tf-small">${bi("56 天 · 人民币余额预测", "56 days · Projected CNY balance")}</p></div><span class="co-chart-key">${bi("当前计划", "Current plan")}</span></div><svg id="tf-chart" class="tf-chart" role="img" aria-label="${bi("企业未来56天人民币资金走势", "Company CNY cash forecast over 56 days")}"></svg><div class="co-events">${upcoming.map((event) => `<button type="button" data-cash-overview="${event.id}"><span class="co-event-date">${date(event.day)}</span><span>${bi(...event.label)}</span><strong class="${event.amount > 0 ? "in" : "out"}">${event.amount < 0 ? "−" : "+"}${money(event.amount)}</strong></button>`).join("")}</div><p class="tf-note">${bi("确认新的回款或付款资料后，订单、资金预测和 AI 分析同步更新。", "Confirmed receipt and payment records update orders, cash forecasts and AI context together.")}</p></section>`;
 }
 
 function companyDocuments() {
-  return `${knowledge.view()}<section class="co-intro"><h1>${bi("资料先归属，再一起分析。", "Put evidence in context.")}</h1><p>${bi("先选择对应订单，查看已有关联资料并补充缺项。", "Choose an order to review its evidence and add missing documents.")}</p></section>${companyOrders("documents")}<details class="sx-details"><summary>${bi("企业共用资料", "Shared company records")}</summary><div class="sx-detail-content">${docTypes
+  return `${knowledge.view()}<details class="sx-details"><summary>${bi("按订单浏览资料", "Browse evidence by order")}</summary>${companyOrders("documents")}</details><details class="sx-details"><summary>${bi("企业共用资料", "Shared company records")}</summary><div class="sx-detail-content">${docTypes
     .filter((d) => d.scope === "company")
     .map(docRow)
     .join("")}</div></details>${activeJob() ? flowPanel() : ""}`;
 }
 
 function companyAi() {
-  const turns = flow.chat.filter((t) => t.scope === "company");
-  return `<section class="tx-chat"><div class="tx-chat-top"><span>${bi("企业整体资金 · 全部订单", "Company cash · All orders")}</span><button class="tf-link" data-action="ai-new">${bi("新对话", "New chat")}</button></div><div class="tx-messages" aria-live="polite">${turns.length ? turns.map((t) => t.rag ? ragReply(t) : `<div class="tx-chat-user" data-user-content>${escapeHtml(t.question)}</div><div class="tx-chat-reply"><span class="sx-eyebrow">TradeX · ${bi("企业分析", "Company analysis")}${t.snapshot.v !== flow.version ? " · " + bi("较早资料", "Earlier evidence") : ""}</span><p>${bi(`当前人民币可用余额为 ${money(t.snapshot.opening)}，美元余额 USD 19,970 单独保留。根据已确认安排及预计回款，56 天最大资金缺口为 ${money(t.snapshot.peak)}。重点跟进 Harbour Supplies 的 USD 12,000 尾款，以及 Nordlicht 的 USD ${t.snapshot.feeRemaining ?? 30} 未结差额。`, `Available CNY is ${money(t.snapshot.opening)}; USD 19,970 remains separate. Based on the confirmed schedule and expected receipts, the 56-day peak shortfall is ${money(t.snapshot.peak)}. Follow up Harbour Supplies’ USD 12,000 balance and Nordlicht’s USD ${t.snapshot.feeRemaining ?? 30} outstanding difference.`)}${t.snapshot.partialReceipt ? `<br>${partialAnalysis(t.snapshot)}` : ""}</p></div>`).join("") : `<div class="tx-chat-empty"><span class="sx-ai-mark">✦</span><h1>${bi("公司的资金，需要关注什么？", "What needs attention across the business?")}</h1><p>${bi("从整体现金情况开始，具体订单再展开。", "Start with company cash, then explore the relevant order.")}</p></div>`}</div><div class="tx-composer">${knowledge.composer()}<div class="tx-chat-hints"><button data-fill-question="${bi("帮我概括公司的资金情况", "Summarize company cash and priorities")}">${bi("概括资金与待办", "Summarize cash and priorities")}</button></div><form id="tf-ai-form"><textarea id="tf-ai-question" rows="3" aria-label="${bi("向 AI 助手提问", "Ask TradeX")}" placeholder="${bi("询问公司的资金和待处理事项…", "Ask about company cash and priorities…")}">${escapeHtml(state.aiDraft || "")}</textarea><div class="tx-send-row"><span class="tf-note">${bi("已连接知识库 · 回答附来源", "Connected library · Answers with sources")}</span><button class="tf-button primary" type="button" data-action="ai-submit">${bi("发送", "Send")} ↑</button></div></form></div></section><details class="sx-details"><summary>${bi("选择订单继续分析", "Explore an order")}</summary>${companyOrders("assistant")}</details>`;
+  const turns = flow.chat.filter((t) => !t.archived && t.scope === "company");
+  return `<section class="tx-chat"><div class="tx-chat-top"><span>${bi("企业整体资金 · 全部订单", "Company cash · All orders")}</span><button class="tf-link" data-action="ai-new">${bi("新对话", "New chat")}</button></div><div class="tx-messages" aria-live="polite">${turns.length ? conversationTurns(turns, (t) => t.rag ? ragReply(t) : `<div class="tx-chat-user" data-user-content>${escapeHtml(t.question)}</div><div class="tx-chat-reply"><span class="sx-eyebrow">TradeX · ${bi("企业分析", "Company analysis")}${t.snapshot.v !== flow.version ? " · " + bi("较早资料", "Earlier evidence") : ""}</span><p>${bi(`当前人民币可用余额为 ${money(t.snapshot.opening)}，美元余额 USD 19,970 单独保留。根据已确认安排及预计回款，56 天最大资金缺口为 ${money(t.snapshot.peak)}。重点跟进 Harbour Supplies 的 USD 12,000 尾款${setupMode ? "。" : `，以及 Nordlicht 的 USD ${t.snapshot.feeRemaining ?? 30} 未结差额。`}`, `Available CNY is ${money(t.snapshot.opening)}; USD 19,970 remains separate. Based on the confirmed schedule and expected receipts, the 56-day peak shortfall is ${money(t.snapshot.peak)}. Follow up Harbour Supplies’ USD 12,000 balance${setupMode ? "." : ` and Nordlicht’s USD ${t.snapshot.feeRemaining ?? 30} outstanding difference.`}`)}${t.snapshot.partialReceipt ? `<br>${partialAnalysis(t.snapshot)}` : ""}</p></div>`) : `<div class="tx-chat-empty"><span class="sx-ai-mark">✦</span><h1>${bi("公司的资金，需要关注什么？", "What needs attention across the business?")}</h1><p>${bi("从整体现金情况开始，具体订单再展开。", "Start with company cash, then explore the relevant order.")}</p></div>`}</div><div class="tx-composer">${knowledge.composer()}<div class="tx-chat-hints" ${turns.length ? "hidden" : ""}><button data-fill-question="${bi("帮我概括公司的资金情况", "Summarize company cash and priorities")}">${bi("哪些付款需要先处理？", "Which payments need attention?")}</button></div><form id="tf-ai-form"><textarea id="tf-ai-question" rows="3" aria-label="${bi("向 AI 助手提问", "Ask TradeX")}" placeholder="${bi("询问公司的资金和待处理事项…", "Ask about company cash and priorities…")}">${escapeHtml(state.aiDraft || "")}</textarea><div class="tx-send-row"><span class="tf-note">${bi("Enter 换行", "Enter for a new line")}</span><button class="tf-button primary" type="button" data-action="ai-submit">${bi("发送", "Send")} ↑</button></div></form></div></section><details class="sx-details"><summary>${bi("选择订单继续分析", "Explore an order")}</summary>${companyOrders("assistant")}</details>`;
 }
 root.addEventListener("click", (e) => {
+  const cashEntry = e.target.closest("[data-cash-overview]");
+  if (cashEntry) {
+    const snapshot = enrich(currentBase());
+    openCashMovement(cashEvents(snapshot).find(event => event.id === cashEntry.dataset.cashOverview), snapshot);
+    return;
+  }
   const entry = e.target.closest("[data-open-order]");
   if (!entry) return;
   selectCase(entry.dataset.openOrder);

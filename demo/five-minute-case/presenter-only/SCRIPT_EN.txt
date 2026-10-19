@@ -1,0 +1,50 @@
+TRADEX — FIVE-MINUTE ENGLISH DEMO SCRIPT
+A partial payment, a missing date, and a supplier deadline
+
+Stage directions in brackets are not spoken. Use the exact financial values only when the corresponding result is visible. The five-minute schedule includes clicks and processing time; rehearse against actual model latency.
+
+00:00–00:40 | THE BUSINESS QUESTION
+[Overview, English mode; point to CNY cash, supplier payment and the order card.]
+
+Meet StarSail, a small exporter in Shenzhen with one person handling finance. Its owner has a simple question: can we pay our supplier before the customer's money arrives?
+
+The company has 128,000 renminbi available, but owes its supplier 160,000 on October twenty-second. Its dollar balance is reserved for other overseas commitments. The current plan already shows a 32,000-renminbi shortfall. Now, a new customer email changes the picture.
+
+00:40–01:30 | FROM AN ORDER TO ITS EVIDENCE
+[Open Harbour Supplies / TF-26104. Open the connected document library, upload 04_buyer_partial_payment.eml linked to TF-26104, wait for Searchable, then click Ask AI and submit Prompt 1.]
+
+Harbour Supplies says it will pay the undisputed portion first while a quality review continues. But the email gives neither an amount nor a payment date.
+
+We upload it against this order and ask TradeX to read it. The assistant brings the document into the conversation, with a citation that opens the original passage. We can also see which agent is working and which operation it is performing.
+
+01:30–02:30 | THE ASSISTANT ASKS, THE USER CLARIFIES
+[Show the missing-field questions. Reveal the later clarification email to the audience. Enter the amount and date comments from PROMPTS_EN.txt, then continue.]
+
+The important step is what happens before the calculation: TradeX asks for the missing information.
+
+A later buyer reply now gives us six thousand dollars, targeting October twenty-ninth. Our finance team uses that date as expected cash availability. The remaining six thousand dollars has no agreed date, so it stays outside scheduled inflows.
+
+I enter those details. TradeX prepares a payment proposal for review. Answering a question and approving a financial update are separate steps.
+
+02:30–03:20 | ONE CONFIRMATION, CONNECTED VIEWS
+[Check USD 6,000 / 2026-10-29, click Confirm and update dashboard. Automatic reanalysis starts. Switch to Overview while it runs, point to the updated order and CNY 34,000 peak gap, then return through AI tasks.]
+
+I confirm the expected payment. The order now shows a partial receipt plan, and the company cash forecast updates with it.
+
+Under our fixed conversion assumption, expected proceeds fall from eighty thousand to forty thousand renminbi. The peak shortfall rises to thirty-four thousand. The bank balance has not increased: this is still a promise.
+
+The analysis continues while I move between pages, using the same confirmed financial state.
+
+03:20–04:35 | A BETTER BUSINESS DECISION
+[After automatic analysis finishes, send Prompt 5. Show the comparison and negotiation draft.]
+
+Let's compare two supplier extensions. Ten days moves payment to November first, but operating expenses on November sixth still create a thirty-four-thousand-renminbi gap.
+
+Moving payment to November seventeenth avoids a negative daily balance in this scenario, because another customer's planned receipt arrives the day before. That depends on the receipt arriving on time and the supplier agreeing to the extension.
+
+TradeX turns the comparison into a negotiation draft. The supplier's accepted date stays unchanged until agreement is recorded.
+
+04:35–05:00 | THE PRODUCT VALUE
+[End on the answer with its comparison, source citation and activity record.]
+
+TradeX connects an email, a clarification, an order and a cash decision. The agents interpret and coordinate; financial tools calculate; the user confirms material changes. For a small exporter, this means less manual handoff between documents, spreadsheets and conversations, and a clearer next action.

@@ -13,15 +13,22 @@ export const dayNumber = (s) =>
 
 export const receiptCNY = (s) => s.partialReceipt ? s.partialReceipt.netCNY : 80000;
 
+export function cashEvents(s) {
+  return [
+    { id: "supplier", day: s.supplierDay, amount: -160000, orderId: "TF-26104", label: ["供应商付款", "Supplier payment"] },
+    { id: "receipt", day: s.receiptDay, amount: receiptCNY(s), orderId: "TF-26104", label: s.partialReceipt ? ["部分付款预计结汇", "Partial receipt conversion"] : ["预计尾款结汇", "Expected receipt conversion"] },
+    { id: "operating", day: 20, amount: -42000, orderId: null, label: ["物流及经营支出", "Logistics & operating costs"] },
+    { id: "other-receipt", day: 30, amount: 120000, orderId: null, label: ["其他预计回款", "Other expected receipts"] },
+    { id: "other-payment", day: 40, amount: -38000, orderId: null, label: ["其他经营付款", "Other operating payments"] },
+    { id: "later-receipt", day: 50, amount: 65000, orderId: null, label: ["其他预计回款", "Other expected receipts"] },
+  ].sort((a, b) => a.day - b.day);
+}
+
 export function seriesFor(s) {
+  const events = cashEvents(s);
   let v = s.opening;
   return Array.from({ length: 56 }, (_, d) => {
-    if (d === s.supplierDay) v -= 160000;
-    if (d === s.receiptDay) v += receiptCNY(s);
-    if (d === 20) v -= 42000;
-    if (d === 30) v += 120000;
-    if (d === 40) v -= 38000;
-    if (d === 50) v += 65000;
+    v += events.filter(event => event.day === d).reduce((sum, event) => sum + event.amount, 0);
     return { d, v };
   });
 }

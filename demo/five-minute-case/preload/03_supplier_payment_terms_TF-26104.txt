@@ -1,0 +1,10 @@
+SYNTHETIC BUSINESS RECORD — SUPPLIER PAYMENT TERMS
+Buyer: StarSail Exports
+Supplier: Dongguan PaperCraft Manufacturing (fictional)
+Linked export order: TF-26104
+Outstanding procurement payable: CNY 160,000
+Agreed payment date: 22 October 2026
+
+This is the full outstanding amount due to the supplier. No extension has been agreed as of 17 October 2026. Any new date or fee must be agreed with the supplier before replacing the accepted payment schedule.
+
+Finance may compare alternative dates for planning. A scenario, a request email and a supplier's written acceptance are separate records.

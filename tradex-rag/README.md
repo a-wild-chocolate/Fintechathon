@@ -4,7 +4,7 @@ The Python backend stores versioned business documents in SQLite, indexes passag
 
 ## Installation
 
-From this directory, using Python 3.12 or newer:
+For a complete clone-to-browser walkthrough, see the [root README](../README.md#first-time-setup-after-cloning). Use Python 3.12 as the reference environment. Commands below run from `Fintechathon/tradex-rag` in macOS, Linux or WSL2:
 
 ```bash
 python3.12 -m venv .venv
@@ -22,21 +22,13 @@ Open http://127.0.0.1:8765 for the library workbench or run `npm run dev` from t
 
 Embedded Qdrant has one owning process. Stop the server before running CLI commands that open the same library. MCP clients use the running HTTP service through `./mcp.sh` instead of opening its storage directly.
 
-## Qwen answers
+## Main agent and subagents
 
-Set the following in this directory's `.env`, then restart `./start.sh`:
+Configure OpenRouter in this directory's `.env` using the [root setup guide](../README.md#openrouter-and-multi-agent-configuration). The provider adapter also supports direct Qwen and DeepSeek APIs. The Coordinator delegates to Reconciliation, Cash-flow and Decision; tools use the existing MCP bridge and HTTP workflows. [Agent architecture and tool contracts](../docs/AGENTS.md) describe the implementation.
 
-```dotenv
-TRADEX_EMBEDDING=bge-local
-DASHSCOPE_API_KEY=your_model_studio_api_key
-DASHSCOPE_BASE_URL=your_regional_openai_compatible_base_url
-TRADEX_CHAT_ENABLED=1
-TRADEX_CHAT_MODEL=qwen-plus
-```
+Without a configured key, retrieval excerpts remain available. With `TRADEX_AGENTS_ENABLED=1` and the selected provider configured, `/api/assistant/chat` runs the multi-agent workflow. `TRADEX_CHAT_ENABLED` controls the older single-call Qwen path and should remain `0` for the multi-agent application.
 
-Use the compatible endpoint from the same Model Studio region as the key, ending in `/compatible-mode/v1`. With chat disabled, answers display retrieved excerpts and citations. With chat enabled, Qwen generates an evidence-based answer and the service checks its cited source IDs. Credentials remain in the backend; `.env` is ignored by Git.
-
-The optional hosted embedding configuration is documented in `.env.example`. Changing embedding models requires reindexing into the corresponding vector collection. `start.sh` reads `.env`; for direct CLI commands using custom settings, export those variables in the terminal first.
+Keep `.env` local. `start.sh` reads it; direct CLI commands require exported environment variables when using non-default settings. Agent run and proposal state is stored in ignored `var/agents.sqlite3`.
 
 ## Data and processing
 
@@ -58,6 +50,6 @@ Runtime files are created under `var/`, and downloaded models under `.models/`. 
 python3 ../knowledge_base/validate.py
 ```
 
-The local-model tokenizer test skips when model weights have not been downloaded. From the repository root, `npm run check:integration` checks uploads, bilingual retrieval and citation downloads through the running frontend proxy; keep `TRADEX_CHAT_ENABLED=0` for this check.
+The local-model tokenizer test skips when model weights have not been downloaded. From the repository root, `npm run check:integration` checks uploads, bilingual retrieval and citation downloads through the running frontend proxy; keep `TRADEX_AGENTS_ENABLED=0` and `TRADEX_CHAT_ENABLED=0` for this check. Run `.venv/bin/python -m pytest tests/test_agent_stack.py -m integration -q` for the actual local MCP/multi-agent contract test with mocked model replies.
 
 See [research and design notes](docs/research_and_design.txt) for storage, chunking and MCP decisions, and [frontend API contracts](../docs/API.md) for integration details. `requirements-tested.txt` records the earlier development environment; `pyproject.toml` declares installation dependencies.

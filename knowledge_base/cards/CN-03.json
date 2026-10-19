@@ -1,0 +1,89 @@
+{
+  "card_id": "CN-03",
+  "source_id": "CN-TAX-2026",
+  "title": "部分回款与退税收汇材料",
+  "summary_zh": "第四十八至五十一条规定收汇期限、视同收汇及证据要求。次年4月30日规则包含合同最终收汇日期等条件与例外，不能直接套成所有订单的截止日。",
+  "summary_en": "Articles 48–51 connect export tax relief to collection and evidence, including bank or FX receipt records and specified deemed-collection cases. Contract-date exceptions and the stated outer limit must be checked together with the ordinary deadline.",
+  "anchor_terms": [
+    "第四十八条",
+    "第五十一条"
+  ],
+  "required_order_fields": [
+    "export_declaration_date",
+    "contract_final_collection_date",
+    "received_amount",
+    "remaining_receivable",
+    "deemed_collection_reason"
+  ],
+  "tradex_workflow": "Compare the payment email with contract and bank records, ask for the missing receipt date or evidence, and propose a conditional collection follow-up.",
+  "cash_effect": "An email promise updates expected collection; only accepted receipt evidence updates actual cash.",
+  "keywords": [
+    "部分付款",
+    "延期收汇",
+    "出口退税",
+    "银行收汇凭证",
+    "结汇水单",
+    "collection",
+    "partial payment"
+  ],
+  "title_en": "Partial receipts and export refund evidence",
+  "jurisdiction": "CN",
+  "source_title": "出口业务增值税和消费税退（免）税管理办法",
+  "source_url": "https://shanghai.chinatax.gov.cn/zzzb/zcwj/202602/t479288.html",
+  "publisher": "State Taxation Administration (Shanghai official republication)",
+  "source_type": "regulation",
+  "source_language": "zh",
+  "topic": "export_refund",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": "2026-01-30",
+  "effective_from": "2026-01-01",
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "CN-TAX-2026-B0176",
+      "locator": "/html/body/div/div/div[6]/div/div[2]/div[1]/div/div[5]/div[2]/div/div/div/div/p[177]",
+      "path": "extracted/CN-TAX-2026.json"
+    },
+    {
+      "block_id": "CN-TAX-2026-B0182",
+      "locator": "/html/body/div/div/div[6]/div/div[2]/div[1]/div/div[5]/div[2]/div/div/div/div/p[183]",
+      "path": "extracted/CN-TAX-2026.json"
+    },
+    {
+      "block_id": "CN-TAX-2026-B0191",
+      "locator": "/html/body/div/div/div[6]/div/div[2]/div[1]/div/div[5]/div[2]/div/div/div/div/p[192]",
+      "path": "extracted/CN-TAX-2026.json"
+    },
+    {
+      "block_id": "CN-TAX-2026-B0184",
+      "locator": "/html/body/div/div/div[6]/div/div[2]/div[1]/div/div[5]/div[2]/div/div/div/div/p[185]",
+      "path": "extracted/CN-TAX-2026.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "部分回款与退税收汇材料\n第四十八至五十一条规定收汇期限、视同收汇及证据要求。次年4月30日规则包含合同最终收汇日期等条件与例外，不能直接套成所有订单的截止日。\nArticles 48–51 connect export tax relief to collection and evidence, including bank or FX receipt records and specified deemed-collection cases. Contract-date exceptions and the stated outer limit must be checked together with the ordinary deadline.\nKeywords: 部分付款, 延期收汇, 出口退税, 银行收汇凭证, 结汇水单, collection, partial payment"
+}

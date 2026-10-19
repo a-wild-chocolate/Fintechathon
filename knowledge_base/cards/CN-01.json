@@ -1,0 +1,78 @@
+{
+  "card_id": "CN-01",
+  "source_id": "CN-TAX-2026",
+  "title": "出口退税首次备案与资料",
+  "summary_zh": "2026年第5号公告规定首次申报退免税或申请相关证明时办理备案，提交备案表及清单列明的附送资料。企业经营模式决定后续适用流程。",
+  "summary_en": "The 2026 management rules require registration when first claiming export tax relief or requesting related certificates. The registration form and applicable supporting-document list govern the evidence request.",
+  "anchor_terms": [
+    "第四条",
+    "第五条"
+  ],
+  "required_order_fields": [
+    "taxpayer_status",
+    "refund_method",
+    "first_claim",
+    "supporting_document_list"
+  ],
+  "tradex_workflow": "Ask whether the exporter uses the trading-company or manufacturing route; build a missing-document task from the applicable form.",
+  "cash_effect": "Track a potential refund separately from bank cash; a filing is not a confirmed receipt.",
+  "keywords": [
+    "中国",
+    "外贸企业",
+    "出口退税",
+    "首次备案",
+    "资料清单",
+    "export refund",
+    "registration"
+  ],
+  "title_en": "Export tax refund registration and supporting documents",
+  "jurisdiction": "CN",
+  "source_title": "出口业务增值税和消费税退（免）税管理办法",
+  "source_url": "https://shanghai.chinatax.gov.cn/zzzb/zcwj/202602/t479288.html",
+  "publisher": "State Taxation Administration (Shanghai official republication)",
+  "source_type": "regulation",
+  "source_language": "zh",
+  "topic": "export_refund",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": "2026-01-30",
+  "effective_from": "2026-01-01",
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "CN-TAX-2026-B0013",
+      "locator": "/html/body/div/div/div[6]/div/div[2]/div[1]/div/div[5]/div[2]/div/div/div/div/p[14]",
+      "path": "extracted/CN-TAX-2026.json"
+    },
+    {
+      "block_id": "CN-TAX-2026-B0014",
+      "locator": "/html/body/div/div/div[6]/div/div[2]/div[1]/div/div[5]/div[2]/div/div/div/div/p[15]",
+      "path": "extracted/CN-TAX-2026.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "出口退税首次备案与资料\n2026年第5号公告规定首次申报退免税或申请相关证明时办理备案，提交备案表及清单列明的附送资料。企业经营模式决定后续适用流程。\nThe 2026 management rules require registration when first claiming export tax relief or requesting related certificates. The registration form and applicable supporting-document list govern the evidence request.\nKeywords: 中国, 外贸企业, 出口退税, 首次备案, 资料清单, export refund, registration"
+}

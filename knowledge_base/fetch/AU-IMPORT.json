@@ -1,0 +1,13 @@
+{
+  "source_id": "AU-IMPORT",
+  "requested_url": "https://www.abf.gov.au/importing-exporting-and-manufacturing/importing/how-to-import/requirements",
+  "retrieved_at": "2026-10-17T19:23:03.388598+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.abf.gov.au/importing-exporting-and-manufacturing/importing/how-to-import/requirements",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 1161190,
+  "raw_path": "raw/AU-IMPORT.html",
+  "last_modified": null,
+  "etag": null
+}

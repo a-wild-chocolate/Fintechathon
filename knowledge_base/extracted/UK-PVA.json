@@ -1,0 +1,528 @@
+{
+  "source_id": "UK-PVA",
+  "method": "html_dom",
+  "blocks": [
+    {
+      "text": "Check when you can account for import VAT on your VAT Return",
+      "section": "Check when you can account for import VAT on your VAT Return",
+      "locator": "/html/body/div[2]/main/div[1]/div[1]/div/h1",
+      "block_id": "UK-PVA-B0001"
+    },
+    {
+      "text": "Check when you can use postponed VAT accounting to declare and recover import VAT on the same VAT Return.",
+      "section": "Check when you can account for import VAT on your VAT Return",
+      "locator": "/html/body/div[2]/main/div[1]/div[2]/p",
+      "block_id": "UK-PVA-B0002"
+    },
+    {
+      "text": "Updates to this page",
+      "section": "Updates to this page",
+      "locator": "/html/body/div[2]/main/div[1]/div[2]/div/h2",
+      "block_id": "UK-PVA-B0003"
+    },
+    {
+      "text": "From:",
+      "section": "Updates to this page",
+      "locator": "/html/body/div[2]/main/div[1]/div[2]/div/dl/dt[1]",
+      "block_id": "UK-PVA-B0004"
+    },
+    {
+      "text": "HM Revenue & Customs",
+      "section": "Updates to this page",
+      "locator": "/html/body/div[2]/main/div[1]/div[2]/div/dl/dd[1]",
+      "block_id": "UK-PVA-B0005"
+    },
+    {
+      "text": "Published:",
+      "section": "Updates to this page",
+      "locator": "/html/body/div[2]/main/div[1]/div[2]/div/dl/dt[2]",
+      "block_id": "UK-PVA-B0006"
+    },
+    {
+      "text": "27 July 2020",
+      "section": "Updates to this page",
+      "locator": "/html/body/div[2]/main/div[1]/div[2]/div/dl/dd[2]",
+      "block_id": "UK-PVA-B0007"
+    },
+    {
+      "text": "Last updated:",
+      "section": "Updates to this page",
+      "locator": "/html/body/div[2]/main/div[1]/div[2]/div/dl/dt[3]",
+      "block_id": "UK-PVA-B0008"
+    },
+    {
+      "text": "16 June 2025\n \n \n \n \n Show all updates\n \n \n \n \n 16 June 2025 \n Welsh translation added. \n \n \n 9 June 2025 \n The section 'When you must account for import VAT on your VAT Return' has been removed, as this procedure is no longer mandatory. Information about using another person or business to import goods for you has been updated, as they must now have written permission to use postponed VAT accounting. \n \n \n 1 October 2022 \n Information about Customs Handling of Import and Export Freight (CHIEF) has been removed. You can no longer use CHIEF for import declarations unless you have permission from HMRC. \n \n \n 15 December 2021 \n Existing arrangements for customs checks on goods from Ireland will continue after 1 January 2022. Changes made to \"When you must account for import VAT on your VAT return\" and \"How to complete your customs declaration account for import VAT on your VAT Return\". \n \n \n 13 August 2021 \n Clarification that postponed VAT accounting will be available permanently. A checklist has been added to help navigation, and the details you may need to complete your customs declaration using CHIEF have been updated. \n \n \n 8 April 2021 \n The 'If you import goods for business and non-business purposes' section has been updated to say you can account for import VAT on your VAT return if you import goods that will be used solely for a non-business purpose, and you are a body that is eligible to reclaim import VAT through a VAT refund scheme . The 'How to complete your customs declaration to account for import VAT on your VAT Return' section has also been updated with information about selecting how to account for import VAT on your customs declaration. \n \n \n 16 March 2021 \n The end date when you must account for import VAT on your VAT Return if you delay your customs declaration or use a simplified customs declaration has been changed from 30 June 2021 to 31 December 2021. \n \n \n 11 February 2021 \n There have been multiple changes to this guidance to help readers understand what they need to do and how to do it. \n \n \n 22 December 2020 \n Information has been added about accounting for VAT if you do not know the full customs value of goods and using someone to import goods on your behalf. \n \n \n 4 December 2020 \n Information on Non-established taxable persons and guidance on how to complete your declaration if you are accounting for import VAT on your VAT return has been added. \n \n \n 24 August 2020 \n Added Welsh translation. \n \n \n 27 July 2020 \n First published.",
+      "section": "Updates to this page",
+      "locator": "/html/body/div[2]/main/div[1]/div[2]/div/dl/dd[3]",
+      "block_id": "UK-PVA-B0009"
+    },
+    {
+      "text": "Accounting for import VAT on your VAT Return means you declare and recover import VAT on the same VAT Return, rather than paying it upfront when the goods are imported and recovering it later. It is also called postponed VAT accounting.",
+      "section": "Updates to this page",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[1]",
+      "block_id": "UK-PVA-B0010"
+    },
+    {
+      "text": "The normal rules about what VAT you can reclaim as input tax apply.",
+      "section": "Updates to this page",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[2]",
+      "block_id": "UK-PVA-B0011"
+    },
+    {
+      "text": "Before using postponed VAT accounting",
+      "section": "Before using postponed VAT accounting",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h2[1]",
+      "block_id": "UK-PVA-B0012"
+    },
+    {
+      "text": "Your business must be registered for VAT in the UK to use postponed VAT accounting.",
+      "section": "Before using postponed VAT accounting",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[3]",
+      "block_id": "UK-PVA-B0013"
+    },
+    {
+      "text": "Who can use postponed VAT accounting",
+      "section": "Who can use postponed VAT accounting",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h2[2]",
+      "block_id": "UK-PVA-B0014"
+    },
+    {
+      "text": "You can account for import VAT on your VAT Return for goods you import into:",
+      "section": "Who can use postponed VAT accounting",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[4]",
+      "block_id": "UK-PVA-B0015"
+    },
+    {
+      "text": "Great Britain (England, Scotland and Wales) from anywhere outside the UK",
+      "section": "Who can use postponed VAT accounting",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[1]/li[1]",
+      "block_id": "UK-PVA-B0016"
+    },
+    {
+      "text": "Northern Ireland from outside the UK and EU",
+      "section": "Who can use postponed VAT accounting",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[1]/li[2]",
+      "block_id": "UK-PVA-B0017"
+    },
+    {
+      "text": "You do not need any approval to account for import VAT on your VAT Return.",
+      "section": "Who can use postponed VAT accounting",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[5]",
+      "block_id": "UK-PVA-B0018"
+    },
+    {
+      "text": "Non-established taxable persons",
+      "section": "Non-established taxable persons",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h3[1]",
+      "block_id": "UK-PVA-B0019"
+    },
+    {
+      "text": "If you are a person who does not have a UK establishment, you’ll need to get someone to deal with customs for you . They’ll also need to complete your import declaration.",
+      "section": "Non-established taxable persons",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[6]",
+      "block_id": "UK-PVA-B0020"
+    },
+    {
+      "text": "If you want to account for import VAT on your VAT Return, you must tell the person dealing with customs on your behalf to both:",
+      "section": "Non-established taxable persons",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[7]",
+      "block_id": "UK-PVA-B0021"
+    },
+    {
+      "text": "select this on your import declaration",
+      "section": "Non-established taxable persons",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[2]/li[1]",
+      "block_id": "UK-PVA-B0022"
+    },
+    {
+      "text": "enter your details as the consignee",
+      "section": "Non-established taxable persons",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[2]/li[2]",
+      "block_id": "UK-PVA-B0023"
+    },
+    {
+      "text": "If someone imports goods on your behalf",
+      "section": "If someone imports goods on your behalf",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h3[2]",
+      "block_id": "UK-PVA-B0024"
+    },
+    {
+      "text": "You can have a person or business import goods on your behalf. For example, this could be:",
+      "section": "If someone imports goods on your behalf",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[8]",
+      "block_id": "UK-PVA-B0025"
+    },
+    {
+      "text": "a freight forwarder",
+      "section": "If someone imports goods on your behalf",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[3]/li[1]",
+      "block_id": "UK-PVA-B0026"
+    },
+    {
+      "text": "a customs agent",
+      "section": "If someone imports goods on your behalf",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[3]/li[2]",
+      "block_id": "UK-PVA-B0027"
+    },
+    {
+      "text": "a broker",
+      "section": "If someone imports goods on your behalf",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[3]/li[3]",
+      "block_id": "UK-PVA-B0028"
+    },
+    {
+      "text": "an express operator",
+      "section": "If someone imports goods on your behalf",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[3]/li[4]",
+      "block_id": "UK-PVA-B0029"
+    },
+    {
+      "text": "When someone imports goods on your behalf, you’ll need to tell them, in writing, if you want to use postponed VAT accounting on those imports. They must have this written confirmation before they can proceed with the import declaration.",
+      "section": "If someone imports goods on your behalf",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[9]",
+      "block_id": "UK-PVA-B0030"
+    },
+    {
+      "text": "If you already have someone importing goods on your behalf, you should contact them to tell them if you want to use postponed VAT accounting on imports. You should keep a written record of your instructions.",
+      "section": "If someone imports goods on your behalf",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[10]",
+      "block_id": "UK-PVA-B0031"
+    },
+    {
+      "text": "When a supplier arranges for someone to import goods on your behalf",
+      "section": "When a supplier arranges for someone to import goods on your behalf",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h3[3]",
+      "block_id": "UK-PVA-B0032"
+    },
+    {
+      "text": "You can also buy goods from a supplier who arranges for a person or business to import and deliver the goods for you.",
+      "section": "When a supplier arranges for someone to import goods on your behalf",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[11]",
+      "block_id": "UK-PVA-B0033"
+    },
+    {
+      "text": "You must agree with the supplier how you want to account for import VAT. This is so that they can give the person or business importing the goods written instructions to make the correct entry on the import declaration. They must have these written instructions before they can make the import declaration. Keep a written record of what you agree with the supplier.",
+      "section": "When a supplier arranges for someone to import goods on your behalf",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[12]",
+      "block_id": "UK-PVA-B0034"
+    },
+    {
+      "text": "You’ll also need to give the supplier your EORI number.",
+      "section": "When a supplier arranges for someone to import goods on your behalf",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[13]",
+      "block_id": "UK-PVA-B0035"
+    },
+    {
+      "text": "The import will appear on your monthly postponed import VAT statement in the normal way.",
+      "section": "When a supplier arranges for someone to import goods on your behalf",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[14]",
+      "block_id": "UK-PVA-B0036"
+    },
+    {
+      "text": "Check your import VAT certificate (C79) and postponed VAT account statements using the Customs Declaration Service, to make sure all your imports are covered. Businesses should check their financial dashboard for their statements.",
+      "section": "When a supplier arranges for someone to import goods on your behalf",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/div[1]/p",
+      "block_id": "UK-PVA-B0037"
+    },
+    {
+      "text": "When you can use postponed VAT accounting",
+      "section": "When you can use postponed VAT accounting",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h2[3]",
+      "block_id": "UK-PVA-B0038"
+    },
+    {
+      "text": "You can do this if both the following apply:",
+      "section": "When you can use postponed VAT accounting",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[15]",
+      "block_id": "UK-PVA-B0039"
+    },
+    {
+      "text": "the goods you import are for use in your business and you have the right to dispose of them (usually as the owner)",
+      "section": "When you can use postponed VAT accounting",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[4]/li[1]",
+      "block_id": "UK-PVA-B0040"
+    },
+    {
+      "text": "you include your VAT registration number on your import declaration",
+      "section": "When you can use postponed VAT accounting",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[4]/li[2]",
+      "block_id": "UK-PVA-B0041"
+    },
+    {
+      "text": "If you import goods for business and non-business purposes",
+      "section": "If you import goods for business and non-business purposes",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h3[4]",
+      "block_id": "UK-PVA-B0042"
+    },
+    {
+      "text": "You can account for import VAT on your VAT Return if you import goods which:",
+      "section": "If you import goods for business and non-business purposes",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[16]",
+      "block_id": "UK-PVA-B0043"
+    },
+    {
+      "text": "will be used for both business and non-business purposes",
+      "section": "If you import goods for business and non-business purposes",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[5]/li[1]",
+      "block_id": "UK-PVA-B0044"
+    },
+    {
+      "text": "you do not know will be used for business purposes at the time that you import them",
+      "section": "If you import goods for business and non-business purposes",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[5]/li[2]",
+      "block_id": "UK-PVA-B0045"
+    },
+    {
+      "text": "You can use postponed VAT accounting when you import goods you know will be used solely for non-business purposes, but only if you’re a body that is eligible to reclaim import VAT through a VAT refund scheme . When you complete your import declaration, select that you’re making an immediate payment, or using a duty deferment account.",
+      "section": "If you import goods for business and non-business purposes",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/div[2]/p",
+      "block_id": "UK-PVA-B0046"
+    },
+    {
+      "text": "Goods in special procedures",
+      "section": "Goods in special procedures",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h3[5]",
+      "block_id": "UK-PVA-B0047"
+    },
+    {
+      "text": "If you declare goods into a customs special procedure , you can select that you’ll be accounting for import VAT on your VAT Return when you submit the declaration that removes them into free circulation. This applies to the following special procedures:",
+      "section": "Goods in special procedures",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[17]",
+      "block_id": "UK-PVA-B0048"
+    },
+    {
+      "text": "customs warehousing",
+      "section": "Goods in special procedures",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[6]/li[1]",
+      "block_id": "UK-PVA-B0049"
+    },
+    {
+      "text": "inward processing",
+      "section": "Goods in special procedures",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[6]/li[2]",
+      "block_id": "UK-PVA-B0050"
+    },
+    {
+      "text": "temporary admission",
+      "section": "Goods in special procedures",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[6]/li[3]",
+      "block_id": "UK-PVA-B0051"
+    },
+    {
+      "text": "end use",
+      "section": "Goods in special procedures",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[6]/li[4]",
+      "block_id": "UK-PVA-B0052"
+    },
+    {
+      "text": "outward processing",
+      "section": "Goods in special procedures",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[6]/li[5]",
+      "block_id": "UK-PVA-B0053"
+    },
+    {
+      "text": "duty suspension",
+      "section": "Goods in special procedures",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[6]/li[6]",
+      "block_id": "UK-PVA-B0054"
+    },
+    {
+      "text": "Find out about trading and moving goods in and out of Northern Ireland if you move goods between Northern Ireland and the EU.",
+      "section": "Goods in special procedures",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[18]",
+      "block_id": "UK-PVA-B0055"
+    },
+    {
+      "text": "Excise goods",
+      "section": "Excise goods",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h3[6]",
+      "block_id": "UK-PVA-B0056"
+    },
+    {
+      "text": "You can account for import VAT on your VAT Return when you release excise goods for use in the UK . This is also known as goods ‘released for home consumption’.",
+      "section": "Excise goods",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[19]",
+      "block_id": "UK-PVA-B0057"
+    },
+    {
+      "text": "This includes when goods are released from an excise warehouse after being in duty suspension since they were imported.",
+      "section": "Excise goods",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[20]",
+      "block_id": "UK-PVA-B0058"
+    },
+    {
+      "text": "Imports delivered by Royal Mail Group",
+      "section": "Imports delivered by Royal Mail Group",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h3[7]",
+      "block_id": "UK-PVA-B0059"
+    },
+    {
+      "text": "If your business receives goods through the post in consignments of more than £135 using Royal Mail Group (including Parcelforce, where they are not acting as an express operator) you cannot account for import VAT on your VAT Return.",
+      "section": "Imports delivered by Royal Mail Group",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[21]",
+      "block_id": "UK-PVA-B0060"
+    },
+    {
+      "text": "Royal Mail Group offers postponed VAT accounting for commercial (non-postal) services, if requested by the importer.",
+      "section": "Imports delivered by Royal Mail Group",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[22]",
+      "block_id": "UK-PVA-B0061"
+    },
+    {
+      "text": "If you do not know the full customs value of goods",
+      "section": "If you do not know the full customs value of goods",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h3[8]",
+      "block_id": "UK-PVA-B0062"
+    },
+    {
+      "text": "You can still account for import VAT on your VAT Return, even if you cannot confirm the full customs value of the goods that you import.",
+      "section": "If you do not know the full customs value of goods",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[23]",
+      "block_id": "UK-PVA-B0063"
+    },
+    {
+      "text": "To do this, you should:",
+      "section": "If you do not know the full customs value of goods",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[24]",
+      "block_id": "UK-PVA-B0064"
+    },
+    {
+      "text": "Apply for a general guarantee account to cover the amount of VAT that is unknown.",
+      "section": "If you do not know the full customs value of goods",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ol/li[1]",
+      "block_id": "UK-PVA-B0065"
+    },
+    {
+      "text": "Select that you’ll be accounting for import VAT on your VAT Return for the amount that is known.",
+      "section": "If you do not know the full customs value of goods",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ol/li[2]",
+      "block_id": "UK-PVA-B0066"
+    },
+    {
+      "text": "How to use postponed VAT accounting on your import declaration",
+      "section": "How to use postponed VAT accounting on your import declaration",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h2[4]",
+      "block_id": "UK-PVA-B0067"
+    },
+    {
+      "text": "When completing your import declaration, you can select to account for import VAT on your VAT Return. You cannot change how you want to account for import VAT on your import declaration once you’ve submitted it.",
+      "section": "How to use postponed VAT accounting on your import declaration",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[25]",
+      "block_id": "UK-PVA-B0068"
+    },
+    {
+      "text": "You need to enter your VAT registration number at header level in Data Element 3/40 (you should not use method of payment G in Data Element 4/8).",
+      "section": "How to use postponed VAT accounting on your import declaration",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[26]",
+      "block_id": "UK-PVA-B0069"
+    },
+    {
+      "text": "VAT will be recorded against your EORI number. This will be at declaration level only.",
+      "section": "How to use postponed VAT accounting on your import declaration",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[27]",
+      "block_id": "UK-PVA-B0070"
+    },
+    {
+      "text": "If you act on behalf of someone else",
+      "section": "If you act on behalf of someone else",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h3[9]",
+      "block_id": "UK-PVA-B0071"
+    },
+    {
+      "text": "If you’ve been authorised to act on behalf of your client, you must use their EORI number or VAT registration number on the import declaration.",
+      "section": "If you act on behalf of someone else",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[28]",
+      "block_id": "UK-PVA-B0072"
+    },
+    {
+      "text": "If you import goods in consignments valued at £135 or less",
+      "section": "If you import goods in consignments valued at £135 or less",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h3[10]",
+      "block_id": "UK-PVA-B0073"
+    },
+    {
+      "text": "There are different rules for the treatment of goods in consignments valued at £135 or less.",
+      "section": "If you import goods in consignments valued at £135 or less",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[29]",
+      "block_id": "UK-PVA-B0074"
+    },
+    {
+      "text": "Find out about the treatment of VAT for imported goods sold:",
+      "section": "If you import goods in consignments valued at £135 or less",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[30]",
+      "block_id": "UK-PVA-B0075"
+    },
+    {
+      "text": "to customers in the UK using online marketplaces",
+      "section": "If you import goods in consignments valued at £135 or less",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[7]/li[1]",
+      "block_id": "UK-PVA-B0076"
+    },
+    {
+      "text": "directly to customers in the UK",
+      "section": "If you import goods in consignments valued at £135 or less",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[7]/li[2]",
+      "block_id": "UK-PVA-B0077"
+    },
+    {
+      "text": "These rules do not apply to the import of excise goods. You can choose to account for import VAT on your VAT Return for the import of consignments of excise goods of any value.",
+      "section": "If you import goods in consignments valued at £135 or less",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[31]",
+      "block_id": "UK-PVA-B0078"
+    },
+    {
+      "text": "If you import commercial goods (merchandise in baggage) into Great Britain or Northern Ireland",
+      "section": "If you import commercial goods (merchandise in baggage) into Great Britain or Northern Ireland",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h3[11]",
+      "block_id": "UK-PVA-B0079"
+    },
+    {
+      "text": "If you’re eligible to make a simple online declaration instead and choose to do so, you will not be able to account for import VAT on your VAT Return.",
+      "section": "If you import commercial goods (merchandise in baggage) into Great Britain or Northern Ireland",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[32]",
+      "block_id": "UK-PVA-B0080"
+    },
+    {
+      "text": "Find out more about:",
+      "section": "If you import commercial goods (merchandise in baggage) into Great Britain or Northern Ireland",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[33]",
+      "block_id": "UK-PVA-B0081"
+    },
+    {
+      "text": "bringing commercial goods into Great Britain in your baggage",
+      "section": "If you import commercial goods (merchandise in baggage) into Great Britain or Northern Ireland",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[8]/li[1]",
+      "block_id": "UK-PVA-B0082"
+    },
+    {
+      "text": "bringing commercial goods into Northern Ireland in your baggage",
+      "section": "If you import commercial goods (merchandise in baggage) into Great Britain or Northern Ireland",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/ul[8]/li[2]",
+      "block_id": "UK-PVA-B0083"
+    },
+    {
+      "text": "What you’ll need to do if you choose to use postponed VAT accounting",
+      "section": "What you’ll need to do if you choose to use postponed VAT accounting",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/h2[5]",
+      "block_id": "UK-PVA-B0084"
+    },
+    {
+      "text": "You can get your postponed import VAT statements online , which you can use to help you when completing your VAT Return to account for import VAT .",
+      "section": "What you’ll need to do if you choose to use postponed VAT accounting",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[34]",
+      "block_id": "UK-PVA-B0085"
+    },
+    {
+      "text": "Sign up for emails or print this page",
+      "section": "Sign up for emails or print this page",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[3]/h2",
+      "block_id": "UK-PVA-B0086"
+    },
+    {
+      "text": "Related content",
+      "section": "Related content",
+      "locator": "/html/body/div[2]/main/div[2]/div[2]/div/div/h2",
+      "block_id": "UK-PVA-B0087"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "card_id": "JP-01",
+  "source_id": "JP-DOCUMENTS",
+  "title": "日本进口单证清单",
+  "summary_zh": "日本海关列示发票、运输单据、装箱单、运保费、合同及在适用情形下的许可和原产地证明，还可能要求补充材料。",
+  "summary_en": "Japan Customs lists commercial and transport evidence, with licences, origin evidence and other supporting records depending on the goods and requested treatment.",
+  "anchor_terms": [
+    "Invoice",
+    "Additional documentation",
+    "where a preferential rate"
+  ],
+  "required_order_fields": [
+    "product",
+    "transport_mode",
+    "invoice",
+    "packing_list",
+    "freight_insurance",
+    "preference_claim"
+  ],
+  "tradex_workflow": "Create a conditional checklist instead of treating every document as universally mandatory.",
+  "cash_effect": "Link missing evidence to the shipment and expected collection scenario.",
+  "keywords": [
+    "日本",
+    "进口资料",
+    "发票",
+    "提单",
+    "装箱单",
+    "Japan",
+    "documents"
+  ],
+  "title_en": "Japan import document checklist",
+  "jurisdiction": "JP",
+  "source_title": "1107 Documents to be Submitted for Import Clearance",
+  "source_url": "https://www.customs.go.jp/english/c-answer_e/imtsukan/1107_e.htm",
+  "publisher": "Japan Customs",
+  "source_type": "official_guidance",
+  "source_language": "en",
+  "topic": "import_documents",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "JP-DOCUMENTS-B0002",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/ol[1]/li[1]",
+      "path": "extracted/JP-DOCUMENTS.json"
+    },
+    {
+      "block_id": "JP-DOCUMENTS-B0018",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/table/tbody/tr[4]",
+      "path": "extracted/JP-DOCUMENTS.json"
+    },
+    {
+      "block_id": "JP-DOCUMENTS-B0012",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/p[1]",
+      "path": "extracted/JP-DOCUMENTS.json"
+    },
+    {
+      "block_id": "JP-DOCUMENTS-B0010",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/ol[2]/li[2]",
+      "path": "extracted/JP-DOCUMENTS.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "日本进口单证清单\n日本海关列示发票、运输单据、装箱单、运保费、合同及在适用情形下的许可和原产地证明，还可能要求补充材料。\nJapan Customs lists commercial and transport evidence, with licences, origin evidence and other supporting records depending on the goods and requested treatment.\nKeywords: 日本, 进口资料, 发票, 提单, 装箱单, Japan, documents"
+}

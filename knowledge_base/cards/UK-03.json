@@ -1,0 +1,81 @@
+{
+  "card_id": "UK-03",
+  "source_id": "UK-TARIFF",
+  "title": "英国商品编码与实时税费查询",
+  "summary_zh": "英国官方税则查询入口用于查找商品编码、关税及VAT信息；实际报价需结合商品、原产地和进口日期。",
+  "summary_en": "The UK Trade Tariff entry point supports commodity-code and tax-rate lookup. A saved guide page is not a rate determination for a particular shipment.",
+  "anchor_terms": [
+    "commodity codes",
+    "VAT"
+  ],
+  "required_order_fields": [
+    "commodity_code",
+    "origin",
+    "import_date",
+    "customs_value"
+  ],
+  "tradex_workflow": "Store the dated lookup result and source with the order before calculating import costs.",
+  "cash_effect": "Recompute the cost scenario when a verified rate or importer arrangement changes.",
+  "keywords": [
+    "英国",
+    "税率",
+    "商品编码",
+    "关税",
+    "tariff"
+  ],
+  "title_en": "UK commodity codes and current import charges",
+  "jurisdiction": "GB",
+  "source_title": "Trade Tariff: look up commodity codes, duty and VAT rates",
+  "source_url": "https://www.gov.uk/trade-tariff",
+  "publisher": "UK Government",
+  "source_type": "live_lookup_guide",
+  "source_language": "en",
+  "topic": "tariff_lookup",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2026-10-19",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "UK-TARIFF-B0001",
+      "locator": "/html/body/div[2]/main/div[1]/div[1]/div/h1",
+      "path": "extracted/UK-TARIFF.json"
+    },
+    {
+      "block_id": "UK-TARIFF-B0018",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/ul[2]/li[2]",
+      "path": "extracted/UK-TARIFF.json"
+    },
+    {
+      "block_id": "UK-TARIFF-B0004",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[1]/ul/li[1]",
+      "path": "extracted/UK-TARIFF.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "英国商品编码与实时税费查询\n英国官方税则查询入口用于查找商品编码、关税及VAT信息；实际报价需结合商品、原产地和进口日期。\nThe UK Trade Tariff entry point supports commodity-code and tax-rate lookup. A saved guide page is not a rate determination for a particular shipment.\nKeywords: 英国, 税率, 商品编码, 关税, tariff"
+}

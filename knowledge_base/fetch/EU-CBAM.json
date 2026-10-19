@@ -1,0 +1,13 @@
+{
+  "source_id": "EU-CBAM",
+  "requested_url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en",
+  "retrieved_at": "2026-10-17T19:23:01.971983+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-definitive-regime_en",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 119072,
+  "raw_path": "raw/EU-CBAM.html",
+  "last_modified": null,
+  "etag": null
+}

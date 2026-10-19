@@ -1,0 +1,44 @@
+TradeX RAG file system — research and implementation decisions
+18 October 2026
+
+Purpose
+A small export business needs to retrieve a buyer email, contract clause and trade rule together, while keeping their sources and versions distinct. TradeX therefore treats retrieval as a shared evidence service used by agents and the dashboard. It does not write accepted order or cash balances merely because a document was indexed.
+
+Reference systems
+Dify provides parent-child retrieval: small chunks support matching and their parent sections supply context. TradeX adopts this retrieval pattern with explicit paragraph, page and row locations. This avoids presenting a sentence without its surrounding conditions. Source: https://docs.dify.ai/en/cloud/use-dify/knowledge/create-knowledge/chunking-and-cleaning-text and https://dify.ai/blog/introducing-parent-child-retrieval-for-enhanced-knowledge
+
+RAGFlow separates document parsing, chunking and indexing and retains source locations for reviewing retrieved evidence. TradeX uses a small persisted ingestion queue with these stages, rather than deploying the full platform. The current parsers handle text-readable documents; OCR and advanced table-layout recognition are future additions. Sources: https://github.com/infiniflow/ragflow/blob/main/docs/guides/dataset/configuration.md and https://github.com/infiniflow/ragflow/blob/main/docs/guides/dataset/chunk_parsing_results_and_knowledge_fragment_management.md
+
+Qdrant's Python client provides a persistent local mode and a server client using the same API. TradeX uses the local mode for the prototype, with one owning service process and a thread lock around database operations. Agent MCP processes call the service rather than each opening the local vector directory. A server URL can replace local storage when concurrent services are required. Source: https://github.com/qdrant/qdrant-client
+
+SQLite WAL supports simultaneous readers and a writer, while still allowing only one writer at a time. TradeX uses short transactions for metadata, write leases and queued work; model inference runs outside them. SQLite and Qdrant are not one atomic database: SQL determines which versions may be retrieved, and indexing jobs can be replayed. Source: https://www.sqlite.org/wal.html
+
+Chosen embedding models
+Running local model: BAAI/bge-small-zh-v1.5, a Chinese embedding model from Beijing Academy of Artificial Intelligence, using FastEmbed/ONNX on CPU. Its vectors have 512 dimensions and its model input window is 512 tokens. The downloaded model is cached locally, so normal indexing needs no API key or network request. English documents remain searchable, but English retrieval quality should be compared separately before choosing the production model. Sources: https://huggingface.co/BAAI/bge-small-zh-v1.5 and https://qdrant.github.io/fastembed/examples/Supported_Models/
+
+Optional hosted model: Alibaba Cloud Bailian text-embedding-v4 at 1024 dimensions. The official model table documents 64–2048 dimensions and an 8192-token input limit; 1024 is the general-purpose default. Its adapter uses the OpenAI-compatible embeddings endpoint with a user-configured regional base URL. It has not been called in this work. Switching models creates a separate Qdrant collection and requires reindexing, because equal dimensions would not make different embedding spaces compatible. Source: https://help.aliyun.com/en/model-studio/embedding-rerank-model/ and https://help.aliyun.com/zh/model-studio/embedding
+
+File layout and identity
+Documents use random UUID identifiers and increasing integer versions, without content hashes. Each version has its own immutable source file at var/files/<document_id>/v<number>/source.<extension>. SQLite stores filenames, ownership, policy metadata, processing jobs, parents, child chunks, write leases and events. Qdrant stores vector points keyed by the chunk UUID and carries document/version/scope metadata.
+
+Chunking
+1. Extract source blocks: paragraphs for text/Markdown; headers and body for EML; pages for PDF; paragraphs and table rows for DOCX; labeled rows for CSV/XLSX.
+2. Keep blocks in their source sections. A table row carries column names; it is not mixed with a different record. Very long rows or paragraphs may be split but retain their locator.
+3. Bound parent context at 1400 length units, with 80 units of overlap only when one block is long. A length unit is one Chinese character, one English word/number, or punctuation.
+4. For local BGE, use its actual tokenizer: 350 tokens per child with 50-token overlap, leaving space for the title within its 512-token limit. The API-only/disabled-provider path uses 300 length units with 40-unit overlap. Match the child, return its parent. These are explicit starting settings, not empirically optimal values.
+5. Attach document title, version, source URL, evidence locations, jurisdiction and effective dates. Parsed uploaded text remains evidence, including when it contains imperative sentences.
+
+Retrieval
+SQLite FTS5 indexes English words and Chinese bigrams. Qdrant performs cosine similarity over actual BGE vectors. Reciprocal Rank Fusion merges the two rankings with k=60; parent deduplication avoids returning repeated context. The eligible current chunks are filtered by tenant/public scope, document version, policy status, date and destination before dense retrieval. Source references accompany the results, and an overdue policy-review date remains visible. Querying a destination also considers China's export rules and relevant cross-market sources.
+
+Ingestion and publishing
+Upload -> immutable source version + queued SQLite job -> extract -> parent/child chunks + FTS -> local vectors -> Qdrant -> document.ready event. Keyword retrieval becomes available after parsing. If embedding fails, the job reports embedding_failed while keyword search remains available; an explicit retry or reindex can continue later. A newer upload supersedes an older running job. Only the current published SQL version is exposed, including after an interrupted vector write.
+
+Shared editing
+An agent obtains a write lease containing a random token, increasing fencing number, expiry and base version. The save transaction checks the active token, expiry and expected version; an old holder cannot commit after another holder acquires the lease. Saving creates a new version and releases the lease. Readers continue using the published version until the new text is parsed. Read access does not lock the file.
+
+Agent and trigger interfaces
+The HTTP API exposes documents, jobs, search, versioned originals and editing. The MCP bridge supplies search_knowledge, list_documents, read_document, upload_document, acquire_document_lease, save_document_version, release_document_lease, ingestion_status and knowledge_events. Persisted document.uploaded, document.parsed, document.ready and document.deleted events can be consumed by cursor. An event consumer can ask the coordinator to reconsider affected tasks, but this release does not run a finance-agent scheduler or change financial state.
+
+Prototype boundary
+The service binds to localhost and uses a fixed configured tenant. It is a local development service, not a multi-user sign-in system. The workbench shows real upload, indexing, search and revision behavior; the port-5173 frontend now connects uploads, retrieval chat and source citations through its API proxy. Optional Qwen generation is configured in the backend .env file. Deleted documents are archived from retrieval; original revision files remain for audit and this is not a physical-erasure API.

@@ -28,6 +28,20 @@ For automated Chrome file selection: To enable file upload, open chrome://extens
 
 No paid Qwen calls were made. The live preview uses local BGE retrieval and explicitly labeled source excerpts. Qwen response handling was tested with a mocked provider. Configure `tradex-rag/.env` and enable chat to validate your chosen regional model endpoint.
 
-## What is in the upload package
+## Original frontend-only package (18 October)
 
 Only the frontend source, English documentation, tests and synthetic demo records are included. The separate RAG backend, local database, uploaded files, embedding weights, API keys, logs, screenshots and `dist/` output are excluded.
+
+## Integrated repository (19 October)
+
+The repository now includes `tradex-rag/` backend source and `knowledge_base/` public materials. The original frontend-only ZIP is superseded by this repository layout. Runtime databases, private uploads, model weights, virtual environments and credentials remain excluded. See the root and backend READMEs for a fresh-clone setup.
+
+Checks repeated against the integrated repository:
+
+- Frontend syntax, 10 business-logic tests and production build: passed.
+- Backend tests imported from the new repository path: 21 passed, one optional tokenizer check skipped because this source checkout has no bundled model weights.
+- Fresh temporary SQLite/Qdrant library using the existing local BGE cache: all 28 public cards indexed; repeat seeding added zero duplicates; every card retained an English title; English and Chinese hybrid retrieval returned results. No paid API calls were made.
+- Knowledge archive: all 28 card references and 10 keyword fixtures passed after rebuilding.
+- Git exclusions checked for credentials, Python environment, model weights, runtime database, uploads and bytecode.
+
+Browser interaction checks above remain the 18 October record; this packaging update did not repeat them.

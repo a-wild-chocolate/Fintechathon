@@ -1,0 +1,120 @@
+{
+  "source_id": "UK-TARIFF",
+  "method": "html_dom",
+  "blocks": [
+    {
+      "text": "Trade Tariff: look up commodity codes, duty and VAT rates",
+      "section": "Trade Tariff: look up commodity codes, duty and VAT rates",
+      "locator": "/html/body/div[2]/main/div[1]/div[1]/div/h1",
+      "block_id": "UK-TARIFF-B0001"
+    },
+    {
+      "text": "Use this service to find a commodity code for goods you’re importing to or exporting from the UK.",
+      "section": "Trade Tariff: look up commodity codes, duty and VAT rates",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[1]/p[1]",
+      "block_id": "UK-TARIFF-B0002"
+    },
+    {
+      "text": "You can also use the service to:",
+      "section": "Trade Tariff: look up commodity codes, duty and VAT rates",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[1]/p[2]",
+      "block_id": "UK-TARIFF-B0003"
+    },
+    {
+      "text": "check if there’s duty or VAT to pay",
+      "section": "Trade Tariff: look up commodity codes, duty and VAT rates",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[1]/ul/li[1]",
+      "block_id": "UK-TARIFF-B0004"
+    },
+    {
+      "text": "find out about suspensions or reductions",
+      "section": "Trade Tariff: look up commodity codes, duty and VAT rates",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[1]/ul/li[2]",
+      "block_id": "UK-TARIFF-B0005"
+    },
+    {
+      "text": "You’ll need a commodity code when you fill in a customs declaration form, so you pay the correct amount of tax and duties.",
+      "section": "Trade Tariff: look up commodity codes, duty and VAT rates",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[1]/p[3]",
+      "block_id": "UK-TARIFF-B0006"
+    },
+    {
+      "text": "Start now",
+      "section": "Trade Tariff: look up commodity codes, duty and VAT rates",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/p",
+      "block_id": "UK-TARIFF-B0007"
+    },
+    {
+      "text": "Before you start",
+      "section": "Before you start",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[1]/h2",
+      "block_id": "UK-TARIFF-B0008"
+    },
+    {
+      "text": "To find a commodity code for your goods, you’ll need details of the product you’re importing or exporting. This could include:",
+      "section": "Before you start",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/p[1]",
+      "block_id": "UK-TARIFF-B0009"
+    },
+    {
+      "text": "the type of product",
+      "section": "Before you start",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/ul[1]/li[1]",
+      "block_id": "UK-TARIFF-B0010"
+    },
+    {
+      "text": "what the product is used for",
+      "section": "Before you start",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/ul[1]/li[2]",
+      "block_id": "UK-TARIFF-B0011"
+    },
+    {
+      "text": "the materials used to make it",
+      "section": "Before you start",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/ul[1]/li[3]",
+      "block_id": "UK-TARIFF-B0012"
+    },
+    {
+      "text": "how it’s produced",
+      "section": "Before you start",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/ul[1]/li[4]",
+      "block_id": "UK-TARIFF-B0013"
+    },
+    {
+      "text": "the way it’s packaged",
+      "section": "Before you start",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/ul[1]/li[5]",
+      "block_id": "UK-TARIFF-B0014"
+    },
+    {
+      "text": "Help with finding the right commodity code",
+      "section": "Help with finding the right commodity code",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/h2",
+      "block_id": "UK-TARIFF-B0015"
+    },
+    {
+      "text": "If you’re not sure how to classify your goods, you can:",
+      "section": "Help with finding the right commodity code",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/p[2]",
+      "block_id": "UK-TARIFF-B0016"
+    },
+    {
+      "text": "check the guidance on hard to classify goods",
+      "section": "Help with finding the right commodity code",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/ul[2]/li[1]",
+      "block_id": "UK-TARIFF-B0017"
+    },
+    {
+      "text": "use the A to Z of classified goods to find commodity codes for common products",
+      "section": "Help with finding the right commodity code",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/ul[2]/li[2]",
+      "block_id": "UK-TARIFF-B0018"
+    },
+    {
+      "text": "Related content",
+      "section": "Related content",
+      "locator": "/html/body/div[2]/main/div[2]/div[2]/div/div/h2",
+      "block_id": "UK-TARIFF-B0019"
+    }
+  ]
+}

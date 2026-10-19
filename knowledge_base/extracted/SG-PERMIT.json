@@ -1,0 +1,186 @@
+{
+  "source_id": "SG-PERMIT",
+  "method": "html_dom",
+  "blocks": [
+    {
+      "text": "Home",
+      "section": "Document body",
+      "locator": "/html/body/main/div[1]/div/div/div/div[1]/ol/li[1]",
+      "block_id": "SG-PERMIT-B0001"
+    },
+    {
+      "text": "Doing Business",
+      "section": "Document body",
+      "locator": "/html/body/main/div[1]/div/div/div/div[1]/ol/li[2]",
+      "block_id": "SG-PERMIT-B0002"
+    },
+    {
+      "text": "Import Operations",
+      "section": "Document body",
+      "locator": "/html/body/main/div[1]/div/div/div/div[1]/ol/li[3]",
+      "block_id": "SG-PERMIT-B0003"
+    },
+    {
+      "text": "Import Procedures",
+      "section": "Document body",
+      "locator": "/html/body/main/div[1]/div/div/div/div[1]/ol/li[4]",
+      "block_id": "SG-PERMIT-B0004"
+    },
+    {
+      "text": "Obtain a Customs Import Permit",
+      "section": "Document body",
+      "locator": "/html/body/main/div[1]/div/div/div/div[1]/ol/li[5]",
+      "block_id": "SG-PERMIT-B0005"
+    },
+    {
+      "text": "Obtain a Customs Import Permit",
+      "section": "Obtain a Customs Import Permit",
+      "locator": "/html/body/main/div[1]/div/div/div/div[2]/h1",
+      "block_id": "SG-PERMIT-B0006"
+    },
+    {
+      "text": "Learn how to obtain a Customs Import Permit by registering for a Unique Entity Number, activating your Customs account, and applying through TradeNet.",
+      "section": "Obtain a Customs Import Permit",
+      "locator": "/html/body/main/div[1]/div/div/div/div[2]/p",
+      "block_id": "SG-PERMIT-B0007"
+    },
+    {
+      "text": "To import goods into Singapore, you must submit a Customs Import Permit through TradeNet.",
+      "section": "Obtain a Customs Import Permit",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[1]",
+      "block_id": "SG-PERMIT-B0008"
+    },
+    {
+      "text": "Before You Apply",
+      "section": "Before You Apply",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[1]",
+      "block_id": "SG-PERMIT-B0009"
+    },
+    {
+      "text": "1. Register for a Unique Entity Number",
+      "section": "1. Register for a Unique Entity Number",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[2]",
+      "block_id": "SG-PERMIT-B0010"
+    },
+    {
+      "text": "You must first register with the Accounting and Corporate Regulatory Authority (ACRA) ↗ (opens in new tab) or the relevant Unique Entity Number (UEN) issuance agency ↗ (opens in new tab) to obtain a UEN.",
+      "section": "1. Register for a Unique Entity Number",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[2]",
+      "block_id": "SG-PERMIT-B0011"
+    },
+    {
+      "text": "2. Activate Your Customs Account",
+      "section": "2. Activate Your Customs Account",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[3]",
+      "block_id": "SG-PERMIT-B0012"
+    },
+    {
+      "text": "After receiving your UEN, activate your Customs Account with Singapore Customs. This is required before any import permit application can be submitted.",
+      "section": "2. Activate Your Customs Account",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[3]",
+      "block_id": "SG-PERMIT-B0013"
+    },
+    {
+      "text": "How You Can Apply for Import Permits",
+      "section": "How You Can Apply for Import Permits",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[4]",
+      "block_id": "SG-PERMIT-B0014"
+    },
+    {
+      "text": "Once your Customs Account is activated, you may choose one of the following options:",
+      "section": "How You Can Apply for Import Permits",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[4]",
+      "block_id": "SG-PERMIT-B0015"
+    },
+    {
+      "text": "Option A: Appoint a Declaring Agent",
+      "section": "Option A: Appoint a Declaring Agent",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[5]",
+      "block_id": "SG-PERMIT-B0016"
+    },
+    {
+      "text": "A Declaring Agent (DA) can apply for customs permits on your behalf.",
+      "section": "Option A: Appoint a Declaring Agent",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[5]",
+      "block_id": "SG-PERMIT-B0017"
+    },
+    {
+      "text": "Option B: Apply for Permits Yourself",
+      "section": "Option B: Apply for Permits Yourself",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[6]",
+      "block_id": "SG-PERMIT-B0018"
+    },
+    {
+      "text": "If you prefer to make declarations yourself or for your clients, you must:",
+      "section": "Option B: Apply for Permits Yourself",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[6]",
+      "block_id": "SG-PERMIT-B0019"
+    },
+    {
+      "text": "Register as a DA, and",
+      "section": "Option B: Apply for Permits Yourself",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[1]/li[1]",
+      "block_id": "SG-PERMIT-B0020"
+    },
+    {
+      "text": "Apply for a TradeNet User ID ↗ (opens in new tab) to access the system.",
+      "section": "Option B: Apply for Permits Yourself",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[1]/li[2]",
+      "block_id": "SG-PERMIT-B0021"
+    },
+    {
+      "text": "How to Submit Permit Applications",
+      "section": "How to Submit Permit Applications",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[7]",
+      "block_id": "SG-PERMIT-B0022"
+    },
+    {
+      "text": "All import permit applications must be submitted through TradeNet, using one of the following channels:",
+      "section": "How to Submit Permit Applications",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[7]",
+      "block_id": "SG-PERMIT-B0023"
+    },
+    {
+      "text": "TradeNet front-end software from an approved software vendor ; or",
+      "section": "How to Submit Permit Applications",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[2]/li[1]",
+      "block_id": "SG-PERMIT-B0024"
+    },
+    {
+      "text": "Government Front-End Application ↗ (opens in new tab)",
+      "section": "How to Submit Permit Applications",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[2]/li[2]",
+      "block_id": "SG-PERMIT-B0025"
+    },
+    {
+      "text": "These channels allow you or your DA to process import declarations and receive approved permit notifications.",
+      "section": "How to Submit Permit Applications",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[8]",
+      "block_id": "SG-PERMIT-B0026"
+    },
+    {
+      "text": "After You Apply",
+      "section": "After You Apply",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[8]",
+      "block_id": "SG-PERMIT-B0027"
+    },
+    {
+      "text": "Once your permit is approved, follow the conditions stated on the permit for cargo clearance and payment of duties and GST (where applicable).",
+      "section": "After You Apply",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[9]",
+      "block_id": "SG-PERMIT-B0028"
+    },
+    {
+      "text": "Ready to apply?",
+      "section": "Ready to apply?",
+      "locator": "/html/body/main/div[2]/div[1]/div/section/div/div/div[1]/h2",
+      "block_id": "SG-PERMIT-B0029"
+    },
+    {
+      "text": "Submit your application through TradeNet using your preferred front-end channel.",
+      "section": "Ready to apply?",
+      "locator": "/html/body/main/div[2]/div[1]/div/section/div/div/div[1]/p",
+      "block_id": "SG-PERMIT-B0030"
+    }
+  ]
+}

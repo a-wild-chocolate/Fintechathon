@@ -1,0 +1,275 @@
+Guide to using ChAFTA to export or import | Australian Government Department of Foreign Affairs and Trade (https://www.dfat.gov.au/trade/agreements/in-force/chafta/doing-business-with-china/guide-to-using-chafta-to-export-or-import)
+citeturn131view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://www.dfat.gov.au/trade/agreements/in-force/chafta/doing-business-with-china/guide-to-using-chafta-to-export-or-import","lineno":null}); Total lines: 708
+L0: cite0†iframe†www.googletagmanager.com L1: 
+L2:   * cite1†About us L3:   * cite2†Ministers L4:   * cite3†News, speeches and media L5:   * cite4†Crisis Hub L6:   * cite5†Careers L7:   * cite6†Contact us L8: 
+L9: Enter search terms [Input: What are you looking for?]
+L10: 
+L11: [Input]
+L12: 
+L13: [Button: Menu ] [Button: Close ]
+L14: 
+L15:   * cite7†Countries, economies and regions L16:   * cite8†International relations L17:   * cite9†Trade and investment L18:   * cite10†Australia’s development program L19:   * cite11†People-to-people L20:   * cite12†Travel L21: ### Countries, economies and regions
+L22: 
+L23:   * cite7†Select a country, economy or region to find embassies, country briefs, economic fact sheets, trade agreements, aid programs, information on sanctions and more. L24:   * cite13†Heads of Government L25: 
+L26: ### cite8†International relations L27: #### cite14†Global security L28: 
+L29:   * cite15†Australia and sanctions L30:   * cite16†Australian Safeguards and Non-proliferation Office (ASNO) L31:   * cite17†Counter-terrorism L32:   * cite18†Non-proliferation, disarmament and arms control L33:   * cite19†Peacekeeping and peacebuilding L34: #### cite20†Regional architecture L35: 
+L36:   * cite21†Quad L37:   * cite22†Asia Pacific Economic Cooperation (APEC) L38:   * cite23†Association of Southeast Asian Nations (ASEAN) L39:   * cite24†East Asia Summit (EAS) L40:   * cite25†Australia and the Indian Ocean region L41:   * cite26†Pacific Islands regional organisations L42: #### cite27†Global themes L43: 
+L44:   * cite28†Child protection L45:   * cite29†Climate change L46:   * cite30†Cyber affairs and critical technology L47:   * cite31†Disability Equity and Rights L48:   * cite32†Gender equality L49:   * cite33†Global health reform L50:   * cite34†Human rights L51:   * cite35†Indigenous Peoples L52:   * cite36†Infrastructure L53:   * cite37†People Smuggling, Human Trafficking and Modern Slavery L54:   * cite38†Protection from Sexual Exploitation, Abuse and Harassment L55: 
+L56: #### cite39†Treaties L57: 
+L58:   * cite40†Australia’s treaty-making process L59: #### cite41†International organisations L60: 
+L61:   * cite42†The Commonwealth of Nations L62:   * cite43†The G20 L63:   * cite44†The OECD L64:   * cite45†United Nations (UN) L65:   * cite46†MIKTA L66:   * cite47†World Trade Organization L67: 
+L68: #### cite48†Foreign Arrangements Scheme†www.foreignarrangements.gov.au L69: 
+L70: 
+L71: ### cite9†Trade and investment L72: #### cite49†About free trade agreements (FTAs) L73: 
+L74:   * cite50†The benefits of FTAs L75:   * cite51†How to get free trade agreement tariff cuts L76:   * cite52†Look up FTA tariffs and services market access - DFAT FTA Portal L77:   * cite53†Discussion paper on potential modernisation – DFAT FTA Portal L78: 
+L79: #### cite54†About foreign investment L80: 
+L81:   * cite55†The benefits of foreign investment L82:   * cite56†Investor-state dispute settlement (ISDS) L83:   * cite57†Australia's bilateral investment treaties L84:   * cite58†Australia's foreign investment policy L85: #### cite59†For Australian business L86: 
+L87: cite60†Addressing non-tariff trade barriers L88: 
+L89: #### Stakeholder engagement
+L90: 
+L91:   * cite61†International Trade Network L92:   * cite62†First Nations trade L93:   * cite63†Ministerial Council on Trade and Investment L94:   * cite64†Trade 2040 Taskforce L95: #### cite65†Australia's free trade agreements (FTAs) L96:   * cite66†FTAs in force L97:     * cite67†ASEAN-Australia-New Zealand (AANZFTA) L98:     * cite68†Chile (ACLFTA) L99:     * cite69†China (ChAFTA) L100:     * cite70†CPTPP L101:     * cite71†Hong Kong (A-HKFTA & IA) L102:     * cite72†India (AI-ECTA) L103:     * cite73†Indonesia (IA-CEPA) L104:     * cite74†Japan (JAEPA) L105:     * cite75†Korea (KAFTA) L106:     * cite76†Malaysia (MAFTA) L107:     * cite77†New Zealand (ANZCERTA) L108:     * cite78†PACER Plus L109:     * cite79†Peru (PAFTA) L110:     * cite80†RCEP L111:     * cite81†Singapore (SAFTA) L112:     * cite82†Thailand (TAFTA) L113:     * cite83†UAE Comprehensive Economic Partnership Agreement (UAE-CEPA) L114:     * cite84†United Kingdom (A-UKFTA) L115:     * cite85†USA (AUSFTA) L116:   * cite86†FTAs not yet in force L117:     * cite87†European Union (A-EUFTA) L118:     * cite88†Trans-Pacific Partnership (TPP) L119:   * cite89†FTAs under negotiation L120:     * cite90†India (AI-CECA) L121:   * cite91†FTAs under consideration L122:     * cite92†Australia-Gulf Cooperation Council (GCC) L123: #### cite93†Trade and investment data, information and publications L124: 
+L125:   * cite94†Fact sheets for countries and regions L126:   * cite95†Australia's trade balance L127:   * cite96†Trade statistics L128:   * cite97†Foreign investment statistics L129:   * cite98†Trade and investment publications L130:   * cite99†Australia's Trade through Time L131: 
+L132: #### cite100†WTO, G20, OECD, APEC and IPEF and ITAG L133: 
+L134:   * cite47†The WTO L135:   * cite43†G20 L136:   * cite44†OECD L137:   * cite22†APEC L138:   * cite101†IPEF L139:   * cite102†ITAG L140: #### cite103†Services and digital trade L141: 
+L142:   * cite104†Service trade policy L143:   * cite105†Australia-Singapore Digital Economy Agreement L144:   * cite106†Digital trade & the digital economy L145: 
+L146: ### Development
+L147: 
+L148: #### cite10†Australia’s development program L149: 
+L150:   * cite107†Performance assessment L151:   * cite108†Development evaluation L152:   * cite109†Budget and statistical information L153:   * cite110†International Development Transparency L154:   * cite111†AusDevPortal†adp.dfat.gov.au L155: #### cite112†Who we work with L156: 
+L157:   * cite113†Multilateral organisations L158:   * cite114†Non-government organisations (NGOs) L159:   * cite115†List of Australian accredited non-government organisations (NGOs) L160: 
+L161: #### cite116†Development topics L162: 
+L163:   * cite117†Development issues L164:   * cite118†Development sectors L165: 
+L166: #### cite119†2030 Agenda for Sustainable Development L167: 
+L168:   * cite120†Sustainable Development Goals L169: 
+L170: #### cite121†Where we deliver our Development Program L171: #### cite122†Humanitarian action L172: 
+L173: Where and how Australia provides emergency assistance.
+L174: 
+L175: #### cite107†Performance assessment L176: 
+L177: ### cite11†People-to-people L178: 
+L179: #### cite123†Australia Awards L180: 
+L181:   * cite124†Australia Awards Scholarships L182:   * cite125†Australia Awards Fellowships L183: 
+L184: #### cite126†New Colombo Plan L185: 
+L186:   * cite127†Scholarship program L187:   * cite128†Semester Program L188:   * cite129†Mobility program L189: #### cite130†Public diplomacy L190: 
+L191:   * cite131†Australian Cultural Diplomacy Grants Program L192:   * cite132†Australia now L193:   * cite133†UK/Australia Season 2021-22 L194: #### cite134†Foundations, councils and institutes L195: 
+L196:   * cite135†ASEAN-Australia Centre†www.aseanaustraliacentre.org.au L197:   * cite136†Australia-India Council L198:   * cite137†Australia-Indonesia Institute L199:   * cite138†Australia-Japan Foundation L200:   * cite139†Australia-Korea Foundation L201:   * cite140†Council for Australian-Arab Relations (CAAR) L202:   * cite141†Council on Australia Latin America Relations (COALAR) L203: 
+L204: #### cite142†International Labour Mobility L205: 
+L206:   * cite143†Pacific Labour Mobility Scheme L207:   * cite144†Agriculture Visa L208: #### cite145†Australian Volunteers Program L209: 
+L210: Supporting organisations in developing countries by matching them with skilled Australians.
+L211: 
+L212: #### cite146†Sports diplomacy L213: 
+L214: Australia is a successful global leader and innovator in sport.
+L215: 
+L216: #### cite147†The cite147†D cite148†iploma cite147†ti cite148†c cite147†Academ cite148†y L217: 
+L218:   * cite149†Language Programs L219: ### cite150†About Australia L220: 
+L221: Australia is a stable, democratic and culturally diverse nation with a highly skilled workforce and one of the strongest performing economies in the world.
+L222: 
+L223: #### cite151†Australia in Brief publication L224: 
+L225: This is the 52nd edition of Australia in Brief, revised and updated in February 2021
+L226: 
+L227: ### cite152†Travel L228: #### Travel advice
+L229: 
+L230: To help Australians avoid difficulties overseas, we maintain travel advisories for more than 170 destinations.
+L231: 
+L232:   * cite153†Smartraveller – travel advice†www.smartraveller.gov.au L233: 
+L234: #### International COVID-19 Vaccination Certificate
+L235: 
+L236: Prove your COVID-19 vaccinations when you travel overseas.
+L237: 
+L238:   * cite154†Services Australia†www.servicesaustralia.gov.au L239: #### Passports
+L240: 
+L241: The Australian Passport Office and its agents are committed to providing a secure, efficient and responsive passport service for Australia.
+L242: 
+L243:   * cite155†Australian Passport Office†www.passports.gov.au L244: 
+L245: #### 24-hour consular emergency helpline
+L246: 
+L247:   * Within Australia: 1300 555 135
+L248:   * Outside Australia: +61 2 6261 3305
+L249:   * cite156†Getting help overseas†smartraveller.gov.au L250: #### Visas
+L251: 
+L252:   * cite157†Visas for Australians travelling overseas L253:   * cite158†Visas to visit Australia L254: 
+L255: cite159†Listen†app-as.readspeaker.com L256: 
+L257: [Button: In this section ]
+L258: 
+L259: [Button: In this section ]
+L260: 
+L261: ## cite160†Doing business with China L262: 
+L263:   * Guide to using ChAFTA to export or import
+L264:   * cite161†ChAFTA frequently asked questions L265:   * cite162†ChAFTA & certificates of origin (COO) L266:   * cite163†Look up FTA tariffs - DFAT FTA portal L267: 
+L268: # Guide to using ChAFTA to export or import
+L269: ## Downloads
+L270: 
+L271: cite164†Guide to using ChAFTA to export and import goods [PDF 1.1 MB] L272: 
+L273: cite165†Guide to using ChAFTA to export and import goods [Word 11.2 MB] L274: 
+L275: The China-Australia Free Trade Agreement (ChAFTA) improves Australia's access to our largest trading partner. Australia is one of only a handful of developed countries to conclude a Free Trade Agreement (FTA) with China, giving our businesses a competitive advantage.
+L276: ChAFTA increases opportunities by eliminating tariffs on the vast majority of trade in goods between Australia and China. This benefits Australian businesses that export Australian goods to China or import Chinese goods for sale in Australia.
+L277: Tariffs, or customs duties, are taxes imposed by governments on goods arriving from overseas. From the date of entry into force, ChAFTA set China's tariffs at zero for more than 85 per cent (by 2015 value) of Australian exports to enter China duty free or at preferential tariff rates. This proportion rose to 93 per cent coverage by 1 January 2019 and will reach 98 per cent once ChAFTA is fully implemented.
+L278: ChAFTA s set Australian import tariffs at zero on 82 per cent of China's exports to Australia from day one, rising to 100 per cent tariff elimination by 1 January 2019.
+L279: ## This step-by-step guide seeks to assist Australian exporters and importers in taking advantage of preferential tariff treatment under ChAFTA.
+L280: 
+L281: It will help you answer four key questions:
+L282: 
+L283:   1. What goods am I exporting or importing? (p. 3)
+L284: 
+L285: Identifying the customs tariff code for your goods is a critical first step.
+L286: 
+L287:   2. How are these goods treated under ChAFTA? (pp. 4-5)
+L288: 
+L289: Identify the lower (preferential) duty rate for your goods.
+L290:   3. Where are my goods produced (are they 'originating' goods that will qualify for lower tariffs under ChAFTA? (pp. 6-13)
+L291: 
+L292: Only goods that 'originate' in Australia or China are eligible for preferential tariff treatment under ChAFTA. There are specific rules to determine eligibility. This prevents parties from other countries gaining the benefits of ChAFTA by simply transhipping their goods through Australia or China.
+L293:   4. How to certify the origin of your goods to ensure you get the lower tariff rate (pp. 14-15)
+L294: 
+L295: Goods seeking preferential treatment under ChAFTA must be accompanied by appropriate documentation, either a 'certificate of origin' or a 'declaration of origin'.
+L296: 
+L297: The FTA Portal – online help for traders
+L298: To help apply this guide to your specific product, a useful online portal is available to assist you to make the most of the FTA with China. It is recommended you read this guide first and then visit the portal at cite166†https://ftaportal.dfat.gov.au/†ftaportal.dfat.gov.au L299: ## 1 What
+L300: ### Step 1: identify the tariff classification of your goods
+L301: 
+L302: Determining how ChAFTA treats a particular good depends on correct identification of that good.
+L303: 
+L304: In ChAFTA, goods are identified by reference to an internationally-recognised system known as the Harmonized Commodity Description and Coding System, commonly referred to as the Harmonized System (HS). The HS is a common goods classification system of more than 5200 six-digit product categories (see table on page 5 for examples).
+L305: Typically, countries further sub-divide the six-digit HS product categories into eight-digit or more tariff lines for greater specificity. (Australia and China both use eight-digit tariff codes for customs duties). Tariff codes beyond the HS six-digit level are not comparable between countries.
+L306: ### Classification
+L307: 
+L308: To find out the HS code applicable to your product, visit the cite166†FTA Portal†ftaportal.dfat.gov.au , type in your product name, and click through to the eight or nine digit HS code that best fits your product.
+L309: 
+L310: If you wish to access the full tariff schedule, importers into Australia can find Australian tariffs under Schedule 3 of the Customs Tariff Act 1995. Exporters to China can find China's tariffs in the Chinese Customs Service tariff schedule.
+L311: To be certain that you have identified the correct tariff for your good, we recommend that you consult a professional customs broker or freight forwarder.
+L312: ### Advance Rulings
+L313: 
+L314: Australia and China are obliged to provide written advance rulings on tariff classification and origin in response to requests by importers, exporters or any person with a justifiable reason. Advance rulings are binding on the importing Customs administration and give greater certainty, in advance of trade taking place, to businesses who wish to know how their product will be treated under ChAFTA.
+L315: 'Advance rulings' can cover the HS classification applicable to your goods and/or whether your goods are considered 'originating' for the purposes of ChAFTA (see Step 3).
+L316: #### For exporters
+L317: 
+L318: Australian exporters may seek cite167†advance rulings†www.abf.gov.au from the China Customs Service. Your importer into China or your customs broker may be able to assist you with this process.
+L319: 
+L320: #### For importers
+L321: 
+L322: If you are importing goods into Australia and would like an advance ruling, please contact Australian Border Force.
+L323: 
+L324: ## 2 How
+L325: ### Step 2: understand how your goods will be treated under ChAFTA
+L326: 
+L327: Once you have the tariff code, you can determine how your goods will be treated under ChAFTA. Both China and Australia have set out their commitments to reduce duty rates on goods in lists, called tariff schedules (based on the HS).
+L328: The cite166†FTA portal†ftaportal.dfat.gov.au is the easiest way to determine the preferential FTA tariff rate on your product. It is searchable by key word or HS code, and contains tariff rates for both imports and exports. The FTA portal also contains information about whether your product is likely to meet Rule of Origin (ROO) requirements.
+L329: The schedules contain thousands of rows of tariff lines that show in the first column the base (starting) duty rate on which reductions occur. In a separate column, a code is used to indicate the tariff staging category. Further columns indicate the preferential duty rate each year from entry into force, until full implementation.
+L330: 
+L331: Both countries' tariff schedules can be found in cite168†ChAFTA Chapter Two, Trade in Goods: Annex I – Schedule in Relation to Article 2.4 (Elimination of Customs Duties) L332: ### Exporters
+L333: 
+L334: If you are exporting to China, you may want to check cite168†China's tariff schedule . China's staging categories range from A-0, indicating tariffs already eliminated, to B‑15, indicating gradual elimination of the tariff over 15 equal annual stages, which began on the date of ChAFTA's entry into force (20 December 2015).
+L335: 
+L336: There are also two special categories relating to tariffs which will be eliminated over 10 or 12 equal annual stages, but where a special agricultural safeguard may apply.
+L337: Category D relates to tariffs which will not be subject to any changes under ChAFTA. On these products, the general most-favoured nation (MFN) tariff rate will continue to apply (i.e. there is no preferential access under ChAFTA).
+L338: For wool exports to China, ChAFTA also allows a quota of Australian exports, which would otherwise be subject to a tariff, to be imported duty free (referred to as a country specific tariff-rate quota). This allowed Australian businesses to export duty free (the 'in-quota' rate) up to a combined total of 30,000 tonnes annually from 1 January 2016, and growing over nine years to 44,324 tonnes. Details of the wool tariff quota are found in cite169†ChAFTA Annex 2-A .
+L339: Australia also continues to be able to access China's WTO Tariff Quota for wool at in-quota rates of 1-3 per cent up to a volume of 287,000 tonnes per annum.
+L340: All of these categories and conditions are explained in cite169†Chapter Two of ChAFTA and related annexures.
+L341: ### What year has ChAFTA reached now?
+L342: 
+L343: When reading the tariff schedules, it is important to understand the relevant 'year' of ChAFTA's operation. Year one under ChAFTA began on the date of entry into force (20 December 2015). The remainder of the agreement is therefore dated as follows:
+L344: Date commencing  | Year of ChAFTA's operation
+L345: --- | ---
+L346: 20 Dec 2015  | 1
+L347: 1 Jan 2016  | 2
+L348: 1 Jan 2017  | 3
+L349: 1 Jan 2018  | 4
+L350: 1 Jan 2019  | 5
+L351: 1 Jan 2020  | 6
+L352: 1 Jan 2021  | 7
+L353: 1 Jan 2022  | 8
+L354: 1 Jan 2023  | 9
+L355: 1 Jan 2024  | 10
+L356: 1 Jan 2029  | 15
+L357: ### Importers
+L358: 
+L359: If you are importing from China, you will need to check Australia's tariff schedule. Australian staging categories range from 0, indicating tariffs already eliminated, to 5, indicating gradual elimination of the base duty rate over 5 equal annual stages, which began on entry into force of ChAFTA and culminate in duty free access from 1 January 2019.
+L360: ### Applied tariffs
+L361: 
+L362: You should be aware that the "base rate" under ChAFTA is the tariff that applied in 2013 and was used as the basis for negotiations. It is the base line for tariff reductions under the Agreement. Separate to ChAFTA, each Party is also able to unilaterally reduce its tariff at any time. For example, a country might temporarily reduce a tariff for a commodity that is in short supply.
+L363: Traders will need to assess whether it is more advantageous to import under the preferential tariff under the Agreement or the current MFN applied tariff.
+L364: ### Reading the Tariff Schedule – examples
+L365: 
+L366: Each tariff line contains the following details:
+L367: 
+L368:   * a 'base rate' column showing the base duty rate or tariff that applied in 2013. This is the starting point on which tariff treatment occurs; and
+L369:   * the tariff that will be applied according to the year of ChAFTA implementation.
+L370: 
+L371: For example, using China's schedule:
+L372: HS Code  | Description  | Base Rate  | Staging Category  | Year 1 20 Dec 2015  | Year 2 1 Jan 2016  | Year 3 1 Jan 2017  | Year 4 1 Jan 2018  | Year 5 1 Jan 2019  | Year 6 1 Jan 2020  | Year 7 1 Jan 2021  | Year 8 1 Jan 2022  | Year 9 1 Jan 2023  | Year 10 1 Jan 2024
+L373: --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+L374: 07131090  | Other dried peas, shelled  | 5  | A-0  | 0%
+L375: 04051000  | Butter  | 10  | B-10  | 9%  | 8%  | 7%  | 6%  | 5%  | 4%  | 3%  | 2%  | 1%  | 0%
+L376:   1. For dried peas, China's base tariff is five per cent; this was eliminated on the day of entry into force (year 1- 20 December 2015) of ChAFTA, and will remain zero from there on.
+L377:   2. In the case of butter, China's base tariff was 10 per cent; this tariff will be reduced to and bound at zero for products of Australian origin, over ten (10) equal annual stages beginning from entry into force (year 1, i.e. 20 December 2015) of the agreement. These goods are free of customs duty on 1 January 2024 (Year 10).
+L378: ## 3 Where?
+L379: ### Step 3: Determine whether your goods meet Rules of origin requirements
+L380: ChAFTA preferential rules of origin (ROO) are agreed criteria used to ensure that only goods originating in either China or Australia enjoy the benefits of the Agreement. These rules prevent goods from a third party being transshipped through either China or Australia to take advantage of the FTA to access lower, preferential import tariffs.
+L381: Any imports into China or Australia that do not comply with the ROO as set out in cite170†Chapter 3 and cite171†Annex II (Product Specific Rules of Origin) will be subject to the general (MFN) rate of duty, instead of the preferential rates available under ChAFTA.
+L382: A good will be considered 'originating' if it is:
+L383: 
+L384:   * 'wholly obtained' or produced from wholly obtained goods in China or Australia; or
+L385:   * 'wholly produced' in China or Australia, or both, from materials classified as 'originating' in either country under the ROO; or
+L386:   * produced in China or Australia, or both, using inputs from other countries, while meeting the Product Specific Rule (PSR) applicable to that good, as set out in cite171†Chapter Three, Annex II .
+L387: #### Wholly Obtained (WO) Goods
+L388: 
+L389: Wholly obtained goods are goods which are exclusively derived from one country. Typically these are agricultural goods and natural resources. The table on page 14 sets out the categories of goods which ChAFTA treats as wholly obtained.
+L390: 
+L391: ChAFTA also treats goods that are made exclusively from wholly obtained goods as being wholly obtained (cite170†Article. 3.3 (j) ).
+L392: #### Wholly Produced (WP) – Goods produced entirely in Australia or China
+L393: 
+L394: Goods produced entirely in either China or Australia, or both, from materials classified as 'wholly obtained' or 'originating' under the Rules of Origin (ROO), will qualify as 'originating' under ChAFTA and qualify for preferential tariff treatment.
+L395: #### Product Specific Rules (PSRs) – For goods containing inputs from outside China or Australia
+L396: 
+L397: Goods made from inputs sourced from outside China or Australia may still qualify as originating, as long as the non-originating inputs have undergone a substantial transformation in China or Australia, or both.
+L398: Product Specific Rules (PSRs) set out in ChAFTA Chapter Three- cite171†Annex II , enable Chinese and Australian customs authorities to determine whether a good has undergone a substantial transformation. If your good contains inputs from outside Australia or China, you will need to check the applicable PSR to
+L399: 
+L400: determine whether your good qualifies as originating.
+L401: #### Change in tariff classification
+L402: 
+L403: Most PSRs in ChAFTA apply a change in tariff classification (CTC) approach. A CTC rule requires that any non-originating inputs/materials that are incorporated into the final good undergo a specified change in tariff classification (HS code) in Australia or China in the process of being incorporated into the final good.
+L404: For example, pure gold (HS 7108.13) has a different classification to gold jewellery (HS 7113.19). In the process of being manufactured into jewellery, the tariff classification of pure gold changes, representing a substantial transformation. The ChAFTA PSRs mean that gold jewellery manufactured in Australia or China from imported pure gold (HS 7108.13) would count as 'originating', regardless of where the original gold came from.
+L405: Different products may be subject to different CTC rules. There are three levels of CTC rule which could apply:
+L406: 
+L407:   * Change in Chapter (CC) – change in any of the first two digits (or 'chapter') of the HS code of non-originating materials once part of the finished product. E.g. importing steel (from HS Chapter 72) and making hand-operated spanners or wrenches (HS code 8204).
+L408: Change in tariff heading (CTH) – change in any of the first four digits of the HS code of non-originating materials once part of the finished product. E.g. changing pure gold
+L409: 
+L410:   * (HS 7108.13) to gold jewellery (HS 7113.19).
+L411:   * Change in tariff subheading (CTSH) – change in any of the six digits of the HS code of non-originating materials once part of the finished product. E.g. importing an antisera or immunological product (HS 3002.10) and using it to produce a vaccine for human medicine (HS 3002.20).
+L412: Some CTC rules specifically exclude the possibility of applying a CTC rule to certain inputs. This is done by excluding specific chapters, headings or subheadings. For example, caustic soda in solution (HS 2815.12) is 'CTSH except from 2815.11'. Subheading 2815.11 includes caustic soda as a solid.
+L413: This rule therefore means that if you import non-originating solid caustic soda and simply mix it with water to produce a caustic soda solution, the solution would not be considered originating and you would not be eligible for a preferential customs duty when it is exported to China.
+L414: #### Regional Value Content
+L415: 
+L416: Some PSRs require a product to have undergone a specific amount of value-add in China or Australia, measured by the regional value content (RVC) of the good. Some PSRs provide a RVC rule as an alternative to a CTC rule, others require a RVC in addition to a CTC rule.
+L417: 
+L418: An RVC approach stipulates that originating materials and processes must represent a specific proportion of the product's final value. More information about calculating RVC is provided on page 14.
+L419: #### Other Approaches
+L420: 
+L421: Some PSRs allow for a good to become originating if the non-originating materials undergo a specific manufacturing or production process, for example:
+L422: 
+L423:   * processes that involve non-originating chemicals undergoing various chemical reactions may grant origin on the resulting new chemicals;
+L424:   * for some agricultural products, smoking of non-originating fresh produce may grant origin; and
+L425:   * for some textile products, fully finishing non-originating raw fabric may grant origin.
+L426: #### Note
+L427: 
+L428: It is important to remember that ROO requirements do not replace any other import requirements such as import licences and biosecurity approvals.
+L429: #### How to find the PSR applicable to your product
+L430: 
+L431: Using the tariff classification from step 1, you can check Chapter Three, cite171†Annex II: Product Specific Rules of Origin .
+L432: Using your goods tariff code, you can identify the relevant entry in the schedule. Note that PSRs are listed at the chapter (two digit), heading (four digit) or sub-heading (six-digit) level. Where a rule is listed at the chapter or heading level, that rule applies to all sub-headings that fall under that particular chapter or heading. Once you have found the relevant entry, the third column will identify the PSR for that product. For example:
+L433: HS Code  | Description  | PSR
+L434: --- | --- | ---
+L435: Chapter 19  | Preparations of cereals, flour, starch or milk; pastry cooks' products  | CC
+L436: 2711  | Petroleum gases and other gaseous hydrocarbons  | CTH
+L437: 2818.20  | - Aluminium oxide, other than artificial corundum  | CTSH except from heading 26.06 or subheading 2620.40
+L438: 
+L439: In the above example, non-originating inputs into preparations such as biscuits, must undergo a change in chapter (change in the first two digits of the HS classification).
+L440: Petroleum gases, on the other hand, must have all non-originating materials used in production undergo a change in tariff classification at the 4-digit level. Aluminium oxide must undergo a change in tariff classification at the 6-digit level but may not be produced from non-originating products of heading 2606 (aluminium ores) or subheading 2620.40 (aluminium slag or residue).
+L441: ### Other Important Rules of Origin
+L442: 
+L443: There are other important factors to take into account when determining whether your good qualifies as originating.
+L444: #### De Minimis
+L445: Where a good contains only a small amount of imported inputs, but those non-originating inputs fail to achieve the necessary CTC once incorporated in the final good, the product may still qualify as originating. If the value of all non-originating materials does not exceed 10 per cent of the value of the good, the product will qualify under the de minimis rule. The goods seeking de minimis classification must comply with any other applicable requirements of the ROOs.
+L446: Further information can be found in ChAFTA cite172†Article. 3.7 . Box 3 on page 14 provides details on calculating a good's value.
+L447: #### Cumulation
+L448: 
+

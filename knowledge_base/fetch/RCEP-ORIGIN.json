@@ -1,0 +1,16 @@
+{
+  "source_id": "RCEP-ORIGIN",
+  "requested_url": "https://fta.mofcom.gov.cn/upload/agreementFiles/rcep/rceppdf/d3z_cn.pdf",
+  "retrieved_at": "2026-10-17T19:26:36.407645+00:00",
+  "status": "downloaded",
+  "previous_attempt": {
+    "status": "fetch_failed",
+    "error": "URLError: <urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake failure (_ssl.c:1081)>"
+  },
+  "http_status": 200,
+  "final_url": "https://fta.mofcom.gov.cn/upload/agreementFiles/rcep/rceppdf/d3z_cn.pdf",
+  "raw_path": "raw/RCEP-ORIGIN.pdf",
+  "content_type": "application/pdf",
+  "bytes": 885810,
+  "download_method": "system_curl_tls_verified"
+}

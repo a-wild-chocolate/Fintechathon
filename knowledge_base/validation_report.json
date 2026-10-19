@@ -1,0 +1,114 @@
+{
+  "reference_checks_passed": true,
+  "cards_checked": 28,
+  "keyword_queries": [
+    {
+      "query": "英国 VAT 进口商",
+      "market": "GB",
+      "expected_top3_card": "UK-02",
+      "retrieved": [
+        "UK-01",
+        "UK-02",
+        "UK-03"
+      ],
+      "passed": true
+    },
+    {
+      "query": "RCEP 原产地证明 发票",
+      "market": "JP",
+      "expected_top3_card": "RCEP-02",
+      "retrieved": [
+        "RCEP-02",
+        "JP-01",
+        "JP-02"
+      ],
+      "passed": true
+    },
+    {
+      "query": "部分付款 退税 收汇",
+      "market": "CN",
+      "expected_top3_card": "CN-03",
+      "retrieved": [
+        "CN-03",
+        "CN-02",
+        "CN-04"
+      ],
+      "passed": true
+    },
+    {
+      "query": "美国 301 原产地",
+      "market": "US",
+      "expected_top3_card": "US-02",
+      "retrieved": [
+        "US-02",
+        "US-01"
+      ],
+      "passed": true
+    },
+    {
+      "query": "广州 信保",
+      "market": "CN-GZ",
+      "expected_top3_card": "GZ-01",
+      "retrieved": [
+        "GZ-01"
+      ],
+      "passed": true
+    },
+    {
+      "query": "CE 文具",
+      "market": "EU",
+      "expected_top3_card": "EU-03",
+      "retrieved": [
+        "EU-03",
+        "EU-01",
+        "EU-02"
+      ],
+      "passed": true
+    },
+    {
+      "query": "新加坡 TradeNet UEN",
+      "market": "SG",
+      "expected_top3_card": "SG-02",
+      "retrieved": [
+        "SG-02",
+        "SG-01",
+        "SG-03"
+      ],
+      "passed": true
+    },
+    {
+      "query": "DAP DDP 清关",
+      "market": "US",
+      "expected_top3_card": "GLOBAL-01",
+      "retrieved": [
+        "GLOBAL-01",
+        "US-01"
+      ],
+      "passed": true
+    },
+    {
+      "query": "澳大利亚 ChAFTA 原产地",
+      "market": "AU",
+      "expected_top3_card": "AU-01",
+      "retrieved": [
+        "AU-01",
+        "RCEP-01",
+        "RCEP-02"
+      ],
+      "passed": true
+    },
+    {
+      "query": "泰国 红线 清关",
+      "market": "TH",
+      "expected_top3_card": "TH-01",
+      "retrieved": [
+        "TH-01",
+        "GLOBAL-01"
+      ],
+      "passed": true
+    }
+  ],
+  "passed": 10,
+  "total": 10,
+  "evaluation_scope": "File and citation integrity plus offline keyword smoke tests; no vector or LLM evaluation."
+}

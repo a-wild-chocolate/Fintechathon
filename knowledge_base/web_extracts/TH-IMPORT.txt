@@ -1,0 +1,157 @@
+สำนักงานศุลกากรท่าเรือแหลมฉบัง - Laem Chabang Port Customs Office (https://lcpcb.customs.go.th/th/import-procedures)
+citeturn126view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://lcpcb.customs.go.th/th/import-procedures","lineno":null}); Total lines: 176
+L0: Call Center : 1164ร้องเรียน : 1332
+L1: 
+L2: |cite0†แผนผังเว็บไซต์ |
+L3: 
+L4: TH /
+L5: 
+L6: EN
+L7: 
+L8: cite1†เมนูด้านบนหน้าหลัก L9: 
+L10: cite1†หน้าหลัก L11: 
+L12: cite1†งานด้านพัสดุ L13: 
+L14: cite1†งานด้านบริการข้อมูล L15: 
+L16: cite1†พิธีการทางศุลกากร L17: 
+L18: cite1†รายงานสถิติและข่าวสาร L19: 
+L20: TH /
+L21: 
+L22: EN
+L23: 
+L24: cite2†Image: ค้นหา L25: 
+L26: เมนูด้านบนหน้าหลัก
+L27: 
+L28: cite3†หน้าหลัก cite1†เกี่ยวกับเรา cite4†วิสัยทัศน์/พันธกิจ/ยุทธศาสตร์ cite5†หน่วยงานกรมศุลกากร cite0†แผนผังเว็บไซต์ cite6†ติดต่อเรา L29: 
+L30: cite7†ประวัติความเป็นมา cite8†ทำเนียบนายด่าน cite9†คณะผู้บริหาร สทบ. cite10†โครงสร้างและหน้าที่ความรับผิดชอบ L31: 
+L32: หน้าหลัก
+L33: cite11†ข่าว/กิจกรรม/ประชาสัมพันธ์ cite12†ข่าวสำนักงานศุลกากรท่าเรือแหลมฉบัง L34: 
+L35: งานด้านพัสดุ
+L36: 
+L37: cite13†ประกาศขายทอดตลาด cite14†ประกาศประกวดราคา cite15†ราคากลาง (ราคาอ้างอิง) cite16†สรุปผลการจัดซื้อจัดจ้าง L38: 
+L39: งานด้านบริการข้อมูล
+L40: cite17†บุคคลทั่วไป/นักท่องเที่ยว/ส่วนราชการ†www.customs.go.th cite18†ผู้ประกอบการ†www.customs.go.th cite19†พิกัดศุลกากร†igtf.customs.go.th cite20†ราคาศุลกากร†www.customs.go.th cite21†กฎหมาย/ประกาศกรมศุลกากร†www.customs.go.th cite22†การใช้สิทธิ์เขตการค้าเสรีและ WTO†www.customs.go.th cite23†สิทธิประโยชน์ทางภาษีศุลกากร†www.customs.go.th cite24†ของควบคุมการนำเข้า-ส่งออก†www.customs.go.th cite25†คู่มือและแบบฟอร์ม†www.customs.go.th cite26†อัตราแลกเปลี่ยน†internet1.customs.go.th L41: 
+L42: พิธีการทางศุลกากร
+L43: cite27†พิธีการนำเข้า cite28†พิธีการส่งออก cite29†การนำของเข้าทางไปรษณีย์ cite30†คู่มือปฏิบัติงานเจ้าหน้าที่ cite31†คู่มือการตรวจปล่อยสินค้าของ สทบ. cite32†คู่มือการปฏิบัติงานตรวจปล่อยสินค้าปิโตรเลียมและของเหลว cite33†คู่มือการปฏิบัติงานตรวจปล่อยสินค้าประเภทยานยนต์ไฟฟ้าแบบแบตเตอรี่สำเร็จรูป (Battery Electric Vehicles : BEV) L44: 
+L45: รายงานสถิติและข่าวสาร
+L46: 
+L47: cite34†สถิติการจัดเก็บรายได้ cite35†สถิติการนำเข้า-ส่งออก cite36†สถิติการจับกุม cite37†มูลค่าการค้า cite38†รายงานของตกค้าง cite1†พัสดุไปรษณีย์ระหว่างประเทศ L48: cite39†กระบวนการทางศุลกากรของของที่นำเข้าทางไปรษณีย์ระหว่างประเทศ cite40†ระบบการติดตามสถานะการผ่านพิธีการศุลกากร†e-tracking.customs.go.th cite41†พัสดุไปรษณีย์ระหว่างประเทศนำส่งสำนักงานศุลกากรท่าเรือแหลมฉบัง cite42†คำถาม - คำตอบ L49: 
+L50: เรื่องน่ารู้
+L51: 
+L52: cite43†เทคโนโลยีที่ใช้ในงานศุลกากร cite44†โครงการความร่วมมือต่างๆ cite45†แบบคำขอฝ่ายพิธีการกลาง cite46†การปฏิบัติพิธีการศุลกากรผ่านแดน cite47†ใบรับรองการนำเข้า แบบที่ 32 L53: 
+L54: cite48†เกี่ยวกับเรา L55: 
+L56: cite42†FAQ L57: 
+L58: cite0†แผนผังเว็บไซต์ L59: 
+L60: ค้นหา[Input: คุณต้องการค้นหาสิ่งใด ?]
+L61: 
+L62: ค้นหายอดนิยม
+L63: พิธีการศุลกากรนำเข้าทางเรือ
+L64: 
+L65: 
+L66: 
+L67: กรมศุลกากรได้พัฒนานำระบบอิเล็กทรอนิกส์ มาใช้ในการบริการผ่านพิธีการศุลกากรซึ่งปัจจุบันเรียกว่าระบบ TCS ผู้ประสงค์จะดำเนินการผ่านพิธีการศุลกากรทางอิเล็กทรอนิกส์จะต้องทำการลงทะเบียนกับกรมศุลกากร เพื่อบันทึกข้อมูลไว้ในฐานข้อมูลระบบคอมพิวเตอร์ของกรมศุลกากร ซึ่งผู้ที่ลงทะเบียนแล้วสามารถเข้าสู่ระบบการผ่านพิธีการศุลกากรทางคอมพิวเตอร์ของตนเองหรือผ่าน SERVICE COUNTER ของเอกชนหรือที่จุดให้บริการของกรมศุลกากร ณ จุดนำเข้า-ส่งออก
+L68: 
+L69: การลงทะเบียนกับกรมศุลกากรต้องเตรียมเอกสารดังต่อไปนี้
+L70:   1. คำร้องขอลงทะเบียนปฏิบัติงานเกี่ยวกับการออกของ (ตามแบบที่กรมศุลกากรกำหนด)
+L71:   2. บัตรประจำตัวประชาชน
+L72:   3. สำเนาทะเบียนบ้าน
+L73:   4. บัตรประจำตัวผู้เสียภาษีอากร หรือหลักฐานการชำระภาษีเงินได้บุคคลธรรมดา
+L74:   5. ประกาศนียบัตรผ่านการอบรมหลักสูตรตัวแทนออกของ จากสถาบันวิทยาการศุลกากร สำนักบริหารทรัพยากรบุคคล กรมศุลกากร จากสมาคมหรือสถาบันที่กรมศุลกากรรับรอง หรือ ประกาศนียบัตรผ่านการอบรมหลักสูตรผู้ชำนาญการศุลกากร จากสถาบันวิทยาการศุลกากร สำนักบริหารทรัพยากรบุคคล กรมศุลกากร
+L75:   6. หนังสือรับรองการเป็นพนักงาน/ลูกจ้างของตัวแทนออกของ (ยกเว้นบุคคลที่มีบัตรผ่านพิธีการศุลกากร หรือบัตรผู้ช่วยปฏิบัติพิธีการศุลกากร และได้ผ่านการอบรมและทดสอบจากสถาบันวิทยาการศุลกากรตามประกาศกรมศุลกากรที่ 13/2549 ภายในวันที่ 31 ธันวาคม 2551
+L76:   7. รูปถ่ายหน้าตรงขนาด 1 นิ้ว จำนวน 1 รูป ซึ่งถ่ายไว้ไม่เกิน 6 เดือน
+L77:   8. สำเนาเอกสารตามข้อ (2) - (5) อย่างละหนึ่งชุด พร้อมลงลายมือชื่อรับรองความถูกต้อง
+L78: โดยยื่นคำร้องที่ ส่วนทะเบียนและสิทธิพิเศษ สำนักมาตรฐานพิธีการและราคาศุลกากร กรมศุลกากรหรือยื่นผ่านสำนักงานศุลกากร หรือด่านศุลกากร ทั้งนี้ผู้ลงทะเบียนจะสามารถปฏิบัติงานเกี่ยวกับการออกของได้สามปีนับแต่วันที่ได้รับอนุญาต
+L79: 
+L80: 
+L81: พิธีการศุลกากรนำเข้าทางเรือ
+L82: 
+L83: ในการนำเข้าสินค้า ผู้นำเข้าจะต้องปฏิบัติตามกฎหมาย ระเบียบ และประกาศที่กรมศุลกากรและหน่วยงานอื่น ๆ ที่เกี่ยวข้องในการนำเข้า อาทิ กระทรวงพาณิชย์สำนักงานคณะกรรมการอาหารและยา กรมปศุสัตว์ ฯลฯ ที่กำหนดไว้ให้ครบถ้วน โดยมีคำแนะนำในการจัดเตรียมเอกสาร เพื่อปฏิบัติตามขั้นตอนพิธีการศุลกากรในการนำเข้าสินค้า ดังนี้
+L84:   1. ผู้นำเข้าต้องยื่นแบบ กศก. 99/1 ใบขนสินค้าขาเข้าพร้อมแบบแสดงรายการภาษีสรรพสามิตและภาษีมูลค่าเพิ่ม สำหรับการนำเข้าสินค้าทั่วไปทุกประเภท ยกเว้นสินค้าที่กรมศุลกากรกำหนดให้ใช้ ใบขนฯประเภทอื่น
+L85:   2. เอกสารที่ควรจัดเตรียมในการนำเข้าสินค้า
+L86:     1. สำหรับพิธีการชำระอากร พิธีการวางประกัน พิธีการขนถ่ายข้างลำ พิธีการคลัง สินค้าทัณฑ์บนประเภทร้านค้าปลอดอากร ต้องมีเอกสารประกอบ ได้แก่
+L87:       1. ต้นฉบับใบขนสินค้าขาเข้า (กศก. 99/1) พร้อมสำเนา 1 ฉบับ เว้นแต่กรณีที่กรมศุลกากรกำหนดให้มีการจัดทำคู่ฉบับเพิ่ม เช่น สำหรับการนำเข้าอาวุธปืน เครื่องกระสุนปืน วัตถุระเบิด การนำเข้าน้ำมันเชื้อเพลิงที่ต้องส่งเงินเข้ากองทุนน้ำมัน กรณีดังกล่าวต้องมีสำเนาใบขนสินค้าขาเข้า 2 ฉบับ
+L88:       2. ใบสั่งปล่อยสินค้า (กศก. 100/1)
+L89:       3. บัญชีราคาสินค้า (Invoice)
+L90:       4. บัญชีรายละเอียดบรรจุหีบห่อ (Packing List)
+L91:       5. ใบตราส่งสินค้า (Bill of Lading)
+L92:       6. ใบแจ้งยอดเบี้ยประกัน (Insurance Premium Invoice)
+L93:       7. ใบอนุญาตหรือหนังสืออนุญาตสำหรับสินค้าควบคุมการนำเข้าได้จาก www.customs.go.th เลือกรายการของควบคุมการนำเข้า-ส่งออก
+L94:       8. ใบรับรองแหล่งกำเนิดสินค้า (Certificate of Origin) กรณีขอลดอัตราอากร
+L95:       9. เอกสารอื่น ๆ เช่น เอกสารแสดงส่วนผสม คุณลักษณะและการใช้งานของสินค้าแค็ตตาล็อก เป็นต้น
+L96:     2. พิธีการหลายเที่ยวเรือ ต้องเพิ่มพิมพ์เขียว (BLUE PRINT) แบบแปลน แบบพิมพ์หรือเอกสารประกอบอื่น ๆ ที่เกี่ยวข้องกับการพิจารณาให้ทำใบขนสินค้าหลายเที่ยวเรือ
+L97:     3. พิธีการขอคืนอากรตามมาตรา 19 ทวิต้องเพิ่มสำเนาใบขนสินค้าขาเข้า (กศก.99/1) อีก 1 ฉบับ
+L98:     4. พิธีการส่งเสริมการลงทุนต้องหนังสืออนุมัติให้ยกเว้นหรือลดหย่อนอากรจากคณะกรรมการส่งเสริมการลงทุน
+L99:     5. พิธีการสินค้าส่งกลับ (RE-EXPORT) มี 2 กรณีดังนี้ คือ
+L100: กรณีสินค้าอยู่ในอารักขาของศุลกากร ต้องเพิ่มเอกสารดังนี้ คือ
+L101:       1. คำร้องขอผ่อนผันทำใบขนสินค้าส่งกลับ (RE-EXPORT) ชำระอากร 1 ใน 10
+L102:       2. ใบขนสินค้าขาออก (กศก.101/1) พร้อมเอกสารประกอบ
+L103: กรณีสินค้าอยู่นอกอารักขาของศุลกากร ต้องเพิ่มเอกสารดังนี้ คือ
+L104:       1. คำร้องขอผ่อนผันทำใบขนสินค้าส่งกลับ (RE-EXPORT)ขอคืนอากร9 ใน 10
+L105:       2. ใบขนสินค้าขาออก (กศก.101/1) พร้อมเอกสารประกอบ
+L106:     6. พิธีการนำของออกจากเขตอุตสาหกรรมส่งออก (EPZ) ต้องเพิ่มเอกสารดังนี้ คือ
+L107:       1. แบบ กนอ. 02-1 กรณีสินค้านำเข้าเป็นวัตถุดิบ
+L108:       2. แบบ กนอ. 02-1 และ กนอ.101 กรณีสินค้านำเข้าเป็นเครื่องจักร อุปกรณ์เครื่องมือและเครื่องใช้ รวมทั้งส่วนประกอบของสินค้าดังกล่าวที่จำเป็นต้องใช้ในการผลิตสินค้าหรือการค้าเพื่อส่งออก
+L109: ขั้นตอนการปฏิบัติพิธีการนำเข้าสินค้าทางเรือ
+L110:   1. ผู้นำเข้าหรือตัวแทนจัดเตรียมข้อมูลใบขนสินค้าเข้าสู่เครื่องคอมพิวเตอร์ของตนเองหรือผ่าน Service Counter และให้ผู้นำเข้าหรือตัวแทนส่งข้อมูลใบขนสินค้ามายังเครื่องคอมพิวเตอร์ของกรมศุลกากร
+L111: ระบบคอมพิวเตอร์กรมศุลกากรจะตรวจสอบข้อมูลกับแฟ้มข้อมูลอ้างอิง การอนุมัติ/อนุญาต เกี่ยวข้องและตรวจสอบบัญชีสินค้าสำหรับเรือโดยอัตโนมัติผ่านระบบคอมพิวเตอร์
+L112:   2. การตรวจปล่อยสินค้าจะนำระบบบริหารความเสี่ยง (Risk Management) มาใช้ในการสั่งการตรวจตามเงื่อนไขที่หน่วยงานศุลกากรกำหนดไว้ในระบบ Profile เพื่อจัดกลุ่มใบขนสินค้าเป็น 2 กลุ่ม คือ ให้เปิดตรวจ (Red Line) หรือให้ยกเว้นการตรวจ (Green Line) เมื่อระบบตรวจสอบเสร็จแล้วจะกำหนดเลขที่ใบขนสินค้าและสั่งการตรวจให้อัตโนมัติ พร้อมกับแจ้งตอบกลับไปยัง ผู้ประกอบการทราบผ่านทางอิเล็กทรอนิกส์และแจ้งโรงพักสินค้าหรือท่าเทียบเรือทราบถึงผลการสั่งการตรวจจากศุลกากร
+L113:     1. กรณียกเว้นการตรวจ ผู้ประกอบการสามารถติดต่อโรงพักสินค้าหรือท่าเทียบเรือรับมอบสินค้าได้ทันที
+L114:     2. กรณีให้เปิดตรวจ ผู้ประกอบการสามารถติดต่อโรงพักสินค้าหรือท่าเทียบเรือเพื่อเตรียมของเพื่อตรวจแล้วติดต่อเจ้าหน้าที่ศุลกากรเพื่อตรวจปล่อยสินค้า
+L115:     3. การชำระและวางเงินประกันค่าภาษีอากร ผู้ประกอบการสามารถเลือกชำระและวางเงินประกันที่สำนักงานศุลกากรหรือชำระและวางเงินประกันผ่านธนาคารทางอิเล็กทรอนิกส์ (e-Payment) ได้
+L116:     4. การวางค้ำประกันค่าภาษีอากร ผู้ประกอบการสามารถเลือกวางค้ำประกันที่สำนักงานศุลกากรหรือวางค้ำประกันผ่านธนาคารทางอิเล็กทรอนิกส์ (e-Guarantee) ได้
+L117:     5. การตรวจปล่อยสินค้าขาเข้า เป็นการตรวจ ณ ท่าที่ระบุในบัญชีสินค้าว่ามีชื่อส่งของถึงแต่ผู้ประกอบการสามารถแจ้งความประสงค์ขอขนย้ายสินค้าไปตรวจปล่อยนอกเขตท่าที่นำเข้าได้แต่ต้องแจ้งล่วงหน้าในขั้นตอนจัดเตรียมใบขนสินค้าก่อนส่งมายังระบบคอมพิวเตอร์ของกรมศุลกากร
+L118:   3. ผู้นำของเข้านำใบขนสินค้าพร้อมใบเสร็จเสียภาษีอากร เอกสาร Deliver Order (D/O) ไปดำเนินการตรวจปล่อยสินค้าในท่าเรือและขนถ่ายสินค้านำเข้ามาที่โกดังหรือโรงงาน หรือบริษัท
+L119:   4. ผู้นำเข้าหรือตัวแทนต้องจัดเก็บข้อมูลบัญชีราคาสินค้าในรูปของสื่อคอมพิวเตอร์เป็นเวลาไม่น้อย 6 เดือน เพื่อใช้สำหรับการตรวจสอบใบขนสินค้าหลังการตรวจปล่อย โดยให้สามารถจัดพิมพ์เป็นรายงานเมื่อกรมศุลกากรร้องขอ ดังนี้
+L120:     1. IMPORT/EXPORT INVOICE LIST BY DECLARATION ITEM
+L121:     2. IMPORT/EXPORT INVOICE LIST BY INVOICE ITEM
+L122:     3. IMPORT/EXPORT INVOICE LIST
+L123: IMPORT PROCEDURES
+L124: 
+L125: cite49†Image IMPORTATION
+L126: When a shipment arrives in Thailand, importers are required to file a Goods Declaration and supporting documents for the imports with a Customs officer at the port of entry. Imported cargo are not legally entered Thailand until after the shipment has arrived within the port of entry, delivery of the merchandise has been authorized by Customs, and applicable taxes and duties have been paid. It is the responsibility of an importer to arrange for examination and release of the imported cargo.
+L127: In addition, depending on the nature of the imports, and regardless of value, the importers may need to obtain a permit to facilitate clearance of the imports. Some, not all, of the goods requiring permit, and the relevant permit issuing agencies, should be contacted prior to the importation.
+L128: 
+L129: DOCUMENTS
+L130: 
+L131: In case of red line (high risk shipment), the minimum documents required to be submitted to the Customs for the clearance of imports consists of:
+L132:   1. Import Declaration
+L133:   2. Bill of Lading (B/L) or Air Waybill
+L134:   3. Invoice
+L135:   4. Packing List
+L136:   5. Import License (if applicable)
+L137:   6. Certificates of Origin (if applicable)
+L138:   7. Other relevant documents such as catalogue, product ingredients, etc.
+L139: 
+L140: 
+L141: 
+L142: DECLARATION & CLEARANCE PROCESS
+L143: 
+L144: Under the e-Import system, there is no need for relevant parties to submit paper documents as all data is transmitted electronically from an importer computer system to the e-Customs system .
+L145: Generally, declaration and clearance process include 4 stages:
+L146:   1. Submission of a Declaration: The first stage of import clearance process is to complete an Import Declaration and submit it to the e-Customs system. Prior to the arrival of cargo or upon the arrival of cargo, a shipping agent electronically transmits a ship or aircraft arrival report, and manifest information to the e-Customs system.
+L147: If there is no error, the ship or aircraft arrival report number is automatically generated by the e-Customs system and the response message is transmitted to the shipping agent. When the cargo arrives at the port or place of entry, an importer or a Customs broker submits an Import Declaration to the e-Customs system.?
+L148:   2. Check and Verification of the Declaration: The second stage is the check and verification of the Declaration and all supporting documents (in case of red line) made by an importer. Again, the e-Customs system validates the given data and issues a Declaration and Payment Numbers within a few seconds in conjunction with the e-payment. In addition, the selectivity profile system will validate the transmitted data and specify the Goods Declaration to be the Green Line or Red Line.?
+L149:   3. Payment of Import Duties and Taxes: The third stage is payment of applicable duties and taxes and/or guarantee. There are currently 2 options for the payment of import duties and taxes: payment at the Customs Department, and payment via e-Payment system.?
+L150:   4. Inspection and Release of Cargo: The last stage is to inspect and finally release cargo from Customs custody.
+L151: 4.1?In case of green line, An importer submits the verified Declaration together with the payment receipt at appropriate warehouses for the release of goods. At this stage, cargo data is screened against predetermined selectivity criteria in order to indicate whether the Declaration is under a Red Line (requiring thorough physical inspection ) or a Green Line (permission of release). A Green Line Declaration is cleared within a few minutes without Customs intervention.
+L152: Then, the cargo status is electronically sent to both the Port Authority and the importer/Customs broker.?
+L153: 4.2?In case of red line, the predetermined selectivity criteria indicates that the cargo is subject to be the Red Line, the Port Authority removes the cargo container for physical inspection by Customs before the release of the cargo.
+L154: WARNING:?The information in this website is intended as a general guideline only and subject to changes without prior notice. It does not in any way replace or supersede Customs and related laws or regulations. Before relying on the information on the Website, users should independently verify its accuracy, completeness and relevance for their purposes.
+L155: 
+L156: สำนักงานศุลกากรท่าเรือแหลมฉบัง - Laem Chabang Port Customs Office
+L157: 
+L158: สำนักงานศุลกากรท่าเรือแหลมฉบัง เลขที่ 919 ต.ทุ่งสุขลา อ.ศรีราชา จ.ชลบุรี 20230
+L159: cite50†Image: Phone 038-407777
+L160: 
+L161: cite51†Image: Fax 038-407702
+L162: 
+L163: cite52†Image: Email cite53†[email protected] L164: 
+L165: แผนผังเว็บไซต์
+L166: 
+L167: จำนวนผู้เยี่ยมชมเว็บไซต์
+L168: 
+L169: 2,267
+L170: 
+L171: cite54†Image: IPv6 cite55†Image: W3C L172: 
+L173: cite56†การปฏิเสธความรับผิด cite57†นโยบายเว็บไซต์ cite58†นโยบายการคุ้มครองข้อมูลส่วนบุคคล cite59†นโยบายการรักษาความมั่นคงปลอดภัยของเว็บไซต์ L174: 
+L175: สงวนลิขสิทธิ์ โดยกรมศุลกากร กระทรวงการคลัง พ.ศ. 2568 ตาม พ.ร.บ.ลิขสิทธิ์ พ.ศ. 2537
+

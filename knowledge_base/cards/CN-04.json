@@ -1,0 +1,84 @@
+{
+  "card_id": "CN-04",
+  "source_id": "CN-FX-2024",
+  "title": "首笔货物贸易收汇前的名录登记",
+  "summary_zh": "货物贸易外汇收支企业原则上在首笔收支前通过境内银行办理名录登记；凭交易电子信息办理业务的小微跨境电商有具体例外定义。",
+  "summary_en": "The notice moves trade-FX enterprise registration to domestic banks before the first goods-trade receipt or payment. Its defined small cross-border e-commerce exception is narrower than all small exporters.",
+  "anchor_terms": [
+    "首笔收支前",
+    "20 万美元"
+  ],
+  "required_order_fields": [
+    "business_model",
+    "first_fx_transaction",
+    "directory_registration",
+    "annual_fx_volume",
+    "settlement_bank"
+  ],
+  "tradex_workflow": "Ask whether the firm is ordinary B2B trade or qualifying e-commerce, then create a bank-preparation checklist.",
+  "cash_effect": "Treat bank processing as an availability dependency, not an automatic settlement delay estimate.",
+  "keywords": [
+    "收汇",
+    "外汇",
+    "银行",
+    "名录登记",
+    "跨境电商",
+    "FX",
+    "registration"
+  ],
+  "title_en": "Registration before the first goods-trade receipt",
+  "jurisdiction": "CN",
+  "source_title": "关于进一步优化贸易外汇业务管理的通知",
+  "source_url": "https://www.safe.gov.cn/safe/2024/0407/24204.html",
+  "publisher": "State Administration of Foreign Exchange",
+  "source_type": "regulation",
+  "source_language": "zh",
+  "topic": "export_receipts",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": "2024-04-07",
+  "effective_from": "2024-06-01",
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "CN-FX-2024-B0005",
+      "locator": "/html/body/div[3]/div/div[1]/div[3]/div/div[4]/div/p[4]",
+      "path": "extracted/CN-FX-2024.json"
+    },
+    {
+      "block_id": "CN-FX-2024-B0008",
+      "locator": "/html/body/div[3]/div/div[1]/div[3]/div/div[4]/div/p[7]",
+      "path": "extracted/CN-FX-2024.json"
+    },
+    {
+      "block_id": "CN-FX-2024-B0012",
+      "locator": "/html/body/div[3]/div/div[1]/div[3]/div/div[4]/div/p[11]",
+      "path": "extracted/CN-FX-2024.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "首笔货物贸易收汇前的名录登记\n货物贸易外汇收支企业原则上在首笔收支前通过境内银行办理名录登记；凭交易电子信息办理业务的小微跨境电商有具体例外定义。\nThe notice moves trade-FX enterprise registration to domestic banks before the first goods-trade receipt or payment. Its defined small cross-border e-commerce exception is narrower than all small exporters.\nKeywords: 收汇, 外汇, 银行, 名录登记, 跨境电商, FX, registration"
+}

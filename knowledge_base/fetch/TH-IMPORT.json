@@ -1,0 +1,7 @@
+{
+  "source_id": "TH-IMPORT",
+  "requested_url": "https://lcpcb.customs.go.th/th/import-procedures",
+  "retrieved_at": "2026-10-17T19:23:03.591120+00:00",
+  "status": "fetch_failed",
+  "error": "HTTPError: HTTP Error 403: Forbidden"
+}

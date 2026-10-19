@@ -1,0 +1,94 @@
+{
+  "card_id": "US-01",
+  "source_id": "US-IMPORT",
+  "title": "美国进口前的责任与分类信息",
+  "summary_zh": "CBP的新进口商指南强调进口商对合规承担责任，并按商品、入境口岸和有关机构要求准备。中国卖方应先确认谁担任进口商及报关安排。",
+  "summary_en": "CBP guidance identifies importer responsibilities and product-specific requirements. Confirm the importer and broker arrangements before turning a US order into a shipment or landed-cost plan.",
+  "anchor_terms": [
+    "importer",
+    "requirements"
+  ],
+  "required_order_fields": [
+    "importer_of_record",
+    "product_description",
+    "hts_code",
+    "origin",
+    "entry_date",
+    "broker"
+  ],
+  "tradex_workflow": "Ask for importer, classification and planned entry date; assemble a broker-facing document request.",
+  "cash_effect": "Allocate import costs according to the sale contract, not solely the destination.",
+  "keywords": [
+    "美国",
+    "进口商",
+    "清关",
+    "报关",
+    "importer",
+    "customs"
+  ],
+  "title_en": "US import responsibilities and classification",
+  "jurisdiction": "US",
+  "source_title": "Tips for New Importers and Exporters",
+  "source_url": "https://www.cbp.gov/trade/basic-import-export/importer-exporter-tips",
+  "publisher": "US Customs and Border Protection",
+  "source_type": "official_guidance",
+  "source_language": "en",
+  "topic": "import_procedures",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "US-IMPORT-B0001",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[1]",
+      "path": "extracted/US-IMPORT.json"
+    },
+    {
+      "block_id": "US-IMPORT-B0003",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[2]",
+      "path": "extracted/US-IMPORT.json"
+    },
+    {
+      "block_id": "US-IMPORT-B0004",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/h2[2]",
+      "path": "extracted/US-IMPORT.json"
+    },
+    {
+      "block_id": "US-IMPORT-B0005",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[3]",
+      "path": "extracted/US-IMPORT.json"
+    },
+    {
+      "block_id": "US-IMPORT-B0008",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[5]",
+      "path": "extracted/US-IMPORT.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "美国进口前的责任与分类信息\nCBP的新进口商指南强调进口商对合规承担责任，并按商品、入境口岸和有关机构要求准备。中国卖方应先确认谁担任进口商及报关安排。\nCBP guidance identifies importer responsibilities and product-specific requirements. Confirm the importer and broker arrangements before turning a US order into a shipment or landed-cost plan.\nKeywords: 美国, 进口商, 清关, 报关, importer, customs"
+}

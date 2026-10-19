@@ -1,0 +1,89 @@
+{
+  "card_id": "UK-02",
+  "source_id": "UK-PVA",
+  "title": "英国进口VAT的付款时点",
+  "summary_zh": "符合条件的英国VAT登记企业可通过VAT申报处理进口VAT；安排他人报关时需要按指引发出书面指示。这是进口人的税务安排，不自动适用于中国卖方。",
+  "summary_en": "Postponed VAT accounting allows eligible UK VAT-registered importers to declare and recover import VAT through the same return, subject to recovery rules. A representative needs written instructions before making the declaration.",
+  "anchor_terms": [
+    "registered for VAT in the UK",
+    "written confirmation",
+    "declare and recover"
+  ],
+  "required_order_fields": [
+    "importer",
+    "uk_vat_registration",
+    "customs_representative",
+    "written_instruction",
+    "vat_recoverability"
+  ],
+  "tradex_workflow": "Ask who is the importer and whether postponed accounting is arranged; request the instruction or statement before changing the cash scenario.",
+  "cash_effect": "Separate VAT accounting from upfront cash payment and from customs duty; model only the exporter’s contractual exposure.",
+  "keywords": [
+    "英国",
+    "进口VAT",
+    "垫付税款",
+    "现金流",
+    "PVA",
+    "postponed VAT"
+  ],
+  "title_en": "When UK import VAT becomes payable",
+  "jurisdiction": "GB",
+  "source_title": "Check when you can account for import VAT on your VAT Return",
+  "source_url": "https://www.gov.uk/guidance/check-when-you-can-account-for-import-vat-on-your-vat-return",
+  "publisher": "HM Revenue & Customs",
+  "source_type": "official_guidance",
+  "source_language": "en",
+  "topic": "import_vat",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "UK-PVA-B0013",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[3]",
+      "path": "extracted/UK-PVA.json"
+    },
+    {
+      "block_id": "UK-PVA-B0030",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[9]",
+      "path": "extracted/UK-PVA.json"
+    },
+    {
+      "block_id": "UK-PVA-B0002",
+      "locator": "/html/body/div[2]/main/div[1]/div[2]/p",
+      "path": "extracted/UK-PVA.json"
+    },
+    {
+      "block_id": "UK-PVA-B0010",
+      "locator": "/html/body/div[2]/main/div[2]/div[1]/div[2]/div[2]/div/p[1]",
+      "path": "extracted/UK-PVA.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "英国进口VAT的付款时点\n符合条件的英国VAT登记企业可通过VAT申报处理进口VAT；安排他人报关时需要按指引发出书面指示。这是进口人的税务安排，不自动适用于中国卖方。\nPostponed VAT accounting allows eligible UK VAT-registered importers to declare and recover import VAT through the same return, subject to recovery rules. A representative needs written instructions before making the declaration.\nKeywords: 英国, 进口VAT, 垫付税款, 现金流, PVA, postponed VAT"
+}

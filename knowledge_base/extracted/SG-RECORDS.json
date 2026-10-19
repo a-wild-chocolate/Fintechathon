@@ -1,0 +1,198 @@
+{
+  "source_id": "SG-RECORDS",
+  "method": "html_dom",
+  "blocks": [
+    {
+      "text": "Home",
+      "section": "Document body",
+      "locator": "/html/body/main/div[1]/div/div/div/div[1]/ol/li[1]",
+      "block_id": "SG-RECORDS-B0001"
+    },
+    {
+      "text": "Doing Business",
+      "section": "Document body",
+      "locator": "/html/body/main/div[1]/div/div/div/div[1]/ol/li[2]",
+      "block_id": "SG-RECORDS-B0002"
+    },
+    {
+      "text": "Import Operations",
+      "section": "Document body",
+      "locator": "/html/body/main/div[1]/div/div/div/div[1]/ol/li[3]",
+      "block_id": "SG-RECORDS-B0003"
+    },
+    {
+      "text": "Import Procedures",
+      "section": "Document body",
+      "locator": "/html/body/main/div[1]/div/div/div/div[1]/ol/li[4]",
+      "block_id": "SG-RECORDS-B0004"
+    },
+    {
+      "text": "Retaining Your Trade Documents",
+      "section": "Document body",
+      "locator": "/html/body/main/div[1]/div/div/div/div[1]/ol/li[5]",
+      "block_id": "SG-RECORDS-B0005"
+    },
+    {
+      "text": "Retaining Your Trade Documents",
+      "section": "Retaining Your Trade Documents",
+      "locator": "/html/body/main/div[1]/div/div/div/div[2]/h1",
+      "block_id": "SG-RECORDS-B0006"
+    },
+    {
+      "text": "Learn about the requirement to retain trade documents for at least 5 years, including what to keep and when to submit them to Singapore Customs.",
+      "section": "Retaining Your Trade Documents",
+      "locator": "/html/body/main/div[1]/div/div/div/div[2]/p",
+      "block_id": "SG-RECORDS-B0007"
+    },
+    {
+      "text": "Keeping proper records is a legal requirement. Both you and your Declaring Agent must keep all documents related to the purchase, import, sale or export of your goods for at least 5 years from the date your permit is approved.",
+      "section": "Retaining Your Trade Documents",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[1]",
+      "block_id": "SG-RECORDS-B0008"
+    },
+    {
+      "text": "What Documents Must You Keep?",
+      "section": "What Documents Must You Keep?",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[1]",
+      "block_id": "SG-RECORDS-B0009"
+    },
+    {
+      "text": "These records help prove your transactions and support Customs checks. They include:",
+      "section": "What Documents Must You Keep?",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[2]",
+      "block_id": "SG-RECORDS-B0010"
+    },
+    {
+      "text": "Commercial invoices",
+      "section": "What Documents Must You Keep?",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul/li[1]",
+      "block_id": "SG-RECORDS-B0011"
+    },
+    {
+      "text": "Bills of lading or air waybills",
+      "section": "What Documents Must You Keep?",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul/li[2]",
+      "block_id": "SG-RECORDS-B0012"
+    },
+    {
+      "text": "Packing lists",
+      "section": "What Documents Must You Keep?",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul/li[3]",
+      "block_id": "SG-RECORDS-B0013"
+    },
+    {
+      "text": "Certificates (origin, analysis, insurance)",
+      "section": "What Documents Must You Keep?",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul/li[4]",
+      "block_id": "SG-RECORDS-B0014"
+    },
+    {
+      "text": "Books of accounts",
+      "section": "What Documents Must You Keep?",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul/li[5]",
+      "block_id": "SG-RECORDS-B0015"
+    },
+    {
+      "text": "Any documents showing your terms of trade",
+      "section": "What Documents Must You Keep?",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul/li[6]",
+      "block_id": "SG-RECORDS-B0016"
+    },
+    {
+      "text": "Any other documents related to the movement or sale of your goods",
+      "section": "What Documents Must You Keep?",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul/li[7]",
+      "block_id": "SG-RECORDS-B0017"
+    },
+    {
+      "text": "In other words: If it helps explain what you imported or exported, keep it.",
+      "section": "What Documents Must You Keep?",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[3]",
+      "block_id": "SG-RECORDS-B0018"
+    },
+    {
+      "text": "When Do You Need to Submit These Documents?",
+      "section": "When Do You Need to Submit These Documents?",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[2]",
+      "block_id": "SG-RECORDS-B0019"
+    },
+    {
+      "text": "Singapore Customs may request them at anytime. Certain permit conditions require you to submit supporting documents within a set timeframe. Common conditions include:",
+      "section": "When Do You Need to Submit These Documents?",
+      "locator": "/html/body/main/div[2]/div[1]/div/div/p",
+      "block_id": "SG-RECORDS-B0020"
+    },
+    {
+      "text": "A5 Submit the permit to the Permits Compliance Unit by the date stated in their request.",
+      "section": "When Do You Need to Submit These Documents?",
+      "locator": "/html/body/main/div[2]/div[1]/div/div/div/table/tbody/tr[1]",
+      "block_id": "SG-RECORDS-B0021"
+    },
+    {
+      "text": "Z02 Submit the permit with invoices and transport documents within 48 hours of approval through Customs eServices ↗ (opens in new tab) (Return of Supporting Documents for Selected Permits) or via go.gov.sg/permit-supp-doc ↗ (opens in new tab) .",
+      "section": "When Do You Need to Submit These Documents?",
+      "locator": "/html/body/main/div[2]/div[1]/div/div/div/table/tbody/tr[2]",
+      "block_id": "SG-RECORDS-B0022"
+    },
+    {
+      "text": "Z18 Same as Z02, but with the added reminder to meet any Competent Authority requirements.",
+      "section": "When Do You Need to Submit These Documents?",
+      "locator": "/html/body/main/div[2]/div[1]/div/div/div/table/tbody/tr[3]",
+      "block_id": "SG-RECORDS-B0023"
+    },
+    {
+      "text": "Digital Copies are Allowed",
+      "section": "Digital Copies are Allowed",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[3]",
+      "block_id": "SG-RECORDS-B0024"
+    },
+    {
+      "text": "You can store scanned images instead of physical copies, as long as they meet the guidelines ↗ (opens in new tab) for storing digital trade documents.",
+      "section": "Digital Copies are Allowed",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[4]",
+      "block_id": "SG-RECORDS-B0025"
+    },
+    {
+      "text": "Keeping your documents organised and accessible ensures smoother audits, faster responses to Customs, and peace of mind for your business operations.",
+      "section": "Digital Copies are Allowed",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[5]",
+      "block_id": "SG-RECORDS-B0026"
+    },
+    {
+      "text": "Examples of Retaining Trade Documents",
+      "section": "Examples of Retaining Trade Documents",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[4]",
+      "block_id": "SG-RECORDS-B0027"
+    },
+    {
+      "text": "Example 1",
+      "section": "Example 1",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[5]",
+      "block_id": "SG-RECORDS-B0028"
+    },
+    {
+      "text": "A Singapore company imports electronic components from Malaysia worth S$5,000.",
+      "section": "Example 1",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[6]",
+      "block_id": "SG-RECORDS-B0029"
+    },
+    {
+      "text": "To ensure compliance, the company keeps all key documents - the customs permit, commercial invoice, packing list, and bill of lading. These records help prove what was shipped and show that GST and duty were correctly declared.",
+      "section": "Example 1",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[7]",
+      "block_id": "SG-RECORDS-B0030"
+    },
+    {
+      "text": "Example 2",
+      "section": "Example 2",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[6]",
+      "block_id": "SG-RECORDS-B0031"
+    },
+    {
+      "text": "A Singapore company exports furniture to Indonesia, valued at S$2,000. The company keeps the customs permit, commercial invoice, and air waybill. These documents confirmed that the goods have been properly declared and cleared for export.",
+      "section": "Example 2",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[8]",
+      "block_id": "SG-RECORDS-B0032"
+    }
+  ]
+}

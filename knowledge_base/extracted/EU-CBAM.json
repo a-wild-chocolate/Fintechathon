@@ -1,0 +1,288 @@
+{
+  "source_id": "EU-CBAM",
+  "method": "html_dom",
+  "blocks": [
+    {
+      "text": "This section contains information on the CBAM definitive regime applicable from 1 January 2026, including its functioning, governance, and main obligations for economic operators.",
+      "section": "Document body",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/p",
+      "block_id": "EU-CBAM-B0001"
+    },
+    {
+      "text": "Latest developments",
+      "section": "Latest developments",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[1]/div/div[1]/h2",
+      "block_id": "EU-CBAM-B0002"
+    },
+    {
+      "text": "Check our previous news about CBAM on the communication and news page",
+      "section": "Latest developments",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[1]/div/div[2]/p[1]",
+      "block_id": "EU-CBAM-B0003"
+    },
+    {
+      "text": "Definitive regime (from 2026)",
+      "section": "Definitive regime (from 2026)",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[1]/div/div[2]/h2",
+      "block_id": "EU-CBAM-B0004"
+    },
+    {
+      "text": "The CBAM definitive regime applies from 1 January 2026. Importers of CBAM goods or their indirect customs representatives are encouraged to follow the instructions available in the Authorisation Management Module section and submit their applications for the status of authorised CBAM declarant.",
+      "section": "Definitive regime (from 2026)",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[1]/div/div[2]/p[2]",
+      "block_id": "EU-CBAM-B0005"
+    },
+    {
+      "text": "EU importers (or their indirect customs representatives) who import more than the single mass-based threshold of 50 tonnes of CBAM goods into the EU are required to apply for the status of authorised CBAM declarants. Authorised CBAM declarants buy CBAM certificates from the national competent authority in their EU country of establishment. The price of the certificate is calculated based on the auction price of EU Emissions Trading System (ETS) allowances expressed in €/tonne of CO2 emitted, as a quarterly average in 2026 and as a weekly average from 2027 onwards.",
+      "section": "Definitive regime (from 2026)",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[2]/ul/li[1]",
+      "block_id": "EU-CBAM-B0006"
+    },
+    {
+      "text": "EU importers declare the emissions embedded in their imports and surrender the corresponding number of certificates each year.",
+      "section": "Definitive regime (from 2026)",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[2]/ul/li[2]",
+      "block_id": "EU-CBAM-B0007"
+    },
+    {
+      "text": "If importers can prove that a carbon price has already been paid during the production of the imported goods, the corresponding amount can be deducted.",
+      "section": "Definitive regime (from 2026)",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[2]/ul/li[3]",
+      "block_id": "EU-CBAM-B0008"
+    },
+    {
+      "text": "Why CBAM?",
+      "section": "Why CBAM?",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[3]/div/div/h2",
+      "block_id": "EU-CBAM-B0009"
+    },
+    {
+      "text": "Climate change is a global problem that needs global solutions. With the EU’s rising climate ambition, and as long as less stringent climate policies prevail in non-EU countries, there is a risk of ‘carbon leakage'.",
+      "section": "Why CBAM?",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[4]/div/article/div/div[1]/div/div/div/div/p[1]",
+      "block_id": "EU-CBAM-B0010"
+    },
+    {
+      "text": "Carbon leakage occurs when companies based in the EU move carbon-intensive production to countries where there are less stringent climate policies in place, or when EU products get replaced by more carbon-intensive imports.",
+      "section": "Why CBAM?",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[4]/div/article/div/div[1]/div/div/div/div/p[2]",
+      "block_id": "EU-CBAM-B0011"
+    },
+    {
+      "text": "CBAM ensures that a carbon price is paid for the embedded emissions generated during the production of certain goods imported into the EU. This ensures that:",
+      "section": "Why CBAM?",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[5]/div/div/p[1]",
+      "block_id": "EU-CBAM-B0012"
+    },
+    {
+      "text": "the carbon price of imports is equivalent to the carbon price of domestic production;",
+      "section": "Why CBAM?",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[5]/div/div/ul/li[1]",
+      "block_id": "EU-CBAM-B0013"
+    },
+    {
+      "text": "the EU's climate objectives are not undermined.",
+      "section": "Why CBAM?",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[5]/div/div/ul/li[2]",
+      "block_id": "EU-CBAM-B0014"
+    },
+    {
+      "text": "CBAM is designed to be compatible with WTO rules.",
+      "section": "Why CBAM?",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[5]/div/div/p[2]",
+      "block_id": "EU-CBAM-B0015"
+    },
+    {
+      "text": "National Competent Authorities",
+      "section": "National Competent Authorities",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[5]/div/div/h2[1]",
+      "block_id": "EU-CBAM-B0016"
+    },
+    {
+      "text": "Access to the CBAM Registry can be requested through the National Competent Authority (NCA) of the EU country in which the importer is established.",
+      "section": "National Competent Authorities",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[5]/div/div/p[3]",
+      "block_id": "EU-CBAM-B0017"
+    },
+    {
+      "text": "Sectoral information",
+      "section": "Sectoral information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[5]/div/div/h2[2]",
+      "block_id": "EU-CBAM-B0018"
+    },
+    {
+      "text": "CBAM applies to imports of selected goods in the following sectors:",
+      "section": "Sectoral information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[5]/div/div/p[4]",
+      "block_id": "EU-CBAM-B0019"
+    },
+    {
+      "text": "Cement",
+      "section": "Sectoral information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[6]/ul/li[1]",
+      "block_id": "EU-CBAM-B0020"
+    },
+    {
+      "text": "Iron and steel",
+      "section": "Sectoral information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[6]/ul/li[2]",
+      "block_id": "EU-CBAM-B0021"
+    },
+    {
+      "text": "Aluminium",
+      "section": "Sectoral information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[6]/ul/li[3]",
+      "block_id": "EU-CBAM-B0022"
+    },
+    {
+      "text": "Fertilisers",
+      "section": "Sectoral information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[6]/ul/li[4]",
+      "block_id": "EU-CBAM-B0023"
+    },
+    {
+      "text": "Electricity",
+      "section": "Sectoral information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[6]/ul/li[5]",
+      "block_id": "EU-CBAM-B0024"
+    },
+    {
+      "text": "Hydrogen",
+      "section": "Sectoral information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[6]/ul/li[6]",
+      "block_id": "EU-CBAM-B0025"
+    },
+    {
+      "text": "Further information on sector-specific requirements is available on our dedicated webpage.",
+      "section": "Sectoral information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[7]/div/div/p[1]",
+      "block_id": "EU-CBAM-B0026"
+    },
+    {
+      "text": "Explore CBAM Sectors",
+      "section": "Sectoral information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[7]/div/div/p[2]",
+      "block_id": "EU-CBAM-B0027"
+    },
+    {
+      "text": "Support for developing countries",
+      "section": "Support for developing countries",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[7]/div/div/h2",
+      "block_id": "EU-CBAM-B0028"
+    },
+    {
+      "text": "The EU is committed to supporting developing countries and Least Developed Countries (LDCs) in greening their industries, transitioning to renewable energy sources and implementing CBAM. The EU is also committed to helping countries interested in introducing or enhancing their carbon pricing systems.",
+      "section": "Support for developing countries",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[7]/div/div/p[3]",
+      "block_id": "EU-CBAM-B0029"
+    },
+    {
+      "text": "The following document provides an overview of the guidance and technical support offered by the EU. It includes a list of programmes that support the green transition in developing countries and LDCs.",
+      "section": "Support for developing countries",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[7]/div/div/p[4]",
+      "block_id": "EU-CBAM-B0030"
+    },
+    {
+      "text": "More information",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[1]/h2",
+      "block_id": "EU-CBAM-B0031"
+    },
+    {
+      "text": "CBAM complements the EU Emissions Trading System (EU ETS) . It helps prevent carbon leakage by ensuring that imported goods reflect the carbon emissions generated during their production.",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[1]/div/div/p[1]",
+      "block_id": "EU-CBAM-B0032"
+    },
+    {
+      "text": "In doing so, it supports the EU’s climate objectives , encourages cleaner industrial production in non-EU countries, and promotes global decarbonisation .",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[1]/div/div/p[2]",
+      "block_id": "EU-CBAM-B0033"
+    },
+    {
+      "text": "CBAM covers",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[2]/div/div/p[1]",
+      "block_id": "EU-CBAM-B0034"
+    },
+    {
+      "text": "iron and steel",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[2]/div/div/ul/li[1]",
+      "block_id": "EU-CBAM-B0035"
+    },
+    {
+      "text": "cement",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[2]/div/div/ul/li[2]",
+      "block_id": "EU-CBAM-B0036"
+    },
+    {
+      "text": "aluminium",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[2]/div/div/ul/li[3]",
+      "block_id": "EU-CBAM-B0037"
+    },
+    {
+      "text": "fertilizers",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[2]/div/div/ul/li[4]",
+      "block_id": "EU-CBAM-B0038"
+    },
+    {
+      "text": "electricity",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[2]/div/div/ul/li[5]",
+      "block_id": "EU-CBAM-B0039"
+    },
+    {
+      "text": "hydrogen",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[2]/div/div/ul/li[6]",
+      "block_id": "EU-CBAM-B0040"
+    },
+    {
+      "text": "The information on each sector is on the CBAM sectors page .",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[2]/div/div/p[2]",
+      "block_id": "EU-CBAM-B0041"
+    },
+    {
+      "text": "The corrected default values are in the Default values definitive period (Excel format) .",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[3]/div/div/p[1]",
+      "block_id": "EU-CBAM-B0042"
+    },
+    {
+      "text": "You can find more information on the CBAM Legislation and Guidance page.",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[3]/div/div/p[2]",
+      "block_id": "EU-CBAM-B0043"
+    },
+    {
+      "text": "The CBAM declarant portal is established via UUM&DS portal.",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[4]/div/div/p[1]",
+      "block_id": "EU-CBAM-B0044"
+    },
+    {
+      "text": "The manual for the declarant portal is CBAM UMN UI manual .",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[4]/div/div/p[2]",
+      "block_id": "EU-CBAM-B0045"
+    },
+    {
+      "text": "For more information, visit the CBAM Registry and reporting page.",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[4]/div/div/p[3]",
+      "block_id": "EU-CBAM-B0046"
+    },
+    {
+      "text": "The prices are published each calendar quarter on the Price of CBAM certificates page.",
+      "section": "More information",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[3]/div/div[2]/div[9]/div[2]/details[5]/div/div/p",
+      "block_id": "EU-CBAM-B0047"
+    }
+  ]
+}

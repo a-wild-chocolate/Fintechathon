@@ -1,0 +1,13 @@
+{
+  "source_id": "EU-CUSTOMS",
+  "requested_url": "https://europa.eu/youreurope/business/finance-and-tax/customs-and-excise-duties/customs-duties-and-procedures-imports/index_en.htm",
+  "retrieved_at": "2026-10-17T19:23:00.515435+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://europa.eu/youreurope/business/finance-and-tax/customs-and-excise-duties/customs-duties-and-procedures-imports/index_en.htm",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 167868,
+  "raw_path": "raw/EU-CUSTOMS.html",
+  "last_modified": "Wed, 14 Oct 2026 19:21:46 GMT",
+  "etag": "\"28fbc-65dd1d78aa680\""
+}

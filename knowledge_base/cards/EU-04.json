@@ -1,0 +1,76 @@
+{
+  "card_id": "EU-04",
+  "source_id": "EU-GPSR-FACTSHEET",
+  "title": "非食品消费品安全与欧盟责任人",
+  "summary_zh": "欧委会GPSR说明强调非食品消费品安全及境外产品的欧盟责任人安排，适用日期为2024年12月13日，仍需结合具体产品规则。",
+  "summary_en": "The Commission factsheet describes the GPSR framework for non-food consumer products, including an EU responsible person for products from outside the EU and application from 13 December 2024.",
+  "anchor_terms": [
+    "responsible person",
+    "13 December 2024"
+  ],
+  "required_order_fields": [
+    "consumer_product",
+    "product_category",
+    "eu_responsible_person",
+    "traceability_records"
+  ],
+  "tradex_workflow": "Request responsible-person and traceability details for covered consumer goods before shipment readiness.",
+  "cash_effect": "Assign preparation work and dates; do not infer that a document guarantees market compliance.",
+  "keywords": [
+    "GPSR",
+    "欧盟责任人",
+    "产品安全",
+    "consumer product",
+    "traceability"
+  ],
+  "title_en": "Consumer product safety and EU responsible persons",
+  "jurisdiction": "EU",
+  "source_title": "The new General Product Safety Regulation: Factsheet",
+  "source_url": "https://commission.europa.eu/document/download/a281b150-19fd-44f9-bef8-c6018f9c4792_en?filename=new_general_product_safety_regulation_-_factsheet.pdf",
+  "publisher": "European Commission / DG Justice and Consumers",
+  "source_type": "official_explanation",
+  "source_language": "en",
+  "topic": "product_compliance",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": "2023-07-01",
+  "effective_from": "2024-12-13",
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "EU-GPSR-FACTSHEET-B0002",
+      "locator": "page=2",
+      "path": "extracted/EU-GPSR-FACTSHEET.json"
+    },
+    {
+      "block_id": "EU-GPSR-FACTSHEET-B0001",
+      "locator": "page=1",
+      "path": "extracted/EU-GPSR-FACTSHEET.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "非食品消费品安全与欧盟责任人\n欧委会GPSR说明强调非食品消费品安全及境外产品的欧盟责任人安排，适用日期为2024年12月13日，仍需结合具体产品规则。\nThe Commission factsheet describes the GPSR framework for non-food consumer products, including an EU responsible person for products from outside the EU and application from 13 December 2024.\nKeywords: GPSR, 欧盟责任人, 产品安全, consumer product, traceability"
+}

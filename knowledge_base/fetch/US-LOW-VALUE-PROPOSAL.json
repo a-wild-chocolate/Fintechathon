@@ -1,0 +1,13 @@
+{
+  "source_id": "US-LOW-VALUE-PROPOSAL",
+  "requested_url": "https://www.govinfo.gov/content/pkg/FR-2026-10-08/html/2026-20650.htm",
+  "retrieved_at": "2026-10-17T19:22:59.997217+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.govinfo.gov/content/pkg/FR-2026-10-08/html/2026-20650.htm",
+  "content_type": "text/html",
+  "bytes": 187870,
+  "raw_path": "raw/US-LOW-VALUE-PROPOSAL.html",
+  "last_modified": "Thu, 08 Oct 2026 16:14:26 GMT",
+  "etag": null
+}

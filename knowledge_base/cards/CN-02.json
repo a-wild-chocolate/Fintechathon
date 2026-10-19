@@ -1,0 +1,86 @@
+{
+  "card_id": "CN-02",
+  "source_id": "CN-TAX-2026",
+  "title": "退税备案单证与留存期限",
+  "summary_zh": "第四十五至四十七条覆盖备案单证：申报后十五日内整理，列明存放方式；成交方式没有对应单证的情形有例外，可按规定以相似资料替代，通常保存十年。",
+  "summary_en": "Articles 45–47 specify supporting trade records, a 15-day post-filing organization requirement and ten-year retention unless otherwise provided. Transaction-specific exceptions and equivalent evidence must remain attached to the requirement.",
+  "anchor_terms": [
+    "第四十五条",
+    "第四十六条",
+    "保存期为十年"
+  ],
+  "required_order_fields": [
+    "refund_filing_date",
+    "transaction_terms",
+    "purchase_contract",
+    "transport_documents",
+    "agency_documents"
+  ],
+  "tradex_workflow": "After a confirmed filing event, propose a document-completion follow-up; show missing contracts or transport evidence and applicable exceptions.",
+  "cash_effect": "Missing evidence can delay or jeopardize a refund; do not invent a refund payment date.",
+  "keywords": [
+    "退税",
+    "备案单证",
+    "合同",
+    "运输单据",
+    "十五日",
+    "十年",
+    "retention",
+    "documents"
+  ],
+  "title_en": "Export refund records and retention periods",
+  "jurisdiction": "CN",
+  "source_title": "出口业务增值税和消费税退（免）税管理办法",
+  "source_url": "https://shanghai.chinatax.gov.cn/zzzb/zcwj/202602/t479288.html",
+  "publisher": "State Taxation Administration (Shanghai official republication)",
+  "source_type": "regulation",
+  "source_language": "zh",
+  "topic": "export_refund",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": "2026-01-30",
+  "effective_from": "2026-01-01",
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "CN-TAX-2026-B0169",
+      "locator": "/html/body/div/div/div[6]/div/div[2]/div[1]/div/div[5]/div[2]/div/div/div/div/p[170]",
+      "path": "extracted/CN-TAX-2026.json"
+    },
+    {
+      "block_id": "CN-TAX-2026-B0174",
+      "locator": "/html/body/div/div/div[6]/div/div[2]/div[1]/div/div[5]/div[2]/div/div/div/div/p[175]",
+      "path": "extracted/CN-TAX-2026.json"
+    },
+    {
+      "block_id": "CN-TAX-2026-B0173",
+      "locator": "/html/body/div/div/div[6]/div/div[2]/div[1]/div/div[5]/div[2]/div/div/div/div/p[174]",
+      "path": "extracted/CN-TAX-2026.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "退税备案单证与留存期限\n第四十五至四十七条覆盖备案单证：申报后十五日内整理，列明存放方式；成交方式没有对应单证的情形有例外，可按规定以相似资料替代，通常保存十年。\nArticles 45–47 specify supporting trade records, a 15-day post-filing organization requirement and ten-year retention unless otherwise provided. Transaction-specific exceptions and equivalent evidence must remain attached to the requirement.\nKeywords: 退税, 备案单证, 合同, 运输单据, 十五日, 十年, retention, documents"
+}

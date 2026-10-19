@@ -1,0 +1,79 @@
+{
+  "card_id": "EU-02",
+  "source_id": "EU-TARIC",
+  "title": "欧盟关税与成员国VAT分开查询",
+  "summary_zh": "TARIC整合关税、优惠与贸易救济等措施，并按日向成员国传输数据；它不包含成员国VAT或消费税税率。",
+  "summary_en": "TARIC combines EU tariff and trade measures, including trade defence instruments. National VAT and excise rates are outside TARIC and require separate country-level evidence.",
+  "anchor_terms": [
+    "TARIC does not contain",
+    "Antidumping"
+  ],
+  "required_order_fields": [
+    "cn_taric_code",
+    "origin",
+    "entry_date",
+    "member_state",
+    "customs_value",
+    "trade_term"
+  ],
+  "tradex_workflow": "Retrieve tariff measures and the member-state VAT rule separately; attach both sources to a landed-cost scenario.",
+  "cash_effect": "Keep customs duty and VAT as separate amounts and timing assumptions.",
+  "keywords": [
+    "欧盟",
+    "TARIC",
+    "关税",
+    "反倾销",
+    "VAT",
+    "进口增值税"
+  ],
+  "title_en": "EU customs duties and member-state VAT",
+  "jurisdiction": "EU",
+  "source_title": "EU Customs Tariff (TARIC)",
+  "source_url": "https://taxation-customs.ec.europa.eu/online-services/online-services-and-databases-customs/eu-customs-tariff-taric_en",
+  "publisher": "European Commission / DG TAXUD",
+  "source_type": "live_lookup_guide",
+  "source_language": "en",
+  "topic": "tariff_lookup",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2026-10-19",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "EU-TARIC-B0019",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/p[8]",
+      "path": "extracted/EU-TARIC.json"
+    },
+    {
+      "block_id": "EU-TARIC-B0011",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/ul[1]/li[3]",
+      "path": "extracted/EU-TARIC.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "欧盟关税与成员国VAT分开查询\nTARIC整合关税、优惠与贸易救济等措施，并按日向成员国传输数据；它不包含成员国VAT或消费税税率。\nTARIC combines EU tariff and trade measures, including trade defence instruments. National VAT and excise rates are outside TARIC and require separate country-level evidence.\nKeywords: 欧盟, TARIC, 关税, 反倾销, VAT, 进口增值税"
+}

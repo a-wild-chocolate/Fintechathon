@@ -1,0 +1,7 @@
+{
+  "source_id": "CN-GZ-INSURANCE",
+  "requested_url": "https://sw.gz.gov.cn/gkmlpt/content/10/10878/post_10878834.html",
+  "retrieved_at": "2026-10-17T19:24:26.465377+00:00",
+  "status": "fetch_failed",
+  "error": "HTTPError: HTTP Error 404: Not Found"
+}

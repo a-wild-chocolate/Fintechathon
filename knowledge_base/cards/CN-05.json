@@ -1,0 +1,78 @@
+{
+  "card_id": "CN-05",
+  "source_id": "CN-FX-2024",
+  "title": "特殊退汇需要哪些条件",
+  "summary_zh": "通知对A类企业、单笔金额以及超过180天或无法原路退回的货物贸易退汇设置了银行办理条件，仍需证明真实合理并核对其他规定。",
+  "summary_en": "The special-refund provision specifies enterprise category, transaction amount, elapsed time and non-original-route cases. Bank review of the transaction and other applicable provisions remain part of the process.",
+  "anchor_terms": [
+    "三、放宽",
+    "A 类企业单笔"
+  ],
+  "required_order_fields": [
+    "enterprise_fx_category",
+    "refund_amount",
+    "original_payment_date",
+    "refund_reason",
+    "refund_destination"
+  ],
+  "tradex_workflow": "Collect the original receipt, contract and refund explanation; route changed beneficiary details to explicit review.",
+  "cash_effect": "A proposed refund is a conditional outflow until accepted and scheduled.",
+  "keywords": [
+    "退款",
+    "退汇",
+    "超过180天",
+    "原路退回",
+    "refund",
+    "beneficiary"
+  ],
+  "title_en": "Conditions for exceptional payment refunds",
+  "jurisdiction": "CN",
+  "source_title": "关于进一步优化贸易外汇业务管理的通知",
+  "source_url": "https://www.safe.gov.cn/safe/2024/0407/24204.html",
+  "publisher": "State Administration of Foreign Exchange",
+  "source_type": "regulation",
+  "source_language": "zh",
+  "topic": "export_receipts",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": "2024-04-07",
+  "effective_from": "2024-06-01",
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "CN-FX-2024-B0011",
+      "locator": "/html/body/div[3]/div/div[1]/div[3]/div/div[4]/div/p[10]",
+      "path": "extracted/CN-FX-2024.json"
+    },
+    {
+      "block_id": "CN-FX-2024-B0012",
+      "locator": "/html/body/div[3]/div/div[1]/div[3]/div/div[4]/div/p[11]",
+      "path": "extracted/CN-FX-2024.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "特殊退汇需要哪些条件\n通知对A类企业、单笔金额以及超过180天或无法原路退回的货物贸易退汇设置了银行办理条件，仍需证明真实合理并核对其他规定。\nThe special-refund provision specifies enterprise category, transaction amount, elapsed time and non-original-route cases. Bank review of the transaction and other applicable provisions remain part of the process.\nKeywords: 退款, 退汇, 超过180天, 原路退回, refund, beneficiary"
+}

@@ -1,0 +1,7 @@
+{
+  "source_id": "RCEP-PORTAL",
+  "requested_url": "https://fta.mofcom.gov.cn/channel/rcep.shtml",
+  "retrieved_at": "2026-10-17T19:23:03.875577+00:00",
+  "status": "fetch_failed",
+  "error": "URLError: <urlopen error [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake failure (_ssl.c:1081)>"
+}

@@ -1,0 +1,13 @@
+{
+  "source_id": "EU-GPSR",
+  "requested_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=LEGISSUM%3A4670517",
+  "retrieved_at": "2026-10-17T19:23:00.774406+00:00",
+  "status": "downloaded",
+  "http_status": 202,
+  "final_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=LEGISSUM%3A4670517",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 0,
+  "raw_path": "raw/EU-GPSR.html",
+  "last_modified": null,
+  "etag": null
+}

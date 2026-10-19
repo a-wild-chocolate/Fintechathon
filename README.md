@@ -24,14 +24,20 @@ Use `PORT=5174 npm run dev` to change the frontend port. Stop the development se
 
 ## Connect the knowledge service
 
-The knowledge service is a separate Python application, `tradex-rag`, in the TradeX workspace. This frontend repository does not include its database, model weights or uploaded files.
-
-Start the existing service in another terminal:
+The repository includes the Python backend in `tradex-rag/` and the public source archive in `knowledge_base/`. Install and seed the service once (Python 3.12+):
 
 ```bash
-cd ../tradex-rag
+cd tradex-rag
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -e '.[test]'
+cp .env.example .env
+.venv/bin/python scripts/download_model.py
+.venv/bin/python -m tradex_rag.cli seed
+.venv/bin/python -m tradex_rag.cli drain
 ./start.sh
 ```
+
+In another terminal, run `npm run dev` from the repository root. The initial model download requires network access; local retrieval then runs without API keys. Stop the backend before running storage-opening CLI commands because embedded Qdrant has one owning process. See the [backend README](tradex-rag/README.md) and [knowledge archive README](knowledge_base/README.md).
 
 The frontend server forwards `/api/*` to **http://127.0.0.1:8765**. The `/knowledge` page opens the bilingual library workbench through the same proxy. Set `TRADEX_RAG_PORT` when starting the frontend if the backend uses a different port:
 
@@ -92,6 +98,8 @@ The order workflow also contains a local field-confirmation demo. Select Harbour
 ## Repository layout
 
 ```text
+tradex-rag/                   Python API, MCP bridge, retrieval service and tests
+knowledge_base/               Public sources and 28 curated bilingual policy cards
 index.html                    Application shell
 src/
   app.js                      Pages, navigation and order workflow
@@ -117,7 +125,7 @@ docs/
   VERIFICATION.md             Verification record and remaining setup
 ```
 
-`dist/`, `output/`, `previews/`, logs, process IDs, dependency folders and local credentials are excluded from Git. The GitHub-ready ZIP contains only source, tests, synthetic examples and documentation.
+`dist/`, `output/`, `previews/`, logs, process IDs, dependency folders, backend `var/` data, downloaded `.models/` and local credentials are excluded from Git. The repository includes source code, tests, synthetic examples, English setup documentation and public knowledge sources. Runtime databases and private uploads are created locally.
 
 ## State and deployment
 
@@ -125,4 +133,4 @@ Finance-demo state is stored in this browser under `tradex-workspace-v1`. Source
 
 `dist/` contains static frontend assets. **GitHub Pages alone does not run the API proxy or Python backend.** For the connected application, run the Node server and RAG service together, or configure your hosting platform to forward `/api/*` and `/knowledge` to the backend. The current server binds to localhost; shared deployment needs an authenticated application boundary.
 
-When creating a repository, select this `tradex-frontend` folder or use the clean ZIP. The surrounding desktop and parent folders are not part of this project.
+This directory is the repository root. Both services and the knowledge archive use paths relative to it; the surrounding desktop folders are not required.

@@ -1,0 +1,13 @@
+{
+  "source_id": "JP-DOCUMENTS",
+  "requested_url": "https://www.customs.go.jp/english/c-answer_e/imtsukan/1107_e.htm",
+  "retrieved_at": "2026-10-17T19:23:02.815171+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.customs.go.jp/english/c-answer_e/imtsukan/1107_e.htm",
+  "content_type": "text/html",
+  "bytes": 14480,
+  "raw_path": "raw/JP-DOCUMENTS.html",
+  "last_modified": "Thu, 21 May 2026 11:27:32 GMT",
+  "etag": null
+}

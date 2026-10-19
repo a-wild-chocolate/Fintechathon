@@ -1,0 +1,27 @@
+{
+  "collected_on": "2026-10-18",
+  "source_records": 34,
+  "nonempty_raw_downloads": 27,
+  "sources_with_extracted_text": 30,
+  "curated_retrieval_cards": 28,
+  "candidate_source_chunks": 446,
+  "web_excerpt_sources": 4,
+  "reference_link_only": [
+    "US-HTS",
+    "EU-GPSR",
+    "AU-IMPORT",
+    "RCEP-PORTAL"
+  ],
+  "default_excluded": [
+    "US-HTS",
+    "US-LOW-VALUE-PROPOSAL",
+    "EU-GPSR",
+    "AU-IMPORT",
+    "VN-IMPORT",
+    "RCEP-PORTAL",
+    "CN-SZ-INSURANCE"
+  ],
+  "paid_model_calls": 0,
+  "embeddings_generated": 0,
+  "qdrant_uploaded": false
+}

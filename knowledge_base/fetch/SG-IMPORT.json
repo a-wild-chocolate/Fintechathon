@@ -1,0 +1,13 @@
+{
+  "source_id": "SG-IMPORT",
+  "requested_url": "https://www.customs.gov.sg/doing-business/import-operations/import-procedures/import-procedures-overview/",
+  "retrieved_at": "2026-10-17T19:23:02.377862+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.customs.gov.sg/doing-business/import-operations/import-procedures/import-procedures-overview/",
+  "content_type": "text/html",
+  "bytes": 647026,
+  "raw_path": "raw/SG-IMPORT.html",
+  "last_modified": "Thu, 15 Oct 2026 02:03:39 GMT",
+  "etag": "\"c515023344340efa2cb9fe4df2311a54\""
+}

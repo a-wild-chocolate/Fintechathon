@@ -1,0 +1,13 @@
+{
+  "source_id": "UK-IMPORT",
+  "requested_url": "https://www.gov.uk/import-goods-into-uk",
+  "retrieved_at": "2026-10-17T19:23:02.105671+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.gov.uk/import-goods-into-uk",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 90482,
+  "raw_path": "raw/UK-IMPORT.html",
+  "last_modified": null,
+  "etag": "W/\"a026cc8fc78d33ea1bf0252a739eda5b\""
+}

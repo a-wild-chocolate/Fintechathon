@@ -1,0 +1,77 @@
+{
+  "card_id": "EU-03",
+  "source_id": "EU-CE",
+  "title": "哪些产品需要CE标志",
+  "summary_zh": "CE仅适用于被相关规则覆盖的产品，并非所有出口欧盟的商品都要CE；应按具体品类识别相应规则和责任主体。",
+  "summary_en": "CE marking applies to products covered by the relevant EU legislation. It is not a universal requirement for every product exported to the EU or proof of product origin.",
+  "anchor_terms": [
+    "Not all products must have CE marking",
+    "manufacturer declares"
+  ],
+  "required_order_fields": [
+    "product_category",
+    "specifications",
+    "manufacturer",
+    "applicable_legislation"
+  ],
+  "tradex_workflow": "For LED or electrical goods, request the relevant conformity evidence; for stationery, identify the actual product category before generating requirements.",
+  "cash_effect": "Treat missing compliance evidence as shipment readiness work, not a fixed certification fee.",
+  "keywords": [
+    "欧盟",
+    "LED",
+    "文具",
+    "CE",
+    "认证",
+    "conformity"
+  ],
+  "title_en": "Which products require CE marking?",
+  "jurisdiction": "EU",
+  "source_title": "CE marking",
+  "source_url": "https://single-market-economy.ec.europa.eu/single-market/goods/ce-marking_en",
+  "publisher": "European Commission",
+  "source_type": "official_guidance",
+  "source_language": "en",
+  "topic": "product_compliance",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "EU-CE-B0014",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/blockquote",
+      "path": "extracted/EU-CE.json"
+    },
+    {
+      "block_id": "EU-CE-B0002",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/p[2]",
+      "path": "extracted/EU-CE.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "哪些产品需要CE标志\nCE仅适用于被相关规则覆盖的产品，并非所有出口欧盟的商品都要CE；应按具体品类识别相应规则和责任主体。\nCE marking applies to products covered by the relevant EU legislation. It is not a universal requirement for every product exported to the EU or proof of product origin.\nKeywords: 欧盟, LED, 文具, CE, 认证, conformity"
+}

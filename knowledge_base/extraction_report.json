@@ -1,0 +1,251 @@
+[
+  {
+    "source_id": "CN-TAX-2026",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 233,
+    "characters": 12632,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "CN-FX-2024",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 28,
+    "characters": 2049,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "CN-FX-GUIDE",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 5,
+    "characters": 550,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "CN-EXPORT-CONTROL",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 174,
+    "characters": 9617,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "US-IMPORT",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 32,
+    "characters": 12690,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "US-301",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 34,
+    "characters": 6560,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "US-HTS",
+    "fetch_status": "downloaded",
+    "extraction_status": "thin_page",
+    "blocks": 0,
+    "characters": 0,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "US-LOW-VALUE-PROPOSAL",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 288,
+    "characters": 183086,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "EU-CUSTOMS",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 89,
+    "characters": 9301,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "EU-TARIC",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 22,
+    "characters": 2969,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "EU-CE",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 14,
+    "characters": 2000,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "EU-GPSR",
+    "fetch_status": "downloaded",
+    "extraction_status": "empty_response"
+  },
+  {
+    "source_id": "EU-CBAM",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 47,
+    "characters": 4107,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "UK-IMPORT",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 16,
+    "characters": 5842,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "UK-PVA",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 87,
+    "characters": 9666,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "UK-TARIFF",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 19,
+    "characters": 882,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "SG-IMPORT",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 149,
+    "characters": 9343,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "SG-PERMIT",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 30,
+    "characters": 1831,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "SG-RECORDS",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 32,
+    "characters": 2452,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "JP-DOCUMENTS",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 19,
+    "characters": 1904,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "JP-TARIFF",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 60,
+    "characters": 871,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "JP-RCEP",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 29,
+    "characters": 2936,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "AU-IMPORT",
+    "fetch_status": "downloaded",
+    "extraction_status": "thin_page",
+    "blocks": 0,
+    "characters": 0,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "AU-CHAFTA",
+    "fetch_status": "fetch_failed"
+  },
+  {
+    "source_id": "VN-IMPORT",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 8,
+    "characters": 3443,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "TH-IMPORT",
+    "fetch_status": "fetch_failed"
+  },
+  {
+    "source_id": "RCEP-PORTAL",
+    "fetch_status": "fetch_failed"
+  },
+  {
+    "source_id": "RCEP-ORIGIN",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 24,
+    "characters": 13123,
+    "method": "pdf_text"
+  },
+  {
+    "source_id": "CN-FX-2025-QA",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 5,
+    "characters": 2424,
+    "method": "pdf_text"
+  },
+  {
+    "source_id": "CN-SZ-INSURANCE",
+    "fetch_status": "fetch_failed"
+  },
+  {
+    "source_id": "CN-GZ-INSURANCE",
+    "fetch_status": "fetch_failed"
+  },
+  {
+    "source_id": "RCEP-COO",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 2,
+    "characters": 775,
+    "method": "pdf_text"
+  },
+  {
+    "source_id": "ICC-DAP-DDP",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 116,
+    "characters": 17068,
+    "method": "html_dom"
+  },
+  {
+    "source_id": "EU-GPSR-FACTSHEET",
+    "fetch_status": "downloaded",
+    "extraction_status": "candidate",
+    "blocks": 3,
+    "characters": 5537,
+    "method": "pdf_text"
+  }
+]

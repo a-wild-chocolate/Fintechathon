@@ -1,0 +1,89 @@
+[SG-PERMIT-B0001] Document body
+Home
+
+[SG-PERMIT-B0002] Document body
+Doing Business
+
+[SG-PERMIT-B0003] Document body
+Import Operations
+
+[SG-PERMIT-B0004] Document body
+Import Procedures
+
+[SG-PERMIT-B0005] Document body
+Obtain a Customs Import Permit
+
+[SG-PERMIT-B0006] Obtain a Customs Import Permit
+Obtain a Customs Import Permit
+
+[SG-PERMIT-B0007] Obtain a Customs Import Permit
+Learn how to obtain a Customs Import Permit by registering for a Unique Entity Number, activating your Customs account, and applying through TradeNet.
+
+[SG-PERMIT-B0008] Obtain a Customs Import Permit
+To import goods into Singapore, you must submit a Customs Import Permit through TradeNet.
+
+[SG-PERMIT-B0009] Before You Apply
+Before You Apply
+
+[SG-PERMIT-B0010] 1. Register for a Unique Entity Number
+1. Register for a Unique Entity Number
+
+[SG-PERMIT-B0011] 1. Register for a Unique Entity Number
+You must first register with the Accounting and Corporate Regulatory Authority (ACRA) ↗ (opens in new tab) or the relevant Unique Entity Number (UEN) issuance agency ↗ (opens in new tab) to obtain a UEN.
+
+[SG-PERMIT-B0012] 2. Activate Your Customs Account
+2. Activate Your Customs Account
+
+[SG-PERMIT-B0013] 2. Activate Your Customs Account
+After receiving your UEN, activate your Customs Account with Singapore Customs. This is required before any import permit application can be submitted.
+
+[SG-PERMIT-B0014] How You Can Apply for Import Permits
+How You Can Apply for Import Permits
+
+[SG-PERMIT-B0015] How You Can Apply for Import Permits
+Once your Customs Account is activated, you may choose one of the following options:
+
+[SG-PERMIT-B0016] Option A: Appoint a Declaring Agent
+Option A: Appoint a Declaring Agent
+
+[SG-PERMIT-B0017] Option A: Appoint a Declaring Agent
+A Declaring Agent (DA) can apply for customs permits on your behalf.
+
+[SG-PERMIT-B0018] Option B: Apply for Permits Yourself
+Option B: Apply for Permits Yourself
+
+[SG-PERMIT-B0019] Option B: Apply for Permits Yourself
+If you prefer to make declarations yourself or for your clients, you must:
+
+[SG-PERMIT-B0020] Option B: Apply for Permits Yourself
+Register as a DA, and
+
+[SG-PERMIT-B0021] Option B: Apply for Permits Yourself
+Apply for a TradeNet User ID ↗ (opens in new tab) to access the system.
+
+[SG-PERMIT-B0022] How to Submit Permit Applications
+How to Submit Permit Applications
+
+[SG-PERMIT-B0023] How to Submit Permit Applications
+All import permit applications must be submitted through TradeNet, using one of the following channels:
+
+[SG-PERMIT-B0024] How to Submit Permit Applications
+TradeNet front-end software from an approved software vendor ; or
+
+[SG-PERMIT-B0025] How to Submit Permit Applications
+Government Front-End Application ↗ (opens in new tab)
+
+[SG-PERMIT-B0026] How to Submit Permit Applications
+These channels allow you or your DA to process import declarations and receive approved permit notifications.
+
+[SG-PERMIT-B0027] After You Apply
+After You Apply
+
+[SG-PERMIT-B0028] After You Apply
+Once your permit is approved, follow the conditions stated on the permit for cargo clearance and payment of duties and GST (where applicable).
+
+[SG-PERMIT-B0029] Ready to apply?
+Ready to apply?
+
+[SG-PERMIT-B0030] Ready to apply?
+Submit your application through TradeNet using your preferred front-end channel.

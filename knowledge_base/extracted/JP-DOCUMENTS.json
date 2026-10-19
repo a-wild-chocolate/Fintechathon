@@ -1,0 +1,120 @@
+{
+  "source_id": "JP-DOCUMENTS",
+  "method": "html_dom",
+  "blocks": [
+    {
+      "text": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[2]/h1",
+      "block_id": "JP-DOCUMENTS-B0001"
+    },
+    {
+      "text": "Invoice",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/ol[1]/li[1]",
+      "block_id": "JP-DOCUMENTS-B0002"
+    },
+    {
+      "text": "Bill of lading or Sea Way Bill (for import of air cargo : Air Way Bill)",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/ol[1]/li[2]",
+      "block_id": "JP-DOCUMENTS-B0003"
+    },
+    {
+      "text": "Insurance certificate",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/ol[1]/li[3]",
+      "block_id": "JP-DOCUMENTS-B0004"
+    },
+    {
+      "text": "Freight account",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/ol[1]/li[4]",
+      "block_id": "JP-DOCUMENTS-B0005"
+    },
+    {
+      "text": "Packing list",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/ol[1]/li[5]",
+      "block_id": "JP-DOCUMENTS-B0006"
+    },
+    {
+      "text": "Contracts",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/ol[1]/li[6]",
+      "block_id": "JP-DOCUMENTS-B0007"
+    },
+    {
+      "text": "Price lists",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/ol[1]/li[7]",
+      "block_id": "JP-DOCUMENTS-B0008"
+    },
+    {
+      "text": "Permit or approval required by laws and regulations (when the import of certain goods is required by laws and regulations other than the Customs Law, such as the Plant Protection Law);",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/ol[2]/li[1]",
+      "block_id": "JP-DOCUMENTS-B0009"
+    },
+    {
+      "text": "Generalized system of preferences and certificates of origin (where a preferential rate is applicable); and",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/ol[2]/li[2]",
+      "block_id": "JP-DOCUMENTS-B0010"
+    },
+    {
+      "text": "Statement on reduction of or exemption from customs duty and excise tax (when such reduction or exemption is applicable to the goods).",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/ol[2]/li[3]",
+      "block_id": "JP-DOCUMENTS-B0011"
+    },
+    {
+      "text": "Additional documentation may be requested, as necessary.",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/p[1]",
+      "block_id": "JP-DOCUMENTS-B0012"
+    },
+    {
+      "text": "(Article 68 and Article 70 of the Customs Law, Article 61 of the Cabinet Order for Enforcement of the Customs Law, Article 8-2 of the Temporary Tariff Measure Law, Article 27 and the Cabinet Order for Enforcement of the Temporary Tariff Measure Law, and others)",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/p[2]",
+      "block_id": "JP-DOCUMENTS-B0013"
+    },
+    {
+      "text": "(Reference)",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/p[3]",
+      "block_id": "JP-DOCUMENTS-B0014"
+    },
+    {
+      "text": "(1) \n A Bill of Lading (B/L) is a document issued by a shipping company to a sender acknowledging that they have received the shipment of goods. It is a necessary document for consignee to receive the shipped goods which have arrived in Japan from the shipping company.",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/table/tbody/tr[1]",
+      "block_id": "JP-DOCUMENTS-B0015"
+    },
+    {
+      "text": "(2) \n A Sea Way Bill is a contract between a carrier and a sender for sea transportation of goods and it is issued when the carrier has accepted the goods and obligated itself to carry the consignment.",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/table/tbody/tr[2]",
+      "block_id": "JP-DOCUMENTS-B0016"
+    },
+    {
+      "text": "(3) \n An Air Way Bill is a contract between a carrier and a sender for air transportation of goods and it is issued when the carrier has accepted the goods and obligated itself to carry the consignment.",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/table/tbody/tr[3]",
+      "block_id": "JP-DOCUMENTS-B0017"
+    },
+    {
+      "text": "(4) \n An Invoice is a document describing the name, quantity, and value of the goods, and is prepared in the shipping country of the goods.",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/table/tbody/tr[4]",
+      "block_id": "JP-DOCUMENTS-B0018"
+    },
+    {
+      "text": "For consultations on customs procedures, please contact the nearest Customs Counselor. Please see No. 9301 for inquiries.",
+      "section": "1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div[2]/p[4]",
+      "block_id": "JP-DOCUMENTS-B0019"
+    }
+  ]
+}

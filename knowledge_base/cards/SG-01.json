@@ -1,0 +1,82 @@
+{
+  "card_id": "SG-01",
+  "source_id": "SG-IMPORT",
+  "title": "新加坡进口人、关税与GST",
+  "summary_zh": "新加坡海关区分应税商品关税与GST，并说明进口人与发票收货方的关系；许可、豁免及税务安排需按实际运输与商品核查。",
+  "summary_en": "Singapore Customs distinguishes dutiable goods from other goods generally subject to GST and explains who is the importer. Permit exceptions and tax schemes depend on the transaction.",
+  "anchor_terms": [
+    "local company is considered the importer",
+    "CIF"
+  ],
+  "required_order_fields": [
+    "invoice_consignee",
+    "product_category",
+    "cif_value",
+    "import_purpose",
+    "tax_scheme"
+  ],
+  "tradex_workflow": "Confirm the Singapore consignee and import purpose before requesting permit evidence or estimating taxes.",
+  "cash_effect": "Allocate any import tax outflow to the contractual payer; GST is not simply a customs duty.",
+  "keywords": [
+    "新加坡",
+    "GST",
+    "CIF",
+    "进口商",
+    "关税"
+  ],
+  "title_en": "Singapore importers, customs duties and GST",
+  "jurisdiction": "SG",
+  "source_title": "Import Procedures Overview",
+  "source_url": "https://www.customs.gov.sg/doing-business/import-operations/import-procedures/import-procedures-overview/",
+  "publisher": "Singapore Customs",
+  "source_type": "official_guidance",
+  "source_language": "en",
+  "topic": "import_procedures",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "SG-IMPORT-B0024",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[9]",
+      "path": "extracted/SG-IMPORT.json"
+    },
+    {
+      "block_id": "SG-IMPORT-B0016",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[5]",
+      "path": "extracted/SG-IMPORT.json"
+    },
+    {
+      "block_id": "SG-IMPORT-B0017",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[6]",
+      "path": "extracted/SG-IMPORT.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "新加坡进口人、关税与GST\n新加坡海关区分应税商品关税与GST，并说明进口人与发票收货方的关系；许可、豁免及税务安排需按实际运输与商品核查。\nSingapore Customs distinguishes dutiable goods from other goods generally subject to GST and explains who is the importer. Permit exceptions and tax schemes depend on the transaction.\nKeywords: 新加坡, GST, CIF, 进口商, 关税"
+}

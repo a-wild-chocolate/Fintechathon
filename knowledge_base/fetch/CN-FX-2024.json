@@ -1,0 +1,13 @@
+{
+  "source_id": "CN-FX-2024",
+  "requested_url": "https://www.safe.gov.cn/safe/2024/0407/24204.html",
+  "retrieved_at": "2026-10-17T19:24:25.196691+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.safe.gov.cn/safe/2024/0407/24204.html",
+  "content_type": "text/html",
+  "bytes": 48196,
+  "raw_path": "raw/CN-FX-2024.html",
+  "last_modified": "Wed, 03 Jun 2026 11:06:03 GMT",
+  "etag": "\"6a200a9b-bc44\""
+}

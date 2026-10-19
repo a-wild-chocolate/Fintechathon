@@ -1,0 +1,98 @@
+{
+  "card_id": "EU-01",
+  "source_id": "EU-CUSTOMS",
+  "title": "欧盟进口责任、EORI与清关",
+  "summary_zh": "欧盟进口指引将EORI、商品分类、申报和清关串为流程；成员国负责各自海关系统。先确定入境成员国及实际进口人。",
+  "summary_en": "The EU import guide connects EORI, customs procedures and product requirements, with national administrations operating the clearance systems.",
+  "anchor_terms": [
+    "EORI",
+    "customs"
+  ],
+  "required_order_fields": [
+    "member_state",
+    "importer",
+    "eori",
+    "commodity_code",
+    "transport_mode"
+  ],
+  "tradex_workflow": "Link importer and EORI information to the order, then request the documents required for its route.",
+  "cash_effect": "Missing customs prerequisites can affect delivery and collection dates; any delay remains an explicit scenario.",
+  "keywords": [
+    "欧盟",
+    "德国",
+    "法国",
+    "EORI",
+    "清关",
+    "import"
+  ],
+  "title_en": "EU import responsibilities, EORI and clearance",
+  "jurisdiction": "EU",
+  "source_title": "Customs duties and procedures on imports",
+  "source_url": "https://europa.eu/youreurope/business/finance-and-tax/customs-and-excise-duties/customs-duties-and-procedures-imports/index_en.htm",
+  "publisher": "European Commission / Your Europe",
+  "source_type": "official_guidance",
+  "source_language": "en",
+  "topic": "import_procedures",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "EU-CUSTOMS-B0014",
+      "locator": "/html/body/main/div[1]/div/div[1]/h3[3]",
+      "path": "extracted/EU-CUSTOMS.json"
+    },
+    {
+      "block_id": "EU-CUSTOMS-B0015",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[5]",
+      "path": "extracted/EU-CUSTOMS.json"
+    },
+    {
+      "block_id": "EU-CUSTOMS-B0048",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[4]/p[1]",
+      "path": "extracted/EU-CUSTOMS.json"
+    },
+    {
+      "block_id": "EU-CUSTOMS-B0001",
+      "locator": "/html/body/main/h1",
+      "path": "extracted/EU-CUSTOMS.json"
+    },
+    {
+      "block_id": "EU-CUSTOMS-B0003",
+      "locator": "/html/body/main/div[1]/div/div[1]/h3[1]",
+      "path": "extracted/EU-CUSTOMS.json"
+    },
+    {
+      "block_id": "EU-CUSTOMS-B0004",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[1]",
+      "path": "extracted/EU-CUSTOMS.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "欧盟进口责任、EORI与清关\n欧盟进口指引将EORI、商品分类、申报和清关串为流程；成员国负责各自海关系统。先确定入境成员国及实际进口人。\nThe EU import guide connects EORI, customs procedures and product requirements, with national administrations operating the clearance systems.\nKeywords: 欧盟, 德国, 法国, EORI, 清关, import"
+}

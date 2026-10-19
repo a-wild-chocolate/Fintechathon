@@ -1,0 +1,84 @@
+{
+  "card_id": "SG-03",
+  "source_id": "SG-RECORDS",
+  "title": "新加坡贸易单证留存",
+  "summary_zh": "进口商与申报代理需按官方要求留存贸易单证至少五年，起点为许可批准日；发票、运输、装箱和相关证明应可追溯。",
+  "summary_en": "Singapore Customs requires the trader and declaring agent to retain relevant trade documents for at least five years from permit approval, with specified conditions for digital copies.",
+  "anchor_terms": [
+    "5 years from the date your permit is approved",
+    "Commercial invoices",
+    "Digital Copies"
+  ],
+  "required_order_fields": [
+    "permit_approval_date",
+    "invoice",
+    "transport_document",
+    "packing_list",
+    "relevant_certificates"
+  ],
+  "tradex_workflow": "Attach a document-retention task to the permit and order rather than asking the Chinese seller to satisfy another party’s duty automatically.",
+  "cash_effect": "A recordkeeping task changes evidence readiness, not cash balances.",
+  "keywords": [
+    "新加坡",
+    "单证",
+    "五年",
+    "发票",
+    "提单",
+    "retention"
+  ],
+  "title_en": "Singapore trade document retention",
+  "jurisdiction": "SG",
+  "source_title": "Retaining Your Trade Documents",
+  "source_url": "https://www.customs.gov.sg/doing-business/import-operations/import-procedures/retaining-your-trade-documents",
+  "publisher": "Singapore Customs",
+  "source_type": "official_guidance",
+  "source_language": "en",
+  "topic": "document_retention",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2027-01-16",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "SG-RECORDS-B0008",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[1]",
+      "path": "extracted/SG-RECORDS.json"
+    },
+    {
+      "block_id": "SG-RECORDS-B0011",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul/li[1]",
+      "path": "extracted/SG-RECORDS.json"
+    },
+    {
+      "block_id": "SG-RECORDS-B0024",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[3]",
+      "path": "extracted/SG-RECORDS.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "新加坡贸易单证留存\n进口商与申报代理需按官方要求留存贸易单证至少五年，起点为许可批准日；发票、运输、装箱和相关证明应可追溯。\nSingapore Customs requires the trader and declaring agent to retain relevant trade documents for at least five years from permit approval, with specified conditions for digital copies.\nKeywords: 新加坡, 单证, 五年, 发票, 提单, retention"
+}

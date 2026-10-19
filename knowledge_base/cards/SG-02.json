@@ -1,0 +1,91 @@
+{
+  "card_id": "SG-02",
+  "source_id": "SG-PERMIT",
+  "title": "TradeNet进口许可准备",
+  "summary_zh": "取得UEN并激活海关账户后，可委托申报代理或按规定自行通过TradeNet申请进口许可，获批后按许可条件清关。",
+  "summary_en": "The permit guide links a UEN and activated Customs Account to a TradeNet application, either through a declaring agent or an appropriately registered applicant.",
+  "anchor_terms": [
+    "Unique Entity Number",
+    "TradeNet"
+  ],
+  "required_order_fields": [
+    "importer_uen",
+    "customs_account",
+    "declaring_agent",
+    "permit_status"
+  ],
+  "tradex_workflow": "Track importer setup and permit readiness as order prerequisites; request confirmation from the buyer or declaring agent.",
+  "cash_effect": "Use the confirmed clearance arrangement to refine shipment timing, without promising approval.",
+  "keywords": [
+    "新加坡",
+    "TradeNet",
+    "UEN",
+    "进口许可",
+    "permit"
+  ],
+  "title_en": "Preparing a TradeNet import permit",
+  "jurisdiction": "SG",
+  "source_title": "Obtain a Customs Import Permit",
+  "source_url": "https://www.customs.gov.sg/businesses/importing-goods/import-procedures/apply-customs-import-permit/",
+  "publisher": "Singapore Customs",
+  "source_type": "official_guidance",
+  "source_language": "en",
+  "topic": "import_permits",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "SG-PERMIT-B0007",
+      "locator": "/html/body/main/div[1]/div/div/div/div[2]/p",
+      "path": "extracted/SG-PERMIT.json"
+    },
+    {
+      "block_id": "SG-PERMIT-B0010",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[2]",
+      "path": "extracted/SG-PERMIT.json"
+    },
+    {
+      "block_id": "SG-PERMIT-B0011",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[2]",
+      "path": "extracted/SG-PERMIT.json"
+    },
+    {
+      "block_id": "SG-PERMIT-B0008",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[1]",
+      "path": "extracted/SG-PERMIT.json"
+    },
+    {
+      "block_id": "SG-PERMIT-B0021",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[1]/li[2]",
+      "path": "extracted/SG-PERMIT.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "TradeNet进口许可准备\n取得UEN并激活海关账户后，可委托申报代理或按规定自行通过TradeNet申请进口许可，获批后按许可条件清关。\nThe permit guide links a UEN and activated Customs Account to a TradeNet application, either through a declaring agent or an appropriately registered applicant.\nKeywords: 新加坡, TradeNet, UEN, 进口许可, permit"
+}

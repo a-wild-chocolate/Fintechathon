@@ -1,0 +1,13 @@
+{
+  "source_id": "UK-PVA",
+  "requested_url": "https://www.gov.uk/guidance/check-when-you-can-account-for-import-vat-on-your-vat-return",
+  "retrieved_at": "2026-10-17T19:23:02.115719+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.gov.uk/guidance/check-when-you-can-account-for-import-vat-on-your-vat-return",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 101017,
+  "raw_path": "raw/UK-PVA.html",
+  "last_modified": null,
+  "etag": "W/\"f1040a07eb654c01956bdc8e38830c22\""
+}

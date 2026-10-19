@@ -1,0 +1,65 @@
+[EU-TARIC-B0001] Document body
+TARIC, or the integrated tariff of the European Union, is a multilingual database integrating all measures relating to the Common Customs Tariff (CCT) and commercial and agricultural legislation.
+
+[EU-TARIC-B0002] Document body
+Access TARIC
+
+[EU-TARIC-B0003] Rationale
+Rationale
+
+[EU-TARIC-B0004] Rationale
+The TARIC database integrates measures related to the EU customs tariff as well as commercial and agricultural legislation. This ensures that such measures are applied uniformly across all EU countries.
+
+[EU-TARIC-B0005] Rationale
+For economic operators, TARIC provides a transparent overview of the requirements for importing goods into or exporting goods out of the EU. TARIC also enables the collection of EU-wide statistics related to these measures.
+
+[EU-TARIC-B0006] Rationale
+TARIC data is transmitted daily to the national administrations of EU countries so that they always have accurate and up-to-date information. These administrations use the data to update their national customs clearance systems with the aim of maximising automation in customs procedures.
+
+[EU-TARIC-B0007] Categories of measures
+Categories of measures
+
+[EU-TARIC-B0008] Categories of measures
+The following is a non-exhaustive list of the main categories of measures recorded in TARIC:
+
+[EU-TARIC-B0009] Categories of measures
+Tariff measures ‘Third-country duty’, customs duty applicable to all imports originating in a non-EU country/territory as defined in the Combined Nomenclature Tariff preferences Autonomous tariff suspensions Tariff quotas Customs unions
+
+[EU-TARIC-B0010] Categories of measures
+Agricultural measures Agricultural components Additional duties on sugar, sugar content and flour content Representative prices for poultry Standard Import Values and Unit Prices for fruits and vegetables
+
+[EU-TARIC-B0011] Categories of measures
+Trade defence instruments Antidumping duties Countervailing duties Safeguard duties
+
+[EU-TARIC-B0012] Categories of measures
+Prohibitions and restrictions Import and/or export prohibition of certain goods (e.g. ozone-depleting substances, certain products originating in or exported to some countries/territories like Iran, North Korea, etc.) Quantitative limits Import and/or export controls of certain categories of goods (e.g. products subject to CITES, luxury goods, cultural goods, products and equipment containing fluorinated greenhouse gases, dual use goods, veterinary or phytosanitary controls on animals and food, etc.)
+
+[EU-TARIC-B0013] Categories of measures
+Surveillance of movements of goods at import and export
+
+[EU-TARIC-B0014] Categories of measures
+TARIC also contains:
+
+[EU-TARIC-B0015] Categories of measures
+The goods nomenclature and additional codes;
+
+[EU-TARIC-B0016] Categories of measures
+The supplementary units;
+
+[EU-TARIC-B0017] Categories of measures
+The EU codes to be used in Data Element 12 03 000 000 of the Customs Declaration as "Supporting document”
+
+[EU-TARIC-B0018] Categories of measures
+The nomenclature of country/territory codes used in the different Data Elements of the Customs Declaration, in accordance with Commission Implementing Regulation (EU) 2020/1470 of 12 October 2020 on the nomenclature of countries and territories for the European statistics on international trade in goods and on the geographical breakdown for other business statistics
+
+[EU-TARIC-B0019] Categories of measures
+TARIC does not contain information relating to national levies such as rates of VAT and rates of excise.
+
+[EU-TARIC-B0020] Categories of measures
+TARIC raw data is also freely available in Excel format.
+
+[EU-TARIC-B0021] Legal basis
+Legal basis
+
+[EU-TARIC-B0022] Legal basis
+Council Regulation (EEC) No 2658/87 on the tariff and statistical nomenclature and on the Common Customs Tariff

@@ -40,3 +40,10 @@ export function rememberAgentSession(turn, sessionId, sessions) {
   const key = JSON.stringify([turn.orderId, turn.documentId]);
   if (!sessions[key] || sessions[key] === sessionId) sessions[key] = sessionId;
 }
+
+export function openAgentTask(turns, id) {
+  const turn = turns.find(item => item.id === id);
+  for (const linked of linkedConversation(turns, [turn])) linked.archived = false;
+  turn.unread = false;
+  return turn;
+}

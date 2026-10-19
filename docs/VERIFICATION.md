@@ -225,3 +225,62 @@ The assistant requested the missing amount and date. The user supplied USD 6,000
 The notification browser check confirmed that opening the inbox removed the badge, reloading retained the read state, event details exposed impact and next action, and View order navigated to TF-26104. Chinese and English labels were checked. Stable event identities prevent unrelated version changes from regenerating unread cash alerts.
 
 Three baseline Word documents were reformatted as single-page business records, rendered and visually checked. Their actual extracted text passes the deterministic onboarding checks. Frontend syntax, 39 tests and production build passed. Earlier backend verification in this change passed 63 unit tests with 2 integration tests deselected; image tests check the real image payload shape, null fields, extraction cache reuse and source-image access using a scripted model.
+
+### AI task result navigation — 19 October 2026
+
+Selecting an AI task now opens its scope and document context, restores linked clarification turns, marks that result read, and moves focus and panel scroll to its answer after normal scroll restoration. The selected answer has a brief left-edge highlight. Unread tasks remain reachable even when older than the eight recent entries; completed entries distinguish New result from Viewed.
+
+Browser verification selected the earliest and latest real saved screenshot-analysis tasks in the isolated workspace. Both different answers received focus and appeared 24 px below the conversation panel top. A scripted nine-reply fixture independently checked targeting an older reply. No model calls were made. JavaScript checks, all 40 frontend tests and the production build passed.
+
+
+## Relational business persistence — 19 October 2026
+
+Added company, counterparty, account, order, cash-movement, evidence-reference and financial-revision tables in `agents.sqlite3`, plus server-backed workspace views. Existing forecast snapshots migrate once. Model-confirmed payment promises update the expected cash movement transactionally without changing actual opening balances or settled order value. Frontend startup restores server state before using the local cache.
+
+Validation: 69 backend tests passed (2 opt-in tests deselected); 41 frontend tests passed; JavaScript syntax checks and production build passed. API tests reopen the database through a fresh application, and browser verification at a distinct origin recovered the existing CNY 128,000 balance, USD 6,000 promise, CNY 34,000 peak gap and three AI turns. No paid inference was required for these persistence checks.
+
+## Company and order management — 19 October 2026
+
+The default application now opens a company selector. New companies start with dated CNY/USD balances and an empty order ledger. Company creation and order create/edit use a review-and-confirm flow; order previews roll back their SQL transaction, while confirmation saves the order, counterparties, payment terms, cash movements and financial revision together.
+
+Verification in an isolated local database:
+
+- Created `Pearl Export QA` in the browser with CNY 50,000 and USD 2,000, then created EUR order `PE-901` for a new customer. No sample orders were copied.
+- With a CNY 70,000 supplier payment on 5 November and a EUR 5,000 expected receipt at 8 CNY/EUR on 15 November, the preview and saved dashboard showed a CNY 20,000 gap.
+- Edited the supplier payment to CNY 30,000. The preview and confirmed dashboard changed the gap to zero without adding duplicate movements. Reloading the browser and restarting the backend retained the company, order and balances.
+- Used the configured OpenRouter model on this saved order. The first live answer exposed integer cents as yuan; model-facing workflow and context serializers now consistently expose major currency units. The subsequent completed run (`cb41e1f9-f9f2-4e7a-b0af-4985a7fb9f19`) used CNY 50,000 opening cash, CNY 30,000 supplier payment, EUR 5,000 / CNY 40,000 expected receipt, CNY 0 shortfall and EUR 3,000 unscheduled balance. The page was changed to Overview while analysis continued.
+- Checked English/Chinese dashboard labels, the dynamic order selection in document upload and the original company's separate entry in the company selector. Uploaded a synthetic payment text through the browser, observed `Ready for AI`, then verified that **Ask AI** carried both `PE-901` and the uploaded document into the composer.
+- Backend suite: 74 passed, 2 socket integration tests deselected. Two additional currency-clarification and preserved-adjustment cases were then added; the focused company suite passed all 7 cases.
+- Frontend: 42 tests passed, including a new saved-company chart case with independent dates, amounts and order IDs; syntax validation and production build passed.
+
+The company API tests cover preview rollback, confirmed persistence, edits, cancellation, version conflicts, invalid amounts, duplicate order numbers, company isolation, MCP run routing, document scope, currency units and idempotent receipt confirmation. The current order editor supports one next expected receipt and one supplier payment per order; opening balances include historical receipts rather than posting them again.
+
+## New-company screenshot-to-cash verification — 19 October 2026
+
+Created a separate synthetic company, **Cedar Export QA**, and order **CW-GB-112** through the normal browser review/confirmation flow on ports 5173/8765. This case deliberately uses GBP and November dates instead of the legacy USD/October demonstration. Company ID: `c09d22c4-72cb-48a1-b552-1ab4a762e2bf`.
+
+### Saved records and expected result
+
+- Opening availability: CNY 42,000 and a separate USD 1,000 account as of 1 November 2026.
+- Northbridge Home order: GBP 18,000 total, GBP 3,000 already received, GBP 15,000 outstanding; rate assumption 9.2 CNY/GBP.
+- Original forecast: GBP 15,000 available 7 November; CNY 95,000 payable to Foshan Cedar Lighting on 9 November. This forecast has no shortfall.
+- Uploaded a synthetic buyer email screenshot stating partial payment without an amount or payment date. The email header is dated 3 November 2026 and is not a receipt date.
+- First clarification supplied only GBP 4,000. The next clarification asked only for the missing date; then supplied 16 November 2026. The company remained at financial version 2 and the original order terms remained unchanged until the confirmation button was clicked.
+- Confirmation advanced the company to version 3 and replaced its expected receipt with GBP 4,000 / CNY 36,800 on 16 November. The first and peak CNY gap is **53,000 on 9 November**, reducing to **16,200 on 16 November**. GBP 11,000 remains unscheduled. Opening balances and the GBP 3,000 already received are unchanged.
+- Direct SQLite inspection verified one supplier movement and one expected receipt, the revised order terms, and a version-specific evidence link to the uploaded screenshot. The original `demo-exporter` remained at version 6. Browser refresh retained the new records and chart; changing pages did not interrupt analysis. English/Chinese labels and the source viewer were checked.
+
+### Real-model findings and repairs
+
+The initial DeepSeek image extraction misread parts of the header, including the year, although it correctly left the payment amount/date null. A Qwen image check read the header and body correctly on this screenshot. The local configuration and documented OpenRouter vision default now use `qwen/qwen3.5-plus-20260420`; conversational agents remain on DeepSeek V4.1 Flash. New document `d02180e0-72cc-4309-a600-710c0df823ce` preserves the corrected extraction. Existing source versions and unsuccessful execution records were retained.
+
+The second HITL continuation exposed omitted tool arguments: the model repeatedly left out the supplied date and mentioned an irrelevant USD amount. The agent-facing receipt contract now requires explicit amount, currency, date and evidence IDs, with nullable unknowns; the legacy USD-only alias remains available to the underlying MCP service but is removed from the agent-facing schema. Duplicate receipt proposals within one turn reuse their result. Missing-field cards take their fields from the proposal, and generic currency amount changes invalidate reconciliation dependencies. The repaired continuation (`ca295358-ee77-449f-a820-a7f0dbb54a21`) completed in **7.9 seconds**, using three model calls across Coordinator and Reconciliation, retaining GBP 4,000, 16 November and both source references. This is an individual development measurement.
+
+Post-confirmation analysis correctly calculated the CNY 53,000 gap but encountered scenario errors and produced a poor unsolicited draft. Tool errors now retain their actionable business explanation; prompts distinguish confirmed state from an unconfirmed proposal and request residual-gap checks before recommending a timing change. A subsequent real run (`076a3995-42e3-44e0-a7fb-0f97066afa64`, 36.0 seconds) calculated the current plan and both alternatives with no tool errors: receipt on 6 November leaves CNY 16,200 short on 9 November; supplier payment on 17 November leaves CNY 16,200 short on 17 November. No draft or financial change was made. One generated sentence still called this a timing rather than amount problem despite correctly reporting the residual funding need; narrative consistency is not a fully passed criterion.
+
+### Demo-data boundary
+
+The normal company UI and managed-company financial tools read company-scoped SQL records, dates, currencies and orders. No legacy order IDs or financial constants appeared in the new company's saved ledger or calculations. The old `?demo` / `?setup` route, legacy workflow branch, fixtures and demonstration documents still contain intentional sample data; they have not been deleted. The initial HTML now keeps that legacy layout in an inert template so it does not flash sample company information while a normal workspace loads.
+
+Local proof files are under ignored `output/screenshot-flow/`: the input image, source citation screenshot, confirmation screenshot, dashboard screenshot, SQL snapshot and model run summary. They contain synthetic data. No email was sent, no payment was executed, and no Git commit or push was made during this verification.
+
+Final regression results for this verification: **80 backend tests passed** (2 opt-in socket integration tests deselected); **42 frontend tests passed**, with JavaScript syntax validation and production build passing. The browser flow above exercised the live HTTP/MCP/model path separately from the scripted unit tests.

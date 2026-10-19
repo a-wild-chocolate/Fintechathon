@@ -25,7 +25,8 @@ class ModelClient:
         self.base = os.getenv('TRADEX_MODEL_BASE_URL') or (os.getenv('DASHSCOPE_BASE_URL', '') if self.provider == 'qwen' else base)
         default = os.getenv('TRADEX_MODEL', model)
         self.models = {role: os.getenv('TRADEX_MODEL_' + role.upper(), default) for role in ROLES}
-        self.models['vision'] = os.getenv('TRADEX_MODEL_VISION', default)
+        vision_default = 'qwen/qwen3.5-plus-20260420' if self.provider == 'openrouter' else default
+        self.models['vision'] = os.getenv('TRADEX_MODEL_VISION', vision_default)
         self.transport = transport
         self.slots = threading.BoundedSemaphore(int(os.getenv('TRADEX_MODEL_CONCURRENCY', '2')))
 

@@ -4,6 +4,7 @@ from datetime import date, timedelta
 from decimal import Decimal, ROUND_HALF_UP
 from pydantic import BaseModel, Field
 from ..service import Conflict, NotFound
+from ..business_records import for_model
 
 class Workspace(BaseModel):
     version: int = Field(ge=1)
@@ -25,15 +26,29 @@ def cents(amount):
 
 def cash(snapshot, delay=0, extension=0):
     """The current demo company's 56-day schedule, matching src/finance.js."""
+    if snapshot.get('kind')=='business':
+        from ..business_records import forecast
+        return forecast(snapshot,delay=delay,extension=extension)
     receipt_day, supplier_day = snapshot['receiptDay']+delay, snapshot['supplierDay']+extension
     if not 0 <= receipt_day <= 55 or not 0 <= supplier_day <= 55:
         raise ValueError('Scenario dates must remain within the 56-day demo horizon.')
     net = int((Decimal(str(snapshot['amountUSD'])) / Decimal('12000') * Decimal('8000000')).quantize(Decimal('1'), rounding=ROUND_HALF_UP))
+    movements = snapshot.get('movements')
+    scheduled = {}
+    if movements:
+        for movement in movements:
+            due = (date.fromisoformat(movement['due_date'])-START).days
+            value = movement['signed_minor']
+            if movement['id'] == 'supplier': due = supplier_day
+            if movement['id'] == 'receipt': due, value = receipt_day, net
+            scheduled[due] = scheduled.get(due, 0) + value
+    else:
+        scheduled = {20: -4200000, 30: 12000000, 40: -3800000, 50: 6500000}
+        scheduled[supplier_day] = scheduled.get(supplier_day, 0) - 16000000
+        scheduled[receipt_day] = scheduled.get(receipt_day, 0) + net
     balance = cents(snapshot['opening']); series = []
     for day in range(56):
-        if day == supplier_day: balance -= 16000000
-        if day == receipt_day: balance += net
-        balance += {20: -4200000, 30: 12000000, 40: -3800000, 50: 6500000}.get(day, 0)
+        balance += scheduled.get(day, 0)
         series.append({'date': str(START+timedelta(days=day)), 'balance_cny': balance/100})
     first = next((row for row in series if row['balance_cny'] < 0), None)
     return {'state_version': snapshot['version'], 'currency': 'CNY', 'opening_cny': snapshot['opening'],
@@ -59,8 +74,8 @@ class Workflows:
         request = run['request']; workspace = self.store.workspace(self.tenant)
         proposal = self.store.proposal(self.tenant, run['session_id'])
         if name == 'wf_status':
-            return {'workspace': workspace, 'order_id': request.get('order_id'), 'proposal': proposal,
-                    'basis': 'Workspace is a user-supplied demo forecast; receipt promises are not posted cash.'}
+            return {'workspace': for_model(workspace), 'monetary_units':'All amounts are in major currency units (CNY yuan, USD dollars, EUR euros), never cents.', 'order_id': request.get('order_id'), 'proposal': proposal,
+                    'basis': 'Saved company records and explicit planning assumptions; receipt promises are not posted cash.'}
         if name in {'kb_search', 'wf_financing'}:
             results = self.lib.search(args['query'], self.tenant, document_id=request.get('document_id'),
                                       order_id=request.get('order_id'), market=request.get('market'), limit=5)['results']
@@ -91,11 +106,15 @@ class Workflows:
         if name == 'wf_draft':
             return self.store.artifact(self.tenant, run_id, args['kind'], args['text'])
         if not workspace: return {'status': 'needs_information', 'reason': 'Open the company dashboard to supply the demo cash schedule.'}
+        if workspace.get('kind')=='business':
+            from .business_workflows import execute
+            return for_model(execute(self,name,self.store.run(run_id,self.tenant),args,workspace,proposal))
         if request.get('order_id') not in {None, '', 'TF-26104'}:
             return {'status': 'needs_information', 'reason': 'This order has no backend financial schedule yet. Do not reuse TF-26104 figures.'}
         if name == 'wf_reconcile':
             if request.get('order_id') != 'TF-26104': raise ValueError('Select TF-26104 to propose a receipt schedule change')
-            amount, receipt_date = args.get('amount_usd'), args.get('receipt_date')
+            amount = args.get('amount') if args.get('amount') is not None else args.get('amount_usd')
+            receipt_date = args.get('receipt_date')
             missing = []
             if amount is None: missing.append('amount_usd')
             elif not 0 < amount <= 12000: raise ValueError('Amount must be greater than zero and at most USD 12000')
@@ -132,14 +151,18 @@ class Workflows:
             for source in proposal['sources']:
                 doc = self.lib.document(source['document_id'], self.tenant)
                 if doc['current_version'] != source['version']: raise Conflict('Source changed; ask the assistant to reanalyze')
-            workspace_row = db.execute('SELECT * FROM agent_workspaces WHERE tenant=?', (self.tenant,)).fetchone()
-            if workspace_row['version'] != row['base_version']: raise Conflict('Financial state changed; reanalyze before confirmation')
-            snapshot = json.loads(workspace_row['snapshot']); before = cash(snapshot)
-            snapshot.update(version=snapshot['version']+1, amountUSD=proposal['amount_usd'],
-                            receiptDay=(date.fromisoformat(proposal['receipt_date'])-START).days)
-            result = {'workspace': snapshot, 'before': before, 'after': cash(snapshot), 'proposal_id': proposal_id,
-                      'status': 'confirmed', 'actual_cash_changed': False}
-            db.execute('UPDATE agent_workspaces SET version=?,snapshot=? WHERE tenant=?',
-                       (snapshot['version'], json.dumps(snapshot), self.tenant))
+            snapshot=self.store.business.snapshot(self.tenant,db)
+            if snapshot['version'] != row['base_version']: raise Conflict('Financial state changed; reanalyze before confirmation')
+            if snapshot.get('kind')=='business':
+                from .business_workflows import confirm
+                result=confirm(self,db,proposal,snapshot)
+                result['proposal_id']=proposal_id
+            else:
+                before=cash(snapshot)
+                snapshot.update(version=snapshot['version']+1,amountUSD=proposal['amount_usd'],receiptDay=(date.fromisoformat(proposal['receipt_date'])-START).days)
+                snapshot=self.store.business.write_snapshot(db,self.tenant,snapshot,'receipt_confirmation')
+                result={'workspace':snapshot,'before':before,'after':cash(snapshot),'proposal_id':proposal_id,'status':'confirmed','actual_cash_changed':False}
+            for source in proposal['sources']:
+                db.execute('INSERT OR REPLACE INTO business_evidence VALUES(?,?,?,?,?)', (self.tenant,source['document_id'],source['version'],proposal['order_id'],'receipt_promise'))
             db.execute("UPDATE agent_proposals SET status='confirmed',result=? WHERE id=?", (json.dumps(result), proposal_id))
         return result

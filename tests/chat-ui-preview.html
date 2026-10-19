@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CashWeave conversation verification</title><link rel="stylesheet" href="/src/styles.css"><link rel="stylesheet" href="/src/clarity.css"><link rel="stylesheet" href="/src/knowledge.css"><link rel="stylesheet" href="/src/chat.css"></head><body>
-<div id="tradeflow-export-preview" data-page="assistant"><header class="tf-top"><strong>↗ CashWeave</strong><small>UI test · scripted events · no model calls</small></header><main class="tf-main" style="margin:auto"><div id="tf-content"><section class="tx-chat"><div class="tx-chat-top"><span>TF-26104 · Harbour Supplies</span><button id="language" class="tf-link">中文 / English</button></div><div class="tx-messages" id="messages"></div><div class="tx-composer"><div class="kb-context">↳ Order documents</div><form id="tf-ai-form"><textarea id="tf-ai-question" aria-label="Ask CashWeave" rows="1"></textarea><div class="tx-send-row"><span class="tf-note"></span><button class="tf-button primary" type="button" data-action="ai-submit">Send</button></div></form></div></section></div><footer style="display:flex;gap:16px;margin-top:24px;flex-wrap:wrap"><button id="scroll-check">Verify history scroll</button><button id="advance">Next activity</button><button id="finish">Complete response</button><button id="complete-while-typing">Complete while typing</button><output id="checks"></output></footer></main></div>
+<div id="tradeflow-export-preview" data-page="assistant"><header class="tf-top"><strong>↗ CashWeave</strong><small>UI test · scripted events · no model calls</small></header><main class="tf-main" style="margin:auto"><div id="tf-content"><section class="tx-chat"><div class="tx-chat-top"><span>TF-26104 · Harbour Supplies</span><button id="language" class="tf-link">中文 / English</button></div><div class="tx-messages" id="messages"></div><div class="tx-composer"><div class="kb-context">↳ Order documents</div><form id="tf-ai-form"><textarea id="tf-ai-question" aria-label="Ask CashWeave" rows="1"></textarea><div class="tx-send-row"><span class="tf-note"></span><button class="tf-button primary" type="button" data-action="ai-submit">Send</button></div></form></div></section></div><footer style="display:flex;gap:16px;margin-top:24px;flex-wrap:wrap"><button id="jump-task">Open earlier task result</button><button id="scroll-check">Verify history scroll</button><button id="advance">Next activity</button><button id="finish">Complete response</button><button id="complete-while-typing">Complete while typing</button><output id="checks"></output></footer></main></div>
 <script type="module">
-import {setupChat,replaceChatReply,rememberChatScroll} from '/src/chat-ui.js';
+import {setupChat,replaceChatReply,rememberChatScroll,focusChatReply} from '/src/chat-ui.js';
 import {createKnowledgeUI} from '/src/knowledge.js';
 const root=document.querySelector('#tradeflow-export-preview');
 let lang='en';
@@ -26,6 +26,16 @@ document.querySelector('#complete-while-typing').onclick=()=>{
  document.querySelector('#checks').textContent=document.activeElement===input&&input.value==='Keep this unsent question'&&input.selectionStart===5&&input.selectionEnd===9?'PASS · Input, focus and selection retained':'FAIL';
 };
 document.querySelector('#language').onclick=()=>{rememberChatScroll(root);lang=lang==='en'?'zh':'en';const panel=root.querySelector('.tx-messages');const next=panel.cloneNode(false);next.removeAttribute('data-scroll-key');next.innerHTML=history+markup();panel.replaceWith(next);setupChat(root,lang);};
+document.querySelector('#jump-task').onclick=()=>{
+ setupChat(root,lang);
+ focusChatReply(root,'history-2');
+ requestAnimationFrame(()=>{
+  const reply=root.querySelector('[data-reply-id="history-2"]');
+  const panel=root.querySelector('.tx-messages');
+  const offset=reply.getBoundingClientRect().top-panel.getBoundingClientRect().top;
+  document.querySelector('#checks').textContent=document.activeElement===reply && Math.abs(offset-24)<2 ? 'PASS · Selected reply focused and positioned at the top of the panel' : 'FAIL · Task navigation';
+ });
+};
 document.querySelector('#scroll-check').onclick=()=>{
  const panel=root.querySelector('.tx-messages');
  panel.scrollTop=100;

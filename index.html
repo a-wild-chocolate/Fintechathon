@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="/src/clarity.css" />
     <link rel="stylesheet" href="/src/knowledge.css" />
     <link rel="stylesheet" href="/src/chat.css" />
-    <script type="module" src="/src/app.js"></script>
+    <link rel="stylesheet" href="/src/business.css" />
+    <script type="module" src="/src/bootstrap.js"></script>
   </head>
   <body>
     <div
@@ -20,6 +21,8 @@
       lang="zh-CN"
       aria-label="CashWeave 小微出口企业财务工作台"
     >
+      <p role="status">Loading CashWeave…</p>
+      <template id="legacy-workspace">
       <header class="tf-top">
         <div class="tf-brand"><span class="tf-logo">↗</span>CashWeave</div>
         <div class="tf-company">
@@ -72,6 +75,7 @@
       </div>
       <aside id="tx-agent-tasks" class="tx-agent-tasks" data-user-content></aside>
       <div class="tf-toast" id="tf-toast" role="status" hidden></div>
+      </template>
     </div>
   </body>
 </html>

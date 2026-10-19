@@ -45,6 +45,16 @@ class AgentRuntime:
         with self.store.db.connect(write=True) as db:
             db.execute("UPDATE agent_runs SET status='interrupted' WHERE status='running'")
 
+    def for_company(self, tenant):
+        from copy import copy
+        from dataclasses import replace
+        scoped = copy(self)
+        scoped.tenant = tenant
+        scoped.library = copy(self.library)
+        scoped.library.settings = replace(self.library.settings, tenant=tenant)
+        scoped.workflows = Workflows(scoped.library, self.store)
+        return scoped
+
     @property
     def enabled(self):
         return os.getenv('TRADEX_AGENTS_ENABLED', '0') == '1' and self.model.configured

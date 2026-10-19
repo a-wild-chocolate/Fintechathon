@@ -14,6 +14,17 @@ export const dayNumber = (s) =>
 export const receiptCNY = (s) => s.partialReceipt ? s.partialReceipt.netCNY : 80000;
 
 export function cashEvents(s) {
+  if (s.kind === 'business') return s.movements.filter(row => row.status !== 'posted').map(row => ({
+    id:row.id, orderId:row.order_id,
+    label:[row.label.replace('Expected receipt','预计回款').replace('Supplier payment','供应商付款'),row.label], amount:row.signed_minor/100,
+    day:Math.round((Date.parse(row.due_date)-Date.parse(s.planning_start))/86400000),
+  }));
+  if (s.movements?.length) {
+    const labels = {supplier:['供应商付款','Supplier payment'],receipt:s.partialReceipt ? ['部分付款预计结汇','Partial receipt conversion'] : ['预计尾款结汇','Expected receipt conversion'],operating:['物流及经营支出','Logistics & operating costs'],'other-receipt':['其他预计回款','Other expected receipts'],'other-payment':['其他经营付款','Other operating payments'],'later-receipt':['其他预计回款','Other expected receipts']};
+    return s.movements.map(row => ({id:row.id, orderId:row.order_id, label:labels[row.id] || [row.label,row.label],
+      day:row.id === 'supplier' ? s.supplierDay : row.id === 'receipt' ? s.receiptDay : dayNumber(row.due_date),
+      amount:row.id === 'receipt' ? receiptCNY(s) : row.signed_minor / 100})).sort((a,b)=>a.day-b.day);
+  }
   return [
     { id: "supplier", day: s.supplierDay, amount: -160000, orderId: "TF-26104", label: ["供应商付款", "Supplier payment"] },
     { id: "receipt", day: s.receiptDay, amount: receiptCNY(s), orderId: "TF-26104", label: s.partialReceipt ? ["部分付款预计结汇", "Partial receipt conversion"] : ["预计尾款结汇", "Expected receipt conversion"] },

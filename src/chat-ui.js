@@ -11,6 +11,21 @@ export function rememberChatScroll(root) {
 }
 
 const followConversation = panel => panel.scrollTo({top: panel.scrollHeight, behavior: 'instant'});
+
+export function focusChatReply(root, turnId) {
+  // Run after setupChat restores the panel so task navigation takes priority.
+  requestAnimationFrame(() => {
+    const reply = root.querySelector(`[data-reply-id="${CSS.escape(turnId)}"]`);
+    if (!reply) return;
+    const panel = reply.closest('.tx-messages');
+    const top = panel.scrollTop + reply.getBoundingClientRect().top - panel.getBoundingClientRect().top - 24;
+    panel.scrollTo({top, behavior: 'instant'});
+    reply.tabIndex = -1;
+    reply.focus({preventScroll: true});
+    reply.classList.add('is-task-target');
+    rememberChatScroll(root);
+  });
+}
 const reveal = element => {
   if (!reducedMotion()) element.animate([{ opacity: 0, transform: 'translateY(5px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 240, easing: 'ease-out' });
 };

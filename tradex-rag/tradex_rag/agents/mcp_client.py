@@ -21,6 +21,12 @@ class WorkflowClient:
             schema = json.loads(json.dumps(tool.input_schema))
             for key in ('run_id', 'role'): schema['properties'].pop(key, None)
             schema['required'] = [k for k in schema.get('required', []) if k not in ('run_id', 'role')]
+            if tool.name == 'wf_reconcile':
+                schema['properties'].pop('amount_usd')
+                schema['required'] = ['amount', 'currency', 'receipt_date', 'evidence_ids']
+                schema['properties']['amount']['description'] = 'Instalment amount in the order currency, or null if unknown. Carry forward the current proposal amount unless corrected.'
+                schema['properties']['receipt_date']['description'] = 'Payment availability date as YYYY-MM-DD, or null if unknown. Apply the latest human answer, not the email header date.'
+                schema['properties']['evidence_ids']['description'] = 'IDs of the supporting document sections in known_sources. Human answers supplement the document; they do not erase its provenance.'
             result.append({'type': 'function', 'function': {'name': tool.name, 'description': tool.description, 'parameters': schema}})
         return result
 

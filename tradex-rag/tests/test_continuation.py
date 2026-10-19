@@ -210,3 +210,17 @@ def test_repeated_cash_tool_is_cached_until_workspace_changes(setup):
         assert (await tool.ainvoke({}))['opening_cny']==100000
     asyncio.run(check())
     assert calls==['wf_cash','wf_cash']
+
+
+def test_generic_currency_amount_requires_reconciliation(setup):
+    from tradex_rag.agents.runtime import Turn
+    from tradex_rag.agents.continuation import Continuation
+    _,runtime,model,doc=setup
+    install_model(model,[])
+    first=runtime.answer('Assess the order',language='en',order_id='TF-26104',document_id=doc,workspace=SNAPSHOT)
+    parent=runtime.store.run(first['run_id'],'test')
+    run,_,request,history=runtime.prepare('GBP 4000',order_id='TF-26104',document_id=doc)
+    request['human_answers']=[{'field':'amount','action':'answer','comment':'GBP 4000'}]
+    continuation=Continuation(Turn(runtime,run,request,history),parent)
+    assert 'reconciliation' in continuation.required
+    assert continuation.cash_facts==[]

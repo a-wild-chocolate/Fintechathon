@@ -48,7 +48,7 @@ class Continuation:
                 if doc['current_version'] != version:
                     self.changed_sources.append(document_id)
                     self.required.add(role)
-        if any(answer.get('field') in {'amount_usd', 'receipt_date'} and answer['action'] == 'answer'
+        if any(answer.get('field') in {'amount', 'amount_usd', 'receipt_date'} and answer['action'] == 'answer'
                for answer in turn.request.get('human_answers', [])):
             self.required.add('reconciliation')
         self.cash_facts = []

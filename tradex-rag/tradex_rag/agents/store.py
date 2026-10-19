@@ -2,6 +2,7 @@ import json
 import time
 from uuid import uuid4
 from ..db import Database
+from ..business import BusinessStore
 from ..service import Conflict, NotFound
 from .human import resolve_answers, reply_text
 
@@ -19,6 +20,7 @@ class AgentStore:
     def __init__(self, path):
         self.db = Database(path)
         with self.db.connect() as db: db.executescript(SCHEMA)
+        self.business = BusinessStore(self.db)
 
     def start(self, tenant, request):
         with self.db.connect(write=True) as db:
@@ -103,16 +105,11 @@ class AgentStore:
             db.execute('UPDATE agent_sessions SET turns=? WHERE id=?', (json.dumps(history[-4:], ensure_ascii=False), run['session_id']))
 
     def workspace(self, tenant):
-        with self.db.connect() as db:
-            row = db.execute('SELECT snapshot FROM agent_workspaces WHERE tenant=?', (tenant,)).fetchone()
-        return json.loads(row['snapshot']) if row else None
+        return self.business.snapshot(tenant)
 
     def import_workspace(self, tenant, snapshot):
         with self.db.connect(write=True) as db:
-            row = db.execute('SELECT version FROM agent_workspaces WHERE tenant=?', (tenant,)).fetchone()
-            if not row or snapshot['version'] > row['version']:
-                db.execute('INSERT OR REPLACE INTO agent_workspaces VALUES(?,?,?)',
-                           (tenant, snapshot['version'], json.dumps(snapshot)))
+            self.business.write_snapshot(db, tenant, snapshot, 'workspace_import')
         return self.workspace(tenant)
 
     def proposal(self, tenant, session_id):

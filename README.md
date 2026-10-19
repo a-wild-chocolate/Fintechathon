@@ -1,6 +1,37 @@
-# TradeX
+# CashWeave
 
-An export-finance workspace for small Chinese trading businesses. TradeX connects company cash, order evidence, document search and an AI conversation in one workflow.
+An export-finance workspace for small Chinese trading businesses. CashWeave connects company cash, order evidence, document search and an AI conversation in one workflow.
+
+## Companies, orders and cash planning
+
+The default homepage lists saved companies. Choose **New company**, enter a name and dated opening CNY/USD balances, review them, then confirm. A new company starts with no orders or sample cash movements.
+
+Inside a company, choose **New order** and enter the customer, goods, order currency/value, already received amount, next expected receipt and supplier payment. USD, EUR, GBP and CNY orders are supported; the cash forecast is in CNY using the explicit conversion assumption you enter. Unknown receipts stay unscheduled.
+
+**Review and continue** previews the company-wide cash impact without saving. **Confirm and save** writes the order and its payment plan in one SQLite transaction. **Edit order** follows the same review flow; it replaces that order's future movements rather than duplicating them. Cancelled orders remain in history and contribute no future receipts or payments.
+
+The dashboard, document upload scope and AI assistant use the selected company's saved records. Click **Analyze cash impact** on an order to start analysis with that order's context. Documents can be linked to any saved order, and confirmed AI receipt proposals update its expected payment plan. Company switching separates orders, documents, conversations and AI tasks.
+
+The original scripted demonstration remains at `/?demo=1`. Normal company creation does not load that data. Editing the original sample company's orders converts it to a managed workspace; its demo link then opens the saved company instead. The SQL schema and API are documented in [Database design](docs/DATABASE.md).
+
+## Start the backend and frontend
+
+After the one-time installation below, run these in two terminals from the repository root:
+
+```bash
+# Terminal A: loads tradex-rag/.env and opens port 8765
+cd tradex-rag
+./start.sh
+```
+
+```bash
+# Terminal B: run from the repository root; opens port 5173
+npm run dev
+```
+
+Open **http://127.0.0.1:5173/** for company management. Backend API reference: **http://127.0.0.1:8765/docs**. Keep both terminals running. Company and order tables are created automatically at startup; no separate SQL server or manual schema import is needed.
+
+API keys belong in **`tradex-rag/.env`**. Company/order management and deterministic cash calculations work without a model key; AI answers require the configured model provider. See [OpenRouter configuration](#openrouter-and-multi-agent-configuration). Restart the backend after changing `.env`.
 
 ## First-time setup after cloning
 
@@ -15,7 +46,7 @@ node --version
 python3.12 --version
 ```
 
-Git names the cloned folder `Fintechathon`, even though the product is TradeX. All paths below are relative to that folder. The frontend uses Node's built-in modules, so there is no `npm install` step.
+Git names the cloned folder `Fintechathon`, even though the product is CashWeave. All paths below are relative to that folder. The frontend uses Node's built-in modules, so there is no `npm install` step.
 
 ### 2. Install the backend and create its configuration
 
@@ -150,7 +181,7 @@ See the [backend README](tradex-rag/README.md), [knowledge archive README](knowl
 - **Overview** shows currency-specific balances, upcoming payments, a 56-day cash projection and orders requiring attention.
 - **Documents** supports real uploads with an optional order association, processing status, company-document and public-policy views, and a direct **Ask AI** entry.
 - **AI assistant** searches the selected document or the current order plus shared company records and public policies. Answers show numbered citations. Each citation opens the referenced file version, highlights the source passage and links to the original file or official policy page.
-- **Notifications** demonstrate event-based updates and scheduled follow-ups using the browser's demo date.
+- **Notifications** in the original demo demonstrate event-based updates and scheduled follow-ups using the browser's demo date.
 
 Chinese and English controls cover the frontend and knowledge workbench. Public policy cards have English display titles and bilingual summaries. Uploaded originals and quoted evidence retain their source language.
 
@@ -184,7 +215,7 @@ src/
   finance.js                  Deterministic cash calculations
   partial-payment.js          Email-field clarification demo
   followups.js                Reminder and event-demo logic
-  storage.js                  Browser state persistence
+  storage.js                  Backend workspace persistence and browser cache
   icons.js                    Local SVG icons
   styles.css                  Base components
   clarity.css                 Finance-workspace layouts
@@ -235,6 +266,6 @@ Each session is saved under `tradex-rag/var/empty-demos/`. Reopening the same pr
 
 Upload a PNG, JPG or WEBP through **Documents**, link it to the order, and choose **Ask AI** after indexing. The backend sends the image directly to the configured vision model, stores the transcription and payment fields with the source version, and indexes them for retrieval. Missing amount or date fields remain empty until the assistant asks the user. Confirmation updates the expected receipt and cash projection, while the bank balance and total outstanding receivable remain unchanged. Citation buttons open the original screenshot alongside the extracted text.
 
-Configure `TRADEX_MODEL_VISION` in `tradex-rag/.env`. It uses the existing provider and API key and defaults to `TRADEX_MODEL`. The tested OpenRouter configuration is `deepseek/deepseek-v4.1-flash`. Image extraction is cached per source version so an indexing retry can reuse the result. No separate OCR service is required.
+Configure `TRADEX_MODEL_VISION` in `tradex-rag/.env`. It uses the existing provider and API key. OpenRouter defaults to `qwen/qwen3.5-plus-20260420` for screenshots; the conversational agents keep their separately configured DeepSeek models. Other providers use `TRADEX_MODEL` unless overridden with a vision-capable model. Image extraction is cached per source version so an indexing retry reuses the result; changing models does not rewrite existing evidence. Upload a new document or source version to analyze it again. No separate OCR service is required.
 
 The bell opens a contextual event list. Opening it marks the displayed events as read; the alerts remain available. Expand an event to inspect its cash impact, open its order or explicitly start AI analysis. Unchanged financial alerts retain their read state across unrelated workspace versions.

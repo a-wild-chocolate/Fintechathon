@@ -25,7 +25,7 @@ def question_cards(output, proposal, language, specialist_results, human_answers
     en = language == 'en'
     skipped_fields = {a.get('field') for a in human_answers if a['action'] == 'skip'}
     skipped_questions = {a['question'] for a in human_answers if a['action'] == 'skip'}
-    if not questions and proposal and proposal.get('missing_fields'):
+    if proposal and proposal.get('missing_fields'):
         fields = {
             'amount_usd': ('客户本次计划支付多少美元？', 'How much USD does the buyer plan to pay this time?',
                            ['金额已知，我在留言中填写', '客户尚未明确金额'],
@@ -34,6 +34,9 @@ def question_cards(output, proposal, language, specialist_results, human_answers
                              ['日期已知，我在留言中填写', '客户尚未明确日期'],
                              ['I know the date; I will enter it below', 'The buyer has not specified a date']),
         }
+        currency=proposal.get('currency', 'USD')
+        fields['amount']=(f'客户本次计划支付多少 {currency}？', f'How much {currency} does the buyer plan to pay this time?',
+                          fields['amount_usd'][2], fields['amount_usd'][3])
         questions = [{'question': fields[f][int(en)], 'options': fields[f][3 if en else 2],
                       'field': f, 'context': 'Leave this unknown if it has not been agreed.' if en else '尚未约定的信息可以保留未知。'}
                      for f in proposal['missing_fields'] if f in fields and f not in skipped_fields]

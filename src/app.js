@@ -1,8 +1,8 @@
-import { setupChat, replaceChatReply, rememberChatScroll } from "./chat-ui.js";
+import { setupChat, replaceChatReply, rememberChatScroll, focusChatReply } from "./chat-ui.js";
 import { attachCashChart, cashAnalysisQuestion } from "./cash-chart.js";
 import { setupDocuments, parseSetupDocument, readSetupFile } from "./onboarding.js";
 import { collectHumanAnswers, humanReplySummary } from './human-loop.js';
-import { restoreAgentTasks, archiveConversation, retainAgentTasks, rememberAgentSession, linkedConversation } from './agent-tasks.js';
+import { restoreAgentTasks, archiveConversation, retainAgentTasks, rememberAgentSession, linkedConversation, openAgentTask } from './agent-tasks.js';
 import {
   translations,
   docGroups,
@@ -22,7 +22,7 @@ import {
   cashEvents,
 } from "./finance.js";
 import { samplePartialEmail, inspectPaymentEmail, readPaymentDetails, paymentProblem, partialReceipt } from "./partial-payment.js";
-import { loadWorkspace, saveWorkspace } from "./storage.js";
+import { loadWorkspace, saveWorkspace, storedFinancialState, storedBusinessRecords } from "./storage.js";
 import { followupView, markNotificationsRead } from "./followups.js";
 import { renderIcons } from "./icons.js";
 import { createKnowledgeUI, askKnowledge, knowledgeAPI, watchAgentRun } from "./knowledge.js";
@@ -69,6 +69,7 @@ const knowledge = createKnowledgeUI({
 
 function applyAgentWorkspace(snapshot) {
   if ((setupMode && !flow.setup?.complete) || !snapshot || snapshot.version < flow.version) return;
+  flow.movements = snapshot.movements;
   flow.version = snapshot.version;
   flow.opening = snapshot.opening;
   flow.supplierDay = snapshot.supplierDay;
@@ -126,11 +127,11 @@ function renderAgentTasks() {
   const unread = tasks.filter(t => t.unread);
   host.hidden = !tasks.length;
   if (!tasks.length) return;
-  const visible = [...new Set([...pending, ...tasks.slice(-8)])].reverse();
+  const visible = [...new Set([...pending, ...unread, ...tasks.slice(-8) ])].reverse();
   const label = t => t.rag.task_status === 'needs_approval' && t.rag.proposal?.status === 'confirmed' ? bi('已确认并更新', 'Confirmed and updated') : t.rag.human_response ? bi('已回答', 'Answered') : t.rag.status === 'pending' ? bi('后台运行中', 'Running in background')
     : t.rag.status === 'error' || t.rag.task_status === 'failed' ? bi('需要查看', 'Needs attention')
     : t.rag.task_status === 'needs_information' ? bi('待补充信息', 'Needs information')
-    : t.rag.task_status === 'needs_approval' ? bi('待确认', 'Needs confirmation') : bi('结果已就绪', 'Result ready');
+    : t.rag.task_status === 'needs_approval' ? bi('待确认', 'Needs confirmation') : t.unread ? bi('新结果', 'New result') : bi('已查看', 'Viewed');
   host.innerHTML = `<button class="tx-agent-task-toggle" data-agent-tasks-toggle aria-expanded="${!!state.agentTasksOpen}">✦ ${bi('AI 任务', 'AI tasks')} · ${pending.length ? bi(`${pending.length} 项运行中`, `${pending.length} running`) : unread.length ? bi(`${unread.length} 条新结果`, `${unread.length} new results`) : bi('查看结果', 'View results')}</button>${state.agentTasksOpen ? `<section class="tx-agent-task-list"><strong>${bi('切换页面后继续运行', 'Tasks continue across pages')}</strong>${visible.map(t => `<button data-agent-task="${t.id}"><span>${escapeHtml(t.orderId || bi('企业整体', 'Company'))} · ${label(t)}</span><strong>${escapeHtml(t.question)}</strong></button>`).join('')}</section>` : ''}`;
 }
 root.addEventListener('click', event => {
@@ -138,8 +139,7 @@ root.addEventListener('click', event => {
   if (toggle) { state.agentTasksOpen = !state.agentTasksOpen; renderAgentTasks(); }
   const button = event.target.closest('[data-agent-task]');
   if (!button) return;
-  const turn = flow.chat.find(t => t.id === button.dataset.agentTask);
-  turn.archived = false; turn.unread = false;
+  const turn = openAgentTask(flow.chat, button.dataset.agentTask);
   const sessionId = turn.rag.session_id || turn.rag.progress?.session_id;
   if (sessionId) {
     flow.agentSessions ||= {};
@@ -148,6 +148,7 @@ root.addEventListener('click', event => {
   state.context = turn.scope; state.page = 'assistant'; state.ragDocumentId = turn.documentId || '';
   state.agentTasksOpen = false;
   render(); persist();
+  focusChatReply(root, turn.id);
 });
 
 function saveHumanDraft(event) {
@@ -255,6 +256,7 @@ const labels = {
 
 function balances() {
   return seriesFor({
+    movements: flow.movements,
     opening: flow.opening,
     partialReceipt: flow.partialReceipt ? { ...flow.partialReceipt } : null,
     supplierDay: flow.supplierDay + (state.extended ? 10 : 0),
@@ -1018,6 +1020,7 @@ const signedMoney = (n) => (n < 0 ? "−" : "") + money(n);
 
 function currentBase() {
   return {
+    movements: flow.movements,
     v: flow.version,
     opening: flow.opening,
     partialReceipt: flow.partialReceipt ? { ...flow.partialReceipt } : null,
@@ -1473,6 +1476,7 @@ function commitJob() {
 }
 
 function render() {
+  showStorageStatus();
   if (setupMode && !flow.setup.complete) { renderSetup(); return; }
   renderAgentTasks();
   const company = state.context === "company";
@@ -1528,6 +1532,8 @@ function render() {
   $("#tf-toast").hidden = true;
   renderNotifications();
   localize();
+  const companyRecord = storedBusinessRecords()?.company;
+  if (companyRecord) $(".tf-company").textContent = companyRecord.name;
   renderIcons(root);
   setupChat(root, state.lang, `${state.page}:${docScope()}`);
   requestAnimationFrame(chart);
@@ -1834,7 +1840,22 @@ function persist() {
   saveWorkspace({ state, docGroup, docUploads, flow });
 }
 
-const saved = loadWorkspace();
+let storageStatus = {status:'loading'};
+const storageLabel = document.createElement('span');
+storageLabel.className = 'tx-storage-status';
+$('.tf-top').append(storageLabel);
+function showStorageStatus() {
+  const labels = {loading:['连接数据库…','Connecting…'], saving:['正在保存…','Saving…'], saved:['已保存到数据库','Saved to database'], offline:['离线 · 仅本机缓存','Offline · Local cache'], error:['保存失败 · 请刷新','Save failed · Reload']};
+  storageLabel.textContent = bi(...labels[storageStatus.status]);
+  storageLabel.title = storageStatus.detail || '';
+  storageLabel.setAttribute('role','status');
+}
+window.addEventListener('workspace-storage', event => {storageStatus=event.detail; showStorageStatus();});
+window.addEventListener('workspace-financial', event => {
+  if (event.detail && event.detail.version > flow.version) {applyAgentWorkspace(event.detail); render();}
+});
+showStorageStatus();
+const saved = await loadWorkspace();
 if (saved) {
   state = saved.state;
   docGroup = saved.docGroup;
@@ -1844,12 +1865,14 @@ if (saved) {
     if (job.status === "parsing") job.status = "queued";
   }
 }
+applyAgentWorkspace(storedFinancialState());
 state.page = "home";
 state.context = "company";
 state.notificationsOpen = false;
 state.agentTasksOpen = false;
 const reconnectingTurns = restoreAgentTasks(flow.chat);
 render();
+persist();
 knowledge.refresh();
 refreshAgents();
 for (const turn of reconnectingTurns) retrieveForTurn(turn);
@@ -1886,17 +1909,13 @@ function companyPosition() {
   const base = currentBase(),
     summary = enrich(base),
     series = seriesFor(base);
-  const payments = [
-    { day: flow.supplierDay, amount: 160000 },
-    { day: 20, amount: 42000 },
-    { day: 40, amount: 38000 },
-  ];
+  const payments = cashEvents(base).filter(event => event.amount < 0);
   return {
     ...summary,
     minimum: Math.min(...series.map((p) => p.v)),
     dueWeek: payments
       .filter((p) => p.day < 7)
-      .reduce((sum, p) => sum + p.amount, 0),
+      .reduce((sum, p) => sum - p.amount, 0),
   };
 }
 
@@ -1954,19 +1973,29 @@ function companyOrders(destination = "overview") {
       label: bi("待核差额", "Unresolved"),
     }] : []),
   ];
+  const business = storedBusinessRecords();
+  for (const row of rows) {
+    const record = business?.trade_orders.find(order => order.id === row.id);
+    if (!record) continue;
+    row.name = business.counterparties.find(party => party.id === record.customer_id).name;
+    row.amount = `${record.currency} ${((record.total_minor - record.received_minor - record.adjustment_minor) / 100).toLocaleString("en-US")}`;
+  }
   const visibleRows =
     destination === "overview"
       ? rows.filter((row) => row.scope !== "fee" || flow.feeRemaining !== 0)
       : rows;
-  return `<div class="co-orders">${visibleRows.map((order) => `<button type="button" class="co-order" data-open-order="${order.scope}" data-order-destination="${destination}"><span class="co-avatar ${order.tone}" aria-hidden="true">${order.initials}</span><div class="co-order-main"><div class="co-order-title"><strong>${order.name}</strong><span class="co-status ${order.tone}">${order.status}</span></div><span class="co-order-meta">${order.id} · ${order.country}</span><p>${order.detail}</p><span class="co-order-next">${bi("下一步", "Next")} <span>→</span> ${order.next}</span></div><div class="co-order-amount"><span>${order.label}</span><strong>${order.amount}</strong></div><span class="co-chevron" aria-hidden="true">›</span></button>`).join("")}</div>`;
+  return `<div class="co-orders">${visibleRows.map((order) => `<button type="button" class="co-order" data-open-order="${order.scope}" data-order-destination="${destination}"><span class="co-avatar ${order.tone}" aria-hidden="true">${order.initials}</span><div class="co-order-main"><div class="co-order-title"><strong>${escapeHtml(order.name)}</strong><span class="co-status ${order.tone}">${order.status}</span></div><span class="co-order-meta">${order.id} · ${order.country}</span><p>${order.detail}</p><span class="co-order-next">${bi("下一步", "Next")} <span>→</span> ${order.next}</span></div><div class="co-order-amount"><span>${order.label}</span><strong>${order.amount}</strong></div><span class="co-chevron" aria-hidden="true">›</span></button>`).join("")}</div>`;
 }
 
 function companyHome() {
   const p = companyPosition();
   const upcoming = cashEvents(currentBase()).slice(0, 3);
-  return `<section class="co-intro"><div><span class="sx-eyebrow">${bi("星帆出口贸易 / 资金工作台", "StarSail Exports / Cash workspace")}</span><h1>${bi("每笔订单，都有下一步。", "Every order. A clear next step.")}</h1></div><span class="co-asof">${bi("2026年10月17日 · 示例企业", "17 Oct 2026 · Sample business")}</span></section>
+  const business = storedBusinessRecords();
+  const companyName = business?.company?.name || 'StarSail Exports';
+  const usdBalance = business?.bank_accounts.filter(account => account.currency === 'USD').reduce((sum, account) => sum + account.opening_minor / 100, 0) ?? 19970;
+  return `<section class="co-intro"><div><span class="sx-eyebrow">${escapeHtml(companyName)} / ${bi("资金工作台", "Cash workspace")}</span><h1>${bi("每笔订单，都有下一步。", "Every order. A clear next step.")}</h1></div><span class="co-asof">${bi("2026年10月17日 · 示例企业", "17 Oct 2026 · Sample business")}</span></section>
   <section class="co-cash-card" aria-label="${bi("企业资金概况", "Company cash position")}">
-    <div class="co-balances"><article><span>${bi("可用人民币", "Available CNY")}</span><strong><small>¥</small>${flow.opening.toLocaleString("en-US")}</strong><p>${bi("用于境内经营付款", "Available for domestic payments")}</p></article><article><span>${bi("可用美元", "Available USD")}</span><strong><small>$</small>19,970</strong><p>${bi("美元账户 · 尚未结汇", "USD account · Not converted")}</p></article></div>
+    <div class="co-balances"><article><span>${bi("可用人民币", "Available CNY")}</span><strong><small>¥</small>${flow.opening.toLocaleString("en-US")}</strong><p>${bi("用于境内经营付款", "Available for domestic payments")}</p></article><article><span>${bi("可用美元", "Available USD")}</span><strong><small>$</small>${usdBalance.toLocaleString("en-US")}</strong><p>${bi("美元账户 · 尚未结汇", "USD account · Not converted")}</p></article></div>
     <div class="co-cash-summary"><div><span>${bi("7 天内待付", "Due within 7 days")}</span><strong>${money(p.dueWeek)}</strong></div><div class="${p.peak ? "co-negative" : ""}"><span>${bi("56 天最大缺口", "56-day peak shortfall")}</span><strong>${money(p.peak)}</strong></div></div>
   </section>
   <section class="co-insight ${p.peak ? "attention" : ""}" aria-label="${bi("当前需要关注", "Needs your attention")}"><span class="co-insight-icon" aria-hidden="true">${p.peak ? "!" : "↗"}</span><div><strong>${p.peak ? bi(`${date(p.first)} 预计出现资金缺口`, `Cash shortfall expected on ${date(p.first)}`) : bi("当前收付款计划下，预计无资金缺口", "No shortfall under the current cash plan")}</strong><p>${p.peak ? bi("先协调付款时间，再跟进客户回款。", "Review payment timing and follow up collections.") : bi(`未来 56 天最低余额 ${signedMoney(p.minimum)}，仍需按期收回客户尾款。`, `Lowest 56-day balance: ${signedMoney(p.minimum)}. Buyer receipts must arrive as planned.`)}</p></div><button class="tf-link" data-connected-question="${bi("帮我分析企业资金情况和优先处理的订单", "Analyze company cash and prioritize outstanding orders")}">${bi("分析原因", "Explain this")} ↗</button></section>

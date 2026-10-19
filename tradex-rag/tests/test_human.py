@@ -57,3 +57,14 @@ def test_clarification_validation_and_stale_questions(setup):
     with pytest.raises(ValueError): runtime.store.respond(first['run_id'],'test',bad,'zh')
     runtime.answer('6000',order_id='TF-26104',document_id=doc,session_id=first['session_id'])
     with pytest.raises(Conflict): runtime.store.respond(first['run_id'],'test',answers,'zh')
+
+
+def test_missing_receipt_fields_replace_unrelated_model_choices():
+    from tradex_rag.agents.human import question_cards
+    output={'questions':[{'question':'Move the supplier payment?', 'context':'Optional action', 'options':['Yes','No']}]}
+    proposal={'currency':'GBP','missing_fields':['amount','receipt_date']}
+    cards=question_cards(output,proposal,'en',{})
+    assert [q['field'] for q in cards]==['amount','receipt_date']
+    assert 'GBP' in cards[0]['question']
+    assert all('15,000' not in str(q) and '2026-11-07' not in str(q) for q in cards)
+    assert len(question_cards(output,proposal,'en',{},[{'field':'amount','action':'skip','question':cards[0]['question']}]))==1

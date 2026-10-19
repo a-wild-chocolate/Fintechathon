@@ -1,6 +1,6 @@
-# TradeX RAG service
+# CashWeave backend
 
-The Python backend stores versioned business documents in SQLite, indexes passages in Qdrant and provides cited retrieval to the TradeX frontend and MCP clients. Public policy cards and company uploads share a retrieval interface with separate visibility and order scopes.
+The Python backend stores companies, orders, accounts and cash plans in SQLite, indexes versioned documents in Qdrant and serves the CashWeave frontend and MCP clients. Public policy cards and company uploads share a retrieval interface with separate visibility and order scopes.
 
 ## Installation
 
@@ -21,6 +21,20 @@ The model download requires network access once. Subsequent local indexing uses 
 Open http://127.0.0.1:8765 for the library workbench or run `npm run dev` from the repository root for the finance application. The HTTP API description is available at http://127.0.0.1:8765/docs.
 
 Embedded Qdrant has one owning process. Stop the server before running CLI commands that open the same library. MCP clients use the running HTTP service through `./mcp.sh` instead of opening its storage directly.
+
+## Daily startup and database files
+
+From this directory, run `./start.sh`. It loads `.env` and starts FastAPI at `http://127.0.0.1:8765`. In another terminal, run `npm run dev` from the repository root and open `http://127.0.0.1:5173/`.
+
+- `var/agents.sqlite3`: companies, customers/suppliers, accounts, orders, cash schedules, financial versions, conversations and agent runs.
+- `var/library.sqlite3`: document metadata, sections, versions and indexing jobs.
+- `var/files/`: original uploads; `var/qdrant/`: vector index.
+
+`TRADEX_DATA_DIR` changes the storage root. Preserve this directory between restarts; SQLite tables are created automatically. Source SQL is in `tradex_rag/sql/business.sql`. Existing demo forecasts migrate without replacing uploaded documents or AI history.
+
+`GET /api/companies` lists companies in this local workspace; `POST /api/companies` creates an empty company. Company APIs use `/api/companies/{company_id}/...`, including `/business/overview`, `/business/orders/preview`, `/business/orders`, `/assistant/runs` and `/uploads`. The local workspace owner is selected by `TRADEX_TENANT`; this development server binds to loopback and is not a multi-user authentication service.
+
+If port 8765 is already occupied, stop the previous service or set `TRADEX_RAG_PORT` in `.env` and start the frontend with the matching value, for example `TRADEX_RAG_PORT=8766 npm run dev`. If dependency installation was cancelled, rerun `.venv/bin/python -m pip install -e '.[test]'`; recreating the database is unnecessary.
 
 ## Main agent and subagents
 

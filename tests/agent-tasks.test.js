@@ -62,3 +62,18 @@ test('long active conversations retain every message while old archived replies 
  const active = Array.from({length:30}, (_, id) => ({id,rag:{status:'done'}}));
  assert.deepEqual(retainAgentTasks([old,...active]), active);
 });
+
+test('opening a task restores its clarification thread and reads only that result', async () => {
+  const {openAgentTask} = await import('../src/agent-tasks.js');
+  const turns = [
+    {id:'question', archived:true, unread:false, rag:{run_id:'r1', human_response:{run_id:'r2'}}},
+    {id:'answer', archived:true, unread:true, rag:{run_id:'r2'}},
+    {id:'other', archived:true, unread:true, rag:{run_id:'r3'}},
+  ];
+  assert.equal(openAgentTask(turns,'answer'), turns[1]);
+  assert.equal(turns[0].archived, false);
+  assert.equal(turns[1].archived, false);
+  assert.equal(turns[1].unread, false);
+  assert.equal(turns[2].unread, true);
+  assert.equal(turns[2].archived, true);
+});

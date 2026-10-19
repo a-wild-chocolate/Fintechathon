@@ -64,6 +64,11 @@ def workflow_tool(turn, role, definition):
     async def invoke(**arguments):
         name = spec['name']
         cache_key = None
+        if name == 'wf_reconcile':
+            for fact in turn.facts.get(role, []):
+                if fact['tool'] == name and fact['arguments'] == arguments:
+                    turn.record({'event': 'workflow_reused', 'agent': role, 'tool': name})
+                    return fact['result']
         if name in {'wf_status', 'wf_cash', 'wf_options'}:
             from .continuation import CashScenario
             store, tenant = turn.runtime.store, turn.runtime.tenant
@@ -85,6 +90,9 @@ def workflow_tool(turn, role, definition):
         except ValueError as exc:
             turn.record({'event': 'tool_error', 'agent': role, 'tool': name, 'error': str(exc)})
             return {'error': str(exc)}
+        if 'error' in value:
+            turn.record({'event': 'tool_error', 'agent': role, 'tool': name, 'arguments': arguments, 'error': value['error']})
+            return value
         turn.record({'event': 'tool_result', 'agent': role, 'tool': name, 'arguments': arguments, 'result': value})
         if name in {'kb_search', 'evidence_read'}:
             dependencies = turn.dependencies.setdefault(role, {})
@@ -211,7 +219,8 @@ async def run_agent(turn, role, task):
         if role != 'coordinator':
             context['continuation'] = {key: value for key, value in context['continuation'].items()
                                        if key in {'original_question', 'current_workspace', 'current_proposal', 'required_roles', 'cash_scenarios'}}
-    result = await agent.ainvoke({'messages': [{'role': 'user', 'content': json.dumps(context, ensure_ascii=False)}]},
+    from ..business_records import for_model
+    result = await agent.ainvoke({'messages': [{'role': 'user', 'content': json.dumps(for_model(context), ensure_ascii=False)}]},
                                  {'recursion_limit': 30})
     if not completed:
         try:

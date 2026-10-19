@@ -86,3 +86,14 @@
 #tradeflow-export-preview[data-page="assistant"] .tx-messages:focus-visible { outline: 1px solid #a6bfb3; outline-offset: 2px; }
 #tradeflow-export-preview[data-page="assistant"] .tx-composer { position: relative; bottom: auto; flex-shrink: 0; margin-top: 12px; }
 #tradeflow-export-preview[data-page="assistant"] #tf-content > .sx-details { flex-shrink: 0; max-height: 22dvh; overflow-y: auto; margin-top: 12px; }
+
+/* A task selection identifies its reply without adding another card. */
+#tradeflow-export-preview .tx-chat-reply.is-task-target { animation: task-reply-focus 1.8s ease-out; }
+#tradeflow-export-preview .tx-chat-reply.is-task-target:focus { outline: none; }
+@keyframes task-reply-focus {
+  0%, 45% { box-shadow: -3px 0 0 #4c8c78; }
+  100% { box-shadow: -3px 0 0 transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #tradeflow-export-preview .tx-chat-reply.is-task-target { animation: none; box-shadow: -3px 0 0 #4c8c78; }
+}

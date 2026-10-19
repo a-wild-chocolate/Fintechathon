@@ -44,7 +44,12 @@ def knowledge_events(after:int=0)->list:
     return request('GET','/api/events',params={'after':after})
 # Business workflow tools are called with host-injected run and role context.
 def workflow(name, run_id, role, arguments):
-    return request('POST', '/api/agent-tools/'+name, json={'run_id':run_id,'role':role,'arguments':arguments})
+    try:
+        return request('POST', '/api/agent-tools/'+name, json={'run_id':run_id,'role':role,'arguments':arguments})
+    except httpx.HTTPStatusError as exc:
+        if exc.response.status_code not in (400, 409):
+            raise
+        return {'error': exc.response.json()['detail']}
 
 @server.tool()
 def wf_status(run_id:str, role:str)->dict:
@@ -62,13 +67,13 @@ def evidence_read(run_id:str, role:str, document_id:str)->dict:
     return workflow('evidence_read',run_id,role,{'document_id':document_id})
 
 @server.tool()
-def wf_reconcile(run_id:str, role:str, amount_usd:float|None=None, receipt_date:str|None=None, evidence_ids:list[int]|None=None)->dict:
-    """Prepare TF-26104 expected partial-payment fields. Missing amount/date remain null; no cash is committed."""
-    return workflow('wf_reconcile',run_id,role,{'amount_usd':amount_usd,'receipt_date':receipt_date,'evidence_ids':evidence_ids or []})
+def wf_reconcile(run_id:str, role:str, amount_usd:float|None=None, receipt_date:str|None=None, evidence_ids:list[int]|None=None, amount:float|None=None, currency:str|None=None)->dict:
+    """Prepare the selected order’s expected receipt fields using its saved currency and outstanding amount. Missing amount/date remain null; no cash is committed."""
+    return workflow('wf_reconcile',run_id,role,{'amount_usd':amount_usd,'receipt_date':receipt_date,'evidence_ids':evidence_ids or [],'amount':amount,'currency':currency})
 
 @server.tool()
 def wf_cash(run_id:str, role:str, receipt_delay_days:int=0, supplier_extension_days:int=0, use_proposal:bool=False)->dict:
-    """Calculate 56-day CNY forecast and shortfalls from the company demo schedule or a pending proposal."""
+    """Calculate 56-day CNY forecast and shortfalls from saved company cash movements or a pending proposal."""
     return workflow('wf_cash',run_id,role,{'receipt_delay_days':receipt_delay_days,'supplier_extension_days':supplier_extension_days,'use_proposal':use_proposal})
 
 @server.tool()

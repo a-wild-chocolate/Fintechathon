@@ -21,7 +21,7 @@ def main():
             packages[name] = metadata.version(name)
         except metadata.PackageNotFoundError:
             packages[name] = None
-    test_environment = dict(os.environ, CUDA_VISIBLE_DEVICES="")
+    test_environment = dict(os.environ, CUDA_VISIBLE_DEVICES="", GUARD_TEST_CONFIG=os.path.abspath(args.config))
     result = subprocess.run([sys.executable, "-B", "-m", "unittest", "discover", "-s", "tests", "-v"],
                             cwd=b.root, env=test_environment, capture_output=True, text=True, timeout=180)
     b.write("audit/cpu-tests.log", result.stdout + result.stderr)

@@ -38,7 +38,10 @@ def installment_status(h, installment):
             "outstanding_usd_minor": remaining, "fee_party": h["fee_party"],
             "receipt_status": "settled" if remaining == 0 else ("partial" if net else "unconfirmed"),
             "coverage_day": h["coverage_day"], "absence_conclusive": h["coverage_day"] >= h["clock"],
-            "followup_state": "closed" if remaining == 0 else "open"}
+            "followup_state": "closed" if remaining == 0 else "open",
+            "next_action": ("archive_installment" if remaining == 0 else
+                            "request_statement_through_" + str(h["clock"])
+                            if h["coverage_day"] < h["clock"] else "retain_followup")}
 
 
 class Gateway:

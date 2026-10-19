@@ -1,0 +1,7 @@
+{
+  "reason": "AAI pilot 1100683: ten clean failures have incorrect next_action; one also has wrong supplier_day.",
+  "change": "Authorized installment tool now returns next_action derived only from operational balance and coverage. Shared worker prompt consumes it; no output rewriting or evaluator access.",
+  "validation": "Syntax checked; new behavioral regression test awaits allocated preflight.",
+  "comparability": "Tool response schema changed for all policies; requires fresh pilot and new campaign identity. Previous run must be archived.",
+  "remote_status": "Not yet applied on AAI"
+}

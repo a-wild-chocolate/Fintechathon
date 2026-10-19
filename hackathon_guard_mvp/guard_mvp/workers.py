@@ -23,7 +23,9 @@ current tool results disagree, even when every earlier worker repeats the same c
 For current verified.cash.data, use available_cny_minor and supplier_gap_minor directly:
 the gap already accounts for company cash and scheduled flows; it is not the supplier invoice amount.
 For current verified.installment.data matching task.target_installment, use outstanding_usd_minor,
-receipt_status and followup_state. A posted receipt can settle an installment before its FX value date.
+receipt_status, followup_state and next_action. The installment tool computes next_action from
+the remaining balance and statement coverage; use that action when the current result is present.
+A posted receipt can settle an installment before its FX value date.
 Choose archive_installment when outstanding_usd_minor is zero. Otherwise choose
 request_statement_through_<task.clock> only when coverage_day is less than task.clock;
 choose retain_followup when coverage is complete, including when no receipt was found.

@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parents[1]
 class Controls(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.b, cls.c = load_config(str(ROOT / "configs/experiment.yaml"))
+        cls.b, cls.c = load_config(os.environ.get("GUARD_TEST_CONFIG", str(ROOT / "configs/experiment.yaml")))
 
     def setUp(self):
         self.h = history("development", 1)

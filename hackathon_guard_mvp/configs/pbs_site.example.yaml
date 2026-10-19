@@ -1,0 +1,30 @@
+{
+  "queue": "gpu_free",
+  "project": "fs_ccds_asysong",
+  "select": "1:ncpus=12:ngpus=1:mem=64gb",
+  "walltime": "02:00:00",
+  "modules": [
+    "pytorch/2.11.0"
+  ],
+  "h200_selector": null,
+  "h200_enforcement": "gpu_free routes to documented H200 pool; verify GPU name and memory in allocation",
+  "download_policy_confirmed": false,
+  "evidence": [
+    "../gaas.pdf pages 7-8, 12",
+    "audit/gaas-queues.txt",
+    "audit/gaas-free-node.txt",
+    "/usr/local/templates/submit_gpu_test.pbs",
+    "/usr/local/templates/datamover.pbs"
+  ],
+  "documented_max_walltime": "04:00:00",
+  "observed_normal_max_walltime": "06:00:00",
+  "observed_high_max_walltime": "01:00:00",
+  "project_access": "confirmed by user; current Unix group appears in free-queue ACL",
+  "datamover": {
+    "queue": "gpu_datamover",
+    "select": "1:ncpus=4",
+    "documented_max_walltime": "120:00:00",
+    "purpose": "file transfers; external package/model egress not specified in this PDF"
+  },
+  "preparation_route": "User explicitly authorized modest binary package installation and pinned model download on login node; no builds or inference there."
+}

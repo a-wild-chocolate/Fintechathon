@@ -1,0 +1,21 @@
+{
+  "documents": {
+    "AAI-resourcelist.pdf": "5a4a71ce996297b7ee0a7ef4e47f05fb260fd1285cb6c5e6e7ec0b3be8f1e71f",
+    "AAI-userguide.pdf": "d339414ba78fc18246f8dbad447dd97565434314a700978c6a440e666cdaa976"
+  },
+  "syntax_checks": [
+    "guard_mvp/workers.py",
+    "tests/test_schedulers.py",
+    "scripts/slurm_launch.py",
+    "scripts/configure_slurm.py",
+    "slurm/run.sh"
+  ],
+  "original_files_unchanged": true,
+  "new_scheduler_tests": 5,
+  "tests_execution": "pending PBS preflight 88551.gaas",
+  "aai_execution": "not performed; remote environment details pending",
+  "pbs_jobs": [
+    "88551.gaas",
+    "88552.gaas"
+  ]
+}

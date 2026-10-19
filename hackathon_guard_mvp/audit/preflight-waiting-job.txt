@@ -1,0 +1,58 @@
+Job Id: 88471.gaas
+    Job_Name = guard_preflight
+    Job_Owner = suaq0001@hpc-gaas-hn2
+    job_state = H
+    queue = gpu_free_high
+    server = gaas
+    Checkpoint = u
+    ctime = Mon Oct 19 01:00:01 2026
+    depend = afterok:88472.gaas@gaas
+    Error_Path = hpc-gaas-hn2:/home/suaq0001/projects/Fintechathon/hackathon_gu
+	ard_mvp/runs/pbs/preflight.err
+    Hold_Types = d
+    Join_Path = n
+    Keep_Files = n
+    Mail_Points = a
+    mtime = Mon Oct 19 01:00:48 2026
+    Output_Path = hpc-gaas-hn2:/home/suaq0001/projects/Fintechathon/hackathon_g
+	uard_mvp/runs/pbs/preflight.out
+    Priority = 100
+    qtime = Mon Oct 19 01:00:01 2026
+    Rerunable = True
+    Resource_List.am_job_cache = {"job.walltime": 3600, "job.ngpus": 1.0,
+	 "job.queue_charge_rate": 0}
+    Resource_List.mem = 250gb
+    Resource_List.ncpus = 12
+    Resource_List.ngpus = 1
+    Resource_List.nodect = 1
+    Resource_List.place = free
+    Resource_List.queue_charge_rate = 0
+    Resource_List.select = 1:ncpus=12:ngpus=1:mem=250GB
+    Resource_List.walltime = 01:00:00
+    Shell_Path_List = /bin/bash
+    substate = 22
+    Variable_List = PBS_O_HOME=/home/suaq0001,PBS_O_LANG=C.UTF-8,
+	PBS_O_LOGNAME=suaq0001,
+	PBS_O_PATH=/home/suaq0001/.codex/tmp/arg0/codex-arg07pwsN5:/home/suaq0
+	001/.vscode-server/cli/servers/Stable-6d62b1d5dace93a33b3a6d3eca1317bd5
+	e15bcb1/server/bin/remote-cli:/usr/local/modules-5.6.1/bin:/usr/local/b
+	in:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/am/python/bin:/opt/pbs/bin:/
+	opt/am/python/bin:/opt/pbs/bin:/home/suaq0001/.vscode-server/extensions
+	/openai.chatgpt-26.917.62051-linux-x64/bin/linux-x86_64:/opt/am/python/
+	bin:/opt/pbs/bin,PBS_O_MAIL=/var/spool/mail/suaq0001,
+	PBS_O_SHELL=/bin/bash,PBS_O_INTERACTIVE_AUTH_METHOD=resvport,
+	PBS_O_HOST=hpc-gaas-hn2,
+	PBS_O_WORKDIR=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp
+	,PBS_O_SYSTEM=Linux,
+	GUARD_ROOT=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp,
+	PBS_O_QUEUE=gpu_free
+    etime = Mon Oct 19 01:00:01 2026
+    Submit_arguments = -N guard_preflight -q gpu_free -P fs_ccds_asysong -l sel
+	ect=1:ncpus=12:ngpus=1:mem=64gb -l walltime=01:00:00 -W depend=afterok:
+	88470.gaas -o /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/
+	runs/pbs/preflight.out -e /home/suaq0001/projects/Fintechathon/hackatho
+	n_guard_mvp/runs/pbs/preflight.err -v GUARD_ROOT=/home/suaq0001/project
+	s/Fintechathon/hackathon_guard_mvp pbs/preflight.pbs
+    project = fs_ccds_asysong
+    Submit_Host = hpc-gaas-hn2
+

@@ -1,0 +1,102 @@
+Queue: gpu_free
+    queue_type = Route
+    total_jobs = 2
+    state_count = Transit:0 Queued:0 Held:2 Waiting:0 Running:0 Exiting:0 Begun
+	:0 
+    route_destinations = gpu_free_high,gpu_free_normal
+    enabled = True
+    started = True
+
+Queue: gpu_free_normal
+    queue_type = Execution
+    total_jobs = 37
+    state_count = Transit:0 Queued:18 Held:10 Waiting:0 Running:8 Exiting:0 Beg
+	un:1 
+    from_route_only = True
+    resources_max.ngpus = 4
+    resources_max.walltime = 06:00:00
+    resources_min.ngpus = 1
+    resources_default.queue_charge_rate = 0
+    acl_group_enable = True
+    acl_groups = hpc_admin,hpc_ebslee_group,hpc_fs_asjagath_group,
+	hpc_fs_asjmzheng_group,hpc_fs_astjcham_group,hpc_fs_asysong_group,
+	hpc_fs_atsushi.nitanda_group,hpc_fs_bryan.limwy_group,
+	hpc_fs_chenpeng_group,hpc_fs_chuanxia.zheng_group,
+	hpc_fs_cyrussam.mostajeran_group,hpc_fs_dacheng.tao_group,
+	hpc_fs_dmitrii.ustiugov_group,hpc_fs_echchang_group,
+	hpc_fs_ekcteh_group,hpc_fs_ethcheng_group,hpc_fs_gaocong_group,
+	hpc_fs_guoqing.chang_group,hpc_fs_guoweialvin.chan_group,
+	hpc_fs_hemant.tyagi_group,hpc_fs_hongying.li_group,
+	hpc_fs_jiawang.bian_group,hpc_fs_lisz_group,hpc_fs_liu_group,
+	hpc_fs_massimo_group,hpc_fs_matthew.foreman_group,
+	hpc_fs_mengmi.zhang_group,hpc_fs_mir.feroskhan_group,
+	hpc_fs_mtyng_group,hpc_fs_r.ni_group,hpc_fs_sangho.yun_group,
+	hpc_fs_siqiang.luo_group,hpc_fs_thomas.peyrin_group,
+	hpc_fs_wanhua.li_group,hpc_fs_wei.lu_group,hpc_fs_wen.zhou_group,
+	hpc_fs_wptay_group,hpc_fs_xiaojin.zheng_group,hpc_fs_xiaole.yin_group,
+	hpc_fs_xuefeng.du_group,hpc_fs_ygmu_group,hpc_fs_youngrong.kim_group
+    default_chunk.Qlist = gpu_free
+    resources_assigned.mem = 2000gb
+    resources_assigned.ncpus = 96
+    resources_assigned.ngpus = 8
+    resources_assigned.nodect = 8
+    max_run = [u:PBS_GENERIC=1]
+    enabled = True
+    started = True
+
+Queue: gpu_free_high
+    queue_type = Execution
+    Priority = 100
+    total_jobs = 1
+    state_count = Transit:0 Queued:0 Held:1 Waiting:0 Running:0 Exiting:0 Begun
+	:0 
+    from_route_only = True
+    resources_max.ngpus = 1
+    resources_max.walltime = 01:00:00
+    resources_min.ngpus = 1
+    resources_default.queue_charge_rate = 0
+    acl_group_enable = True
+    acl_groups = hpc_admin,hpc_ebslee_group,hpc_fs_asjagath_group,
+	hpc_fs_asjmzheng_group,hpc_fs_astjcham_group,hpc_fs_asysong_group,
+	hpc_fs_atsushi.nitanda_group,hpc_fs_bryan.limwy_group,
+	hpc_fs_chenpeng_group,hpc_fs_chuanxia.zheng_group,
+	hpc_fs_cyrussam.mostajeran_group,hpc_fs_dacheng.tao_group,
+	hpc_fs_dmitrii.ustiugov_group,hpc_fs_echchang_group,
+	hpc_fs_ekcteh_group,hpc_fs_ethcheng_group,hpc_fs_gaocong_group,
+	hpc_fs_guoqing.chang_group,hpc_fs_guoweialvin.chan_group,
+	hpc_fs_hemant.tyagi_group,hpc_fs_hongying.li_group,
+	hpc_fs_jiawang.bian_group,hpc_fs_lisz_group,hpc_fs_liu_group,
+	hpc_fs_massimo_group,hpc_fs_matthew.foreman_group,
+	hpc_fs_mengmi.zhang_group,hpc_fs_mir.feroskhan_group,
+	hpc_fs_mtyng_group,hpc_fs_r.ni_group,hpc_fs_sangho.yun_group,
+	hpc_fs_siqiang.luo_group,hpc_fs_thomas.peyrin_group,
+	hpc_fs_wanhua.li_group,hpc_fs_wei.lu_group,hpc_fs_wen.zhou_group,
+	hpc_fs_wptay_group,hpc_fs_xiaojin.zheng_group,hpc_fs_xiaole.yin_group,
+	hpc_fs_xuefeng.du_group,hpc_fs_ygmu_group,hpc_fs_youngrong.kim_group
+    default_chunk.Qlist = gpu_free
+    resources_assigned.mem = 0gb
+    resources_assigned.ncpus = 0
+    resources_assigned.ngpus = 0
+    resources_assigned.nodect = 0
+    max_run = [u:PBS_GENERIC=1]
+    enabled = True
+    started = True
+
+Queue: gpu_datamover
+    queue_type = Execution
+    total_jobs = 5
+    state_count = Transit:0 Queued:0 Held:5 Waiting:0 Running:0 Exiting:0 Begun
+	:0 
+    resources_max.ncpus = 4
+    resources_max.ngpus = 0
+    resources_max.walltime = 120:00:00
+    resources_default.queue_charge_rate = 0
+    default_chunk.Qlist = gpu_datamover
+    resources_assigned.mem = 0gb
+    resources_assigned.ncpus = 0
+    resources_assigned.ngpus = 0
+    resources_assigned.nodect = 0
+    max_run = [u:PBS_GENERIC=2]
+    enabled = True
+    started = True
+

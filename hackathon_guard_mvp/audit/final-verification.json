@@ -1,0 +1,13 @@
+{
+  "application_tests": 10,
+  "gpu_submitted": false,
+  "live_inference_executed": false,
+  "manifest_hash": "532e8cea893da08f71ce4fa9145f0c34f284d7efb7a1e3b9fdbb37706bf924cc",
+  "original_file_count": 29,
+  "original_files_unchanged": true,
+  "passed": true,
+  "python_tests": 38,
+  "source_hash": "30217614222fbfc0478df6214bbd4312433f9fe5a702573b2d0f9e16d6e67503",
+  "test_failures": 0,
+  "training_executed": false
+}

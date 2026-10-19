@@ -1,0 +1,54 @@
+[
+  {
+    "stage": "preflight",
+    "job_id": "88477.gaas",
+    "command": [
+      "qsub",
+      "-N",
+      "guard_preflight",
+      "-q",
+      "gpu_free",
+      "-P",
+      "fs_ccds_asysong",
+      "-l",
+      "select=1:ncpus=12:ngpus=1:mem=64gb",
+      "-l",
+      "walltime=01:00:00",
+      "-o",
+      "/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/login-preflight.out",
+      "-e",
+      "/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/login-preflight.err",
+      "-v",
+      "GUARD_ROOT=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp",
+      "pbs/preflight.pbs"
+    ],
+    "submitted_at": "2026-10-18T17:10:08.656090+00:00"
+  },
+  {
+    "stage": "pilot",
+    "job_id": "88478.gaas",
+    "command": [
+      "qsub",
+      "-N",
+      "guard_pilot",
+      "-q",
+      "gpu_free",
+      "-P",
+      "fs_ccds_asysong",
+      "-l",
+      "select=1:ncpus=12:ngpus=1:mem=64gb",
+      "-l",
+      "walltime=01:00:00",
+      "-o",
+      "/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/login-pilot.out",
+      "-e",
+      "/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/login-pilot.err",
+      "-v",
+      "GUARD_ROOT=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp",
+      "-W",
+      "depend=afterok:88477.gaas",
+      "pbs/pilot.pbs"
+    ],
+    "submitted_at": "2026-10-18T17:10:08.710754+00:00"
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "gpu_stage": "not executed",
+  "libraries": {
+    "accelerate": "1.6.0",
+    "matplotlib": "3.10.1",
+    "safetensors": "0.5.3",
+    "tensordict": null,
+    "torch": "2.11.0+cu130",
+    "torchrl": null,
+    "transformers": "4.51.3"
+  },
+  "node": "/home/suaq0001/.vscode-server/cli/servers/Stable-6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/server/node",
+  "original_files_unchanged": true,
+  "passed": true,
+  "presentations": 936,
+  "python": "3.12.13",
+  "source_hash": "83c3c0ac6fe0f4c1ace4679fd1ea023d813372793fcc476ef376a5dafb5cef9e",
+  "tests_command": [
+    "/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/.venv/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ]
+}

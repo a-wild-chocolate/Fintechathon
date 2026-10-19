@@ -1,0 +1,13 @@
+{
+  "reviewed_at": "2026-10-18T16:54:43.898928+00:00",
+  "pdf": "../gaas.pdf",
+  "pdf_sha256": "378902a1ca11efd28bb8ec06e5f5dd6921c2bfaddcf1fb27c9d0f754b6ef394d",
+  "project": "fs_ccds_asysong",
+  "submission_queue": "gpu_free",
+  "direct_normal_submission_valid": false,
+  "chosen_walltime": "02:00:00",
+  "guide_max_walltime": "04:00:00",
+  "live_normal_max_walltime": "06:00:00",
+  "downloads_executed": false,
+  "jobs_submitted": false
+}

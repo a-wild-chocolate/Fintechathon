@@ -1,0 +1,61 @@
+Job Id: 88470.gaas
+    Job_Name = guard_prepare
+    Job_Owner = suaq0001@hpc-gaas-hn2
+    job_state = H
+    queue = gpu_datamover
+    server = gaas
+    Checkpoint = u
+    ctime = Mon Oct 19 00:59:35 2026
+    Error_Path = hpc-gaas-hn2:/home/suaq0001/projects/Fintechathon/hackathon_gu
+	ard_mvp/runs/pbs/prepare.err
+    Hold_Types = s
+    Join_Path = n
+    Keep_Files = n
+    Mail_Points = a
+    mtime = Mon Oct 19 01:00:48 2026
+    Output_Path = hpc-gaas-hn2:/home/suaq0001/projects/Fintechathon/hackathon_g
+	uard_mvp/runs/pbs/prepare.out
+    Priority = 100
+    qtime = Mon Oct 19 00:59:35 2026
+    Rerunable = True
+    Resource_List.am_job_cache = {"job.walltime": 7200, "job.ngpus": 0,
+	 "job.queue_charge_rate": 0, "am_cloud_enabled": false}
+    Resource_List.mem = 16gb
+    Resource_List.ncpus = 4
+    Resource_List.ngpus = 0
+    Resource_List.nodect = 1
+    Resource_List.place = free
+    Resource_List.queue_charge_rate = 0
+    Resource_List.select = 1:ncpus=4:mem=16gb
+    Resource_List.walltime = 02:00:00
+    stime = Mon Oct 19 01:00:08 2026
+    obittime = Mon Oct 19 01:00:09 2026
+    Shell_Path_List = /bin/bash
+    substate = 20
+    Variable_List = PBS_O_HOME=/home/suaq0001,PBS_O_LANG=C.UTF-8,
+	PBS_O_LOGNAME=suaq0001,
+	PBS_O_PATH=/home/suaq0001/.codex/tmp/arg0/codex-arg07pwsN5:/home/suaq0
+	001/.vscode-server/cli/servers/Stable-6d62b1d5dace93a33b3a6d3eca1317bd5
+	e15bcb1/server/bin/remote-cli:/usr/local/modules-5.6.1/bin:/usr/local/b
+	in:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/am/python/bin:/opt/pbs/bin:/
+	opt/am/python/bin:/opt/pbs/bin:/home/suaq0001/.vscode-server/extensions
+	/openai.chatgpt-26.917.62051-linux-x64/bin/linux-x86_64:/opt/am/python/
+	bin:/opt/pbs/bin,PBS_O_MAIL=/var/spool/mail/suaq0001,
+	PBS_O_SHELL=/bin/bash,PBS_O_INTERACTIVE_AUTH_METHOD=resvport,
+	PBS_O_HOST=hpc-gaas-hn2,
+	PBS_O_WORKDIR=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp
+	,PBS_O_SYSTEM=Linux,
+	GUARD_ROOT=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp,
+	PBS_O_QUEUE=gpu_datamover
+    comment = job held, too many failed attempts to run
+    run_count = 21
+    Exit_status = -10
+    Submit_arguments = -N guard_prepare -q gpu_datamover -P fs_ccds_asysong -l 
+	select=1:ncpus=4:mem=16gb -l walltime=02:00:00 -o /home/suaq0001/projec
+	ts/Fintechathon/hackathon_guard_mvp/runs/pbs/prepare.out -e /home/suaq0
+	001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/prepare.err -v G
+	UARD_ROOT=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp pbs/
+	prepare.pbs
+    project = fs_ccds_asysong
+    Submit_Host = hpc-gaas-hn2
+

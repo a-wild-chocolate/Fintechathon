@@ -1,0 +1,47 @@
+{
+  "agreement": {
+    "accepted": false,
+    "day": 25,
+    "id": "agreement-1",
+    "version": 1
+  },
+  "clock": 12,
+  "company_events": [
+    {
+      "day": 20,
+      "minor": -4200000
+    },
+    {
+      "day": 30,
+      "minor": 12000000
+    },
+    {
+      "day": 40,
+      "minor": -3800000
+    },
+    {
+      "day": 50,
+      "minor": 6500000
+    }
+  ],
+  "coverage_day": 8,
+  "fee_party": "buyer",
+  "followup_state": "open",
+  "invoice_usd_minor": 1203000,
+  "ledger": [],
+  "opening_day": 0,
+  "opening_minor": 12803000,
+  "order_id": "order-fb49b85fe8a6faf5",
+  "permissions": {
+    "close_followup": true,
+    "update_supplier": true,
+    "verify": true
+  },
+  "receiptDay": 12,
+  "supplierDay": 15,
+  "supplier_minor": 16000000,
+  "target_installment": "inst-1",
+  "tenant": "tenant-fb49b85fe8a6faf5",
+  "version": 1,
+  "workflow": "collection"
+}

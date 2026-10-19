@@ -1,0 +1,29 @@
+{
+  "clock": 12,
+  "followup_state": "open",
+  "invoice_usd_minor": 1203600,
+  "opening_day": 0,
+  "opening_minor": 12803600,
+  "order_id": "order-f8cd35d9302b5455",
+  "permissions": {
+    "close_followup": true,
+    "update_supplier": true,
+    "verify": true
+  },
+  "receiptDay": 12,
+  "sources": [
+    {
+      "authority": "correspondence",
+      "id": "source-1",
+      "name": "correspondence.txt",
+      "text": "Revised settlement memorandum for your consideration. Provide the current obligation and next step. Order order-f8cd35d9302b5455. Scenario: buyer_fee. Proposed supplier day 25; confirmation requires the agreement register. Payment promises do not assert a posted bank credit. Bank records are available for authorized verification.",
+      "version": 1
+    }
+  ],
+  "supplierDay": 15,
+  "supplier_minor": 16000000,
+  "target_installment": "inst-1",
+  "tenant": "tenant-f8cd35d9302b5455",
+  "version": 1,
+  "workflow": "collection"
+}

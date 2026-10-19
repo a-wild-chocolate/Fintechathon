@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cashweave-guard-mvp"
+version = "0.1.0"
+requires-python = ">=3.9"
+description = "Isolated synthetic financial coordination experiment"
+
+[tool.setuptools.packages.find]
+include = ["guard_mvp*", "evaluator_private*"]

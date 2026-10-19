@@ -1,0 +1,41 @@
+GaaS datamover preparation blocked before user script starts
+
+User: suaq0001
+UID on login node: 17260836
+Primary group: hpc_fs_asysong_group
+GID on login node: 1304617455
+Project: fs_ccds_asysong (GPU Free access confirmed by user)
+Queue: gpu_datamover
+Requested: select=1:ncpus=4:mem=16gb, walltime=02:00:00
+
+Job 88470.gaas: assigned hpc-gaas-dm1; 21 launch attempts; system held;
+Exit_status=-10; comment: job held, too many failed attempts to run.
+This first job was canceled after saving qstat -fx output.
+
+Job 88472.gaas: explicitly assigned hpc-gaas-dm2; same 21 launch attempts;
+Hold_Types=s; Exit_status=-10; same comment. This job is retained held.
+
+No application stdout/stderr or preparation log was created. Package
+installation and model download did not start. Dependent GPU preflight
+88471.gaas was canceled without running.
+
+OpenPBS defines -10 as JOB_EXEC_FAILUID (invalid uid/gid for job):
+https://github.com/openpbs/openpbs/blob/master/src/include/job.h
+This is a diagnosis based on the upstream definition, not access to local
+PBS MOM logs. Please verify the installed PBS implementation and inspect
+MOM logs, account lookup and UID/GID consistency on dm1/dm2.
+
+Useful admin checks on each node:
+  getent passwd suaq0001
+  getent group hpc_fs_asysong_group
+  id suaq0001
+and PBS MOM logs for 88470.gaas / 88472.gaas around 19 Oct 2026 01:00–01:02.
+Please confirm which datamover transfer method is supported for this account.
+
+Saved evidence (inside the experiment):
+  audit/preparation-dm1-job.txt
+  audit/preparation-dm2-job.txt
+  audit/preflight-waiting-job.txt
+  pbs/prepare.pbs
+
+This support note has NOT been sent to anyone.

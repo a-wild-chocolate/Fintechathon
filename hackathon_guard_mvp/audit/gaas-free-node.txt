@@ -1,0 +1,31 @@
+hpc-gaas-g25
+     Mom = hpc-gaas-g25
+     ntype = PBS
+     state = free
+     pcpus = 112
+     jobs = 88423.gaas/0, 88423.gaas/1, 88423.gaas/2, 88423.gaas/3, 88423.gaas/4, 88423.gaas/5, 88423.gaas/6, 88423.gaas/7, 88423.gaas/8, 88423.gaas/9, 88423.gaas/10, 88423.gaas/11, 87645.gaas/12, 87645.gaas/13, 87645.gaas/14, 87645.gaas/15, 87645.gaas/16, 87645.gaas/17, 87645.gaas/18, 87645.gaas/19, 87645.gaas/20, 87645.gaas/21, 87645.gaas/22, 87645.gaas/23, 88281.gaas/24, 88281.gaas/25, 88281.gaas/26, 88281.gaas/27, 88281.gaas/28, 88281.gaas/29, 88281.gaas/30, 88281.gaas/31, 88281.gaas/32, 88281.gaas/33, 88281.gaas/34, 88281.gaas/35, 87415[15].gaas/36, 87415[15].gaas/37, 87415[15].gaas/38, 87415[15].gaas/39, 87415[15].gaas/40, 87415[15].gaas/41, 87415[15].gaas/42, 87415[15].gaas/43, 87415[15].gaas/44, 87415[15].gaas/45, 87415[15].gaas/46, 87415[15].gaas/47, 88426.gaas/48, 88426.gaas/49, 88426.gaas/50, 88426.gaas/51, 88426.gaas/52, 88426.gaas/53, 88426.gaas/54, 88426.gaas/55, 88426.gaas/56, 88426.gaas/57, 88426.gaas/58, 88426.gaas/59, 88446.gaas/60, 88446.gaas/61, 88446.gaas/62, 88446.gaas/63, 88446.gaas/64, 88446.gaas/65, 88446.gaas/66, 88446.gaas/67, 88446.gaas/68, 88446.gaas/69, 88446.gaas/70, 88446.gaas/71, 88409.gaas/72, 88409.gaas/73, 88409.gaas/74, 88409.gaas/75, 88409.gaas/76, 88409.gaas/77, 88409.gaas/78, 88409.gaas/79, 88409.gaas/80, 88409.gaas/81, 88409.gaas/82, 88409.gaas/83, 88437.gaas/84, 88437.gaas/85, 88437.gaas/86, 88437.gaas/87, 88437.gaas/88, 88437.gaas/89, 88437.gaas/90, 88437.gaas/91, 88437.gaas/92, 88437.gaas/93, 88437.gaas/94, 88437.gaas/95
+     resources_available.arch = linux
+     resources_available.host = hpc-gaas-g25
+     resources_available.hpmem = 17301504kb
+     resources_available.mem = 2113276064kb
+     resources_available.ncpus = 100
+     resources_available.ngpus = 8
+     resources_available.Qlist = gpu_free
+     resources_available.vmem = 2121664668kb
+     resources_available.vnode = hpc-gaas-g25
+     resources_assigned.accelerator_memory = 0kb
+     resources_assigned.hbmem = 0kb
+     resources_assigned.hpmem = 0kb
+     resources_assigned.mem = 2097152000kb
+     resources_assigned.naccelerators = 0
+     resources_assigned.ncpus = 96
+     resources_assigned.ngpus = 8
+     resources_assigned.swap = 0kb
+     resources_assigned.vmem = 0kb
+     comment = Unable to clean up one or more cgroups
+     resv_enable = True
+     sharing = default_shared
+     license = l
+     last_state_change_time = Sun Oct 11 01:01:11 2026
+     last_used_time = Mon Oct 19 00:38:14 2026
+

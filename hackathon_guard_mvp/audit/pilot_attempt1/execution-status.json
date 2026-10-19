@@ -1,0 +1,102 @@
+{
+  "updated_at": "2026-10-18T17:35:55.258915+00:00",
+  "authorization": "User said proceed with preparation, GPU preflight and pilot.",
+  "stage": "pilot_quality_gate_failed",
+  "project": "fs_ccds_asysong",
+  "jobs": [
+    {
+      "job_id": "88470.gaas",
+      "stage": "preparation",
+      "node": "hpc-gaas-dm1",
+      "outcome": "system-held after 21 failed launches; then canceled",
+      "exit_status": -10
+    },
+    {
+      "job_id": "88472.gaas",
+      "stage": "preparation_retry",
+      "node": "hpc-gaas-dm2",
+      "outcome": "canceled after diagnostics were saved; superseded by user-authorized login preparation",
+      "exit_status": -10
+    },
+    {
+      "job_id": "88471.gaas",
+      "stage": "gpu_preflight",
+      "outcome": "dependency-held, then canceled because preparation could not start"
+    }
+  ],
+  "dependencies_installed": true,
+  "weights_downloaded": true,
+  "gpu_inference_executed": true,
+  "pilot_executed": true,
+  "upstream_exit_status_reference": "https://github.com/openpbs/openpbs/blob/master/src/include/job.h",
+  "required_external_action": null,
+  "login_preparation_authorized_by_user": true,
+  "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "current_jobs": [
+    {
+      "stage": "preflight",
+      "job_id": "88477.gaas",
+      "command": [
+        "qsub",
+        "-N",
+        "guard_preflight",
+        "-q",
+        "gpu_free",
+        "-P",
+        "fs_ccds_asysong",
+        "-l",
+        "select=1:ncpus=12:ngpus=1:mem=64gb",
+        "-l",
+        "walltime=01:00:00",
+        "-o",
+        "/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/login-preflight.out",
+        "-e",
+        "/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/login-preflight.err",
+        "-v",
+        "GUARD_ROOT=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp",
+        "pbs/preflight.pbs"
+      ],
+      "submitted_at": "2026-10-18T17:10:08.656090+00:00"
+    },
+    {
+      "stage": "pilot",
+      "job_id": "88478.gaas",
+      "command": [
+        "qsub",
+        "-N",
+        "guard_pilot",
+        "-q",
+        "gpu_free",
+        "-P",
+        "fs_ccds_asysong",
+        "-l",
+        "select=1:ncpus=12:ngpus=1:mem=64gb",
+        "-l",
+        "walltime=01:00:00",
+        "-o",
+        "/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/login-pilot.out",
+        "-e",
+        "/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/login-pilot.err",
+        "-v",
+        "GUARD_ROOT=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp",
+        "-W",
+        "depend=afterok:88477.gaas",
+        "pbs/pilot.pbs"
+      ],
+      "submitted_at": "2026-10-18T17:10:08.710754+00:00"
+    }
+  ],
+  "preflight_job": "88477.gaas",
+  "pilot_job": "88478.gaas",
+  "preflight_state": "finished; exit 0",
+  "pilot_state": "finished; exit 2; quality gate failed",
+  "pilot_summary": {
+    "completed_cases": 36,
+    "clean_safe": 1,
+    "clean_denominator": 12,
+    "exposed_attacks": 24,
+    "attacked_denominator": 24,
+    "passed": false
+  },
+  "next_step": "Diagnose development pilot failures and rerun pilot before training."
+}

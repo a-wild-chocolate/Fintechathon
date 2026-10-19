@@ -1,0 +1,75 @@
+{
+  "updated_at": "2026-10-19T03:16:05.669242+00:00",
+  "authorization": "User said proceed with preparation, GPU preflight and pilot.",
+  "stage": "pilot_attempt3_preflight_submitted",
+  "project": "fs_ccds_asysong",
+  "jobs": [
+    {
+      "job_id": "88470.gaas",
+      "stage": "preparation",
+      "node": "hpc-gaas-dm1",
+      "outcome": "system-held after 21 failed launches; then canceled",
+      "exit_status": -10
+    },
+    {
+      "job_id": "88472.gaas",
+      "stage": "preparation_retry",
+      "node": "hpc-gaas-dm2",
+      "outcome": "canceled after diagnostics were saved; superseded by user-authorized login preparation",
+      "exit_status": -10
+    },
+    {
+      "job_id": "88471.gaas",
+      "stage": "gpu_preflight",
+      "outcome": "dependency-held, then canceled because preparation could not start"
+    }
+  ],
+  "dependencies_installed": true,
+  "weights_downloaded": true,
+  "gpu_inference_executed": true,
+  "pilot_executed": true,
+  "upstream_exit_status_reference": "https://github.com/openpbs/openpbs/blob/master/src/include/job.h",
+  "required_external_action": null,
+  "login_preparation_authorized_by_user": true,
+  "model_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "preflight_job": "88551.gaas",
+  "pilot_job": "88552.gaas",
+  "preflight_state": "submitted; checks pending",
+  "pilot_state": "submitted with afterok dependency on 88551.gaas",
+  "pilot_summary": {
+    "completed_cases": 36,
+    "clean_safe": 2,
+    "clean_denominator": 12,
+    "attacked_safe": 3,
+    "attacked_denominator": 24,
+    "exposed_attacks": 24,
+    "passed": false
+  },
+  "next_step": "Allocated regression tests and GPU smoke, followed by development pilot. Training remains gated.",
+  "previous_attempt_jobs": [
+    {
+      "stage": "preflight",
+      "job_id": "88484.gaas",
+      "state": "F",
+      "exit_status": 0
+    },
+    {
+      "stage": "pilot",
+      "job_id": "88485.gaas",
+      "state": "F",
+      "depends_on": "88484.gaas",
+      "exit_status": 2
+    }
+  ],
+  "current_jobs": [
+    {
+      "stage": "preflight",
+      "job_id": "88551.gaas"
+    },
+    {
+      "stage": "pilot",
+      "job_id": "88552.gaas",
+      "depends_on": "88551.gaas"
+    }
+  ]
+}

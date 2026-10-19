@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#PBS -S /bin/bash
+#PBS -o /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/pilot.out
+#PBS -e /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/pilot.err
+GUARD_STAGE=pilot
+guard_args=()
+source "${GUARD_ROOT:?}/pbs/common.sh"

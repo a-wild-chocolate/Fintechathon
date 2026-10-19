@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+#PBS -S /bin/bash
+set -eo pipefail
+: "${PBS_JOBID:?PBS allocation required}"
+: "${PBS_NODEFILE:?PBS node assignment required}"
+: "${GUARD_ROOT:?absolute experiment root required}"
+: "${PBS_O_WORKDIR:?submission directory required}"
+guard_resolved=$(cd -- "$GUARD_ROOT" && pwd -P)
+[[ "$guard_resolved" = "$(cd -- "$PBS_O_WORKDIR" && pwd -P)" ]] || exit 2
+[[ "$(basename -- "$guard_resolved")" = hackathon_guard_mvp ]] || exit 2
+[[ "$(hostname -s)" = hpc-gaas-dm* ]] || { echo 'Preparation requires the documented datamover nodes' >&2; exit 2; }
+cd "$guard_resolved"
+source /etc/profile.d/modules.sh
+module load pytorch/2.11.0
+source scripts/env.sh
+set -u
+export PYTHONUNBUFFERED=1
+export PYTHONUSERBASE="$guard_resolved/cache/pythonuser"
+unset PIP_TARGET PIP_PREFIX PIP_USER
+guard_job_dir="$guard_resolved/runs/preparation/${PBS_JOBID//[^a-zA-Z0-9._-]/_}"
+mkdir -p "$guard_job_dir"
+exec > >(tee "$guard_job_dir/preparation.log") 2>&1
+echo "Preparing local dependencies and pinned open model on $(hostname -s), PBS $PBS_JOBID"
+# Preserve the read-only module's Torch; pip must not replace it with a different build.
+.venv/bin/python -B -c 'from importlib.metadata import version; print("torch==" + version("torch"))' > "$guard_job_dir/constraints.txt"
+.venv/bin/python -B -m pip install --disable-pip-version-check --only-binary=:all: \
+    -c "$guard_job_dir/constraints.txt" -r requirements.lock
+.venv/bin/python -B -m pip check
+.venv/bin/python -B scripts/prepare_model.py --config configs/experiment.yaml \
+    --experiment-root "$guard_resolved" --site-download-policy-confirmed
+.venv/bin/python -B - <<'PY'
+from importlib import metadata
+from guard_mvp.io import load_config
+import os, platform
+b,c=load_config('configs/experiment.yaml')
+b.json('audit/preparation_complete.json', dict(completed=True, pbs_job_id=os.environ['PBS_JOBID'],
+    hostname=platform.node(), model_id=c['model']['id'], model_revision=c['model']['revision'],
+    libraries={name:metadata.version(name) for name in ['torch','transformers','accelerate','safetensors','matplotlib']},
+    inference_executed=False))
+print('Preparation complete; GPU smoke still required.')
+PY

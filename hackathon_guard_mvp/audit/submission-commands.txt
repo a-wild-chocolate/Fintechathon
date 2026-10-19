@@ -1,0 +1,29 @@
+# PREPARED ONLY; revised against gaas.pdf and live scheduler. No qsub command executed.
+
+cd /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp
+qsub -N guard_preflight -q gpu_free -P fs_ccds_asysong -l select=1:ncpus=12:ngpus=1:mem=64gb -l walltime=02:00:00 -o /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/preflight.out -e /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/preflight.err -v GUARD_ROOT=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/pbs/preflight.pbs
+# gpu_free targets the documented H200 pool; allocated GPU name/memory are still verified.
+
+cd /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp
+qsub -N guard_pilot -q gpu_free -P fs_ccds_asysong -l select=1:ncpus=12:ngpus=1:mem=64gb -l walltime=02:00:00 -o /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/pilot.out -e /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/pilot.err -v GUARD_ROOT=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/pbs/pilot.pbs
+# gpu_free targets the documented H200 pool; allocated GPU name/memory are still verified.
+
+cd /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp
+qsub -N guard_train -q gpu_free -P fs_ccds_asysong -l select=1:ncpus=12:ngpus=1:mem=64gb -l walltime=02:00:00 -o /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/train.out -e /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/train.err -v GUARD_ROOT=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/pbs/train.pbs
+# gpu_free targets the documented H200 pool; allocated GPU name/memory are still verified.
+
+cd /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp
+qsub -N guard_evaluate-E0 -q gpu_free -P fs_ccds_asysong -l select=1:ncpus=12:ngpus=1:mem=64gb -l walltime=02:00:00 -o /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/evaluate-E0.out -e /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/evaluate-E0.err -v GUARD_ROOT=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp,GUARD_CONDITION=E0 /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/pbs/evaluate.pbs
+# gpu_free targets the documented H200 pool; allocated GPU name/memory are still verified.
+
+cd /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp
+qsub -N guard_evaluate-E1 -q gpu_free -P fs_ccds_asysong -l select=1:ncpus=12:ngpus=1:mem=64gb -l walltime=02:00:00 -o /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/evaluate-E1.out -e /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/evaluate-E1.err -v GUARD_ROOT=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp,GUARD_CONDITION=E1 /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/pbs/evaluate.pbs
+# gpu_free targets the documented H200 pool; allocated GPU name/memory are still verified.
+
+cd /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp
+qsub -N guard_evaluate-E2 -q gpu_free -P fs_ccds_asysong -l select=1:ncpus=12:ngpus=1:mem=64gb -l walltime=02:00:00 -o /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/evaluate-E2.out -e /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/evaluate-E2.err -v GUARD_ROOT=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp,GUARD_CONDITION=E2 /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/pbs/evaluate.pbs
+# gpu_free targets the documented H200 pool; allocated GPU name/memory are still verified.
+
+cd /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp
+qsub -N guard_evaluate-E3 -q gpu_free -P fs_ccds_asysong -l select=1:ncpus=12:ngpus=1:mem=64gb -l walltime=02:00:00 -o /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/evaluate-E3.out -e /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/runs/pbs/evaluate-E3.err -v GUARD_ROOT=/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp,GUARD_CONDITION=E3 /home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/pbs/evaluate.pbs
+# gpu_free targets the documented H200 pool; allocated GPU name/memory are still verified.

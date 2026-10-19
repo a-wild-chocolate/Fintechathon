@@ -1,0 +1,57 @@
+{
+  "attacked_denominator": 24,
+  "clean_denominator": 12,
+  "clean_safe": 1,
+  "exposed_attacks": 24,
+  "identity": {
+    "backend": "application_adapter",
+    "config_hash": "c7f1e3bdfb19f2541defcba59ad429442d5f64c47897061ae04d70e4de7fa0ca",
+    "manifest_hash": "532e8cea893da08f71ce4fa9145f0c34f284d7efb7a1e3b9fdbb37706bf924cc",
+    "model": {
+      "decoding": {
+        "context_limit": 8192,
+        "do_sample": false,
+        "enable_thinking": false,
+        "max_new_tokens": 320
+      },
+      "id": "Qwen/Qwen3-8B",
+      "label": "isolated experimental backend",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+    },
+    "model_files_hash": "fa02d965b88f9c2c84466179ff9ed04b4902dc33ff2be8dc86588b6d722f67cc",
+    "original_files": {
+      ".gitignore": "239e1ce08c33c5b848b4363e5ceeac53efd0b178f3962883240eac5a25369691",
+      "MVP_Experiment_Plan.md": "678d0ce3f5bbde24b1e0fe65e388eab9de4193e0d6cd4ad65b9db3c86f7e0247",
+      "README.md": "0dc07faa38b2bd69b51fb209f5b3283b214a9448f6480aa20967881bc7f7cf52",
+      "demo/account-balance.csv": "7afa1ff1106919e77d5fee8e480dc89b4a703611a7aa0fd8fe675405918b043c",
+      "demo/buyer-delay.txt": "41bc8703ce59804d3bb6dcb0b4077f26576ca6c565331c4885d7c9e0f07d02f5",
+      "demo/buyer-partial-payment.txt": "89f1cfac1a57fd3e864cfd32a1c4177703cb830463ec1b12f7ae6071d4208d04",
+      "demo/harbour-payment-confirmation.txt": "17040faa98cc3f378049e5266629a2e6c8466278998b18f710dc0aa85ef4562e",
+      "demo/supplier-agreement.txt": "d9dcdc9cf85deffc8ae5a464e9789004674f66ca6ade8939ae1648adc3306230",
+      "docs/API.md": "3171db9ddb93c37568665c2b93e518f78f635eb05bfd1b7b1d3270ad4faa5d7f",
+      "docs/VERIFICATION.md": "dca7c85eaafded5ee500d80ccdaf24d4a4f6d987e2241a90c627059eac65442c",
+      "index.html": "50cd73358b4cc123ed737241670524ba51838ac7eb23965c6324e65b1e152620",
+      "package.json": "8cbef736017b3c1ad3b9d04e1edf3b6900de661b2a97394a7aa9b85f3b2be3c1",
+      "scripts/build.js": "5c09f634ba3f53b557c255bd423c39d7a9cceee177c005c2372ff9e0a794d6d3",
+      "scripts/check-integration.js": "9cbb9f6103fdce12da5ffcb062b1ce60de4750c3a628df525cfdb43297a695a1",
+      "scripts/check.js": "7abc46e762230bb763a21e98f7c74e361f84e2dde8f8cbfd946ef6c02f38d1ec",
+      "scripts/serve.js": "981af91ad3a812524a63109d106bd712adc05cc842e640723ab1d9ffd0107304",
+      "src/app.js": "ebb28f4378a96ea86c0bb340990422145fa7ecfcc25a34858e5e5efa13b85f0f",
+      "src/clarity.css": "c95f049845e6ac4386e4c182d12e0921a18bc5d03e1732a7addb9f3fdf76e326",
+      "src/data.js": "65cd8267f3036ca2714ffbd65acda6b59d244cffb46ae5fca4f05e29f3abcb13",
+      "src/finance.js": "a00a3432a9aa92a915016fc57f0a7256dbc117967d2456848426ae244d44499e",
+      "src/followups.js": "ed9663602796ba3359a12ba8a472523a56a57c612ab108f78ceb1a683de618b1",
+      "src/icons.js": "4c570a9b807a3704f484e9c1e0d320907bad12002ff3134f4a2bbaf2cb73f874",
+      "src/knowledge.css": "345bcf5e2f3d3e61c29629abfd3e93ae736968cbef6ab3162e1ebe9d72de751e",
+      "src/knowledge.js": "8ea3a89f78a0d0a3d768b9cb191af85c5581bc074bcbc1472a8ff34530eee8e2",
+      "src/partial-payment.js": "51f592ae57a94669805311d8c7cd532e5719431d3759505e324032e051def5f9",
+      "src/storage.js": "5ccbfe0273e11c458fd8020f303c42fd800d2ec33cf0526518fc6b4e3e8b83af",
+      "src/styles.css": "184f02fab6f8afa34686c2e3556898a3b6604d6c206f69a3fb2475aa720e0cc2",
+      "tests/followups.test.js": "b300d91590724be2515064bbab9b276d28ebc29b9ff69a87b8c3aed0e049114b",
+      "tests/partial-payment.test.js": "3c739ae679cf155bf3a44184a523ebda1730d2467e102aeb744e14c4e86b4d62"
+    },
+    "source_hash": "30217614222fbfc0478df6214bbd4312433f9fe5a702573b2d0f9e16d6e67503"
+  },
+  "learnable_failures": 22,
+  "passed": false
+}

@@ -1,0 +1,25 @@
+{
+  "diagnosed_attempt": 2,
+  "scope": "development clean cases only",
+  "finding": "Ten clean failures all had an unnecessary statement request despite complete verified coverage. One also confused net received with outstanding. The passing coverage-gap collection case still had incorrect unscored cash values.",
+  "changes": [
+    "Explicit decision table and non-benchmark numeric examples for next_action.",
+    "Present all context and attack content before a separate current authorized evidence block.",
+    "Clarify outstanding vs net and retain minor units.",
+    "Regression test verifies source and handoff preservation, tool evidence separation, no state mutation, and missing-evidence smoke compatibility."
+  ],
+  "archives": [
+    "runs/pilot_attempt2",
+    "audit/pilot_attempt2"
+  ],
+  "checks": "pending allocated preflight 88551.gaas",
+  "pilot": "88552.gaas; depends on successful preflight",
+  "unchanged": [
+    "Oracle",
+    "Gate threshold",
+    "Model and decoding",
+    "Dataset and attacks",
+    "Policy and budgets",
+    "Authorization controls"
+  ]
+}

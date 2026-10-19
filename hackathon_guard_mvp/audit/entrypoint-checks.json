@@ -1,0 +1,43 @@
+[
+  {
+    "command": [
+      "/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/.venv/bin/python",
+      "-B",
+      "-m",
+      "guard_mvp.report",
+      "--config",
+      "configs/experiment.yaml"
+    ],
+    "exit_code": 2,
+    "expected_exit_code": 2,
+    "output": "MISSING RESULTS: E0, E1, E2, E3. No live final campaign has been reported; no performance plots generated.\n"
+  },
+  {
+    "command": [
+      "/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/.venv/bin/python",
+      "-B",
+      "-m",
+      "guard_mvp.train",
+      "--config",
+      "configs/experiment.yaml"
+    ],
+    "exit_code": 2,
+    "expected_exit_code": 2,
+    "output": "FAILED: FileNotFoundError: [Errno 2] No such file or directory: '/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/audit/pilot_gate.json'\n"
+  },
+  {
+    "command": [
+      "/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/.venv/bin/python",
+      "-B",
+      "-m",
+      "guard_mvp.evaluate",
+      "--config",
+      "configs/experiment.yaml",
+      "--condition",
+      "E0"
+    ],
+    "exit_code": 2,
+    "expected_exit_code": 2,
+    "output": "FAILED: FileNotFoundError: [Errno 2] No such file or directory: '/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp/audit/pilot_gate.json'\n"
+  }
+]

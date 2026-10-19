@@ -1,0 +1,382 @@
+       10/19/26, 12:51 AM                                        Quick Start Guide on using GPU-As-A-Service Resource
+             Quick Start Guide on using GPU-As-A-Service
+             Resource
+                     Soh Hwee Jin, Melvin
+                     Senior Assistant Director, InfoComm Infrastructure
+               Q1. What is GPU-As-A-Service (GaaS)?
+               GPU-As-A-Service (GaaS) is an new services offered by High Performance
+               Computing Centre (HPCC) and consists of 25 Compute Nodes with 200 Nvidia
+               H200 Cards.
+                
+               To get the latest updates on what is happening to the Cluster, please subscribe to
+               the NTU HPC Users' Group
+               Q2. How do I connect to GaaS Login Node?
+               Server IP Address: 172.21.33.7
+               Step 1: Accessing Login Node with a SSH Client
+                      You can use MobaXterm (https://mobaxterm.mobatek.net/) to access the
+                      Cluster. Once you launch XTerm inside MobaXterm, you can use the follow
+                      command 
+                       
+                                  By DNS Name (Preferred)                                             By IP Address
+                       $ ssh
+                                                                                    $ ssh Your_NTU_UserID@172.21.33.7
+                       Your_NTU_UserID@gaas.hpc.ntu.edu.sg
+                                                                                    Your_NTU_UserID@172.21.33.7
+                       Your_NTU_UserID@gaas.hpc.ntu.edu.sg
+                                                                                    Password: xxxxx
+                       Password: xxxxx
+                      Alternatively, you can use Putty (https://www.putty.org/) to access the Cluster
+                       
+                      If you are working outside NTU, please remember to VPN in first. For students
+                      who are using the Cluster, do ask your supervisor to fill up a form to seek
+       https://entuedu.sharepoint.com/teams/ntuhpcusersgroup2/SitePages/Quick-Start-Guide-on-using-GaaS-Resource.aspx                             1/12
+       10/19/26, 12:51 AM                                        Quick Start Guide on using GPU-As-A-Service Resource
+                      VPN access to Wildfly. For more information, do take a look at Q20. How do I
+                      get VPN Access for Student Account?
+               If you are facing errors such as the image below on your PC or MAC, you have to
+               update the known_hosts on your client
+                
+                        S/No                                   Explnation                                        Command
+                                                                                                      ssh-keygen -R 172.21.33.7
+                                           Remove a specific host's key from your
+                                                                                                      ssh-keygen -R
+                                           known_hosts
+                                                                                                      gaas.hpc.ntu.edu.sg
+                
+               Upon successful login, you should see the Login Node. Kindly note the
+               instructions written there. 
+       https://entuedu.sharepoint.com/teams/ntuhpcusersgroup2/SitePages/Quick-Start-Guide-on-using-GaaS-Resource.aspx                             2/12
+       10/19/26, 12:51 AM                                        Quick Start Guide on using GPU-As-A-Service Resource
+               Purpose of the Login Node:
+                      The Login Node is not a place for you to run your code. Please DO NOT RUN
+                      on the login node. The System Administrator will intervene to remove your
+                      processes as it interfere in other people work. 
+                      There are more powerful nodes that can handle your codes are found in the
+                      compute resource pool. All you need is a submission script to get the
+                      resource to be assigned to you. "Q4 Where can I get sample Submission
+                      Script"
+               Note for Windows Users:
+                      If you are very uncomfortable using SSH Client, you may want to consider
+                      using WINSCP (https://winscp.net/eng/index.php) which is very Windows-
+                      like. 
+                      Remember to use File Protocol: SCP
+                
+                
+               Further Readings on WINSCP
+                      Guides to Using WinSCP (By WinSCP)
+       https://entuedu.sharepoint.com/teams/ntuhpcusersgroup2/SitePages/Quick-Start-Guide-on-using-GaaS-Resource.aspx                             3/12
+       10/19/26, 12:51 AM                                        Quick Start Guide on using GPU-As-A-Service Resource
+                      WinSCP Tutorial - Connecting with FTP, FTPS, SFTP, uploading and
+                      downloading
+               Note for Mac Users:
+               Mac is UNIX under the hood. So all you need is to launch the MAC Terminal. User
+               Your NTU ID (without Domain) and NTU Password
+               ssh Your_NTU_UserID@172.21.33.7
+               Your_NTU_UserID@172.21.33.7
+               Password: xxxxxxxx
+                
+                
+               If you wish to learn more about using MAC OS Terminal, you may wish to preview
+               the Youtube Video by Percy Grunwald   https://youtu.be/aKRYQsKR46I?
+               si=ECG0O4oNNyvh9c3k 
+       https://entuedu.sharepoint.com/teams/ntuhpcusersgroup2/SitePages/Quick-Start-Guide-on-using-GaaS-Resource.aspx                             4/12
+       10/19/26, 12:51 AM                                        Quick Start Guide on using GPU-As-A-Service Resource
+               Q3. What applications are available on GaaS? How do I use
+               them?
+               GaaS is using an environmental module system to load and unload libraries. It is
+               not necessary to manually edit your own PATH and LD_LIBRARY_PATH. The
+               understanding of this section will allows you to learn how to integrate the module
+               load command in "Q4 Where can I get sample Submission Script"
+                 Options                        Explanation                                             Commands
+                                To list the software installed at the
+                     1                                                               module avail
+                                cluster
+                                To select the software paths and                     module load anaconda/2025
+                     2
+                                libraries                                            module load cuda/13.0
+                                To unload the software paths and                     module unload anaconda/2025
+                     3
+                                libraries                                            module unload cuda/13.0
+                                To list the software that you have
+                     4                                                               module list
+                                loaded
+               Q4. Where can I get sample Submission Scripts?
+               A High-Performance Computing Cluster has a large collection of powerful servers
+               to process the job. When you submit a job, the Scheduler find the most suitable
+               server according to your submission script parameters and place your job there. 
+               Sample PBS Script can be found at /usr/local/templates/. Feel free to copy any
+               scripts to your directory and modify them as you wish.  
+                
+                  Steps                      Options                                               Commands
+                     1          List all Submission Scripts               ls -l /usr/local/templates/*.pbs
+                                Copy the sample
+                     2          submission scripts into                   cp /usr/local/templates/lammps.pbs  .
+                                your directory
+               Q5. What do I edit in the Submission Script 
+       https://entuedu.sharepoint.com/teams/ntuhpcusersgroup2/SitePages/Quick-Start-Guide-on-using-GaaS-Resource.aspx                             5/12
+       10/19/26, 12:51 AM                                        Quick Start Guide on using GPU-As-A-Service Resource
+               Open up the submission script you have chosen (For example lammps.pbs) using
+               your favourite editor. If you are using Linux, you can use favourite editors like vim
+               or nano.
+                 Step(s)             Explanation                                              Commands
+                                                                #PBS -N myMATLAB
+                 1             Edit Job Name
+                                                                (*Make sure there is no spaces in-between the letter)
+                                                                #PBS -P project_code
+                                                                (*Check with your Supervisor on your specific Project
+                                                                Code. 
+                               Edit Project ID
+                 2
+                                                                If you are using GPU Dedicated Subscription, there is a
+                                
+                                                                prefix ds_****
+                                                                If you are using GPU Annual Subscription, there is a
+                                                                prefix gs_****)
+                                                                For Dedicated Queue
+                                                                #PBS -q gpu_ded
+                               Edit the Queue
+                                                                For Annual Subscription Queue
+                                                                #PBS -q gpu_as 
+                 3
+                               (Queue Represent
+                               the Resource Pool)
+                                                                For Pay-Per-Use
+                                                                #PBS -q gpu_pps
+                                                                 
+                               Edit the Walltime
+                                                                #PBS -l walltime=120:00:00
+                               (Walltime represent
+                 4
+                               how much time you
+                                                                (Default is 120 hours)
+                               are requesting from
+                               the scheduler)
+                                                                If I need 2 GPGPU (4 CPCPU Cores are attached to
+                                                                each GPGPU)
+                                                                #PBS -l select=1:ncpus=8:ngpus=2
+                               Edit the Resource
+                 6
+                               (GPU)
+                                                                if I need 1 GPGPU  (4 CPCPU Cores are attached to
+                                                                each GPGPU)
+                                                                #PBS -l select=1:ncpus=4:ngpus=1
+                               Edit the Resources               I need a node with at least 1000GB RAM
+                 7
+                               (Mem)                            #PBS -l select=1:ncpus=32:mem=1000g
+                 8             Load the                         module load ansys/fluent/25R2
+                               Application you
+       https://entuedu.sharepoint.com/teams/ntuhpcusersgroup2/SitePages/Quick-Start-Guide-on-using-GaaS-Resource.aspx                             6/12
+       10/19/26, 12:51 AM                                        Quick Start Guide on using GPU-As-A-Service Resource
+                 Step(s)             Explanation                                              Commands
+                               need…. 
+                               For Anaconda
+                                                                Take a look at Q8. How to compile and Test a GPGPU
+                 9             Virtual
+                                                                Application?
+                               Environment……
+               Save and you are ready to submit your jobs. See Q6.
+               Q6. How do I submit my jobs?
+               You have to use SSH Client to login to GaaS to submit the job. See Q2 on how to
+               Connect to GaaS. Once at the terminal, you can use the commands
+                 S/No                           Usage                                                 Commands
+                   1         General Commands                                    qsub matlab.pbs
+                   2         View Job State on the Cluster                       qstat
+                   3         View my own jobs only                               qstat -u $USER
+                                                                                 qstat -f JobID
+                   4         View a specific Job Details
+                                                                                 (where JobID is the Job Number allocated)
+                             Kill a specific job that belongs to                 qdel JobID
+                   5
+                             me                                                  (where JobID is the Job Number allocated)
+                   6         Check information on resources                      pbsnodes -aSj
+                             Checking Queue (Resources)
+                   7                                                             qstat -Q
+                             Overview
+                                                                                 qsub -I -l select=1:ncpus=8:mpiprocs=8 -l
+                             Launching an interactive mode
+                   8                                                             walltime=04:00:00 -P my_projectid -q
+                             (GPU)
+                                                                                 gpu_v100
+                
+               Q7. Can I have more information about the Queue? 
+                                                                                                                        Maximum
+                  Queue Name                         Information                       Resource Pool
+                                                                                                                   Walltime per Job
+                 gpu_free                  Free Queue for PhD                       hpc-gaas-g25                  4 hours
+                                           Students                                 (Total: 8 X H200)
+                                           (* HPCC reserve the right
+       https://entuedu.sharepoint.com/teams/ntuhpcusersgroup2/SitePages/Quick-Start-Guide-on-using-GaaS-Resource.aspx                             7/12
+       10/19/26, 12:51 AM                                        Quick Start Guide on using GPU-As-A-Service Resource
+                                                                                                                        Maximum
+                  Queue Name                         Information                       Resource Pool
+                                                                                                                   Walltime per Job
+                                           to change allocation of
+                                           resources to the queue) 
+                                                                                    hpc-gaas-g01 to
+                                           Dedicated Queue for
+                 gpu_ded                                                            hpc-gaas-g05                  1440 hours
+                                           Projects
+                                                                                    (Total: 40 x H200)
+                                                                                    hpc-gaas-06 to
+                                           Annual Subscription for                  hpc-gaas-g24
+                 gpu_gaas                                                                                         120 hours
+                                           Projects                                 (total: 152 X
+                                                                                    H200)
+                                                                                    hpc-gaas-g06 to
+                                                                                    hpc-gaas-g24
+                 gpu_ppu                   Pay-Per-Use Usage                                                      120 hours
+                                                                                    (total: 152 X
+                                                                                    H200)
+                                           Free for Users of GPU-As-                hpc-gaas-dm1 to
+                 gpu_datamover                                                                                    120 hours
+                                           A-Service                                hpc-gaas-dm2
+               Q8. How to compile and Test a GPGPU Application?
+               The HPC Login Node is a lean Node with a L40s GPU. If you wish to compile based
+               your application on the actual H200 card, do the following
+                 Steps                      Explanation                                               Commands
+                                                                                qsub -I -l select=1:ncpus=4:ngpus=1 -l
+                             Request a GPU Resource through
+                    1                                                           walltime=04:00:00 -P my_projectid -q
+                             an Interactive Session
+                                                                                gpu_as
+                             Load the Application of your
+                                                                                module load anaconda/2025
+                             course. 
+                    2        For example, if you are using
+                                                                                eval "$(/usr/local/anaconda2025/bin/conda
+                             Anaconda Application Suite, load
+                                                                                shell.bash hook)"
+                             the ana
+                                                                                See Set up virtual environment for Python
+                    3        Build your virtual environment
+                                                                                using Anaconda
+                    4        Make sure the GPU Submission                       ## Load the Application
+                             Script have the following 3 lines:
+                                                                                module load anaconda/2025
+       https://entuedu.sharepoint.com/teams/ntuhpcusersgroup2/SitePages/Quick-Start-Guide-on-using-GaaS-Resource.aspx                             8/12
+       10/19/26, 12:51 AM                                        Quick Start Guide on using GPU-As-A-Service Resource
+                 Steps                      Explanation                                               Commands
+                                                                                eval "$(/usr/local/anaconda2025/bin/conda
+                                                                                shell.bash hook)"
+                                                                                ##(where myenv is the private virtual
+                                                                                environment)
+                                                                                conda activate myenv 
+                                                                                 
+               Q9. How do I run a multi-GPU / multi-node PyTorch job?
+               PyTorch distributed jobs on the cluster use NCCL over the GPU fabric, launched by
+               mpirun from HPC-X (NVHPC 26.3). A single submission script
+               (PYTORCH_MULTINODE_TEST.pbs) works for both single-node multi-GPU and
+               multi-node runs — only the select= line changes.
+               Sample scripts are at /usr/local/templates/. Copy them to your directory and edit
+               as needed.
+                
+                 Steps       Options                           Commands
+                             List all PyTorch
+                 1                                             ls -l /usr/local/templates/pytorch*
+                             sample scripts
+                                                               cp
+                             Copy the sample to
+                 2                                             /usr/local/templates/PYTORCH_MULTINODE_TEST.pbs
+                             your directory
+                                                               /usr/local/templates/multinode_hello.py .
+                             Single node, 8
+                                                               #PBS -l
+                 3           GPUs — edit the
+                                                               select=1:ncpus=96:ngpus=8:mpiprocs=8:mem=2000gb
+                             resource line
+                             Multi-node (e.g. 2 ×
+                                                               #PBS -l
+                 4           8 GPUs) — edit the
+                                                               select=2:ncpus=96:ngpus=8:mpiprocs=8:mem=2000gb
+                             resource line
+                 5           Submit the job                    qsub PYTORCH_MULTINODE_TEST.pbs
+                 6           Check the output                  cat PYTORCH_MULTINODE_TEST.o<JOBID>
+                
+       https://entuedu.sharepoint.com/teams/ntuhpcusersgroup2/SitePages/Quick-Start-Guide-on-using-GaaS-Resource.aspx                             9/12
+       10/19/26, 12:51 AM                                        Quick Start Guide on using GPU-As-A-Service Resource
+               Notes
+                      mpiprocs must equal ngpus (one rank per GPU).
+                      The queue gpu_as and project hpc_admin are required.
+                      The script uses pbs_tmrsh instead of SSH between nodes — no key setup
+                      needed.
+                      MASTER_ADDR / MASTER_PORT are set automatically from $PBS_NODEFILE;
+                      do not hardcode them.
+                       
+               Expected output of cat PYTORCH_MULTINODE_TEST.o<JOBID>
+               The output has three sections — a header banner, a per-rank GPU roll-call, and a
+               pass/fail footer. Below is an example for 2 Node, 16 GPU test
+               Loading pytorch/2.11.0
+                Loading requirement: gnu/gcc-12.3 python/3.12.13
+               =========================================================
+               JOBID   : <JOBID>.gaas
+               WORKDIR : /home/<user>/<dir>
+               DATE    : <DATE> <TIME>
+               LAYOUT  : 2 nodes × 8 GPUs = 16 ranks
+               NODES   : hpc-gaas-gxx hpc-gaas-gxy
+               MASTER  : hpc-gaas-gxx:29500
+               MPIRUN  : mpirun (Open MPI) 4.1.9a1
+               =========================================================
+                rank  0/16 | hpc-gaas-gxx:GPU0 | NVIDIA H200
+                rank  1/16 | hpc-gaas-gxx:GPU1 | NVIDIA H200
+                ...
+                rank 15/16 | hpc-gaas-gxy:GPU7 | NVIDIA H200
+               PASS — all_reduce + broadcast + matmul verified
+                16 GPUs across 2 nodes
+               =========================================================
+               ==== TEST PASSED ====
+               Q10: What is GPU-As-A-Service Cluster User Help Menu
+               System?
+               menu.sh is a Menu System to help Users with important information below
+       https://entuedu.sharepoint.com/teams/ntuhpcusersgroup2/SitePages/Quick-Start-Guide-on-using-GaaS-Resource.aspx                            10/12
+       10/19/26, 12:51 AM                                        Quick Start Guide on using GPU-As-A-Service Resource
+                                                                 Screenshot of Menu.sh
+                 S/No                  Queries                             Information Required                            Commands
+                                                                                                                            menu.sh  
+                              Check my Space                    You can quickly check your space
+                    1                                                                                                          Select
+                              Usage and Quota                   usage and quota
+                                                                                                                             Option 1
+                                                                It will list the project groups that you
+                                                                are in, and the net balance of each
+                                                                project group.
+                                                                If you have an Annual Subscription
+                                                                and the number is unusually large or
+                                                                small, do not be alarmed. Annual
+                                                                Subscription is period-based, rather
+                              Check my Project                                                                               menu.sh 
+                                                                than funds-based. The funds inside
+                              Fund Balance (For
+                    2                                           the Annual Subscription are used for                           Select
+                              Non-Annual
+                                                                tracking usage rather than the actual                        Option 2
+                              Subscription)
+                                                                net funds.
+                                                                In other words, any subscription
+                                                                which has gs_
+                                                                If you are using Pay-Per-Use, the Net
+                                                                Balance in the Project Group is the
+                                                                Funds you have at HPCC
+                                                                You can check who are the active
+                                                                members who has access to and can
+                              Check Active Group                                                                             menu.sh
+                                                                use your Supervisor Project Code.
+                              Members and Project
+                    3                                           You can also check your Project Expiry                         Select
+                              Expiry in My Project
+                                                                Dates. This is useful if you need to                         Option 3
+                              Group
+                                                                verify the your CPU/GPU Annual
+                                                                subscription Project End Date.
+       https://entuedu.sharepoint.com/teams/ntuhpcusersgroup2/SitePages/Quick-Start-Guide-on-using-GaaS-Resource.aspx                            11/12
+       10/19/26, 12:51 AM                                        Quick Start Guide on using GPU-As-A-Service Resource
+                 S/No                  Queries                             Information Required                            Commands
+                                                                                                                             menu.sh
+                              Check Queuing Job                 Check the approximate time your
+                    4                                                                                                          Select
+                              Estimated Start Time              queued jobs will run
+                                                                                                                             Option 4
+               Q11: How to use Data-movers Nodes to copy files to and
+               from GPU-As-A-Cluster?
+               For more information see Using Datamover nodes to copy data to and from GPU-
+               As-A-Service.
+       https://entuedu.sharepoint.com/teams/ntuhpcusersgroup2/SitePages/Quick-Start-Guide-on-using-GaaS-Resource.aspx                            12/12

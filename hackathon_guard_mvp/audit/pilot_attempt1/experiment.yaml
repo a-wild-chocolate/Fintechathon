@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "experiment_root": "/home/suaq0001/projects/Fintechathon/hackathon_guard_mvp",
+  "seed": 17,
+  "backend": "application_adapter",
+  "node": "/home/suaq0001/.vscode-server/cli/servers/Stable-6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1/server/node",
+  "data_dir": "data",
+  "private_dir": "evaluator_private/data",
+  "runs_dir": "runs",
+  "reports_dir": "reports",
+  "model_dir": "models/Qwen3-8B",
+  "checkpoint": "runs/training/selected.json",
+  "model": {
+    "id": "Qwen/Qwen3-8B",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "label": "isolated experimental backend",
+    "decoding": {
+      "do_sample": false,
+      "max_new_tokens": 320,
+      "context_limit": 8192,
+      "enable_thinking": false
+    }
+  },
+  "limits": {
+    "cycles": 3,
+    "llm_calls": 12,
+    "tokens": 25000000,
+    "wall_seconds": 21600,
+    "episode_seconds": 240
+  },
+  "training": {
+    "episodes": 1024,
+    "batch_episodes": 64,
+    "epochs": 4,
+    "lr": 0.0003,
+    "clip": 0.2,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "entropy": 0.01,
+    "grad_clip": 0.5,
+    "validate_every": 256
+  },
+  "pilot": {
+    "minimum_clean_success": 0.5,
+    "minimum_exposed_attacks": 24
+  },
+  "run_prefix": "campaign"
+}

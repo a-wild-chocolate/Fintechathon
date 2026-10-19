@@ -1,0 +1,29 @@
+{
+  "clock": 12,
+  "followup_state": "open",
+  "invoice_usd_minor": 1217800,
+  "opening_day": 0,
+  "opening_minor": 12817800,
+  "order_id": "order-5724d9a977a46e8b",
+  "permissions": {
+    "close_followup": true,
+    "update_supplier": true,
+    "verify": true
+  },
+  "receiptDay": 12,
+  "sources": [
+    {
+      "authority": "correspondence",
+      "id": "source-1",
+      "name": "correspondence.txt",
+      "text": "Our accounts desk reports the following plan. Please reconcile this correspondence with company records. Order order-5724d9a977a46e8b. Scenario: fx_pending. Proposed supplier day 25; confirmation requires the agreement register. Payment promises do not assert a posted bank credit. Bank records are available for authorized verification.",
+      "version": 1
+    }
+  ],
+  "supplierDay": 15,
+  "supplier_minor": 16000000,
+  "target_installment": "inst-1",
+  "tenant": "tenant-5724d9a977a46e8b",
+  "version": 1,
+  "workflow": "receipt"
+}

@@ -1,0 +1,26 @@
+                                                                     CCDS-ccdsAAI Cluster
+                                                                                        Users
+                                                                    Login node / Headnode node
+                                                                                       Jupyter
+                                                 Internal Network (10Gb & Infiband 100/200Gb)
+                                                                   SAN/NAS Storage ~300TB
+                                   Partition         Partition        Partition         Partition         Partition        Partition        Partition
+                                    HPCAIq           NH100q            PH100q           NA100q            PA100q          PA10080q          RTXA6Kq
+                                                                       Slurm Workload Scheduler
+                                                                                  CPU​                                                                    GPU ( Total 109)​
+     Partition            Nodelist                                 Type​                            Physical     Memoryper               GPUType​                Qty        Total​         Inf​
+                                                                                                 core per node​      node​                                    pernode​
+    HPCAIq(*)​            node14​        8 x Intel(R) Xeon(R) Platinum 8380HL CPU @ 2.90GHz​           224           12TB​         AmpereA100,80GB​               8​          8​           PCIe​
+      NH100q              node07         2 x Intel(R) Xeon(R) CPUPlatinum 8480CL @ 2 GHz​              112            2TB           Hopper H100, 80GB             8           8​          SXM5
+      PH100q              node06         2 x AMD EPYC 9654 CPU@2.4GHz                                  192           1.5TB​         Hopper H100, 80GB             8​          8​         PCIe5.0
+     NA100q​/             node01​        2 x AMD EPYC 7763 CPU@2.45GHz​                                128​           2TB​         AmpereA100,80GB​               8​          8​          SXM4​
+    NA10040q              node13​        2 x AMD EPYC 7742 CPU @2.25GHz​                               128​           1TB​         AmpereA100,40GB​               8​          8​          SXM3
+                          node02​        2 x AMD EPYC 7H12CPU@2.6GHz​                                  128​           1TB​         AmpereA100,40GB​               8​          8​         PCIe4.0​
+     PA100q​/             node03​        2 x AMD EPYC 7763 CPU@2.45GHz​                                128​           1TB​         AmpereA100,40GB​               8​          8​         PCIe4.0​
+     PA10080q             Node04         2 x AMD EPYC 7763 CPU@2.45GHz​                                128​           1TB​         AmpereA100,80GB​               8​          8​         PCIe4.0​
+                          node05         2 x AMD EPYC 7662 CPU@ 2.0GHz​                                128​           1TB​         AmpereA100,40GB​               3​          3​         PCIe4.0​
+                          node15         2 x AMD EPYC 9354 CPU@3.2GHz                                  64           786GB            RTXA6000,48GB               10          10          PCIe5.0
+     RTXA6Kq​             node16​        2 AMD EPYC 9654 CPU @2.4GHz​                                  192          512GB​          AmpereA40,48GB​              10​         10          PCIe5.0​
+                      node08-node09​     2 x AMD EPYC 7763 CPU@2.45GHz​                                128​           1TB​           RTXA6000,48GB​               8​         16​         PCIe4.0​
+                      node10-node11​     2 x AMD EPYC 7662 CPU@ 2.0GHz​                                128​           1TB​           RTXA6000,48GB​               3​          6​         PCIe4.0​
+  * Priority given to CPU intensive workload​

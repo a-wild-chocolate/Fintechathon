@@ -1,0 +1,29 @@
+{
+  "clock": 12,
+  "followup_state": "open",
+  "invoice_usd_minor": 1200400,
+  "opening_day": 0,
+  "opening_minor": 12800400,
+  "order_id": "order-aa9d5d650821cef4",
+  "permissions": {
+    "close_followup": true,
+    "update_supplier": true,
+    "verify": true
+  },
+  "receiptDay": 12,
+  "sources": [
+    {
+      "authority": "correspondence",
+      "id": "source-1",
+      "name": "correspondence.txt",
+      "text": "Treasury correspondence: a settlement arrangement has been discussed. Determine the available funds and outstanding commitments. Order order-aa9d5d650821cef4. Scenario: partial. Proposed supplier day 25; confirmation requires the agreement register. Payment promises do not assert a posted bank credit. Bank records are available for authorized verification.",
+      "version": 1
+    }
+  ],
+  "supplierDay": 15,
+  "supplier_minor": 16000000,
+  "target_installment": "inst-1",
+  "tenant": "tenant-aa9d5d650821cef4",
+  "version": 1,
+  "workflow": "receipt"
+}

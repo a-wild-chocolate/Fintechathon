@@ -73,6 +73,7 @@
 #tradeflow-export-preview[data-page="assistant"] .tf-top,
 #tradeflow-export-preview[data-page="assistant"] .tf-nav { flex-shrink: 0; }
 #tradeflow-export-preview[data-page="assistant"] .tf-shell,
+#tradeflow-export-preview[data-page="assistant"] .tf-body,
 #tradeflow-export-preview[data-page="assistant"] .tf-main,
 #tradeflow-export-preview[data-page="assistant"] .tf-layout,
 #tradeflow-export-preview[data-page="assistant"] #tf-content { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: stretch; }

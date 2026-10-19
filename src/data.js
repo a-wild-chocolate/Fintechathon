@@ -25,7 +25,7 @@ export const translations = {
     "Turn analysis of this order into actions you can follow through.",
 
   "AI 助手": "AI Assistant",
-  "TradeX AI 助手": "TradeX AI Assistant",
+  "CashWeave AI 助手": "CashWeave AI Assistant",
   "从业务问题开始，把分析连接到订单、资金和行动。":
     "Start with a business question and connect analysis to orders, cash and actions.",
   "打开完整助手 ↗": "Open full assistant ↗",
@@ -37,7 +37,7 @@ export const translations = {
   本周资金与订单重点: "This week’s cash and orders",
   "核对 30 美元回款差额": "Resolve the $30 difference",
   分析客户延期付款: "Analyze a late buyer payment",
-  "TradeX · 示例分析": "TradeX · Example analysis",
+  "CashWeave · 示例分析": "CashWeave · Example analysis",
   整理订单证据: "Review order evidence",
   "核对 / 计算": "Reconcile / Calculate",
   准备行动: "Prepare actions",
@@ -69,8 +69,8 @@ export const translations = {
   "德国订单另有 30 美元回款差额，需要补充汇款凭证；英国订单则需要优先协调付款时间。":
     "The German order also has a $30 receipt difference requiring remittance advice; prioritize payment timing for the UK order.",
   继续核对德国回款差额: "Continue with the German receipt difference",
-  "TradeX 小微出口企业财务工作台":
-    "TradeX finance workspace for small exporters",
+  "CashWeave 小微出口企业财务工作台":
+    "CashWeave finance workspace for small exporters",
   星帆出口贸易: "StarSail Exports",
   " · 深圳": " · Shenzhen",
   "模拟企业 · 交互预览": "Sample business · Interactive preview",

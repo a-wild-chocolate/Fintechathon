@@ -1,7 +1,8 @@
+import { setupChat, replaceChatReply, rememberChatScroll } from "./chat-ui.js";
 import { attachCashChart, cashAnalysisQuestion } from "./cash-chart.js";
-import { setupDocuments, parseSetupDocument } from "./onboarding.js";
+import { setupDocuments, parseSetupDocument, readSetupFile } from "./onboarding.js";
 import { collectHumanAnswers, humanReplySummary } from './human-loop.js';
-import { restoreAgentTasks, archiveConversation, retainAgentTasks, rememberAgentSession } from './agent-tasks.js';
+import { restoreAgentTasks, archiveConversation, retainAgentTasks, rememberAgentSession, linkedConversation } from './agent-tasks.js';
 import {
   translations,
   docGroups,
@@ -22,7 +23,7 @@ import {
 } from "./finance.js";
 import { samplePartialEmail, inspectPaymentEmail, readPaymentDetails, paymentProblem, partialReceipt } from "./partial-payment.js";
 import { loadWorkspace, saveWorkspace } from "./storage.js";
-import { followupView } from "./followups.js";
+import { followupView, markNotificationsRead } from "./followups.js";
 import { renderIcons } from "./icons.js";
 import { createKnowledgeUI, askKnowledge, knowledgeAPI, watchAgentRun } from "./knowledge.js";
 
@@ -59,7 +60,7 @@ const knowledge = createKnowledgeUI({
     if (openChat) {
       state.context = doc.metadata.order_id === 'TF-26104' ? 'buyer' : doc.metadata.order_id === 'TF-26091' ? 'fee' : 'company';
       state.page = 'assistant';
-      state.aiDraft = bi('这份资料有哪些付款条件和待确认事项？', 'What payment terms and missing details are in this document?');
+      state.aiDraft = bi('读取这份付款资料，提取本次付款金额和日期；缺失的字段请向我提问。', 'Read this payment document, extract the payment amount and date, and ask me for any missing fields.');
       render(); $('#tf-ai-question')?.focus();
     }
     persist();
@@ -111,7 +112,10 @@ async function retrieveForTurn(turn) {
     turn.unread = state.page !== 'assistant' || docScope() !== turn.scope || turn.archived;
   } catch (error) { turn.rag = { status: 'error', error: error.message, progress: turn.rag.progress }; }
   monitoringTurns.delete(turn.id);
-  if ((state.page === 'assistant' && docScope() === turn.scope) || state.page === 'home') render();
+  if (state.page === 'assistant' && docScope() === turn.scope) {
+    if (!replaceChatReply(root, turn, ragReply(turn), state.lang)) render();
+    renderAgentTasks();
+  } else if (state.page === 'home') render();
   else renderAgentTasks();
   persist();
 }
@@ -123,7 +127,7 @@ function renderAgentTasks() {
   host.hidden = !tasks.length;
   if (!tasks.length) return;
   const visible = [...new Set([...pending, ...tasks.slice(-8)])].reverse();
-  const label = t => t.rag.status === 'pending' ? bi('后台运行中', 'Running in background')
+  const label = t => t.rag.task_status === 'needs_approval' && t.rag.proposal?.status === 'confirmed' ? bi('已确认并更新', 'Confirmed and updated') : t.rag.human_response ? bi('已回答', 'Answered') : t.rag.status === 'pending' ? bi('后台运行中', 'Running in background')
     : t.rag.status === 'error' || t.rag.task_status === 'failed' ? bi('需要查看', 'Needs attention')
     : t.rag.task_status === 'needs_information' ? bi('待补充信息', 'Needs information')
     : t.rag.task_status === 'needs_approval' ? bi('待确认', 'Needs confirmation') : bi('结果已就绪', 'Result ready');
@@ -213,7 +217,7 @@ root.addEventListener('toggle', event => {
 
 function ragReply(turn) {
   const finance = /资金|现金|缺口|cash|shortfall|liquidity/i.test(turn.question);
-  return `<div class="tx-chat-user" data-user-content>${escapeHtml(turn.question)}</div><div class="tx-chat-reply"><span class="sx-eyebrow">TradeX</span>${knowledge.answer(turn)}${finance && turn.rag.status === "done" ? `<details class="kb-finance-note"><summary>${bi('当前演示账本', 'Current demo ledger')} · v${turn.snapshot.v}</summary><p>${bi('可用人民币：', 'Available CNY: ')}${money(turn.snapshot.opening)} · ${bi('56 天预计最大缺口：', '56-day projected peak shortfall: ')}${money(turn.snapshot.peak)}<br>${bi('由资金计算模块计算；资料检索不会改动账本。', 'Calculated by the cash engine; document retrieval does not change the ledger.')}</p></details>` : ''}</div>`;
+  return `<div class="tx-chat-user" data-user-content>${escapeHtml(turn.question)}</div><div class="tx-chat-reply" data-reply-id="${turn.id}" data-chat-status="${turn.rag.status}"><span class="sx-eyebrow">CashWeave</span>${knowledge.answer(turn)}${finance && turn.rag.status === "done" ? `<details class="kb-finance-note"><summary>${bi('当前演示账本', 'Current demo ledger')} · v${turn.snapshot.v}</summary><p>${bi('可用人民币：', 'Available CNY: ')}${money(turn.snapshot.opening)} · ${bi('56 天预计最大缺口：', '56-day projected peak shortfall: ')}${money(turn.snapshot.peak)}<br>${bi('由资金计算模块计算；资料检索不会改动账本。', 'Calculated by the cash engine; document retrieval does not change the ledger.')}</p></details>` : ''}</div>`;
 }
 root.addEventListener('click', async event => {
   const button = event.target.closest('button'); if (!button) return;
@@ -583,7 +587,7 @@ function documentsView() {
 function docRow(d) {
   const records = docUploads[docKey(d)] || [],
     priority = isPriority(d);
-  return `<article class="tx-doc-row"><div class="tx-doc-description"><div class="tx-doc-title"><h3>${bi(...d.name)}</h3><span class="tf-badge ${priority ? "warn" : ""}">${priority ? bi("当前问题优先", "Priority for this issue") : d.need === "base" ? bi("基础资料", "Core record") : d.need === "optional" ? bi("选用时补充", "When needed") : bi("发生时补充", "When applicable")}</span></div><p>${bi(...d.purpose)}</p><p class="tf-small">${bi("核实字段：", "Fields to verify: ")}${bi(...d.fields)}</p><span class="tf-small">${d.scope === "company" ? bi("归属：企业共用 · 无需每笔订单重复上传", "Scope: company-wide · Reuse across orders") : bi("归属：", "Scope: ") + caseName()}</span></div><div class="tx-doc-upload"><label for="doc-${d.id}">${bi("添加", "Add")} ${bi(...d.name)}</label><input id="doc-${d.id}" type="file" multiple data-doc-upload="${d.id}" accept=".pdf,.csv,.xlsx,.txt,.eml,.docx,.md,.json" aria-label="${bi("上传", "Upload")} ${bi(...d.name)}"><span class="tf-note">PDF / CSV / XLSX / DOCX / TXT / EML / MD / JSON · ${bi("每份 ≤ 10 MB，最多 5 份", "≤ 10 MB each, up to 5 files")}</span><span class="tf-badge">${docStatus(d)}</span>${sampleExists(d) ? `<span class="tf-small">${bi("已关联预置业务示例", "Linked to the preset business example")}</span>` : ""}${records.map((f, i) => `<div class="tx-doc-file"><span data-user-content>${escapeHtml(f.name)}</span>${templateLabels[d.id] ? `<button type="button" class="tf-link" data-parse-file="${d.id}" data-file-index="${i}">${bi("演示解析", "Demo extraction")}</button>` : ""}<button type="button" class="tf-link" data-doc-remove="${d.id}" data-doc-index="${i}">${bi("移除", "Remove")}</button></div>`).join("")}</div></article>`;
+  return `<article class="tx-doc-row"><div class="tx-doc-description"><div class="tx-doc-title"><h3>${bi(...d.name)}</h3><span class="tf-badge ${priority ? "warn" : ""}">${priority ? bi("当前问题优先", "Priority for this issue") : d.need === "base" ? bi("基础资料", "Core record") : d.need === "optional" ? bi("选用时补充", "When needed") : bi("发生时补充", "When applicable")}</span></div><p>${bi(...d.purpose)}</p><p class="tf-small">${bi("核实字段：", "Fields to verify: ")}${bi(...d.fields)}</p><span class="tf-small">${d.scope === "company" ? bi("归属：企业共用 · 无需每笔订单重复上传", "Scope: company-wide · Reuse across orders") : bi("归属：", "Scope: ") + caseName()}</span></div><div class="tx-doc-upload"><label for="doc-${d.id}">${bi("添加", "Add")} ${bi(...d.name)}</label><input id="doc-${d.id}" type="file" multiple data-doc-upload="${d.id}" accept=".pdf,.csv,.xlsx,.txt,.eml,.docx,.md,.json,.png,.jpg,.jpeg,.webp" aria-label="${bi("上传", "Upload")} ${bi(...d.name)}"><span class="tf-note">PNG / JPG / WEBP / PDF / DOCX / TXT / EML / CSV / XLSX · ${bi("每份 ≤ 10 MB，最多 5 份", "≤ 10 MB each, up to 5 files")}</span><span class="tf-badge">${docStatus(d)}</span>${sampleExists(d) ? `<span class="tf-small">${bi("已关联预置业务示例", "Linked to the preset business example")}</span>` : ""}${records.map((f, i) => `<div class="tx-doc-file"><span data-user-content>${escapeHtml(f.name)}</span>${templateLabels[d.id] ? `<button type="button" class="tf-link" data-parse-file="${d.id}" data-file-index="${i}">${bi("演示解析", "Demo extraction")}</button>` : ""}<button type="button" class="tf-link" data-doc-remove="${d.id}" data-doc-index="${i}">${bi("移除", "Remove")}</button></div>`).join("")}</div></article>`;
 }
 
 root.addEventListener("click", (e) => {
@@ -648,7 +652,7 @@ function renderSetup() {
     <div class="setup-status"><span>${bi("已确认资料", "Confirmed records")} <strong>${count} / 3</strong></span><span>${bi("订单", "Orders")} <strong>${records.sales ? 1 : 0}</strong></span><span>${bi("人民币余额", "CNY balance")} <strong>${records.cash ? money(records.cash.fields.opening) : "—"}</strong></span></div>
     <ol class="setup-steps">${setupDocuments.map((item,index) => `<li class="${records[item.id] ? 'done' : next?.id === item.id ? 'active' : ''}"><b>${records[item.id] ? '✓' : index+1}</b><span>${bi(...item.label)}</span></li>`).join('')}</ol>
     <section class="tf-panel ow-entry"><span class="sx-eyebrow">${next ? bi(`第 ${count+1} 步`, `STEP ${count+1}`) : bi("基础资料已齐全", "BASELINE READY")}</span><h1>${next ? bi(...next.label) : bi("现在，可以看清资金安排了。", "Your cash picture is ready.")}</h1><p>${next ? bi(...next.purpose) : bi("将已确认的账户余额、订单和付款条款关联，计算首次资金缺口。", "Connect the confirmed balances, order and supplier terms to calculate the first cash shortfall.")}</p>
-    ${next ? `<button class="tf-link setup-download" data-setup-sample ${setupBusy ? "disabled" : ""}>${bi("读取本步示例文件", "Read the sample file")} ↗</button>${setupPending ? `<p class="tf-small" data-user-content>${escapeHtml(setupPending.file.name)}</p><dl class="setup-fields">${Object.entries(fields).map(([key,value]) => `<div><dt>${bi(...labels[key])}</dt><dd>${key.endsWith('Day') ? date(value) : typeof value === 'number' ? value.toLocaleString('en-US') : escapeHtml(value)}</dd></div>`).join('')}</dl><p class="tf-note">${bi("字段来自上传的文本；确认后保存原件并加入知识库。", "Fields come from the uploaded text. Confirm to save the source in the knowledge library.")}</p><div class="ow-entry-action"><button class="tf-button primary" data-setup-confirm ${setupBusy ? 'disabled' : ''}>${setupBusy ? bi("正在保存…", "Saving…") : bi("确认并导入", "Confirm & import")}</button><button class="tf-link" data-setup-reselect ${setupBusy ? 'disabled' : ''}>${bi("重新选文件", "Choose another file")}</button></div>` : `<label class="ow-file-label setup-file" for="setup-file">↑ ${bi("选择资料，读取字段", "Choose a file to read its fields")}</label><input id="setup-file" class="ow-file-input" type="file" accept=".txt" aria-label="${bi("上传基础资料", "Upload baseline record")}"><p class="tf-note">${bi("可上传示例 TXT，或直接读取示例文件；本步由程序读取字段。", "Upload the sample TXT or read it directly above. This step reads fields without an AI call.")}</p>`}` : `<button class="tf-button primary setup-open" data-setup-open>${bi("生成订单与资金看板", "Build orders & cash dashboard")} →</button>`}
+    ${next ? `<button class="tf-link setup-download" data-setup-sample ${setupBusy ? "disabled" : ""}>${bi("读取本步示例文件", "Read the sample file")} ↗</button>${setupPending ? `<p class="tf-small" data-user-content>${escapeHtml(setupPending.file.name)}</p><dl class="setup-fields">${Object.entries(fields).map(([key,value]) => `<div><dt>${bi(...labels[key])}</dt><dd>${key.endsWith('Day') ? date(value) : typeof value === 'number' ? value.toLocaleString('en-US') : escapeHtml(value)}</dd></div>`).join('')}</dl><p class="tf-note">${bi("字段来自上传的文本；确认后保存原件并加入知识库。", "Fields come from the uploaded text. Confirm to save the source in the knowledge library.")}</p><div class="ow-entry-action"><button class="tf-button primary" data-setup-confirm ${setupBusy ? 'disabled' : ''}>${setupBusy ? bi("正在保存…", "Saving…") : bi("确认并导入", "Confirm & import")}</button><button class="tf-link" data-setup-reselect ${setupBusy ? 'disabled' : ''}>${bi("重新选文件", "Choose another file")}</button></div>` : `<label class="ow-file-label setup-file" for="setup-file">↑ ${bi("选择资料，读取字段", "Choose a file to read its fields")}</label><input id="setup-file" class="ow-file-input" type="file" accept=".txt,.docx" aria-label="${bi("上传基础资料", "Upload baseline record")}"><p class="tf-note">${bi("可上传示例 Word 或 TXT，或直接读取示例文件；本步由程序读取字段。", "Upload the sample Word or TXT file, or read it directly above. Fields are read without an AI call.")}</p>`}` : `<button class="tf-button primary setup-open" data-setup-open>${bi("生成订单与资金看板", "Build orders & cash dashboard")} →</button>`}
     <p class="setup-error" role="status">${escapeHtml(setupError)}</p></section>
     ${count ? `<details class="sx-details"><summary>${bi("查看已导入资料", "View imported records")}</summary>${setupDocuments.filter(item=>records[item.id]).map(item=>`<p class="setup-record">✓ ${bi(...item.label)} · ${escapeHtml(records[item.id].filename)}</p>`).join('')}</details>` : ''}`;
   localize();
@@ -660,20 +664,20 @@ root.addEventListener('change', async event => {
   const file = event.target.files[0];
   if (!file) return;
   const next = setupDocuments.find(item => !flow.setup.records[item.id]);
-  setupError = '';
-  try { setupPending = { kind: next.id, file, fields: parseSetupDocument(next.id, await file.text()) }; }
+  setupError = ''; setupPending = null; setupBusy = true; render();
+  try { setupPending = { kind: next.id, file, fields: parseSetupDocument(next.id, await readSetupFile(file)) }; }
   catch (error) { setupError = error.message; }
-  render();
+  setupBusy = false; render();
 });
 root.addEventListener('click', async event => {
   if (event.target.closest('[data-setup-sample]')) {
     const next = setupDocuments.find(item => !flow.setup.records[item.id]);
     setupError = ''; setupBusy = true; render();
     try {
-      const response = await fetch('/demo/five-minute-case/preload/' + next.file);
+      const response = await fetch('/demo/baseline/' + next.file);
       if (!response.ok) throw Error('Could not load the sample file.');
-      const text = await response.text();
-      setupPending = { kind: next.id, file: new File([text], next.file, {type:'text/plain'}), fields: parseSetupDocument(next.id, text) };
+      const file = new File([await response.blob()], next.file);
+      setupPending = { kind: next.id, file, fields: parseSetupDocument(next.id, await readSetupFile(file)) };
     } catch (error) { setupError = error.message; }
     setupBusy = false; render();
   }
@@ -1372,31 +1376,25 @@ function taskView() {
 }
 
 function conversationTurns(turns, renderTurn) {
-  const needsAction = (turn) => turn.rag?.status === "pending" ||
-    (turn.rag?.questions?.length && !turn.rag.human_response) ||
-    turn.rag?.proposal?.status === "needs_approval";
-  const earlier = turns.filter((turn, index) => index < turns.length - 1 && !needsAction(turn));
-  const current = turns.filter((turn, index) => index === turns.length - 1 || needsAction(turn));
-  return `${earlier.length ? `<details class="tx-history"><summary>${bi("之前的对话", "Earlier conversation")} · ${earlier.length}</summary><div class="tx-history-turns">${earlier.map(turn => renderTurn(turn, turns.indexOf(turn))).join("")}</div></details>` : ""}${current.map(turn => renderTurn(turn, turns.indexOf(turn))).join("")}`;
+  return turns.map(renderTurn).join("");
 }
 
 function aiPage() {
   if (!agentsEnabled && !state.ragDocumentId && activeJob()?.type === "partialPayment" && activeJob().status !== "confirmed") return partialConversation(activeJob());
-  const turns = flow.chat.filter(
-    (t) =>
-      !t.archived && t.scope === docScope() &&
-      (state.page !== "overview" || t.snapshot.v === flow.version),
-  );
+  const scoped = flow.chat.filter(t => !t.archived && t.scope === docScope());
+  const turns = state.page === "overview"
+    ? linkedConversation(scoped, scoped.filter(t => t.snapshot.v === flow.version))
+    : scoped;
   return `<section class="tx-chat"><div class="tx-chat-top"><span>${bi("AI 助手", "AI assistant")}</span><button class="tf-link" data-action="ai-new">${bi("新对话", "New chat")}</button></div><div class="tx-messages" aria-live="polite">${
     turns.length
       ? conversationTurns(turns, (t, i) => {
             const stale = t.snapshot.v !== flow.version,
               last = i === turns.length - 1;
             if (t.rag) return ragReply(t);
-            return `<div class="tx-chat-user" data-user-content>${escapeHtml(t.question)}</div><div class="tx-chat-reply"><span class="sx-eyebrow">TradeX${stale ? " · " + bi("较早资料", "Earlier evidence") : ""}</span><p>${t.kind === "missing" ? bi("请补充客户的付款通知或供应商延期确认，在资料库核对日期后，资金预测会一起更新。", "Add the buyer’s payment notice or supplier agreement. Verify its dates in Documents to update the forecast.") : chatAnswer(t)}</p>${last && state.page !== "overview" ? `<div class="tx-chat-actions">${stale ? `<button class="tf-link" data-flow-action="reanalyze">${bi("资料有更新，重新分析", "Evidence changed · Reanalyze")} →</button>` : t.scope === "fee" || t.kind === "missing" || t.followupType === "receipt" ? button("documents", "去补充资料", "Add evidence") : t.kind === "delay" ? `<button class="tf-link" data-connected="delay">${bi("把这个假设放到资金看板", "View this scenario on the dashboard")} →</button>` : `<button class="tf-link" data-simple="compare">${bi("去比较付款方案", "Compare payment options")} →</button>`}</div>` : ""}<details class="sx-sources"><summary>${bi("分析依据", "Sources")}</summary><p class="tf-small">${caseName()} · ${bi("已确认资料", "Confirmed evidence")} v${t.snapshot.v}</p>${state.page === "overview" ? `<button class="tf-link" data-order-step="2">${bi("查看确认字段", "View confirmed fields")}</button>` : button("reconcile", "查看字段", "View fields")}</details>${last && state.page === "overview" && !stale && t.followupType === "receipt" ? `<button class="tf-link ow-ai-next" data-order-step="1">${bi("补充到账凭证", "Add bank evidence")} →</button>` : last && state.page === "overview" && !stale && t.scope === "buyer" && t.snapshot.peak > 0 ? `<button class="tf-link ow-ai-next" data-simple="compare">${bi("比较付款方案", "Compare payment options")} →</button>` : ""}</div>`;
+            return `<div class="tx-chat-user" data-user-content>${escapeHtml(t.question)}</div><div class="tx-chat-reply"><span class="sx-eyebrow">CashWeave${stale ? " · " + bi("较早资料", "Earlier evidence") : ""}</span><p>${t.kind === "missing" ? bi("请补充客户的付款通知或供应商延期确认，在资料库核对日期后，资金预测会一起更新。", "Add the buyer’s payment notice or supplier agreement. Verify its dates in Documents to update the forecast.") : chatAnswer(t)}</p>${last && state.page !== "overview" ? `<div class="tx-chat-actions">${stale ? `<button class="tf-link" data-flow-action="reanalyze">${bi("资料有更新，重新分析", "Evidence changed · Reanalyze")} →</button>` : t.scope === "fee" || t.kind === "missing" || t.followupType === "receipt" ? button("documents", "去补充资料", "Add evidence") : t.kind === "delay" ? `<button class="tf-link" data-connected="delay">${bi("把这个假设放到资金看板", "View this scenario on the dashboard")} →</button>` : `<button class="tf-link" data-simple="compare">${bi("去比较付款方案", "Compare payment options")} →</button>`}</div>` : ""}<details class="sx-sources"><summary>${bi("分析依据", "Sources")}</summary><p class="tf-small">${caseName()} · ${bi("已确认资料", "Confirmed evidence")} v${t.snapshot.v}</p>${state.page === "overview" ? `<button class="tf-link" data-order-step="2">${bi("查看确认字段", "View confirmed fields")}</button>` : button("reconcile", "查看字段", "View fields")}</details>${last && state.page === "overview" && !stale && t.followupType === "receipt" ? `<button class="tf-link ow-ai-next" data-order-step="1">${bi("补充到账凭证", "Add bank evidence")} →</button>` : last && state.page === "overview" && !stale && t.scope === "buyer" && t.snapshot.peak > 0 ? `<button class="tf-link ow-ai-next" data-simple="compare">${bi("比较付款方案", "Compare payment options")} →</button>` : ""}</div>`;
           })
       : `<div class="tx-chat-empty"><span class="sx-ai-mark">✦</span><h1>${bi("这笔订单，下一步怎么做？", "What comes next for this order?")}</h1><p>${bi("直接问，订单、资料和资金安排已经关联。", "Just ask. Your order, evidence and cash plan are connected.")}</p></div>`
-  }</div><div class="tx-composer">${knowledge.composer()}<div class="tx-chat-hints" ${turns.length ? "hidden" : ""}>${[bi("帮我分析当前付款风险", "Explain the current payment risk"), docScope() === "fee" ? (flow.feeRemaining === 0 ? bi("这次确认对资金有什么影响？", "How does this confirmation affect cash?") : bi("还缺哪些回款资料？", "What receipt evidence is missing?")) : bi("客户晚付 14 天会怎样？", "What if the buyer pays 14 days late?")].map((q) => `<button data-fill-question="${escapeHtml(q)}">${q}</button>`).join("")}</div><form id="tf-ai-form"><textarea id="tf-ai-question" rows="3" maxlength="300" aria-label="${bi("向 AI 助手提问", "Ask TradeX")}" placeholder="${bi("输入你的问题…", "Ask a question…")}">${escapeHtml(state.aiDraft || "")}</textarea><div class="tx-send-row"><span class="tf-note">${bi("Enter 换行", "Enter for a new line")}</span><button class="tf-button primary" type="button" data-action="ai-submit">${bi("发送", "Send")} ↑</button></div></form></div></section>`;
+  }</div><div class="tx-composer">${knowledge.composer()}<div class="tx-chat-hints" ${turns.length ? "hidden" : ""}>${[bi("帮我分析当前付款风险", "Explain the current payment risk"), docScope() === "fee" ? (flow.feeRemaining === 0 ? bi("这次确认对资金有什么影响？", "How does this confirmation affect cash?") : bi("还缺哪些回款资料？", "What receipt evidence is missing?")) : bi("客户晚付 14 天会怎样？", "What if the buyer pays 14 days late?")].map((q) => `<button data-fill-question="${escapeHtml(q)}">${q}</button>`).join("")}</div><form id="tf-ai-form"><textarea id="tf-ai-question" rows="3" maxlength="300" aria-label="${bi("向 AI 助手提问", "Ask CashWeave")}" placeholder="${bi("输入你的问题…", "Ask a question…")}">${escapeHtml(state.aiDraft || "")}</textarea><div class="tx-send-row"><span class="tf-note">${bi("Enter 换行", "Enter for a new line")}</span><button class="tf-button primary" type="button" data-action="ai-submit">${bi("发送", "Send")} ↑</button></div></form></div></section>`;
 }
 
 function askAi(question, kind) {
@@ -1488,6 +1486,7 @@ function render() {
     tasks: taskView,
     assistant: company ? companyAi : aiPage,
   };
+  rememberChatScroll(root);
   root.dataset.page = state.page;
   $("#tf-content").innerHTML = views[state.page]();
   $(".tf-heading").hidden = ["home", "overview", "assistant"].includes(state.page);
@@ -1530,6 +1529,7 @@ function render() {
   renderNotifications();
   localize();
   renderIcons(root);
+  setupChat(root, state.lang, `${state.page}:${docScope()}`);
   requestAnimationFrame(chart);
 }
 
@@ -1766,14 +1766,14 @@ function partialConversation(job) {
   const hint = draft.amountUSD === null
     ? bi("本次先付 USD 6,000", "The buyer will pay USD 6,000 first")
     : bi("预计 2026-10-29 结汇后可用", "CNY will be available on 2026-10-29");
-  const history = `<div class="tx-chat-reply"><span class="sx-eyebrow">TradeX</span><p>${bi("这封邮件提出部分付款。已关联 Harbour Supplies 的 TF-26104，订单记录中的待收尾款是 USD 12,000。", "This email proposes a partial payment. It is linked to Harbour Supplies order TF-26104, which has USD 12,000 outstanding.")}${job.disputed ? bi(" 邮件同时提到争议处理，余款条件需要继续跟进。", " The email also mentions a dispute, so the release conditions for the remainder need follow-up.") : ""}</p><p>${paymentPrompt(job.extracted)}</p></div>
-      ${job.messages.map((m) => `<div class="tx-chat-user" data-user-content>${escapeHtml(m.question)}</div><div class="tx-chat-reply"><span class="sx-eyebrow">TradeX</span><p>${paymentPrompt(m.draft)}</p></div>`).join("")}`;
+  const history = `<div class="tx-chat-reply"><span class="sx-eyebrow">CashWeave</span><p>${bi("这封邮件提出部分付款。已关联 Harbour Supplies 的 TF-26104，订单记录中的待收尾款是 USD 12,000。", "This email proposes a partial payment. It is linked to Harbour Supplies order TF-26104, which has USD 12,000 outstanding.")}${job.disputed ? bi(" 邮件同时提到争议处理，余款条件需要继续跟进。", " The email also mentions a dispute, so the release conditions for the remainder need follow-up.") : ""}</p><p>${paymentPrompt(job.extracted)}</p></div>
+      ${job.messages.map((m) => `<div class="tx-chat-user" data-user-content>${escapeHtml(m.question)}</div><div class="tx-chat-reply"><span class="sx-eyebrow">CashWeave</span><p>${paymentPrompt(m.draft)}</p></div>`).join("")}`;
   return `<section class="tx-chat pp-chat">
     <div class="tx-chat-top"><span>${bi("第 2 步 / AI 补全付款信息", "STEP 2 / CLARIFY PAYMENT")}</span><span>TF-26104</span></div>
     <details class="pp-source"><summary>${bi("客户邮件", "Buyer email")} · <span data-user-content>${escapeHtml(job.name)}</span></summary><pre data-user-content>${escapeHtml(job.content)}</pre></details>
     <div class="tx-messages" aria-live="polite">
       ${job.messages.length || ready ? `<details class="tx-history"><summary>${bi("之前的补充记录", "Earlier clarifications")}</summary><div class="tx-history-turns">${history}</div></details>` : ""}
-      ${ready ? "" : `<div class="tx-chat-reply"><span class="sx-eyebrow">TradeX</span><p>${paymentPrompt(draft)}</p></div>`}
+      ${ready ? "" : `<div class="tx-chat-reply"><span class="sx-eyebrow">CashWeave</span><p>${paymentPrompt(draft)}</p></div>`}
       ${ready ? `<div class="pp-review"><h2>${confirmed ? bi("已确认的部分付款计划", "Confirmed partial-payment plan") : bi("确认这次付款计划", "Confirm this payment plan")}</h2><p class="tf-small">${bi("字段来自邮件及你的补充，确认前不改变资金预测。", "Fields come from the email and your clarification. The forecast changes only after confirmation.")}</p><div class="ow-fields"><label>${bi("本次付款（USD）", "This installment (USD)")}<input id="pp-amount" type="number" min="0.01" max="11999.99" step="0.01" value="${draft.amountUSD}" ${confirmed ? "readonly" : ""}></label><label>${bi("预计人民币可用日", "Expected CNY availability")}<input id="pp-date" type="date" min="2026-10-17" max="2026-12-11" value="${escapeHtml(draft.date)}" ${confirmed ? "readonly" : ""}></label></div><p class="pp-estimate" id="pp-estimate">${partialEstimate(estimate)}</p><p class="tf-note">${bi("沿用原订单 USD 12,000 对应净额 CNY 80,000 的比例假设。余款不设定到账日；总应收仍为 USD 12,000，实际银行余额不变。", "Net CNY follows the existing USD 12,000 / CNY 80,000 order assumption. The remainder has no receipt date. Total receivables stay at USD 12,000 and bank cash is unchanged.")}</p><p id="pp-error" class="pp-error" role="alert"></p><div class="ow-footer">${confirmed ? `<button class="tf-link" data-order-action="edit">${bi("修改计划", "Revise plan")}</button><button class="tf-button primary" data-order-step="3">${bi("查看资金影响", "View cash impact")} →</button>` : `<button class="tf-button primary" data-partial-action="confirm">${bi("确认并更新订单与现金流", "Confirm & update order and cash")} →</button>`}</div></div>` : ""}
     </div>
     ${ready ? "" : `<div class="tx-composer"><div class="tx-chat-hints"><button data-fill-question="${escapeHtml(hint)}">${bi("试填：", "Try: ")}${hint}</button></div><form id="tf-ai-form"><textarea id="tf-ai-question" rows="2" maxlength="300" aria-label="${bi("补充付款信息", "Clarify payment details")}" placeholder="${bi("回复金额或日期，例如：先付 USD 6,000…", "Reply with the amount or date, e.g. pay USD 6,000…")}">${escapeHtml(state.aiDraft || "")}</textarea><div class="tx-send-row"><span class="tf-note">${bi("本地规则演示 · 未连接模型", "Local rule-based demo · No live model")}</span><button type="button" class="tf-button primary" data-action="ai-submit">${bi("发送", "Send")} ↑</button></div></form></div>`}
@@ -1983,7 +1983,7 @@ function companyDocuments() {
 
 function companyAi() {
   const turns = flow.chat.filter((t) => !t.archived && t.scope === "company");
-  return `<section class="tx-chat"><div class="tx-chat-top"><span>${bi("企业整体资金 · 全部订单", "Company cash · All orders")}</span><button class="tf-link" data-action="ai-new">${bi("新对话", "New chat")}</button></div><div class="tx-messages" aria-live="polite">${turns.length ? conversationTurns(turns, (t) => t.rag ? ragReply(t) : `<div class="tx-chat-user" data-user-content>${escapeHtml(t.question)}</div><div class="tx-chat-reply"><span class="sx-eyebrow">TradeX · ${bi("企业分析", "Company analysis")}${t.snapshot.v !== flow.version ? " · " + bi("较早资料", "Earlier evidence") : ""}</span><p>${bi(`当前人民币可用余额为 ${money(t.snapshot.opening)}，美元余额 USD 19,970 单独保留。根据已确认安排及预计回款，56 天最大资金缺口为 ${money(t.snapshot.peak)}。重点跟进 Harbour Supplies 的 USD 12,000 尾款${setupMode ? "。" : `，以及 Nordlicht 的 USD ${t.snapshot.feeRemaining ?? 30} 未结差额。`}`, `Available CNY is ${money(t.snapshot.opening)}; USD 19,970 remains separate. Based on the confirmed schedule and expected receipts, the 56-day peak shortfall is ${money(t.snapshot.peak)}. Follow up Harbour Supplies’ USD 12,000 balance${setupMode ? "." : ` and Nordlicht’s USD ${t.snapshot.feeRemaining ?? 30} outstanding difference.`}`)}${t.snapshot.partialReceipt ? `<br>${partialAnalysis(t.snapshot)}` : ""}</p></div>`) : `<div class="tx-chat-empty"><span class="sx-ai-mark">✦</span><h1>${bi("公司的资金，需要关注什么？", "What needs attention across the business?")}</h1><p>${bi("从整体现金情况开始，具体订单再展开。", "Start with company cash, then explore the relevant order.")}</p></div>`}</div><div class="tx-composer">${knowledge.composer()}<div class="tx-chat-hints" ${turns.length ? "hidden" : ""}><button data-fill-question="${bi("帮我概括公司的资金情况", "Summarize company cash and priorities")}">${bi("哪些付款需要先处理？", "Which payments need attention?")}</button></div><form id="tf-ai-form"><textarea id="tf-ai-question" rows="3" aria-label="${bi("向 AI 助手提问", "Ask TradeX")}" placeholder="${bi("询问公司的资金和待处理事项…", "Ask about company cash and priorities…")}">${escapeHtml(state.aiDraft || "")}</textarea><div class="tx-send-row"><span class="tf-note">${bi("Enter 换行", "Enter for a new line")}</span><button class="tf-button primary" type="button" data-action="ai-submit">${bi("发送", "Send")} ↑</button></div></form></div></section><details class="sx-details"><summary>${bi("选择订单继续分析", "Explore an order")}</summary>${companyOrders("assistant")}</details>`;
+  return `<section class="tx-chat"><div class="tx-chat-top"><span>${bi("企业整体资金 · 全部订单", "Company cash · All orders")}</span><button class="tf-link" data-action="ai-new">${bi("新对话", "New chat")}</button></div><div class="tx-messages" aria-live="polite">${turns.length ? conversationTurns(turns, (t) => t.rag ? ragReply(t) : `<div class="tx-chat-user" data-user-content>${escapeHtml(t.question)}</div><div class="tx-chat-reply"><span class="sx-eyebrow">CashWeave · ${bi("企业分析", "Company analysis")}${t.snapshot.v !== flow.version ? " · " + bi("较早资料", "Earlier evidence") : ""}</span><p>${bi(`当前人民币可用余额为 ${money(t.snapshot.opening)}，美元余额 USD 19,970 单独保留。根据已确认安排及预计回款，56 天最大资金缺口为 ${money(t.snapshot.peak)}。重点跟进 Harbour Supplies 的 USD 12,000 尾款${setupMode ? "。" : `，以及 Nordlicht 的 USD ${t.snapshot.feeRemaining ?? 30} 未结差额。`}`, `Available CNY is ${money(t.snapshot.opening)}; USD 19,970 remains separate. Based on the confirmed schedule and expected receipts, the 56-day peak shortfall is ${money(t.snapshot.peak)}. Follow up Harbour Supplies’ USD 12,000 balance${setupMode ? "." : ` and Nordlicht’s USD ${t.snapshot.feeRemaining ?? 30} outstanding difference.`}`)}${t.snapshot.partialReceipt ? `<br>${partialAnalysis(t.snapshot)}` : ""}</p></div>`) : `<div class="tx-chat-empty"><span class="sx-ai-mark">✦</span><h1>${bi("公司的资金，需要关注什么？", "What needs attention across the business?")}</h1><p>${bi("从整体现金情况开始，具体订单再展开。", "Start with company cash, then explore the relevant order.")}</p></div>`}</div><div class="tx-composer">${knowledge.composer()}<div class="tx-chat-hints" ${turns.length ? "hidden" : ""}><button data-fill-question="${bi("帮我概括公司的资金情况", "Summarize company cash and priorities")}">${bi("哪些付款需要先处理？", "Which payments need attention?")}</button></div><form id="tf-ai-form"><textarea id="tf-ai-question" rows="3" aria-label="${bi("向 AI 助手提问", "Ask CashWeave")}" placeholder="${bi("询问公司的资金和待处理事项…", "Ask about company cash and priorities…")}">${escapeHtml(state.aiDraft || "")}</textarea><div class="tx-send-row"><span class="tf-note">${bi("Enter 换行", "Enter for a new line")}</span><button class="tf-button primary" type="button" data-action="ai-submit">${bi("发送", "Send")} ↑</button></div></form></div></section><details class="sx-details"><summary>${bi("选择订单继续分析", "Explore an order")}</summary>${companyOrders("assistant")}</details>`;
 }
 root.addEventListener("click", (e) => {
   const cashEntry = e.target.closest("[data-cash-overview]");
@@ -2023,7 +2023,10 @@ function renderNotifications() {
   $("#tx-notification-panel").setAttribute("aria-label", bi("消息与跟进", "Notifications and follow-up"));
   $("#tx-notification-panel").hidden = !state.notificationsOpen;
   if (!state.notificationsOpen) return;
-  $("#tx-notification-panel").innerHTML = `<div class="nt-heading"><div><h2>${bi("消息与跟进", "Notifications & follow-up")}</h2><p>${bi("提醒带着订单与资料，一起继续处理。", "Continue with the order and evidence in context.")}</p></div><button class="tf-link" data-notification="close" aria-label="${bi("关闭消息提醒", "Close notifications")}">×</button></div><div class="nt-list">${view.items.map(item => { const t = notificationText(item); return `<button class="nt-item ${item.unread ? 'unread' : ''}" data-notification-id="${item.id}"><span class="nt-meta">TF-26104 · ${item.trigger === 'time' ? bi('时间提醒', 'Time trigger') : bi('业务更新', 'Event trigger')}</span><strong>${t.title}</strong><span>${t.body}</span><small>${bi('继续处理订单', 'Continue with order')} →</small></button>`; }).join('') || `<p class="nt-empty">${bi("当前没有待处理提醒。", "No alerts need attention.")}</p>`}</div><details class="nt-tracking" ${state.followupsExpanded ? "open" : ""}><summary>${bi("正在跟进的事项", "Scheduled follow-ups")} (${view.watches.filter(w => !w.paused).length})</summary>${view.watches.map(w => `<div class="nt-watch"><span>${w.id === 'supplier' ? bi('付款日前三天检查资金', 'Check cash three days before payment') : bi('预计回款日核实到账', 'Verify receipt on the expected date')}<small>${date(w.day)} · ${w.paused ? bi('已暂停','Paused') : bi('跟进中','Following')}</small></span><button class="tf-link" data-watch="${w.id}">${w.paused ? bi('恢复','Resume') : bi('暂停','Pause')}</button></div>`).join('')}<div class="nt-demo"><span>${bi('演示日期', 'Demo date')} ${date(state.followups.day)}</span>${view.next !== undefined ? `<button class="tf-link" data-notification="advance">${bi('推进至下一次提醒', 'Advance to next reminder')} →</button>` : ''}<small>${bi('本地演示按此日期检查提醒，关闭网页后不会后台运行。', 'Local demo checks use this date. No background execution after closing the page.')}</small></div></details>`;
+  $("#tx-notification-panel").innerHTML = `<div class="nt-heading"><div><h2>${bi("消息与跟进", "Notifications & follow-up")}</h2><p>${bi("展开事件，查看影响与下一步。", "Select an event to review its impact and next step.")}</p></div><button class="tf-link" data-notification="close" aria-label="${bi("关闭消息提醒", "Close notifications")}">×</button></div><div class="nt-list">${view.items.map(item => {
+    const t = notificationText(item), selected = state.notificationSelection === item.id;
+    return `<div class="nt-event ${selected ? 'selected' : ''}"><button class="nt-item" data-notification-id="${item.id}" aria-expanded="${selected}" aria-controls="nt-detail-${item.id}"><span class="nt-meta">TF-26104 · ${item.trigger === 'time' ? bi('时间提醒', 'Scheduled reminder') : bi('业务更新', 'Business update')}</span><strong>${t.title}<span aria-hidden="true">${selected ? '−' : '+'}</span></strong></button>${selected ? `<section class="nt-detail" id="nt-detail-${item.id}" aria-label="${bi('事件详情','Event details')}"><p>${t.body}</p><dl><div><dt>${bi('关联客户','Customer')}</dt><dd>Harbour Supplies</dd></div><div><dt>${bi('下一步','Next step')}</dt><dd>${item.kind === 'evidence' ? bi('核对资料中的金额与日期','Review the amount and date') : item.kind === 'receipt' ? bi('上传银行流水，核实到账','Upload a bank record to verify receipt') : bi('查看资金缺口，制定付款安排','Review the cash gap and plan payments')}</dd></div></dl><div class="nt-actions"><button class="tf-button primary" data-notification="analyze" data-event-id="${item.id}">${bi('让 AI 分析','Analyze with AI')}</button><button class="tf-link" data-notification="order" data-event-id="${item.id}">${bi('查看订单','View order')} →</button></div></section>` : ''}</div>`;
+  }).join('') || `<p class="nt-empty">${bi("当前没有待处理提醒。", "No alerts need attention.")}</p>`}</div><details class="nt-tracking" ${state.followupsExpanded ? "open" : ""}><summary>${bi("正在跟进的事项", "Scheduled follow-ups")} (${view.watches.filter(w => !w.paused).length})</summary>${view.watches.map(w => `<div class="nt-watch"><span>${w.id === 'supplier' ? bi('付款日前三天检查资金', 'Check cash three days before payment') : bi('预计回款日核实到账', 'Verify receipt on the expected date')}<small>${date(w.day)} · ${w.paused ? bi('已暂停','Paused') : bi('跟进中','Following')}</small></span><button class="tf-link" data-watch="${w.id}">${w.paused ? bi('恢复','Resume') : bi('暂停','Pause')}</button></div>`).join('')}<div class="nt-demo"><span>${bi('演示日期', 'Demo date')} ${date(state.followups.day)}</span>${view.next !== undefined ? `<button class="tf-link" data-notification="advance">${bi('推进至下一次提醒', 'Advance to next reminder')} →</button>` : ''}<small>${bi('本地演示按此日期检查提醒，关闭网页后不会后台运行。', 'Local demo checks use this date. No background execution after closing the page.')}</small></div></details>`;
 }
 
 root.addEventListener('click', event => {
@@ -2032,7 +2035,14 @@ root.addEventListener('click', event => {
   event.stopPropagation();
   const action = b.dataset.notification;
   if (action === 'advance' || b.dataset.watch) state.followupsExpanded = true;
-  if (action === 'toggle') state.notificationsOpen = !state.notificationsOpen;
+  if (action === 'toggle') {
+    state.notificationsOpen = !state.notificationsOpen;
+    if (state.notificationsOpen) {
+      const items = followupView(flow, state.followups).items;
+      state.notificationSelection = items.find(item => item.unread)?.id || items[0]?.id;
+      state.followups = markNotificationsRead(state.followups, items);
+    }
+  }
   if (action === 'close') state.notificationsOpen = false;
   if (action === 'advance') state.followups.day = followupView(flow, state.followups).next;
   if (b.dataset.watch) {
@@ -2040,20 +2050,22 @@ root.addEventListener('click', event => {
     state.followups.paused = state.followups.paused.includes(id) ? state.followups.paused.filter(x => x !== id) : [...state.followups.paused, id];
   }
   if (b.dataset.notificationId) {
-    const item = followupView(flow, state.followups).items.find(n => n.id === b.dataset.notificationId);
-    if (!item) return;
-    state.followups.read = [...new Set([...state.followups.read, item.id])].slice(-100);
+    state.notificationSelection = state.notificationSelection === b.dataset.notificationId ? null : b.dataset.notificationId;
+  }
+  if (action === 'order' || action === 'analyze') {
+    const item = followupView(flow, state.followups).items.find(n => n.id === b.dataset.eventId);
+    state.followups = markNotificationsRead(state.followups, [item]);
     state.notificationsOpen = false;
     selectCase('buyer');
     state.delayed = false; state.extended = false;
-    const pending = activeJob()?.status !== 'confirmed' && activeJob();
-    if (item.kind === 'evidence' || pending) setOrderStep(2);
-    else if (item.kind === 'updated') setOrderStep(3);
-    else {
-      if (activeJob()?.status === 'confirmed') setOrderStep(4);
-      else state.page = 'assistant';
-      askAi(bi(`根据提醒「${notificationText(item).title}」，分析这笔订单的下一步。`, `Follow up this alert: ${notificationText(item).title}. Explain the next action for this order.`), 'buyer');
+    if (action === 'analyze') {
+      state.page = 'assistant';
+      const text = notificationText(item);
+      askAi(bi(`请跟进订单 TF-26104（Harbour Supplies）的提醒「${text.title}」：${text.body} 请分析资金影响和下一步。`, `Follow up order TF-26104 (Harbour Supplies): ${text.title}. ${text.body} Explain the cash impact and next action.`), 'buyer');
       flow.chat.at(-1).followupType = item.kind;
+    } else {
+      const pending = activeJob() && activeJob().status !== 'confirmed';
+      setOrderStep(pending ? 2 : activeJob() ? 3 : 1);
     }
     window.scrollTo({ top: 0 });
   }

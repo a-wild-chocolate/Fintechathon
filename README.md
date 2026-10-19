@@ -103,7 +103,7 @@ Edit **`Fintechathon/tradex-rag/.env`**, beside `start.sh`. Keep existing local 
 TRADEX_AGENTS_ENABLED=1
 TRADEX_MODEL_PROVIDER=openrouter
 OPENROUTER_API_KEY=your_openrouter_api_key
-TRADEX_MODEL=qwen/qwen3-30b-a3b-instruct-2507
+TRADEX_MODEL=deepseek/deepseek-v4.1-flash
 TRADEX_MODEL_CONCURRENCY=2
 TRADEX_AGENT_MAX_CALLS=18
 TRADEX_MODEL_MAX_TOKENS=4096
@@ -219,14 +219,22 @@ TradeX now uses the open-source Deep Agents harness for its Coordinator and thre
 
 Run `npm run demo:empty` from the repository root after installing the frontend and backend dependencies and configuring `tradex-rag/.env`. Open http://127.0.0.1:5174/. This starts an isolated frontend and backend on ports 5174 and 18770. It creates a new tenant and data directory for each invocation, without changing the existing workspace on port 5173. Stop it with Ctrl+C before starting a new rehearsal. Keep the terminal open during the demo.
 
-The first screen contains no orders, financial projections, chat history or uploaded documents. Upload each supplied TXT record or choose **Read the sample file**, review its extracted fields, then confirm the import:
+The first screen contains no orders, financial projections, chat history or uploaded documents. Upload each supplied Word record in `demo/baseline/` or choose **Read the sample file**, review its extracted fields, then confirm the import:
 
 1. Company cash schedule: opening CNY balance and separate USD balance.
 2. Sales order: TF-26104, outstanding USD 12,000 and expected receipt date.
 3. Supplier terms: CNY 160,000 due on 22 October.
 
-Choose **Build orders & cash dashboard** to reveal the initial CNY 32,000 shortfall. Then open Harbour Supplies, upload `demo/five-minute-case/live-upload/04_buyer_partial_payment.eml` in Documents, and select **Ask AI**. Keep the clarification email in `presenter-only/` off the system until the presenter answers the missing-amount/date question.
+Choose **Build orders & cash dashboard** to reveal the initial CNY 32,000 shortfall. Then open Harbour Supplies, upload `demo/screenshot-case/buyer-email.png` in Documents, and select **Ask AI**. When asked, enter USD 6,000 and 29 October 2026. Leave the remaining USD 6,000 unscheduled, then confirm the proposed fields.
 
-The baseline importer reads the supplied case's documented TXT format with deterministic field extraction. It does not use an LLM or support arbitrary company datasets. The subsequent email analysis uses the configured agent service. The initial USD 19,970 belongs to other overseas commitments; a second customer order is not created from that balance. New sessions start without public-policy seeds; add policy documents separately when needed.
+The baseline importer reads the supplied case's Word paragraphs and schedule tables with deterministic field extraction. It does not use an LLM or support arbitrary company datasets. The subsequent email analysis uses the configured agent service. The initial USD 19,970 belongs to other overseas commitments; a second customer order is not created from that balance. New sessions start without public-policy seeds; add policy documents separately when needed.
 
 Each session is saved under `tradex-rag/var/empty-demos/`. Reopening the same printed URL retains the confirmed imports; restarting the command creates a fresh rehearsal.
+
+## Email screenshot workflow
+
+Upload a PNG, JPG or WEBP through **Documents**, link it to the order, and choose **Ask AI** after indexing. The backend sends the image directly to the configured vision model, stores the transcription and payment fields with the source version, and indexes them for retrieval. Missing amount or date fields remain empty until the assistant asks the user. Confirmation updates the expected receipt and cash projection, while the bank balance and total outstanding receivable remain unchanged. Citation buttons open the original screenshot alongside the extracted text.
+
+Configure `TRADEX_MODEL_VISION` in `tradex-rag/.env`. It uses the existing provider and API key and defaults to `TRADEX_MODEL`. The tested OpenRouter configuration is `deepseek/deepseek-v4.1-flash`. Image extraction is cached per source version so an indexing retry can reuse the result. No separate OCR service is required.
+
+The bell opens a contextual event list. Opening it marks the displayed events as read; the alerts remain available. Expand an event to inspect its cash impact, open its order or explicitly start AI analysis. Unchanged financial alerts retain their read state across unrelated workspace versions.

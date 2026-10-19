@@ -1,4 +1,4 @@
-import { enrich, seriesFor } from './finance.js';
+import { enrich, seriesFor, receiptCNY } from './finance.js';
 
 // Local demo: rules read accepted state, never a temporary cash scenario.
 export function followupView(flow, { day = 0, paused = [], read = [] } = {}) {
@@ -13,13 +13,17 @@ export function followupView(flow, { day = 0, paused = [], read = [] } = {}) {
   const add = (id, kind, trigger, extra = {}) => items.push({ id, kind, trigger, version: flow.version, ...extra, unread: !read.includes(id) });
   if (pending) add(`evidence-${pending.id}-${pending.status}`, 'evidence', 'event', { job: pending.id });
   if (latest) add(`updated-${flow.version}`, 'updated', 'event', { job: latest.id, peak: cash.peak });
-  else if (cash.peak > 0) add(`cash-${flow.version}`, 'cash', 'event', { peak: cash.peak, first: cash.first });
+  else if (cash.peak > 0) add(`cash-${cash.first}-${cash.peak}-${flow.supplierDay}-${flow.receiptDay}-${receiptCNY(flow)}`, 'cash', 'event', { peak: cash.peak, first: cash.first });
   const dueBalance = seriesFor(flow)[flow.supplierDay].v;
   if (!paused.includes('supplier') && day >= Math.max(0, flow.supplierDay - 3) && day <= flow.supplierDay && dueBalance < 0) {
-    add(`supplier-${flow.supplierDay}-${flow.version}`, 'supplier', 'time', { due: flow.supplierDay, gap: -dueBalance });
+    add(`supplier-${flow.supplierDay}-${-dueBalance}`, 'supplier', 'time', { due: flow.supplierDay, gap: -dueBalance });
   }
   if (!paused.includes('receipt') && day >= flow.receiptDay) {
-    add(`receipt-${flow.receiptDay}-${flow.version}`, 'receipt', 'time', { due: flow.receiptDay });
+    add(`receipt-${flow.receiptDay}-${receiptCNY(flow)}`, 'receipt', 'time', { due: flow.receiptDay });
   }
   return { items: items.reverse(), watches, next: watches.filter(w => !w.paused && w.day > day).sort((a,b) => a.day-b.day)[0]?.day };
+}
+
+export function markNotificationsRead(followups, items) {
+  return { ...followups, read: [...new Set([...followups.read, ...items.map(item => item.id)])].slice(-100) };
 }

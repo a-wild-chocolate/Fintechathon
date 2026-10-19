@@ -123,3 +123,20 @@ def test_api_async_upload_and_lock(tmp_path):
         lease=client.post(f'/api/documents/{doc}/lease',json={});assert lease.status_code==200
         assert client.post(f'/api/documents/{doc}/lease',json={}).status_code==409
         assert client.get(f'/api/documents/{doc}/versions/1/original').content=='付款金额缺失'.encode()
+
+def test_word_preview_extracts_fields_without_importing_document(tmp_path):
+    from io import BytesIO
+    from docx import Document
+    doc = Document()
+    doc.add_paragraph('Order: TF-26104')
+    doc.add_paragraph('Outstanding balance: USD 12,000')
+    content = BytesIO()
+    doc.save(content)
+    settings = Settings(data_dir=tmp_path, tenant='preview-test')
+    library = Library(settings, embedding=TestEmbedding())
+    with TestClient(create_app(settings, library)) as client:
+        response = client.post('/api/document-preview', files={
+            'file': ('order.docx', content.getvalue(), 'application/vnd.openxmlformats-officedocument.wordprocessingml.document')})
+        assert response.status_code == 200
+        assert response.json()['text'] == 'Order: TF-26104\nOutstanding balance: USD 12,000'
+        assert client.get('/api/documents').json() == []

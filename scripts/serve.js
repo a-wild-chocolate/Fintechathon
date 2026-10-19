@@ -9,6 +9,8 @@ const mime = {
   ".js": "text/javascript; charset=utf-8",
   ".css": "text/css; charset=utf-8",
   ".txt": "text/plain; charset=utf-8",
+  ".docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  ".png": "image/png",
   ".csv": "text/csv; charset=utf-8",
   ".svg": "image/svg+xml",
 };
@@ -54,5 +56,5 @@ createServer(async (request, response) => {
     response.writeHead(error.code === "ENOENT" ? 404 : 500).end(error.code);
   }
 }).listen(port, "127.0.0.1", () => {
-  console.log(`TradeX ready: http://127.0.0.1:${port}`);
+  console.log(`CashWeave ready: http://127.0.0.1:${port}`);
 });

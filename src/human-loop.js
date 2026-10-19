@@ -4,7 +4,7 @@ export function renderHumanQuestions(turn, language) {
   const r = turn.rag, questions = r.questions || [];
   if (!questions.length) return '';
   const en = language === 'en', tr = (zh, english) => en ? english : zh;
-  if (r.human_response) return `<p class="kb-human-submitted">✓ ${tr('回答已保存，助手已继续分析。', 'Responses saved. The assistant has continued.')}</p>`;
+  if (r.human_response) return `<p class="kb-human-submitted">✓ ${tr('回答已保存，后续分析见下方。', 'Responses saved. Follow-up analysis is below.')}</p>`;
   return `<form class="kb-human" data-human-form="${esc(turn.id)}" data-user-content>
     <header><strong>${tr('需要你补充一点信息', 'A quick clarification')}</strong><p>${tr('选择、留言或暂不回答，由你决定。', 'Choose an option, leave a note, or skip.')}</p></header>
     ${questions.map(q => {

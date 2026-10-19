@@ -6,7 +6,9 @@ from pathlib import Path
 from uuid import uuid4
 from lxml import html
 
-SUPPORTED = {'.txt','.md','.eml','.pdf','.docx','.csv','.xlsx','.json'}
+from .vision import IMAGE_TYPES
+
+SUPPORTED = set(IMAGE_TYPES) | {'.txt','.md','.eml','.pdf','.docx','.csv','.xlsx','.json'}
 class ParseError(ValueError): pass
 
 def parse(path: Path):

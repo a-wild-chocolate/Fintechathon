@@ -58,6 +58,7 @@ class AgentStore:
             if latest['id'] != run_id:
                 raise Conflict('Continue the latest conversation turn instead of answering an earlier question.')
             request = json.loads(row['request'])
+            request.setdefault('original_question', request['question'])
             request.update(question=reply_text(resolved), session_id=row['session_id'], language=language,
                            human_answers=resolved, reply_to_run_id=run_id)
             next_run, session, history = self._start(db, tenant, request)

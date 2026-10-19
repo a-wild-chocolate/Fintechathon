@@ -31,6 +31,10 @@ class ScriptedModel:
             question = comments[-1] if comments else 'read email'
         n = sum(m['role'] == 'assistant' for m in messages)
         self.calls.append(role)
+        if role == 'coordinator' and context.get('continuation'):
+            if n == 0:
+                return {'role':'assistant','content':None,'tool_calls':[call('plan_resume',rerun_roles=['reconciliation'],decision_task='general',reason='Fill the missing payment fields.')]}, {'usage':{}}
+            n -= 1
         if role == 'coordinator':
             if n == 0: calls = [call('wf_status')]
             elif n == 1: calls = [call('task', subagent_type='cash_flow' if question == 'confirmed' else 'reconciliation', description=question)]
@@ -42,7 +46,7 @@ class ScriptedModel:
                                       receipt_date='2026-10-29' if question == '2026-10-29' else None, evidence_ids=[1])]
             else: calls = [finish('needs_approval' if question == '2026-10-29' else 'needs_information', [1])]
         elif role == 'cash_flow': calls = [call('wf_cash')] if n == 0 else [finish()]
-        else: calls = [call('wf_options', supplier_extension_days=10), call('wf_draft', kind='supplier_request', text='Could we extend the payment deadline?')] if n == 0 else [finish()]
+        else: calls = [call('wf_options', supplier_extension_days=10)] if n == 0 else [call('finish', status='completed', paragraphs=[{'text':'A supplier request draft is ready.','sources':[]}], draft={'kind':'supplier_request','text':'Could we extend the payment deadline?'})]
         return {'role': 'assistant', 'content': None, 'tool_calls': calls}, {'model': 'fixture', 'usage': {'total_tokens': 10}}
 
 @pytest.fixture
@@ -247,3 +251,22 @@ def test_current_tool_facts_replace_prior_model_prose(setup):
     model.chat=inspect
     result=runtime.answer('The supplier agrees to 10 extra days.',session_id=first['session_id'])
     assert result['task_status']=='completed'
+
+
+def test_openrouter_deepseek_uses_structured_completion(monkeypatch):
+    operation = "finish"
+    monkeypatch.setenv('TRADEX_MODEL_PROVIDER','openrouter')
+    monkeypatch.setenv('OPENROUTER_API_KEY','fixture-only')
+    monkeypatch.setenv('TRADEX_MODEL','deepseek/deepseek-v4.1-flash')
+    monkeypatch.delenv('TRADEX_MODEL_COORDINATOR',raising=False)
+    def respond(request):
+        payload=json.loads(request.content)
+        assert payload['reasoning']=={'enabled':False}
+        assert 'tools' not in payload and 'tool_choice' not in payload
+        assert payload['response_format']['type'] == 'json_schema'
+        assert payload['provider']['allow_fallbacks'] is False
+        assert payload['model']=='deepseek/deepseek-v4.1-flash'
+        return httpx.Response(200,json={'choices':[{'message':{'role':'assistant','content':'{}'},'finish_reason':'stop'}]})
+    client=ModelClient(httpx.MockTransport(respond))
+    message, _ = client.chat('coordinator',[{'role':'user','content':'test'}],[{'type':'function','function':{'name':operation,'parameters':{'type':'object','properties':{}}}}])
+    assert message['tool_calls'][0]['function'] == {'name':operation,'arguments':'{}'}

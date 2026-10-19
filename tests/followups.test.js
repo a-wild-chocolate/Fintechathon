@@ -34,3 +34,21 @@ test('confirmation replaces missing-evidence alert with a state update',()=>{
   assert.equal(view.items.find(x=>x.kind==='updated').peak,34000);
   assert.equal(accepted.opening,128000);
 });
+
+test('viewed alerts stay read across unrelated financial versions', () => {
+  const read = followupView(base, {day:12}).items.map(item => item.id);
+  assert.equal(followupView({...base, version:2}, {day:12, read}).items.some(item => item.unread), false);
+  const changed = followupView({...base, opening:120000, version:2}, {day:2, read});
+  assert.equal(changed.items.find(item => item.kind === 'cash').unread, true);
+  assert.equal(changed.items.find(item => item.kind === 'supplier').unread, true);
+});
+
+test('opening the inbox marks visible events read while keeping them available', async () => {
+  const {markNotificationsRead} = await import('../src/followups.js');
+  const followups = {day:2, paused:[], read:[]};
+  const before = followupView(base, followups);
+  const saved = JSON.parse(JSON.stringify(markNotificationsRead(followups, before.items)));
+  const after = followupView(base, saved);
+  assert.equal(after.items.length, before.items.length);
+  assert.equal(after.items.filter(item => item.unread).length, 0);
+});

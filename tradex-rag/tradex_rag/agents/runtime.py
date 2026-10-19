@@ -98,6 +98,8 @@ class AgentRuntime:
         proposal = self.store.proposal(self.tenant, session_id)
         if task_status != 'failed' and proposal and proposal['status'] in {'needs_information', 'needs_approval'}:
             task_status = proposal['status']
+        elif task_status == 'needs_approval':
+            task_status = 'completed'
         if output.get('questions') and task_status != 'failed':
             task_status = 'needs_information'
         output['questions'] = question_cards(output, proposal, language, turn.outputs, request.get('human_answers', [])) if task_status == 'needs_information' else []
@@ -105,6 +107,7 @@ class AgentRuntime:
         result = dict(output, mode='multi_agent', model=self.model.models['coordinator'], provider=self.model.provider,
                       task_status=task_status, run_id=run_id, session_id=session_id,
                       sources=saved['sources'], proposal=proposal, trace=saved['trace'],
+                      specialist_results=turn.outputs, workflow_facts=turn.facts, specialist_sources=turn.dependencies,
                       workspace=self.store.workspace(self.tenant))
         self.store.finish(run_id, self.tenant, result)
         return result
@@ -115,6 +118,10 @@ class Turn:
         self.history = history
         self.remaining = int(os.getenv('TRADEX_AGENT_MAX_CALLS', '18'))
         self.outputs = {}
+        self.facts = {}
+        self.dependencies = {}
+        self.tool_cache = {}
+        self.continuation = None
         self.delegations = 0
         self.delegation_lock = asyncio.Lock()
 
@@ -129,8 +136,14 @@ class Turn:
 
     async def execute(self):
         # Carry versioned source references across clarification turns.
-        for turn in self.history:
-            self.runtime.store.sources(self.run_id, self.runtime.tenant, turn['answer'].get('sources', []))
+        if self.request.get('reply_to_run_id'):
+            from .continuation import Continuation
+            parent = self.runtime.store.run(self.request['reply_to_run_id'], self.runtime.tenant)
+            self.runtime.store.sources(self.run_id, self.runtime.tenant, parent['result'].get('sources', []))
+            self.continuation = Continuation(self, parent)
+        else:
+            for turn in self.history:
+                self.runtime.store.sources(self.run_id, self.runtime.tenant, turn['answer'].get('sources', []))
         async with self.runtime.connector(self.run_id) as client:
             self.client = client
             return await self.agent('coordinator', self.request['question'])

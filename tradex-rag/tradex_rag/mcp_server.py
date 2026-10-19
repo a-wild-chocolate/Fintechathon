@@ -2,7 +2,7 @@
 import os
 import httpx
 from mcp.server.mcpserver import MCPServer
-server=MCPServer('TradeX Evidence Library')
+server=MCPServer('CashWeave Evidence Library')
 BASE=os.getenv('TRADEX_RAG_URL','http://127.0.0.1:8765')
 def request(method,path,**kwargs):
     r=httpx.request(method,BASE+path,timeout=60,**kwargs);r.raise_for_status();return r.json()

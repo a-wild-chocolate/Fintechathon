@@ -59,3 +59,33 @@ test('live progress shows the current operation and keeps the full trace in a di
  assert.equal((visible.match(/Calculating cash flow and shortfalls/g)||[]).length,1);
  assert.doesNotMatch(visible,/Understanding the request/);
 });
+
+test('continuation activity distinguishes reused specialists from model execution', () => {
+  const run = {status:'running',trace:[
+    {event:'resume_planned',agent:'coordinator',rerun_roles:['decision'],reused_roles:['cash_flow']},
+    {event:'agent_reused',agent:'cash_flow',from_run_id:'previous'},
+    {event:'model_started',agent:'decision'},
+  ]};
+  const state = progressState(run.trace, run.status);
+  assert.equal(state.steps.find(step => step.agent === 'cash_flow').status, 'reused');
+  assert.equal(state.active.agent, 'decision');
+  const html=renderAgentProgress(run,'en',true);
+  assert.match(html,/Reusing the completed result; no model call/);
+  assert.match(html,/Reused/);
+});
+
+test('saved calculations remain visible without implying a specialist model ran', () => {
+  const trace=[{event:'workflow_reused',agent:'cash_flow',tool:'wf_cash'}];
+  assert.equal(progressState(trace).active, undefined);
+  assert.match(renderAgentProgress({trace,status:'completed'},'en',true), /Reusing the saved calculation; no model call/);
+  assert.match(renderAgentProgress({trace,status:'completed'},'zh',true), /复用已有计算/);
+});
+
+
+test('a confirmed proposal no longer shows a waiting indicator', async () => {
+  const {turnProgress} = await import('../src/agent-progress.js');
+  const progress = turnProgress({trace:[], task_status:'needs_approval', proposal:{status:'confirmed'}});
+  assert.equal(progress.status,'confirmed');
+  assert.match(renderAgentProgress(progress,'en'),/Confirmed and updated/);
+  assert.doesNotMatch(renderAgentProgress(progress,'en'),/Waiting for confirmation/);
+});

@@ -6,6 +6,7 @@ const roles = {
   decision: ['决策 Agent', 'Decision', '比较可行方案与下一步', 'Comparing options and next steps'],
 };
 const operations = {
+  plan_resume: ['确认受影响的任务，复用已有结果', 'Selecting affected tasks and reusing prior results'],
   wf_status: ['读取订单与资金状态', 'Reading order and cash state'],
   kb_search: ['检索相关资料与政策', 'Searching documents and policies'],
   evidence_read: ['阅读原始文件与条款', 'Reading source documents and terms'],
@@ -22,14 +23,25 @@ const operations = {
   finish: ['整理分析结果', 'Preparing the response'],
 };
 const statuses = {
+  answered: ['回答已收到', 'Response received'], confirmed: ['已确认并更新', 'Confirmed and updated'],
   completed: ['分析完成', 'Analysis complete'], needs_information: ['等待补充信息', 'Waiting for information'],
   needs_approval: ['等待确认方案', 'Waiting for confirmation'], failed: ['分析未完成', 'Analysis incomplete'],
   interrupted: ['分析已中断', 'Analysis interrupted'],
 };
 
+export function turnProgress(result) {
+  return { trace: result.trace, status: result.task_status === 'needs_approval' && result.proposal?.status === 'confirmed' ? 'confirmed' : result.human_response ? 'answered' : result.task_status };
+}
+
 export function progressState(trace = [], status = 'running') {
   const steps = [], agents = {};
   for (const e of trace) {
+    if (e.event === 'resume_planned') steps.push({agent:'coordinator', tool:'plan_resume', kind:'tool', status:'done'});
+    if (e.event === 'agent_reused') {
+      steps.push({agent:e.agent, kind:'reuse', status:'reused'});
+      agents[e.agent] = 'done';
+    }
+    if (e.event === 'workflow_reused') steps.push({agent:e.agent, tool:e.tool, kind:'reuse', status:'reused'});
     if (e.event === 'agent_started') agents[e.agent] = 'working';
     if (e.event === 'agent_finished') agents[e.agent] = 'done';
     if (e.event === 'model_started' || e.event === 'tool_started') {
@@ -55,12 +67,12 @@ export function renderAgentProgress(run = {}, lang = 'zh', expanded = false) {
   const status = run.status || 'running';
   const {steps, active} = progressState(run.trace, status);
   const name = role => (roles[role] || ['助手','Assistant'])[i];
-  const label = step => step.kind === 'model' ? (roles[step.agent] || ['','','正在分析','Analyzing'])[i+2] : (operations[step.tool] || ['执行工作流','Running a workflow'])[i];
+  const label = step => step.kind === 'reuse' ? (step.tool ? (en ? 'Reusing the saved calculation; no model call' : '复用已有计算，无需调用模型') : (en ? 'Reusing the completed result; no model call' : '复用已完成结果，无需调用模型')) : step.kind === 'model' ? (roles[step.agent] || ['','','正在分析','Analyzing'])[i+2] : (operations[step.tool] || ['执行工作流','Running a workflow'])[i];
   const running = status === 'running';
   const title = running ? (active ? `${name(active.agent)} · ${en ? 'Working' : '处理中'}` : (en ? 'Starting analysis' : '正在启动分析')) : (statuses[status] || statuses.failed)[i];
-  const subtitle = running ? (active ? label(active) : (en ? 'Connecting to the agent workflow…' : '正在连接 Agent 工作流…')) : (en ? 'Your execution record is available below.' : '可展开查看本次执行过程。');
-  const rows = items => items.map(step => `<li class="kb-progress-step ${step.status}"><span class="kb-step-mark" aria-hidden="true">${step.status === 'done' ? '✓' : step.status === 'working' ? '·' : '!'}</span><div><strong>${esc(name(step.agent))}</strong><span>${esc(label(step))}</span></div><small>${({done:['已完成','Done'],working:['进行中','Working'],error:['未成功','Failed'],stopped:['已停止','Stopped']}[step.status])[i]}</small></li>`).join('');
-  return `<details class="kb-progress" ${expanded ? 'open' : ''} aria-label="${en ? 'Agent activity' : '智能体执行进度'}"><summary class="kb-progress-head"><span class="kb-progress-indicator ${running ? 'running' : ''}" aria-hidden="true"></span><span class="kb-progress-heading"><strong class="kb-current-agent">${esc(title)}</strong><span class="kb-current-action" role="status">${esc(subtitle)}</span></span><span class="kb-progress-toggle"><span class="kb-show">${en ? 'Show activity' : '展开过程'}</span><span class="kb-hide">${en ? 'Hide activity' : '收起过程'}</span><span class="kb-progress-count">${steps.length}</span><span class="kb-progress-chevron" aria-hidden="true">⌄</span></span></summary><div class="kb-progress-body"><ol class="kb-progress-steps">${rows(steps)}</ol>${steps.length ? '' : `<p class="tf-small">${en ? 'Waiting for the first execution event…' : '等待第一条执行记录…'}</p>`}</div></details>`;
+  const subtitle = running ? (active ? label(active) : (en ? 'Connecting to the agent workflow…' : '正在连接 Agent 工作流…')) : status === 'answered' ? (en ? 'Follow-up analysis continues below.' : '后续分析在下方继续。') : (en ? 'Your execution record is available below.' : '可展开查看本次执行过程。');
+  const rows = items => items.map(step => `<li class="kb-progress-step ${step.status}"><span class="kb-step-mark" aria-hidden="true">${['done','reused'].includes(step.status) ? '✓' : step.status === 'working' ? '·' : '!'}</span><div><strong>${esc(name(step.agent))}</strong><span>${esc(label(step))}</span></div><small>${({done:['已完成','Done'],reused:['已复用','Reused'],working:['进行中','Working'],error:['未成功','Failed'],stopped:['已停止','Stopped']}[step.status])[i]}</small></li>`).join('');
+  return `<details class="kb-progress" data-status="${status}" ${expanded ? 'open' : ''} aria-label="${en ? 'Agent activity' : '智能体执行进度'}"><summary class="kb-progress-head"><span class="kb-progress-indicator ${running ? 'running' : ''}" aria-hidden="true"></span><span class="kb-progress-heading"><strong class="kb-current-agent">${esc(title)}</strong><span class="kb-current-action" role="status">${esc(subtitle)}</span></span><span class="kb-progress-toggle"><span class="kb-show">${en ? 'Show activity' : '展开过程'}</span><span class="kb-hide">${en ? 'Hide activity' : '收起过程'}</span><span class="kb-progress-count">${steps.length}</span><span class="kb-progress-chevron" aria-hidden="true">⌄</span></span></summary><div class="kb-progress-body"><ol class="kb-progress-steps">${rows(steps)}</ol>${steps.length ? '' : `<p class="tf-small">${en ? 'Waiting for the first execution event…' : '等待第一条执行记录…'}</p>`}</div></details>`;
 }
 
 export function updateAgentProgress(container, run, lang, expanded = false) {
@@ -75,10 +87,18 @@ export function updateAgentProgress(container, run, lang, expanded = false) {
     const target = current.querySelector(selector);
     if (target.textContent !== value) target.textContent = value;
   }
+  current.dataset.status = next.dataset.status;
   current.querySelector('.kb-progress-indicator').className = next.querySelector('.kb-progress-indicator').className;
-  for (const selector of ['.kb-progress-body']) {
-    const value = next.querySelector(selector).innerHTML;
-    const target = current.querySelector(selector);
-    if (target.innerHTML !== value) target.innerHTML = value;
-  }
+  const list = current.querySelector('.kb-progress-steps');
+  const incoming = next.querySelectorAll('.kb-progress-step');
+  incoming.forEach((row, index) => {
+    const existing = list.children[index];
+    if (!existing) list.append(row.cloneNode(true));
+    else {
+      existing.className = row.className;
+      if (existing.innerHTML !== row.innerHTML) existing.innerHTML = row.innerHTML;
+    }
+  });
+  while (list.children.length > incoming.length) list.lastElementChild.remove();
+  if (incoming.length) current.querySelector('.kb-progress-body > p')?.remove();
 }

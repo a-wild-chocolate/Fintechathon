@@ -1,0 +1,88 @@
+/* A quiet reading surface with one persistent composing area. */
+#tradeflow-export-preview[data-page="assistant"] { overflow: clip; }
+#tradeflow-export-preview[data-page="assistant"] .tf-main { max-width: 1040px; padding-top: 20px; padding-bottom: 24px; }
+#tradeflow-export-preview[data-page="assistant"] .tx-chat { width: 100%; max-width: 760px; margin: 0 auto; min-height: 0; display: flex; flex-direction: column; padding-bottom: 0; }
+#tradeflow-export-preview .tx-chat-top { border: 0; padding: 4px 0 20px; font-size: 12px; color: #7a8783; }
+#tradeflow-export-preview .tx-chat-top .tf-link { font-size: 12px; color: #5c7169; }
+#tradeflow-export-preview .tx-messages { gap: 20px; padding: 18px 0 32px; }
+#tradeflow-export-preview[data-page="assistant"] .tx-messages { flex: 1; }
+#tradeflow-export-preview .tx-chat.is-empty .tx-messages { justify-content: center; min-height: 250px; padding-top: 24px; }
+#tradeflow-export-preview .tx-chat-empty { text-align: center; padding: 36px 0; }
+#tradeflow-export-preview .tx-chat-empty .sx-ai-mark { display: block; margin-bottom: 18px; font-size: 32px; font-weight: 400; }
+#tradeflow-export-preview .tx-chat-empty h1 { font-size: clamp(25px, 3vw, 32px); line-height: 1.35; letter-spacing: -.8px; font-weight: 550; }
+#tradeflow-export-preview .tx-chat-empty p { font-size: 14px; color: #82908a; margin-top: 14px; }
+#tradeflow-export-preview .tx-chat-user { align-self: flex-end; max-width: 85%; border: 0; border-radius: 20px 20px 5px 20px; padding: 12px 18px; background: #eaf0ed; font-size: 15px; line-height: 1.75; }
+#tradeflow-export-preview .tx-chat-reply { gap: 14px; padding: 8px 0 26px; font-size: 15px; line-height: 1.85; }
+#tradeflow-export-preview .tx-chat-reply > .sx-eyebrow { display: flex; align-items: center; gap: 8px; text-transform: none; letter-spacing: .1px; font-size: 12px; font-weight: 600; color: #356657; }
+#tradeflow-export-preview .tx-chat-reply > .sx-eyebrow::before { content: '✦'; font-size: 18px; font-weight: 400; }
+#tradeflow-export-preview .kb-answer-text { font-size: 15px; line-height: 1.85; margin: 0 0 16px; color: #2e3c37; white-space: pre-wrap; }
+#tradeflow-export-preview .kb-answer-text:last-of-type { margin-bottom: 12px; }
+#tradeflow-export-preview .kb-citation { font-size: 10px; padding: 1px 5px; border-radius: 5px; background: #eaf1ed; vertical-align: middle; }
+#tradeflow-export-preview .kb-sources, #tradeflow-export-preview .kb-finance-note { border: 0; padding: 0; margin: 12px 0 0; font-size: 12px; color: #75867c; }
+#tradeflow-export-preview .kb-source { border: 0; border-bottom: 1px solid #e5ebe7; border-radius: 0; background: none; padding: 10px 0; }
+#tradeflow-export-preview .tx-chat-hints { justify-content: center; gap: 8px 20px; margin: 0 0 18px; }
+#tradeflow-export-preview .tx-chat-hints button { padding: 5px 0; border: 0; font-size: 12px; color: #60766b; }
+#tradeflow-export-preview .tx-chat-hints button::after { content: ' ↗'; color: #8c9d93; }
+#tradeflow-export-preview .tx-composer { position: sticky; bottom: 18px; z-index: 8; padding: 14px 18px 12px; border: 1px solid #dce4df; border-radius: 22px; background: #fff; box-shadow: 0 6px 25px #253f3610; }
+#tradeflow-export-preview .tx-composer:focus-within { border-color: #a6bfb3; box-shadow: 0 6px 25px #253f3610; }
+#tradeflow-export-preview .tx-composer textarea { display: block; min-height: 44px; max-height: 180px; resize: none; font-size: 15px; line-height: 1.6; padding: 10px 0; outline: none; }
+#tradeflow-export-preview .tx-composer textarea::placeholder { color: #96a19b; }
+#tradeflow-export-preview .tx-composer .kb-context { display: block; margin: 0 0 4px; padding: 0; border: 0; background: none; font-size: 11px; color: #7b8c81; }
+#tradeflow-export-preview .tx-composer .kb-context summary { justify-content: flex-start; gap: 7px; }
+#tradeflow-export-preview .tx-composer .kb-context summary > span:first-child { display: none; }
+#tradeflow-export-preview .tx-composer .kb-context summary strong { font-size: 11px; font-weight: 400; }
+#tradeflow-export-preview .tx-composer .kb-context summary strong::before { content: '↳ '; }
+#tradeflow-export-preview .tx-composer .kb-context-edit { margin-left: 0; font-size: 0; }
+#tradeflow-export-preview .tx-composer .kb-context-edit::after { content: '⌄'; font-size: 12px; }
+#tradeflow-export-preview .tx-send-row { min-height: 34px; }
+#tradeflow-export-preview .tx-send-row .tf-note { font-size: 10px; color: #8b9890; }
+#tradeflow-export-preview .tx-send-row .primary { display: grid; place-items: center; border: 0; width: 34px; height: 34px; min-height: 34px; padding: 0; border-radius: 50%; background: #245f4b; transition: background 160ms, transform 160ms; }
+#tradeflow-export-preview .tx-send-row .primary:hover:enabled { background: #174b39; transform: translateY(-1px); }
+#tradeflow-export-preview .tx-send-row .primary:disabled { background: #e8eeea; color: #9ba8a0; cursor: default; opacity: 1; }
+#tradeflow-export-preview[data-page="assistant"] #tf-content > .sx-details { max-width: 760px; width: 100%; margin: 20px auto 0; padding: 0; border: 0; color: #7e8e84; font-size: 12px; }
+#tradeflow-export-preview .kb-progress { max-width: none; padding: 2px 0; margin: 0 0 12px; }
+#tradeflow-export-preview .kb-progress-head { align-items: center; gap: 9px; min-height: 30px; }
+#tradeflow-export-preview .kb-progress-heading { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+#tradeflow-export-preview .kb-progress-head strong { font-size: 12px; font-weight: 500; color: #5b7266; }
+#tradeflow-export-preview .kb-current-action { font-size: 12px; margin: 0; color: #8b978f; }
+#tradeflow-export-preview .kb-progress:not([data-status="running"]) .kb-current-action { display: none; }
+#tradeflow-export-preview .kb-progress-indicator { width: 6px; height: 6px; border: 0; background: #94a59b; margin: 0 2px; border-radius: 50%; }
+#tradeflow-export-preview .kb-progress-indicator.running { background: #35775e; animation: tx-breathe 1.8s ease-in-out infinite; }
+#tradeflow-export-preview .kb-progress-toggle { padding: 0; gap: 5px; font-size: 10px; }
+#tradeflow-export-preview .kb-progress-toggle .kb-show, #tradeflow-export-preview .kb-progress-toggle .kb-hide, #tradeflow-export-preview .kb-progress-count { display: none; }
+#tradeflow-export-preview .kb-progress-body { margin-top: 8px; padding: 8px 0 0 16px; border-top: 0; border-left: 1px solid #dbe5df; }
+#tradeflow-export-preview .kb-progress-step { padding: 5px 0; }
+#tradeflow-export-preview .kb-progress-step small { color: #97a59c; }
+#tradeflow-export-preview .kb-progress-step div { gap: 8px; font-size: 11px; }
+@keyframes tx-breathe { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
+@media (max-width: 640px) {
+  #tradeflow-export-preview[data-page="assistant"] .tf-main { padding-inline: 18px; }
+  #tradeflow-export-preview[data-page="assistant"] .tx-chat { min-height: 0; }
+  #tradeflow-export-preview .tx-chat-user { max-width: 92%; }
+  #tradeflow-export-preview .tx-composer { bottom: max(8px, env(safe-area-inset-bottom)); padding: 12px 14px 10px; }
+  #tradeflow-export-preview .kb-progress-heading { flex-direction: column; gap: 0; }
+  #tradeflow-export-preview .tx-send-row .tf-note { font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #tradeflow-export-preview .kb-progress-indicator.running { animation: none; }
+  #tradeflow-export-preview .tx-send-row .primary { transition: none; }
+}
+
+/* Keep the conversation scroll separate from navigation and composition. */
+#tradeflow-export-preview[data-page="assistant"] { height: 100dvh; display: flex; flex-direction: column; overflow: hidden; }
+#tradeflow-export-preview[data-page="assistant"] .tf-top,
+#tradeflow-export-preview[data-page="assistant"] .tf-nav { flex-shrink: 0; }
+#tradeflow-export-preview[data-page="assistant"] .tf-shell,
+#tradeflow-export-preview[data-page="assistant"] .tf-main,
+#tradeflow-export-preview[data-page="assistant"] .tf-layout,
+#tradeflow-export-preview[data-page="assistant"] #tf-content { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: stretch; }
+#tradeflow-export-preview[data-page="assistant"] .tf-main { width: 100%; }
+#tradeflow-export-preview[data-page="assistant"] #tf-content { gap: 0; }
+#tradeflow-export-preview[data-page="assistant"] .tx-chat { flex: 1; min-height: 0; }
+#tradeflow-export-preview[data-page="assistant"] .tx-chat-top,
+#tradeflow-export-preview[data-page="assistant"] .tx-chat-hints { flex-shrink: 0; }
+#tradeflow-export-preview[data-page="assistant"] .tx-messages { min-height: 0; overflow-y: auto; overscroll-behavior: contain; overflow-anchor: none; scrollbar-width: thin; scrollbar-color: #c7d3cc transparent; scrollbar-gutter: stable; padding-right: 12px; }
+#tradeflow-export-preview[data-page="assistant"] .tx-messages > * { flex-shrink: 0; }
+#tradeflow-export-preview[data-page="assistant"] .tx-messages:focus-visible { outline: 1px solid #a6bfb3; outline-offset: 2px; }
+#tradeflow-export-preview[data-page="assistant"] .tx-composer { position: relative; bottom: auto; flex-shrink: 0; margin-top: 12px; }
+#tradeflow-export-preview[data-page="assistant"] #tf-content > .sx-details { flex-shrink: 0; max-height: 22dvh; overflow-y: auto; margin-top: 12px; }

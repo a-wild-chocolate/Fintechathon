@@ -69,3 +69,7 @@
   .kb-human-actions > .primary { width: 100%; }
   .kb-proposal-fields dd { font-size: 17px; }
 }
+
+.kb-source-image { margin: 20px 0; }
+.kb-source-image img { display: block; width: 100%; max-height: 65vh; object-fit: contain; background: #fff; }
+.kb-source-image figcaption { margin-top: 8px; font-size: 12px; color: var(--muted, #748980); }

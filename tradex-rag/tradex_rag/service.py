@@ -7,6 +7,7 @@ from .db import Database
 from .embedding import provider
 from .parsing import parse,chunk,lexical_tokens,SUPPORTED
 from .vectors import VectorStore
+from .vision import IMAGE_TYPES, read_image, image_blocks
 
 class Conflict(ValueError):pass
 class NotFound(ValueError):pass
@@ -14,11 +15,12 @@ class AccessDenied(ValueError):pass
 
 RCEP_MARKETS={'CN','JP','SG','AU','VN','TH','KR','MY','ID','NZ','PH','BN','KH','LA','MM'}
 class Library:
-    def __init__(self,settings=None,embedding=None,clock=time.time):
+    def __init__(self,settings=None,embedding=None,clock=time.time,vision_model=None):
         self.settings=settings or Settings();self.root=self.settings.data_dir
         self.root.mkdir(parents=True,exist_ok=True);(self.root/'files').mkdir(exist_ok=True)
         self.db=Database(self.root/'library.sqlite3');self.embedding=embedding or provider(self.settings)
         self.vectors=VectorStore(self.settings,self.embedding);self.clock=clock
+        self.vision_model=vision_model
         self.stop=threading.Event();self.wake=threading.Event();self.worker=None
 
     def _document(self,db,document_id,tenant,write=False):
@@ -99,7 +101,10 @@ class Library:
             selected=version if version is not None else doc['current_version']
             if version is not None and version not in {v['version'] for v in versions}:raise NotFound('Version not found')
             parents=[dict(r) for r in db.execute('SELECT id,text,section,locator FROM parents WHERE document_id=? AND version=?',(document_id,selected))]
-        return {**doc,'metadata':json.loads(doc['metadata']),'versions':versions,'content':parents,'selected_version':selected}
+        image_path = self.root/'files'/document_id/f'v{selected}'/'image-evidence.json'
+        image_analysis = json.loads(image_path.read_text()) if image_path.exists() else None
+        return {**doc,'metadata':json.loads(doc['metadata']),'versions':versions,'content':parents,'selected_version':selected,
+                'image_analysis': image_analysis}
 
     def original(self,document_id,version,tenant):
         with self.db.connect() as db:
@@ -158,9 +163,13 @@ class Library:
             if doc['deleted'] or job['version']!=doc['latest_version']:
                 self._finish(job,'superseded');return True
             if job['operation']=='ingest':
-                blocks=parse(Path(version['path']))
+                path = Path(version['path'])
+                if path.suffix.lower() in IMAGE_TYPES:
+                    with self.db.connect(write=True) as db:
+                        db.execute("UPDATE versions SET status='reading_image' WHERE document_id=? AND version=?", (doc['id'], job['version']))
+                blocks = image_blocks(read_image(path, self.vision_model)) if path.suffix.lower() in IMAGE_TYPES else parse(path)
                 if json.loads(doc['metadata']).get('source_kind')=='curated_policy_card':
-                    blocks=[b for b in blocks if not b['text'].startswith('TradeX workflow suggestion')]
+                    blocks=[b for b in blocks if not b['text'].startswith('CashWeave workflow suggestion')]
                 parents,children=chunk(blocks,getattr(self.embedding,'split_text',None))
                 with self.db.connect(write=True) as db:
                     # A restart repeats parsing, so remove only this unpublished/retried version's chunks.

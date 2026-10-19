@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {setupDocuments,parseSetupDocument} from '../src/onboarding.js';
 import {enrich} from '../src/finance.js';
-const records = Object.fromEntries(setupDocuments.map(d=>[d.id,readFileSync(new URL('../demo/five-minute-case/preload/'+d.file,import.meta.url),'utf8')]));
+const records = JSON.parse(readFileSync(new URL('./fixtures/baseline-text.json',import.meta.url),'utf8'));
 test('the three uploaded records reconstruct the original cash gap without payment-email assumptions',()=>{
   const cash=parseSetupDocument('cash',records.cash);
   const sales=parseSetupDocument('sales',records.sales);

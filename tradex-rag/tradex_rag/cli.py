@@ -10,7 +10,7 @@ def seed(lib,path):
         card=json.loads(line);key=card['card_id']
         if key in existing:continue
         # Selected summaries enter search; 446 unreviewed raw slices stay in the source archive.
-        text=card['embedding_text']+'\n\nTradeX workflow suggestion (not a policy clause):\n'+card['tradex_workflow']
+        text=card['embedding_text']+'\n\nCashWeave workflow suggestion (not a policy clause):\n'+card['tradex_workflow']
         fields=['title_en','card_id','source_id','source_url','source_title','publisher','jurisdiction','effective_from','effective_to','review_due','allowed_use','evidence_refs','required_order_fields','cash_effect','tradex_workflow']
         metadata={k:card.get(k) for k in fields};metadata['source_kind']='curated_policy_card'
         lib.create(key+'.txt',text.encode(),card['title'],'public',metadata,source_key=key);count+=1

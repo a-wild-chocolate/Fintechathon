@@ -139,3 +139,89 @@ The failed run `8281e114-a2c0-42e2-bccd-2ff9873d9950` ended after a model respon
 The transport now records provider termination reasons, uses a configurable 4,096-token output cap, and distinguishes truncation, malformed tool arguments, missing results and result validation failures. The cash specialist receives calculation tools and compact financial results; earlier generated prose is excluded from its financial context. Source identifiers remain available for retrieval and citations.
 
 Verification: 44 backend tests, 2 HTTP/MCP integration tests with scripted responses, and 24 frontend tests passed. Live OpenRouter run `e29a8fe5-f323-4f1e-a480-258ac647ebd2` completed using the same submitted clarification answers. Its supplier date, receipt date, receipt amount, supplier amount and peak shortfall matched the calculation result. The earlier live verification completed but reused stale financial figures, which prompted the context repair. A further instruction distinguishes a funded scenario from a risk-free shipment; the final narrowing of cash-agent tools and this wording were not given another paid inference run. Existing failed records remain unchanged.
+
+
+### Selective clarification continuation — 19 October 2026
+
+- Persisted specialist outputs, compact workflow facts and source-version dependencies in run results.
+- Added a Coordinator continuation plan and displayed reused specialists in activity.
+- Real Deep Agents tests with a scripted provider cover preference-only continuation, cash-scenario changes, evidence updates, acknowledgements, source citations and runtime restart. The preference fixture invokes only Decision; the acknowledgement fixture invokes no subagent. These are execution-path checks, not measured live-provider speed improvements.
+- Backend suite: 51 passed (2 integration tests selected separately). Frontend suite: 32 passed; syntax checks and build passed.
+- HTTP + stdio MCP integration: 2 passed using the scripted provider. Local backend restarted successfully after confirming no running agent tasks. No paid-provider latency benchmark was run for this change.
+
+### Real-model clarification replay — 19 October 2026
+
+Used the configured OpenRouter `qwen/qwen3-30b-a3b-instruct-2507` for a synthetic order through the real HTTP API, Deep Agents harness and stdio MCP tools. A separate tenant and SQLite/Qdrant directory protected the normal demo workspace. Embeddings were disabled for this routing test; document reads and lexical retrieval remained available. Web and sandbox tools retained the configured availability.
+
+The case asks for a cash analysis, then a choice between buyer collection and supplier negotiation. The reply selects a buyer collection draft, confirms unchanged amounts/dates, and skips the supplier-extension question. Both revised continuations replay the same saved initial analysis and identical answers; the initial model run was not regenerated.
+
+| Stage | Elapsed | Model requests started | Roles with returned model calls | Outcome |
+| --- | ---: | ---: | --- | --- |
+| Initial analysis | 286.9 s | 18 | Coordinator 6; Cash flow 5; Decision 7 | Asked clarification |
+| Original continuation | 167.4 s | 13 | Coordinator 3; Cash flow 5; Decision 4 | Final Coordinator request timed out |
+| Calculation-reuse correction | 68.3 s | 7 | Coordinator 3; Decision 4 | Draft saved; unsupported approval label and stale conversion remained |
+| Final continuation | 74.7 s | 9 | Coordinator 5; Decision 4 | Completed; draft saved; no further questions |
+
+The initial cash specialist finished its calculations but marked itself `needs_information` because it also asked an action preference. Result-only caching therefore missed valid calculations, and the original continuation repeated five cash-model calls. The scheduler now compares explicitly requested scenarios with saved calculations independently of narrative completion status. It also excludes stale cash/advice prose from the continuation context when authoritative calculations are available. An approval status must correspond to a pending workflow proposal.
+
+Final assertions passed: only the Decision specialist started; the cash and reconciliation models received zero calls; saved cash calculations were reused; the workspace remained unchanged; a buyer collection draft was saved without sending; the final response reported CNY 32,000 on 22 October and the planned USD 12,000 receipt on 29 October without the earlier unsupported USD conversion. The final run has status `completed` and no questions.
+
+This is a single-case observation, not an average speedup benchmark: the original continuation includes a model timeout, while the revised continuations complete. The final run still takes about 75 seconds and performs extra status, calculation and retrieval calls; eliminating specialist reruns does not eliminate provider latency or all unnecessary tool selection. Provider-reported inference charges across these four stages total USD 0.02968431; the timed-out request's unreported charge and any separate search/sandbox charges are excluded.
+
+Regression verification: 54 backend tests passed, two real HTTP/MCP integration tests passed with fixture model responses, and 33 frontend tests plus syntax/build checks passed. A further workspace-version regression checks invalidation when only the calculation, rather than a completed cash-agent result, survives. Local raw traces and timing summaries are under ignored `tradex-rag/var/hitl-live-20261019/`; no credentials are included.
+
+
+### DeepSeek model switch and bounded continuation — 19 October 2026
+
+OpenRouter's public catalogue and endpoint listing include `deepseek/deepseek-v4.1-flash` with tool calling and structured output. The local default and all four role assignments use this model through the existing OpenRouter key. Reasoning is disabled for the interactive path; the provider adapter remains replaceable.
+
+The Coordinator now selects the continuation once and the scheduler invokes only affected specialists. The final specialist response goes directly to the user. Read-only workflow results reuse normalized arguments and unchanged workspace/proposal state. An explicit draft task requires a draft in its completion schema, and completion is serialized so duplicate model calls cannot create two artifacts. DeepSeek finalization with only `finish` available uses schema-shaped JSON, converted to the same locally validated completion envelope. Normal business analysis retains tool selection.
+
+The following development attempts replay the same synthetic initial checkpoint and identical human answers described above. Each attempt has a separate saved run; none silently replaced a failed record. The initial checkpoint was produced by Qwen, so this measures continuation rather than a complete DeepSeek analysis from upload.
+
+| Attempt | End-to-end elapsed | Model requests started | Observed outcome |
+| --- | ---: | ---: | --- |
+| `optimized-qwen` | 25.9 s | 1 | Qwen; draft omitted |
+| `optimized-deepseek` | 16.9 s | 3 | DeepSeek; two draft writes |
+| `optimized-deepseek-final` | 30.0 s | 2 | Single save entry; output truncated |
+| `optimized-deepseek-draft` | 14.8 s | 2 | Draft-only routing; duplicate completion saved twice |
+| `optimized-deepseek-once` | 9.8 s | 2 | Serialized completion; one draft, incomplete deadline wording |
+| `optimized-deepseek-repeat` | 30.1 s | 2 | Repeated case; output truncated |
+| `optimized-deepseek-single-tool` | 3.1 s | 1 | Unsupported parallel-tool parameter; HTTP 404 |
+| `optimized-deepseek-structured` | 40.8 s | 3 | Structured routing omitted draft mode; output truncated |
+| `optimized-deepseek-final-json` | 35.8 s | 2 | Native routing omitted draft mode; output truncated |
+| `optimized-deepseek-explicit-route` | 9.2 s | 2 | Required draft mode; model omitted optional draft |
+| `optimized-deepseek-required-draft` | 13.9 s | 2 | Required draft result; one saved draft |
+| `optimized-deepseek-verified-repeat` | 9.8 s | 2 | Unchanged configuration repeat; one saved draft |
+
+The final unchanged configuration completed twice in 13.9 and 9.8 seconds, compared with the previous 74.7-second Qwen continuation. Each used one Coordinator and one Decision call, reused the cash calculation, saved exactly one draft, returned no new questions and preserved the financial workspace. No status, cash-calculation, comparison or retrieval tool was re-executed. Both responses retained the CNY 32,000 shortfall on 22 October and the existing USD 12,000 receipt schedule. This comparison changes both orchestration and model; it does not isolate a model-only speedup or estimate typical latency across cases.
+
+Artifact review found remaining writing-quality issues: the final two saved email bodies contain literal `%0A` separators, mention internal cash pressure, and ask for payment before 29 October without clearly requesting availability by the 22 October supplier deadline. They were saved as drafts, never sent. Execution and latency assertions pass; polished correspondence quality is not a passed criterion. Earlier completed-status runs that omitted or duplicated drafts are not counted as successful functional checks.
+
+Provider-reported inference charges across these development attempts total USD 0.01095045; the rejected parameter request reported no usage. The unsupported `parallel_tool_calls=false` setting was removed. No automatic retry or alternate-provider fallback was introduced. Local traces and synthetic model outputs remain under ignored `tradex-rag/var/hitl-live-20261019/`.
+
+Final regression checks: 59 backend unit tests and two real HTTP/MCP integration tests passed; integration model responses were scripted. The frontend was unchanged by this model switch. After confirming zero active runs, the local backend restarted; both port 8765 and the port 5173 frontend proxy reported OpenRouter DeepSeek V4.1 Flash for all four roles.
+
+### Conversation presentation — 19 October 2026
+
+The AI page now uses a centered reading column, soft user bubbles, an unboxed assistant response and a sticky composer. The actual agent operation is a compact expandable activity row; its indicator and existing list rows persist across polling updates. A completed reply replaces only its own message instead of rerendering the entire page. New replies use a brief fade/translation, with reduced-motion support, rather than simulated token streaming. Readers away from the conversation end are not automatically pulled down.
+
+The input grows with its content; Enter sends and Shift+Enter inserts a newline. IME composition does not submit, and sending is disabled while the current conversation runs, while draft editing remains available.
+
+Verification used the real page at port 5173 and a separate UI fixture with scripted execution events, without paid model calls or changes to business data. Browser checks confirmed preserved activity disclosure, indicator and row DOM nodes, and preserved unsent input, focus and selection when a response arrives. English/Chinese controls, Enter submission and Shift+Enter multiline editing passed. The actual page was visually checked at a narrow viewport and the conversation fixture at desktop width. Frontend syntax, 35 tests and build passed.
+
+### Scrollable conversation panel — 19 October 2026
+
+The assistant keeps all active conversation turns in chronological order inside a viewport-sized scroll region; earlier turns are no longer folded into a separate disclosure or removed by the archived-history retention limit. Navigation and the composer remain outside the scrolling message area. Reply completion preserves the reading position when the user has scrolled up, and language changes restore the same scroll offset.
+
+Verification: 36 frontend tests, JavaScript syntax checks, and production build passed. The browser fixture confirmed nine retained replies, independent panel scrolling, stable composer placement, and preserved reading position after a scripted completion. The live order conversation was checked at a 598 px viewport, including scrolling to earlier messages and switching Chinese/English without losing the reading position. No model calls were needed for these presentation checks.
+
+### Screenshot payment evidence and notification inbox — 19 October 2026
+
+A real OpenRouter DeepSeek V4.1 Flash run used `demo/screenshot-case/buyer-email.png` through the browser upload flow in an isolated workspace on ports 5176/8766. The image contained a partial-payment promise but no amount or payment date. Extraction returned null for both fields, correctly leaving the email header date separate. The source viewer displayed the uploaded image and cited extracted fields in Chinese and English controls. The model misread the small demonstration footer brand; payment-field checks passed, not verbatim transcription accuracy.
+
+The assistant requested the missing amount and date. The user supplied USD 6,000 and 29 October 2026 and left the residual balance unscheduled. The 26.4-second clarification continuation invoked only Coordinator and Reconciliation. The financial workspace remained at version 1 until explicit confirmation. Confirmation produced version 2, expected CNY 40,000 on 29 October, unchanged opening CNY 128,000 and outstanding USD 12,000. The first gap remained CNY 32,000 on 22 October and the peak became CNY 34,000 on 6 November. Subsequent Coordinator, Cash-flow and Decision execution completed and generated action advice and a saved draft. No message was sent. This was one synthetic case, not a latency benchmark.
+
+The notification browser check confirmed that opening the inbox removed the badge, reloading retained the read state, event details exposed impact and next action, and View order navigated to TF-26104. Chinese and English labels were checked. Stable event identities prevent unrelated version changes from regenerating unread cash alerts.
+
+Three baseline Word documents were reformatted as single-page business records, rendered and visually checked. Their actual extracted text passes the deterministic onboarding checks. Frontend syntax, 39 tests and production build passed. Earlier backend verification in this change passed 63 unit tests with 2 integration tests deselected; image tests check the real image payload shape, null fields, extraction cache reuse and source-image access using a scripted model.

@@ -1,5 +1,8 @@
 from contextlib import asynccontextmanager
 from pathlib import Path
+from tempfile import NamedTemporaryFile
+from .parsing import parse
+from .vision import IMAGE_TYPES
 from fastapi import FastAPI,UploadFile,File,Form,Request,BackgroundTasks
 from fastapi.responses import FileResponse,JSONResponse
 from pydantic import BaseModel,Field
@@ -63,7 +66,7 @@ def create_app(settings=None,library=None,agent_model=None,agent_connector=None)
         app.state.agents=AgentRuntime(app.state.library,agent_model,agent_connector)
         yield
         app.state.library.close()
-    app=FastAPI(title='TradeX Evidence Library',version='0.1.0',lifespan=lifespan)
+    app=FastAPI(title='CashWeave Evidence Library',version='0.1.0',lifespan=lifespan)
     @app.exception_handler(ValueError)
     async def value_error(request,exc):
         status=409 if isinstance(exc,Conflict) else 404 if isinstance(exc,NotFound) else 403 if isinstance(exc,AccessDenied) else 400
@@ -116,6 +119,19 @@ def create_app(settings=None,library=None,agent_model=None,agent_connector=None)
         return app.state.agents.workflows.execute(name,body.run_id,body.role,body.arguments)
     @app.get('/api/documents')
     def documents():return app.state.library.list_documents(settings.tenant)
+    @app.post('/api/document-preview')
+    async def document_preview(file:UploadFile=File(...)):
+        suffix = Path(file.filename).suffix.lower()
+        if suffix not in {'.txt', '.docx'}:
+            raise ValueError('Baseline records must be TXT or DOCX files.')
+        data = await file.read(20*1024*1024+1)
+        if len(data) > 20*1024*1024:
+            raise ValueError('Maximum file size is 20 MB')
+        with NamedTemporaryFile(suffix=suffix) as source:
+            source.write(data)
+            source.flush()
+            blocks = parse(Path(source.name))
+        return {'text': '\n'.join(block['text'] for block in blocks)}
     @app.post('/api/uploads',status_code=202)
     async def upload(file:UploadFile=File(...),title:str=Form(''),order_id:str=Form('')):
         data=await file.read(20*1024*1024+1)
@@ -132,6 +148,12 @@ def create_app(settings=None,library=None,agent_model=None,agent_connector=None)
     def original(document_id:str,version:int):
         v=app.state.library.original(document_id,version,settings.tenant)
         return FileResponse(v['path'],filename=v['filename'],media_type='application/octet-stream')
+    @app.get('/api/documents/{document_id}/versions/{version}/image')
+    def source_image(document_id:str,version:int):
+        source=app.state.library.original(document_id,version,settings.tenant)
+        mime=IMAGE_TYPES.get(Path(source['path']).suffix.lower())
+        if not mime: raise ValueError('This document is not an image.')
+        return FileResponse(source['path'],media_type=mime)
     @app.post('/api/documents/{document_id}/lease')
     def lease(document_id:str,body:LeaseRequest):
         return app.state.library.lease(document_id,settings.tenant,settings.actor,body.seconds)

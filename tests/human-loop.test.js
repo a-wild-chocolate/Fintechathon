@@ -26,3 +26,29 @@ test('submitted answers replace the form and escape document-like text',()=>{
   assert.doesNotMatch(renderHumanQuestions(t,'en'),/<form/);
   assert.match(humanReplySummary(t.rag.human_response,'en'),/Supplier payment · 10 days/);
 });
+
+import { turnProgress, renderAgentProgress } from '../src/agent-progress.js';
+test('submitted or skipped clarification is answered, not waiting or falsely completed',()=>{
+ const r={task_status:'needs_information',trace:[],human_response:{run_id:'next',status:'running'}};
+ const progress=turnProgress(r);
+ assert.equal(progress.status,'answered');
+ assert.equal(r.task_status,'needs_information');
+ const html=renderAgentProgress(progress,'en');
+ assert.match(html,/Response received/);
+ assert.doesNotMatch(html,/Waiting for information|Analysis complete|indicator running/);
+ assert.match(renderAgentProgress(progress,'zh'),/回答已收到/);
+ assert.equal(turnProgress({task_status:'needs_information'}).status,'needs_information');
+});
+
+import { createKnowledgeUI } from '../src/knowledge.js';
+test('the answer renderer uses the saved response rather than the historical waiting status', () => {
+ const ui=createKnowledgeUI({root:{addEventListener(){}},language:()=> 'en',order:()=> 'TF-26104'});
+ const t=turn();
+ Object.assign(t.rag,{status:'done',mode:'multi_agent',task_status:'needs_information',trace:[],paragraphs:[],sources:[],human_response:{run_id:'child'}});
+ const html=ui.answer(t);
+ assert.match(html,/Response received/);
+ assert.doesNotMatch(html,/Waiting for information|data-human-form/);
+ delete t.rag.human_response;
+ assert.match(ui.answer(t),/Waiting for information/);
+ assert.match(ui.answer(t),/data-human-form/);
+});

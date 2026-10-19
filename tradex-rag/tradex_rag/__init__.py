@@ -1,1 +1,1 @@
-"""TradeX shared evidence and retrieval service."""
+"""CashWeave shared evidence and retrieval service."""

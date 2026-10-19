@@ -6,16 +6,37 @@ The product uses a Coordinator with three business subagents. This implementatio
 
 Browser conversation → `/api/assistant/runs` → Coordinator → selected subagents → MCP business workflows → shared evidence and forecast state → cited response or confirmation card.
 
-[Deep Agents](https://docs.langchain.com/oss/python/deepagents/overview) owns the model/tool loop and native `task` delegation. TradeX supplies a small provider adapter, role-specific MCP tools, call budgets and public activity events. The Coordinator invokes three business subagents with separate contexts and combines their results. Dependent subagent invocations are serialized; no additional general-purpose worker is created.
+[Deep Agents](https://docs.langchain.com/oss/python/deepagents/overview) owns the model/tool loop and native `task` delegation. TradeX supplies a small provider adapter, role-specific MCP tools, call budgets and public activity events. The Coordinator selects from three business subagents with separate contexts and combines their results. Dependent subagent invocations are serialized; no additional general-purpose worker is created.
 
 | Role | Responsibility | Business tools |
 | --- | --- | --- |
 | Coordinator | Understand the request, delegate, combine questions and explain the result | `wf_status`, `kb_search`, `evidence_read` |
 | Reconciliation | Read evidence, identify missing payment fields and prepare a receipt proposal | Shared read tools plus `wf_reconcile` |
-| Cash flow | Translate hypotheses into parameters and explain calculated balances | `wf_status`, `kb_search`, `wf_cash` |
-| Decision | Compare conditional responses, retrieve financing requirements and save drafts | Shared read tools plus `wf_cash`, `wf_options`, `wf_financing`, `wf_draft` |
+| Cash flow | Translate hypotheses into parameters and explain calculated balances | `wf_status`, `wf_cash` |
+| Decision | Compare conditional responses, retrieve financing requirements and save drafts | Shared read tools plus `wf_cash`, `wf_options`, `wf_financing`; `finish.draft` saves through `wf_draft` |
 
 `finish` returns a structured role result. `task` is the harness delegation tool and `finish` is the structured business result tool; financial and knowledge operations are MCP tools. The existing document upload, version and write-lease MCP tools remain available to external clients. The core roles use the tools listed above; optional public-search and sandbox tools are described below.
+
+## Selective continuation after human input
+
+A clarification starts a linked continuation with the original objective, the user's answers, saved specialist results and recorded workflow calculations. The Coordinator makes one `plan_resume` call to select affected roles. The scheduler executes them in dependency order and publishes the final specialist response directly, eliminating a separate delegation call and Coordinator rewrite. When the reply only acknowledges the current plan, the Coordinator returns the answer inside `plan_resume.response`.
+
+| What changed | Typical continuation |
+| --- | --- |
+| Missing payment amount or date | Reconciliation, then affected downstream analysis |
+| Payment timing or cash assumptions | Cash flow and updated decision advice |
+| Preferred action | Decision, reusing completed reconciliation and cash results |
+| Acknowledgement or skip | Coordinator synthesis, with unresolved facts kept explicit |
+
+Completed results and document dependencies are stored in SQLite. Workspace changes invalidate cached cash analysis; changed source versions invalidate the specialists that used them and affected downstream results. The plan records `resume_planned` and `agent_reused` events, displayed as **Reused** in the activity panel. Reusing a result makes no specialist model call and does not repeat draft or write tools. Provider latency still applies to the calls that remain.
+
+Successful cash calculations are cached separately from an agent's completion status: a pending action preference does not invalidate an already calculated forecast. `plan_resume.cash_scenarios` specifies newly requested timing or proposal scenarios. The scheduler removes cash-agent work covered by existing calculations and records `workflow_reused`; changed workspace versions, relevant evidence, or receipt fields still require recomputation. Draft-only tasks finish after saving the draft; `needs_approval` requires an actual pending receipt proposal.
+
+For correspondence with sufficient context, `decision_task="draft"` gives Decision only the completion operation. Its single `finish` result includes the full draft and user-facing reply; the application saves the draft through MCP before publishing the reply. Completion is serialized per agent, so duplicate completion calls cannot save a second draft or rerun the continuation plan.
+
+Read-only status, cash and scenario tools reuse results for identical arguments, workspace and proposal state. Changed inputs create a new cache entry. Drafts and financial writes are never treated as cached reads.
+
+This is persisted result-level continuation, not restoration of an in-flight model request. Historical runs created before result persistence have no reusable specialist cache; their first continuation may need to recompute the relevant work.
 
 ## Provider configuration
 
@@ -25,13 +46,13 @@ Set the following in `tradex-rag/.env`, then restart `./start.sh`:
 TRADEX_AGENTS_ENABLED=1
 TRADEX_MODEL_PROVIDER=openrouter
 OPENROUTER_API_KEY=your_openrouter_key
-TRADEX_MODEL=qwen/qwen3-30b-a3b-instruct-2507
+TRADEX_MODEL=deepseek/deepseek-v4.1-flash
 TRADEX_MODEL_CONCURRENCY=2
 TRADEX_AGENT_MAX_CALLS=18
 TRADEX_CHAT_ENABLED=0
 ```
 
-These settings enable all four roles with one API key and model. To assign different models, set `TRADEX_MODEL_COORDINATOR`, `TRADEX_MODEL_RECONCILIATION`, `TRADEX_MODEL_CASH_FLOW` and `TRADEX_MODEL_DECISION`. OpenRouter's public model catalogue listed tool support for `qwen/qwen3-30b-a3b-instruct-2507` and `deepseek/deepseek-v3.2` when checked on 19 October 2026. These are starting configurations, not a measured ranking.
+These settings enable all four roles with one API key and model. To assign different models, set `TRADEX_MODEL_COORDINATOR`, `TRADEX_MODEL_RECONCILIATION`, `TRADEX_MODEL_CASH_FLOW` and `TRADEX_MODEL_DECISION`. The current model is `deepseek/deepseek-v4.1-flash`, verified in OpenRouter's public model catalogue on 19 October 2026 with tool support. DeepSeek reasoning is disabled for this interactive workflow. When the only available operation is `finish`, the adapter requests a single schema-shaped JSON result and translates it into the same harness tool envelope; local validation and MCP execution remain unchanged. Other steps retain model-selected tool calls. See `VERIFICATION.md` for the live clarification replay results; other role assignments remain configurable.
 
 The provider adapter owns credentials, endpoints, role model assignments, request parameters, concurrency and usage metadata. Provider failures are recorded without automatic retry or cross-provider fallback. The OpenRouter adapter requires support for the requested parameters and disables provider fallback for that request. The two-request concurrency setting is an application budget, not a claimed OpenRouter limit.
 
@@ -39,7 +60,7 @@ Direct-provider alternatives use the same agent and workflow code:
 
 | Provider | Key variable | Base URL | Model example |
 | --- | --- | --- | --- |
-| `openrouter` | `OPENROUTER_API_KEY` | Defaults to `https://openrouter.ai/api/v1` | `qwen/qwen3-30b-a3b-instruct-2507` |
+| `openrouter` | `OPENROUTER_API_KEY` | Defaults to `https://openrouter.ai/api/v1` | `deepseek/deepseek-v4.1-flash` |
 | `qwen` | `DASHSCOPE_API_KEY` | Set `DASHSCOPE_BASE_URL` to the workspace's regional compatible endpoint | `qwen-plus` |
 | `deepseek` | `DEEPSEEK_API_KEY` | Defaults to `https://api.deepseek.com` | `deepseek-chat` |
 
@@ -66,7 +87,7 @@ The frontend sends its confirmed demo fields, not its temporary scenario slider 
 
 Each completed model/tool step is recorded with its role and result; model usage is saved when supplied by the provider. The trace does not store private model reasoning. Completed turns can continue after restart; a run interrupted during an external call is marked interrupted rather than replayed automatically. A session is bound to its order and selected document. **New chat** starts a new session without deleting old activity.
 
-A turn allows at most 18 model calls and four delegations; the Coordinator gets at most seven calls and each subagent invocation at most five. Limits include finalization. Subagents reserve one global call for the Coordinator to summarize their results; the final available call exposes only `finish`. A budget or connection failure preserves completed specialist output and records its failure category. All three specialists are invoked only when needed; normal dashboard rendering uses no model calls.
+A turn allows at most 18 model calls and four delegations; the Coordinator gets at most seven calls and each subagent invocation at most five. Limits include finalization. On a new analysis, subagents reserve one global call for the Coordinator to summarize their results; clarification continuations return the final specialist response directly and need no summary reserve; the final available call exposes only `finish`. A budget or connection failure preserves completed specialist output and records its failure category. All three specialists are invoked only when needed; normal dashboard rendering uses no model calls.
 
 ## Scope of this implementation
 

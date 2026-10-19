@@ -1,0 +1,21 @@
+{
+  "reason": "User requested reconciliation of Git branches for push/pull. Reviewed upstream documentation and ignore changes; original application source hashes unchanged.",
+  "upstream_commit": "0736bf9",
+  "pre_merge_commit": "d2fa2a7",
+  "merge_commit": "30feb2a0699692fb2add78bed2bacb2661cf825d",
+  "changes": {
+    "README.md": {
+      "before": "0dc07faa38b2bd69b51fb209f5b3283b214a9448f6480aa20967881bc7f7cf52",
+      "after": "e1c449cbc7a170fc3980f19ce129e1d7429f4118db9e196eed7028a247a2f84f"
+    },
+    ".gitignore": {
+      "before": "239e1ce08c33c5b848b4363e5ceeac53efd0b178f3962883240eac5a25369691",
+      "after": "d73148f2e7c00e38b984ba1af305ed845a50376b21dbc7dd4e5e4e866b238c0c"
+    },
+    "docs/VERIFICATION.md": {
+      "before": "dca7c85eaafded5ee500d80ccdaf24d4a4f6d987e2241a90c627059eac65442c",
+      "after": "4e5f87ca5c150ecd392d282f8db54de573f01d798018e8974d478a4e8cd6d966"
+    }
+  },
+  "validation": "A fresh preflight and pilot are required; prior results retain their old identity."
+}

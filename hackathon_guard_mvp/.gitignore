@@ -6,3 +6,7 @@ __pycache__/
 runs/
 reports/
 *.egg-info/
+
+# Installation-specific Slurm configuration
+/configs/experiment.slurm.yaml
+/slurm/site-env.sh

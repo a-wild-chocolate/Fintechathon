@@ -1,0 +1,83 @@
+{
+  "card_id": "CN-07",
+  "source_id": "CN-FX-2025-QA",
+  "title": "净额结算与资格条件",
+  "summary_zh": "2025年政策问答解释货款与返利、运输相关费用等净额结算情形；部分条款针对优质企业或特定安排，不能把净额到账差额自动认定为手续费。",
+  "summary_en": "SAFE explains specified net-settlement cases involving rebates and transport charges, alongside qualification conditions for certain arrangements. The underlying transactions and the applicable banking route need to be identified.",
+  "anchor_terms": [
+    "销售货款与相关销售返利",
+    "优质企业"
+  ],
+  "required_order_fields": [
+    "gross_invoice",
+    "net_receipt",
+    "rebate_agreement",
+    "transport_charges",
+    "bank_qualification"
+  ],
+  "tradex_workflow": "Separate fee, rebate and netting hypotheses; retrieve the agreement and bank explanation before allocating the difference.",
+  "cash_effect": "Keep gross receivables, adjustments and actual bank cash distinct.",
+  "keywords": [
+    "净额结算",
+    "销售返利",
+    "对账差额",
+    "手续费",
+    "netting",
+    "rebate"
+  ],
+  "title_en": "Net settlement and eligibility conditions",
+  "jurisdiction": "CN",
+  "source_title": "进一步便利外汇资金结算支持外贸稳定发展：政策问答",
+  "source_url": "https://www.safe.gov.cn/safe/file/file/20251223/1d856ef316a64a3c9d13571b19f05432.pdf",
+  "publisher": "State Administration of Foreign Exchange",
+  "source_type": "official_explanation",
+  "source_language": "zh",
+  "topic": "export_receipts",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": "2025-12-23",
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "CN-FX-2025-QA-B0001",
+      "locator": "page=1",
+      "path": "extracted/CN-FX-2025-QA.json"
+    },
+    {
+      "block_id": "CN-FX-2025-QA-B0002",
+      "locator": "page=2",
+      "path": "extracted/CN-FX-2025-QA.json"
+    },
+    {
+      "block_id": "CN-FX-2025-QA-B0003",
+      "locator": "page=3",
+      "path": "extracted/CN-FX-2025-QA.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "净额结算与资格条件\n2025年政策问答解释货款与返利、运输相关费用等净额结算情形；部分条款针对优质企业或特定安排，不能把净额到账差额自动认定为手续费。\nSAFE explains specified net-settlement cases involving rebates and transport charges, alongside qualification conditions for certain arrangements. The underlying transactions and the applicable banking route need to be identified.\nKeywords: 净额结算, 销售返利, 对账差额, 手续费, netting, rebate"
+}

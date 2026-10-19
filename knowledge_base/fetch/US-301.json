@@ -1,0 +1,13 @@
+{
+  "source_id": "US-301",
+  "requested_url": "https://www.cbp.gov/trade/programs-administration/entry-summary/section-301-trade-remedies/faqs",
+  "retrieved_at": "2026-10-17T19:22:59.501375+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.cbp.gov/trade/programs-administration/entry-summary/section-301-trade-remedies/faqs",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 151945,
+  "raw_path": "raw/US-301.html",
+  "last_modified": "Sat, 17 Oct 2026 19:23:01 GMT",
+  "etag": "\"1792264981\""
+}

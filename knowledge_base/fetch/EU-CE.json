@@ -1,0 +1,13 @@
+{
+  "source_id": "EU-CE",
+  "requested_url": "https://single-market-economy.ec.europa.eu/single-market/goods/ce-marking_en",
+  "retrieved_at": "2026-10-17T19:23:00.710321+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://single-market-economy.ec.europa.eu/single-market/goods/ce-marking_en",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 100094,
+  "raw_path": "raw/EU-CE.html",
+  "last_modified": null,
+  "etag": null
+}

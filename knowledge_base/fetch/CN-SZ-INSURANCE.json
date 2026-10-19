@@ -1,0 +1,7 @@
+{
+  "source_id": "CN-SZ-INSURANCE",
+  "requested_url": "https://www.sz.gov.cn/cn/xxgk/zfxxgj/tzgg/content/post_12930573.html",
+  "retrieved_at": "2026-10-17T19:24:25.929567+00:00",
+  "status": "fetch_failed",
+  "error": "URLError: <urlopen error [SSL: BAD_ECPOINT] bad ecpoint (_ssl.c:1081)>"
+}

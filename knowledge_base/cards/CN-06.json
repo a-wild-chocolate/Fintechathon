@@ -1,0 +1,93 @@
+{
+  "card_id": "CN-06",
+  "source_id": "CN-EXPORT-CONTROL",
+  "title": "出口前识别物项、用途与最终用户",
+  "summary_zh": "两用物项出口管制条例要求结合物项性能、主要用途和管制要求判断，涉及许可的需准备相关材料，不能仅凭“普通商品”名称判断。",
+  "summary_en": "The dual-use export control regulation links licensing and screening to item characteristics, use and end-user information. A product name alone does not resolve control status.",
+  "anchor_terms": [
+    "性能指标",
+    "最终用户"
+  ],
+  "required_order_fields": [
+    "product_specification",
+    "destination",
+    "end_user",
+    "end_use",
+    "control_classification"
+  ],
+  "tradex_workflow": "Request specifications and end-use evidence before shipment readiness; send unresolved control questions for specialist review.",
+  "cash_effect": "Record authorization as a shipment prerequisite; model delay only when a date assumption is supplied.",
+  "keywords": [
+    "出口管制",
+    "两用物项",
+    "许可证",
+    "最终用户",
+    "end use",
+    "export controls"
+  ],
+  "title_en": "Export controls: items, end use and end users",
+  "jurisdiction": "CN",
+  "source_title": "中华人民共和国两用物项出口管制条例",
+  "source_url": "https://exportcontrol.mofcom.gov.cn/article/zcfg/gnzcfg/gzjgfxwj/202410/1057.html",
+  "publisher": "Ministry of Commerce",
+  "source_type": "regulation",
+  "source_language": "zh",
+  "topic": "export_controls",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": "2024-09-30",
+  "effective_from": "2024-12-01",
+  "effective_to": null,
+  "review_due": "2026-10-25",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "CN-EXPORT-CONTROL-B0059",
+      "locator": "/html/body/div[1]/div[3]/div/div[2]/div[2]/div[2]/p[44]",
+      "path": "extracted/CN-EXPORT-CONTROL.json"
+    },
+    {
+      "block_id": "CN-EXPORT-CONTROL-B0097",
+      "locator": "/html/body/div[1]/div[3]/div/div[2]/div[2]/div[2]/p[82]",
+      "path": "extracted/CN-EXPORT-CONTROL.json"
+    },
+    {
+      "block_id": "CN-EXPORT-CONTROL-B0010",
+      "locator": "/html/body/div[1]/div[3]/div/div[1]/div[4]/dl[1]/dd[2]",
+      "path": "extracted/CN-EXPORT-CONTROL.json"
+    },
+    {
+      "block_id": "CN-EXPORT-CONTROL-B0061",
+      "locator": "/html/body/div[1]/div[3]/div/div[2]/div[2]/div[2]/p[46]",
+      "path": "extracted/CN-EXPORT-CONTROL.json"
+    },
+    {
+      "block_id": "CN-EXPORT-CONTROL-B0062",
+      "locator": "/html/body/div[1]/div[3]/div/div[2]/div[2]/div[2]/p[47]",
+      "path": "extracted/CN-EXPORT-CONTROL.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "出口前识别物项、用途与最终用户\n两用物项出口管制条例要求结合物项性能、主要用途和管制要求判断，涉及许可的需准备相关材料，不能仅凭“普通商品”名称判断。\nThe dual-use export control regulation links licensing and screening to item characteristics, use and end-user information. A product name alone does not resolve control status.\nKeywords: 出口管制, 两用物项, 许可证, 最终用户, end use, export controls"
+}

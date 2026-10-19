@@ -1,0 +1,13 @@
+{
+  "source_id": "SG-PERMIT",
+  "requested_url": "https://www.customs.gov.sg/businesses/importing-goods/import-procedures/apply-customs-import-permit/",
+  "retrieved_at": "2026-10-17T19:23:02.610707+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.customs.gov.sg/doing-business/import-operations/import-procedures/obtain-a-customs-import-permit/",
+  "content_type": "text/html",
+  "bytes": 449911,
+  "raw_path": "raw/SG-PERMIT.html",
+  "last_modified": "Thu, 15 Oct 2026 02:03:39 GMT",
+  "etag": "\"4c07be6f85fca8a1dc677d24dfe401b2\""
+}

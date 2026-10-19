@@ -1,0 +1,102 @@
+{
+  "source_id": "UK-IMPORT",
+  "method": "html_dom",
+  "blocks": [
+    {
+      "text": "Import goods into the UK: step by step",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[1]/div/div[1]/h1",
+      "block_id": "UK-IMPORT-B0001"
+    },
+    {
+      "text": "How to bring goods into the UK from any country, including how much tax and duty you’ll need to pay and whether you need to get a licence or certificate.",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[1]/div/div[2]/p",
+      "block_id": "UK-IMPORT-B0002"
+    },
+    {
+      "text": "Step 1 : \n \n \n \n\n \n Check if you need to follow this process\n \n \n\n\n \n Follow these steps if you're moving goods permanently to: \n\n England, Wales or Scotland (Great Britain) from a country outside the UK Northern Ireland from a country outside the UK and the EU \n\n What you need to do is different if you are: \n\n moving goods between Great Britain and Northern Ireland or from the EU to Northern Ireland getting goods through the post bringing goods in your luggage for personal use bringing goods in your luggage, car or van to use in your business or sell bringing in goods temporarily bringing goods back into the UK after they were rejected at another country’s border moving to the UK with your belongings",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[1]",
+      "block_id": "UK-IMPORT-B0003"
+    },
+    {
+      "text": "Step 2 : \n \n \n \n\n \n Get your business ready to import\n \n \n\n\n \n You need an Economic Operators Registration and Identification number (EORI number) that starts with GB to import goods into England, Wales or Scotland. You'll need a new one if you have an EORI number that does not start with GB. \n\n If you move goods to or from Northern Ireland, you may need one that starts with XI. \n\n Get an EORI number \n\n If you store goods in the UK for sellers outside the UK, you may need to apply to the Fulfilment House Due Diligence Scheme. \n\n Find out if you need to apply to the Fulfilment House Due Diligence Scheme \n\n There are processes that can make clearing customs quicker and easier to manage if you have to make import declarations regularly. \n\n Find out about using simplified declaration procedures Check if Authorised Economic Operator status is right for you",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[2]",
+      "block_id": "UK-IMPORT-B0004"
+    },
+    {
+      "text": "and\n \n \n \n\n \n Check the business sending you the goods can export to the UK\n \n \n\n\n \n The business sending you the goods may need: \n\n to make an export declaration in their country licences or certificates to send goods to the UK \n\n Check whoever is sending the goods is able to export them from their country.",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[3]",
+      "block_id": "UK-IMPORT-B0005"
+    },
+    {
+      "text": "Step 3 : \n \n \n \n\n \n Decide who will make customs declarations and transport the goods\n \n \n\n\n \n You can hire someone to deal with customs and transport the goods for you, or you can do it yourself. \n\n Most businesses that import goods use a transporter or customs agent. \n\n Find out how to hire someone to deal with customs for you",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[4]",
+      "block_id": "UK-IMPORT-B0006"
+    },
+    {
+      "text": "Step 4 : \n \n \n \n\n \n Find out the commodity code for your goods\n \n \n\n\n \n You’ll need to include the commodity code on your import declaration. This will determine the rate of duty you need to pay and if you need an import licence. \n\n Your customs agent or transporter might be able to help you with this. \n\n Find the right commodity code for your goods",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[5]",
+      "block_id": "UK-IMPORT-B0007"
+    },
+    {
+      "text": "and\n \n \n \n\n \n Work out the value of your goods\n \n \n\n\n \n When you make your import declaration, you’ll need to include the value of your goods - this helps work out how much duty and VAT you’ll need to pay. \n\n Work out the value of your goods for customs",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[6]",
+      "block_id": "UK-IMPORT-B0008"
+    },
+    {
+      "text": "Step 5 : \n \n \n \n\n \n Find out if you can reduce your Customs Duty\n \n \n\n\n \n You may be able to pay less or no Customs Duty if the UK has a trade agreement with the country you're importing from. \n\n Find out if you can pay a lower rate of Customs Duty because of a trade agreement \n\n Some goods qualify for suspended or reduced Customs Duty under 'UK duty suspensions' or 'autonomous tariff quotas'. \n\n Check if a duty suspension or tariff quota covers your goods \n\n You may also be able to reduce the amount of duty you pay based on what the goods are and what you plan to do with them. \n\n Check other ways you can pay a lower rate of Customs Duty",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[7]",
+      "block_id": "UK-IMPORT-B0009"
+    },
+    {
+      "text": "and\n \n \n \n\n \n Find out if you can delay your Customs Duty\n \n \n\n\n \n You may be able to delay sending information about goods or paying Customs Duty. \n\n Check if you can delay your Customs Duty",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[8]",
+      "block_id": "UK-IMPORT-B0010"
+    },
+    {
+      "text": "Step 6 : \n \n \n \n\n \n Check if you need a licence or certificate for your goods\n \n \n\n\n \n There are special rules and you may need to get licences or certificates if you are importing any of the following: \n\n animals and animal products plants and plant products high risk food veterinary medicines human medicine controlled drugs tissues and cells for human application waste shipments products containing F gas precursor chemicals hazardous chemicals nuclear material (on the Office for Nuclear Regulation website) guns, knives, swords and other weapons weapons and goods that could be used for torture or capital punishment",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[9]",
+      "block_id": "UK-IMPORT-B0011"
+    },
+    {
+      "text": "Step 7 : \n \n \n \n\n \n Check the labelling, marking and marketing rules\n \n \n\n\n \n Check the marking, labelling and marketing standards for food, plant seeds and manufactured goods",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[10]",
+      "block_id": "UK-IMPORT-B0012"
+    },
+    {
+      "text": "Step 8 : \n \n \n \n\n \n Get your goods through customs\n \n \n\n\n \n If you've appointed someone to deal with UK customs for you, they'll make the declaration and get your goods through the UK border. \n\n Make an import declaration yourself and get your goods cleared by UK customs",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[11]",
+      "block_id": "UK-IMPORT-B0013"
+    },
+    {
+      "text": "Step 9 : \n \n \n \n\n \n Claim a VAT refund\n \n \n\n\n \n If you're VAT registered, you can claim back any VAT you paid on the goods you've imported. You’ll need your Import VAT Certificate (C79). \n\n Find out how to claim a VAT refund",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[12]",
+      "block_id": "UK-IMPORT-B0014"
+    },
+    {
+      "text": "Step 10 : \n \n \n \n\n \n If you paid the wrong amount of duty or rejected the goods\n \n \n\n\n \n If you paid too much Customs Duty or import VAT or rejected the goods, you can claim a refund or ask for a payment to be waived. \n\n Find out how to claim a refund or make a claim for rejected imports \n\n If you paid too little Customs Duty or import VAT, report it to HMRC. \n\n Find out how to tell HMRC you’ve underpaid and pay the difference",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[13]",
+      "block_id": "UK-IMPORT-B0015"
+    },
+    {
+      "text": "Step 11 : \n \n \n \n\n \n Keep invoices and records\n \n \n\n\n \n You must keep records of commercial invoices and any customs paperwork, including your Import VAT Certificate (C79). \n\n If you imported controlled goods, for example firearms, keep any paperwork that shows who owns them.",
+      "section": "Import goods into the UK: step by step",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[14]",
+      "block_id": "UK-IMPORT-B0016"
+    }
+  ]
+}

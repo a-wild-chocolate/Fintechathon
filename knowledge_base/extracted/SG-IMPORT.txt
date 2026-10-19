@@ -1,0 +1,446 @@
+[SG-IMPORT-B0001] Document body
+Home
+
+[SG-IMPORT-B0002] Document body
+Doing Business
+
+[SG-IMPORT-B0003] Document body
+Import Operations
+
+[SG-IMPORT-B0004] Document body
+Import Procedures
+
+[SG-IMPORT-B0005] Document body
+Import Procedures Overview
+
+[SG-IMPORT-B0006] Import Procedures Overview
+Import Procedures Overview
+
+[SG-IMPORT-B0007] Import Procedures Overview
+Learn about the key requirements, duties, permits, errors, and penalties for importing goods into Singapore.
+
+[SG-IMPORT-B0008] Import Procedures Overview
+Download the full version of the infographics [PDF, 2.23 MB] ↗ (opens in new tab) to view the linked resources.
+
+[SG-IMPORT-B0009] Import Procedures Overview
+All goods imported into Singapore are regulated under the Customs Act, the Goods and Services Tax (GST) Act and the Regulation of Imports and Exports Act (RIEA).
+
+[SG-IMPORT-B0010] Import Procedures Overview
+Imported goods are subject to GST and/or duty , and a customs permit is required to account for the import and tax payment.
+
+[SG-IMPORT-B0011] Import Procedures Overview
+Dutiable goods (incurring both duty and GST) are:
+
+[SG-IMPORT-B0012] Import Procedures Overview
+Intoxicating liquors
+
+[SG-IMPORT-B0013] Import Procedures Overview
+Tobacco products
+
+[SG-IMPORT-B0014] Import Procedures Overview
+Motor vehicles
+
+[SG-IMPORT-B0015] Import Procedures Overview
+Petroleum products
+
+[SG-IMPORT-B0016] Import Procedures Overview
+Ad valorem or specific duty rates may apply.
+
+[SG-IMPORT-B0017] Import Procedures Overview
+All other goods are non-dutiable and incur GST only. Prevailing GST is levied on the Cost,Insurance, Freight (CIF) value , which includes duties (if dutiable) and all costs incidental to the sale and delivery of the goods into Singapore.
+
+[SG-IMPORT-B0018] Import Procedures Overview
+Find out more about duties and GST .
+
+[SG-IMPORT-B0019] Import Requirements
+Import Requirements
+
+[SG-IMPORT-B0020] Who Is the Importer
+Who Is the Importer
+
+[SG-IMPORT-B0021] Who Is the Importer
+The importer is the party who brings the goods into Singapore:
+
+[SG-IMPORT-B0022] Who Is the Importer
+for their own account or use; or
+
+[SG-IMPORT-B0023] Who Is the Importer
+for the account or use of another party.
+
+[SG-IMPORT-B0024] Who Is the Importer
+If goods are sold by an overseas company to a local company who is named as the consignee on the commercial invoice, the local company is considered the importer.
+
+[SG-IMPORT-B0025] Before Importation
+Before Importation
+
+[SG-IMPORT-B0026] Before Importation
+Importers must obtain the relevant customs permit before the goods are imported into Singapore.
+
+[SG-IMPORT-B0027] Before Importation
+Refer to:
+
+[SG-IMPORT-B0028] Before Importation
+Types of Customs Permits
+
+[SG-IMPORT-B0029] Before Importation
+Situations Where No Customs Permit Is Required
+
+[SG-IMPORT-B0030] Before Importation
+Taxable companies should check with the Inland Revenue Authority of Singapore (IRAS) ↗ (opens in new tab) on GST accounting arrangements.
+
+[SG-IMPORT-B0031] Useful Links
+Useful Links
+
+[SG-IMPORT-B0032] Useful Links
+Controlled and Prohibited Goods
+
+[SG-IMPORT-B0033] Useful Links
+Obtain a Customs Import Permit
+
+[SG-IMPORT-B0034] Useful Links
+Paying Duty and GST
+
+[SG-IMPORT-B0035] Useful Links
+Overlanded and Shortlanded Goods
+
+[SG-IMPORT-B0036] Useful Links
+Depositing Goods in Free Trade Zones
+
+[SG-IMPORT-B0037] Useful Links
+Depositing Goods in Licensed or Zero-GST Warehouses
+
+[SG-IMPORT-B0038] Useful Links
+Retaining Your Trade Documents
+
+[SG-IMPORT-B0039] Useful Links
+Documents for Clearance of Goods
+
+[SG-IMPORT-B0040] Useful Links
+Return of Customs Permits
+
+[SG-IMPORT-B0041] Useful Links
+Sealing and Unstuffing
+
+[SG-IMPORT-B0042] Errors and Offences
+Errors and Offences
+
+[SG-IMPORT-B0043] Errors and Offences
+Importers may be penalised if they do not comply with the requirements under the Customs Act, the RIEA and their subsidiary legislation.
+
+[SG-IMPORT-B0044] Examples of Common Errors and Corrective Actions
+Examples of Common Errors and Corrective Actions
+
+[SG-IMPORT-B0045] Errors in Import Permits
+Errors in Import Permits
+
+[SG-IMPORT-B0046] Import Permit Not Utilised
+Import Permit Not Utilised
+
+[SG-IMPORT-B0047] Import Permit Not Utilised
+You may submit an amendment or cancellation request via TradeNet, stating the reason (e.g. extending permit validity).
+
+[SG-IMPORT-B0048] Import Permit Not Utilised
+Some permit fields cannot be amended if controlled, prohibited or dutiable goods are involved. See the List of Non-Amendable Fields ↗ (opens in new tab) for more information.
+
+[SG-IMPORT-B0049] Import Permit Not Utilised
+If the permit cannot be amended or cancelled:
+
+[SG-IMPORT-B0050] Import Permit Not Utilised
+you may lodge a Voluntary Disclosure to Singapore Customs; or
+
+[SG-IMPORT-B0051] Import Permit Not Utilised
+if it is a payment permit, you may submit a refund request via TradeNet with the reason for refund.
+
+[SG-IMPORT-B0052] Import Permit Not Utilised
+A Voluntary Disclosure is not required solely for refund requests.
+
+[SG-IMPORT-B0053] Import Permit Already Utilised
+Import Permit Already Utilised
+
+[SG-IMPORT-B0054] Import Permit Already Utilised
+Amendment or cancellation is generally not allowed once the permit has been used for cargo clearance.
+
+[SG-IMPORT-B0055] Import Permit Already Utilised
+If errors are detected and amendment/cancellation is not possible, you may lodge a Voluntary Disclosure to Singapore Customs.
+
+[SG-IMPORT-B0056] Errors by Approved Major Exporter Scheme (MES) Traders
+Errors by Approved Major Exporter Scheme (MES) Traders
+
+[SG-IMPORT-B0057] Incorrect Information Declared on In-Non-Payment (Approved Premises/Schemes) Permit
+Incorrect Information Declared on In-Non-Payment (Approved Premises/Schemes) Permit
+
+[SG-IMPORT-B0058] Incorrect Information Declared on In-Non-Payment (Approved Premises/Schemes) Permit
+If the permit was used for cargo clearance:
+
+[SG-IMPORT-B0059] Incorrect Information Declared on In-Non-Payment (Approved Premises/Schemes) Permit
+the MES trader must notify IRAS of the corrections in their GST returns.
+
+[SG-IMPORT-B0060] Incorrect Information Declared on In-Non-Payment (Approved Premises/Schemes) Permit
+Corrections must be supported by relevant documents (e.g. commercial invoices, shipping documents).
+
+[SG-IMPORT-B0061] Wrong Importer Name and UEN Declared
+Wrong Importer Name and UEN Declared
+
+[SG-IMPORT-B0062] Wrong Importer Name and UEN Declared
+The declaring agent must:
+
+[SG-IMPORT-B0063] Wrong Importer Name and UEN Declared
+Obtain a replacement In-Non-Payment “Approved Premises/Schemes” (INP-APS) permit reflecting the correct MES trader as the importer.
+
+[SG-IMPORT-B0064] Wrong Importer Name and UEN Declared
+Submit the original and replacement permits, and supporting documents, via the Customs Documentation Enquiry Form ↗ (opens in new tab) to request invalidation of the unused replacement permit.
+
+[SG-IMPORT-B0065] Wrong Importer Name and UEN Declared
+Only the importer name and UEN should be changed. All other fields must remain unchanged.
+
+[SG-IMPORT-B0066] Errors in an In-Payment Permit
+Errors in an In-Payment Permit
+
+[SG-IMPORT-B0067] In-Payment Permit Taken Instead of INP-APS Permit for MES Trader
+In-Payment Permit Taken Instead of INP-APS Permit for MES Trader
+
+[SG-IMPORT-B0068] In-Payment Permit Taken Instead of INP-APS Permit for MES Trader
+An INP-APS permit should be obtained at the time of import.
+
+[SG-IMPORT-B0069] In-Payment Permit Taken Instead of INP-APS Permit for MES Trader
+A replacement permit is not required if the In-Payment (IPT) permit was already used.
+
+[SG-IMPORT-B0070] In-Payment Permit Taken Instead of INP-APS Permit for MES Trader
+If the declaring agent has paid GST, they may seek reimbursement from the importer , who may then claim the GST as input tax in their GST return to IRAS.
+
+[SG-IMPORT-B0071] Wrong Importer Declared
+Wrong Importer Declared
+
+[SG-IMPORT-B0072] Wrong Importer Declared
+A replacement In-Payment permit with the correct importer’s UEN and name must be obtained.
+
+[SG-IMPORT-B0073] Wrong Importer Declared
+If foreign currency values were incorrectly declared, use the initial permit’s exchange rate when applying for the replacement permit.
+
+[SG-IMPORT-B0074] Wrong Importer Declared
+The importer or declaring agent may submit a refund request via TradeNet with the reason for refund for duties/GST paid on the wrong permit.
+
+[SG-IMPORT-B0075] Wrong Value of Goods Declared
+Wrong Value of Goods Declared
+
+[SG-IMPORT-B0076] Wrong Value of Goods Declared
+Take up a Short-Payment permit ↗ (opens in new tab) to account for the shortfall in duty and/or GST.
+
+[SG-IMPORT-B0077] Wrong Value of Goods Declared
+For over-payment or wrong payment, submit a refund request via TradeNet with the reason for refund.
+
+[SG-IMPORT-B0078] Wrong Information Declared and Cannot Be Amended
+Wrong Information Declared and Cannot Be Amended
+
+[SG-IMPORT-B0079] Wrong Information Declared and Cannot Be Amended
+If none of the above corrective options apply, lodge a Voluntary Disclosure.
+
+[SG-IMPORT-B0080] Examples of Common Offences
+Examples of Common Offences
+
+[SG-IMPORT-B0081] Incorrect Declaration on Value of Goods
+Incorrect Declaration on Value of Goods
+
+[SG-IMPORT-B0082] Incorrect Declaration on Value of Goods
+Examples:
+
+[SG-IMPORT-B0083] Incorrect Declaration on Value of Goods
+Insurance charges omitted when declaring GST payment permit
+
+[SG-IMPORT-B0084] Incorrect Declaration on Value of Goods
+Free gifts provided by overseas suppliers not declared
+
+[SG-IMPORT-B0085] Failure to Declare Imported Goods
+Failure to Declare Imported Goods
+
+[SG-IMPORT-B0086] Failure to Declare Imported Goods
+Example:
+
+[SG-IMPORT-B0087] Failure to Declare Imported Goods
+Undeclared goods found inside containers imported into Singapore
+
+[SG-IMPORT-B0088] Failure to Produce Trade Documents
+Failure to Produce Trade Documents
+
+[SG-IMPORT-B0089] Failure to Produce Trade Documents
+Examples:
+
+[SG-IMPORT-B0090] Failure to Produce Trade Documents
+Invoice, bill of lading, certificate of origin not produced for verification upon request
+
+[SG-IMPORT-B0091] Failure to Produce Permit for Clearance
+Failure to Produce Permit for Clearance
+
+[SG-IMPORT-B0092] Failure to Produce Permit for Clearance
+Example:
+
+[SG-IMPORT-B0093] Failure to Produce Permit for Clearance
+Haulier fails to produce goods and customs permit with supporting documents for endorsement
+
+[SG-IMPORT-B0094] Unauthorised Tampering
+Unauthorised Tampering
+
+[SG-IMPORT-B0095] Unauthorised Tampering
+Examples:
+
+[SG-IMPORT-B0096] Unauthorised Tampering
+Tampering/opening/breaking/altering or removing Customs lock or red seal affixed on the container
+
+[SG-IMPORT-B0097] Unauthorised Tampering
+Tampering with safeguards on containerised dutiable goods
+
+[SG-IMPORT-B0098] Unauthorised Tampering
+For minor offences, Singapore Customs may compound offences up to S$5,000 per offence . Fraudulent or serious cases may be prosecuted.
+
+[SG-IMPORT-B0099] Penalties Upon Conviction for Key Offences
+Penalties Upon Conviction for Key Offences
+
+[SG-IMPORT-B0100] Penalties Upon Conviction for Key Offences
+Common customs offences and penalties upon conviction.
+
+[SG-IMPORT-B0101] Penalties Upon Conviction for Key Offences
+Offence Penalty Upon Conviction
+
+[SG-IMPORT-B0102] Penalties Upon Conviction for Key Offences
+Making an incorrect declaration (Section 128(1)(a) Customs Act) Fine up to S$10,000 or the equivalent of duty/GST payable (whichever is higher), or imprisonment up to 12 months, or both.
+
+[SG-IMPORT-B0103] Penalties Upon Conviction for Key Offences
+Incorrect or incomplete declaration of value of goods imported into or manufactured in Singapore for duty/GST assessment (Section 128(1)(c)) Same penalties as above.
+
+[SG-IMPORT-B0104] Penalties Upon Conviction for Key Offences
+Failure to declare goods imported into/exported from/transhipped in Singapore (Section 128B(1)(a)) Same penalties as above.
+
+[SG-IMPORT-B0105] Penalties Upon Conviction for Key Offences
+Failure to declare value of goods for duty/GST assessment (Section 128B(1)(b)) Same penalties as above.
+
+[SG-IMPORT-B0106] Penalties Upon Conviction for Key Offences
+Failure/refusal to produce trade documents (Section 128C) Same penalties as above.
+
+[SG-IMPORT-B0107] Penalties Upon Conviction for Key Offences
+Failure to comply with conditions for removal of goods from customs control (Section 27(1)(c)) Fine up to S$5,000.
+
+[SG-IMPORT-B0108] Penalties Upon Conviction for Key Offences
+Making a false declaration (Section 28(1)(a), RIEA) Fine up to S$10,000 or imprisonment up to 2 years, or both.
+
+[SG-IMPORT-B0109] Penalties Upon Conviction for Key Offences
+Importing/exporting/transhipping without permit (Reg. 3(1), RIER) First conviction: Fine up to S$100,000 or 3 times value of goods (whichever greater), or imprisonment up to 2 years, or both. Second or subsequent conviction: Fine up to S$200,000 or 4 times the value of the goods, whichever is greater, or imprisonment not exceeding 3 years, or both.
+
+[SG-IMPORT-B0110] Penalties Upon Conviction for Key Offences
+Unauthorised tampering of seals/safeguards (Reg. 16(4), Container Regs) First conviction: Fine up to S$5,000. Second or subsequent conviction: Fine up to S$8,000.
+
+[SG-IMPORT-B0111] Best Practices
+Best Practices
+
+[SG-IMPORT-B0112] Do
+Do
+
+[SG-IMPORT-B0113] Do
+Inform Singapore Customs of any change in company particulars.
+
+[SG-IMPORT-B0114] Do
+Understand import procedures and declaration requirements.
+
+[SG-IMPORT-B0115] Do
+Know the contents of each consignment.
+
+[SG-IMPORT-B0116] Do
+Provide full supporting documents to your declaring agent.
+
+[SG-IMPORT-B0117] Do
+Include freight and insurance charges in declared value.
+
+[SG-IMPORT-B0118] Do
+Declare all additional goods (samples, gifts, free-of-charge (FOC) items).
+
+[SG-IMPORT-B0119] Do
+Ensure Harmonised System (HS) codes, quantities and descriptions are accurate.
+
+[SG-IMPORT-B0120] Do
+Comply with all permit conditions.
+
+[SG-IMPORT-B0121] Do
+Apply for Customs supervision for unstuffing if a container is affixed with the Customs red seal.
+
+[SG-IMPORT-B0122] Do
+Retain supporting documents for 5 years.
+
+[SG-IMPORT-B0123] Do Not
+Do Not
+
+[SG-IMPORT-B0124] Do Not
+Make declarations without verifying authenticity of documents.
+
+[SG-IMPORT-B0125] Do Not
+Use pro-forma invoices for permit application.
+
+[SG-IMPORT-B0126] Do Not
+Declare nominal value for samples or FOC items.
+
+[SG-IMPORT-B0127] Do Not
+Declare the country of the port of loading as the country of origin, when the goods actually originate from another country.
+
+[SG-IMPORT-B0128] Do Not
+Share TradeNet user ID or password.
+
+[SG-IMPORT-B0129] Do Not
+Use your UEN to import goods not belonging to you (unless consolidating for customers without UEN — you remain responsible).
+
+[SG-IMPORT-B0130] For More Information
+For More Information
+
+[SG-IMPORT-B0131] For More Information
+Hand-carried Temporary Imported Goods
+
+[SG-IMPORT-B0132] For More Information
+Types of Import Permits
+
+[SG-IMPORT-B0133] For More Information
+Permit Validity and Error Messages
+
+[SG-IMPORT-B0134] For More Information
+Permit Amendments and Cancellation
+
+[SG-IMPORT-B0135] For More Information
+Claiming Preferential Tariff Treatment for Dutiable Imports
+
+[SG-IMPORT-B0136] For More Information
+Importing Trade Samples
+
+[SG-IMPORT-B0137] For More Information
+Importing by Postal or Courier Service
+
+[SG-IMPORT-B0138] For More Information
+Importing of Pets for Commercial Purpose
+
+[SG-IMPORT-B0139] For More Information
+Importing Personal Pets as Part of a Change of Residence
+
+[SG-IMPORT-B0140] For More Information
+Importing Investment Precious Metals (IPMs)
+
+[SG-IMPORT-B0141] For More Information
+Importing Medicinal Products and Therapeutic Products for Clinical Trials
+
+[SG-IMPORT-B0142] For More Information
+Importing Motor Vehicles Granted Duty Exemption and Boats Granted GST Relief
+
+[SG-IMPORT-B0143] For More Information
+Importing Empty Freight Containers, Pallets and Packing
+
+[SG-IMPORT-B0144] For More Information
+Importing Ethyl Alcohol
+
+[SG-IMPORT-B0145] For More Information
+Importing Goods for Destruction or Recycling
+
+[SG-IMPORT-B0146] For More Information
+Re-importing Shut-out Goods
+
+[SG-IMPORT-B0147] For More Information
+Re-importing Goods Sent Overseas for Activities
+
+[SG-IMPORT-B0148] For More Information
+Importing Used Household Articles and Personal Effects
+
+[SG-IMPORT-B0149] For More Information
+Authorised Piers and Places

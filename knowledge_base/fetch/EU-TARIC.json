@@ -1,0 +1,13 @@
+{
+  "source_id": "EU-TARIC",
+  "requested_url": "https://taxation-customs.ec.europa.eu/online-services/online-services-and-databases-customs/eu-customs-tariff-taric_en",
+  "retrieved_at": "2026-10-17T19:23:00.619312+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://taxation-customs.ec.europa.eu/online-services/online-services-and-databases-customs/eu-customs-tariff-taric_en",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 98649,
+  "raw_path": "raw/EU-TARIC.html",
+  "last_modified": null,
+  "etag": null
+}

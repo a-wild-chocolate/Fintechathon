@@ -1,0 +1,13 @@
+{
+  "source_id": "UK-TARIFF",
+  "requested_url": "https://www.gov.uk/trade-tariff",
+  "retrieved_at": "2026-10-17T19:23:02.148100+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.gov.uk/trade-tariff",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 66312,
+  "raw_path": "raw/UK-TARIFF.html",
+  "last_modified": null,
+  "etag": "W/\"a79c6b8349a7885f0528ab9e4e972d94\""
+}

@@ -1,0 +1,75 @@
+{
+  "card_id": "RCEP-02",
+  "source_id": "RCEP-COO",
+  "title": "原产地证明字段缺项诊断",
+  "summary_zh": "RCEP附件列明出口商、进口商、商品描述、六位HS编码、原产标准、发票等最低信息，适合做证明文件字段核对。",
+  "summary_en": "The minimum-information annex identifies parties, goods description, six-digit HS code, origin criterion and invoice information, among other fields for the relevant proof of origin.",
+  "anchor_terms": [
+    "最低信息要求",
+    "发票"
+  ],
+  "required_order_fields": [
+    "exporter",
+    "producer",
+    "importer",
+    "hs6",
+    "origin_criterion",
+    "invoice_number",
+    "certificate_number"
+  ],
+  "tradex_workflow": "Extract the certificate fields, compare them with the invoice and order, and ask for any missing or inconsistent field.",
+  "cash_effect": "Track origin-document readiness before applying a preference to the cost scenario.",
+  "keywords": [
+    "RCEP",
+    "原产地证",
+    "字段",
+    "缺项",
+    "HS编码",
+    "certificate"
+  ],
+  "title_en": "Missing fields in proof of origin",
+  "jurisdiction": "RCEP",
+  "source_title": "RCEP 原产地证明最低信息要求",
+  "source_url": "https://fta.mofcom.gov.cn/upload/agreementFiles/rcep/rceppdf/d3z_fj2_cn.pdf",
+  "publisher": "Ministry of Commerce of China / RCEP treaty text",
+  "source_type": "treaty",
+  "source_language": "zh",
+  "topic": "origin_documents",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2027-01-16",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "RCEP-COO-B0001",
+      "locator": "page=1",
+      "path": "extracted/RCEP-COO.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "原产地证明字段缺项诊断\nRCEP附件列明出口商、进口商、商品描述、六位HS编码、原产标准、发票等最低信息，适合做证明文件字段核对。\nThe minimum-information annex identifies parties, goods description, six-digit HS code, origin criterion and invoice information, among other fields for the relevant proof of origin.\nKeywords: RCEP, 原产地证, 字段, 缺项, HS编码, certificate"
+}

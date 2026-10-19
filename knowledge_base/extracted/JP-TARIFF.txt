@@ -1,0 +1,179 @@
+[JP-TARIFF-B0001] Japan's Tariff Schedule ( Statistical Code for Import )
+Japan's Tariff Schedule ( Statistical Code for Import )
+
+[JP-TARIFF-B0002] Japan's Tariff Schedule ( Statistical Code for Import )
+August 8, 2026
+
+[JP-TARIFF-B0003] Japan's Tariff Schedule ( Statistical Code for Import )
+August 1, 2026
+
+[JP-TARIFF-B0004] Japan's Tariff Schedule ( Statistical Code for Import )
+July 9, 2026
+
+[JP-TARIFF-B0005] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2026
+
+[JP-TARIFF-B0006] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2026
+
+[JP-TARIFF-B0007] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2025
+
+[JP-TARIFF-B0008] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2025
+
+[JP-TARIFF-B0009] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2024
+
+[JP-TARIFF-B0010] Japan's Tariff Schedule ( Statistical Code for Import )
+February 1, 2024
+
+[JP-TARIFF-B0011] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2024
+
+[JP-TARIFF-B0012] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2023
+
+[JP-TARIFF-B0013] Japan's Tariff Schedule ( Statistical Code for Import )
+February 21, 2023
+
+[JP-TARIFF-B0014] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2023
+
+[JP-TARIFF-B0015] Japan's Tariff Schedule ( Statistical Code for Import )
+December 8, 2022
+
+[JP-TARIFF-B0016] Japan's Tariff Schedule ( Statistical Code for Import )
+December 1, 2022
+
+[JP-TARIFF-B0017] Japan's Tariff Schedule ( Statistical Code for Import )
+November 29, 2022
+
+[JP-TARIFF-B0018] Japan's Tariff Schedule ( Statistical Code for Import )
+Apr 1, 2022
+
+[JP-TARIFF-B0019] Japan's Tariff Schedule ( Statistical Code for Import )
+Jan 1, 2022
+
+[JP-TARIFF-B0020] Japan's Tariff Schedule ( Statistical Code for Import )
+Oct 22, 2021
+
+[JP-TARIFF-B0021] Japan's Tariff Schedule ( Statistical Code for Import )
+Sep 19, 2021
+
+[JP-TARIFF-B0022] Japan's Tariff Schedule ( Statistical Code for Import )
+Apr 1, 2021
+
+[JP-TARIFF-B0023] Japan's Tariff Schedule ( Statistical Code for Import )
+Jan 1, 2021
+
+[JP-TARIFF-B0024] Japan's Tariff Schedule ( Statistical Code for Import )
+Oct 1, 2020
+
+[JP-TARIFF-B0025] Japan's Tariff Schedule ( Statistical Code for Import )
+June 27, 2020
+
+[JP-TARIFF-B0026] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2020
+
+[JP-TARIFF-B0027] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2020
+
+[JP-TARIFF-B0028] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2019
+
+[JP-TARIFF-B0029] Japan's Tariff Schedule ( Statistical Code for Import )
+February 1, 2019
+
+[JP-TARIFF-B0030] Japan's Tariff Schedule ( Statistical Code for Import )
+January 14, 2019
+
+[JP-TARIFF-B0031] Japan's Tariff Schedule ( Statistical Code for Import )
+December 30, 2018
+
+[JP-TARIFF-B0032] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2018
+
+[JP-TARIFF-B0033] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2018
+
+[JP-TARIFF-B0034] Japan's Tariff Schedule ( Statistical Code for Import )
+May 16, 2017
+
+[JP-TARIFF-B0035] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2017
+
+[JP-TARIFF-B0036] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2017
+
+[JP-TARIFF-B0037] Japan's Tariff Schedule ( Statistical Code for Import )
+June 7, 2016
+
+[JP-TARIFF-B0038] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2016
+
+[JP-TARIFF-B0039] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2016
+
+[JP-TARIFF-B0040] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2015
+
+[JP-TARIFF-B0041] Japan's Tariff Schedule ( Statistical Code for Import )
+January 15, 2015
+
+[JP-TARIFF-B0042] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2015
+
+[JP-TARIFF-B0043] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2014
+
+[JP-TARIFF-B0044] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2014
+
+[JP-TARIFF-B0045] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2013
+
+[JP-TARIFF-B0046] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2013
+
+[JP-TARIFF-B0047] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2012
+
+[JP-TARIFF-B0048] Japan's Tariff Schedule ( Statistical Code for Import )
+March 1, 2012
+
+[JP-TARIFF-B0049] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2012
+
+[JP-TARIFF-B0050] Japan's Tariff Schedule ( Statistical Code for Import )
+August 1, 2011
+
+[JP-TARIFF-B0051] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2011
+
+[JP-TARIFF-B0052] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2011
+
+[JP-TARIFF-B0053] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2010
+
+[JP-TARIFF-B0054] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2010
+
+[JP-TARIFF-B0055] Japan's Tariff Schedule ( Statistical Code for Import )
+June 1, 2009
+
+[JP-TARIFF-B0056] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2009
+
+[JP-TARIFF-B0057] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2009
+
+[JP-TARIFF-B0058] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2008
+
+[JP-TARIFF-B0059] Japan's Tariff Schedule ( Statistical Code for Import )
+January 1, 2008
+
+[JP-TARIFF-B0060] Japan's Tariff Schedule ( Statistical Code for Import )
+April 1, 2007

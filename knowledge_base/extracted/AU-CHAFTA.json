@@ -1,0 +1,1363 @@
+{
+  "source_id": "AU-CHAFTA",
+  "method": "web_tool_excerpt",
+  "coverage": "selected lines, not full original",
+  "blocks": [
+    {
+      "block_id": "AU-CHAFTA-W0275",
+      "text": "The China-Australia Free Trade Agreement (ChAFTA) improves Australia's access to our largest trading partner. Australia is one of only a handful of developed countries to conclude a Free Trade Agreement (FTA) with China, giving our businesses a competitive advantage.",
+      "section": "Selected source excerpt",
+      "locator": "web extracted line 275"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0276",
+      "text": "ChAFTA increases opportunities by eliminating tariffs on the vast majority of trade in goods between Australia and China. This benefits Australian businesses that export Australian goods to China or import Chinese goods for sale in Australia.",
+      "section": "Selected source excerpt",
+      "locator": "web extracted line 276"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0277",
+      "text": "Tariffs, or customs duties, are taxes imposed by governments on goods arriving from overseas. From the date of entry into force, ChAFTA set China's tariffs at zero for more than 85 per cent (by 2015 value) of Australian exports to enter China duty free or at preferential tariff rates. This proportion rose to 93 per cent coverage by 1 January 2019 and will reach 98 per cent once ChAFTA is fully implemented.",
+      "section": "Selected source excerpt",
+      "locator": "web extracted line 277"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0278",
+      "text": "ChAFTA s set Australian import tariffs at zero on 82 per cent of China's exports to Australia from day one, rising to 100 per cent tariff elimination by 1 January 2019.",
+      "section": "Selected source excerpt",
+      "locator": "web extracted line 278"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0279",
+      "text": "## This step-by-step guide seeks to assist Australian exporters and importers in taking advantage of preferential tariff treatment under ChAFTA.",
+      "section": "This step-by-step guide seeks to assist Australian exporters and importers in taking advantage of preferential tariff treatment under ChAFTA.",
+      "locator": "web extracted line 279"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0281",
+      "text": "It will help you answer four key questions:",
+      "section": "This step-by-step guide seeks to assist Australian exporters and importers in taking advantage of preferential tariff treatment under ChAFTA.",
+      "locator": "web extracted line 281"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0283",
+      "text": "1. What goods am I exporting or importing? (p. 3)",
+      "section": "This step-by-step guide seeks to assist Australian exporters and importers in taking advantage of preferential tariff treatment under ChAFTA.",
+      "locator": "web extracted line 283"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0285",
+      "text": "Identifying the customs tariff code for your goods is a critical first step.",
+      "section": "This step-by-step guide seeks to assist Australian exporters and importers in taking advantage of preferential tariff treatment under ChAFTA.",
+      "locator": "web extracted line 285"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0287",
+      "text": "2. How are these goods treated under ChAFTA? (pp. 4-5)",
+      "section": "This step-by-step guide seeks to assist Australian exporters and importers in taking advantage of preferential tariff treatment under ChAFTA.",
+      "locator": "web extracted line 287"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0289",
+      "text": "Identify the lower (preferential) duty rate for your goods.",
+      "section": "This step-by-step guide seeks to assist Australian exporters and importers in taking advantage of preferential tariff treatment under ChAFTA.",
+      "locator": "web extracted line 289"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0290",
+      "text": "3. Where are my goods produced (are they 'originating' goods that will qualify for lower tariffs under ChAFTA? (pp. 6-13)",
+      "section": "This step-by-step guide seeks to assist Australian exporters and importers in taking advantage of preferential tariff treatment under ChAFTA.",
+      "locator": "web extracted line 290"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0292",
+      "text": "Only goods that 'originate' in Australia or China are eligible for preferential tariff treatment under ChAFTA. There are specific rules to determine eligibility. This prevents parties from other countries gaining the benefits of ChAFTA by simply transhipping their goods through Australia or China.",
+      "section": "This step-by-step guide seeks to assist Australian exporters and importers in taking advantage of preferential tariff treatment under ChAFTA.",
+      "locator": "web extracted line 292"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0293",
+      "text": "4. How to certify the origin of your goods to ensure you get the lower tariff rate (pp. 14-15)",
+      "section": "This step-by-step guide seeks to assist Australian exporters and importers in taking advantage of preferential tariff treatment under ChAFTA.",
+      "locator": "web extracted line 293"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0295",
+      "text": "Goods seeking preferential treatment under ChAFTA must be accompanied by appropriate documentation, either a 'certificate of origin' or a 'declaration of origin'.",
+      "section": "This step-by-step guide seeks to assist Australian exporters and importers in taking advantage of preferential tariff treatment under ChAFTA.",
+      "locator": "web extracted line 295"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0297",
+      "text": "The FTA Portal – online help for traders",
+      "section": "This step-by-step guide seeks to assist Australian exporters and importers in taking advantage of preferential tariff treatment under ChAFTA.",
+      "locator": "web extracted line 297"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0298",
+      "text": "To help apply this guide to your specific product, a useful online portal is available to assist you to make the most of the FTA with China. It is recommended you read this guide first and then visit the portal at https://ftaportal.dfat.gov.au/†ftaportal.dfat.gov.au L299: ## 1 What",
+      "section": "This step-by-step guide seeks to assist Australian exporters and importers in taking advantage of preferential tariff treatment under ChAFTA.",
+      "locator": "web extracted line 298"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0300",
+      "text": "### Step 1: identify the tariff classification of your goods",
+      "section": "Step 1: identify the tariff classification of your goods",
+      "locator": "web extracted line 300"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0302",
+      "text": "Determining how ChAFTA treats a particular good depends on correct identification of that good.",
+      "section": "Step 1: identify the tariff classification of your goods",
+      "locator": "web extracted line 302"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0304",
+      "text": "In ChAFTA, goods are identified by reference to an internationally-recognised system known as the Harmonized Commodity Description and Coding System, commonly referred to as the Harmonized System (HS). The HS is a common goods classification system of more than 5200 six-digit product categories (see table on page 5 for examples).",
+      "section": "Step 1: identify the tariff classification of your goods",
+      "locator": "web extracted line 304"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0305",
+      "text": "Typically, countries further sub-divide the six-digit HS product categories into eight-digit or more tariff lines for greater specificity. (Australia and China both use eight-digit tariff codes for customs duties). Tariff codes beyond the HS six-digit level are not comparable between countries.",
+      "section": "Step 1: identify the tariff classification of your goods",
+      "locator": "web extracted line 305"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0306",
+      "text": "### Classification",
+      "section": "Classification",
+      "locator": "web extracted line 306"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0308",
+      "text": "To find out the HS code applicable to your product, visit the FTA Portal†ftaportal.dfat.gov.au , type in your product name, and click through to the eight or nine digit HS code that best fits your product.",
+      "section": "Classification",
+      "locator": "web extracted line 308"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0310",
+      "text": "If you wish to access the full tariff schedule, importers into Australia can find Australian tariffs under Schedule 3 of the Customs Tariff Act 1995. Exporters to China can find China's tariffs in the Chinese Customs Service tariff schedule.",
+      "section": "Classification",
+      "locator": "web extracted line 310"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0311",
+      "text": "To be certain that you have identified the correct tariff for your good, we recommend that you consult a professional customs broker or freight forwarder.",
+      "section": "Classification",
+      "locator": "web extracted line 311"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0312",
+      "text": "### Advance Rulings",
+      "section": "Advance Rulings",
+      "locator": "web extracted line 312"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0314",
+      "text": "Australia and China are obliged to provide written advance rulings on tariff classification and origin in response to requests by importers, exporters or any person with a justifiable reason. Advance rulings are binding on the importing Customs administration and give greater certainty, in advance of trade taking place, to businesses who wish to know how their product will be treated under ChAFTA.",
+      "section": "Advance Rulings",
+      "locator": "web extracted line 314"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0315",
+      "text": "'Advance rulings' can cover the HS classification applicable to your goods and/or whether your goods are considered 'originating' for the purposes of ChAFTA (see Step 3).",
+      "section": "Advance Rulings",
+      "locator": "web extracted line 315"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0316",
+      "text": "#### For exporters",
+      "section": "For exporters",
+      "locator": "web extracted line 316"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0318",
+      "text": "Australian exporters may seek advance rulings†www.abf.gov.au from the China Customs Service. Your importer into China or your customs broker may be able to assist you with this process.",
+      "section": "For exporters",
+      "locator": "web extracted line 318"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0320",
+      "text": "#### For importers",
+      "section": "For importers",
+      "locator": "web extracted line 320"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0322",
+      "text": "If you are importing goods into Australia and would like an advance ruling, please contact Australian Border Force.",
+      "section": "For importers",
+      "locator": "web extracted line 322"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0324",
+      "text": "## 2 How",
+      "section": "2 How",
+      "locator": "web extracted line 324"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0325",
+      "text": "### Step 2: understand how your goods will be treated under ChAFTA",
+      "section": "Step 2: understand how your goods will be treated under ChAFTA",
+      "locator": "web extracted line 325"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0327",
+      "text": "Once you have the tariff code, you can determine how your goods will be treated under ChAFTA. Both China and Australia have set out their commitments to reduce duty rates on goods in lists, called tariff schedules (based on the HS).",
+      "section": "Step 2: understand how your goods will be treated under ChAFTA",
+      "locator": "web extracted line 327"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0328",
+      "text": "The FTA portal†ftaportal.dfat.gov.au is the easiest way to determine the preferential FTA tariff rate on your product. It is searchable by key word or HS code, and contains tariff rates for both imports and exports. The FTA portal also contains information about whether your product is likely to meet Rule of Origin (ROO) requirements.",
+      "section": "Step 2: understand how your goods will be treated under ChAFTA",
+      "locator": "web extracted line 328"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0329",
+      "text": "The schedules contain thousands of rows of tariff lines that show in the first column the base (starting) duty rate on which reductions occur. In a separate column, a code is used to indicate the tariff staging category. Further columns indicate the preferential duty rate each year from entry into force, until full implementation.",
+      "section": "Step 2: understand how your goods will be treated under ChAFTA",
+      "locator": "web extracted line 329"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0331",
+      "text": "Both countries' tariff schedules can be found in ChAFTA Chapter Two, Trade in Goods: Annex I – Schedule in Relation to Article 2.4 (Elimination of Customs Duties) L332: ### Exporters",
+      "section": "Step 2: understand how your goods will be treated under ChAFTA",
+      "locator": "web extracted line 331"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0334",
+      "text": "If you are exporting to China, you may want to check China's tariff schedule . China's staging categories range from A-0, indicating tariffs already eliminated, to B‑15, indicating gradual elimination of the tariff over 15 equal annual stages, which began on the date of ChAFTA's entry into force (20 December 2015).",
+      "section": "Step 2: understand how your goods will be treated under ChAFTA",
+      "locator": "web extracted line 334"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0336",
+      "text": "There are also two special categories relating to tariffs which will be eliminated over 10 or 12 equal annual stages, but where a special agricultural safeguard may apply.",
+      "section": "Step 2: understand how your goods will be treated under ChAFTA",
+      "locator": "web extracted line 336"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0337",
+      "text": "Category D relates to tariffs which will not be subject to any changes under ChAFTA. On these products, the general most-favoured nation (MFN) tariff rate will continue to apply (i.e. there is no preferential access under ChAFTA).",
+      "section": "Step 2: understand how your goods will be treated under ChAFTA",
+      "locator": "web extracted line 337"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0338",
+      "text": "For wool exports to China, ChAFTA also allows a quota of Australian exports, which would otherwise be subject to a tariff, to be imported duty free (referred to as a country specific tariff-rate quota). This allowed Australian businesses to export duty free (the 'in-quota' rate) up to a combined total of 30,000 tonnes annually from 1 January 2016, and growing over nine years to 44,324 tonnes. Details of the wool tariff quota are found in ChAFTA Annex 2-A .",
+      "section": "Step 2: understand how your goods will be treated under ChAFTA",
+      "locator": "web extracted line 338"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0339",
+      "text": "Australia also continues to be able to access China's WTO Tariff Quota for wool at in-quota rates of 1-3 per cent up to a volume of 287,000 tonnes per annum.",
+      "section": "Step 2: understand how your goods will be treated under ChAFTA",
+      "locator": "web extracted line 339"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0340",
+      "text": "All of these categories and conditions are explained in Chapter Two of ChAFTA and related annexures.",
+      "section": "Step 2: understand how your goods will be treated under ChAFTA",
+      "locator": "web extracted line 340"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0341",
+      "text": "### What year has ChAFTA reached now?",
+      "section": "What year has ChAFTA reached now?",
+      "locator": "web extracted line 341"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0343",
+      "text": "When reading the tariff schedules, it is important to understand the relevant 'year' of ChAFTA's operation. Year one under ChAFTA began on the date of entry into force (20 December 2015). The remainder of the agreement is therefore dated as follows:",
+      "section": "What year has ChAFTA reached now?",
+      "locator": "web extracted line 343"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0344",
+      "text": "Date commencing  | Year of ChAFTA's operation",
+      "section": "What year has ChAFTA reached now?",
+      "locator": "web extracted line 344"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0345",
+      "text": "--- | ---",
+      "section": "What year has ChAFTA reached now?",
+      "locator": "web extracted line 345"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0346",
+      "text": "20 Dec 2015  | 1",
+      "section": "What year has ChAFTA reached now?",
+      "locator": "web extracted line 346"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0347",
+      "text": "1 Jan 2016  | 2",
+      "section": "What year has ChAFTA reached now?",
+      "locator": "web extracted line 347"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0348",
+      "text": "1 Jan 2017  | 3",
+      "section": "What year has ChAFTA reached now?",
+      "locator": "web extracted line 348"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0349",
+      "text": "1 Jan 2018  | 4",
+      "section": "What year has ChAFTA reached now?",
+      "locator": "web extracted line 349"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0350",
+      "text": "1 Jan 2019  | 5",
+      "section": "What year has ChAFTA reached now?",
+      "locator": "web extracted line 350"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0351",
+      "text": "1 Jan 2020  | 6",
+      "section": "What year has ChAFTA reached now?",
+      "locator": "web extracted line 351"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0352",
+      "text": "1 Jan 2021  | 7",
+      "section": "What year has ChAFTA reached now?",
+      "locator": "web extracted line 352"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0353",
+      "text": "1 Jan 2022  | 8",
+      "section": "What year has ChAFTA reached now?",
+      "locator": "web extracted line 353"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0354",
+      "text": "1 Jan 2023  | 9",
+      "section": "What year has ChAFTA reached now?",
+      "locator": "web extracted line 354"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0355",
+      "text": "1 Jan 2024  | 10",
+      "section": "What year has ChAFTA reached now?",
+      "locator": "web extracted line 355"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0356",
+      "text": "1 Jan 2029  | 15",
+      "section": "What year has ChAFTA reached now?",
+      "locator": "web extracted line 356"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0357",
+      "text": "### Importers",
+      "section": "Importers",
+      "locator": "web extracted line 357"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0359",
+      "text": "If you are importing from China, you will need to check Australia's tariff schedule. Australian staging categories range from 0, indicating tariffs already eliminated, to 5, indicating gradual elimination of the base duty rate over 5 equal annual stages, which began on entry into force of ChAFTA and culminate in duty free access from 1 January 2019.",
+      "section": "Importers",
+      "locator": "web extracted line 359"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0360",
+      "text": "### Applied tariffs",
+      "section": "Applied tariffs",
+      "locator": "web extracted line 360"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0362",
+      "text": "You should be aware that the \"base rate\" under ChAFTA is the tariff that applied in 2013 and was used as the basis for negotiations. It is the base line for tariff reductions under the Agreement. Separate to ChAFTA, each Party is also able to unilaterally reduce its tariff at any time. For example, a country might temporarily reduce a tariff for a commodity that is in short supply.",
+      "section": "Applied tariffs",
+      "locator": "web extracted line 362"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0363",
+      "text": "Traders will need to assess whether it is more advantageous to import under the preferential tariff under the Agreement or the current MFN applied tariff.",
+      "section": "Applied tariffs",
+      "locator": "web extracted line 363"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0364",
+      "text": "### Reading the Tariff Schedule – examples",
+      "section": "Reading the Tariff Schedule – examples",
+      "locator": "web extracted line 364"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0366",
+      "text": "Each tariff line contains the following details:",
+      "section": "Reading the Tariff Schedule – examples",
+      "locator": "web extracted line 366"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0368",
+      "text": "* a 'base rate' column showing the base duty rate or tariff that applied in 2013. This is the starting point on which tariff treatment occurs; and",
+      "section": "Reading the Tariff Schedule – examples",
+      "locator": "web extracted line 368"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0369",
+      "text": "* the tariff that will be applied according to the year of ChAFTA implementation.",
+      "section": "Reading the Tariff Schedule – examples",
+      "locator": "web extracted line 369"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0371",
+      "text": "For example, using China's schedule:",
+      "section": "Reading the Tariff Schedule – examples",
+      "locator": "web extracted line 371"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0372",
+      "text": "HS Code  | Description  | Base Rate  | Staging Category  | Year 1 20 Dec 2015  | Year 2 1 Jan 2016  | Year 3 1 Jan 2017  | Year 4 1 Jan 2018  | Year 5 1 Jan 2019  | Year 6 1 Jan 2020  | Year 7 1 Jan 2021  | Year 8 1 Jan 2022  | Year 9 1 Jan 2023  | Year 10 1 Jan 2024",
+      "section": "Reading the Tariff Schedule – examples",
+      "locator": "web extracted line 372"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0373",
+      "text": "--- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---",
+      "section": "Reading the Tariff Schedule – examples",
+      "locator": "web extracted line 373"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0374",
+      "text": "07131090  | Other dried peas, shelled  | 5  | A-0  | 0%",
+      "section": "Reading the Tariff Schedule – examples",
+      "locator": "web extracted line 374"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0375",
+      "text": "04051000  | Butter  | 10  | B-10  | 9%  | 8%  | 7%  | 6%  | 5%  | 4%  | 3%  | 2%  | 1%  | 0%",
+      "section": "Reading the Tariff Schedule – examples",
+      "locator": "web extracted line 375"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0376",
+      "text": "1. For dried peas, China's base tariff is five per cent; this was eliminated on the day of entry into force (year 1- 20 December 2015) of ChAFTA, and will remain zero from there on.",
+      "section": "Reading the Tariff Schedule – examples",
+      "locator": "web extracted line 376"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0377",
+      "text": "2. In the case of butter, China's base tariff was 10 per cent; this tariff will be reduced to and bound at zero for products of Australian origin, over ten (10) equal annual stages beginning from entry into force (year 1, i.e. 20 December 2015) of the agreement. These goods are free of customs duty on 1 January 2024 (Year 10).",
+      "section": "Reading the Tariff Schedule – examples",
+      "locator": "web extracted line 377"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0378",
+      "text": "## 3 Where?",
+      "section": "3 Where?",
+      "locator": "web extracted line 378"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0379",
+      "text": "### Step 3: Determine whether your goods meet Rules of origin requirements",
+      "section": "Step 3: Determine whether your goods meet Rules of origin requirements",
+      "locator": "web extracted line 379"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0380",
+      "text": "ChAFTA preferential rules of origin (ROO) are agreed criteria used to ensure that only goods originating in either China or Australia enjoy the benefits of the Agreement. These rules prevent goods from a third party being transshipped through either China or Australia to take advantage of the FTA to access lower, preferential import tariffs.",
+      "section": "Step 3: Determine whether your goods meet Rules of origin requirements",
+      "locator": "web extracted line 380"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0381",
+      "text": "Any imports into China or Australia that do not comply with the ROO as set out in Chapter 3 and Annex II (Product Specific Rules of Origin) will be subject to the general (MFN) rate of duty, instead of the preferential rates available under ChAFTA.",
+      "section": "Step 3: Determine whether your goods meet Rules of origin requirements",
+      "locator": "web extracted line 381"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0382",
+      "text": "A good will be considered 'originating' if it is:",
+      "section": "Step 3: Determine whether your goods meet Rules of origin requirements",
+      "locator": "web extracted line 382"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0384",
+      "text": "* 'wholly obtained' or produced from wholly obtained goods in China or Australia; or",
+      "section": "Step 3: Determine whether your goods meet Rules of origin requirements",
+      "locator": "web extracted line 384"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0385",
+      "text": "* 'wholly produced' in China or Australia, or both, from materials classified as 'originating' in either country under the ROO; or",
+      "section": "Step 3: Determine whether your goods meet Rules of origin requirements",
+      "locator": "web extracted line 385"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0386",
+      "text": "* produced in China or Australia, or both, using inputs from other countries, while meeting the Product Specific Rule (PSR) applicable to that good, as set out in Chapter Three, Annex II .",
+      "section": "Step 3: Determine whether your goods meet Rules of origin requirements",
+      "locator": "web extracted line 386"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0387",
+      "text": "#### Wholly Obtained (WO) Goods",
+      "section": "Wholly Obtained (WO) Goods",
+      "locator": "web extracted line 387"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0389",
+      "text": "Wholly obtained goods are goods which are exclusively derived from one country. Typically these are agricultural goods and natural resources. The table on page 14 sets out the categories of goods which ChAFTA treats as wholly obtained.",
+      "section": "Wholly Obtained (WO) Goods",
+      "locator": "web extracted line 389"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0391",
+      "text": "ChAFTA also treats goods that are made exclusively from wholly obtained goods as being wholly obtained (Article. 3.3 (j) ).",
+      "section": "Wholly Obtained (WO) Goods",
+      "locator": "web extracted line 391"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0392",
+      "text": "#### Wholly Produced (WP) – Goods produced entirely in Australia or China",
+      "section": "Wholly Produced (WP) – Goods produced entirely in Australia or China",
+      "locator": "web extracted line 392"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0394",
+      "text": "Goods produced entirely in either China or Australia, or both, from materials classified as 'wholly obtained' or 'originating' under the Rules of Origin (ROO), will qualify as 'originating' under ChAFTA and qualify for preferential tariff treatment.",
+      "section": "Wholly Produced (WP) – Goods produced entirely in Australia or China",
+      "locator": "web extracted line 394"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0395",
+      "text": "#### Product Specific Rules (PSRs) – For goods containing inputs from outside China or Australia",
+      "section": "Product Specific Rules (PSRs) – For goods containing inputs from outside China or Australia",
+      "locator": "web extracted line 395"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0397",
+      "text": "Goods made from inputs sourced from outside China or Australia may still qualify as originating, as long as the non-originating inputs have undergone a substantial transformation in China or Australia, or both.",
+      "section": "Product Specific Rules (PSRs) – For goods containing inputs from outside China or Australia",
+      "locator": "web extracted line 397"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0398",
+      "text": "Product Specific Rules (PSRs) set out in ChAFTA Chapter Three- Annex II , enable Chinese and Australian customs authorities to determine whether a good has undergone a substantial transformation. If your good contains inputs from outside Australia or China, you will need to check the applicable PSR to",
+      "section": "Product Specific Rules (PSRs) – For goods containing inputs from outside China or Australia",
+      "locator": "web extracted line 398"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0400",
+      "text": "determine whether your good qualifies as originating.",
+      "section": "Product Specific Rules (PSRs) – For goods containing inputs from outside China or Australia",
+      "locator": "web extracted line 400"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0401",
+      "text": "#### Change in tariff classification",
+      "section": "Change in tariff classification",
+      "locator": "web extracted line 401"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0403",
+      "text": "Most PSRs in ChAFTA apply a change in tariff classification (CTC) approach. A CTC rule requires that any non-originating inputs/materials that are incorporated into the final good undergo a specified change in tariff classification (HS code) in Australia or China in the process of being incorporated into the final good.",
+      "section": "Change in tariff classification",
+      "locator": "web extracted line 403"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0404",
+      "text": "For example, pure gold (HS 7108.13) has a different classification to gold jewellery (HS 7113.19). In the process of being manufactured into jewellery, the tariff classification of pure gold changes, representing a substantial transformation. The ChAFTA PSRs mean that gold jewellery manufactured in Australia or China from imported pure gold (HS 7108.13) would count as 'originating', regardless of where the original gold came from.",
+      "section": "Change in tariff classification",
+      "locator": "web extracted line 404"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0405",
+      "text": "Different products may be subject to different CTC rules. There are three levels of CTC rule which could apply:",
+      "section": "Change in tariff classification",
+      "locator": "web extracted line 405"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0407",
+      "text": "* Change in Chapter (CC) – change in any of the first two digits (or 'chapter') of the HS code of non-originating materials once part of the finished product. E.g. importing steel (from HS Chapter 72) and making hand-operated spanners or wrenches (HS code 8204).",
+      "section": "Change in tariff classification",
+      "locator": "web extracted line 407"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0408",
+      "text": "Change in tariff heading (CTH) – change in any of the first four digits of the HS code of non-originating materials once part of the finished product. E.g. changing pure gold",
+      "section": "Change in tariff classification",
+      "locator": "web extracted line 408"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0410",
+      "text": "* (HS 7108.13) to gold jewellery (HS 7113.19).",
+      "section": "Change in tariff classification",
+      "locator": "web extracted line 410"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0411",
+      "text": "* Change in tariff subheading (CTSH) – change in any of the six digits of the HS code of non-originating materials once part of the finished product. E.g. importing an antisera or immunological product (HS 3002.10) and using it to produce a vaccine for human medicine (HS 3002.20).",
+      "section": "Change in tariff classification",
+      "locator": "web extracted line 411"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0412",
+      "text": "Some CTC rules specifically exclude the possibility of applying a CTC rule to certain inputs. This is done by excluding specific chapters, headings or subheadings. For example, caustic soda in solution (HS 2815.12) is 'CTSH except from 2815.11'. Subheading 2815.11 includes caustic soda as a solid.",
+      "section": "Change in tariff classification",
+      "locator": "web extracted line 412"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0413",
+      "text": "This rule therefore means that if you import non-originating solid caustic soda and simply mix it with water to produce a caustic soda solution, the solution would not be considered originating and you would not be eligible for a preferential customs duty when it is exported to China.",
+      "section": "Change in tariff classification",
+      "locator": "web extracted line 413"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0414",
+      "text": "#### Regional Value Content",
+      "section": "Regional Value Content",
+      "locator": "web extracted line 414"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0416",
+      "text": "Some PSRs require a product to have undergone a specific amount of value-add in China or Australia, measured by the regional value content (RVC) of the good. Some PSRs provide a RVC rule as an alternative to a CTC rule, others require a RVC in addition to a CTC rule.",
+      "section": "Regional Value Content",
+      "locator": "web extracted line 416"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0418",
+      "text": "An RVC approach stipulates that originating materials and processes must represent a specific proportion of the product's final value. More information about calculating RVC is provided on page 14.",
+      "section": "Regional Value Content",
+      "locator": "web extracted line 418"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0419",
+      "text": "#### Other Approaches",
+      "section": "Other Approaches",
+      "locator": "web extracted line 419"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0421",
+      "text": "Some PSRs allow for a good to become originating if the non-originating materials undergo a specific manufacturing or production process, for example:",
+      "section": "Other Approaches",
+      "locator": "web extracted line 421"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0423",
+      "text": "* processes that involve non-originating chemicals undergoing various chemical reactions may grant origin on the resulting new chemicals;",
+      "section": "Other Approaches",
+      "locator": "web extracted line 423"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0424",
+      "text": "* for some agricultural products, smoking of non-originating fresh produce may grant origin; and",
+      "section": "Other Approaches",
+      "locator": "web extracted line 424"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0425",
+      "text": "* for some textile products, fully finishing non-originating raw fabric may grant origin.",
+      "section": "Other Approaches",
+      "locator": "web extracted line 425"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0426",
+      "text": "#### Note",
+      "section": "Note",
+      "locator": "web extracted line 426"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0428",
+      "text": "It is important to remember that ROO requirements do not replace any other import requirements such as import licences and biosecurity approvals.",
+      "section": "Note",
+      "locator": "web extracted line 428"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0429",
+      "text": "#### How to find the PSR applicable to your product",
+      "section": "How to find the PSR applicable to your product",
+      "locator": "web extracted line 429"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0431",
+      "text": "Using the tariff classification from step 1, you can check Chapter Three, Annex II: Product Specific Rules of Origin .",
+      "section": "How to find the PSR applicable to your product",
+      "locator": "web extracted line 431"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0432",
+      "text": "Using your goods tariff code, you can identify the relevant entry in the schedule. Note that PSRs are listed at the chapter (two digit), heading (four digit) or sub-heading (six-digit) level. Where a rule is listed at the chapter or heading level, that rule applies to all sub-headings that fall under that particular chapter or heading. Once you have found the relevant entry, the third column will identify the PSR for that product. For example:",
+      "section": "How to find the PSR applicable to your product",
+      "locator": "web extracted line 432"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0433",
+      "text": "HS Code  | Description  | PSR",
+      "section": "How to find the PSR applicable to your product",
+      "locator": "web extracted line 433"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0434",
+      "text": "--- | --- | ---",
+      "section": "How to find the PSR applicable to your product",
+      "locator": "web extracted line 434"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0435",
+      "text": "Chapter 19  | Preparations of cereals, flour, starch or milk; pastry cooks' products  | CC",
+      "section": "How to find the PSR applicable to your product",
+      "locator": "web extracted line 435"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0436",
+      "text": "2711  | Petroleum gases and other gaseous hydrocarbons  | CTH",
+      "section": "How to find the PSR applicable to your product",
+      "locator": "web extracted line 436"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0437",
+      "text": "2818.20  | - Aluminium oxide, other than artificial corundum  | CTSH except from heading 26.06 or subheading 2620.40",
+      "section": "How to find the PSR applicable to your product",
+      "locator": "web extracted line 437"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0439",
+      "text": "In the above example, non-originating inputs into preparations such as biscuits, must undergo a change in chapter (change in the first two digits of the HS classification).",
+      "section": "How to find the PSR applicable to your product",
+      "locator": "web extracted line 439"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0440",
+      "text": "Petroleum gases, on the other hand, must have all non-originating materials used in production undergo a change in tariff classification at the 4-digit level. Aluminium oxide must undergo a change in tariff classification at the 6-digit level but may not be produced from non-originating products of heading 2606 (aluminium ores) or subheading 2620.40 (aluminium slag or residue).",
+      "section": "How to find the PSR applicable to your product",
+      "locator": "web extracted line 440"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0441",
+      "text": "### Other Important Rules of Origin",
+      "section": "Other Important Rules of Origin",
+      "locator": "web extracted line 441"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0443",
+      "text": "There are other important factors to take into account when determining whether your good qualifies as originating.",
+      "section": "Other Important Rules of Origin",
+      "locator": "web extracted line 443"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0444",
+      "text": "#### De Minimis",
+      "section": "De Minimis",
+      "locator": "web extracted line 444"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0445",
+      "text": "Where a good contains only a small amount of imported inputs, but those non-originating inputs fail to achieve the necessary CTC once incorporated in the final good, the product may still qualify as originating. If the value of all non-originating materials does not exceed 10 per cent of the value of the good, the product will qualify under the de minimis rule. The goods seeking de minimis classification must comply with any other applicable requirements of the ROOs.",
+      "section": "De Minimis",
+      "locator": "web extracted line 445"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0446",
+      "text": "Further information can be found in ChAFTA Article. 3.7 . Box 3 on page 14 provides details on calculating a good's value.",
+      "section": "De Minimis",
+      "locator": "web extracted line 446"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0447",
+      "text": "#### Cumulation",
+      "section": "Cumulation",
+      "locator": "web extracted line 447"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0449",
+      "text": "The rule of cumulation provides that goods which are originating in one Party are considered originating in the other Party for the purposes of ChAFTA. This means that if Australian-originating inputs were incorporated into a product made in China, that input would be treated as if it originated in China.",
+      "section": "Cumulation",
+      "locator": "web extracted line 449"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0450",
+      "text": "#### Fungible materials",
+      "section": "Fungible materials",
+      "locator": "web extracted line 450"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0452",
+      "text": "Fungible materials are those which are identical or interchangeable, because they are of the same kind of commercial quality, possess the same technical and physical characteristics, and, once mixed, cannot be readily distinguished. Examples include natural gas, grain, or simple parts",
+      "section": "Fungible materials",
+      "locator": "web extracted line 452"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0454",
+      "text": "(e.g. rivets). Specific accounting rules apply to exporters wishing to demonstrate that fungible goods are originating under ChAFTA. More information is available in Article. 3.9 .",
+      "section": "Fungible materials",
+      "locator": "web extracted line 454"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0455",
+      "text": "#### Minimal operations or processes",
+      "section": "Minimal operations or processes",
+      "locator": "web extracted line 455"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0457",
+      "text": "Goods will not qualify as originating if they have only undergone a simple process such as packaging, simple grinding or washing. A full list of processes that will not confer origin is available in ChAFTA Article 3.12 .",
+      "section": "Minimal operations or processes",
+      "locator": "web extracted line 457"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0458",
+      "text": "#### Neutral elements",
+      "section": "Neutral elements",
+      "locator": "web extracted line 458"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0460",
+      "text": "Materials which are used in the production of a good, but are not physically incorporated into the end product, are not counted in determining whether a product is originating. Examples include fuel and energy, tools, moulds, catalysts and solvents. A full list is available in ChAFTA Article. 3.11 .",
+      "section": "Neutral elements",
+      "locator": "web extracted line 460"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0461",
+      "text": "#### Accessories, spare parts and tools",
+      "section": "Accessories, spare parts and tools",
+      "locator": "web extracted line 461"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0463",
+      "text": "The origin of accessories, spare parts or tools presented and classified with a good will not be taken into account to assess whether a good has complied with applicable ROOs, provided that the quantity of accessories is what is customarily supplied with those finished goods and they are not invoiced separately. The value of accessories, spare parts and tools is considered, however, in assessing a good for the purposes of an RVC rule.",
+      "section": "Accessories, spare parts and tools",
+      "locator": "web extracted line 463"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0464",
+      "text": "#### Packing, packages and containers",
+      "section": "Packing, packages and containers",
+      "locator": "web extracted line 464"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0466",
+      "text": "Packing materials and containers for shipping and transport (not retail packaging) can be disregarded when",
+      "section": "Packing, packages and containers",
+      "locator": "web extracted line 466"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0468",
+      "text": "determining the origin of a good. Article 3.10 provides further detail.",
+      "section": "Packing, packages and containers",
+      "locator": "web extracted line 468"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0469",
+      "text": "Retail packaging materials, provided that they are classified with the good, are not taken into account in determining whether a product is originating. For example, in the case of wine bottled in non-originating bottles for retail sale, the bottles would not be taken into account in assessing whether the wine itself was originating. However, retail packaging materials are considered in assessing the value of non-originating materials in a good for the purposes of an RVC rule, where one applies.",
+      "section": "Packing, packages and containers",
+      "locator": "web extracted line 469"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0470",
+      "text": "Further information can be found in Article 3.10 .",
+      "section": "Packing, packages and containers",
+      "locator": "web extracted line 470"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0471",
+      "text": "#### Transit through a third-party",
+      "section": "Transit through a third-party",
+      "locator": "web extracted line 471"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0473",
+      "text": "ChAFTA is designed to reflect modern trading practices, including the use of transport and distribution hubs in third parties for consignments of goods. A good will be considered 'originating', despite being transported through a third country, if the goods meet a range of conditions including:",
+      "section": "Transit through a third-party",
+      "locator": "web extracted line 473"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0474",
+      "text": "* the goods do not undergo any operation other than unloading, reloading, storing, repacking, re-labelling, splitting up for transport reasons or any operation necessary to preserve the goods in good condition to be transported on to China or Australia;",
+      "section": "Transit through a third-party",
+      "locator": "web extracted line 474"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0475",
+      "text": "* the goods are not stored temporarily in a transport hub for longer than 12 months; and",
+      "section": "Transit through a third-party",
+      "locator": "web extracted line 475"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0476",
+      "text": "* the goods remain under customs control (N.B. for the purposes of the Treaty, goods transhipped through Hong Kong into Australia are deemed to be under 'customs control').",
+      "section": "Transit through a third-party",
+      "locator": "web extracted line 476"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0477",
+      "text": "Under the treaty, the importing Customs Administration may require specific additional documentation on customs control (and non-manipulation) for transhipped goods.",
+      "section": "Transit through a third-party",
+      "locator": "web extracted line 477"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0478",
+      "text": "#### For imports into Australia",
+      "section": "For imports into Australia",
+      "locator": "web extracted line 478"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0480",
+      "text": "For goods transhipped through a third party into Australia, including Singapore and Hong Kong, Australia will not require any specific additional documentation to grant preferential tariff treatment under the FTA; other than the commercial documentation ordinarily required to be kept by importers.",
+      "section": "For imports into Australia",
+      "locator": "web extracted line 480"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0481",
+      "text": "More information is available on the Australian Border Force website here: https://www.abf.gov.au/importing-exporting-and-manufacturing/free-trade-agreements/china†www.abf.gov.au L482: #### For exports to China",
+      "section": "For imports into Australia",
+      "locator": "web extracted line 481"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0484",
+      "text": "Articles 14 and 15 of China's Customs Decree 228 set out China's documentation requirements for when imports from Australia pass through third countries. These provisions should be read in conjunction with announcements 57 and 60 (see below).",
+      "section": "For imports into Australia",
+      "locator": "web extracted line 484"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0486",
+      "text": "The official Chinese versions and unofficial translations of these decrees and announcements .",
+      "section": "For imports into Australia",
+      "locator": "web extracted line 486"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0487",
+      "text": "For example, announcement 57 provides advice on streamlined arrangements for FTA transhipment through third countries (excluding Hong Kong or Macao). This applies to instances where the good is",
+      "section": "For imports into Australia",
+      "locator": "web extracted line 487"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0489",
+      "text": "supported by a single shipping document, issued by international courier services, civil aviation transportation companies, international shipping contractors and their agents, that shows both the point of origin in Australia and the destination in China.",
+      "section": "For imports into Australia",
+      "locator": "web extracted line 489"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0490",
+      "text": "China has also released an announcement (no.60 of 2015) to facilitate implementation of direct consignment through Hong Kong and Macao.",
+      "section": "For imports into Australia",
+      "locator": "web extracted line 490"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0492",
+      "text": "Related to this, the Hong Kong Customs and Excise Department has established a China Free Trade Agreement Transshipment Facilitation Scheme to assist implementation of the China's transhipment arrangements. Details are available here: http://www.customs.gov.hk/en/trade_facilitation/fta/index.html†www.customs.gov.hk .",
+      "section": "For imports into Australia",
+      "locator": "web extracted line 492"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0493",
+      "text": "## A guide to using Rules of Origin under ChAFTA",
+      "section": "A guide to using Rules of Origin under ChAFTA",
+      "locator": "web extracted line 493"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0495",
+      "text": "### 4 Certify",
+      "section": "4 Certify",
+      "locator": "web extracted line 495"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0497",
+      "text": "#### Step 4: Prepare a certificate of origin for your goods",
+      "section": "Step 4: Prepare a certificate of origin for your goods",
+      "locator": "web extracted line 497"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0499",
+      "text": "Once you have gone through the first three steps and determined that your good will qualify for preferential tariff treatment under ChAFTA, you will need to complete the appropriate documentation to demonstrate this, should you be asked, to the importing customs authority. This can be done by using a ChAFTA Certificate of Origin (COO), or Declaration of Origin (DOO).",
+      "section": "Step 4: Prepare a certificate of origin for your goods",
+      "locator": "web extracted line 499"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0500",
+      "text": "#### Certificate of Origin",
+      "section": "Certificate of Origin",
+      "locator": "web extracted line 500"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0502",
+      "text": "A COO must be issued by an authorised body in the country of origin and may need to be provided, on request, to customs officials in the importing country.",
+      "section": "Certificate of Origin",
+      "locator": "web extracted line 502"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0504",
+      "text": "A COO applies to a single shipment. It may cover one or more goods, but must not exceed 20 items (that is, 20 unique goods)) and may be valid for up to one year.",
+      "section": "Certificate of Origin",
+      "locator": "web extracted line 504"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0505",
+      "text": "For Australian exporters, Certificates of Origin can be obtained from an Australian accredited body under Australia’s Free Trade Agreement Certificate of Origin (FTA CoO) Recognition Scheme. See How to obtain a Certificate of Origin for more information.",
+      "section": "Certificate of Origin",
+      "locator": "web extracted line 505"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0507",
+      "text": "Or from Wine Australia†www.wineaustralia.com (for wine and wine-related products).",
+      "section": "Certificate of Origin",
+      "locator": "web extracted line 507"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0509",
+      "text": "Charges will apply for Certificates of Origin and may vary depending on authorised body.”",
+      "section": "Certificate of Origin",
+      "locator": "web extracted line 509"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0511",
+      "text": "For importers to Australia, China's authorised bodies are:",
+      "section": "Certificate of Origin",
+      "locator": "web extracted line 511"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0512",
+      "text": "* China Customs Service†english.customs.gov.cn (GACC)",
+      "section": "Certificate of Origin",
+      "locator": "web extracted line 512"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0513",
+      "text": "* The China Council for the Promotion of International Trade",
+      "section": "Certificate of Origin",
+      "locator": "web extracted line 513"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0515",
+      "text": "Contact details for these authorised bodies are listed on page 17.",
+      "section": "Certificate of Origin",
+      "locator": "web extracted line 515"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0516",
+      "text": "These authorised bodies have COO templates you can use. An example is included at the end of this guide, but exporters should seek the authorised template from the relevant authorising body. Traders should note that the 'overleaf instruction' forms part of the Certificate of Origin and should be included with the Certificate of Origin when declared at the border.",
+      "section": "Certificate of Origin",
+      "locator": "web extracted line 516"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0517",
+      "text": "For guidance on how to complete your COO (including how to indicate third party invoicing, how to declare your origin criterion and who can sign the form), please read the overleaf instruction accompanying the sample COO template. This guidance is also available at the back of this guide, on pages 19-21.",
+      "section": "Certificate of Origin",
+      "locator": "web extracted line 517"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0518",
+      "text": "#### Declarations of Origin",
+      "section": "Declarations of Origin",
+      "locator": "web extracted line 518"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0520",
+      "text": "Alternatively, an exporter or producer may choose to complete a Declaration of Origin (DOO). A DOO may be accepted in place of a COO, for goods covered by an advance ruling on ChAFTA origin (see section on advance rulings on page 3 above and ChAFTA Article 4.9 ).",
+      "section": "Declarations of Origin",
+      "locator": "web extracted line 520"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0521",
+      "text": "A DOO is completed by the exporter of a good and must comply with the template set out in Annex 3-B of ChAFTA (also available on page 21 of this guide). There is no need for a DOO to be approved by an authorised body. DOOs apply to a single shipment, may cover up to 20 items, and remain valid for one year.",
+      "section": "Declarations of Origin",
+      "locator": "web extracted line 521"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0522",
+      "text": "#### Record keeping",
+      "section": "Record keeping",
+      "locator": "web extracted line 522"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0524",
+      "text": "Under ChAFTA, exporters or producers must maintain all records necessary to demonstrate a goods' origin for three years after signing a COO, or longer where a Party's laws and regulations require.",
+      "section": "Record keeping",
+      "locator": "web extracted line 524"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0526",
+      "text": "Exporters or importers into Australia should note that records must be retained for five years and can be retained in hard copy or electronic format.",
+      "section": "Record keeping",
+      "locator": "web extracted line 526"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0528",
+      "text": "ChAFTA Article 3.20 provides details on record keeping requirements.",
+      "section": "Record keeping",
+      "locator": "web extracted line 528"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0529",
+      "text": "#### Waiver of certification",
+      "section": "Waiver of certification",
+      "locator": "web extracted line 529"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0531",
+      "text": "A COO or DOO will not always be required. For certain goods, Australia and China have waived the requirement altogether. Neither country will require a COO or DOO for goods where the total customs value is less than 1000 AUD (for Australia) or 6000 RMB (for China). ChAFTA allows both countries to raise this threshold as required. You should check with the relevant importing customs authority for more up-to-date information.",
+      "section": "Waiver of certification",
+      "locator": "web extracted line 531"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0532",
+      "text": "#### Verification",
+      "section": "Verification",
+      "locator": "web extracted line 532"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0534",
+      "text": "Customs authorities may need to verify the information contained in a COO or DOO. The approach they follow for such processes is outlined in ChAFTA Article 3.21 . Verification activities may involve:",
+      "section": "Verification",
+      "locator": "web extracted line 534"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0536",
+      "text": "* requests for information from the authorised body, the importer, the exporter, or the producer;",
+      "section": "Verification",
+      "locator": "web extracted line 536"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0537",
+      "text": "* requests for information from the exporting customs authority; or",
+      "section": "Verification",
+      "locator": "web extracted line 537"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0538",
+      "text": "* a request to undertake a verification visit to the premises of the exporter or producer.",
+      "section": "Verification",
+      "locator": "web extracted line 538"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0539",
+      "text": "#### Retrospective claims: seeking preferential rates following import",
+      "section": "Retrospective claims: seeking preferential rates following import",
+      "locator": "web extracted line 539"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0540",
+      "text": "Under ChAFTA, importers are entitled to claim preferential tariff treatment after importation of eligible goods, if a claim is not made at the time of importation. For imports into Australia, refunds can be claimed for up to 12 months of the date of shipment for imports where the certificate of origin is issued retrospectively, and up to 4 years for imports where a certificate of origin was held at the time of importation.",
+      "section": "Retrospective claims: seeking preferential rates following import",
+      "locator": "web extracted line 540"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0541",
+      "text": "Note that for imports to China, importers must note at the time of import their intention to make a retrospective claim. Importers have at least one year to apply for a refund of any excess duties paid.",
+      "section": "Retrospective claims: seeking preferential rates following import",
+      "locator": "web extracted line 541"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0542",
+      "text": "## Contacts for further information",
+      "section": "Contacts for further information",
+      "locator": "web extracted line 542"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0543",
+      "text": "### Australia",
+      "section": "Australia",
+      "locator": "web extracted line 543"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0545",
+      "text": "For general enquiries concerning ChAFTA",
+      "section": "Australia",
+      "locator": "web extracted line 545"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0546",
+      "text": "* Department of Foreign Affairs and Trade (DFAT)",
+      "section": "Australia",
+      "locator": "web extracted line 546"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0547",
+      "text": "Ph: (02) 6261 1111",
+      "section": "Australia",
+      "locator": "web extracted line 547"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0548",
+      "text": "Email: fta@dfat.gov.au (chinafta@dfat.gov.au)",
+      "section": "Australia",
+      "locator": "web extracted line 548"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0549",
+      "text": "Website: China–Australia Free Trade Agreement L550:   * DFAT FTA Portal",
+      "section": "Australia",
+      "locator": "web extracted line 549"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0551",
+      "text": "To help apply this guide to your specific product, a useful online portal is available to assist you to make the most of the FTA with China. The FTA Portal allows users to search for tariff outcomes by keyword or HS code, and links to step-by-step rules of origin guidance and certification information, as well as a snapshot of import market data relating to the searched product. Visit the portal here: www.ftaportal.dfat.gov.au†www.ftaportal.dfat.gov.au L552: For all Australian customs matters including import requirements and procedures, advance rulings, tariff classifications and rules of origin",
+      "section": "Australia",
+      "locator": "web extracted line 551"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0554",
+      "text": "* Australian Border Force",
+      "section": "Australia",
+      "locator": "web extracted line 554"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0555",
+      "text": "Email: CHAFTA@abf.gov.au",
+      "section": "Australia",
+      "locator": "web extracted line 555"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0556",
+      "text": "Website: Australian Border Force - China†www.abf.gov.au L557:",
+      "section": "Australia",
+      "locator": "web extracted line 556"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0558",
+      "text": "For enquiries regarding COOs for export into China",
+      "section": "Australia",
+      "locator": "web extracted line 558"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0559",
+      "text": "* Australian Chamber of Commerce and Industry",
+      "section": "Australia",
+      "locator": "web extracted line 559"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0560",
+      "text": "Ph: (02) 6273 2311",
+      "section": "Australia",
+      "locator": "web extracted line 560"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0561",
+      "text": "Email: info@acci.asn.au",
+      "section": "Australia",
+      "locator": "web extracted line 561"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0562",
+      "text": "Web: Australian Chamber of Commerce and Industry†www.acci.asn.au L563:   * Australian Industry Group",
+      "section": "Australia",
+      "locator": "web extracted line 562"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0564",
+      "text": "Ph: 1300 776 063",
+      "section": "Australia",
+      "locator": "web extracted line 564"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0565",
+      "text": "Email: trade.docs@aigroup.com.au",
+      "section": "Australia",
+      "locator": "web extracted line 565"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0566",
+      "text": "Website: AiGROUP L567:   * International Export Certification Services",
+      "section": "Australia",
+      "locator": "web extracted line 566"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0568",
+      "text": "Ph: (02) 8831 6395",
+      "section": "Australia",
+      "locator": "web extracted line 568"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0569",
+      "text": "Email: coo@ozdocs.com.au",
+      "section": "Australia",
+      "locator": "web extracted line 569"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0570",
+      "text": "Website: International Export Certification Services†www.ecertorigin.com L571:   * TradeWindow Origin",
+      "section": "Australia",
+      "locator": "web extracted line 570"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0572",
+      "text": "(02) 9098 5969",
+      "section": "Australia",
+      "locator": "web extracted line 572"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0573",
+      "text": "Email: originsupport@tradewindow.io",
+      "section": "Australia",
+      "locator": "web extracted line 573"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0574",
+      "text": "Web: TradeWindow Origin†tradewindow.io L575:   * Wine Australia",
+      "section": "Australia",
+      "locator": "web extracted line 574"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0576",
+      "text": "Ph: (08) 8228 2000",
+      "section": "Australia",
+      "locator": "web extracted line 576"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0577",
+      "text": "Website: Wine Australia†www.wineaustralia.com L578: ### China",
+      "section": "Australia",
+      "locator": "web extracted line 577"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0580",
+      "text": "* China Ministry of Commerce FTA Network",
+      "section": "Australia",
+      "locator": "web extracted line 580"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0581",
+      "text": "Website: China Council for the Promotion of International Trade Beijing",
+      "section": "Australia",
+      "locator": "web extracted line 581"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0583",
+      "text": "For enquiries regarding COOs for import to Australia",
+      "section": "Australia",
+      "locator": "web extracted line 583"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0585",
+      "text": "* China Customer Service",
+      "section": "Australia",
+      "locator": "web extracted line 585"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0586",
+      "text": "Website: english.customs.gov.cn†english.customs.gov.cn L587:   * The China Council for the Promotion of International Trade",
+      "section": "Australia",
+      "locator": "web extracted line 586"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0588",
+      "text": "Website: http://en.ccpit.org/info/index.html†en.ccpit.org L589: ## Certificate of Origin",
+      "section": "Australia",
+      "locator": "web extracted line 588"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0591",
+      "text": "(Sample only - originals to be supplied by authorised bodies)",
+      "section": "Australia",
+      "locator": "web extracted line 591"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0597",
+      "text": "DECLARATION OF ORIGIN",
+      "section": "Australia",
+      "locator": "web extracted line 597"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0599",
+      "text": "China-Australia Free Trade Agreement",
+      "section": "Australia",
+      "locator": "web extracted line 599"
+    }
+  ]
+}

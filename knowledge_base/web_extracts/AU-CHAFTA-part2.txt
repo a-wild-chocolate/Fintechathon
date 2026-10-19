@@ -1,0 +1,363 @@
+Guide to using ChAFTA to export or import | Australian Government Department of Foreign Affairs and Trade (https://www.dfat.gov.au/trade/agreements/in-force/chafta/doing-business-with-china/guide-to-using-chafta-to-export-or-import)
+citeturn134view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"turn131view0","lineno":420}); Total lines: 708
+L306: ### Classification
+L307: 
+L311: To be certain that you have identified the correct tariff for your good, we recommend that you consult a professional customs broker or freight forwarder.
+L312: ### Advance Rulings
+L313: 
+L314: Australia and China are obliged to provide written advance rulings on tariff classification and origin in response to requests by importers, exporters or any person with a justifiable reason. Advance rulings are binding on the importing Customs administration and give greater certainty, in advance of trade taking place, to businesses who wish to know how their product will be treated under ChAFTA.
+L315: 'Advance rulings' can cover the HS classification applicable to your goods and/or whether your goods are considered 'originating' for the purposes of ChAFTA (see Step 3).
+L316: #### For exporters
+L317: 
+L318: Australian exporters may seek cite167†advance rulings†www.abf.gov.au from the China Customs Service. Your importer into China or your customs broker may be able to assist you with this process.
+L319: 
+L320: #### For importers
+L321: 
+L322: If you are importing goods into Australia and would like an advance ruling, please contact Australian Border Force.
+L323: 
+L324: ## 2 How
+L325: ### Step 2: understand how your goods will be treated under ChAFTA
+L326: 
+L327: Once you have the tariff code, you can determine how your goods will be treated under ChAFTA. Both China and Australia have set out their commitments to reduce duty rates on goods in lists, called tariff schedules (based on the HS).
+L328: The cite166†FTA portal†ftaportal.dfat.gov.au is the easiest way to determine the preferential FTA tariff rate on your product. It is searchable by key word or HS code, and contains tariff rates for both imports and exports. The FTA portal also contains information about whether your product is likely to meet Rule of Origin (ROO) requirements.
+L329: The schedules contain thousands of rows of tariff lines that show in the first column the base (starting) duty rate on which reductions occur. In a separate column, a code is used to indicate the tariff staging category. Further columns indicate the preferential duty rate each year from entry into force, until full implementation.
+L330: 
+L331: Both countries' tariff schedules can be found in cite168†ChAFTA Chapter Two, Trade in Goods: Annex I – Schedule in Relation to Article 2.4 (Elimination of Customs Duties) L332: ### Exporters
+L333: 
+L334: If you are exporting to China, you may want to check cite168†China's tariff schedule . China's staging categories range from A-0, indicating tariffs already eliminated, to B‑15, indicating gradual elimination of the tariff over 15 equal annual stages, which began on the date of ChAFTA's entry into force (20 December 2015).
+L335: 
+L336: There are also two special categories relating to tariffs which will be eliminated over 10 or 12 equal annual stages, but where a special agricultural safeguard may apply.
+L337: Category D relates to tariffs which will not be subject to any changes under ChAFTA. On these products, the general most-favoured nation (MFN) tariff rate will continue to apply (i.e. there is no preferential access under ChAFTA).
+L338: For wool exports to China, ChAFTA also allows a quota of Australian exports, which would otherwise be subject to a tariff, to be imported duty free (referred to as a country specific tariff-rate quota). This allowed Australian businesses to export duty free (the 'in-quota' rate) up to a combined total of 30,000 tonnes annually from 1 January 2016, and growing over nine years to 44,324 tonnes. Details of the wool tariff quota are found in cite169†ChAFTA Annex 2-A .
+L339: Australia also continues to be able to access China's WTO Tariff Quota for wool at in-quota rates of 1-3 per cent up to a volume of 287,000 tonnes per annum.
+L340: All of these categories and conditions are explained in cite169†Chapter Two of ChAFTA and related annexures.
+L341: ### What year has ChAFTA reached now?
+L342: 
+L343: When reading the tariff schedules, it is important to understand the relevant 'year' of ChAFTA's operation. Year one under ChAFTA began on the date of entry into force (20 December 2015). The remainder of the agreement is therefore dated as follows:
+L344: Date commencing  | Year of ChAFTA's operation
+L345: --- | ---
+L346: 20 Dec 2015  | 1
+L347: 1 Jan 2016  | 2
+L348: 1 Jan 2017  | 3
+L349: 1 Jan 2018  | 4
+L350: 1 Jan 2019  | 5
+L351: 1 Jan 2020  | 6
+L352: 1 Jan 2021  | 7
+L353: 1 Jan 2022  | 8
+L354: 1 Jan 2023  | 9
+L355: 1 Jan 2024  | 10
+L356: 1 Jan 2029  | 15
+L357: ### Importers
+L358: 
+L359: If you are importing from China, you will need to check Australia's tariff schedule. Australian staging categories range from 0, indicating tariffs already eliminated, to 5, indicating gradual elimination of the base duty rate over 5 equal annual stages, which began on entry into force of ChAFTA and culminate in duty free access from 1 January 2019.
+L360: ### Applied tariffs
+L361: 
+L362: You should be aware that the "base rate" under ChAFTA is the tariff that applied in 2013 and was used as the basis for negotiations. It is the base line for tariff reductions under the Agreement. Separate to ChAFTA, each Party is also able to unilaterally reduce its tariff at any time. For example, a country might temporarily reduce a tariff for a commodity that is in short supply.
+L363: Traders will need to assess whether it is more advantageous to import under the preferential tariff under the Agreement or the current MFN applied tariff.
+L364: ### Reading the Tariff Schedule – examples
+L365: 
+L366: Each tariff line contains the following details:
+L367: 
+L368:   * a 'base rate' column showing the base duty rate or tariff that applied in 2013. This is the starting point on which tariff treatment occurs; and
+L369:   * the tariff that will be applied according to the year of ChAFTA implementation.
+L370: 
+L371: For example, using China's schedule:
+L372: HS Code  | Description  | Base Rate  | Staging Category  | Year 1 20 Dec 2015  | Year 2 1 Jan 2016  | Year 3 1 Jan 2017  | Year 4 1 Jan 2018  | Year 5 1 Jan 2019  | Year 6 1 Jan 2020  | Year 7 1 Jan 2021  | Year 8 1 Jan 2022  | Year 9 1 Jan 2023  | Year 10 1 Jan 2024
+L373: --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
+L374: 07131090  | Other dried peas, shelled  | 5  | A-0  | 0%
+L375: 04051000  | Butter  | 10  | B-10  | 9%  | 8%  | 7%  | 6%  | 5%  | 4%  | 3%  | 2%  | 1%  | 0%
+L376:   1. For dried peas, China's base tariff is five per cent; this was eliminated on the day of entry into force (year 1- 20 December 2015) of ChAFTA, and will remain zero from there on.
+L377:   2. In the case of butter, China's base tariff was 10 per cent; this tariff will be reduced to and bound at zero for products of Australian origin, over ten (10) equal annual stages beginning from entry into force (year 1, i.e. 20 December 2015) of the agreement. These goods are free of customs duty on 1 January 2024 (Year 10).
+L378: ## 3 Where?
+L379: ### Step 3: Determine whether your goods meet Rules of origin requirements
+L380: ChAFTA preferential rules of origin (ROO) are agreed criteria used to ensure that only goods originating in either China or Australia enjoy the benefits of the Agreement. These rules prevent goods from a third party being transshipped through either China or Australia to take advantage of the FTA to access lower, preferential import tariffs.
+L381: Any imports into China or Australia that do not comply with the ROO as set out in cite170†Chapter 3 and cite171†Annex II (Product Specific Rules of Origin) will be subject to the general (MFN) rate of duty, instead of the preferential rates available under ChAFTA.
+L382: A good will be considered 'originating' if it is:
+L383: 
+L384:   * 'wholly obtained' or produced from wholly obtained goods in China or Australia; or
+L385:   * 'wholly produced' in China or Australia, or both, from materials classified as 'originating' in either country under the ROO; or
+L386:   * produced in China or Australia, or both, using inputs from other countries, while meeting the Product Specific Rule (PSR) applicable to that good, as set out in cite171†Chapter Three, Annex II .
+L387: #### Wholly Obtained (WO) Goods
+L388: 
+L389: Wholly obtained goods are goods which are exclusively derived from one country. Typically these are agricultural goods and natural resources. The table on page 14 sets out the categories of goods which ChAFTA treats as wholly obtained.
+L390: 
+L391: ChAFTA also treats goods that are made exclusively from wholly obtained goods as being wholly obtained (cite170†Article. 3.3 (j) ).
+L392: #### Wholly Produced (WP) – Goods produced entirely in Australia or China
+L393: 
+L394: Goods produced entirely in either China or Australia, or both, from materials classified as 'wholly obtained' or 'originating' under the Rules of Origin (ROO), will qualify as 'originating' under ChAFTA and qualify for preferential tariff treatment.
+L395: #### Product Specific Rules (PSRs) – For goods containing inputs from outside China or Australia
+L396: 
+L397: Goods made from inputs sourced from outside China or Australia may still qualify as originating, as long as the non-originating inputs have undergone a substantial transformation in China or Australia, or both.
+L398: Product Specific Rules (PSRs) set out in ChAFTA Chapter Three- cite171†Annex II , enable Chinese and Australian customs authorities to determine whether a good has undergone a substantial transformation. If your good contains inputs from outside Australia or China, you will need to check the applicable PSR to
+L399: 
+L400: determine whether your good qualifies as originating.
+L401: #### Change in tariff classification
+L402: 
+L403: Most PSRs in ChAFTA apply a change in tariff classification (CTC) approach. A CTC rule requires that any non-originating inputs/materials that are incorporated into the final good undergo a specified change in tariff classification (HS code) in Australia or China in the process of being incorporated into the final good.
+L404: For example, pure gold (HS 7108.13) has a different classification to gold jewellery (HS 7113.19). In the process of being manufactured into jewellery, the tariff classification of pure gold changes, representing a substantial transformation. The ChAFTA PSRs mean that gold jewellery manufactured in Australia or China from imported pure gold (HS 7108.13) would count as 'originating', regardless of where the original gold came from.
+L405: Different products may be subject to different CTC rules. There are three levels of CTC rule which could apply:
+L406: 
+L407:   * Change in Chapter (CC) – change in any of the first two digits (or 'chapter') of the HS code of non-originating materials once part of the finished product. E.g. importing steel (from HS Chapter 72) and making hand-operated spanners or wrenches (HS code 8204).
+L408: Change in tariff heading (CTH) – change in any of the first four digits of the HS code of non-originating materials once part of the finished product. E.g. changing pure gold
+L409: 
+L410:   * (HS 7108.13) to gold jewellery (HS 7113.19).
+L411:   * Change in tariff subheading (CTSH) – change in any of the six digits of the HS code of non-originating materials once part of the finished product. E.g. importing an antisera or immunological product (HS 3002.10) and using it to produce a vaccine for human medicine (HS 3002.20).
+L412: Some CTC rules specifically exclude the possibility of applying a CTC rule to certain inputs. This is done by excluding specific chapters, headings or subheadings. For example, caustic soda in solution (HS 2815.12) is 'CTSH except from 2815.11'. Subheading 2815.11 includes caustic soda as a solid.
+L413: This rule therefore means that if you import non-originating solid caustic soda and simply mix it with water to produce a caustic soda solution, the solution would not be considered originating and you would not be eligible for a preferential customs duty when it is exported to China.
+L414: #### Regional Value Content
+L415: 
+L416: Some PSRs require a product to have undergone a specific amount of value-add in China or Australia, measured by the regional value content (RVC) of the good. Some PSRs provide a RVC rule as an alternative to a CTC rule, others require a RVC in addition to a CTC rule.
+L417: 
+L418: An RVC approach stipulates that originating materials and processes must represent a specific proportion of the product's final value. More information about calculating RVC is provided on page 14.
+L419: #### Other Approaches
+L420: 
+L421: Some PSRs allow for a good to become originating if the non-originating materials undergo a specific manufacturing or production process, for example:
+L422: 
+L423:   * processes that involve non-originating chemicals undergoing various chemical reactions may grant origin on the resulting new chemicals;
+L424:   * for some agricultural products, smoking of non-originating fresh produce may grant origin; and
+L425:   * for some textile products, fully finishing non-originating raw fabric may grant origin.
+L426: #### Note
+L427: 
+L428: It is important to remember that ROO requirements do not replace any other import requirements such as import licences and biosecurity approvals.
+L429: #### How to find the PSR applicable to your product
+L430: 
+L431: Using the tariff classification from step 1, you can check Chapter Three, cite171†Annex II: Product Specific Rules of Origin .
+L432: Using your goods tariff code, you can identify the relevant entry in the schedule. Note that PSRs are listed at the chapter (two digit), heading (four digit) or sub-heading (six-digit) level. Where a rule is listed at the chapter or heading level, that rule applies to all sub-headings that fall under that particular chapter or heading. Once you have found the relevant entry, the third column will identify the PSR for that product. For example:
+L433: HS Code  | Description  | PSR
+L434: --- | --- | ---
+L435: Chapter 19  | Preparations of cereals, flour, starch or milk; pastry cooks' products  | CC
+L436: 2711  | Petroleum gases and other gaseous hydrocarbons  | CTH
+L437: 2818.20  | - Aluminium oxide, other than artificial corundum  | CTSH except from heading 26.06 or subheading 2620.40
+L438: 
+L439: In the above example, non-originating inputs into preparations such as biscuits, must undergo a change in chapter (change in the first two digits of the HS classification).
+L440: Petroleum gases, on the other hand, must have all non-originating materials used in production undergo a change in tariff classification at the 4-digit level. Aluminium oxide must undergo a change in tariff classification at the 6-digit level but may not be produced from non-originating products of heading 2606 (aluminium ores) or subheading 2620.40 (aluminium slag or residue).
+L441: ### Other Important Rules of Origin
+L442: 
+L443: There are other important factors to take into account when determining whether your good qualifies as originating.
+L444: #### De Minimis
+L445: Where a good contains only a small amount of imported inputs, but those non-originating inputs fail to achieve the necessary CTC once incorporated in the final good, the product may still qualify as originating. If the value of all non-originating materials does not exceed 10 per cent of the value of the good, the product will qualify under the de minimis rule. The goods seeking de minimis classification must comply with any other applicable requirements of the ROOs.
+L446: Further information can be found in ChAFTA cite172†Article. 3.7 . Box 3 on page 14 provides details on calculating a good's value.
+L447: #### Cumulation
+L448: 
+L449: The rule of cumulation provides that goods which are originating in one Party are considered originating in the other Party for the purposes of ChAFTA. This means that if Australian-originating inputs were incorporated into a product made in China, that input would be treated as if it originated in China.
+L450: #### Fungible materials
+L451: 
+L452: Fungible materials are those which are identical or interchangeable, because they are of the same kind of commercial quality, possess the same technical and physical characteristics, and, once mixed, cannot be readily distinguished. Examples include natural gas, grain, or simple parts
+L453: 
+L454: (e.g. rivets). Specific accounting rules apply to exporters wishing to demonstrate that fungible goods are originating under ChAFTA. More information is available in cite170†Article. 3.9 .
+L455: #### Minimal operations or processes
+L456: 
+L457: Goods will not qualify as originating if they have only undergone a simple process such as packaging, simple grinding or washing. A full list of processes that will not confer origin is available in cite170†ChAFTA Article 3.12 .
+L458: #### Neutral elements
+L459: 
+L460: Materials which are used in the production of a good, but are not physically incorporated into the end product, are not counted in determining whether a product is originating. Examples include fuel and energy, tools, moulds, catalysts and solvents. A full list is available in cite170†ChAFTA Article. 3.11 .
+L461: #### Accessories, spare parts and tools
+L462: 
+L463: The origin of accessories, spare parts or tools presented and classified with a good will not be taken into account to assess whether a good has complied with applicable ROOs, provided that the quantity of accessories is what is customarily supplied with those finished goods and they are not invoiced separately. The value of accessories, spare parts and tools is considered, however, in assessing a good for the purposes of an RVC rule.
+L464: #### Packing, packages and containers
+L465: 
+L466: Packing materials and containers for shipping and transport (not retail packaging) can be disregarded when
+L467: 
+L468: determining the origin of a good. cite170†Article 3.10 provides further detail.
+L469: Retail packaging materials, provided that they are classified with the good, are not taken into account in determining whether a product is originating. For example, in the case of wine bottled in non-originating bottles for retail sale, the bottles would not be taken into account in assessing whether the wine itself was originating. However, retail packaging materials are considered in assessing the value of non-originating materials in a good for the purposes of an RVC rule, where one applies.
+L470: Further information can be found in cite170†Article 3.10 .
+L471: #### Transit through a third-party
+L472: 
+L473: ChAFTA is designed to reflect modern trading practices, including the use of transport and distribution hubs in third parties for consignments of goods. A good will be considered 'originating', despite being transported through a third country, if the goods meet a range of conditions including:
+L474:   * the goods do not undergo any operation other than unloading, reloading, storing, repacking, re-labelling, splitting up for transport reasons or any operation necessary to preserve the goods in good condition to be transported on to China or Australia;
+L475:   * the goods are not stored temporarily in a transport hub for longer than 12 months; and
+L476:   * the goods remain under customs control (N.B. for the purposes of the Treaty, goods transhipped through Hong Kong into Australia are deemed to be under 'customs control').
+L477: Under the treaty, the importing Customs Administration may require specific additional documentation on customs control (and non-manipulation) for transhipped goods.
+L478: #### For imports into Australia
+L479: 
+L480: For goods transhipped through a third party into Australia, including Singapore and Hong Kong, Australia will not require any specific additional documentation to grant preferential tariff treatment under the FTA; other than the commercial documentation ordinarily required to be kept by importers.
+L481: More information is available on the Australian Border Force website here: cite173†https://www.abf.gov.au/importing-exporting-and-manufacturing/free-trade-agreements/china†www.abf.gov.au L482: #### For exports to China
+L483: 
+L484: Articles 14 and 15 of China's Customs Decree 228 set out China's documentation requirements for when imports from Australia pass through third countries. These provisions should be read in conjunction with announcements 57 and 60 (see below).
+L485: 
+L486: The cite174†official Chinese versions and unofficial translations of these decrees and announcements .
+L487: For example, announcement 57 provides advice on streamlined arrangements for FTA transhipment through third countries (excluding Hong Kong or Macao). This applies to instances where the good is
+L488: 
+L489: supported by a single shipping document, issued by international courier services, civil aviation transportation companies, international shipping contractors and their agents, that shows both the point of origin in Australia and the destination in China.
+L490: China has also released an announcement (no.60 of 2015) to facilitate implementation of direct consignment through Hong Kong and Macao.
+L491: 
+L492: Related to this, the Hong Kong Customs and Excise Department has established a China Free Trade Agreement Transshipment Facilitation Scheme to assist implementation of the China's transhipment arrangements. Details are available here: cite175†http://www.customs.gov.hk/en/trade_facilitation/fta/index.html†www.customs.gov.hk .
+L493: ## A guide to using Rules of Origin under ChAFTA
+L494: 
+L495: ### 4 Certify
+L496: 
+L497: #### Step 4: Prepare a certificate of origin for your goods
+L498: 
+L499: Once you have gone through the first three steps and determined that your good will qualify for preferential tariff treatment under ChAFTA, you will need to complete the appropriate documentation to demonstrate this, should you be asked, to the importing customs authority. This can be done by using a ChAFTA Certificate of Origin (COO), or Declaration of Origin (DOO).
+L500: #### Certificate of Origin
+L501: 
+L502: A COO must be issued by an authorised body in the country of origin and may need to be provided, on request, to customs officials in the importing country.
+L503: 
+L504: A COO applies to a single shipment. It may cover one or more goods, but must not exceed 20 items (that is, 20 unique goods)) and may be valid for up to one year.
+L505: For Australian exporters, Certificates of Origin can be obtained from an Australian accredited body under Australia’s Free Trade Agreement Certificate of Origin (FTA CoO) Recognition Scheme. See cite176†How to obtain a Certificate of Origin for more information.
+L506: 
+L507: Or from cite177†Wine Australia†www.wineaustralia.com (for wine and wine-related products).
+L508: 
+L509: Charges will apply for Certificates of Origin and may vary depending on authorised body.”
+L510: 
+L511: For importers to Australia, China's authorised bodies are:
+L512:   * cite178†China Customs Service†english.customs.gov.cn (GACC)
+L513:   * The China Council for the Promotion of International Trade
+L514: 
+L515: Contact details for these authorised bodies are listed on page 17.
+L516: These authorised bodies have COO templates you can use. An example is included at the end of this guide, but exporters should seek the authorised template from the relevant authorising body. Traders should note that the 'overleaf instruction' forms part of the Certificate of Origin and should be included with the Certificate of Origin when declared at the border.
+L517: For guidance on how to complete your COO (including how to indicate third party invoicing, how to declare your origin criterion and who can sign the form), please read the cite179†overleaf instruction accompanying the sample COO template. This guidance is also available at the back of this guide, on pages 19-21.
+L518: #### Declarations of Origin
+L519: 
+L520: Alternatively, an exporter or producer may choose to complete a Declaration of Origin (DOO). A DOO may be accepted in place of a COO, for goods covered by an advance ruling on ChAFTA origin (see section on advance rulings on page 3 above and ChAFTA cite168†Article 4.9 ).
+L521: A DOO is completed by the exporter of a good and must comply with the template set out in cite170†Annex 3-B of ChAFTA (also available on page 21 of this guide). There is no need for a DOO to be approved by an authorised body. DOOs apply to a single shipment, may cover up to 20 items, and remain valid for one year.
+L522: #### Record keeping
+L523: 
+L524: Under ChAFTA, exporters or producers must maintain all records necessary to demonstrate a goods' origin for three years after signing a COO, or longer where a Party's laws and regulations require.
+L525: 
+L526: Exporters or importers into Australia should note that records must be retained for five years and can be retained in hard copy or electronic format.
+L527: 
+L528: cite170†ChAFTA Article 3.20 provides details on record keeping requirements.
+L529: #### Waiver of certification
+L530: 
+L531: A COO or DOO will not always be required. For certain goods, Australia and China have waived the requirement altogether. Neither country will require a COO or DOO for goods where the total customs value is less than 1000 AUD (for Australia) or 6000 RMB (for China). ChAFTA allows both countries to raise this threshold as required. You should check with the relevant importing customs authority for more up-to-date information.
+L532: #### Verification
+L533: 
+L534: Customs authorities may need to verify the information contained in a COO or DOO. The approach they follow for such processes is outlined in cite170†ChAFTA Article 3.21 . Verification activities may involve:
+L535: 
+L536:   * requests for information from the authorised body, the importer, the exporter, or the producer;
+L537:   * requests for information from the exporting customs authority; or
+L538:   * a request to undertake a verification visit to the premises of the exporter or producer.
+L539: #### Retrospective claims: seeking preferential rates following import
+L540: Under ChAFTA, importers are entitled to claim preferential tariff treatment after importation of eligible goods, if a claim is not made at the time of importation. For imports into Australia, refunds can be claimed for up to 12 months of the date of shipment for imports where the certificate of origin is issued retrospectively, and up to 4 years for imports where a certificate of origin was held at the time of importation.
+L541:  Note that for imports to China, importers must note at the time of import their intention to make a retrospective claim. Importers have at least one year to apply for a refund of any excess duties paid.
+L542: ## Contacts for further information
+L543: ### Australia
+L544: 
+L545: For general enquiries concerning ChAFTA
+L546:   * Department of Foreign Affairs and Trade (DFAT)
+L547: Ph: (02) 6261 1111
+L548: Email: fta@dfat.gov.au (chinafta@dfat.gov.au)
+L549: Website: cite180†China–Australia Free Trade Agreement L550:   * DFAT FTA Portal
+L551: To help apply this guide to your specific product, a useful online portal is available to assist you to make the most of the FTA with China. The FTA Portal allows users to search for tariff outcomes by keyword or HS code, and links to step-by-step rules of origin guidance and certification information, as well as a snapshot of import market data relating to the searched product. Visit the portal here: cite181†www.ftaportal.dfat.gov.au†www.ftaportal.dfat.gov.au L552: For all Australian customs matters including import requirements and procedures, advance rulings, tariff classifications and rules of origin
+L553: 
+L554:   * Australian Border Force
+L555: Email: CHAFTA@abf.gov.au
+L556: Website: cite182†Australian Border Force - China†www.abf.gov.au L557: 
+L558: For enquiries regarding COOs for export into China
+L559:   * Australian Chamber of Commerce and Industry
+L560: Ph: (02) 6273 2311
+L561: Email: info@acci.asn.au
+L562: Web: cite183†Australian Chamber of Commerce and Industry†www.acci.asn.au L563:   * Australian Industry Group
+L564: Ph: 1300 776 063
+L565: Email: trade.docs@aigroup.com.au
+L566: Website: cite184†AiGROUP L567:   * International Export Certification Services
+L568: Ph: (02) 8831 6395
+L569: Email: coo@ozdocs.com.au
+L570: Website: cite185†International Export Certification Services†www.ecertorigin.com L571:   * TradeWindow Origin
+L572: (02) 9098 5969
+L573: Email: originsupport@tradewindow.io
+L574: Web: cite186†TradeWindow Origin†tradewindow.io L575:   * Wine Australia
+L576: Ph: (08) 8228 2000
+L577: Website: cite187†Wine Australia†www.wineaustralia.com L578: ### China
+L579: 
+L580:   * China Ministry of Commerce FTA Network
+L581: Website: China Council for the Promotion of International Trade Beijing
+L582: 
+L583: For enquiries regarding COOs for import to Australia
+L584: 
+L585:   * China Customer Service
+L586: Website: cite178†english.customs.gov.cn†english.customs.gov.cn L587:   * The China Council for the Promotion of International Trade
+L588: Website: cite188†http://en.ccpit.org/info/index.html†en.ccpit.org L589: ## Certificate of Origin
+L590: 
+L591: (Sample only - originals to be supplied by authorised bodies)
+L592: 
+L593: 
+L594: 
+L595: 
+L596: 
+L597: DECLARATION OF ORIGIN
+L598: 
+L599: China-Australia Free Trade Agreement
+L600: 
+L601: On behalf of
+L602: 
+L603: ______________________________________________________________, being the
+L604: 
+L605: (print exporter's or producer's name and address)
+L606: 
+L607: EXPORTER / PRODUCER / EXPORTER AND PRODUCER,
+L608: 
+L609: (strike out those which do not apply)
+L610: 
+L611: I hereby declare that the goods described below are originating goods from
+L612: 
+L613: AUSTRALIA / CHINA
+L614: (strike out that which does not apply)
+L615: 
+L616: in accordance with the rules of origin requirements of the China-Australia Free Trade Agreement.
+L617: 
+L618: I am legally responsible for the truthfulness and authenticity of what is declared in this document.
+L619: 
+L620: Item No.  | Description of goods  | Harmonised system code six (6) digits  | Number and date of invoice  | Reference number of advance ruling  | Origin-conferring criteria
+L621:    |    |    |    |    |
+L622: 
+L623: Signature: ________________________________________________
+L624: Name: _________________________________________________
+L625: 
+L626: Position: _______________________________________________
+L627: 
+L628: Date: __________________________________________________
+L629: 
+L630: Note: This declaration must be printed and presented as a separate document accompanying the commercial invoice. The maximum number of items covered by this declaration should not exceed 20.
+L631: 
+L632: Disclaimer
+L633: cite189†Image: Flow chart showing the use of Rules of Origin. If you require an accessible version of this information please contact chinafta@dfat.gov.au L634: 
+L635: 
+L636: 
+L637: 
+L638: 
+L639: 
+L640: 
+L641: 
+L642: 
+L643: 
+L644: 
+L645: 
+L646: 
+L647: 
+L648: 
+L649: 
+L650: 
+L651: 
+L652: 
+L653: 
+L654: 
+L655: 
+L656: 
+L657: 
+L658: 
+L659: 
+L660: 
+L661: 
+L662: 
+L663: 
+L664: 
+L665: 
+L666: 
+L667: Site map +
+L668: ### Department of Foreign Affairs and Trade
+L669: 
+L670: R.G. Casey Building
+L671: John McEwen Crescent
+L672: Barton ACT 0221 Australia
+L673: 
+L674: Phone: +61 2 6261 1111
+L675: ABN: 47 065 634 525
+L676: 
+L677: cite190†Contact us L678: #### Follow us
+L679: 
+L680:   * cite191†X†twitter.com L681:   * cite192†Facebook†facebook.com L682:   * cite193†Instagram†www.instagram.com L683:   * cite194†YouTube†youtube.com L684:   * cite195†LinkedIn†www.linkedin.com L685: 
+L686: cite196†All social media accounts L687: 
+L688:   * cite197†About us L689:   * cite198†Ministers L690:   * cite199†News, speeches and media L691:   * cite4†Crisis Hub L692:   * cite5†Careers L693:   * cite200†Countries, economies and regions L694:   * cite201†Trade and investment L695:   * cite202†Development L696:   * cite203†People-to-people L697:   * cite150†About Australia L698:   * cite204†Travel L699: cite205†Image: The Australian Department of Foreign Affairs and Trade acknowledges the Traditional Custodians of Country throughout Australia, and their continuing connection to land, waters and community. We pay our respects to all First Nations peoples, their cultures and to their Elders, past, present and emerging. Artwork by Brooke Rigney-Lively, dated 2024. L700:   * cite206†Copyright L701:   * cite207†Privacy L702:   * cite208†Disclaimer L703:   * cite209†Accessibility L704:   * cite210†Freedom of information L705:   * cite211†Vulnerability Disclosure Policy L706: 
+L707: cite212†Back to top 

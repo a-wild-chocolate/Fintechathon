@@ -1,0 +1,54 @@
+{
+  "source_id": "VN-IMPORT",
+  "method": "html_dom",
+  "blocks": [
+    {
+      "text": "View Procedure",
+      "section": "View Procedure",
+      "locator": "/html/body/div/div[2]/div[2]/div/h1",
+      "block_id": "VN-IMPORT-B0001"
+    },
+    {
+      "text": "Procedure Name Customs Procedure for Import Goods (VNACCS)",
+      "section": "View Procedure",
+      "locator": "/html/body/div/div[2]/div[2]/div/table/tr[1]",
+      "block_id": "VN-IMPORT-B0002"
+    },
+    {
+      "text": "Description \n\n \n \n \n \n Category \n \n \n Customs Clearance Procedure \n \n \n \n \n Responsible Agency \n \n \n General Department of Vietnam Customs (GDVC) \n\n Address: Block E3 - Duong Dinh Nghe street, Yen Hoa, Cau Giay, Hanoi, Vietnam \n\n Phone: (+844) 39440833 (ext: 8623) \n\n Email: webmaster@customs.gov.vn \n \n \n \n \n Legal Basis of the Procedure \n \n \n Customs Law No 54/2014/QH13 dated 23/06/2014 \n\n - Decree No. 08/2015/ND-CP dated 21/01/2015 of the Government detailing a number of articles of the Customs Law on customs procedures for goods electronic export and import trade. \n\n - Circular 38/2015/TT-BTC dated 25/03/2015 specified electronic customs procedures for export and import trade. \n\n - Circular 172/2010/TT-BTC dated 02/11/2010 specified for fees and charges for customs. \n \n \n \n \n Processing time \n \n \n - No later than 08 working hours for partly physical examination of the shipment \n\n - No later than 02 days (working) for fully physical examination of the shipment \n \n \n \n \n Fee \n \n \n 20,000 VND \n \n \n \n \n\n \n\n Required Documents: \n\n \n \n \n \n Serial \n \n \n Document Title \n \n \n Remarks \n \n \n \n \n 1 \n \n \n An electronic import Customs declaration based on software \n \n \n \n \n \n \n \n\n \n\n Required Documents if the trader receives feedback for Yellow Channel: \n\n \n \n \n \n Serial \n \n \n Document Title \n \n \n Remarks \n \n \n \n \n 1 \n \n \n BL \n \n \n \n \n \n \n \n 2 \n \n \n Packing list \n \n \n \n \n \n \n \n 3 \n \n \n Goods declaration form \n \n \n (if any) \n \n \n \n \n 4 \n \n \n Import License \n \n \n (if any) \n \n \n \n \n 5 \n \n \n Invoice \n \n \n \n \n \n \n \n 6 \n \n \n Specialized Inspection Certificate \n \n \n (if any) \n \n \n \n \n 7 \n \n \n Certificate of Origin \n \n \n (if any) \n \n \n \n \n\n \n\n Process Steps: \n\n \n \n \n \n \n\n \n\n \n\n \n\n Step 1: \n\n Customs Declaration Submission \n \n \n 1.1: Registration \n\n Importers must submit customs declaration to Customs System by IDA. Registered information will be stored and can be modified up to 7 days. \n \n \n \n \n 1.2: Information Change \n\n In case of changing information from IDA importer has to go through IDB to change information (if any) \n \n \n \n \n 1.3: Submission of Final Declaration \n\n Importer sends final registered custom declaration by IDC \n \n \n \n \n \n\n \n\n \n\n Step 2: \n\n Receiving feedback from Customs System \n\n \n\n \n \n \n 2.1: Feedback for Green Channel \n\n If Customs System sends feedback for Green Channel importer has to pay duty (if any) and get custom clearance. \n \n \n \n \n 2.2: Feedback for Yellow Channel \n\n If Customs System sends feedback for Yellow Channel importer has to submit the following documents for Customs verification \n\n (i) BL \n\n (ii) Packing list \n\n (iii) Goods value declaration form \n\n (iv) Import License (if any) \n\n (v) Invoice \n\n (vi) Specialized Inspection Certificate (if any) \n\n (vii) Certificate of Origin (if any) \n \n \n \n \n 2.3: Feedback for Red Channel \n\n If Customs System sends feedback for Red Channel importer has to submit the above seven documents and cargo for physical examination. \n\n 2.4: Importer pays duty and charge/fee \n \n \n \n \n Step 3: \n\n Receiving Customs Clearance \n \n \n Importer receives Customs clearance \n \n \n \n \n\n \n\n Process Map:",
+      "section": "View Procedure",
+      "locator": "/html/body/div/div[2]/div[2]/div/table/tr[2]",
+      "block_id": "VN-IMPORT-B0003"
+    },
+    {
+      "text": "Category Procedure",
+      "section": "View Procedure",
+      "locator": "/html/body/div/div[2]/div[2]/div/table/tr[3]",
+      "block_id": "VN-IMPORT-B0004"
+    },
+    {
+      "text": "Title Description Created Date Updated Date Issued By",
+      "section": "View Procedure",
+      "locator": "/html/body/div/div[2]/div[2]/div/div[2]/table/thead/tr",
+      "block_id": "VN-IMPORT-B0005"
+    },
+    {
+      "text": "Import procedure declaration form Import procedure declaration form 26-01-2016 17-02-2016 Ministry of Finance",
+      "section": "View Procedure",
+      "locator": "/html/body/div/div[2]/div[2]/div/div[2]/table/tbody/tr",
+      "block_id": "VN-IMPORT-B0006"
+    },
+    {
+      "text": "Name Measure Type Agency Description Comments Legal Document Validity To Measure Class",
+      "section": "View Procedure",
+      "locator": "/html/body/div/div[2]/div[2]/div/div[4]/table/thead/tr",
+      "block_id": "VN-IMPORT-B0007"
+    },
+    {
+      "text": "No results found.",
+      "section": "View Procedure",
+      "locator": "/html/body/div/div[2]/div[2]/div/div[4]/table/tbody/tr",
+      "block_id": "VN-IMPORT-B0008"
+    }
+  ]
+}

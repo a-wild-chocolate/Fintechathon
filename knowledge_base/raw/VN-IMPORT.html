@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Vietnam trade portal, Commodity Code" />
+        <meta name="keywords" content="Vietnam Trade,Vietnam Trade Portal,Vietnam NTM,Vietnam trade repository, Vietnam Import Export, Import taxes, Export taxes, VITP" />
+        <meta name="author" content="Worldbank" />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="all" />
+	        <!-- blueprint CSS framework -->
+        <link rel="stylesheet" type="text/css" href="/css/screen.css" media="screen, projection" />
+
+        <link rel="stylesheet" type="text/css" href="/css/print.css" media="print" />
+        <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" href="/css/ie.css" media="screen, projection" />
+        <![endif]-->
+
+                    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+                <link rel="stylesheet" type="text/css" href="/css/form.css" />
+        <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap-social.css" />
+        <link rel="stylesheet" type="text/css" href="/bootstrap/css/font-awesome.css" />
+                <style type="text/css">
+    #footer {
+        background: #a1a1a1;
+    }
+
+    .portlet-decoration {
+        padding: 3px 8px;
+        background: #2073a6;
+        border-left: 0px solid #2073a6;
+    }
+
+    .portlet-content {
+        font-size: 0.9em;
+        margin: 0 0 5px 0;
+        padding: 5px 8px;
+        background: #f6f4f9;
+        border: 1px solid #f6f4f9;
+    }
+
+    #nav-bar { border-top:1px solid #a1a1a1; border-bottom:1px solid #a1a1a1; background:#a1a1a1; padding:0px 0px 0px 0px;  }
+    #nav { float:left; margin:0;list-style-image:none;list-style-position:outside;list-style-type:none;margin:0px;padding:0;}
+
+    /************** ALL LEVELS  *************/
+    #nav li { position:relative; text-align:left; }
+    #nav li.over { z-index:99; }
+    #nav li.active { z-index:100; }
+    #nav a,
+    #nav a:hover { display:block; text-decoration:none; }
+    #nav span { display:block; }
+    #nav a { line-height:1.3em; }
+
+    /************ 1ST LEVEL  ***************/
+    #nav li { float:left; background:url(../css/nav1_sep.gif) no-repeat 100% 0;  }
+    #nav li.active { margin-left:0px; background:url(../css/nav1_bg.gif) no-repeat; color:#FF0000; font-weight:bold;  }
+    #nav li.active em { display:block; position:absolute; top:0; right:-1px; width:3px; height:27px; background:url(../css/nav1_active.gif) no-repeat 100% 0; }
+    #nav a { float:left; padding:0 14px; color:#fff; line-height:27px; }
+    #nav li.over a { color:#d6e2e5; }
+
+
+    /************ 1ST LEVEL RESET ************/
+    #nav ul li,
+    #nav ul li.active { list-style-image:none;list-style-position:outside;list-style-type:none;margin:0;padding:0; float:none; height:auto; background:none; margin:0; }
+    #nav ul a,
+    #nav ul a:hover { float:none; padding:0; line-height:1.3em; }
+    #nav ul li.over a,
+    #nav ul li.over a:hover,
+    #nav ul a,
+    #nav li.active li { font-weight:normal; }
+
+
+    /************ 2ND LEVEL ************/
+    #nav ul { list-style-image:none;list-style-position:outside;list-style-type:none;margin:0;padding:0 0 3px 0; position:absolute; width:189px; top:27px; left:-10000px; border-top:1px solid #2d444f; }
+    #nav ul ul  { list-style-image:none;list-style-position:outside;list-style-type:none;margin:0;padding:2px 0 0 0; border-top:0; background:url(../css/nav3_bg.png) 0 0 no-repeat; left:100px; top:13px; }
+
+    /* Show menu */
+    #nav li.over ul { left:-1px; }
+    #nav li.over ul ul { left:-10000px; }
+    #nav li.over ul li.over ul { left:100px; }
+
+    #nav ul li { background:url(../css/nav2_li_bg.png) repeat-y; padding:0 2px; }
+    #nav ul li a { background:#e3ecee; }
+    #nav ul li a:hover { background:#d0dfe2; }
+    #nav li.over ul a,
+    #nav ul li.active a,
+    #nav ul li a,
+    #nav ul li a:hover { color:#2f2f2f; }
+    #nav ul span,
+    #nav ul li.last li span { padding:5px 15px; background:url(../css/nav2_link_bg.gif) repeat-x 0 100%; }
+    #nav ul li.last span,
+    #nav ul li.last li.last span { background:none; }
+    #nav ul li.last { background:url(../css/nav2_last_li_bg.png) no-repeat 0 100%; padding-bottom:3px; }
+
+    #nav ul li.parent a,
+    #nav ul li.parent li.parent a { background-image:url(../css/nav2_parent_arrow.gif); background-position:100% 100%; background-repeat:no-repeat; }
+    #nav ul li.parent li a,
+    #nav ul li.parent li.parent li a { background-image:none; }
+
+    /************ 3RD+ LEVEL ************/
+    /* Cursors */
+    #nav li.parent a,
+    #nav li.parent li.parent a,
+    #nav li.parent li.parent li.parent a { cursor:default; }
+
+    #nav li.parent li a,
+    #nav li.parent li.parent li a,
+    #nav li.parent li.parent li.parent li a { cursor:pointer; }
+
+    /* Show menu */
+    #nav ul ul ul { left:-10000px; list-style-image:none;list-style-position:outside;list-style-type:none;margin:0;padding:0; }
+    #nav li.over ul li.over ul ul { left:-10000px;}
+    #nav li.over ul li.over ul li.over ul { left:100px; }
+
+    #nav-bar:after, #nav-container:after { content:"."; display:block; clear:both; font-size:0; line-height:0; height:0; overflow:hidden; }
+
+    /* Nav bar background */
+    .navbar-default {
+        background-color: #a1a1a1 !important;
+        border-color: #e7e7e7;
+    }
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:hover,
+    .navbar-default .navbar-nav > .active > a:focus {
+        color: #fff;
+        background-color: #a1a1a1 !important;
+        font-weight: bold;
+    }
+
+    .grid-view table.items th{
+        background: #2073a6 !important;
+        color: white;
+        text-align: center;
+    }
+</style><style type="text/css">
+    @font-face {
+        font-family: 'Rezland';
+        src: url('https://www.vietnamtradeportal.gov.vn/ckeditor/Rezland.eot'); /* IE9 Compat Modes */
+        src: url('https://www.vietnamtradeportal.gov.vn/ckeditor/Rezland.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('https://www.vietnamtradeportal.gov.vn/ckeditor/Rezland.woff2') format('woff2'), /* Modern Browsers */
+            url('https://www.vietnamtradeportal.gov.vn/ckeditor/Rezland.woff') format('woff'), /* Modern Browsers */
+            url('https://www.vietnamtradeportal.gov.vn/ckeditor/Rezland.ttf') format('truetype'), /* Safari, Android, iOS */
+            url('https://www.vietnamtradeportal.gov.vn/ckeditor/Rezland.svg') format('svg'); /* Legacy iOS */
+        font-weight: normal;
+        font-style: normal;
+    }
+</style>        <script src="/bootstrap/js/jquery2.0.3.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.js"></script>
+        <link rel="stylesheet" type="text/css" href="/assets/ebdade7c/detailview/styles.css" />
+<link rel="stylesheet" type="text/css" href="/assets/ebdade7c/gridview/styles.css" />
+<link rel="stylesheet" type="text/css" href="./css/pager.css" />
+<link rel="stylesheet" type="text/css" href="/assets/9d841d60/style.css" />
+<script type="text/javascript" src="/assets/2074ab20/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/2074ab20/jquery.ba-bbq.js"></script>
+<title>The Trade Portal - View1 SearchProcedure</title>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91463743-3"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91463743-3"></script><script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+
+            gtag('config', 'UA-91463743-3');
+            </script>        <!-- Import fonts used in ckeditor in the main-->
+        <script>
+            FontsGoogle = ['Calibri', 'Courier New'];
+            for (var i = 0; i < FontsGoogle.length; i++) {
+                FontsGoogle[i] = 'http://fonts.googleapis.com/css?family=' + FontsGoogle[i].replace(' ', '+');
+                $("head").append("<link rel='stylesheet' href='" + FontsGoogle[i] + "'>");
+            }
+        </script>
+        <!-- script enable or disable good and service measure -->
+        <script>
+            $(document).ready(function () {
+                $('img').addClass('img-fluid');
+                $('input[type="text"]').each(function () {
+                    var att = $(this).attr('class');
+                    if (typeof att !== typeof undefined && att !== false) {
+                        if (!$(this).hasClass('form-control')) {
+                            $(this).addClass('form-control');
+                        }
+                    } else {
+                        $(this).attr('class', 'form-control');
+                    }
+                });
+                $('input[type="password"]').each(function () {
+                    var att = $(this).attr('class');
+                    if (typeof att !== typeof undefined && att !== false) {
+                        if (!$(this).hasClass('form-control')) {
+                            $(this).addClass('form-control');
+                        }
+                    } else {
+                        $(this).attr('class', 'form-control');
+                    }
+                });
+                $('select').each(function () {
+                    var att = $(this).attr('class');
+                    if (typeof att !== typeof undefined && att !== false) {
+                        if (!$(this).hasClass('form-control')) {
+                            $(this).addClass('form-control');
+                        }
+                    } else {
+                        $(this).attr('class', 'form-control');
+                    }
+                    if ($(this).hasClass('select2-offscreen')) {
+                        $(this).removeClass('form-control');
+                    }
+                });
+                $(window).load(function () {
+                    // this code will run after all other $(document).ready() scripts
+                    // have completely finished, AND all page elements are fully loaded.
+                    /*$('select').each(function () {
+                     var att = $(this).attr('class');
+                     if (typeof att !== typeof undefined && att !== false) {
+                     if (!$(this).hasClass('form-control')) {
+                     $(this).addClass('form-control');
+                     }
+                     } else {
+                     $(this).attr('class', 'form-control');
+                     }
+                     if ($(this).hasClass('select2-offscreen')) {
+                     //	$(this).removeClass('form-control');
+                     }
+                     });*/
+                    $('div .select2-container').attr('style', 'border:0px; padding:6px 0px;background-color:transparent; box-shadow:none');
+                    $('a .select2-choice').attr('style', 'height:105%');
+                });
+                $('div').each(function () {
+                    var att = $(this).attr('class');
+                    if (typeof att !== typeof undefined && att !== false) {
+                        if ($(this).hasClass('select2-container')) {
+                            $(this).removeClass('form-control');
+                        }
+                    }
+                });
+                $('table').each(function () {
+                    var att = $(this).attr('class');
+                    if (typeof att !== typeof undefined && att !== false) {
+                        if (!$(this).hasClass('items')) {
+                            $(this).addClass('container-table');
+                        }
+                    } else {
+                        $(this).attr('class', 'container-table');
+                    }
+                });
+                $('.portlet table').each(function () {
+                    var att = $(this).attr('class');
+                    if (typeof att !== typeof undefined && att !== false) {
+                        $(this).removeClass('container-table');
+                    }
+                });
+            });</script>
+
+            </head>
+
+    <body>
+
+        <div class="container-fluid" style=" padding-left: 0px; padding-right: 0px;">
+            <img width="100%" src="./images/banner.jpg">
+            <!-- header -->
+
+            <div id="mainMbMenu" style="margin-left: 0px; margin-right: 0px">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div class="showflag">
+                                                            </div>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="/index.php?r=site/index">Home</a></li>
+                                <li><a href="/index.php?r=site/display&amp;id=12">About Us</a></li>
+                                                                <li><a href="/index.php?r=site/display&amp;id=3">Guide to Trade</a></li>
+                                <li><a href="/index.php?r=site/display&amp;id=5">FAQs</a></li>
+                                <li><a href="/index.php?r=site/display&amp;id=6">Help</a></li>
+
+                            </ul>
+                            <div class="btn-group nav navbar-right" style="padding: 15px">
+                                <a class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-share-alt fa-inverse"></i> Share
+                                </a>
+                                <ul class="dropdown-menu" style="background-color:#fff;min-width:87px !important; padding: 5px; margin-top: -15px">
+                                    <li>
+                                        <div style="padding:0px;" id="yw3"><a class="btn btn-social-icon  btn-xs" style="background:#085ff7" title="Facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.vietnamtradeportal.gov.vn%2Findex.php%3Fid%3D3%26r%3DsearchProcedure%2Fview1"><span class="fa fa-facebook" style="color:#fff"></span> </a> <a class="btn btn-social-icon  btn-xs" style="background:#087bc7" title="Twitter" target="_blank" href="http://twitter.com/share?url=https%3A%2F%2Fwww.vietnamtradeportal.gov.vn%2Findex.php%3Fid%3D3%26r%3DsearchProcedure%2Fview1"><span class="fa fa-twitter" style="color:#fff"></span> </a> <a class="btn btn-social-icon  btn-xs" style="background:#f73c23" title="Google" target="_blank" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.vietnamtradeportal.gov.vn%2Findex.php%3Fid%3D3%26r%3DsearchProcedure%2Fview1"><span class="fa fa-google" style="color:#fff"></span> </a> <div style='padding-top:5px;'></div></div>                                    </li>
+                                </ul>
+                            </div>
+                            <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+                                <li>
+                                                                    </li>
+
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+
+
+
+                    </div>
+                    <!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <div class="cont" >
+            <div class="col-sm-6 col-md-6">
+                                    <div class="breadcrumbs">
+<a href="/index.php">Home</a> &raquo; <a href="/index.php?r=searchProcedure/index">Search Procedures</a> &raquo; <span>View Procedure</span></div><!-- breadcrumbs -->
+                            </div>
+            <!--            <div class="col-sm-6  col-md-6">
+                            <div  style="padding-bottom: 5px;">
+
+                                 Single button
+                                <div class="btn-group nav navbar-right">
+                                    <a class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-share-alt fa-inverse"></i> Share
+                                    </a>
+                                    <ul class="dropdown-menu" style="background-color:#fff;min-width:87px !important; padding: 5px;">
+                                        <li>
+            <div style="padding:0px;" id="yw4"><a class="btn btn-social-icon  btn-xs" style="background:#085ff7" title="Facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.vietnamtradeportal.gov.vn%2Findex.php%3Fid%3D3%26r%3DsearchProcedure%2Fview1"><span class="fa fa-facebook" style="color:#fff"></span> </a> <a class="btn btn-social-icon  btn-xs" style="background:#087bc7" title="Twitter" target="_blank" href="http://twitter.com/share?url=https%3A%2F%2Fwww.vietnamtradeportal.gov.vn%2Findex.php%3Fid%3D3%26r%3DsearchProcedure%2Fview1"><span class="fa fa-twitter" style="color:#fff"></span> </a> <a class="btn btn-social-icon  btn-xs" style="background:#f73c23" title="Google" target="_blank" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.vietnamtradeportal.gov.vn%2Findex.php%3Fid%3D3%26r%3DsearchProcedure%2Fview1"><span class="fa fa-google" style="color:#fff"></span> </a> <div style='padding-top:5px;'></div></div>                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="container">
+	<div id="content">
+		
+<h1>View Procedure</h1>
+    <table class="detail-view" id="yw0"><tr class="odd"><th>Procedure Name</th><td>Customs Procedure for Import Goods (VNACCS)</td></tr>
+<tr class="even"><th>Description</th><td><div>&nbsp;</div>
+
+<table border="0" cellpadding="0" cellspacing="0" style="width: 700px">
+	<tbody>
+		<tr>
+			<td>
+			<div><strong><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Category</span></span></strong></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Customs Clearance Procedure</span></span></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div><strong><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Responsible Agency&nbsp;&nbsp;</span></span></strong></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">General Department of Vietnam Customs (GDVC)</span></span></div>
+
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Address: Block E3 - Duong Dinh Nghe street, Yen Hoa, Cau Giay, Hanoi, Vietnam</span></span></div>
+
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Phone: (+844) 39440833 (ext: 8623)</span></span></div>
+
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Email: webmaster@customs.gov.vn</span></span></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div><strong><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Legal Basis of the Procedure&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></strong></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Customs Law No <a href="?r=site/display&amp;id=40" target="_blank">54/2014/QH13 </a>dated 23/06/2014</span></span></div>
+
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">- Decree No. <a href="?r=site/display&amp;id=68" target="_blank">08/2015/ND-CP</a> dated 21/01/2015 of the Government detailing a number of articles of the Customs Law on customs procedures for goods electronic export and import trade.</span></span></div>
+
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">- Circular <a href="?r=site/display&amp;id=74" target="_blank">38/2015/TT-BTC </a>dated 25/03/2015 specified electronic customs procedures for export and import trade.</span></span></div>
+
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">- Circular <a href="http://www.customs.gov.vn/Lists/VanBanPhapLuat/ViewDetails.aspx?ID=5767" target="_blank">172/2010/TT-BTC</a> dated 02/11/2010 specified for fees and charges for customs.</span></span></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div><strong><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Processing time</span></span></strong></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">- No later than 08 working hours for partly physical examination of the shipment</span></span></div>
+
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">- No later than 02 days (working) for fully physical examination of the shipment</span></span></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div><strong><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Fee</span></span></strong></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">20,000 VND</span></span></div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div>&nbsp;</div>
+
+<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;"><strong>Required Documents:</strong></span></span></div>
+
+<table border="0" cellpadding="0" cellspacing="0" style="width: 700px">
+	<tbody>
+		<tr>
+			<td>
+			<div style="text-align: center;"><strong><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Serial</span></span></strong></div>
+			</td>
+			<td>
+			<div style="text-align: center;"><strong><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Document Title </span></span></strong></div>
+			</td>
+			<td>
+			<div style="text-align: center;"><strong><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Remarks</span></span></strong></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div style="text-align: center;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">1</span></span></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">An electronic import Customs declaration based&nbsp;on software&nbsp;</span></span></div>
+			</td>
+			<td>
+			<div>&nbsp;</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div>&nbsp;</div>
+
+<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;"><strong>Required Documents if the trader receives feedback for Yellow Channel:</strong></span></span></div>
+
+<table border="0" cellpadding="0" cellspacing="0" style="width: 700px">
+	<tbody>
+		<tr>
+			<td>
+			<div style="text-align: center;"><strong><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Serial</span></span></strong></div>
+			</td>
+			<td>
+			<div style="text-align: center;"><strong><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Document Title </span></span></strong></div>
+			</td>
+			<td>
+			<div style="text-align: center;"><strong><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Remarks</span></span></strong></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div style="text-align: center;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">1</span></span></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">BL</span></span></div>
+			</td>
+			<td>
+			<div>&nbsp;</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div style="text-align: center;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">2</span></span></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Packing list</span></span></div>
+			</td>
+			<td>
+			<div>&nbsp;</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div style="text-align: center;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">3</span></span></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Goods declaration form</span></span></div>
+			</td>
+			<td>
+			<div>(if any)</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div style="text-align: center;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">4</span></span></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Import License</span></span></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">(if any)</span></span></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div style="text-align: center;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">5</span></span></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Invoice</span></span></div>
+			</td>
+			<td>
+			<div>&nbsp;</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div style="text-align: center;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">6</span></span></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Specialized Inspection Certificate</span></span></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">(if any)</span></span></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div style="text-align: center;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">7</span></span></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Certificate of Origin</span></span></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">(if any)</span></span></div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div>&nbsp;</div>
+
+<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;"><strong>Process Steps:</strong></span></span></div>
+
+<table border="0" cellpadding="0" cellspacing="0" style="width: 700px">
+	<tbody>
+		<tr>
+			<td rowspan="3">
+			<div>&nbsp;</div>
+
+			<div>&nbsp;</div>
+
+			<div>&nbsp;</div>
+
+			<div>&nbsp;</div>
+
+			<div><strong><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Step 1:</span></span></strong></div>
+
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Customs Declaration Submission</span></span></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">1.1: Registration</span></span></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Importers must submit customs declaration to Customs System by IDA. Registered information will be stored and can be modified up to 7 days.</span></span></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">1.2: Information Change </span></span></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">In case of changing information from IDA importer has to go through IDB to change information (if any)</span></span></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">1.3: Submission of Final Declaration </span></span></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Importer sends final registered custom declaration by IDC</span></span></div>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="3">
+			<div>&nbsp;</div>
+
+			<div>&nbsp;</div>
+
+			<div>&nbsp;</div>
+
+			<div><strong><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Step 2:</span></span></strong></div>
+
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Receiving feedback from Customs System</span></span></div>
+
+			<div>&nbsp;</div>
+
+			<div>&nbsp;</div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">2.1:&nbsp; Feedback for Green Channel</span></span></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">If Customs System sends feedback for Green Channel importer has to pay duty (if any) and get custom clearance.</span></span></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">2.2:&nbsp; Feedback for Yellow Channel</span></span></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">If Customs System sends feedback for Yellow Channel importer has &nbsp;to submit the following documents for Customs verification</span></span></div>
+
+			<div style="margin-left: 80px;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">(i) BL</span></span></div>
+
+			<div style="margin-left: 80px;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">(ii) Packing list</span></span></div>
+
+			<div style="margin-left: 80px;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">(iii) Goods value declaration form</span></span></div>
+
+			<div style="margin-left: 80px;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">(iv) Import License (if any)</span></span></div>
+
+			<div style="margin-left: 80px;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">(v) Invoice</span></span></div>
+
+			<div style="margin-left: 80px;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">(vi) Specialized Inspection Certificate (if any)</span></span></div>
+
+			<div style="margin-left: 80px;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">(vii) Certificate of Origin (if any)</span></span></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">2.3:&nbsp; Feedback for Red Channel</span></span></div>
+
+			<div style="margin-left: 40px;"><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">If Customs System sends feedback for Red Channel importer has to submit the above seven documents and cargo for physical examination.</span></span></div>
+
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">2.4: Importer pays duty and charge/fee</span></span></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<div><strong><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Step 3:</span></span></strong></div>
+
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Receiving Customs Clearance</span></span></div>
+			</td>
+			<td>
+			<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;">Importer &nbsp;receives Customs clearance</span></span></div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div>&nbsp;</div>
+
+<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;"><strong>Process Map: </strong></span></span></div>
+
+<div><span style="font-size:12px;"><span style="font-family:arial,helvetica,sans-serif;"><strong><img alt="" src="/kcfinder/upload/images/e-custom%20import%20clearance%20EN%285%29.png" style="width: 700px; height: 1550px;" /></strong></span></span></div>
+</td></tr>
+<tr class="odd"><th>Category</th><td>Procedure</td></tr>
+</table><br>
+<div class="row">
+    The following form/s are used in this procedure</div>
+<!--
+Display Forms List Belong to each particular Procedure
+-->
+<div id="forms-grid" class="grid-view">
+<table class="items">
+<thead>
+<tr>
+<th class="link-column" id="forms-grid_c0">Title</th><th id="forms-grid_c1">Description</th><th id="forms-grid_c2">Created Date</th><th id="forms-grid_c3">Updated Date</th><th id="forms-grid_c4">Issued By</th><th id="forms-grid_c5"><img src="images/en.gif" alt="" /></th></tr>
+</thead>
+<tbody>
+<tr class="odd"><td class="link-column"><a href="?r=searchForms/view&amp;id=5">Import procedure declaration form</a></td><td>Import procedure declaration form</td><td>26-01-2016</td><td>17-02-2016</td><td>Ministry of Finance</td><td style="text-align: center"><a target="_blank" href="/kcfinder/upload/files/Import declaration form.pdf"><img src="images/pdf_icon.gif" alt="This is Dowload File" /></a></td></tr>
+</tbody>
+</table><div class="keys" style="display:none" title="/index.php?id=3&amp;r=searchProcedure/view1"><span>5</span></div>
+</div><div class="row">
+    This procedure applies to the following measures</div>
+<div id="measure-grid" class="grid-view">
+<table class="items">
+<thead>
+<tr>
+<th id="measure-grid_c0">Name</th><th id="measure-grid_c1">Measure Type</th><th id="measure-grid_c2">Agency</th><th id="measure-grid_c3">Description</th><th id="measure-grid_c4">Comments</th><th id="measure-grid_c5">Legal Document</th><th id="measure-grid_c6">Validity To</th><th id="measure-grid_c7">Measure Class</th></tr>
+</thead>
+<tbody>
+<tr><td colspan="8"><span class="empty">No results found.</span></td></tr>
+</tbody>
+</table><div class="keys" style="display:none" title="/index.php?id=3&amp;r=searchProcedure/view1"></div>
+</div>	</div><!-- content -->
+</div>
+        </div>
+        <div id="footer">
+            <div id="footerMenu">
+                <a href="/index.php?r=site/display&amp;id=9">Site Map</a> |
+                <a href="/index.php?r=site/display&amp;id=10">Commonly Used Terms</a> |
+                <a href="/index.php?r=site/display&amp;id=11">Terms and Conditions</a>            </div>
+            &copy;Copyright 2026 
+            General Department of Vietnam Customs. All Rights Reserved.<br/>
+            <br/>
+        </div><!-- footer -->
+
+    </div><!-- page -->
+
+<script type="text/javascript" src="/assets/ebdade7c/gridview/jquery.yiigridview.js"></script>
+<script type="text/javascript" src="/assets/9d841d60/script.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+jQuery(function($) {
+jQuery('#forms-grid').yiiGridView({'ajaxUpdate':['forms-grid'],'ajaxVar':'ajax','pagerClass':'pager','loadingClass':'grid-view-loading','filterClass':'filters','tableClass':'items','selectableRows':1,'pageVar':'page'});
+jQuery('#measure-grid').yiiGridView({'ajaxUpdate':['measure-grid'],'ajaxVar':'ajax','pagerClass':'pager','loadingClass':'grid-view-loading','filterClass':'filters','tableClass':'items','selectableRows':1,'pageVar':'page'});
+});
+/*]]>*/
+</script>
+</body>
+</html>

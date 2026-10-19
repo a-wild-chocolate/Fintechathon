@@ -1,0 +1,95 @@
+[SG-RECORDS-B0001] Document body
+Home
+
+[SG-RECORDS-B0002] Document body
+Doing Business
+
+[SG-RECORDS-B0003] Document body
+Import Operations
+
+[SG-RECORDS-B0004] Document body
+Import Procedures
+
+[SG-RECORDS-B0005] Document body
+Retaining Your Trade Documents
+
+[SG-RECORDS-B0006] Retaining Your Trade Documents
+Retaining Your Trade Documents
+
+[SG-RECORDS-B0007] Retaining Your Trade Documents
+Learn about the requirement to retain trade documents for at least 5 years, including what to keep and when to submit them to Singapore Customs.
+
+[SG-RECORDS-B0008] Retaining Your Trade Documents
+Keeping proper records is a legal requirement. Both you and your Declaring Agent must keep all documents related to the purchase, import, sale or export of your goods for at least 5 years from the date your permit is approved.
+
+[SG-RECORDS-B0009] What Documents Must You Keep?
+What Documents Must You Keep?
+
+[SG-RECORDS-B0010] What Documents Must You Keep?
+These records help prove your transactions and support Customs checks. They include:
+
+[SG-RECORDS-B0011] What Documents Must You Keep?
+Commercial invoices
+
+[SG-RECORDS-B0012] What Documents Must You Keep?
+Bills of lading or air waybills
+
+[SG-RECORDS-B0013] What Documents Must You Keep?
+Packing lists
+
+[SG-RECORDS-B0014] What Documents Must You Keep?
+Certificates (origin, analysis, insurance)
+
+[SG-RECORDS-B0015] What Documents Must You Keep?
+Books of accounts
+
+[SG-RECORDS-B0016] What Documents Must You Keep?
+Any documents showing your terms of trade
+
+[SG-RECORDS-B0017] What Documents Must You Keep?
+Any other documents related to the movement or sale of your goods
+
+[SG-RECORDS-B0018] What Documents Must You Keep?
+In other words: If it helps explain what you imported or exported, keep it.
+
+[SG-RECORDS-B0019] When Do You Need to Submit These Documents?
+When Do You Need to Submit These Documents?
+
+[SG-RECORDS-B0020] When Do You Need to Submit These Documents?
+Singapore Customs may request them at anytime. Certain permit conditions require you to submit supporting documents within a set timeframe. Common conditions include:
+
+[SG-RECORDS-B0021] When Do You Need to Submit These Documents?
+A5 Submit the permit to the Permits Compliance Unit by the date stated in their request.
+
+[SG-RECORDS-B0022] When Do You Need to Submit These Documents?
+Z02 Submit the permit with invoices and transport documents within 48 hours of approval through Customs eServices ↗ (opens in new tab) (Return of Supporting Documents for Selected Permits) or via go.gov.sg/permit-supp-doc ↗ (opens in new tab) .
+
+[SG-RECORDS-B0023] When Do You Need to Submit These Documents?
+Z18 Same as Z02, but with the added reminder to meet any Competent Authority requirements.
+
+[SG-RECORDS-B0024] Digital Copies are Allowed
+Digital Copies are Allowed
+
+[SG-RECORDS-B0025] Digital Copies are Allowed
+You can store scanned images instead of physical copies, as long as they meet the guidelines ↗ (opens in new tab) for storing digital trade documents.
+
+[SG-RECORDS-B0026] Digital Copies are Allowed
+Keeping your documents organised and accessible ensures smoother audits, faster responses to Customs, and peace of mind for your business operations.
+
+[SG-RECORDS-B0027] Examples of Retaining Trade Documents
+Examples of Retaining Trade Documents
+
+[SG-RECORDS-B0028] Example 1
+Example 1
+
+[SG-RECORDS-B0029] Example 1
+A Singapore company imports electronic components from Malaysia worth S$5,000.
+
+[SG-RECORDS-B0030] Example 1
+To ensure compliance, the company keeps all key documents - the customs permit, commercial invoice, packing list, and bill of lading. These records help prove what was shipped and show that GST and duty were correctly declared.
+
+[SG-RECORDS-B0031] Example 2
+Example 2
+
+[SG-RECORDS-B0032] Example 2
+A Singapore company exports furniture to Indonesia, valued at S$2,000. The company keeps the customs permit, commercial invoice, and air waybill. These documents confirmed that the goods have been properly declared and cleared for export.

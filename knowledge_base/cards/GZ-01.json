@@ -1,0 +1,73 @@
+{
+  "card_id": "GZ-01",
+  "source_id": "CN-GZ-INSURANCE",
+  "title": "广州小微出口信保申领线索",
+  "summary_zh": "2026年通知引导辖区内2025年度出口额1000万美元（含）以下的中小微企业通过单一窗口申领普惠平台类出口信保；实际保障仍看保单。",
+  "summary_en": "The Guangzhou notice encourages eligible local SMEs with 2025 exports no greater than USD 10 million to apply through the Single Window for the inclusive-platform policy. The issued policy determines actual cover.",
+  "anchor_terms": [
+    "1000万美元",
+    "单一窗口"
+  ],
+  "required_order_fields": [
+    "registration_city",
+    "2025_export_value",
+    "policy_application",
+    "issued_policy",
+    "covered_buyer"
+  ],
+  "tradex_workflow": "Create a policy-readiness checklist and obtain the actual policy before answering coverage or claim questions.",
+  "cash_effect": "Do not add an insurance recovery to cash solely because the enterprise fits the notice description.",
+  "keywords": [
+    "广州",
+    "小微企业",
+    "出口信用保险",
+    "信保",
+    "普惠",
+    "insurance"
+  ],
+  "title_en": "Guangzhou small-exporter credit insurance guidance",
+  "jurisdiction": "CN-GZ",
+  "source_title": "组织中小微出口企业线上申领普惠出口信用保险保单的通知",
+  "source_url": "https://sw.gz.gov.cn/gkmlpt/content/10/10878/post_10878834.html",
+  "publisher": "Guangzhou Municipal Commerce Bureau",
+  "source_type": "local_program_notice",
+  "source_language": "zh",
+  "topic": "export_credit_insurance",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": "2026-06-30",
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "CN-GZ-INSURANCE-W0050",
+      "locator": "web extracted line 50",
+      "path": "extracted/CN-GZ-INSURANCE.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "广州小微出口信保申领线索\n2026年通知引导辖区内2025年度出口额1000万美元（含）以下的中小微企业通过单一窗口申领普惠平台类出口信保；实际保障仍看保单。\nThe Guangzhou notice encourages eligible local SMEs with 2025 exports no greater than USD 10 million to apply through the Single Window for the inclusive-platform policy. The issued policy determines actual cover.\nKeywords: 广州, 小微企业, 出口信用保险, 信保, 普惠, insurance"
+}

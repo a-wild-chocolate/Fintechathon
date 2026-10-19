@@ -1,0 +1,105 @@
+{
+  "card_id": "RCEP-01",
+  "source_id": "RCEP-ORIGIN",
+  "title": "RCEP原产货物与运输条件",
+  "summary_zh": "RCEP第三章规定原产资格、累积、产品特定规则和直接运输等要求，享惠应结合进口方实施安排与商品税则。",
+  "summary_en": "RCEP Chapter 3 defines originating goods, cumulation and associated operational conditions. Preferential treatment requires the relevant product-specific rule and importing-party implementation, not merely a Chinese shipping address.",
+  "anchor_terms": [
+    "第二条",
+    "第四条",
+    "直接运输"
+  ],
+  "required_order_fields": [
+    "origin",
+    "destination",
+    "hs_code",
+    "production_inputs",
+    "transport_route",
+    "origin_proof"
+  ],
+  "tradex_workflow": "Collect manufacturing and transport evidence, then resolve the product-specific origin rule through the official tariff/origin source.",
+  "cash_effect": "Keep the preference conditional until the evidence and destination rate are established.",
+  "keywords": [
+    "RCEP",
+    "原产地",
+    "累积",
+    "直接运输",
+    "零关税",
+    "origin"
+  ],
+  "title_en": "RCEP originating goods and transport conditions",
+  "jurisdiction": "RCEP",
+  "source_title": "RCEP 第三章 原产地规则",
+  "source_url": "https://fta.mofcom.gov.cn/upload/agreementFiles/rcep/rceppdf/d3z_cn.pdf",
+  "publisher": "Ministry of Commerce of China / RCEP treaty text",
+  "source_type": "treaty",
+  "source_language": "zh",
+  "topic": "preferential_origin",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2027-01-16",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "RCEP-ORIGIN-B0002",
+      "locator": "page=2",
+      "path": "extracted/RCEP-ORIGIN.json"
+    },
+    {
+      "block_id": "RCEP-ORIGIN-B0004",
+      "locator": "page=4",
+      "path": "extracted/RCEP-ORIGIN.json"
+    },
+    {
+      "block_id": "RCEP-ORIGIN-B0008",
+      "locator": "page=8",
+      "path": "extracted/RCEP-ORIGIN.json"
+    },
+    {
+      "block_id": "RCEP-ORIGIN-B0024",
+      "locator": "page=24",
+      "path": "extracted/RCEP-ORIGIN.json"
+    },
+    {
+      "block_id": "RCEP-ORIGIN-B0010",
+      "locator": "page=10",
+      "path": "extracted/RCEP-ORIGIN.json"
+    },
+    {
+      "block_id": "RCEP-ORIGIN-B0019",
+      "locator": "page=19",
+      "path": "extracted/RCEP-ORIGIN.json"
+    },
+    {
+      "block_id": "RCEP-ORIGIN-B0023",
+      "locator": "page=23",
+      "path": "extracted/RCEP-ORIGIN.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "RCEP原产货物与运输条件\nRCEP第三章规定原产资格、累积、产品特定规则和直接运输等要求，享惠应结合进口方实施安排与商品税则。\nRCEP Chapter 3 defines originating goods, cumulation and associated operational conditions. Preferential treatment requires the relevant product-specific rule and importing-party implementation, not merely a Chinese shipping address.\nKeywords: RCEP, 原产地, 累积, 直接运输, 零关税, origin"
+}

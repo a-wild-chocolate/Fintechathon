@@ -1,0 +1,13 @@
+{
+  "source_id": "CN-EXPORT-CONTROL",
+  "requested_url": "https://exportcontrol.mofcom.gov.cn/article/zcfg/gnzcfg/gzjgfxwj/202410/1057.html",
+  "retrieved_at": "2026-10-17T19:22:58.402447+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://exportcontrol.mofcom.gov.cn/article/zcfg/gnzcfg/gzjgfxwj/202410/1057.html",
+  "content_type": "text/html",
+  "bytes": 43240,
+  "raw_path": "raw/CN-EXPORT-CONTROL.html",
+  "last_modified": null,
+  "etag": null
+}

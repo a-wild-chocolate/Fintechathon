@@ -1,0 +1,79 @@
+{
+  "source_id": "CN-SZ-INSURANCE",
+  "method": "web_tool_excerpt",
+  "coverage": "selected lines, not full original",
+  "blocks": [
+    {
+      "block_id": "CN-SZ-INSURANCE-W0020",
+      "text": "通知公告",
+      "section": "Selected source excerpt",
+      "locator": "web extracted line 20"
+    },
+    {
+      "block_id": "CN-SZ-INSURANCE-W0022",
+      "text": "您现在的位置 首页 > 政务公开 > 政府信息公开 > 通知公告 L23:",
+      "section": "Selected source excerpt",
+      "locator": "web extracted line 22"
+    },
+    {
+      "block_id": "CN-SZ-INSURANCE-W0024",
+      "text": "# 深圳市商务局关于开展2026年7-9月中小微外贸企业出口信用保险统保工作的通知",
+      "section": "深圳市商务局关于开展2026年7-9月中小微外贸企业出口信用保险统保工作的通知",
+      "locator": "web extracted line 24"
+    },
+    {
+      "block_id": "CN-SZ-INSURANCE-W0025",
+      "text": "###### 信息来源：深圳市商务局 信息提供日期：2026-08-10 18:32 〖字体：大中小 〗 视力保护色：",
+      "section": "信息来源：深圳市商务局 信息提供日期：2026-08-10 18:32 〖字体：大中小 〗 视力保护色：",
+      "locator": "web extracted line 25"
+    },
+    {
+      "block_id": "CN-SZ-INSURANCE-W0027",
+      "text": "各相关企业：",
+      "section": "信息来源：深圳市商务局 信息提供日期：2026-08-10 18:32 〖字体：大中小 〗 视力保护色：",
+      "locator": "web extracted line 27"
+    },
+    {
+      "block_id": "CN-SZ-INSURANCE-W0029",
+      "text": "为支持我市中小微外贸企业充分利用国家政策性金融工具拓展出口业务，有效防范出口收汇风险，促进中小微外贸企业健康稳定发展。市商务局联合中国出口信用保险公司深圳分公司对附件清单企业统一开展出口信用保险统保工作，统保保单保障期限为2026年7月1日至2026年9月30日。请相关企业主动对接中国出口信用保险公司深圳分公司申领统保保单，切实发挥出口信用保险风险保障功能，充分把握市场机遇，积极拓展海外订单。",
+      "section": "信息来源：深圳市商务局 信息提供日期：2026-08-10 18:32 〖字体：大中小 〗 视力保护色：",
+      "locator": "web extracted line 29"
+    },
+    {
+      "block_id": "CN-SZ-INSURANCE-W0031",
+      "text": "保单领取方式：企业可通过访问中国（深圳）国际贸易“单一窗口”（https://sz.singlewindow.cn）进行在线领取。",
+      "section": "信息来源：深圳市商务局 信息提供日期：2026-08-10 18:32 〖字体：大中小 〗 视力保护色：",
+      "locator": "web extracted line 31"
+    },
+    {
+      "block_id": "CN-SZ-INSURANCE-W0033",
+      "text": "联系电话：“单一窗口”线上投保咨询电话0755-83165355(7*24小时提供咨询服务）、0755-88325624。",
+      "section": "信息来源：深圳市商务局 信息提供日期：2026-08-10 18:32 〖字体：大中小 〗 视力保护色：",
+      "locator": "web extracted line 33"
+    },
+    {
+      "block_id": "CN-SZ-INSURANCE-W0035",
+      "text": "特此通知。",
+      "section": "信息来源：深圳市商务局 信息提供日期：2026-08-10 18:32 〖字体：大中小 〗 视力保护色：",
+      "locator": "web extracted line 35"
+    },
+    {
+      "block_id": "CN-SZ-INSURANCE-W0037",
+      "text": "附件：企业清单",
+      "section": "信息来源：深圳市商务局 信息提供日期：2026-08-10 18:32 〖字体：大中小 〗 视力保护色：",
+      "locator": "web extracted line 37"
+    },
+    {
+      "block_id": "CN-SZ-INSURANCE-W0039",
+      "text": "深圳市商务局",
+      "section": "信息来源：深圳市商务局 信息提供日期：2026-08-10 18:32 〖字体：大中小 〗 视力保护色：",
+      "locator": "web extracted line 39"
+    },
+    {
+      "block_id": "CN-SZ-INSURANCE-W0041",
+      "text": "2026年8月10日",
+      "section": "信息来源：深圳市商务局 信息提供日期：2026-08-10 18:32 〖字体：大中小 〗 视力保护色：",
+      "locator": "web extracted line 41"
+    }
+  ]
+}

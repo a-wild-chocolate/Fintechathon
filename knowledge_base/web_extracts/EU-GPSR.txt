@@ -1,0 +1,6 @@
+eur-lex.europa.eu (https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=LEGISSUM%3A4670517)
+citeturn125view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=LEGISSUM%3A4670517","lineno":null}); Redirected to URL: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=LEGISSUM:4670517; Total lines: 3
+L0: # JavaScript is disabled
+L1: 
+L2: In order to continue, we need to verify that you're not a robot. This requires JavaScript. Enable JavaScript and then reload the page.
+

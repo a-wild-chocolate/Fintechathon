@@ -1,0 +1,322 @@
+[EU-CUSTOMS-B0001] Customs duties and procedures on imports
+Customs duties and procedures on imports
+
+[EU-CUSTOMS-B0002] How to import goods into the EU
+How to import goods into the EU
+
+[EU-CUSTOMS-B0003] Customs procedures for import in the EU
+Customs procedures for import in the EU
+
+[EU-CUSTOMS-B0004] Customs procedures for import in the EU
+Customs duties are rules that control how goods enter or leave the EU market. If
+ your business imports goods into the EU from non-EU countries, you must follow these
+ rules by completing several different procedures.
+
+[EU-CUSTOMS-B0005] Customs procedures for import in the EU
+These procedures provide important details about the goods, including:
+
+[EU-CUSTOMS-B0006] Customs procedures for import in the EU
+their origin
+
+[EU-CUSTOMS-B0007] Customs procedures for import in the EU
+their nature
+
+[EU-CUSTOMS-B0008] Customs procedures for import in the EU
+their value
+
+[EU-CUSTOMS-B0009] Customs procedures for import in the EU
+Based on this information, the customs authority in the EU country that you are based
+ in can determine which taxes and duties need to be paid as well as ensure that goods
+ entering the EU are safe and comply with other EU rules.
+
+[EU-CUSTOMS-B0010] Warning
+Warning
+
+[EU-CUSTOMS-B0011] Getting started
+Getting started
+
+[EU-CUSTOMS-B0012] Set up your business
+Set up your business
+
+[EU-CUSTOMS-B0013] Set up your business
+To import goods, you need to be established as a business in the EU. If you are a
+ non-EU resident, you will need a work permit with the right to carry out an independent
+ commercial activity. Rules can vary by country – find out more information about starting a business .
+
+[EU-CUSTOMS-B0014] Get an EORI number
+Get an EORI number
+
+[EU-CUSTOMS-B0015] Get an EORI number
+An Economic Operators Registration and Identification (EORI) number is mandatory if as a business you export, import or move goods into the EU. It is
+ unique to your business and does not expire. You can apply for an EORI through the
+ national EU customs authority where you are based or where your business is established.
+
+[EU-CUSTOMS-B0016] Preparing to import
+Preparing to import
+
+[EU-CUSTOMS-B0017] Classify your goods
+Classify your goods
+
+[EU-CUSTOMS-B0018] Classify your goods
+Each good has a Combined Nomenclature (CN) code assigned to it in the EU, which is based on Harmonised system (HS) codes used
+ around the world. The CN code determines the customs duties and rules that apply to
+ a given product. You can find the classification of your goods in the CLASS consultation database .
+
+[EU-CUSTOMS-B0019] Check import restrictions or licenses
+Check import restrictions or licenses
+
+[EU-CUSTOMS-B0020] Check import restrictions or licenses
+Some goods such as chemicals, medicine, food, and weapons may either be restricted or need special permits to be imported into the EU. You can verify this for the goods you want to import
+ by searching their CN or HS codes on the TARIC database . You should also ensure that you contact the national EU customs authority where you are based or where you will carry out your customs-related activity to
+ verify whether there are any additional national prohibitions or restrictions. In
+ some cases, you may need additional import licenses.
+
+[EU-CUSTOMS-B0021] Certificates and rules of origin
+Certificates and rules of origin
+
+[EU-CUSTOMS-B0022] Certificates and rules of origin
+Rules of origin determine in which country a product was sourced or made. Sometimes called a product’s
+ "economic nationality,” this system helps ensure that customs authorities can apply
+ duties correctly so that businesses located in the EU can benefit from reduced rates
+ where applicable. Sometimes you will need to provide proof of the origin of the product
+ you are importing to benefit from this. This proof may be a certificate of origin
+ or a declaration of origin issued by the exporter to you. This can be accessed through
+ the Registered Exporter system (REX) .
+
+[EU-CUSTOMS-B0023] Complying with EU requirements
+Complying with EU requirements
+
+[EU-CUSTOMS-B0024] Complying with EU requirements
+Most goods and products entering the EU must comply with technical requirements for industrial products and health and hygiene requirements for food and agricultural products.
+
+[EU-CUSTOMS-B0025] Complying with EU requirements
+Some requirements are mandatory, while others are voluntary. Find out more about
+ product requirements , including CE markings . If you are not sure about the requirements related to the product you want to import,
+ you can refer to My Trade Assistant using the CN codes to search in the database.
+
+[EU-CUSTOMS-B0026] Importing your goods
+Importing your goods
+
+[EU-CUSTOMS-B0027] Importing your goods
+You need to provide a customs declaration to your national customs authority for your imported products to enter the EU. There
+ are a number of steps to follow, and you can submit these documents yourself or nominate
+ a representative such as a customs broker to complete the formalities on your behalf.
+
+[EU-CUSTOMS-B0028] Entry Summary Declaration
+Entry Summary Declaration
+
+[EU-CUSTOMS-B0029] Entry Summary Declaration
+You first need to present an Entry Summary Declaration (ENS) before the arrival of the goods at the first point of entry into the EU. This is necessary
+ so that authorities can verify and assess the risks associated with the products you
+ want to import.
+
+[EU-CUSTOMS-B0030] Entry Summary Declaration
+The ENS must be presented by you or your representative (either the customs broker
+ or the carrier). The deadline for logging the ENS depends on the mode of transportation
+ of the goods in question. You can declare this information through the Common Import Control System (ICS2) , an EU-wide network that makes targeted controls more manageable.
+
+[EU-CUSTOMS-B0031] Complete a customs declaration
+Complete a customs declaration
+
+[EU-CUSTOMS-B0032] Complete a customs declaration
+A customs declaration is an official document that gives details of goods that are
+ being imported into the EU. Depending on the type of goods that you are importing,
+ you may need to provide the authorities with more documents, including:
+
+[EU-CUSTOMS-B0033] Complete a customs declaration
+commercial invoices
+
+[EU-CUSTOMS-B0034] Complete a customs declaration
+transportation documents
+
+[EU-CUSTOMS-B0035] Complete a customs declaration
+certificates of origin
+
+[EU-CUSTOMS-B0036] Complete a customs declaration
+import licenses
+
+[EU-CUSTOMS-B0037] Complete a customs declaration
+inspection certificates.
+
+[EU-CUSTOMS-B0038] Complete a customs declaration
+The information you include in the customs declaration will determine what duties
+ (if any), VAT, or tariffs you will need to pay. For more information on the documents
+ and processes involved, get in touch with your national customs authority .
+
+[EU-CUSTOMS-B0039] Entry checks and release
+Entry checks and release
+
+[EU-CUSTOMS-B0040] Entry checks and release
+Once your goods arrive at the border, the customs authorities must be notified with
+ a presentation notification. The goods remain under the supervision of the customs
+ authority (known as temporary storage). They can be stored until they are cleared
+ and for no longer than 90 days. They may be cleared in a few ways:
+
+[EU-CUSTOMS-B0041] Released for free circulation
+Released for free circulation
+
+[EU-CUSTOMS-B0042] Released for free circulation
+This means that your goods have met all the requirements for import based either on the documentation provided, an additional document check, or physical
+ check of the goods. Once a good is released, it means that you have paid all the applicable
+ customs import duties, taxes, or excise charges and the good is considered to have
+ the same status as a product made in the EU, this is called “Union status.” From here, your product is free to be sold anywhere in the EU market.
+
+[EU-CUSTOMS-B0043] Transit, storage, and processing
+Transit, storage, and processing
+
+[EU-CUSTOMS-B0044] Transit, storage, and processing
+You can also move your goods through the EU without going through the import procedures
+ at the point of entry by using the customs transit procedure . This means that you can move the goods to the destination country instead of the
+ entry point to complete the customs formalities there. Your goods can also be placed
+ in storage, called customs warehousing . This procedure lets businesses import goods before fully deciding what to do with
+ them. If the goods are housed in a space authorised by the customs authorities, you
+ do not pay the applicable customs duties, taxes, or excise charges until the they
+ are released for free circulation, as mentioned above.
+
+[EU-CUSTOMS-B0045] Transit, storage, and processing
+If you choose to import a good to continue its manufacture or repair it with either
+ the intention of selling it in the EU or re-exporting it, your good can be authorised
+ for the inward processing procedure . You must specify the period for this processing, and at the end of it, you may either
+ re-export the good or follow the procedure above to have it release for free circulation.
+ In that case, you must pay all the applicable duties, taxes and excise charges.
+
+[EU-CUSTOMS-B0046] Sample story
+Sample story
+
+[EU-CUSTOMS-B0047] Anna’s import journey: from tea leaves to European shelves
+Anna’s import journey: from tea leaves to European shelves
+
+[EU-CUSTOMS-B0048] Anna’s import journey: from tea leaves to European shelves
+Anna owns a small specialty tea shop in France and wants to import a unique blend
+ of organic tea from Sri Lanka. To start, she makes sure her business is registered
+ in the EU and applies for an EORI number through the French customs authority.
+
+[EU-CUSTOMS-B0049] Anna’s import journey: from tea leaves to European shelves
+Before placing the order, Anna checks the CLASS database to find the correct CN code for tea. This classification code tells customs what rules and duties apply. She
+ also uses the TARIC database to see if there are any restrictions or special requirements. While she doesn’t need
+ a license for importing tea, she learns that a sanitary certificate is required since tea is a food product.
+
+[EU-CUSTOMS-B0050] Anna’s import journey: from tea leaves to European shelves
+Her supplier in Sri Lanka agrees to include a certificate of origin , which means Anna can benefit from lower customs duties under the EU’s trade agreement
+ with Sri Lanka. With all preparations in place, Anna arranges for the shipment.
+
+[EU-CUSTOMS-B0051] Anna’s import journey: from tea leaves to European shelves
+Before the goods arrive at the port in Marseille, her customs agent submits an Entry Summary Declaration (ENS) to alert the authorities and allow for safety and security risk checks. When the
+ shipment reaches the EU, her agent files a customs declaration with customs. Along with the declaration, Anna provides the commercial invoice, transport
+ documents, the certificate of origin, and the required sanitary certificate.
+
+[EU-CUSTOMS-B0052] Anna’s import journey: from tea leaves to European shelves
+Once the declaration is accepted, Anna pays the customs duty and VAT . Customs officers inspect a few boxes and confirm everything is in order. The tea
+ is cleared and released for delivery. Soon after, Anna receives her shipment and stocks the shelves with her new organic
+ tea blend, that she can sell throughout the EU thanks to her online shop.
+
+[EU-CUSTOMS-B0053] Anna’s import journey: from tea leaves to European shelves
+Find out more about customs duties and import procedures in your country below:
+
+[EU-CUSTOMS-B0054] Choose country
+Choose country
+
+[EU-CUSTOMS-B0055] Choose country
+Austria
+
+[EU-CUSTOMS-B0056] Choose country
+Belgium
+
+[EU-CUSTOMS-B0057] Choose country
+Bulgaria
+
+[EU-CUSTOMS-B0058] Choose country
+Croatia
+
+[EU-CUSTOMS-B0059] Choose country
+Cyprus
+
+[EU-CUSTOMS-B0060] Choose country
+Czechia
+
+[EU-CUSTOMS-B0061] Choose country
+Denmark
+
+[EU-CUSTOMS-B0062] Choose country
+Estonia
+
+[EU-CUSTOMS-B0063] Choose country
+Finland
+
+[EU-CUSTOMS-B0064] Choose country
+France
+
+[EU-CUSTOMS-B0065] Choose country
+Germany
+
+[EU-CUSTOMS-B0066] Choose country
+Greece
+
+[EU-CUSTOMS-B0067] Choose country
+Hungary
+
+[EU-CUSTOMS-B0068] Choose country
+Ireland
+
+[EU-CUSTOMS-B0069] Choose country
+Italy
+
+[EU-CUSTOMS-B0070] Choose country
+Latvia
+
+[EU-CUSTOMS-B0071] Choose country
+Lithuania
+
+[EU-CUSTOMS-B0072] Choose country
+Luxembourg
+
+[EU-CUSTOMS-B0073] Choose country
+Malta
+
+[EU-CUSTOMS-B0074] Choose country
+Netherlands
+
+[EU-CUSTOMS-B0075] Choose country
+Poland
+
+[EU-CUSTOMS-B0076] Choose country
+Portugal
+
+[EU-CUSTOMS-B0077] Choose country
+Romania
+
+[EU-CUSTOMS-B0078] Choose country
+Slovakia
+
+[EU-CUSTOMS-B0079] Choose country
+Slovenia
+
+[EU-CUSTOMS-B0080] Choose country
+Spain
+
+[EU-CUSTOMS-B0081] Choose country
+Sweden
+
+[EU-CUSTOMS-B0082] Need support from assistance services?
+Need support from assistance services?
+
+[EU-CUSTOMS-B0083] Need support from assistance services?
+Get in touch with specialised assistance services
+
+[EU-CUSTOMS-B0084] Need support from assistance services?
+Do you have questions on operating a business cross-border, for example exporting or expanding to another EU country? If so, the Enterprise Europe Network can give you free advice.
+
+[EU-CUSTOMS-B0085] Need support from assistance services?
+You can also use the assistance service finder to find the right help for you.
+
+[EU-CUSTOMS-B0086] Need support from assistance services?
+Facebook
+
+[EU-CUSTOMS-B0087] Need support from assistance services?
+Linkedin
+
+[EU-CUSTOMS-B0088] Need support from assistance services?
+X (Twitter)
+
+[EU-CUSTOMS-B0089] Need support from assistance services?
+e-mail

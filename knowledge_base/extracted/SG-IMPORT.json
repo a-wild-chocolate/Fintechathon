@@ -1,0 +1,900 @@
+{
+  "source_id": "SG-IMPORT",
+  "method": "html_dom",
+  "blocks": [
+    {
+      "text": "Home",
+      "section": "Document body",
+      "locator": "/html/body/main/div[1]/div/div/div/div[1]/ol/li[1]",
+      "block_id": "SG-IMPORT-B0001"
+    },
+    {
+      "text": "Doing Business",
+      "section": "Document body",
+      "locator": "/html/body/main/div[1]/div/div/div/div[1]/ol/li[2]",
+      "block_id": "SG-IMPORT-B0002"
+    },
+    {
+      "text": "Import Operations",
+      "section": "Document body",
+      "locator": "/html/body/main/div[1]/div/div/div/div[1]/ol/li[3]",
+      "block_id": "SG-IMPORT-B0003"
+    },
+    {
+      "text": "Import Procedures",
+      "section": "Document body",
+      "locator": "/html/body/main/div[1]/div/div/div/div[1]/ol/li[4]",
+      "block_id": "SG-IMPORT-B0004"
+    },
+    {
+      "text": "Import Procedures Overview",
+      "section": "Document body",
+      "locator": "/html/body/main/div[1]/div/div/div/div[1]/ol/li[5]",
+      "block_id": "SG-IMPORT-B0005"
+    },
+    {
+      "text": "Import Procedures Overview",
+      "section": "Import Procedures Overview",
+      "locator": "/html/body/main/div[1]/div/div/div/div[2]/h1",
+      "block_id": "SG-IMPORT-B0006"
+    },
+    {
+      "text": "Learn about the key requirements, duties, permits, errors, and penalties for importing goods into Singapore.",
+      "section": "Import Procedures Overview",
+      "locator": "/html/body/main/div[1]/div/div/div/div[2]/p",
+      "block_id": "SG-IMPORT-B0007"
+    },
+    {
+      "text": "Download the full version of the infographics [PDF, 2.23 MB] ↗ (opens in new tab) to view the linked resources.",
+      "section": "Import Procedures Overview",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[1]",
+      "block_id": "SG-IMPORT-B0008"
+    },
+    {
+      "text": "All goods imported into Singapore are regulated under the Customs Act, the Goods and Services Tax (GST) Act and the Regulation of Imports and Exports Act (RIEA).",
+      "section": "Import Procedures Overview",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[2]",
+      "block_id": "SG-IMPORT-B0009"
+    },
+    {
+      "text": "Imported goods are subject to GST and/or duty , and a customs permit is required to account for the import and tax payment.",
+      "section": "Import Procedures Overview",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[3]",
+      "block_id": "SG-IMPORT-B0010"
+    },
+    {
+      "text": "Dutiable goods (incurring both duty and GST) are:",
+      "section": "Import Procedures Overview",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[4]",
+      "block_id": "SG-IMPORT-B0011"
+    },
+    {
+      "text": "Intoxicating liquors",
+      "section": "Import Procedures Overview",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[1]/li[1]",
+      "block_id": "SG-IMPORT-B0012"
+    },
+    {
+      "text": "Tobacco products",
+      "section": "Import Procedures Overview",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[1]/li[2]",
+      "block_id": "SG-IMPORT-B0013"
+    },
+    {
+      "text": "Motor vehicles",
+      "section": "Import Procedures Overview",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[1]/li[3]",
+      "block_id": "SG-IMPORT-B0014"
+    },
+    {
+      "text": "Petroleum products",
+      "section": "Import Procedures Overview",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[1]/li[4]",
+      "block_id": "SG-IMPORT-B0015"
+    },
+    {
+      "text": "Ad valorem or specific duty rates may apply.",
+      "section": "Import Procedures Overview",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[5]",
+      "block_id": "SG-IMPORT-B0016"
+    },
+    {
+      "text": "All other goods are non-dutiable and incur GST only. Prevailing GST is levied on the Cost,Insurance, Freight (CIF) value , which includes duties (if dutiable) and all costs incidental to the sale and delivery of the goods into Singapore.",
+      "section": "Import Procedures Overview",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[6]",
+      "block_id": "SG-IMPORT-B0017"
+    },
+    {
+      "text": "Find out more about duties and GST .",
+      "section": "Import Procedures Overview",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[7]",
+      "block_id": "SG-IMPORT-B0018"
+    },
+    {
+      "text": "Import Requirements",
+      "section": "Import Requirements",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[1]",
+      "block_id": "SG-IMPORT-B0019"
+    },
+    {
+      "text": "Who Is the Importer",
+      "section": "Who Is the Importer",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[2]",
+      "block_id": "SG-IMPORT-B0020"
+    },
+    {
+      "text": "The importer is the party who brings the goods into Singapore:",
+      "section": "Who Is the Importer",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[8]",
+      "block_id": "SG-IMPORT-B0021"
+    },
+    {
+      "text": "for their own account or use; or",
+      "section": "Who Is the Importer",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[2]/li[1]",
+      "block_id": "SG-IMPORT-B0022"
+    },
+    {
+      "text": "for the account or use of another party.",
+      "section": "Who Is the Importer",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[2]/li[2]",
+      "block_id": "SG-IMPORT-B0023"
+    },
+    {
+      "text": "If goods are sold by an overseas company to a local company who is named as the consignee on the commercial invoice, the local company is considered the importer.",
+      "section": "Who Is the Importer",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[9]",
+      "block_id": "SG-IMPORT-B0024"
+    },
+    {
+      "text": "Before Importation",
+      "section": "Before Importation",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[3]",
+      "block_id": "SG-IMPORT-B0025"
+    },
+    {
+      "text": "Importers must obtain the relevant customs permit before the goods are imported into Singapore.",
+      "section": "Before Importation",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[10]",
+      "block_id": "SG-IMPORT-B0026"
+    },
+    {
+      "text": "Refer to:",
+      "section": "Before Importation",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[11]",
+      "block_id": "SG-IMPORT-B0027"
+    },
+    {
+      "text": "Types of Customs Permits",
+      "section": "Before Importation",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[3]/li[1]",
+      "block_id": "SG-IMPORT-B0028"
+    },
+    {
+      "text": "Situations Where No Customs Permit Is Required",
+      "section": "Before Importation",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[3]/li[2]",
+      "block_id": "SG-IMPORT-B0029"
+    },
+    {
+      "text": "Taxable companies should check with the Inland Revenue Authority of Singapore (IRAS) ↗ (opens in new tab) on GST accounting arrangements.",
+      "section": "Before Importation",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[12]",
+      "block_id": "SG-IMPORT-B0030"
+    },
+    {
+      "text": "Useful Links",
+      "section": "Useful Links",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[4]",
+      "block_id": "SG-IMPORT-B0031"
+    },
+    {
+      "text": "Controlled and Prohibited Goods",
+      "section": "Useful Links",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[4]/li[1]",
+      "block_id": "SG-IMPORT-B0032"
+    },
+    {
+      "text": "Obtain a Customs Import Permit",
+      "section": "Useful Links",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[4]/li[2]",
+      "block_id": "SG-IMPORT-B0033"
+    },
+    {
+      "text": "Paying Duty and GST",
+      "section": "Useful Links",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[4]/li[3]",
+      "block_id": "SG-IMPORT-B0034"
+    },
+    {
+      "text": "Overlanded and Shortlanded Goods",
+      "section": "Useful Links",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[4]/li[4]",
+      "block_id": "SG-IMPORT-B0035"
+    },
+    {
+      "text": "Depositing Goods in Free Trade Zones",
+      "section": "Useful Links",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[4]/li[5]",
+      "block_id": "SG-IMPORT-B0036"
+    },
+    {
+      "text": "Depositing Goods in Licensed or Zero-GST Warehouses",
+      "section": "Useful Links",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[4]/li[6]",
+      "block_id": "SG-IMPORT-B0037"
+    },
+    {
+      "text": "Retaining Your Trade Documents",
+      "section": "Useful Links",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[4]/li[7]",
+      "block_id": "SG-IMPORT-B0038"
+    },
+    {
+      "text": "Documents for Clearance of Goods",
+      "section": "Useful Links",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[4]/li[8]",
+      "block_id": "SG-IMPORT-B0039"
+    },
+    {
+      "text": "Return of Customs Permits",
+      "section": "Useful Links",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[4]/li[9]",
+      "block_id": "SG-IMPORT-B0040"
+    },
+    {
+      "text": "Sealing and Unstuffing",
+      "section": "Useful Links",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[4]/li[10]",
+      "block_id": "SG-IMPORT-B0041"
+    },
+    {
+      "text": "Errors and Offences",
+      "section": "Errors and Offences",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[5]",
+      "block_id": "SG-IMPORT-B0042"
+    },
+    {
+      "text": "Importers may be penalised if they do not comply with the requirements under the Customs Act, the RIEA and their subsidiary legislation.",
+      "section": "Errors and Offences",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[13]",
+      "block_id": "SG-IMPORT-B0043"
+    },
+    {
+      "text": "Examples of Common Errors and Corrective Actions",
+      "section": "Examples of Common Errors and Corrective Actions",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[6]",
+      "block_id": "SG-IMPORT-B0044"
+    },
+    {
+      "text": "Errors in Import Permits",
+      "section": "Errors in Import Permits",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[7]",
+      "block_id": "SG-IMPORT-B0045"
+    },
+    {
+      "text": "Import Permit Not Utilised",
+      "section": "Import Permit Not Utilised",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[8]",
+      "block_id": "SG-IMPORT-B0046"
+    },
+    {
+      "text": "You may submit an amendment or cancellation request via TradeNet, stating the reason (e.g. extending permit validity).",
+      "section": "Import Permit Not Utilised",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[14]",
+      "block_id": "SG-IMPORT-B0047"
+    },
+    {
+      "text": "Some permit fields cannot be amended if controlled, prohibited or dutiable goods are involved. See the List of Non-Amendable Fields ↗ (opens in new tab) for more information.",
+      "section": "Import Permit Not Utilised",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[15]",
+      "block_id": "SG-IMPORT-B0048"
+    },
+    {
+      "text": "If the permit cannot be amended or cancelled:",
+      "section": "Import Permit Not Utilised",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[16]",
+      "block_id": "SG-IMPORT-B0049"
+    },
+    {
+      "text": "you may lodge a Voluntary Disclosure to Singapore Customs; or",
+      "section": "Import Permit Not Utilised",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[5]/li[1]",
+      "block_id": "SG-IMPORT-B0050"
+    },
+    {
+      "text": "if it is a payment permit, you may submit a refund request via TradeNet with the reason for refund.",
+      "section": "Import Permit Not Utilised",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[5]/li[2]",
+      "block_id": "SG-IMPORT-B0051"
+    },
+    {
+      "text": "A Voluntary Disclosure is not required solely for refund requests.",
+      "section": "Import Permit Not Utilised",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[17]",
+      "block_id": "SG-IMPORT-B0052"
+    },
+    {
+      "text": "Import Permit Already Utilised",
+      "section": "Import Permit Already Utilised",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[9]",
+      "block_id": "SG-IMPORT-B0053"
+    },
+    {
+      "text": "Amendment or cancellation is generally not allowed once the permit has been used for cargo clearance.",
+      "section": "Import Permit Already Utilised",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[18]",
+      "block_id": "SG-IMPORT-B0054"
+    },
+    {
+      "text": "If errors are detected and amendment/cancellation is not possible, you may lodge a Voluntary Disclosure to Singapore Customs.",
+      "section": "Import Permit Already Utilised",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[19]",
+      "block_id": "SG-IMPORT-B0055"
+    },
+    {
+      "text": "Errors by Approved Major Exporter Scheme (MES) Traders",
+      "section": "Errors by Approved Major Exporter Scheme (MES) Traders",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[10]",
+      "block_id": "SG-IMPORT-B0056"
+    },
+    {
+      "text": "Incorrect Information Declared on In-Non-Payment (Approved Premises/Schemes) Permit",
+      "section": "Incorrect Information Declared on In-Non-Payment (Approved Premises/Schemes) Permit",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[11]",
+      "block_id": "SG-IMPORT-B0057"
+    },
+    {
+      "text": "If the permit was used for cargo clearance:",
+      "section": "Incorrect Information Declared on In-Non-Payment (Approved Premises/Schemes) Permit",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[20]",
+      "block_id": "SG-IMPORT-B0058"
+    },
+    {
+      "text": "the MES trader must notify IRAS of the corrections in their GST returns.",
+      "section": "Incorrect Information Declared on In-Non-Payment (Approved Premises/Schemes) Permit",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[6]/li[1]",
+      "block_id": "SG-IMPORT-B0059"
+    },
+    {
+      "text": "Corrections must be supported by relevant documents (e.g. commercial invoices, shipping documents).",
+      "section": "Incorrect Information Declared on In-Non-Payment (Approved Premises/Schemes) Permit",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[6]/li[2]",
+      "block_id": "SG-IMPORT-B0060"
+    },
+    {
+      "text": "Wrong Importer Name and UEN Declared",
+      "section": "Wrong Importer Name and UEN Declared",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[12]",
+      "block_id": "SG-IMPORT-B0061"
+    },
+    {
+      "text": "The declaring agent must:",
+      "section": "Wrong Importer Name and UEN Declared",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[21]",
+      "block_id": "SG-IMPORT-B0062"
+    },
+    {
+      "text": "Obtain a replacement In-Non-Payment “Approved Premises/Schemes” (INP-APS) permit reflecting the correct MES trader as the importer.",
+      "section": "Wrong Importer Name and UEN Declared",
+      "locator": "/html/body/main/div[2]/div[1]/div/ol/li[1]",
+      "block_id": "SG-IMPORT-B0063"
+    },
+    {
+      "text": "Submit the original and replacement permits, and supporting documents, via the Customs Documentation Enquiry Form ↗ (opens in new tab) to request invalidation of the unused replacement permit.",
+      "section": "Wrong Importer Name and UEN Declared",
+      "locator": "/html/body/main/div[2]/div[1]/div/ol/li[2]",
+      "block_id": "SG-IMPORT-B0064"
+    },
+    {
+      "text": "Only the importer name and UEN should be changed. All other fields must remain unchanged.",
+      "section": "Wrong Importer Name and UEN Declared",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[22]",
+      "block_id": "SG-IMPORT-B0065"
+    },
+    {
+      "text": "Errors in an In-Payment Permit",
+      "section": "Errors in an In-Payment Permit",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[13]",
+      "block_id": "SG-IMPORT-B0066"
+    },
+    {
+      "text": "In-Payment Permit Taken Instead of INP-APS Permit for MES Trader",
+      "section": "In-Payment Permit Taken Instead of INP-APS Permit for MES Trader",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[14]",
+      "block_id": "SG-IMPORT-B0067"
+    },
+    {
+      "text": "An INP-APS permit should be obtained at the time of import.",
+      "section": "In-Payment Permit Taken Instead of INP-APS Permit for MES Trader",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[23]",
+      "block_id": "SG-IMPORT-B0068"
+    },
+    {
+      "text": "A replacement permit is not required if the In-Payment (IPT) permit was already used.",
+      "section": "In-Payment Permit Taken Instead of INP-APS Permit for MES Trader",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[24]",
+      "block_id": "SG-IMPORT-B0069"
+    },
+    {
+      "text": "If the declaring agent has paid GST, they may seek reimbursement from the importer , who may then claim the GST as input tax in their GST return to IRAS.",
+      "section": "In-Payment Permit Taken Instead of INP-APS Permit for MES Trader",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[25]",
+      "block_id": "SG-IMPORT-B0070"
+    },
+    {
+      "text": "Wrong Importer Declared",
+      "section": "Wrong Importer Declared",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[15]",
+      "block_id": "SG-IMPORT-B0071"
+    },
+    {
+      "text": "A replacement In-Payment permit with the correct importer’s UEN and name must be obtained.",
+      "section": "Wrong Importer Declared",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[26]",
+      "block_id": "SG-IMPORT-B0072"
+    },
+    {
+      "text": "If foreign currency values were incorrectly declared, use the initial permit’s exchange rate when applying for the replacement permit.",
+      "section": "Wrong Importer Declared",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[27]",
+      "block_id": "SG-IMPORT-B0073"
+    },
+    {
+      "text": "The importer or declaring agent may submit a refund request via TradeNet with the reason for refund for duties/GST paid on the wrong permit.",
+      "section": "Wrong Importer Declared",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[28]",
+      "block_id": "SG-IMPORT-B0074"
+    },
+    {
+      "text": "Wrong Value of Goods Declared",
+      "section": "Wrong Value of Goods Declared",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[16]",
+      "block_id": "SG-IMPORT-B0075"
+    },
+    {
+      "text": "Take up a Short-Payment permit ↗ (opens in new tab) to account for the shortfall in duty and/or GST.",
+      "section": "Wrong Value of Goods Declared",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[29]",
+      "block_id": "SG-IMPORT-B0076"
+    },
+    {
+      "text": "For over-payment or wrong payment, submit a refund request via TradeNet with the reason for refund.",
+      "section": "Wrong Value of Goods Declared",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[30]",
+      "block_id": "SG-IMPORT-B0077"
+    },
+    {
+      "text": "Wrong Information Declared and Cannot Be Amended",
+      "section": "Wrong Information Declared and Cannot Be Amended",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[17]",
+      "block_id": "SG-IMPORT-B0078"
+    },
+    {
+      "text": "If none of the above corrective options apply, lodge a Voluntary Disclosure.",
+      "section": "Wrong Information Declared and Cannot Be Amended",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[31]",
+      "block_id": "SG-IMPORT-B0079"
+    },
+    {
+      "text": "Examples of Common Offences",
+      "section": "Examples of Common Offences",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[18]",
+      "block_id": "SG-IMPORT-B0080"
+    },
+    {
+      "text": "Incorrect Declaration on Value of Goods",
+      "section": "Incorrect Declaration on Value of Goods",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[19]",
+      "block_id": "SG-IMPORT-B0081"
+    },
+    {
+      "text": "Examples:",
+      "section": "Incorrect Declaration on Value of Goods",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[32]",
+      "block_id": "SG-IMPORT-B0082"
+    },
+    {
+      "text": "Insurance charges omitted when declaring GST payment permit",
+      "section": "Incorrect Declaration on Value of Goods",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[7]/li[1]",
+      "block_id": "SG-IMPORT-B0083"
+    },
+    {
+      "text": "Free gifts provided by overseas suppliers not declared",
+      "section": "Incorrect Declaration on Value of Goods",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[7]/li[2]",
+      "block_id": "SG-IMPORT-B0084"
+    },
+    {
+      "text": "Failure to Declare Imported Goods",
+      "section": "Failure to Declare Imported Goods",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[20]",
+      "block_id": "SG-IMPORT-B0085"
+    },
+    {
+      "text": "Example:",
+      "section": "Failure to Declare Imported Goods",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[33]",
+      "block_id": "SG-IMPORT-B0086"
+    },
+    {
+      "text": "Undeclared goods found inside containers imported into Singapore",
+      "section": "Failure to Declare Imported Goods",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[8]/li",
+      "block_id": "SG-IMPORT-B0087"
+    },
+    {
+      "text": "Failure to Produce Trade Documents",
+      "section": "Failure to Produce Trade Documents",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[21]",
+      "block_id": "SG-IMPORT-B0088"
+    },
+    {
+      "text": "Examples:",
+      "section": "Failure to Produce Trade Documents",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[34]",
+      "block_id": "SG-IMPORT-B0089"
+    },
+    {
+      "text": "Invoice, bill of lading, certificate of origin not produced for verification upon request",
+      "section": "Failure to Produce Trade Documents",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[9]/li",
+      "block_id": "SG-IMPORT-B0090"
+    },
+    {
+      "text": "Failure to Produce Permit for Clearance",
+      "section": "Failure to Produce Permit for Clearance",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[22]",
+      "block_id": "SG-IMPORT-B0091"
+    },
+    {
+      "text": "Example:",
+      "section": "Failure to Produce Permit for Clearance",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[35]",
+      "block_id": "SG-IMPORT-B0092"
+    },
+    {
+      "text": "Haulier fails to produce goods and customs permit with supporting documents for endorsement",
+      "section": "Failure to Produce Permit for Clearance",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[10]/li",
+      "block_id": "SG-IMPORT-B0093"
+    },
+    {
+      "text": "Unauthorised Tampering",
+      "section": "Unauthorised Tampering",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[23]",
+      "block_id": "SG-IMPORT-B0094"
+    },
+    {
+      "text": "Examples:",
+      "section": "Unauthorised Tampering",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[36]",
+      "block_id": "SG-IMPORT-B0095"
+    },
+    {
+      "text": "Tampering/opening/breaking/altering or removing Customs lock or red seal affixed on the container",
+      "section": "Unauthorised Tampering",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[11]/li[1]",
+      "block_id": "SG-IMPORT-B0096"
+    },
+    {
+      "text": "Tampering with safeguards on containerised dutiable goods",
+      "section": "Unauthorised Tampering",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[11]/li[2]",
+      "block_id": "SG-IMPORT-B0097"
+    },
+    {
+      "text": "For minor offences, Singapore Customs may compound offences up to S$5,000 per offence . Fraudulent or serious cases may be prosecuted.",
+      "section": "Unauthorised Tampering",
+      "locator": "/html/body/main/div[2]/div[1]/div/p[37]",
+      "block_id": "SG-IMPORT-B0098"
+    },
+    {
+      "text": "Penalties Upon Conviction for Key Offences",
+      "section": "Penalties Upon Conviction for Key Offences",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[24]",
+      "block_id": "SG-IMPORT-B0099"
+    },
+    {
+      "text": "Common customs offences and penalties upon conviction.",
+      "section": "Penalties Upon Conviction for Key Offences",
+      "locator": "/html/body/main/div[2]/div[1]/div/div[2]/p",
+      "block_id": "SG-IMPORT-B0100"
+    },
+    {
+      "text": "Offence Penalty Upon Conviction",
+      "section": "Penalties Upon Conviction for Key Offences",
+      "locator": "/html/body/main/div[2]/div[1]/div/div[2]/div/table/tbody/tr[1]",
+      "block_id": "SG-IMPORT-B0101"
+    },
+    {
+      "text": "Making an incorrect declaration (Section 128(1)(a) Customs Act) Fine up to S$10,000 or the equivalent of duty/GST payable (whichever is higher), or imprisonment up to 12 months, or both.",
+      "section": "Penalties Upon Conviction for Key Offences",
+      "locator": "/html/body/main/div[2]/div[1]/div/div[2]/div/table/tbody/tr[2]",
+      "block_id": "SG-IMPORT-B0102"
+    },
+    {
+      "text": "Incorrect or incomplete declaration of value of goods imported into or manufactured in Singapore for duty/GST assessment (Section 128(1)(c)) Same penalties as above.",
+      "section": "Penalties Upon Conviction for Key Offences",
+      "locator": "/html/body/main/div[2]/div[1]/div/div[2]/div/table/tbody/tr[3]",
+      "block_id": "SG-IMPORT-B0103"
+    },
+    {
+      "text": "Failure to declare goods imported into/exported from/transhipped in Singapore (Section 128B(1)(a)) Same penalties as above.",
+      "section": "Penalties Upon Conviction for Key Offences",
+      "locator": "/html/body/main/div[2]/div[1]/div/div[2]/div/table/tbody/tr[4]",
+      "block_id": "SG-IMPORT-B0104"
+    },
+    {
+      "text": "Failure to declare value of goods for duty/GST assessment (Section 128B(1)(b)) Same penalties as above.",
+      "section": "Penalties Upon Conviction for Key Offences",
+      "locator": "/html/body/main/div[2]/div[1]/div/div[2]/div/table/tbody/tr[5]",
+      "block_id": "SG-IMPORT-B0105"
+    },
+    {
+      "text": "Failure/refusal to produce trade documents (Section 128C) Same penalties as above.",
+      "section": "Penalties Upon Conviction for Key Offences",
+      "locator": "/html/body/main/div[2]/div[1]/div/div[2]/div/table/tbody/tr[6]",
+      "block_id": "SG-IMPORT-B0106"
+    },
+    {
+      "text": "Failure to comply with conditions for removal of goods from customs control (Section 27(1)(c)) Fine up to S$5,000.",
+      "section": "Penalties Upon Conviction for Key Offences",
+      "locator": "/html/body/main/div[2]/div[1]/div/div[2]/div/table/tbody/tr[7]",
+      "block_id": "SG-IMPORT-B0107"
+    },
+    {
+      "text": "Making a false declaration (Section 28(1)(a), RIEA) Fine up to S$10,000 or imprisonment up to 2 years, or both.",
+      "section": "Penalties Upon Conviction for Key Offences",
+      "locator": "/html/body/main/div[2]/div[1]/div/div[2]/div/table/tbody/tr[8]",
+      "block_id": "SG-IMPORT-B0108"
+    },
+    {
+      "text": "Importing/exporting/transhipping without permit (Reg. 3(1), RIER) First conviction: Fine up to S$100,000 or 3 times value of goods (whichever greater), or imprisonment up to 2 years, or both. Second or subsequent conviction: Fine up to S$200,000 or 4 times the value of the goods, whichever is greater, or imprisonment not exceeding 3 years, or both.",
+      "section": "Penalties Upon Conviction for Key Offences",
+      "locator": "/html/body/main/div[2]/div[1]/div/div[2]/div/table/tbody/tr[9]",
+      "block_id": "SG-IMPORT-B0109"
+    },
+    {
+      "text": "Unauthorised tampering of seals/safeguards (Reg. 16(4), Container Regs) First conviction: Fine up to S$5,000. Second or subsequent conviction: Fine up to S$8,000.",
+      "section": "Penalties Upon Conviction for Key Offences",
+      "locator": "/html/body/main/div[2]/div[1]/div/div[2]/div/table/tbody/tr[10]",
+      "block_id": "SG-IMPORT-B0110"
+    },
+    {
+      "text": "Best Practices",
+      "section": "Best Practices",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[25]",
+      "block_id": "SG-IMPORT-B0111"
+    },
+    {
+      "text": "Do",
+      "section": "Do",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[26]",
+      "block_id": "SG-IMPORT-B0112"
+    },
+    {
+      "text": "Inform Singapore Customs of any change in company particulars.",
+      "section": "Do",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[12]/li[1]",
+      "block_id": "SG-IMPORT-B0113"
+    },
+    {
+      "text": "Understand import procedures and declaration requirements.",
+      "section": "Do",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[12]/li[2]",
+      "block_id": "SG-IMPORT-B0114"
+    },
+    {
+      "text": "Know the contents of each consignment.",
+      "section": "Do",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[12]/li[3]",
+      "block_id": "SG-IMPORT-B0115"
+    },
+    {
+      "text": "Provide full supporting documents to your declaring agent.",
+      "section": "Do",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[12]/li[4]",
+      "block_id": "SG-IMPORT-B0116"
+    },
+    {
+      "text": "Include freight and insurance charges in declared value.",
+      "section": "Do",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[12]/li[5]",
+      "block_id": "SG-IMPORT-B0117"
+    },
+    {
+      "text": "Declare all additional goods (samples, gifts, free-of-charge (FOC) items).",
+      "section": "Do",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[12]/li[6]",
+      "block_id": "SG-IMPORT-B0118"
+    },
+    {
+      "text": "Ensure Harmonised System (HS) codes, quantities and descriptions are accurate.",
+      "section": "Do",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[12]/li[7]",
+      "block_id": "SG-IMPORT-B0119"
+    },
+    {
+      "text": "Comply with all permit conditions.",
+      "section": "Do",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[12]/li[8]",
+      "block_id": "SG-IMPORT-B0120"
+    },
+    {
+      "text": "Apply for Customs supervision for unstuffing if a container is affixed with the Customs red seal.",
+      "section": "Do",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[12]/li[9]",
+      "block_id": "SG-IMPORT-B0121"
+    },
+    {
+      "text": "Retain supporting documents for 5 years.",
+      "section": "Do",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[12]/li[10]",
+      "block_id": "SG-IMPORT-B0122"
+    },
+    {
+      "text": "Do Not",
+      "section": "Do Not",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[27]",
+      "block_id": "SG-IMPORT-B0123"
+    },
+    {
+      "text": "Make declarations without verifying authenticity of documents.",
+      "section": "Do Not",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[13]/li[1]",
+      "block_id": "SG-IMPORT-B0124"
+    },
+    {
+      "text": "Use pro-forma invoices for permit application.",
+      "section": "Do Not",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[13]/li[2]",
+      "block_id": "SG-IMPORT-B0125"
+    },
+    {
+      "text": "Declare nominal value for samples or FOC items.",
+      "section": "Do Not",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[13]/li[3]",
+      "block_id": "SG-IMPORT-B0126"
+    },
+    {
+      "text": "Declare the country of the port of loading as the country of origin, when the goods actually originate from another country.",
+      "section": "Do Not",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[13]/li[4]",
+      "block_id": "SG-IMPORT-B0127"
+    },
+    {
+      "text": "Share TradeNet user ID or password.",
+      "section": "Do Not",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[13]/li[5]",
+      "block_id": "SG-IMPORT-B0128"
+    },
+    {
+      "text": "Use your UEN to import goods not belonging to you (unless consolidating for customers without UEN — you remain responsible).",
+      "section": "Do Not",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[13]/li[6]",
+      "block_id": "SG-IMPORT-B0129"
+    },
+    {
+      "text": "For More Information",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/h2[28]",
+      "block_id": "SG-IMPORT-B0130"
+    },
+    {
+      "text": "Hand-carried Temporary Imported Goods",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[1]",
+      "block_id": "SG-IMPORT-B0131"
+    },
+    {
+      "text": "Types of Import Permits",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[2]",
+      "block_id": "SG-IMPORT-B0132"
+    },
+    {
+      "text": "Permit Validity and Error Messages",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[3]",
+      "block_id": "SG-IMPORT-B0133"
+    },
+    {
+      "text": "Permit Amendments and Cancellation",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[4]",
+      "block_id": "SG-IMPORT-B0134"
+    },
+    {
+      "text": "Claiming Preferential Tariff Treatment for Dutiable Imports",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[5]",
+      "block_id": "SG-IMPORT-B0135"
+    },
+    {
+      "text": "Importing Trade Samples",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[6]",
+      "block_id": "SG-IMPORT-B0136"
+    },
+    {
+      "text": "Importing by Postal or Courier Service",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[7]",
+      "block_id": "SG-IMPORT-B0137"
+    },
+    {
+      "text": "Importing of Pets for Commercial Purpose",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[8]",
+      "block_id": "SG-IMPORT-B0138"
+    },
+    {
+      "text": "Importing Personal Pets as Part of a Change of Residence",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[9]",
+      "block_id": "SG-IMPORT-B0139"
+    },
+    {
+      "text": "Importing Investment Precious Metals (IPMs)",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[10]",
+      "block_id": "SG-IMPORT-B0140"
+    },
+    {
+      "text": "Importing Medicinal Products and Therapeutic Products for Clinical Trials",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[11]",
+      "block_id": "SG-IMPORT-B0141"
+    },
+    {
+      "text": "Importing Motor Vehicles Granted Duty Exemption and Boats Granted GST Relief",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[12]",
+      "block_id": "SG-IMPORT-B0142"
+    },
+    {
+      "text": "Importing Empty Freight Containers, Pallets and Packing",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[13]",
+      "block_id": "SG-IMPORT-B0143"
+    },
+    {
+      "text": "Importing Ethyl Alcohol",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[14]",
+      "block_id": "SG-IMPORT-B0144"
+    },
+    {
+      "text": "Importing Goods for Destruction or Recycling",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[15]",
+      "block_id": "SG-IMPORT-B0145"
+    },
+    {
+      "text": "Re-importing Shut-out Goods",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[16]",
+      "block_id": "SG-IMPORT-B0146"
+    },
+    {
+      "text": "Re-importing Goods Sent Overseas for Activities",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[17]",
+      "block_id": "SG-IMPORT-B0147"
+    },
+    {
+      "text": "Importing Used Household Articles and Personal Effects",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[18]",
+      "block_id": "SG-IMPORT-B0148"
+    },
+    {
+      "text": "Authorised Piers and Places",
+      "section": "For More Information",
+      "locator": "/html/body/main/div[2]/div[1]/div/ul[14]/li[19]",
+      "block_id": "SG-IMPORT-B0149"
+    }
+  ]
+}

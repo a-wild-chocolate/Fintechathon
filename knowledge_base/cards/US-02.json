@@ -1,0 +1,80 @@
+{
+  "card_id": "US-02",
+  "source_id": "US-301",
+  "title": "原产地、301与实时税率核查",
+  "summary_zh": "301常见问题明确原产地与出口地不同。此卡仅引用原产地原则和咨询路径，旧FAQ中的低值包裹表述未进入默认知识。",
+  "summary_en": "The selected CBP passage bases Section 301 treatment on country of origin rather than the country of export. Determine the current HTS and additional measures for the actual entry; this card contains no tariff rate.",
+  "anchor_terms": [
+    "country of origin, not country of export",
+    "binding ruling"
+  ],
+  "required_order_fields": [
+    "hts_code",
+    "country_of_origin",
+    "entry_date",
+    "exclusion_status",
+    "declared_value"
+  ],
+  "tradex_workflow": "Open the live HTS and current CBP notices; record a dated tariff quote before running a cost scenario.",
+  "cash_effect": "Use the verified incremental duty only for the contractual payer and payment date.",
+  "keywords": [
+    "美国",
+    "301",
+    "转口",
+    "原产地",
+    "关税",
+    "800美元",
+    "tariff",
+    "origin"
+  ],
+  "title_en": "Origin, Section 301 and current tariff checks",
+  "jurisdiction": "US",
+  "source_title": "Section 301 Trade Remedies Frequently Asked Questions",
+  "source_url": "https://www.cbp.gov/trade/programs-administration/entry-summary/section-301-trade-remedies/faqs",
+  "publisher": "US Customs and Border Protection",
+  "source_type": "official_guidance",
+  "source_language": "en",
+  "topic": "trade_remedies",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2026-10-19",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "selected_claims_only",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "US-301-B0003",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/div[2]/div[2]/div/div/div/div/div/div/div/p[2]",
+      "path": "extracted/US-301.json"
+    },
+    {
+      "block_id": "US-301-B0014",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/div[9]/div/div/div/div/div/div/div/div/p[1]",
+      "path": "extracted/US-301.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "原产地、301与实时税率核查\n301常见问题明确原产地与出口地不同。此卡仅引用原产地原则和咨询路径，旧FAQ中的低值包裹表述未进入默认知识。\nThe selected CBP passage bases Section 301 treatment on country of origin rather than the country of export. Determine the current HTS and additional measures for the actual entry; this card contains no tariff rate.\nKeywords: 美国, 301, 转口, 原产地, 关税, 800美元, tariff, origin"
+}

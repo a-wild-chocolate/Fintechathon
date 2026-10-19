@@ -1,0 +1,10 @@
+{"query": "英国 VAT 进口商", "market": "GB", "expected_top3_card": "UK-02"}
+{"query": "RCEP 原产地证明 发票", "market": "JP", "expected_top3_card": "RCEP-02"}
+{"query": "部分付款 退税 收汇", "market": "CN", "expected_top3_card": "CN-03"}
+{"query": "美国 301 原产地", "market": "US", "expected_top3_card": "US-02"}
+{"query": "广州 信保", "market": "CN-GZ", "expected_top3_card": "GZ-01"}
+{"query": "CE 文具", "market": "EU", "expected_top3_card": "EU-03"}
+{"query": "新加坡 TradeNet UEN", "market": "SG", "expected_top3_card": "SG-02"}
+{"query": "DAP DDP 清关", "market": "US", "expected_top3_card": "GLOBAL-01"}
+{"query": "澳大利亚 ChAFTA 原产地", "market": "AU", "expected_top3_card": "AU-01"}
+{"query": "泰国 红线 清关", "market": "TH", "expected_top3_card": "TH-01"}

@@ -1,0 +1,56 @@
+[UK-TARIFF-B0001] Trade Tariff: look up commodity codes, duty and VAT rates
+Trade Tariff: look up commodity codes, duty and VAT rates
+
+[UK-TARIFF-B0002] Trade Tariff: look up commodity codes, duty and VAT rates
+Use this service to find a commodity code for goods you’re importing to or exporting from the UK.
+
+[UK-TARIFF-B0003] Trade Tariff: look up commodity codes, duty and VAT rates
+You can also use the service to:
+
+[UK-TARIFF-B0004] Trade Tariff: look up commodity codes, duty and VAT rates
+check if there’s duty or VAT to pay
+
+[UK-TARIFF-B0005] Trade Tariff: look up commodity codes, duty and VAT rates
+find out about suspensions or reductions
+
+[UK-TARIFF-B0006] Trade Tariff: look up commodity codes, duty and VAT rates
+You’ll need a commodity code when you fill in a customs declaration form, so you pay the correct amount of tax and duties.
+
+[UK-TARIFF-B0007] Trade Tariff: look up commodity codes, duty and VAT rates
+Start now
+
+[UK-TARIFF-B0008] Before you start
+Before you start
+
+[UK-TARIFF-B0009] Before you start
+To find a commodity code for your goods, you’ll need details of the product you’re importing or exporting. This could include:
+
+[UK-TARIFF-B0010] Before you start
+the type of product
+
+[UK-TARIFF-B0011] Before you start
+what the product is used for
+
+[UK-TARIFF-B0012] Before you start
+the materials used to make it
+
+[UK-TARIFF-B0013] Before you start
+how it’s produced
+
+[UK-TARIFF-B0014] Before you start
+the way it’s packaged
+
+[UK-TARIFF-B0015] Help with finding the right commodity code
+Help with finding the right commodity code
+
+[UK-TARIFF-B0016] Help with finding the right commodity code
+If you’re not sure how to classify your goods, you can:
+
+[UK-TARIFF-B0017] Help with finding the right commodity code
+check the guidance on hard to classify goods
+
+[UK-TARIFF-B0018] Help with finding the right commodity code
+use the A to Z of classified goods to find commodity codes for common products
+
+[UK-TARIFF-B0019] Related content
+Related content

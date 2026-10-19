@@ -1,0 +1,78 @@
+{
+  "card_id": "AU-01",
+  "source_id": "AU-CHAFTA",
+  "title": "中国出口澳大利亚：ChAFTA原产资格",
+  "summary_zh": "澳方指引要求先确定商品编码和澳大利亚税率，再判断是否符合中澳自贸协定原产地规则；单纯经中国转运不构成优惠资格。",
+  "summary_en": "The ChAFTA guide separates classification, destination tariff treatment and rules of origin. It explains that origin requirements prevent third-country transshipment from obtaining the preference.",
+  "anchor_terms": [
+    "Step 3: Determine whether",
+    "If you are importing from China"
+  ],
+  "required_order_fields": [
+    "australian_tariff_code",
+    "production_history",
+    "non_originating_inputs",
+    "product_specific_rule",
+    "origin_proof"
+  ],
+  "tradex_workflow": "Ask the supplier for origin evidence and use Australia’s import schedule for China-to-Australia orders.",
+  "cash_effect": "Compare supported preferential and non-preferential duty scenarios rather than assuming zero duty.",
+  "keywords": [
+    "澳大利亚",
+    "ChAFTA",
+    "中澳自贸",
+    "原产地",
+    "关税",
+    "Australia"
+  ],
+  "title_en": "China-to-Australia exports: ChAFTA origin eligibility",
+  "jurisdiction": "AU",
+  "source_title": "Guide to using ChAFTA to export or import",
+  "source_url": "https://www.dfat.gov.au/trade/agreements/in-force/chafta/doing-business-with-china/guide-to-using-chafta-to-export-or-import",
+  "publisher": "Australian Department of Foreign Affairs and Trade",
+  "source_type": "official_guidance",
+  "source_language": "en",
+  "topic": "preferential_origin",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "AU-CHAFTA-W0379",
+      "locator": "web extracted line 379",
+      "path": "extracted/AU-CHAFTA.json"
+    },
+    {
+      "block_id": "AU-CHAFTA-W0359",
+      "locator": "web extracted line 359",
+      "path": "extracted/AU-CHAFTA.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "中国出口澳大利亚：ChAFTA原产资格\n澳方指引要求先确定商品编码和澳大利亚税率，再判断是否符合中澳自贸协定原产地规则；单纯经中国转运不构成优惠资格。\nThe ChAFTA guide separates classification, destination tariff treatment and rules of origin. It explains that origin requirements prevent third-country transshipment from obtaining the preference.\nKeywords: 澳大利亚, ChAFTA, 中澳自贸, 原产地, 关税, Australia"
+}

@@ -1,0 +1,72 @@
+{
+  "card_id": "GLOBAL-01",
+  "source_id": "ICC-DAP-DDP",
+  "title": "DAP与DDP：谁承担进口清关",
+  "summary_zh": "ICC公开解释区分DAP与DDP的进口清关责任；采用DDP前应确认卖方在目的国是否能够履行相关义务，并核对合同约定地点和版本。",
+  "summary_en": "ICC explains that DAP and DDP allocate import-clearance responsibilities differently. Destination rules may prevent a seller from undertaking the obligations expected under DDP.",
+  "anchor_terms": [
+    "import clearance",
+    "DAP"
+  ],
+  "required_order_fields": [
+    "incoterm",
+    "incoterms_version",
+    "named_place",
+    "importer_arrangement",
+    "contract_variations"
+  ],
+  "tradex_workflow": "Read the contract before assigning tax and clearance costs; ask who can act as importer and which costs were actually agreed.",
+  "cash_effect": "Only put taxes and duties into the exporter’s cash plan when its contractual responsibility is established.",
+  "keywords": [
+    "DAP",
+    "DDP",
+    "贸易术语",
+    "清关",
+    "税费承担",
+    "Incoterms"
+  ],
+  "title_en": "DAP versus DDP: who handles import clearance?",
+  "jurisdiction": "GLOBAL",
+  "source_title": "DAP & DDP Incoterms 2020: Key differences",
+  "source_url": "https://academy.iccwbo.org/incoterms/article/incoterms-2020-dap-or-ddp/",
+  "publisher": "ICC Academy",
+  "source_type": "standard_owner_explanation",
+  "source_language": "en",
+  "topic": "incoterms",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2027-01-16",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "source_link",
+  "evidence_refs": [
+    {
+      "source_url": "https://academy.iccwbo.org/incoterms/article/incoterms-2020-dap-or-ddp/",
+      "locator": "Public explanation of DAP and DDP import clearance"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "DAP与DDP：谁承担进口清关\nICC公开解释区分DAP与DDP的进口清关责任；采用DDP前应确认卖方在目的国是否能够履行相关义务，并核对合同约定地点和版本。\nICC explains that DAP and DDP allocate import-clearance responsibilities differently. Destination rules may prevent a seller from undertaking the obligations expected under DDP.\nKeywords: DAP, DDP, 贸易术语, 清关, 税费承担, Incoterms"
+}

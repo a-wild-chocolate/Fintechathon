@@ -1,0 +1,95 @@
+{
+  "card_id": "TH-01",
+  "source_id": "TH-IMPORT",
+  "title": "泰国清关资料与查验路径",
+  "summary_zh": "泰国海关页面说明电子申报及查验分流，红线查验列有申报、发票、运输、装箱及适用许可和原产地证明；应按货物和口岸复核。",
+  "summary_en": "The customs-office guide explains e-Import and green/red-line handling. Its red-line checklist includes declaration, invoice, transport and packing evidence, with permits and origin documents where applicable.",
+  "anchor_terms": [
+    "In case of red line",
+    "Import License",
+    "Certificates of Origin"
+  ],
+  "required_order_fields": [
+    "thai_importer",
+    "port",
+    "product",
+    "inspection_channel",
+    "licence_need",
+    "origin_claim"
+  ],
+  "tradex_workflow": "Prepare a buyer-facing document checklist and ask the broker to confirm the applicable route; do not use illustrative clearance times as a promise.",
+  "cash_effect": "Any inspection delay must enter the forecast as an explicit scenario.",
+  "keywords": [
+    "泰国",
+    "清关",
+    "红线",
+    "原产地证",
+    "Thailand",
+    "invoice"
+  ],
+  "title_en": "Thailand customs documents and inspection",
+  "jurisdiction": "TH",
+  "source_title": "Import procedures",
+  "source_url": "https://lcpcb.customs.go.th/th/import-procedures",
+  "publisher": "Thai Customs / Laem Chabang Port Customs Office",
+  "source_type": "official_guidance",
+  "source_language": "en-th",
+  "topic": "import_procedures",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "TH-IMPORT-W0131",
+      "locator": "web extracted line 131",
+      "path": "extracted/TH-IMPORT.json"
+    },
+    {
+      "block_id": "TH-IMPORT-W0148",
+      "locator": "web extracted line 148",
+      "path": "extracted/TH-IMPORT.json"
+    },
+    {
+      "block_id": "TH-IMPORT-W0153",
+      "locator": "web extracted line 153",
+      "path": "extracted/TH-IMPORT.json"
+    },
+    {
+      "block_id": "TH-IMPORT-W0136",
+      "locator": "web extracted line 136",
+      "path": "extracted/TH-IMPORT.json"
+    },
+    {
+      "block_id": "TH-IMPORT-W0137",
+      "locator": "web extracted line 137",
+      "path": "extracted/TH-IMPORT.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "泰国清关资料与查验路径\n泰国海关页面说明电子申报及查验分流，红线查验列有申报、发票、运输、装箱及适用许可和原产地证明；应按货物和口岸复核。\nThe customs-office guide explains e-Import and green/red-line handling. Its red-line checklist includes declaration, invoice, transport and packing evidence, with permits and origin documents where applicable.\nKeywords: 泰国, 清关, 红线, 原产地证, Thailand, invoice"
+}

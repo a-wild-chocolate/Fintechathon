@@ -1,0 +1,180 @@
+{
+  "source_id": "JP-RCEP",
+  "method": "html_dom",
+  "blocks": [
+    {
+      "text": "Guide to obtaining preferential tariff treatment when importing goods under the RCEP Agreement",
+      "section": "Guide to obtaining preferential tariff treatment when importing goods under the RCEP Agreement",
+      "locator": "/html/body/div/div[5]/div/div[2]/h1",
+      "block_id": "JP-RCEP-B0001"
+    },
+    {
+      "text": "Procedural overview",
+      "section": "Procedural overview",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/h2",
+      "block_id": "JP-RCEP-B0002"
+    },
+    {
+      "text": "Claiming the preferential tariff rates available under the RCEP Agreement in relation to goods intended for import into Japan is a process involving three major steps, as well as the satisfaction of criteria relating to direct consignment.",
+      "section": "Procedural overview",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/p[1]",
+      "block_id": "JP-RCEP-B0003"
+    },
+    {
+      "text": "Countries where the RCEP Agreement has entered into force: Japan, Australia, Brunei Darussalam, Cambodia, China, Indonesia, Korea, Lao PDR, Malaysia, New Zealand, the Philippines, Singapore, Thailand and Viet Nam Countries where the RCEP Agreement has not yet entered into force: Myanmar",
+      "section": "Procedural overview",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/p[2]",
+      "block_id": "JP-RCEP-B0004"
+    },
+    {
+      "text": "Step 1. Confirm that preferential tariff rates have been stipulated in relation to the good intended for import into Japan",
+      "section": "Step 1. Confirm that preferential tariff rates have been stipulated in relation to the good intended for import into Japan",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/h3[1]",
+      "block_id": "JP-RCEP-B0005"
+    },
+    {
+      "text": "Confirmation can be accomplished through the use of the Tariff Schedule in combination with the HS Codes and Subdivision assigned to a given good.",
+      "section": "Step 1. Confirm that preferential tariff rates have been stipulated in relation to the good intended for import into Japan",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/p[3]",
+      "block_id": "JP-RCEP-B0006"
+    },
+    {
+      "text": "【 Step 1 】",
+      "section": "Step 1. Confirm that preferential tariff rates have been stipulated in relation to the good intended for import into Japan",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/p[4]",
+      "block_id": "JP-RCEP-B0007"
+    },
+    {
+      "text": "Step 2. Confirm that the good was produced in a Party and is treated as an originating good under the RCEP Agreement",
+      "section": "Step 2. Confirm that the good was produced in a Party and is treated as an originating good under the RCEP Agreement",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/h3[2]",
+      "block_id": "JP-RCEP-B0008"
+    },
+    {
+      "text": "To be treated as an originating good, the good must satisfy one of the following criteria: (a) A wholly obtained or produced good (b) A good produced exclusively from originating materials (c) A good which satisfies the applicable Product-Specific Rule",
+      "section": "Step 2. Confirm that the good was produced in a Party and is treated as an originating good under the RCEP Agreement",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/p[5]",
+      "block_id": "JP-RCEP-B0009"
+    },
+    {
+      "text": "【 Step 2] 】",
+      "section": "Step 2. Confirm that the good was produced in a Party and is treated as an originating good under the RCEP Agreement",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/p[6]",
+      "block_id": "JP-RCEP-B0010"
+    },
+    {
+      "text": "A good which fails to meet the applicable Product-Specific Rule is nevertheless treated as an originating good if it qualifies under one of the following provisions. -Cumulation - De Minimis",
+      "section": "Step 2. Confirm that the good was produced in a Party and is treated as an originating good under the RCEP Agreement",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/p[7]",
+      "block_id": "JP-RCEP-B0011"
+    },
+    {
+      "text": "【 Alternative pathways to originating status under Step 2 】",
+      "section": "Step 2. Confirm that the good was produced in a Party and is treated as an originating good under the RCEP Agreement",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/p[8]",
+      "block_id": "JP-RCEP-B0012"
+    },
+    {
+      "text": "Step 3. Prepare and submits the documents required to obtain preferential tariff treatment to Japan Customs upon import declaration",
+      "section": "Step 3. Prepare and submits the documents required to obtain preferential tariff treatment to Japan Customs upon import declaration",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/h3[3]",
+      "block_id": "JP-RCEP-B0013"
+    },
+    {
+      "text": "The documents required for submission vary according to the method utilized to provide documentary evidence of origin.",
+      "section": "Step 3. Prepare and submits the documents required to obtain preferential tariff treatment to Japan Customs upon import declaration",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/p[9]",
+      "block_id": "JP-RCEP-B0014"
+    },
+    {
+      "text": "【 Step 3 】",
+      "section": "Step 3. Prepare and submits the documents required to obtain preferential tariff treatment to Japan Customs upon import declaration",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/p[10]",
+      "block_id": "JP-RCEP-B0015"
+    },
+    {
+      "text": "Direct Consignment",
+      "section": "Direct Consignment",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/h3[4]",
+      "block_id": "JP-RCEP-B0016"
+    },
+    {
+      "text": "This rule determines whether an RCEP originating good has retained originating status throughout its transport to Japan.",
+      "section": "Direct Consignment",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/p[11]",
+      "block_id": "JP-RCEP-B0017"
+    },
+    {
+      "text": "【 Direct Consignment 】",
+      "section": "Direct Consignment",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/p[12]",
+      "block_id": "JP-RCEP-B0018"
+    },
+    {
+      "text": "References",
+      "section": "References",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div/h4",
+      "block_id": "JP-RCEP-B0019"
+    },
+    {
+      "text": "1.Forms -Declaration of Origin [Self-Certification (Self-Declaration)]（ Sample Instructions ） -Attachment for the Declaration of Origin [Self-Certification (Self-Declaration)] (Sample: Japanese / English ） Instructions ） -Certificate of Origin [Third-party certification system] ( Sample Instructions",
+      "section": "References",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div/p[1]",
+      "block_id": "JP-RCEP-B0020"
+    },
+    {
+      "text": "2.RCEP Agreement - Legal text of the Agreement (Refer to Chapter 3 for the text concerning Rules of Origin and Operational Certification Procedures) -Annexes 3A Product-Specific Rules 3B Minimum Information Requirements",
+      "section": "References",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div/p[2]",
+      "block_id": "JP-RCEP-B0021"
+    },
+    {
+      "text": "3. Product-specific rules search portal",
+      "section": "References",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div/p[3]",
+      "block_id": "JP-RCEP-B0022"
+    },
+    {
+      "text": "4. Schedule of Tariff Commitments",
+      "section": "References",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div/p[4]",
+      "block_id": "JP-RCEP-B0023"
+    },
+    {
+      "text": "5. Interpretation Rules for Rules of Origin",
+      "section": "References",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div/p[5]",
+      "block_id": "JP-RCEP-B0024"
+    },
+    {
+      "text": "6. Tariff schedule",
+      "section": "References",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div/p[6]",
+      "block_id": "JP-RCEP-B0025"
+    },
+    {
+      "text": "7. Outline of Tariff Classification",
+      "section": "References",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div/p[7]",
+      "block_id": "JP-RCEP-B0026"
+    },
+    {
+      "text": "8.Advanced Ruling - Origin - Tariff classification",
+      "section": "References",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div/p[8]",
+      "block_id": "JP-RCEP-B0027"
+    },
+    {
+      "text": "9. Origin verification",
+      "section": "References",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div/p[9]",
+      "block_id": "JP-RCEP-B0028"
+    },
+    {
+      "text": "10.Other materials（ Rules of Origin Portal ） - RCEP Agreement: Guideline on Self-Certification System (Japanese only) - RCEP Country of Origin - RCEP Agreement: Tariff Differential Manual (Japanese only)",
+      "section": "References",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/div/p[10]",
+      "block_id": "JP-RCEP-B0029"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# Preserve downloaded and extracted evidence as collected.
+knowledge_base/raw/** -text -whitespace
+knowledge_base/extracted/** -text -whitespace
+knowledge_base/web_extracts/** -text -whitespace

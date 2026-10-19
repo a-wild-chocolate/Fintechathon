@@ -1,0 +1,366 @@
+{
+  "source_id": "JP-TARIFF",
+  "method": "html_dom",
+  "blocks": [
+    {
+      "text": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[2]/h1",
+      "block_id": "JP-TARIFF-B0001"
+    },
+    {
+      "text": "August 8, 2026",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[1]",
+      "block_id": "JP-TARIFF-B0002"
+    },
+    {
+      "text": "August 1, 2026",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[2]",
+      "block_id": "JP-TARIFF-B0003"
+    },
+    {
+      "text": "July 9, 2026",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[3]",
+      "block_id": "JP-TARIFF-B0004"
+    },
+    {
+      "text": "April 1, 2026",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[4]",
+      "block_id": "JP-TARIFF-B0005"
+    },
+    {
+      "text": "January 1, 2026",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[5]",
+      "block_id": "JP-TARIFF-B0006"
+    },
+    {
+      "text": "April 1, 2025",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[6]",
+      "block_id": "JP-TARIFF-B0007"
+    },
+    {
+      "text": "January 1, 2025",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[7]",
+      "block_id": "JP-TARIFF-B0008"
+    },
+    {
+      "text": "April 1, 2024",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[8]",
+      "block_id": "JP-TARIFF-B0009"
+    },
+    {
+      "text": "February 1, 2024",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[9]",
+      "block_id": "JP-TARIFF-B0010"
+    },
+    {
+      "text": "January 1, 2024",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[10]",
+      "block_id": "JP-TARIFF-B0011"
+    },
+    {
+      "text": "April 1, 2023",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[11]",
+      "block_id": "JP-TARIFF-B0012"
+    },
+    {
+      "text": "February 21, 2023",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[12]",
+      "block_id": "JP-TARIFF-B0013"
+    },
+    {
+      "text": "January 1, 2023",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[13]",
+      "block_id": "JP-TARIFF-B0014"
+    },
+    {
+      "text": "December 8, 2022",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[14]",
+      "block_id": "JP-TARIFF-B0015"
+    },
+    {
+      "text": "December 1, 2022",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[15]",
+      "block_id": "JP-TARIFF-B0016"
+    },
+    {
+      "text": "November 29, 2022",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[16]",
+      "block_id": "JP-TARIFF-B0017"
+    },
+    {
+      "text": "Apr 1, 2022",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[17]",
+      "block_id": "JP-TARIFF-B0018"
+    },
+    {
+      "text": "Jan 1, 2022",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[18]",
+      "block_id": "JP-TARIFF-B0019"
+    },
+    {
+      "text": "Oct 22, 2021",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[19]",
+      "block_id": "JP-TARIFF-B0020"
+    },
+    {
+      "text": "Sep 19, 2021",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[20]",
+      "block_id": "JP-TARIFF-B0021"
+    },
+    {
+      "text": "Apr 1, 2021",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[21]",
+      "block_id": "JP-TARIFF-B0022"
+    },
+    {
+      "text": "Jan 1, 2021",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[22]",
+      "block_id": "JP-TARIFF-B0023"
+    },
+    {
+      "text": "Oct 1, 2020",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[23]",
+      "block_id": "JP-TARIFF-B0024"
+    },
+    {
+      "text": "June 27, 2020",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[24]",
+      "block_id": "JP-TARIFF-B0025"
+    },
+    {
+      "text": "April 1, 2020",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[25]",
+      "block_id": "JP-TARIFF-B0026"
+    },
+    {
+      "text": "January 1, 2020",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[26]",
+      "block_id": "JP-TARIFF-B0027"
+    },
+    {
+      "text": "April 1, 2019",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[27]",
+      "block_id": "JP-TARIFF-B0028"
+    },
+    {
+      "text": "February 1, 2019",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[28]",
+      "block_id": "JP-TARIFF-B0029"
+    },
+    {
+      "text": "January 14, 2019",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[29]",
+      "block_id": "JP-TARIFF-B0030"
+    },
+    {
+      "text": "December 30, 2018",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[30]",
+      "block_id": "JP-TARIFF-B0031"
+    },
+    {
+      "text": "April 1, 2018",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[31]",
+      "block_id": "JP-TARIFF-B0032"
+    },
+    {
+      "text": "January 1, 2018",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[32]",
+      "block_id": "JP-TARIFF-B0033"
+    },
+    {
+      "text": "May 16, 2017",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[33]",
+      "block_id": "JP-TARIFF-B0034"
+    },
+    {
+      "text": "April 1, 2017",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[34]",
+      "block_id": "JP-TARIFF-B0035"
+    },
+    {
+      "text": "January 1, 2017",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[35]",
+      "block_id": "JP-TARIFF-B0036"
+    },
+    {
+      "text": "June 7, 2016",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[36]",
+      "block_id": "JP-TARIFF-B0037"
+    },
+    {
+      "text": "April 1, 2016",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[37]",
+      "block_id": "JP-TARIFF-B0038"
+    },
+    {
+      "text": "January 1, 2016",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[38]",
+      "block_id": "JP-TARIFF-B0039"
+    },
+    {
+      "text": "April 1, 2015",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[39]",
+      "block_id": "JP-TARIFF-B0040"
+    },
+    {
+      "text": "January 15, 2015",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[40]",
+      "block_id": "JP-TARIFF-B0041"
+    },
+    {
+      "text": "January 1, 2015",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[41]",
+      "block_id": "JP-TARIFF-B0042"
+    },
+    {
+      "text": "April 1, 2014",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[42]",
+      "block_id": "JP-TARIFF-B0043"
+    },
+    {
+      "text": "January 1, 2014",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[43]",
+      "block_id": "JP-TARIFF-B0044"
+    },
+    {
+      "text": "April 1, 2013",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[44]",
+      "block_id": "JP-TARIFF-B0045"
+    },
+    {
+      "text": "January 1, 2013",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[45]",
+      "block_id": "JP-TARIFF-B0046"
+    },
+    {
+      "text": "April 1, 2012",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[46]",
+      "block_id": "JP-TARIFF-B0047"
+    },
+    {
+      "text": "March 1, 2012",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[47]",
+      "block_id": "JP-TARIFF-B0048"
+    },
+    {
+      "text": "January 1, 2012",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[48]",
+      "block_id": "JP-TARIFF-B0049"
+    },
+    {
+      "text": "August 1, 2011",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[49]",
+      "block_id": "JP-TARIFF-B0050"
+    },
+    {
+      "text": "April 1, 2011",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[50]",
+      "block_id": "JP-TARIFF-B0051"
+    },
+    {
+      "text": "January 1, 2011",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[51]",
+      "block_id": "JP-TARIFF-B0052"
+    },
+    {
+      "text": "April 1, 2010",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[52]",
+      "block_id": "JP-TARIFF-B0053"
+    },
+    {
+      "text": "January 1, 2010",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[53]",
+      "block_id": "JP-TARIFF-B0054"
+    },
+    {
+      "text": "June 1, 2009",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[54]",
+      "block_id": "JP-TARIFF-B0055"
+    },
+    {
+      "text": "April 1, 2009",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[55]",
+      "block_id": "JP-TARIFF-B0056"
+    },
+    {
+      "text": "January 1, 2009",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[56]",
+      "block_id": "JP-TARIFF-B0057"
+    },
+    {
+      "text": "April 1, 2008",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[57]",
+      "block_id": "JP-TARIFF-B0058"
+    },
+    {
+      "text": "January 1, 2008",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[58]",
+      "block_id": "JP-TARIFF-B0059"
+    },
+    {
+      "text": "April 1, 2007",
+      "section": "Japan's Tariff Schedule ( Statistical Code for Import )",
+      "locator": "/html/body/div/div[5]/div/div[3]/div[1]/ul/li[59]",
+      "block_id": "JP-TARIFF-B0060"
+    }
+  ]
+}

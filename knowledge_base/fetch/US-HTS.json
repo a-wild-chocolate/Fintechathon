@@ -1,0 +1,13 @@
+{
+  "source_id": "US-HTS",
+  "requested_url": "https://hts.usitc.gov/",
+  "retrieved_at": "2026-10-17T19:22:59.897103+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://hts.usitc.gov/",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 11054,
+  "raw_path": "raw/US-HTS.html",
+  "last_modified": "Wed, 02 Sep 2026 23:17:34 GMT",
+  "etag": null
+}

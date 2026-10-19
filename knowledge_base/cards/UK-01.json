@@ -1,0 +1,78 @@
+{
+  "card_id": "UK-01",
+  "source_id": "UK-IMPORT",
+  "title": "出口英国：先区分GB与北爱尔兰",
+  "summary_zh": "英国进口流程包含进口商资质、EORI、商品编码、许可及税费准备；GB与北爱尔兰路径需要区分。",
+  "summary_en": "The UK import guide links EORI, classification, customs arrangements, licences and tax steps. Great Britain and Northern Ireland must not be treated as identical destinations.",
+  "anchor_terms": [
+    "EORI",
+    "Northern Ireland"
+  ],
+  "required_order_fields": [
+    "destination_region",
+    "importer",
+    "gb_or_xi_eori",
+    "commodity_code",
+    "licences"
+  ],
+  "tradex_workflow": "Ask where the goods enter and who imports them, then build the applicable shipment checklist.",
+  "cash_effect": "Connect missing clearance information to order tasks and conditional delivery dates.",
+  "keywords": [
+    "英国",
+    "北爱尔兰",
+    "EORI",
+    "UK",
+    "GB",
+    "import"
+  ],
+  "title_en": "UK exports: Great Britain versus Northern Ireland",
+  "jurisdiction": "GB",
+  "source_title": "Import goods into the UK: step by step",
+  "source_url": "https://www.gov.uk/import-goods-into-uk",
+  "publisher": "UK Government",
+  "source_type": "official_guidance",
+  "source_language": "en",
+  "topic": "import_procedures",
+  "collection": "tradex_public_trade",
+  "visibility": "public",
+  "tenant_id": null,
+  "collected_on": "2026-10-18",
+  "published_date": null,
+  "effective_from": null,
+  "effective_to": null,
+  "review_due": "2026-11-17",
+  "legal_status": "not_globally_adjudicated",
+  "allowed_use": "evidence_retrieval",
+  "content_kind": "original_bilingual_summary",
+  "review_status": "selected_claims_source_checked",
+  "workflow_status": "tradex_design_suggestion",
+  "rule_publication_status": "reference_only",
+  "embedding_status": "not_generated",
+  "version": "2026-10-18-v0.1",
+  "evidence_access": "local_excerpt",
+  "evidence_refs": [
+    {
+      "block_id": "UK-IMPORT-B0004",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[2]",
+      "path": "extracted/UK-IMPORT.json"
+    },
+    {
+      "block_id": "UK-IMPORT-B0003",
+      "locator": "/html/body/div[2]/main/div[2]/div/div/ol/li[1]",
+      "path": "extracted/UK-IMPORT.json"
+    }
+  ],
+  "refresh_before_use": [
+    "tariff_rate",
+    "eligibility_decision",
+    "deadline_execution"
+  ],
+  "agent_roles": [
+    "coordinator",
+    "reconciliation",
+    "cash_flow",
+    "decision",
+    "review"
+  ],
+  "embedding_text": "出口英国：先区分GB与北爱尔兰\n英国进口流程包含进口商资质、EORI、商品编码、许可及税费准备；GB与北爱尔兰路径需要区分。\nThe UK import guide links EORI, classification, customs arrangements, licences and tax steps. Great Britain and Northern Ireland must not be treated as identical destinations.\nKeywords: 英国, 北爱尔兰, EORI, UK, GB, import"
+}

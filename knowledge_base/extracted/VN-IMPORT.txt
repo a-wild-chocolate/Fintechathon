@@ -1,0 +1,319 @@
+[VN-IMPORT-B0001] View Procedure
+View Procedure
+
+[VN-IMPORT-B0002] View Procedure
+Procedure Name Customs Procedure for Import Goods (VNACCS)
+
+[VN-IMPORT-B0003] View Procedure
+Description 
+
+ 
+ 
+ 
+ 
+ Category 
+ 
+ 
+ Customs Clearance Procedure 
+ 
+ 
+ 
+ 
+ Responsible Agency 
+ 
+ 
+ General Department of Vietnam Customs (GDVC) 
+
+ Address: Block E3 - Duong Dinh Nghe street, Yen Hoa, Cau Giay, Hanoi, Vietnam 
+
+ Phone: (+844) 39440833 (ext: 8623) 
+
+ Email: webmaster@customs.gov.vn 
+ 
+ 
+ 
+ 
+ Legal Basis of the Procedure 
+ 
+ 
+ Customs Law No 54/2014/QH13 dated 23/06/2014 
+
+ - Decree No. 08/2015/ND-CP dated 21/01/2015 of the Government detailing a number of articles of the Customs Law on customs procedures for goods electronic export and import trade. 
+
+ - Circular 38/2015/TT-BTC dated 25/03/2015 specified electronic customs procedures for export and import trade. 
+
+ - Circular 172/2010/TT-BTC dated 02/11/2010 specified for fees and charges for customs. 
+ 
+ 
+ 
+ 
+ Processing time 
+ 
+ 
+ - No later than 08 working hours for partly physical examination of the shipment 
+
+ - No later than 02 days (working) for fully physical examination of the shipment 
+ 
+ 
+ 
+ 
+ Fee 
+ 
+ 
+ 20,000 VND 
+ 
+ 
+ 
+ 
+
+ 
+
+ Required Documents: 
+
+ 
+ 
+ 
+ 
+ Serial 
+ 
+ 
+ Document Title 
+ 
+ 
+ Remarks 
+ 
+ 
+ 
+ 
+ 1 
+ 
+ 
+ An electronic import Customs declaration based on software 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ Required Documents if the trader receives feedback for Yellow Channel: 
+
+ 
+ 
+ 
+ 
+ Serial 
+ 
+ 
+ Document Title 
+ 
+ 
+ Remarks 
+ 
+ 
+ 
+ 
+ 1 
+ 
+ 
+ BL 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 2 
+ 
+ 
+ Packing list 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 3 
+ 
+ 
+ Goods declaration form 
+ 
+ 
+ (if any) 
+ 
+ 
+ 
+ 
+ 4 
+ 
+ 
+ Import License 
+ 
+ 
+ (if any) 
+ 
+ 
+ 
+ 
+ 5 
+ 
+ 
+ Invoice 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 6 
+ 
+ 
+ Specialized Inspection Certificate 
+ 
+ 
+ (if any) 
+ 
+ 
+ 
+ 
+ 7 
+ 
+ 
+ Certificate of Origin 
+ 
+ 
+ (if any) 
+ 
+ 
+ 
+ 
+
+ 
+
+ Process Steps: 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ Step 1: 
+
+ Customs Declaration Submission 
+ 
+ 
+ 1.1: Registration 
+
+ Importers must submit customs declaration to Customs System by IDA. Registered information will be stored and can be modified up to 7 days. 
+ 
+ 
+ 
+ 
+ 1.2: Information Change 
+
+ In case of changing information from IDA importer has to go through IDB to change information (if any) 
+ 
+ 
+ 
+ 
+ 1.3: Submission of Final Declaration 
+
+ Importer sends final registered custom declaration by IDC 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ Step 2: 
+
+ Receiving feedback from Customs System 
+
+ 
+
+ 
+ 
+ 
+ 2.1: Feedback for Green Channel 
+
+ If Customs System sends feedback for Green Channel importer has to pay duty (if any) and get custom clearance. 
+ 
+ 
+ 
+ 
+ 2.2: Feedback for Yellow Channel 
+
+ If Customs System sends feedback for Yellow Channel importer has to submit the following documents for Customs verification 
+
+ (i) BL 
+
+ (ii) Packing list 
+
+ (iii) Goods value declaration form 
+
+ (iv) Import License (if any) 
+
+ (v) Invoice 
+
+ (vi) Specialized Inspection Certificate (if any) 
+
+ (vii) Certificate of Origin (if any) 
+ 
+ 
+ 
+ 
+ 2.3: Feedback for Red Channel 
+
+ If Customs System sends feedback for Red Channel importer has to submit the above seven documents and cargo for physical examination. 
+
+ 2.4: Importer pays duty and charge/fee 
+ 
+ 
+ 
+ 
+ Step 3: 
+
+ Receiving Customs Clearance 
+ 
+ 
+ Importer receives Customs clearance 
+ 
+ 
+ 
+ 
+
+ 
+
+ Process Map:
+
+[VN-IMPORT-B0004] View Procedure
+Category Procedure
+
+[VN-IMPORT-B0005] View Procedure
+Title Description Created Date Updated Date Issued By
+
+[VN-IMPORT-B0006] View Procedure
+Import procedure declaration form Import procedure declaration form 26-01-2016 17-02-2016 Ministry of Finance
+
+[VN-IMPORT-B0007] View Procedure
+Name Measure Type Agency Description Comments Legal Document Validity To Measure Class
+
+[VN-IMPORT-B0008] View Procedure
+No results found.

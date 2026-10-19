@@ -1,0 +1,315 @@
+[UK-PVA-B0001] Check when you can account for import VAT on your VAT Return
+Check when you can account for import VAT on your VAT Return
+
+[UK-PVA-B0002] Check when you can account for import VAT on your VAT Return
+Check when you can use postponed VAT accounting to declare and recover import VAT on the same VAT Return.
+
+[UK-PVA-B0003] Updates to this page
+Updates to this page
+
+[UK-PVA-B0004] Updates to this page
+From:
+
+[UK-PVA-B0005] Updates to this page
+HM Revenue & Customs
+
+[UK-PVA-B0006] Updates to this page
+Published:
+
+[UK-PVA-B0007] Updates to this page
+27 July 2020
+
+[UK-PVA-B0008] Updates to this page
+Last updated:
+
+[UK-PVA-B0009] Updates to this page
+16 June 2025
+ 
+ 
+ 
+ 
+ Show all updates
+ 
+ 
+ 
+ 
+ 16 June 2025 
+ Welsh translation added. 
+ 
+ 
+ 9 June 2025 
+ The section 'When you must account for import VAT on your VAT Return' has been removed, as this procedure is no longer mandatory. Information about using another person or business to import goods for you has been updated, as they must now have written permission to use postponed VAT accounting. 
+ 
+ 
+ 1 October 2022 
+ Information about Customs Handling of Import and Export Freight (CHIEF) has been removed. You can no longer use CHIEF for import declarations unless you have permission from HMRC. 
+ 
+ 
+ 15 December 2021 
+ Existing arrangements for customs checks on goods from Ireland will continue after 1 January 2022. Changes made to "When you must account for import VAT on your VAT return" and "How to complete your customs declaration account for import VAT on your VAT Return". 
+ 
+ 
+ 13 August 2021 
+ Clarification that postponed VAT accounting will be available permanently. A checklist has been added to help navigation, and the details you may need to complete your customs declaration using CHIEF have been updated. 
+ 
+ 
+ 8 April 2021 
+ The 'If you import goods for business and non-business purposes' section has been updated to say you can account for import VAT on your VAT return if you import goods that will be used solely for a non-business purpose, and you are a body that is eligible to reclaim import VAT through a VAT refund scheme . The 'How to complete your customs declaration to account for import VAT on your VAT Return' section has also been updated with information about selecting how to account for import VAT on your customs declaration. 
+ 
+ 
+ 16 March 2021 
+ The end date when you must account for import VAT on your VAT Return if you delay your customs declaration or use a simplified customs declaration has been changed from 30 June 2021 to 31 December 2021. 
+ 
+ 
+ 11 February 2021 
+ There have been multiple changes to this guidance to help readers understand what they need to do and how to do it. 
+ 
+ 
+ 22 December 2020 
+ Information has been added about accounting for VAT if you do not know the full customs value of goods and using someone to import goods on your behalf. 
+ 
+ 
+ 4 December 2020 
+ Information on Non-established taxable persons and guidance on how to complete your declaration if you are accounting for import VAT on your VAT return has been added. 
+ 
+ 
+ 24 August 2020 
+ Added Welsh translation. 
+ 
+ 
+ 27 July 2020 
+ First published.
+
+[UK-PVA-B0010] Updates to this page
+Accounting for import VAT on your VAT Return means you declare and recover import VAT on the same VAT Return, rather than paying it upfront when the goods are imported and recovering it later. It is also called postponed VAT accounting.
+
+[UK-PVA-B0011] Updates to this page
+The normal rules about what VAT you can reclaim as input tax apply.
+
+[UK-PVA-B0012] Before using postponed VAT accounting
+Before using postponed VAT accounting
+
+[UK-PVA-B0013] Before using postponed VAT accounting
+Your business must be registered for VAT in the UK to use postponed VAT accounting.
+
+[UK-PVA-B0014] Who can use postponed VAT accounting
+Who can use postponed VAT accounting
+
+[UK-PVA-B0015] Who can use postponed VAT accounting
+You can account for import VAT on your VAT Return for goods you import into:
+
+[UK-PVA-B0016] Who can use postponed VAT accounting
+Great Britain (England, Scotland and Wales) from anywhere outside the UK
+
+[UK-PVA-B0017] Who can use postponed VAT accounting
+Northern Ireland from outside the UK and EU
+
+[UK-PVA-B0018] Who can use postponed VAT accounting
+You do not need any approval to account for import VAT on your VAT Return.
+
+[UK-PVA-B0019] Non-established taxable persons
+Non-established taxable persons
+
+[UK-PVA-B0020] Non-established taxable persons
+If you are a person who does not have a UK establishment, you’ll need to get someone to deal with customs for you . They’ll also need to complete your import declaration.
+
+[UK-PVA-B0021] Non-established taxable persons
+If you want to account for import VAT on your VAT Return, you must tell the person dealing with customs on your behalf to both:
+
+[UK-PVA-B0022] Non-established taxable persons
+select this on your import declaration
+
+[UK-PVA-B0023] Non-established taxable persons
+enter your details as the consignee
+
+[UK-PVA-B0024] If someone imports goods on your behalf
+If someone imports goods on your behalf
+
+[UK-PVA-B0025] If someone imports goods on your behalf
+You can have a person or business import goods on your behalf. For example, this could be:
+
+[UK-PVA-B0026] If someone imports goods on your behalf
+a freight forwarder
+
+[UK-PVA-B0027] If someone imports goods on your behalf
+a customs agent
+
+[UK-PVA-B0028] If someone imports goods on your behalf
+a broker
+
+[UK-PVA-B0029] If someone imports goods on your behalf
+an express operator
+
+[UK-PVA-B0030] If someone imports goods on your behalf
+When someone imports goods on your behalf, you’ll need to tell them, in writing, if you want to use postponed VAT accounting on those imports. They must have this written confirmation before they can proceed with the import declaration.
+
+[UK-PVA-B0031] If someone imports goods on your behalf
+If you already have someone importing goods on your behalf, you should contact them to tell them if you want to use postponed VAT accounting on imports. You should keep a written record of your instructions.
+
+[UK-PVA-B0032] When a supplier arranges for someone to import goods on your behalf
+When a supplier arranges for someone to import goods on your behalf
+
+[UK-PVA-B0033] When a supplier arranges for someone to import goods on your behalf
+You can also buy goods from a supplier who arranges for a person or business to import and deliver the goods for you.
+
+[UK-PVA-B0034] When a supplier arranges for someone to import goods on your behalf
+You must agree with the supplier how you want to account for import VAT. This is so that they can give the person or business importing the goods written instructions to make the correct entry on the import declaration. They must have these written instructions before they can make the import declaration. Keep a written record of what you agree with the supplier.
+
+[UK-PVA-B0035] When a supplier arranges for someone to import goods on your behalf
+You’ll also need to give the supplier your EORI number.
+
+[UK-PVA-B0036] When a supplier arranges for someone to import goods on your behalf
+The import will appear on your monthly postponed import VAT statement in the normal way.
+
+[UK-PVA-B0037] When a supplier arranges for someone to import goods on your behalf
+Check your import VAT certificate (C79) and postponed VAT account statements using the Customs Declaration Service, to make sure all your imports are covered. Businesses should check their financial dashboard for their statements.
+
+[UK-PVA-B0038] When you can use postponed VAT accounting
+When you can use postponed VAT accounting
+
+[UK-PVA-B0039] When you can use postponed VAT accounting
+You can do this if both the following apply:
+
+[UK-PVA-B0040] When you can use postponed VAT accounting
+the goods you import are for use in your business and you have the right to dispose of them (usually as the owner)
+
+[UK-PVA-B0041] When you can use postponed VAT accounting
+you include your VAT registration number on your import declaration
+
+[UK-PVA-B0042] If you import goods for business and non-business purposes
+If you import goods for business and non-business purposes
+
+[UK-PVA-B0043] If you import goods for business and non-business purposes
+You can account for import VAT on your VAT Return if you import goods which:
+
+[UK-PVA-B0044] If you import goods for business and non-business purposes
+will be used for both business and non-business purposes
+
+[UK-PVA-B0045] If you import goods for business and non-business purposes
+you do not know will be used for business purposes at the time that you import them
+
+[UK-PVA-B0046] If you import goods for business and non-business purposes
+You can use postponed VAT accounting when you import goods you know will be used solely for non-business purposes, but only if you’re a body that is eligible to reclaim import VAT through a VAT refund scheme . When you complete your import declaration, select that you’re making an immediate payment, or using a duty deferment account.
+
+[UK-PVA-B0047] Goods in special procedures
+Goods in special procedures
+
+[UK-PVA-B0048] Goods in special procedures
+If you declare goods into a customs special procedure , you can select that you’ll be accounting for import VAT on your VAT Return when you submit the declaration that removes them into free circulation. This applies to the following special procedures:
+
+[UK-PVA-B0049] Goods in special procedures
+customs warehousing
+
+[UK-PVA-B0050] Goods in special procedures
+inward processing
+
+[UK-PVA-B0051] Goods in special procedures
+temporary admission
+
+[UK-PVA-B0052] Goods in special procedures
+end use
+
+[UK-PVA-B0053] Goods in special procedures
+outward processing
+
+[UK-PVA-B0054] Goods in special procedures
+duty suspension
+
+[UK-PVA-B0055] Goods in special procedures
+Find out about trading and moving goods in and out of Northern Ireland if you move goods between Northern Ireland and the EU.
+
+[UK-PVA-B0056] Excise goods
+Excise goods
+
+[UK-PVA-B0057] Excise goods
+You can account for import VAT on your VAT Return when you release excise goods for use in the UK . This is also known as goods ‘released for home consumption’.
+
+[UK-PVA-B0058] Excise goods
+This includes when goods are released from an excise warehouse after being in duty suspension since they were imported.
+
+[UK-PVA-B0059] Imports delivered by Royal Mail Group
+Imports delivered by Royal Mail Group
+
+[UK-PVA-B0060] Imports delivered by Royal Mail Group
+If your business receives goods through the post in consignments of more than £135 using Royal Mail Group (including Parcelforce, where they are not acting as an express operator) you cannot account for import VAT on your VAT Return.
+
+[UK-PVA-B0061] Imports delivered by Royal Mail Group
+Royal Mail Group offers postponed VAT accounting for commercial (non-postal) services, if requested by the importer.
+
+[UK-PVA-B0062] If you do not know the full customs value of goods
+If you do not know the full customs value of goods
+
+[UK-PVA-B0063] If you do not know the full customs value of goods
+You can still account for import VAT on your VAT Return, even if you cannot confirm the full customs value of the goods that you import.
+
+[UK-PVA-B0064] If you do not know the full customs value of goods
+To do this, you should:
+
+[UK-PVA-B0065] If you do not know the full customs value of goods
+Apply for a general guarantee account to cover the amount of VAT that is unknown.
+
+[UK-PVA-B0066] If you do not know the full customs value of goods
+Select that you’ll be accounting for import VAT on your VAT Return for the amount that is known.
+
+[UK-PVA-B0067] How to use postponed VAT accounting on your import declaration
+How to use postponed VAT accounting on your import declaration
+
+[UK-PVA-B0068] How to use postponed VAT accounting on your import declaration
+When completing your import declaration, you can select to account for import VAT on your VAT Return. You cannot change how you want to account for import VAT on your import declaration once you’ve submitted it.
+
+[UK-PVA-B0069] How to use postponed VAT accounting on your import declaration
+You need to enter your VAT registration number at header level in Data Element 3/40 (you should not use method of payment G in Data Element 4/8).
+
+[UK-PVA-B0070] How to use postponed VAT accounting on your import declaration
+VAT will be recorded against your EORI number. This will be at declaration level only.
+
+[UK-PVA-B0071] If you act on behalf of someone else
+If you act on behalf of someone else
+
+[UK-PVA-B0072] If you act on behalf of someone else
+If you’ve been authorised to act on behalf of your client, you must use their EORI number or VAT registration number on the import declaration.
+
+[UK-PVA-B0073] If you import goods in consignments valued at £135 or less
+If you import goods in consignments valued at £135 or less
+
+[UK-PVA-B0074] If you import goods in consignments valued at £135 or less
+There are different rules for the treatment of goods in consignments valued at £135 or less.
+
+[UK-PVA-B0075] If you import goods in consignments valued at £135 or less
+Find out about the treatment of VAT for imported goods sold:
+
+[UK-PVA-B0076] If you import goods in consignments valued at £135 or less
+to customers in the UK using online marketplaces
+
+[UK-PVA-B0077] If you import goods in consignments valued at £135 or less
+directly to customers in the UK
+
+[UK-PVA-B0078] If you import goods in consignments valued at £135 or less
+These rules do not apply to the import of excise goods. You can choose to account for import VAT on your VAT Return for the import of consignments of excise goods of any value.
+
+[UK-PVA-B0079] If you import commercial goods (merchandise in baggage) into Great Britain or Northern Ireland
+If you import commercial goods (merchandise in baggage) into Great Britain or Northern Ireland
+
+[UK-PVA-B0080] If you import commercial goods (merchandise in baggage) into Great Britain or Northern Ireland
+If you’re eligible to make a simple online declaration instead and choose to do so, you will not be able to account for import VAT on your VAT Return.
+
+[UK-PVA-B0081] If you import commercial goods (merchandise in baggage) into Great Britain or Northern Ireland
+Find out more about:
+
+[UK-PVA-B0082] If you import commercial goods (merchandise in baggage) into Great Britain or Northern Ireland
+bringing commercial goods into Great Britain in your baggage
+
+[UK-PVA-B0083] If you import commercial goods (merchandise in baggage) into Great Britain or Northern Ireland
+bringing commercial goods into Northern Ireland in your baggage
+
+[UK-PVA-B0084] What you’ll need to do if you choose to use postponed VAT accounting
+What you’ll need to do if you choose to use postponed VAT accounting
+
+[UK-PVA-B0085] What you’ll need to do if you choose to use postponed VAT accounting
+You can get your postponed import VAT statements online , which you can use to help you when completing your VAT Return to account for import VAT .
+
+[UK-PVA-B0086] Sign up for emails or print this page
+Sign up for emails or print this page
+
+[UK-PVA-B0087] Related content
+Related content

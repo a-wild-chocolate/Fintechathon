@@ -1,0 +1,13 @@
+{
+  "source_id": "VN-IMPORT",
+  "requested_url": "https://www.vietnamtradeportal.gov.vn/index.php?id=3&r=searchProcedure/view1",
+  "retrieved_at": "2026-10-17T19:23:03.587249+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://www.vietnamtradeportal.gov.vn/index.php?id=3&r=searchProcedure/view1",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 36888,
+  "raw_path": "raw/VN-IMPORT.html",
+  "last_modified": null,
+  "etag": null
+}

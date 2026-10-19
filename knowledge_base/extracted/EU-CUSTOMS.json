@@ -1,0 +1,540 @@
+{
+  "source_id": "EU-CUSTOMS",
+  "method": "html_dom",
+  "blocks": [
+    {
+      "text": "Customs duties and procedures on imports",
+      "section": "Customs duties and procedures on imports",
+      "locator": "/html/body/main/h1",
+      "block_id": "EU-CUSTOMS-B0001"
+    },
+    {
+      "text": "How to import goods into the EU",
+      "section": "How to import goods into the EU",
+      "locator": "/html/body/main/div[1]/div/div[1]/h2[1]",
+      "block_id": "EU-CUSTOMS-B0002"
+    },
+    {
+      "text": "Customs procedures for import in the EU",
+      "section": "Customs procedures for import in the EU",
+      "locator": "/html/body/main/div[1]/div/div[1]/h3[1]",
+      "block_id": "EU-CUSTOMS-B0003"
+    },
+    {
+      "text": "Customs duties are rules that control how goods enter or leave the EU market. If\n your business imports goods into the EU from non-EU countries, you must follow these\n rules by completing several different procedures.",
+      "section": "Customs procedures for import in the EU",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[1]",
+      "block_id": "EU-CUSTOMS-B0004"
+    },
+    {
+      "text": "These procedures provide important details about the goods, including:",
+      "section": "Customs procedures for import in the EU",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[2]",
+      "block_id": "EU-CUSTOMS-B0005"
+    },
+    {
+      "text": "their origin",
+      "section": "Customs procedures for import in the EU",
+      "locator": "/html/body/main/div[1]/div/div[1]/ul[1]/li[1]",
+      "block_id": "EU-CUSTOMS-B0006"
+    },
+    {
+      "text": "their nature",
+      "section": "Customs procedures for import in the EU",
+      "locator": "/html/body/main/div[1]/div/div[1]/ul[1]/li[2]",
+      "block_id": "EU-CUSTOMS-B0007"
+    },
+    {
+      "text": "their value",
+      "section": "Customs procedures for import in the EU",
+      "locator": "/html/body/main/div[1]/div/div[1]/ul[1]/li[3]",
+      "block_id": "EU-CUSTOMS-B0008"
+    },
+    {
+      "text": "Based on this information, the customs authority in the EU country that you are based\n in can determine which taxes and duties need to be paid as well as ensure that goods\n entering the EU are safe and comply with other EU rules.",
+      "section": "Customs procedures for import in the EU",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[3]",
+      "block_id": "EU-CUSTOMS-B0009"
+    },
+    {
+      "text": "Warning",
+      "section": "Warning",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[1]/div/h4",
+      "block_id": "EU-CUSTOMS-B0010"
+    },
+    {
+      "text": "Getting started",
+      "section": "Getting started",
+      "locator": "/html/body/main/div[1]/div/div[1]/h2[2]",
+      "block_id": "EU-CUSTOMS-B0011"
+    },
+    {
+      "text": "Set up your business",
+      "section": "Set up your business",
+      "locator": "/html/body/main/div[1]/div/div[1]/h3[2]",
+      "block_id": "EU-CUSTOMS-B0012"
+    },
+    {
+      "text": "To import goods, you need to be established as a business in the EU. If you are a\n non-EU resident, you will need a work permit with the right to carry out an independent\n commercial activity. Rules can vary by country – find out more information about starting a business .",
+      "section": "Set up your business",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[4]",
+      "block_id": "EU-CUSTOMS-B0013"
+    },
+    {
+      "text": "Get an EORI number",
+      "section": "Get an EORI number",
+      "locator": "/html/body/main/div[1]/div/div[1]/h3[3]",
+      "block_id": "EU-CUSTOMS-B0014"
+    },
+    {
+      "text": "An Economic Operators Registration and Identification (EORI) number is mandatory if as a business you export, import or move goods into the EU. It is\n unique to your business and does not expire. You can apply for an EORI through the\n national EU customs authority where you are based or where your business is established.",
+      "section": "Get an EORI number",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[5]",
+      "block_id": "EU-CUSTOMS-B0015"
+    },
+    {
+      "text": "Preparing to import",
+      "section": "Preparing to import",
+      "locator": "/html/body/main/div[1]/div/div[1]/h2[3]",
+      "block_id": "EU-CUSTOMS-B0016"
+    },
+    {
+      "text": "Classify your goods",
+      "section": "Classify your goods",
+      "locator": "/html/body/main/div[1]/div/div[1]/h3[4]",
+      "block_id": "EU-CUSTOMS-B0017"
+    },
+    {
+      "text": "Each good has a Combined Nomenclature (CN) code assigned to it in the EU, which is based on Harmonised system (HS) codes used\n around the world. The CN code determines the customs duties and rules that apply to\n a given product. You can find the classification of your goods in the CLASS consultation database .",
+      "section": "Classify your goods",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[6]",
+      "block_id": "EU-CUSTOMS-B0018"
+    },
+    {
+      "text": "Check import restrictions or licenses",
+      "section": "Check import restrictions or licenses",
+      "locator": "/html/body/main/div[1]/div/div[1]/h3[5]",
+      "block_id": "EU-CUSTOMS-B0019"
+    },
+    {
+      "text": "Some goods such as chemicals, medicine, food, and weapons may either be restricted or need special permits to be imported into the EU. You can verify this for the goods you want to import\n by searching their CN or HS codes on the TARIC database . You should also ensure that you contact the national EU customs authority where you are based or where you will carry out your customs-related activity to\n verify whether there are any additional national prohibitions or restrictions. In\n some cases, you may need additional import licenses.",
+      "section": "Check import restrictions or licenses",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[7]",
+      "block_id": "EU-CUSTOMS-B0020"
+    },
+    {
+      "text": "Certificates and rules of origin",
+      "section": "Certificates and rules of origin",
+      "locator": "/html/body/main/div[1]/div/div[1]/h2[4]",
+      "block_id": "EU-CUSTOMS-B0021"
+    },
+    {
+      "text": "Rules of origin determine in which country a product was sourced or made. Sometimes called a product’s\n \"economic nationality,” this system helps ensure that customs authorities can apply\n duties correctly so that businesses located in the EU can benefit from reduced rates\n where applicable. Sometimes you will need to provide proof of the origin of the product\n you are importing to benefit from this. This proof may be a certificate of origin\n or a declaration of origin issued by the exporter to you. This can be accessed through\n the Registered Exporter system (REX) .",
+      "section": "Certificates and rules of origin",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[8]",
+      "block_id": "EU-CUSTOMS-B0022"
+    },
+    {
+      "text": "Complying with EU requirements",
+      "section": "Complying with EU requirements",
+      "locator": "/html/body/main/div[1]/div/div[1]/h2[5]",
+      "block_id": "EU-CUSTOMS-B0023"
+    },
+    {
+      "text": "Most goods and products entering the EU must comply with technical requirements for industrial products and health and hygiene requirements for food and agricultural products.",
+      "section": "Complying with EU requirements",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[9]",
+      "block_id": "EU-CUSTOMS-B0024"
+    },
+    {
+      "text": "Some requirements are mandatory, while others are voluntary. Find out more about\n product requirements , including CE markings . If you are not sure about the requirements related to the product you want to import,\n you can refer to My Trade Assistant using the CN codes to search in the database.",
+      "section": "Complying with EU requirements",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[10]",
+      "block_id": "EU-CUSTOMS-B0025"
+    },
+    {
+      "text": "Importing your goods",
+      "section": "Importing your goods",
+      "locator": "/html/body/main/div[1]/div/div[1]/h2[6]",
+      "block_id": "EU-CUSTOMS-B0026"
+    },
+    {
+      "text": "You need to provide a customs declaration to your national customs authority for your imported products to enter the EU. There\n are a number of steps to follow, and you can submit these documents yourself or nominate\n a representative such as a customs broker to complete the formalities on your behalf.",
+      "section": "Importing your goods",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[11]",
+      "block_id": "EU-CUSTOMS-B0027"
+    },
+    {
+      "text": "Entry Summary Declaration",
+      "section": "Entry Summary Declaration",
+      "locator": "/html/body/main/div[1]/div/div[1]/h3[6]",
+      "block_id": "EU-CUSTOMS-B0028"
+    },
+    {
+      "text": "You first need to present an Entry Summary Declaration (ENS) before the arrival of the goods at the first point of entry into the EU. This is necessary\n so that authorities can verify and assess the risks associated with the products you\n want to import.",
+      "section": "Entry Summary Declaration",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[12]",
+      "block_id": "EU-CUSTOMS-B0029"
+    },
+    {
+      "text": "The ENS must be presented by you or your representative (either the customs broker\n or the carrier). The deadline for logging the ENS depends on the mode of transportation\n of the goods in question. You can declare this information through the Common Import Control System (ICS2) , an EU-wide network that makes targeted controls more manageable.",
+      "section": "Entry Summary Declaration",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[13]",
+      "block_id": "EU-CUSTOMS-B0030"
+    },
+    {
+      "text": "Complete a customs declaration",
+      "section": "Complete a customs declaration",
+      "locator": "/html/body/main/div[1]/div/div[1]/h3[7]",
+      "block_id": "EU-CUSTOMS-B0031"
+    },
+    {
+      "text": "A customs declaration is an official document that gives details of goods that are\n being imported into the EU. Depending on the type of goods that you are importing,\n you may need to provide the authorities with more documents, including:",
+      "section": "Complete a customs declaration",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[14]",
+      "block_id": "EU-CUSTOMS-B0032"
+    },
+    {
+      "text": "commercial invoices",
+      "section": "Complete a customs declaration",
+      "locator": "/html/body/main/div[1]/div/div[1]/ul[2]/li[1]",
+      "block_id": "EU-CUSTOMS-B0033"
+    },
+    {
+      "text": "transportation documents",
+      "section": "Complete a customs declaration",
+      "locator": "/html/body/main/div[1]/div/div[1]/ul[2]/li[2]",
+      "block_id": "EU-CUSTOMS-B0034"
+    },
+    {
+      "text": "certificates of origin",
+      "section": "Complete a customs declaration",
+      "locator": "/html/body/main/div[1]/div/div[1]/ul[2]/li[3]",
+      "block_id": "EU-CUSTOMS-B0035"
+    },
+    {
+      "text": "import licenses",
+      "section": "Complete a customs declaration",
+      "locator": "/html/body/main/div[1]/div/div[1]/ul[2]/li[4]",
+      "block_id": "EU-CUSTOMS-B0036"
+    },
+    {
+      "text": "inspection certificates.",
+      "section": "Complete a customs declaration",
+      "locator": "/html/body/main/div[1]/div/div[1]/ul[2]/li[5]",
+      "block_id": "EU-CUSTOMS-B0037"
+    },
+    {
+      "text": "The information you include in the customs declaration will determine what duties\n (if any), VAT, or tariffs you will need to pay. For more information on the documents\n and processes involved, get in touch with your national customs authority .",
+      "section": "Complete a customs declaration",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[15]",
+      "block_id": "EU-CUSTOMS-B0038"
+    },
+    {
+      "text": "Entry checks and release",
+      "section": "Entry checks and release",
+      "locator": "/html/body/main/div[1]/div/div[1]/h3[8]",
+      "block_id": "EU-CUSTOMS-B0039"
+    },
+    {
+      "text": "Once your goods arrive at the border, the customs authorities must be notified with\n a presentation notification. The goods remain under the supervision of the customs\n authority (known as temporary storage). They can be stored until they are cleared\n and for no longer than 90 days. They may be cleared in a few ways:",
+      "section": "Entry checks and release",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[16]",
+      "block_id": "EU-CUSTOMS-B0040"
+    },
+    {
+      "text": "Released for free circulation",
+      "section": "Released for free circulation",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[2]/h3",
+      "block_id": "EU-CUSTOMS-B0041"
+    },
+    {
+      "text": "This means that your goods have met all the requirements for import based either on the documentation provided, an additional document check, or physical\n check of the goods. Once a good is released, it means that you have paid all the applicable\n customs import duties, taxes, or excise charges and the good is considered to have\n the same status as a product made in the EU, this is called “Union status.” From here, your product is free to be sold anywhere in the EU market.",
+      "section": "Released for free circulation",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[2]/div/p",
+      "block_id": "EU-CUSTOMS-B0042"
+    },
+    {
+      "text": "Transit, storage, and processing",
+      "section": "Transit, storage, and processing",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[3]/h3",
+      "block_id": "EU-CUSTOMS-B0043"
+    },
+    {
+      "text": "You can also move your goods through the EU without going through the import procedures\n at the point of entry by using the customs transit procedure . This means that you can move the goods to the destination country instead of the\n entry point to complete the customs formalities there. Your goods can also be placed\n in storage, called customs warehousing . This procedure lets businesses import goods before fully deciding what to do with\n them. If the goods are housed in a space authorised by the customs authorities, you\n do not pay the applicable customs duties, taxes, or excise charges until the they\n are released for free circulation, as mentioned above.",
+      "section": "Transit, storage, and processing",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[3]/div/p",
+      "block_id": "EU-CUSTOMS-B0044"
+    },
+    {
+      "text": "If you choose to import a good to continue its manufacture or repair it with either\n the intention of selling it in the EU or re-exporting it, your good can be authorised\n for the inward processing procedure . You must specify the period for this processing, and at the end of it, you may either\n re-export the good or follow the procedure above to have it release for free circulation.\n In that case, you must pay all the applicable duties, taxes and excise charges.",
+      "section": "Transit, storage, and processing",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[17]",
+      "block_id": "EU-CUSTOMS-B0045"
+    },
+    {
+      "text": "Sample story",
+      "section": "Sample story",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[4]/h4",
+      "block_id": "EU-CUSTOMS-B0046"
+    },
+    {
+      "text": "Anna’s import journey: from tea leaves to European shelves",
+      "section": "Anna’s import journey: from tea leaves to European shelves",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[4]/h5",
+      "block_id": "EU-CUSTOMS-B0047"
+    },
+    {
+      "text": "Anna owns a small specialty tea shop in France and wants to import a unique blend\n of organic tea from Sri Lanka. To start, she makes sure her business is registered\n in the EU and applies for an EORI number through the French customs authority.",
+      "section": "Anna’s import journey: from tea leaves to European shelves",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[4]/p[1]",
+      "block_id": "EU-CUSTOMS-B0048"
+    },
+    {
+      "text": "Before placing the order, Anna checks the CLASS database to find the correct CN code for tea. This classification code tells customs what rules and duties apply. She\n also uses the TARIC database to see if there are any restrictions or special requirements. While she doesn’t need\n a license for importing tea, she learns that a sanitary certificate is required since tea is a food product.",
+      "section": "Anna’s import journey: from tea leaves to European shelves",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[4]/p[2]",
+      "block_id": "EU-CUSTOMS-B0049"
+    },
+    {
+      "text": "Her supplier in Sri Lanka agrees to include a certificate of origin , which means Anna can benefit from lower customs duties under the EU’s trade agreement\n with Sri Lanka. With all preparations in place, Anna arranges for the shipment.",
+      "section": "Anna’s import journey: from tea leaves to European shelves",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[4]/p[3]",
+      "block_id": "EU-CUSTOMS-B0050"
+    },
+    {
+      "text": "Before the goods arrive at the port in Marseille, her customs agent submits an Entry Summary Declaration (ENS) to alert the authorities and allow for safety and security risk checks. When the\n shipment reaches the EU, her agent files a customs declaration with customs. Along with the declaration, Anna provides the commercial invoice, transport\n documents, the certificate of origin, and the required sanitary certificate.",
+      "section": "Anna’s import journey: from tea leaves to European shelves",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[4]/p[4]",
+      "block_id": "EU-CUSTOMS-B0051"
+    },
+    {
+      "text": "Once the declaration is accepted, Anna pays the customs duty and VAT . Customs officers inspect a few boxes and confirm everything is in order. The tea\n is cleared and released for delivery. Soon after, Anna receives her shipment and stocks the shelves with her new organic\n tea blend, that she can sell throughout the EU thanks to her online shop.",
+      "section": "Anna’s import journey: from tea leaves to European shelves",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[4]/p[5]",
+      "block_id": "EU-CUSTOMS-B0052"
+    },
+    {
+      "text": "Find out more about customs duties and import procedures in your country below:",
+      "section": "Anna’s import journey: from tea leaves to European shelves",
+      "locator": "/html/body/main/div[1]/div/div[1]/p[18]",
+      "block_id": "EU-CUSTOMS-B0053"
+    },
+    {
+      "text": "Choose country",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/h3",
+      "block_id": "EU-CUSTOMS-B0054"
+    },
+    {
+      "text": "Austria",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[1]",
+      "block_id": "EU-CUSTOMS-B0055"
+    },
+    {
+      "text": "Belgium",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[2]",
+      "block_id": "EU-CUSTOMS-B0056"
+    },
+    {
+      "text": "Bulgaria",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[3]",
+      "block_id": "EU-CUSTOMS-B0057"
+    },
+    {
+      "text": "Croatia",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[4]",
+      "block_id": "EU-CUSTOMS-B0058"
+    },
+    {
+      "text": "Cyprus",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[5]",
+      "block_id": "EU-CUSTOMS-B0059"
+    },
+    {
+      "text": "Czechia",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[6]",
+      "block_id": "EU-CUSTOMS-B0060"
+    },
+    {
+      "text": "Denmark",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[7]",
+      "block_id": "EU-CUSTOMS-B0061"
+    },
+    {
+      "text": "Estonia",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[8]",
+      "block_id": "EU-CUSTOMS-B0062"
+    },
+    {
+      "text": "Finland",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[9]",
+      "block_id": "EU-CUSTOMS-B0063"
+    },
+    {
+      "text": "France",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[10]",
+      "block_id": "EU-CUSTOMS-B0064"
+    },
+    {
+      "text": "Germany",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[11]",
+      "block_id": "EU-CUSTOMS-B0065"
+    },
+    {
+      "text": "Greece",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[12]",
+      "block_id": "EU-CUSTOMS-B0066"
+    },
+    {
+      "text": "Hungary",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[13]",
+      "block_id": "EU-CUSTOMS-B0067"
+    },
+    {
+      "text": "Ireland",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[14]",
+      "block_id": "EU-CUSTOMS-B0068"
+    },
+    {
+      "text": "Italy",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[15]",
+      "block_id": "EU-CUSTOMS-B0069"
+    },
+    {
+      "text": "Latvia",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[16]",
+      "block_id": "EU-CUSTOMS-B0070"
+    },
+    {
+      "text": "Lithuania",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[17]",
+      "block_id": "EU-CUSTOMS-B0071"
+    },
+    {
+      "text": "Luxembourg",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[18]",
+      "block_id": "EU-CUSTOMS-B0072"
+    },
+    {
+      "text": "Malta",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[19]",
+      "block_id": "EU-CUSTOMS-B0073"
+    },
+    {
+      "text": "Netherlands",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[20]",
+      "block_id": "EU-CUSTOMS-B0074"
+    },
+    {
+      "text": "Poland",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[21]",
+      "block_id": "EU-CUSTOMS-B0075"
+    },
+    {
+      "text": "Portugal",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[22]",
+      "block_id": "EU-CUSTOMS-B0076"
+    },
+    {
+      "text": "Romania",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[23]",
+      "block_id": "EU-CUSTOMS-B0077"
+    },
+    {
+      "text": "Slovakia",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[24]",
+      "block_id": "EU-CUSTOMS-B0078"
+    },
+    {
+      "text": "Slovenia",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[25]",
+      "block_id": "EU-CUSTOMS-B0079"
+    },
+    {
+      "text": "Spain",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[26]",
+      "block_id": "EU-CUSTOMS-B0080"
+    },
+    {
+      "text": "Sweden",
+      "section": "Choose country",
+      "locator": "/html/body/main/div[1]/div/div[1]/div[5]/div/ul/li[27]",
+      "block_id": "EU-CUSTOMS-B0081"
+    },
+    {
+      "text": "Need support from assistance services?",
+      "section": "Need support from assistance services?",
+      "locator": "/html/body/main/div[1]/div/div[2]/h2",
+      "block_id": "EU-CUSTOMS-B0082"
+    },
+    {
+      "text": "Get in touch with specialised assistance services",
+      "section": "Need support from assistance services?",
+      "locator": "/html/body/main/div[1]/div/div[2]/p",
+      "block_id": "EU-CUSTOMS-B0083"
+    },
+    {
+      "text": "Do you have questions on operating a business cross-border, for example exporting or expanding to another EU country? If so, the Enterprise Europe Network can give you free advice.",
+      "section": "Need support from assistance services?",
+      "locator": "/html/body/main/div[1]/div/div[2]/div/div[1]/p",
+      "block_id": "EU-CUSTOMS-B0084"
+    },
+    {
+      "text": "You can also use the assistance service finder to find the right help for you.",
+      "section": "Need support from assistance services?",
+      "locator": "/html/body/main/div[1]/div/div[2]/div/div[2]/p",
+      "block_id": "EU-CUSTOMS-B0085"
+    },
+    {
+      "text": "Facebook",
+      "section": "Need support from assistance services?",
+      "locator": "/html/body/main/div[2]/ul/li[1]",
+      "block_id": "EU-CUSTOMS-B0086"
+    },
+    {
+      "text": "Linkedin",
+      "section": "Need support from assistance services?",
+      "locator": "/html/body/main/div[2]/ul/li[2]",
+      "block_id": "EU-CUSTOMS-B0087"
+    },
+    {
+      "text": "X (Twitter)",
+      "section": "Need support from assistance services?",
+      "locator": "/html/body/main/div[2]/ul/li[3]",
+      "block_id": "EU-CUSTOMS-B0088"
+    },
+    {
+      "text": "e-mail",
+      "section": "Need support from assistance services?",
+      "locator": "/html/body/main/div[2]/ul/li[4]",
+      "block_id": "EU-CUSTOMS-B0089"
+    }
+  ]
+}

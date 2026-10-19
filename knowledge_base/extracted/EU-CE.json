@@ -1,0 +1,90 @@
+{
+  "source_id": "EU-CE",
+  "method": "html_dom",
+  "blocks": [
+    {
+      "text": "When you buy a new phone, a teddy bear, or a TV within the EEA, you can find the CE mark on them. CE marking also supports fair competition by holding all companies accountable to the same rules.",
+      "section": "Document body",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/p[1]",
+      "block_id": "EU-CE-B0001"
+    },
+    {
+      "text": "By affixing the CE marking to a product, a manufacturer declares that the product meets all the legal requirements for CE marking and can be sold throughout the EEA. This also applies to products made in other countries that are sold in the EEA.",
+      "section": "Document body",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/p[2]",
+      "block_id": "EU-CE-B0002"
+    },
+    {
+      "text": "There are two main benefits CE marking brings to businesses and consumers within the EEA",
+      "section": "Document body",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/p[3]",
+      "block_id": "EU-CE-B0003"
+    },
+    {
+      "text": "businesses know that products bearing the CE marking can be traded in the EEA without restrictions",
+      "section": "Document body",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/ul/li[1]",
+      "block_id": "EU-CE-B0004"
+    },
+    {
+      "text": "consumers enjoy the same level of health, safety, and environmental protection throughout the entire EEA",
+      "section": "Document body",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/ul/li[2]",
+      "block_id": "EU-CE-B0005"
+    },
+    {
+      "text": "CE marking is a part of the EU’s harmonisation legislation, which is mainly managed by Directorate-General for Internal market, Industry, Entrepreneurship and SMEs. The CE marking for Restriction of Hazardous Substances is managed by Directorate-General for Environment . Comprehensive guidance on the implementation of EU product rules can be found in the so-called Blue Guide .",
+      "section": "Document body",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/p[4]",
+      "block_id": "EU-CE-B0006"
+    },
+    {
+      "text": "This website provides information for manufacturers , importers and distributors on their responsibilities when placing a product on the EEA market. It also informs consumers about the rights and benefits that CE marking brings them.",
+      "section": "Document body",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/p[5]",
+      "block_id": "EU-CE-B0007"
+    },
+    {
+      "text": "If you’re looking for information on CE marking in your country, contact the Enterprise Europe Network or check the list of contact points in the EEA .",
+      "section": "Document body",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/p[6]",
+      "block_id": "EU-CE-B0008"
+    },
+    {
+      "text": "How to reproduce the CE mark",
+      "section": "How to reproduce the CE mark",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/h2",
+      "block_id": "EU-CE-B0009"
+    },
+    {
+      "text": "The archive contains the CE mark in GIF, PNG, JPG, AI and EPS formats.",
+      "section": "How to reproduce the CE mark",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/div/article/div/div/div[2]/p",
+      "block_id": "EU-CE-B0010"
+    },
+    {
+      "text": "General guidelines",
+      "section": "How to reproduce the CE mark",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/div/article/div/div/ul/li[1]",
+      "block_id": "EU-CE-B0011"
+    },
+    {
+      "text": "25 October 2021",
+      "section": "How to reproduce the CE mark",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/div/article/div/div/ul/li[2]",
+      "block_id": "EU-CE-B0012"
+    },
+    {
+      "text": "IMPORTANT NOTE:",
+      "section": "How to reproduce the CE mark",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/p[7]",
+      "block_id": "EU-CE-B0013"
+    },
+    {
+      "text": "Not all products must have CE marking. It is compulsory only for most of the products covered by the New Approach Directives. It is forbidden to affix CE marking to other products. \n\n Please note that a CE marking does not indicate that a product have been approved as safe by the EU or by another authority. It does not indicate the origin of a product either.",
+      "section": "How to reproduce the CE mark",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/article/div/div[2]/div/div/blockquote",
+      "block_id": "EU-CE-B0014"
+    }
+  ]
+}

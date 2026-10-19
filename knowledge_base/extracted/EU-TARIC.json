@@ -1,0 +1,138 @@
+{
+  "source_id": "EU-TARIC",
+  "method": "html_dom",
+  "blocks": [
+    {
+      "text": "TARIC, or the integrated tariff of the European Union, is a multilingual database integrating all measures relating to the Common Customs Tariff (CCT) and commercial and agricultural legislation.",
+      "section": "Document body",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/p[1]",
+      "block_id": "EU-TARIC-B0001"
+    },
+    {
+      "text": "Access TARIC",
+      "section": "Document body",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/p[2]",
+      "block_id": "EU-TARIC-B0002"
+    },
+    {
+      "text": "Rationale",
+      "section": "Rationale",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/h2[1]",
+      "block_id": "EU-TARIC-B0003"
+    },
+    {
+      "text": "The TARIC database integrates measures related to the EU customs tariff as well as commercial and agricultural legislation. This ensures that such measures are applied uniformly across all EU countries.",
+      "section": "Rationale",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/p[3]",
+      "block_id": "EU-TARIC-B0004"
+    },
+    {
+      "text": "For economic operators, TARIC provides a transparent overview of the requirements for importing goods into or exporting goods out of the EU. TARIC also enables the collection of EU-wide statistics related to these measures.",
+      "section": "Rationale",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/p[4]",
+      "block_id": "EU-TARIC-B0005"
+    },
+    {
+      "text": "TARIC data is transmitted daily to the national administrations of EU countries so that they always have accurate and up-to-date information. These administrations use the data to update their national customs clearance systems with the aim of maximising automation in customs procedures.",
+      "section": "Rationale",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/p[5]",
+      "block_id": "EU-TARIC-B0006"
+    },
+    {
+      "text": "Categories of measures",
+      "section": "Categories of measures",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/h2[2]",
+      "block_id": "EU-TARIC-B0007"
+    },
+    {
+      "text": "The following is a non-exhaustive list of the main categories of measures recorded in TARIC:",
+      "section": "Categories of measures",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/p[6]",
+      "block_id": "EU-TARIC-B0008"
+    },
+    {
+      "text": "Tariff measures ‘Third-country duty’, customs duty applicable to all imports originating in a non-EU country/territory as defined in the Combined Nomenclature Tariff preferences Autonomous tariff suspensions Tariff quotas Customs unions",
+      "section": "Categories of measures",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/ul[1]/li[1]",
+      "block_id": "EU-TARIC-B0009"
+    },
+    {
+      "text": "Agricultural measures Agricultural components Additional duties on sugar, sugar content and flour content Representative prices for poultry Standard Import Values and Unit Prices for fruits and vegetables",
+      "section": "Categories of measures",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/ul[1]/li[2]",
+      "block_id": "EU-TARIC-B0010"
+    },
+    {
+      "text": "Trade defence instruments Antidumping duties Countervailing duties Safeguard duties",
+      "section": "Categories of measures",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/ul[1]/li[3]",
+      "block_id": "EU-TARIC-B0011"
+    },
+    {
+      "text": "Prohibitions and restrictions Import and/or export prohibition of certain goods (e.g. ozone-depleting substances, certain products originating in or exported to some countries/territories like Iran, North Korea, etc.) Quantitative limits Import and/or export controls of certain categories of goods (e.g. products subject to CITES, luxury goods, cultural goods, products and equipment containing fluorinated greenhouse gases, dual use goods, veterinary or phytosanitary controls on animals and food, etc.)",
+      "section": "Categories of measures",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/ul[1]/li[4]",
+      "block_id": "EU-TARIC-B0012"
+    },
+    {
+      "text": "Surveillance of movements of goods at import and export",
+      "section": "Categories of measures",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/ul[1]/li[5]",
+      "block_id": "EU-TARIC-B0013"
+    },
+    {
+      "text": "TARIC also contains:",
+      "section": "Categories of measures",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/p[7]",
+      "block_id": "EU-TARIC-B0014"
+    },
+    {
+      "text": "The goods nomenclature and additional codes;",
+      "section": "Categories of measures",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/ul[2]/li[1]",
+      "block_id": "EU-TARIC-B0015"
+    },
+    {
+      "text": "The supplementary units;",
+      "section": "Categories of measures",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/ul[2]/li[2]",
+      "block_id": "EU-TARIC-B0016"
+    },
+    {
+      "text": "The EU codes to be used in Data Element 12 03 000 000 of the Customs Declaration as \"Supporting document”",
+      "section": "Categories of measures",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/ul[2]/li[3]",
+      "block_id": "EU-TARIC-B0017"
+    },
+    {
+      "text": "The nomenclature of country/territory codes used in the different Data Elements of the Customs Declaration, in accordance with Commission Implementing Regulation (EU) 2020/1470 of 12 October 2020 on the nomenclature of countries and territories for the European statistics on international trade in goods and on the geographical breakdown for other business statistics",
+      "section": "Categories of measures",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/ul[2]/li[4]",
+      "block_id": "EU-TARIC-B0018"
+    },
+    {
+      "text": "TARIC does not contain information relating to national levies such as rates of VAT and rates of excise.",
+      "section": "Categories of measures",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/p[8]",
+      "block_id": "EU-TARIC-B0019"
+    },
+    {
+      "text": "TARIC raw data is also freely available in Excel format.",
+      "section": "Categories of measures",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/p[9]",
+      "block_id": "EU-TARIC-B0020"
+    },
+    {
+      "text": "Legal basis",
+      "section": "Legal basis",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/h2[3]",
+      "block_id": "EU-TARIC-B0021"
+    },
+    {
+      "text": "Council Regulation (EEC) No 2658/87 on the tariff and statistical nomenclature and on the Common Customs Tariff",
+      "section": "Legal basis",
+      "locator": "/html/body/div[2]/main/div/div[2]/div/div/div[2]/div/article/div/div/p[10]",
+      "block_id": "EU-TARIC-B0022"
+    }
+  ]
+}

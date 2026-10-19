@@ -1,0 +1,67 @@
+Requirements to import goods (https://www.abf.gov.au/importing-exporting-and-manufacturing/importing/how-to-import/requirements)
+citeturn132view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: open({"ref_id":"https://www.abf.gov.au/importing-exporting-and-manufacturing/importing/how-to-import/requirements","lineno":null}); Total lines: 87
+L0: cite0†iframe†www.googletagmanager.com L1: 
+L2: cite1†Image cite2†Image L3: 
+L4: [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input] [Input]
+L5: 
+L6:   * [Button: Skip to navigation]
+L7:   * cite3†Skip to main content L8: 
+L9: [Input] [Input]
+L10: 
+L11: Select language [Select]
+L12: 
+L13: You have entered feedback mode. Right click on translated text to report
+L14: 
+L15: MENU
+L16: 
+L17:  Menu cite4†Home Affairs Portfolio†www.homeaffairs.gov.au L18: 
+L19:  Back
+L20: 
+L21: [Input: Search]
+L22: ### Popular searches
+L23: 
+L24: ### Your previous searches
+L25: 
+L26: Page Image
+L27: 
+L28: # How to import
+L29: 
+L30: [Select]
+L31: 
+L32: [Input] [Input] [Input]
+L33: 
+L34: Page Content
+L35: 
+L36: ## ​​​​Requirements
+L37: 
+L38: ##### Need a hand?
+L39: 
+L40: ×
+L41: 
+L42: [Button: Cancel]
+L43: 
+L44: cite5†Tell us what you think of this page L45: 
+L46: Last updated:
+L47: 
+L48: ## ​​​​​​​​Contact
+L49: 
+L50: #### General
+L51: 
+L52: Do you have a question, feedback or a complaint? Let us help you find the right answer.
+L53: 
+L54: cite6†Contact us L55: 
+L56: #### Report suspicious activities​
+L57: 
+L58: ​
+L59: #### Media
+L60: 
+L61: ​
+L62: 
+L63:   * cite4†Home Affairs Portfolio†www.homeaffairs.gov.au L64:   * cite7†National Security†www.homeaffairs.gov.au L65:   * cite8†Transport Security†www.homeaffairs.gov.au L66:   * ​ cite9†Emergency Management†www.homeaffairs.gov.au ​
+L67:   * cite10†Cyber Security†www.homeaffairs.gov.au L68:   * cite11†Multicultural Affairs†www.homeaffairs.gov.au L69: 
+L70:   * cite12†Who we are L71:   * cite13†Our Ministers†www.homeaffairs.gov.au L72:   * cite14†Careers L73:   * cite15†Report something suspicious L74: 
+L75: cite16†Image: Australian Government L76: The Australian Border Force acknowledges the Traditional Custodians of Country throughout Australia and their continuing connection to land, sea and community. We pay our respects to all Aboriginal and Torres Strait Islander peoples, their cultures and to their elders past, present and emerging.​
+L77: 
+L78: ​ ​
+L79:   * cite17†Web privacy statement†www.homeaffairs.gov.au L80:   * cite18†Accessibility of this website†www.homeaffairs.gov.au L81:   * cite19†Access to information​†www.homeaffairs.gov.au L82:   * cite20†Information publication scheme†www.homeaffairs.gov.au L83:   * cite21†Copyright and disclaimer†www.homeaffairs.gov.au L84:   * cite22†Privacy†www.homeaffairs.gov.au L85: 
+L86: cite23†Back to top 

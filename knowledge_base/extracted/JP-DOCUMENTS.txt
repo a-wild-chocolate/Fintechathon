@@ -1,0 +1,60 @@
+[JP-DOCUMENTS-B0001] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+
+[JP-DOCUMENTS-B0002] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+Invoice
+
+[JP-DOCUMENTS-B0003] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+Bill of lading or Sea Way Bill (for import of air cargo : Air Way Bill)
+
+[JP-DOCUMENTS-B0004] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+Insurance certificate
+
+[JP-DOCUMENTS-B0005] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+Freight account
+
+[JP-DOCUMENTS-B0006] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+Packing list
+
+[JP-DOCUMENTS-B0007] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+Contracts
+
+[JP-DOCUMENTS-B0008] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+Price lists
+
+[JP-DOCUMENTS-B0009] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+Permit or approval required by laws and regulations (when the import of certain goods is required by laws and regulations other than the Customs Law, such as the Plant Protection Law);
+
+[JP-DOCUMENTS-B0010] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+Generalized system of preferences and certificates of origin (where a preferential rate is applicable); and
+
+[JP-DOCUMENTS-B0011] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+Statement on reduction of or exemption from customs duty and excise tax (when such reduction or exemption is applicable to the goods).
+
+[JP-DOCUMENTS-B0012] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+Additional documentation may be requested, as necessary.
+
+[JP-DOCUMENTS-B0013] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+(Article 68 and Article 70 of the Customs Law, Article 61 of the Cabinet Order for Enforcement of the Customs Law, Article 8-2 of the Temporary Tariff Measure Law, Article 27 and the Cabinet Order for Enforcement of the Temporary Tariff Measure Law, and others)
+
+[JP-DOCUMENTS-B0014] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+(Reference)
+
+[JP-DOCUMENTS-B0015] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+(1) 
+ A Bill of Lading (B/L) is a document issued by a shipping company to a sender acknowledging that they have received the shipment of goods. It is a necessary document for consignee to receive the shipped goods which have arrived in Japan from the shipping company.
+
+[JP-DOCUMENTS-B0016] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+(2) 
+ A Sea Way Bill is a contract between a carrier and a sender for sea transportation of goods and it is issued when the carrier has accepted the goods and obligated itself to carry the consignment.
+
+[JP-DOCUMENTS-B0017] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+(3) 
+ An Air Way Bill is a contract between a carrier and a sender for air transportation of goods and it is issued when the carrier has accepted the goods and obligated itself to carry the consignment.
+
+[JP-DOCUMENTS-B0018] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+(4) 
+ An Invoice is a document describing the name, quantity, and value of the goods, and is prepared in the shipping country of the goods.
+
+[JP-DOCUMENTS-B0019] 1107 Documents to be Submitted for Import Clearance (FAQ) : Japan Customs
+For consultations on customs procedures, please contact the nearest Customs Counselor. Please see No. 9301 for inquiries.

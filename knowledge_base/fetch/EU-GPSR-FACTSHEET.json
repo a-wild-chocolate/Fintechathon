@@ -1,0 +1,13 @@
+{
+  "source_id": "EU-GPSR-FACTSHEET",
+  "requested_url": "https://commission.europa.eu/document/download/a281b150-19fd-44f9-bef8-c6018f9c4792_en?filename=new_general_product_safety_regulation_-_factsheet.pdf",
+  "retrieved_at": "2026-10-17T19:26:00.457196+00:00",
+  "status": "downloaded",
+  "http_status": 200,
+  "final_url": "https://commission.europa.eu/document/download/a281b150-19fd-44f9-bef8-c6018f9c4792_en?filename=new_general_product_safety_regulation_-_factsheet.pdf",
+  "content_type": "application/pdf",
+  "bytes": 574020,
+  "raw_path": "raw/EU-GPSR-FACTSHEET.pdf",
+  "last_modified": null,
+  "etag": null
+}

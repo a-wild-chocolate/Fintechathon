@@ -1,0 +1,198 @@
+{
+  "source_id": "US-IMPORT",
+  "method": "html_dom",
+  "blocks": [
+    {
+      "text": "In order to avoid potential problems in the clearance of your merchandise, U.S. Customs and Border Protection (CBP) strongly recommends that you familiarize yourself with CBP policies and procedures prior to actually importing/exporting your goods. You should also be aware of any entry requirements specific to the particular commodity you are importing/exporting, including those of other federal agencies. To assist you, we offer the following tips for new importers and exporters.",
+      "section": "Document body",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[1]",
+      "block_id": "US-IMPORT-B0001"
+    },
+    {
+      "text": "What kind of license is required to import merchandise into the United States?",
+      "section": "What kind of license is required to import merchandise into the United States?",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/h2[1]",
+      "block_id": "US-IMPORT-B0002"
+    },
+    {
+      "text": "CBP does not require an importer to have a license or permit, but other agencies may require a permit, license, or other certification, depending on the commodity that is being imported. CBP acts in an administrative capacity for these other agencies, and you may wish to contact them directly for more information. You can find links to other government agencies and departments at USA.gov. There is a listing of other government agencies in the appendix section of the publication Importing Into the United States . You may also need a license from local or state authorities to do business. CBP entry forms do ask for your importer number: this is either your IRS business registration number, or if your business is not registered with the IRS or you do not have a business, your social security number will be sufficient. As an alternative, you may request a CBP assigned number by completing a CBP Form 5106 and presenting it to the Entry Branch at a CBP port of entry.",
+      "section": "What kind of license is required to import merchandise into the United States?",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[2]",
+      "block_id": "US-IMPORT-B0003"
+    },
+    {
+      "text": "The CBP website contains valuable information for the new or experienced importer.",
+      "section": "The CBP website contains valuable information for the new or experienced importer.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/h2[2]",
+      "block_id": "US-IMPORT-B0004"
+    },
+    {
+      "text": "We recommend that importers review the topics on the CBP Trade page. In particular, we suggest viewing the information contained in the section titled Basic Importing and Exporting . There are many topic-specific links to explore. This will lead you to information on CBP import requirements, arrival of goods, formal entry vs. informal entry, classification, protest, mail shipments, restricted merchandise and more. For other agency requirements you may need to meet, and if you become a frequent importer with higher valued shipments, we recommend you read Importing into the United States . This publication contains more in-depth information and is valuable reading for anyone seriously venturing into the importing business.",
+      "section": "The CBP website contains valuable information for the new or experienced importer.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[3]",
+      "block_id": "US-IMPORT-B0005"
+    },
+    {
+      "text": "We also urge you to read the Informed Compliance Publications . CBP has prepared a number of Informed Compliance Publications (ICPs) in the \"What Every Member of the Trade Community Should Know About...\" series on a variety issues. If your business will cause you to travel in and out of the country, we recommend that you review the traveler information in the Know Before You Go .",
+      "section": "The CBP website contains valuable information for the new or experienced importer.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[4]",
+      "block_id": "US-IMPORT-B0006"
+    },
+    {
+      "text": "Prior to importing, you may contact the CBP office at the port of entry where your merchandise will enter the United States",
+      "section": "Prior to importing, you may contact the CBP office at the port of entry where your merchandise will enter the United States",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/h2[3]",
+      "block_id": "US-IMPORT-B0007"
+    },
+    {
+      "text": "A complete directory of the various ports of entry can be found on this website. If you are unsure of or haven't decided the port where your shipment will arrive, or you are looking at importing through multiple ports, you may contact a service port of entry near you. Ask to speak with a CBP import specialist assigned to the commodity you are importing. Import specialists are a valuable resource for commodity specific knowledge and can provide classification advice, commodity specific requirements, advisory duty rates, and respond to questions you may have about filing an entry. At many ports, entry specialists handle questions regarding entry filing. Entry specialists work closely with import specialists and provide the technical processing expertise required to file the necessary paperwork.",
+      "section": "Prior to importing, you may contact the CBP office at the port of entry where your merchandise will enter the United States",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[5]",
+      "block_id": "US-IMPORT-B0008"
+    },
+    {
+      "text": "When calling the port, the importer should be able to provide as much detail regarding the transaction as possible. In order for the import specialist to best assist you, it is important you be able to exactly describe the merchandise you are planning to import. In order for the import specialist to best assist you, you should provide a full and complete description of the article and answer specific questions such as: 1) the country of origin of the merchandise and manufacturer; 2) the composition of the merchandise; 3) the intended use of the item; and 4) pricing/payment information (in order to properly determine the value of the shipment). For more information on the classification of merchandise, consult the Harmonized Tariff Schedule (HTS) which contains the actual HTS number and tariff classification guidelines that explain how to properly classify merchandise.",
+      "section": "Prior to importing, you may contact the CBP office at the port of entry where your merchandise will enter the United States",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[6]",
+      "block_id": "US-IMPORT-B0009"
+    },
+    {
+      "text": "Importers can request a written ruling from CBP for the proper HTSUS classification and rate of duty for their merchandise.",
+      "section": "Importers can request a written ruling from CBP for the proper HTSUS classification and rate of duty for their merchandise.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/h2[4]",
+      "block_id": "US-IMPORT-B0010"
+    },
+    {
+      "text": "For information on CBP ruling letters, review What are Ruling Letters . When requesting a binding ruling, importers should follow the procedures outlined in Part 177 of the Customs Regulations (19 C.F.R. 177). Research the results of previous ruling requests by using the Customs Rulings Online Search System (CROSS). CBP may have already issued rulings on products similar to yours that you can use for guidance. CROSS also addresses other issues such as value, country of origin marking, and applicability of trade preference programs. The CROSS database is searchable by key word.",
+      "section": "Importers can request a written ruling from CBP for the proper HTSUS classification and rate of duty for their merchandise.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[7]",
+      "block_id": "US-IMPORT-B0011"
+    },
+    {
+      "text": "The CBP Website also contains valuable information regarding exporting.",
+      "section": "The CBP Website also contains valuable information regarding exporting.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/h2[5]",
+      "block_id": "US-IMPORT-B0012"
+    },
+    {
+      "text": "If your future plans call for exporting merchandise from the U.S., you should review the information found in the Export section of this website .",
+      "section": "The CBP Website also contains valuable information regarding exporting.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[8]",
+      "block_id": "US-IMPORT-B0013"
+    },
+    {
+      "text": "Although CBP enforces many export regulations for various other government agencies, specific questions pertaining to licensing requirements for a particular commodity should be directed to that lead agency. Other agency contact information as well as commodities that may require export licenses, can be obtained by visiting the U.S. Department of Commerce, Bureau of Industry and Security Web sites. Questions regarding export licenses may also be directed to CBP officers at the port where the merchandise will exit the country. Another resource is the Department of Commerce's Trade Information Center which you can call 1-800-USA Trade or visit their website Export.gov .",
+      "section": "The CBP Website also contains valuable information regarding exporting.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[9]",
+      "block_id": "US-IMPORT-B0014"
+    },
+    {
+      "text": "Although certain resident importers and exporters may file entries on their own behalf, many first time importers and exporters consult a licensed customs broker.",
+      "section": "Although certain resident importers and exporters may file entries on their own behalf, many first time importers and exporters consult a licensed customs broker.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/h2[6]",
+      "block_id": "US-IMPORT-B0015"
+    },
+    {
+      "text": "Those importing merchandise for their own use often hire a customs broker, particularly if they find the importing procedures complicated; however, they may make entry on their own. Importers wishing to consult the professional services of a Customs broker may do so. Customs brokers are licensed by CBP, but are not CBP employees. To view a list of customs brokers licensed to conduct CBP business in a specific port, select the Port you expect to use. Many service port pages have a list of customs brokers. Please note these lists may not be all inclusive and those brokers appearing on the list are not endorsed by CBP. There is also an Informed Compliance Publication about customs brokers . Remember, even when using a broker, you, the importer of record, are ultimately responsible for the correctness of the entry documentation presented to CBP and all applicable duties, taxes and fees.",
+      "section": "Although certain resident importers and exporters may file entries on their own behalf, many first time importers and exporters consult a licensed customs broker.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[10]",
+      "block_id": "US-IMPORT-B0016"
+    },
+    {
+      "text": "Importer Security Filing (ISF/\"10+2\") mandatory for ocean vessel shipments.",
+      "section": "Importer Security Filing (ISF/\"10+2\") mandatory for ocean vessel shipments.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/h2[7]",
+      "block_id": "US-IMPORT-B0017"
+    },
+    {
+      "text": "On January 26, 2009, the new rule titled Importer Security Filing and Additional Carrier Requirements (commonly known as \"10+2\") went into effect. This new rule applies to import cargo arriving to the United States by vessel. Failure to comply with the new rule could ultimately result in monetary penalties, increased inspections and delay of cargo.",
+      "section": "Importer Security Filing (ISF/\"10+2\") mandatory for ocean vessel shipments.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[11]",
+      "block_id": "US-IMPORT-B0018"
+    },
+    {
+      "text": "What is an Importer Security Filing? Under the new rule, before merchandise arriving by vessel can be imported into the United States, the \"Importer Security Filing (ISF) Importer,\" or their agent (e.g., licensed customs broker), must electronically submit certain advance cargo information to CBP in the form of an Importer Security Filing. This requirement only applies to cargo arriving in the United States by ocean vessel: it does not apply to cargo arriving by other modes of transportation. Remember, even when using a broker, , the importer of record, is ultimately responsible for the correctness of the entry documentation presented to CBP and all applicable duties, taxes and fees.",
+      "section": "Importer Security Filing (ISF/\"10+2\") mandatory for ocean vessel shipments.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[12]",
+      "block_id": "US-IMPORT-B0019"
+    },
+    {
+      "text": "Where can I Find More Information? For more detailed information about the Importer Security Filing requirements, please see CBP's webpage on Importer Security Filing . You will find a link to Frequently Asked Questions and recordings of recently conducted ISF webinars for small to mediums entities. Additional assistance may be available from your licensed customs broker, freight forwarders, trade associations and local trade centers.",
+      "section": "Importer Security Filing (ISF/\"10+2\") mandatory for ocean vessel shipments.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[13]",
+      "block_id": "US-IMPORT-B0020"
+    },
+    {
+      "text": "You should research general quota information and quota requirements for certain commodities prior to importing into the United States.",
+      "section": "You should research general quota information and quota requirements for certain commodities prior to importing into the United States.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/h2[8]",
+      "block_id": "US-IMPORT-B0021"
+    },
+    {
+      "text": "Import quotas control the amount or volume of various commodities that can be imported into the United States during a specified period of time. United States import quotas may be divided into two main types: absolute and tariff-rate. Absolute quotas usually apply to textiles and strictly limit the quantity of goods that may enter the commerce of the United States during a specific period. Currently there are no commodities subject to absolute quota restrictions. Tariff-rate quotas permit a specified quantity of imported merchandise to be entered at a reduced rate of duty during the quota period. Once a quota has been reached, goods may still be entered, but at a higher rate of duty.",
+      "section": "You should research general quota information and quota requirements for certain commodities prior to importing into the United States.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[14]",
+      "block_id": "US-IMPORT-B0022"
+    },
+    {
+      "text": "Quota information is available on the Quota page. This section contains links to information on subjects such as determining whether imported goods are subject to quota restraints. A Guide to Import Quotas provides additional quota information. Fill levels for agricultural quotas and textiles eligible for trade preference programs are tracked on the Commodity Status Report for Tariff Rate Quotas. General quota information and instructions for specific quotas are available to CBP field offices and the trade as Quota Book Transmittals .",
+      "section": "You should research general quota information and quota requirements for certain commodities prior to importing into the United States.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[15]",
+      "block_id": "US-IMPORT-B0023"
+    },
+    {
+      "text": "You may receive a bill if your shipment is examined by CBP.",
+      "section": "You may receive a bill if your shipment is examined by CBP.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/h2[9]",
+      "block_id": "US-IMPORT-B0024"
+    },
+    {
+      "text": "Under Title 19, section 1467, of the United States Code (19 U.S.C. 1467), CBP has a right to examine any shipment imported into the United States and it is important to know that you, the importer, must bear the cost of such cargo exams. Per the CBP regulations, it is the responsibility of the importer to make the goods available for examination-- \"The importer shall bear any expense involved in preparing the merchandise for CBP examination and in the closing of packages\" (19 C.F.R. 151.6). Household effects are not exempt. No distinction is made between commercial and personal shipments. In the course of normal operations, CBP does not charge for cargo examinations. However, there may still be costs involved for the importer. For example, if your shipment is selected for examination, it will generally be moved to a Centralized Examination Station (CES) for the CBP exam to take place. A CES is a privately operated facility where merchandise is made available to CBP officers for physical examination. The CES facility will unload (devan) your shipment from its shipping container and will reload it after the exam. The CES will bill you for their services. There are also costs associated with moving the cargo to and from the exam site and with storage. Rates will vary across the country and a complete devanning may cost several hundred dollars. The CES facility fulfills the needs of both CBP and the importer by providing an efficient means to conduct exams in a timely manner. CES facilities are discussed in part 118 of the Customs Regulations.",
+      "section": "You may receive a bill if your shipment is examined by CBP.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[16]",
+      "block_id": "US-IMPORT-B0025"
+    },
+    {
+      "text": "Some information requested from CBP can only be provided through Freedom of Information Act (FOIA) procedures.",
+      "section": "Some information requested from CBP can only be provided through Freedom of Information Act (FOIA) procedures.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/h2[10]",
+      "block_id": "US-IMPORT-B0026"
+    },
+    {
+      "text": "When members of the trade community or individuals from the public request information from CBP, there are circumstances when the information being sought can be provided only if the request is pursuant to the provisions of the Freedom of Information Act (FOIA). The CBP Web site has a comprehensive explanation of the agency FOIA program , including background and general information about FOIA law, FOIA regulations, and specific instructions making a FOIA request.",
+      "section": "Some information requested from CBP can only be provided through Freedom of Information Act (FOIA) procedures.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[17]",
+      "block_id": "US-IMPORT-B0027"
+    },
+    {
+      "text": "For general CBP inquiries, please call the CBP INFO Center Monday-Friday, between 8:30 a.m. and 5 p.m. Eastern Time.",
+      "section": "Some information requested from CBP can only be provided through Freedom of Information Act (FOIA) procedures.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[18]",
+      "block_id": "US-IMPORT-B0028"
+    },
+    {
+      "text": "General Inquiries: (1-877) CBP-5511",
+      "section": "Some information requested from CBP can only be provided through Freedom of Information Act (FOIA) procedures.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[19]",
+      "block_id": "US-IMPORT-B0029"
+    },
+    {
+      "text": "International Callers: (202) 325-8000",
+      "section": "Some information requested from CBP can only be provided through Freedom of Information Act (FOIA) procedures.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[20]",
+      "block_id": "US-IMPORT-B0030"
+    },
+    {
+      "text": "TDD: (1-866) 880-6582",
+      "section": "Some information requested from CBP can only be provided through Freedom of Information Act (FOIA) procedures.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[21]",
+      "block_id": "US-IMPORT-B0031"
+    },
+    {
+      "text": "We recommend you first try to find the information you want by using the CBP INFO Center's FAQ tool. It has more than 500 answers about CBP policies and procedures.",
+      "section": "Some information requested from CBP can only be provided through Freedom of Information Act (FOIA) procedures.",
+      "locator": "/html/body/div/main/div/div[2]/div/div/div[3]/article/div/div[1]/p[22]",
+      "block_id": "US-IMPORT-B0032"
+    }
+  ]
+}

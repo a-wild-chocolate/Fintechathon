@@ -70,3 +70,12 @@ def test_image_ingestion_citations_preview_and_retry(tmp_path, monkeypatch):
         response = client.get(f"/api/documents/{doc['id']}/versions/1/image")
         assert response.headers['content-type'] == 'image/png' and response.content == PNG
         assert client.get('/api/agents/workspace').json()['workspace'] is None
+
+
+def test_image_model_returns_json_content(tmp_path):
+    class JsonModel:
+        def chat(self, role, messages, tools):
+            return {'content': json.dumps(FIELDS)}, {'model': 'vision-fixture'}
+    path = tmp_path / 'email.png'
+    path.write_bytes(PNG)
+    assert read_image(path, JsonModel())['fields'] == FIELDS

@@ -117,6 +117,18 @@ def create_app(settings=None,library=None,agent_model=None,agent_connector=None)
         prepared=runtime.prepare(**body.model_dump())
         background.add_task(runtime.execute,*prepared)
         return {'run_id':prepared[0],'session_id':prepared[1],'status':'running'}
+    @app.post('/api/agents/runs/{run_id}/retry', status_code=202)
+    def retry_analysis(request:Request, run_id:str, background:BackgroundTasks):
+        runtime=request.state.agents
+        previous=runtime.store.run(run_id,request.state.tenant)
+        if previous['status'] != 'failed': raise Conflict('Only failed analyses can be retried.')
+        original=previous['request']
+        prepared=runtime.prepare(
+            question='Analyze the current saved cash position and recommend next steps. Payment confirmation is already handled; do not propose or save changes.',
+            language=original['language'], document_id=original.get('document_id'),
+            order_id=original.get('order_id'), analysis_only=True)
+        background.add_task(runtime.execute,*prepared)
+        return {'run_id':prepared[0],'session_id':prepared[1],'status':'running'}
     @app.post('/api/agents/runs/{run_id}/answers', status_code=202)
     def answer_agent_questions(request:Request, run_id:str, body:HumanReply, background:BackgroundTasks):
         runtime=request.state.agents

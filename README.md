@@ -12,7 +12,7 @@ Inside a company, choose **New order** and enter the customer, goods, order curr
 
 The dashboard, document upload scope and AI assistant use the selected company's saved records. Click **Analyze cash impact** on an order to start analysis with that order's context. Documents can be linked to any saved order, and confirmed AI receipt proposals update its expected payment plan. Company switching separates orders, documents, conversations and AI tasks.
 
-The original scripted demonstration remains at `/?demo=1`. Normal company creation does not load that data. Editing the original sample company's orders converts it to a managed workspace; its demo link then opens the saved company instead. The SQL schema and API are documented in [Database design](docs/DATABASE.md).
+The SQL schema and API are documented in [Database design](docs/DATABASE.md).
 
 ## Start the backend and frontend
 
@@ -181,26 +181,19 @@ See the [backend README](tradex-rag/README.md), [knowledge archive README](knowl
 - **Overview** shows currency-specific balances, upcoming payments, a 56-day cash projection and orders requiring attention.
 - **Documents** supports real uploads with an optional order association, processing status, company-document and public-policy views, and a direct **Ask AI** entry.
 - **AI assistant** searches the selected document or the current order plus shared company records and public policies. Answers show numbered citations. Each citation opens the referenced file version, highlights the source passage and links to the original file or official policy page.
-- **Notifications** in the original demo demonstrate event-based updates and scheduled follow-ups using the browser's demo date.
 
 Chinese and English controls cover the frontend and knowledge workbench. Public policy cards have English display titles and bilingual summaries. Uploaded originals and quoted evidence retain their source language.
 
-### Try the document-to-answer flow
+### Document-to-answer flow
 
-1. Open **Documents** and upload `demo/harbour-payment-confirmation.txt`.
-2. Associate it with **TF-26104**, then wait for **Searchable**.
-3. Click **Ask AI** beside the file.
-4. Ask: “What amount will Harbour Supplies pay, on which date, and what remains unconfirmed?”
-5. Open a numbered citation to inspect the source passage and download that exact version.
-6. Switch to Chinese and ask: “客户付款金额、日期和余款安排是什么？”
+1. Create a company and save an order.
+2. Open **Documents**, upload the buyer's payment email or screenshot, and link it to the order.
+3. Wait for processing to finish, then select **Ask AI**.
+4. Answer any questions about missing amounts or dates and review the proposed fields.
+5. Confirm the payment plan to update the order and cash forecast.
+6. Open a numbered citation to inspect the source evidence.
 
-With a configured model, the Coordinator can delegate analysis to specialists and propose fields for explicit confirmation. **Confirm and update dashboard** updates the expected receipt schedule; the follow-up conversation explains its cash impact. Without a key, this walkthrough returns retrieved excerpts.
-
-The file is synthetic: it describes a USD 6,000 payment promise for 29 October 2026 and an unscheduled USD 6,000 remainder. Retrieval does not turn that promise into a confirmed bank receipt.
-
-### Partial-payment clarification demo
-
-The order workflow also contains a local field-confirmation demo. Select Harbour Supplies and use `demo/buyer-partial-payment.txt` or the sample button. Its email omits the amount and date; the local parser requests those fields before confirmation. Replies such as “6000美元” and “10月29日” complete the draft. Confirmation updates the demo order and cash projection. The template demo remains available without a key. For the real agent path, upload the email through Documents, select Ask AI and complete the conversation confirmation flow.
+A payment promise updates the expected receipt schedule; it does not record a bank receipt. Model credentials are required for extraction and AI analysis.
 
 ## Repository layout
 
@@ -209,7 +202,7 @@ tradex-rag/                   Python API, MCP bridge, retrieval service and test
 knowledge_base/               Public sources and 28 curated bilingual policy cards
 index.html                    Application shell
 src/
-  app.js                      Pages, navigation and order workflow
+  business-ui.js              Company, order, dashboard and AI workflow
   knowledge.js                Uploads, retrieval chat and citation viewer
   data.js                     Bilingual copy and business templates
   finance.js                  Deterministic cash calculations
@@ -220,7 +213,6 @@ src/
   styles.css                  Base components
   clarity.css                 Finance-workspace layouts
   knowledge.css               Library and source-viewer styles
-demo/                         Synthetic emails and financial records
 tests/                        Business-logic unit tests
 scripts/
   serve.js                    Static server and local API proxy
@@ -232,11 +224,11 @@ docs/
   VERIFICATION.md             Verification record and remaining setup
 ```
 
-`dist/`, `output/`, `previews/`, logs, process IDs, dependency folders, backend `var/` data, downloaded `.models/` and local credentials are excluded from Git. The repository includes source code, tests, synthetic examples, English setup documentation and public knowledge sources. Runtime databases and private uploads are created locally.
+`dist/`, `output/`, `previews/`, logs, process IDs, dependency folders, backend `var/` data, downloaded `.models/` and local credentials are excluded from Git. The repository includes source code, tests and their fixtures, English setup documentation and public knowledge sources. Runtime databases and private uploads are created locally.
 
 ## State and deployment
 
-Finance-demo state is stored in this browser under `tradex-workspace-v1`. Source files, indexed passages and document versions are stored by the backend in SQLite and Qdrant. Uploading a document does not itself modify financial balances; the order workflow requires field confirmation.
+Company records, orders, payment schedules and conversation state are persisted by the backend. Source files, indexed passages and document versions are stored by the backend in SQLite and Qdrant. Uploading a document does not itself modify financial balances; the order workflow requires field confirmation.
 
 `dist/` contains static frontend assets. **GitHub Pages alone does not run the API proxy or Python backend.** For the connected application, run the Node server and RAG service together, or configure your hosting platform to forward `/api/*` and `/knowledge` to the backend. The current server binds to localhost; shared deployment needs an authenticated application boundary.
 
@@ -246,22 +238,6 @@ This directory is the repository root. Both services and the knowledge archive u
 
 TradeX now uses the open-source Deep Agents harness for its Coordinator and three business subagents. Human clarification, background task progress and cited answers use the same frontend workflow. See [agent setup](docs/AGENTS.md#local-setup) for the optional OpenSandbox service and public web search. Main model credentials remain in `tradex-rag/.env`; web search reuses `OPENROUTER_API_KEY`.
 
-## Start a demonstration from zero
-
-Run `npm run demo:empty` from the repository root after installing the frontend and backend dependencies and configuring `tradex-rag/.env`. Open http://127.0.0.1:5174/. This starts an isolated frontend and backend on ports 5174 and 18770. It creates a new tenant and data directory for each invocation, without changing the existing workspace on port 5173. Stop it with Ctrl+C before starting a new rehearsal. Keep the terminal open during the demo.
-
-The first screen contains no orders, financial projections, chat history or uploaded documents. Upload each supplied Word record in `demo/baseline/` or choose **Read the sample file**, review its extracted fields, then confirm the import:
-
-1. Company cash schedule: opening CNY balance and separate USD balance.
-2. Sales order: TF-26104, outstanding USD 12,000 and expected receipt date.
-3. Supplier terms: CNY 160,000 due on 22 October.
-
-Choose **Build orders & cash dashboard** to reveal the initial CNY 32,000 shortfall. Then open Harbour Supplies, upload `demo/screenshot-case/buyer-email.png` in Documents, and select **Ask AI**. When asked, enter USD 6,000 and 29 October 2026. Leave the remaining USD 6,000 unscheduled, then confirm the proposed fields.
-
-The baseline importer reads the supplied case's Word paragraphs and schedule tables with deterministic field extraction. It does not use an LLM or support arbitrary company datasets. The subsequent email analysis uses the configured agent service. The initial USD 19,970 belongs to other overseas commitments; a second customer order is not created from that balance. New sessions start without public-policy seeds; add policy documents separately when needed.
-
-Each session is saved under `tradex-rag/var/empty-demos/`. Reopening the same printed URL retains the confirmed imports; restarting the command creates a fresh rehearsal.
-
 ## Email screenshot workflow
 
 Upload a PNG, JPG or WEBP through **Documents**, link it to the order, and choose **Ask AI** after indexing. The backend sends the image directly to the configured vision model, stores the transcription and payment fields with the source version, and indexes them for retrieval. Missing amount or date fields remain empty until the assistant asks the user. Confirmation updates the expected receipt and cash projection, while the bank balance and total outstanding receivable remain unchanged. Citation buttons open the original screenshot alongside the extracted text.
@@ -269,3 +245,7 @@ Upload a PNG, JPG or WEBP through **Documents**, link it to the order, and choos
 Configure `TRADEX_MODEL_VISION` in `tradex-rag/.env`. It uses the existing provider and API key. OpenRouter defaults to `qwen/qwen3.5-plus-20260420` for screenshots; the conversational agents keep their separately configured DeepSeek models. Other providers use `TRADEX_MODEL` unless overridden with a vision-capable model. Image extraction is cached per source version so an indexing retry reuses the result; changing models does not rewrite existing evidence. Upload a new document or source version to analyze it again. No separate OCR service is required.
 
 The bell opens a contextual event list. Opening it marks the displayed events as read; the alerts remain available. Expand an event to inspect its cash impact, open its order or explicitly start AI analysis. Unchanged financial alerts retain their read state across unrelated workspace versions.
+
+## Repository hygiene
+
+Presentation kits, recordings, local demo assets and standalone UI previews are excluded from version control. Runtime databases, uploaded documents, model caches and credentials stay in ignored local directories. Public policy sources and small synthetic test fixtures remain available so retrieval and regression tests are reproducible. The separate security experiment directory is maintained independently.

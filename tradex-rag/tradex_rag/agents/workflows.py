@@ -67,6 +67,8 @@ class Workflows:
     def execute(self, name, run_id, role, args):
         if name not in ALLOW.get(role, set()): raise ValueError('Tool is not assigned to this agent role')
         run = self.store.run(run_id, self.tenant)
+        if run['request'].get('analysis_only') and name in {'wf_reconcile', 'wf_draft', 'sandbox_python'}:
+            raise Conflict('Analysis-only retry cannot write financial data or create drafts.')
         if run['status'] != 'running': raise Conflict('Run is no longer active')
         if name in {'web_search', 'web_fetch', 'sandbox_python'}:
             from .extensions import Extensions

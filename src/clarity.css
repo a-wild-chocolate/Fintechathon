@@ -1271,3 +1271,5 @@
 #tradeflow-export-preview .cash-movement-context small { color: var(--tf-sub); }
 #tradeflow-export-preview .cash-movement-context p { margin: 8px 0 0; }
 @media(max-width:640px) { #tradeflow-export-preview .cash-movement-context { align-items: start; flex-direction: column; } }
+
+#tradeflow-export-preview .cash-chart-tooltip { overflow-y: auto; max-width: calc(100vw - 24px); }

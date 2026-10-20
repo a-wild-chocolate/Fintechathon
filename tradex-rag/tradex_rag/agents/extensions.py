@@ -28,7 +28,7 @@ def search(query, transport=None):
     if not enabled('web'): raise ValueError('Public web search is disabled')
     if not query.strip() or len(query) > 500: raise ValueError('Use a short public policy question')
     payload = {'model': os.getenv('TRADEX_SEARCH_MODEL', 'qwen/qwen3-30b-a3b-instruct-2507'),
-               'messages': [{'role': 'user', 'content': query}], 'max_tokens': 500,
+               'messages': [{'role': 'user', 'content': query}],
                'plugins': [{'id': 'web', 'engine': 'exa', 'max_results': 3, 'include_domains': list(PUBLIC_DOMAINS)}]}
     with httpx.Client(timeout=45, transport=transport) as client:
         response = client.post('https://openrouter.ai/api/v1/chat/completions',

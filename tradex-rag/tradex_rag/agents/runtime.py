@@ -20,6 +20,7 @@ def failure_reason(exc):
     if isinstance(exc, ModelOutputError): return exc.reason
     if isinstance(exc, ValidationError): return 'invalid_result'
     if isinstance(exc, CallBudgetExceeded): return 'call_budget'
+    if isinstance(exc, httpx.HTTPStatusError) and exc.response.status_code == 429: return 'rate_limited'
     if isinstance(exc, httpx.HTTPError): return 'model_connection'
     return 'execution_error'
 
@@ -64,7 +65,7 @@ class AgentRuntime:
                 'web_search_enabled': os.getenv('TRADEX_WEB_ENABLED', '0') == '1',
                 'sandbox_enabled': os.getenv('TRADEX_SANDBOX_ENABLED', '0') == '1', 'models': self.model.models, 'roles': list(ROLES), 'configured': self.model.configured}
 
-    def prepare(self, question, language='zh', document_id=None, order_id=None, history=None, session_id=None, workspace=None, market=None):
+    def prepare(self, question, language='zh', document_id=None, order_id=None, history=None, session_id=None, workspace=None, market=None, analysis_only=False):
         if document_id:
             doc = self.library.document(document_id, self.tenant)
             if order_id and doc['tenant'] != 'public' and doc['metadata'].get('order_id') not in {None, '', order_id}:
@@ -73,7 +74,7 @@ class AgentRuntime:
             snapshot = Workspace.model_validate(workspace).model_dump()
             self.store.import_workspace(self.tenant, snapshot)
         request = {'question': question, 'language': language, 'document_id': document_id,
-                   'order_id': order_id, 'session_id': session_id, 'market': market}
+                   'order_id': order_id, 'session_id': session_id, 'market': market, 'analysis_only': analysis_only}
         run_id, session_id, prior = self.store.start(self.tenant, request)
         return run_id, session_id, request, prior
 
@@ -95,6 +96,7 @@ class AgentRuntime:
             logging.getLogger(__name__).exception('Agent run %s failed (%s)', run_id, reason)
             messages = {
                 'call_budget': ('本轮调用次数已达到上限，已保留完成的子任务结果。', 'This turn reached its call limit. Completed specialist results are preserved.'),
+                'rate_limited': ('模型服务请求限流。已确认的付款和资金数据已保存，请稍后点击重新分析。', 'The model service is rate-limiting requests. Saved payment and cash data are unchanged. Please retry the analysis shortly.'),
                 'model_connection': ('模型连接未完成，已保留执行记录。', 'The model connection did not complete. Execution records are preserved.'),
                 'output_truncated': ('模型输出达到长度上限，结果未能完整返回。已保留完成的步骤。', 'The model reached its output limit before returning a complete result. Completed steps are preserved.'),
                 'invalid_tool_arguments': ('模型返回的工具参数格式不完整，未执行该操作。', 'The model returned invalid tool arguments; that operation was not executed.'),
@@ -105,7 +107,7 @@ class AgentRuntime:
             output = {'paragraphs': [p for result in turn.outputs.values() for p in result['paragraphs']],
                       'follow_up': messages[reason][language == 'en'], 'failure_reason': reason}
             task_status = 'failed'
-        proposal = self.store.proposal(self.tenant, session_id)
+        proposal = None if request.get('analysis_only') else self.store.proposal(self.tenant, session_id)
         if task_status != 'failed' and proposal and proposal['status'] in {'needs_information', 'needs_approval'}:
             task_status = proposal['status']
         elif task_status == 'needs_approval':

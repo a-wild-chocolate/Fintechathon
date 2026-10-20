@@ -1,7 +1,0 @@
-DEMO DOCUMENT — Buyer payment notice
-Order: TF-26104
-Buyer: Harbour Supplies
-Outstanding amount: USD 12,000
-Expected CNY availability: 2026-11-12
-Scenario net CNY proceeds: 80,000
-The payment remains an expected receipt.

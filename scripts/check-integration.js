@@ -10,7 +10,7 @@ async function api(path, options = {}) {
 }
 const json = body => ({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
 assert.equal((await api('/assistant/status')).mode, 'evidence', 'Run integration checks with TRADEX_AGENTS_ENABLED=0 and TRADEX_CHAT_ENABLED=0 to avoid paid inference.');
-const text = await readFile(new URL('../demo/harbour-payment-confirmation.txt', import.meta.url), 'utf8');
+const text = await readFile(new URL('../tests/fixtures/payment-confirmation.txt', import.meta.url), 'utf8');
 const form = new FormData();
 form.append('file', new Blob([text], {type:'text/plain'}), 'integration-check.txt');
 form.append('title', '[Integration test] Payment evidence');

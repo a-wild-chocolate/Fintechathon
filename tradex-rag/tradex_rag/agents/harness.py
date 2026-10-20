@@ -35,6 +35,13 @@ class BusinessModel(BaseChatModel):
 
     async def _agenerate(self, messages, stop=None, run_manager=None, **kwargs):
         from .runtime import CallBudgetExceeded
+        if self.role == 'coordinator' and not self.turn.continuation:
+            waiting = next((r for r in self.turn.outputs.values()
+                            if r['status'] in {'needs_information', 'needs_approval'}), None)
+            if waiting:
+                self.turn.record({'event': 'response_ready', 'agent': self.role, 'status': waiting['status']})
+                return ChatResult(generations=[ChatGeneration(message=AIMessage(content='', tool_calls=[
+                    {'name': 'finish', 'args': waiting, 'id': 'deliver_specialist_question'}]))])
         reserve = int(self.role != 'coordinator' and not self.turn.continuation)
         limit = 7 if self.role == 'coordinator' else 5
         if self.turn.remaining <= reserve or self.calls >= limit:
@@ -142,6 +149,8 @@ async def run_agent(turn, role, task):
             turn.record({'event': 'tool_result', 'agent': role, 'tool': 'finish', 'status': completed['status']})
             return json.dumps(completed, ensure_ascii=False)
     definitions = turn.client.definitions(role)
+    if turn.request.get('analysis_only'):
+        definitions = [d for d in definitions if d['function']['name'] not in {'wf_reconcile', 'wf_draft', 'sandbox_python'}]
     if role == 'decision':
         definitions = [d for d in definitions if d['function']['name'] != 'wf_draft']
     if turn.continuation:

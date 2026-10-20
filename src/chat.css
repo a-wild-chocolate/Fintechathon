@@ -98,3 +98,5 @@
 @media (prefers-reduced-motion: reduce) {
   #tradeflow-export-preview .tx-chat-reply.is-task-target { animation: none; box-shadow: -3px 0 0 #4c8c78; }
 }
+
+.business-chat-actions{display:flex;align-items:center;gap:16px;min-width:0}.business-chat-actions select{max-width:260px}@media(max-width:700px){.business-chat-actions{flex-wrap:wrap}.business-chat-actions select{max-width:180px}}

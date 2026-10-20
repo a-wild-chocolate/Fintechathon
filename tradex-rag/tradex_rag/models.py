@@ -38,7 +38,7 @@ class ModelClient:
         if not self.configured:
             raise ValueError('Configure the selected model provider key and base URL.')
         payload = {'model': self.models[role], 'messages': messages, 'tools': tools,
-                   'tool_choice': 'auto', 'max_tokens': int(os.getenv('TRADEX_MODEL_MAX_TOKENS', '4096')), 'temperature': 0.1}
+                   'tool_choice': 'auto', 'temperature': 0.1}
         if self.provider == 'qwen':
             payload['enable_thinking'] = False
         if self.provider == 'openrouter':

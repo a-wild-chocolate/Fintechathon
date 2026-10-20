@@ -36,15 +36,26 @@ export function attachCashChart(svg, { snapshot, points, baseline, comparisonLab
     const prior = baseline[day].v;
     popover.innerHTML = `<strong>${eventDate(day)}</strong><div class="cash-chart-balance"><span>${en ? 'Projected closing balance' : '预计日末余额'}</span><b>${balance < 0 ? '−' : ''}${money(balance)}</b></div>${prior !== balance ? `<small>${comparisonLabel}: ${prior < 0 ? '−' : ''}${money(prior)}</small>` : ''}<ul>${movements.map(event => `<li><span>${event.label[en ? 1 : 0]}<small>${event.orderId || (en ? 'Company cash' : '企业资金')}</small></span><b>${signed(event.amount)}</b></li>`).join('')}</ul>${movements.length ? movements.map(event => `<button type="button" data-cash-event="${event.id}">${event.orderId ? `${event.orderId} · ${en ? 'View order' : '查看订单'}` : en ? 'Analyze company cash' : '分析企业资金'} →</button>`).join('') : `<small>${en ? 'No scheduled cash movements on this day.' : '当日无计划收支。'}</small>`}`;
     popover.hidden = false;
-    popover.style.left = `${Math.max(0, Math.min(x(day) - popover.offsetWidth / 2, width - popover.offsetWidth))}px`;
-    popover.style.top = `${Math.min(y(balance), height - 30) + 16}px`;
+    const anchor = new DOMPoint(x(day), y(balance)).matrixTransform(svg.getScreenCTM());
+    const bounds = host.getBoundingClientRect();
+    const margin = 12;
+    popover.style.maxHeight = `${window.innerHeight - margin * 2}px`;
+    const left = Math.max(margin, Math.min(anchor.x - popover.offsetWidth / 2, window.innerWidth - popover.offsetWidth - margin));
+    const below = anchor.y + margin;
+    const top = below + popover.offsetHeight <= window.innerHeight - margin
+      ? below : Math.max(margin, anchor.y - popover.offsetHeight - margin);
+    popover.style.left = `${left - bounds.left}px`;
+    popover.style.top = `${top - bounds.top}px`;
     cursor.setAttribute('visibility', 'visible');
     const line = cursor.querySelector('line');
     line.setAttribute('x1', x(day)); line.setAttribute('x2', x(day));
     const dot = cursor.querySelector('circle');
     dot.setAttribute('cx', x(day)); dot.setAttribute('cy', y(balance));
   };
-  const dayAt = event => Math.max(0, Math.min(55, Math.round((event.clientX - svg.getBoundingClientRect().left - x(0)) / (x(55) - x(0)) * 55)));
+  const dayAt = event => {
+    const point = new DOMPoint(event.clientX, event.clientY).matrixTransform(svg.getScreenCTM().inverse());
+    return Math.max(0, Math.min(55, Math.round((point.x - x(0)) / (x(55) - x(0)) * 55)));
+  };
   svg.addEventListener('pointermove', event => { if (!pinned && event.pointerType !== 'touch') show(dayAt(event)); });
   svg.addEventListener('click', event => {
     const day = Number(event.target.closest('[data-day]')?.dataset.day ?? dayAt(event));

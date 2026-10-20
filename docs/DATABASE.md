@@ -65,7 +65,7 @@ The normal frontend uses `/business/overview` for company records and server-cal
 
 One next receipt and one remaining supplier obligation are editable per order. Already received amounts describe history included in the entered opening balances; editing them does not post new bank cash. Expected foreign-currency receipts enter the CNY availability forecast using the saved rate and availability date. Unknown receipt dates leave the balance unscheduled, and events beyond the 56-day horizon are listed separately. Bank feeds, full settlement accounting, multi-user login and multiple receipt instalments per order remain outside this entry flow.
 
-The configured `TRADEX_TENANT` owns the local company list. This is company scoping within the local application, not a user authentication system. Old demo pages remain accessible under `/?demo=1`.
+The configured `TRADEX_TENANT` owns the local company list. This is company scoping within the local application, not a user authentication system. The frontend opens company management for all entry URLs.
 
 The SQL files and service code belong in Git. Runtime databases, uploads, backups and credentials stay under ignored local directories. To move a complete workspace, back up the entire data directory while the service is stopped, or use SQLite's backup API for each live database and include the referenced files and vector index.
 

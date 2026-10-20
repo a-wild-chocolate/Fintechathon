@@ -43,7 +43,11 @@ def read_image(path: Path, model=None):
     tool = {'type': 'function', 'function': {'name': 'finish', 'description': 'Return screenshot evidence.',
                                            'parameters': ImageEvidence.model_json_schema()}}
     message, usage = client.chat('vision', messages, [tool])
-    extraction = ImageEvidence.model_validate_json(message['tool_calls'][0]['function']['arguments'])
+    calls = message.get('tool_calls') or []
+    payload = calls[0]['function']['arguments'] if calls else message.get('content')
+    if not payload:
+        raise ValueError('The image model returned no extraction. Retry the document.')
+    extraction = ImageEvidence.model_validate_json(payload)
     result = {'fields': extraction.model_dump(mode='json'), 'model': usage['model'], 'usage': usage.get('usage', {})}
     cached.write_text(json.dumps(result, ensure_ascii=False, indent=2))
     return result

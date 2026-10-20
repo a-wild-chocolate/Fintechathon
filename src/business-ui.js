@@ -13,6 +13,7 @@ const tr=(zh,en)=>lang==='zh'?zh:en;
 let companies=[],business=null,page=companyId?'overview':'companies',selectedOrder='',selectedDocument='',draft='',chat=[],sessions={};
 let form=null,review=null,error='',busy=false,saveStatus='',agentEnabled=false,viewRevision=0,saveTimer,pendingView,saving=false;
 const monitors=new Set();
+let savedViewJSON='',savingViewJSON='';
 const currentOrder=()=>business?.snapshot.orders.find(o=>o.id===selectedOrder);
 const taskToOpen=()=>chat.find(t=>t.rag.status==='pending') || chat.findLast(t=>t.read===false);
 const taskLabel=()=>chat.some(t=>t.rag.status==='pending')?tr('AI 正在后台分析 · 查看','AI is analyzing · View'):tr('AI 分析已完成 · 查看结果','AI analysis ready · View result');
@@ -28,18 +29,24 @@ function updateSaveStatus(message){saveStatus=message;const node=root.querySelec
 function viewPayload(){return {lang,selectedOrder,selectedDocument,draft,chat,sessions};}
 function saveView(){
   if(!companyId)return;
-  pendingView=structuredClone(viewPayload());clearTimeout(saveTimer);saveTimer=setTimeout(flushView,400);
+  const snapshot=viewPayload(), serialized=JSON.stringify(snapshot);
+  clearTimeout(saveTimer);
+  if(serialized===(saving ? savingViewJSON : savedViewJSON)){pendingView=null;return;}
+  pendingView=structuredClone(snapshot);saveTimer=setTimeout(flushView,400);
 }
 async function flushView(){
   if(saving || !pendingView)return;
-  saving=true;const workspace=pendingView;pendingView=null;updateSaveStatus(tr('正在保存…','Saving…'));
-  try{const response=await knowledgeAPI('/business/view',{...post({revision:viewRevision,workspace}),method:'PUT'});viewRevision=response.revision;updateSaveStatus(tr('已保存','Saved'));}
-  catch(e){notice(e.message);updateSaveStatus(tr('未保存','Not saved'));pendingView=null;}
-  finally{saving=false;if(pendingView)await flushView();}
+  saving=true;const workspace=pendingView;pendingView=null;savingViewJSON=JSON.stringify(workspace);
+  const statusTimer=setTimeout(()=>updateSaveStatus(tr('正在保存…','Saving…')),800);
+  try{const response=await knowledgeAPI('/business/view',{...post({revision:viewRevision,workspace}),method:'PUT'});viewRevision=response.revision;savedViewJSON=savingViewJSON;clearTimeout(statusTimer);updateSaveStatus(tr('已保存','Saved'));}
+  catch(e){clearTimeout(statusTimer);notice(e.message);updateSaveStatus(tr('未保存','Not saved'));pendingView=null;}
+  finally{clearTimeout(statusTimer);saving=false;savingViewJSON='';if(pendingView)await flushView();}
 }
 async function refreshBusiness(){business=await knowledgeAPI('/business/overview');}
 function head(title,sub,action=''){return `<div class="business-heading"><div><h1>${title}</h1><p>${sub}</p></div>${action}</div>`;}
-function field(name,label,value='',type='text',extra=''){return `<label>${label}<input name="${name}" type="${type}" value="${esc(value)}" ${extra}></label>`;}
+function field(name,label,value='',type='text',extra=''){
+  if(type==='date'){type='text';extra+=` placeholder="${tr('年-月-日','YYYY-MM-DD')}" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" maxlength="10" title="${tr('请使用 YYYY-MM-DD 格式','Use YYYY-MM-DD format')}"`;}
+  return `<label>${label}<input name="${name}" type="${type}" value="${esc(value)}" ${extra}></label>`;}
 function numberField(name,label,value=0,extra=''){return field(name,label,value,'number',`min="0" step="0.01" required ${extra}`);}
 function orderRows(){
   const orders=business.snapshot.orders;
@@ -62,7 +69,7 @@ function details(){
   const rows=[[tr('客户','Customer'),o.customer],[tr('货物','Goods'),o.goods],[tr('订单总额','Order value'),amount(o.total,o.currency)],
     [tr('已收金额','Already received'),amount(o.received,o.currency)],[tr('未结余额','Outstanding'),amount(o.total-o.received-o.adjustment,o.currency)],
     [tr('下次预计回款','Next expected receipt'),amount(o.expected,o.currency)+' · '+(o.receipt_date || tr('未定','Unscheduled'))],
-    [tr('结汇假设','Conversion assumption'),`1 ${o.currency} = ${o.fx_rate} CNY`],
+    [tr('汇率','Exchange rate'),`1 ${o.currency} = ${o.fx_rate} CNY`],
     [tr('供应商待付','Supplier payment'),amount(o.supplier_amount)+' · '+(o.supplier_date || tr('未定','Unscheduled'))]];
   return head(esc(o.id)+' · '+esc(o.customer),statusName(o.status),`<button class="tf-button" data-edit-order>${tr('编辑订单','Edit order')}</button>`)+
     `<div class="business-next"><div><h2>${tr('查看这笔订单对公司资金的影响','See how this order affects company cash')}</h2><p>${tr('先补充依据，再由 AI 分析回款安排与资金缺口。','Add the evidence, then ask AI to review receipts and funding needs.')}</p></div><button class="tf-button primary" data-order-analysis>${tr('分析资金影响','Analyze cash impact')} ↗</button></div>
@@ -73,14 +80,14 @@ function turnHTML(t){return `<div class="tx-chat-user" data-user-content>${esc(t
 function chatPage(){
   const turns=chat.filter(t=>t.orderId===selectedOrder && !t.archived);
   turns.filter(t=>t.rag.status!=='pending').forEach(t=>t.read=true);
-  return `<section class="tx-chat"><div class="tx-chat-top">${scopeSelector()}<button class="tf-link" data-new-chat>${tr('新对话','New chat')}</button></div><div class="tx-messages">${turns.map(turnHTML).join('') || `<div class="tx-chat-empty"><h1>${tr('这笔生意，下一步怎么安排？','What should we do next?')}</h1><p>${tr('结合当前企业账本和资料，分析回款、付款与资金缺口。','Analyze receipts, payments and funding using your saved business records.')}</p></div>`}</div><div class="tx-composer">${knowledge.composer()}<div class="tx-chat-hints" ${turns.length?'hidden':''}><button data-fill>${tr('帮我分析资金安排','Analyze the cash plan')}</button></div><form id="tf-ai-form"><textarea id="tf-ai-question" aria-label="${tr('向 AI 提问','Ask CashWeave')}">${esc(draft)}</textarea><div class="tx-send-row"><span class="tf-note">${tr('Enter 发送 · Shift + Enter 换行','Enter to send · Shift + Enter for a new line')}</span><button type="button" class="tf-button primary" data-action="ai-submit">↑</button></div></form></div></section>`;
+  return `<section class="tx-chat"><div class="tx-chat-top">${scopeSelector()}<div class="business-chat-actions">${chat.length?`<label class="business-scope">${tr('历史对话','History')}<select id="business-chat-history"><option value="">${tr('选择一条对话','Select a conversation')}</option>${[...chat].reverse().map(t=>`<option value="${esc(t.id)}">${esc(t.orderId || tr('企业整体','Whole company'))} · ${esc(t.question.slice(0,65))}</option>`).join('')}</select></label>`:''}<button class="tf-link" data-new-chat>${tr('新对话','New chat')}</button></div></div><div class="tx-messages">${turns.map(turnHTML).join('') || `<div class="tx-chat-empty"><h1>${tr('这笔生意，下一步怎么安排？','What should we do next?')}</h1><p>${tr('结合当前企业账本和资料，分析回款、付款与资金缺口。','Analyze receipts, payments and funding using your saved business records.')}</p></div>`}</div><div class="tx-composer">${knowledge.composer()}<div class="tx-chat-hints" ${turns.length?'hidden':''}><button data-fill>${tr('帮我分析资金安排','Analyze the cash plan')}</button></div><form id="tf-ai-form"><textarea id="tf-ai-question" aria-label="${tr('向 AI 提问','Ask CashWeave')}">${esc(draft)}</textarea><div class="tx-send-row"><span class="tf-note">${tr('Enter 发送 · Shift + Enter 换行','Enter to send · Shift + Enter for a new line')}</span><button type="button" class="tf-button primary" data-action="ai-submit">↑</button></div></form></div></section>`;
 }
 function formPage(){
   const data=form.data;
   if(form.kind==='company')return head(tr('新增企业','New company'),tr('填写真实业务名称与同一日期的期初余额。','Enter your business name and balances as of one date.'))+`<form id="business-form" class="business-form"><fieldset><legend>${tr('企业信息','Company')}</legend>${field('name',tr('企业名称','Company name'),data.name,'text','required maxlength="160"')}${field('country',tr('国家代码','Country code'),data.country || 'CN','text','required minlength="2" maxlength="2"')}${field('planning_start',tr('余额截至日期','Balance date'),data.planning_start,'date','required')}</fieldset><fieldset><legend>${tr('期初资金','Opening balances')}</legend>${numberField('opening_cny',tr('人民币余额 · CNY','CNY balance'),data.opening_cny)}${numberField('opening_usd',tr('美元余额 · USD','USD balance'),data.opening_usd)}</fieldset>${formActions()}</form>`;
   const currencies=['USD','CNY','EUR','GBP'];
   return head(form.create?tr('新增订单','New order'):tr('编辑订单','Edit order'),tr('录入业务安排，下一步核对资金影响。','Enter the business plan, then review its cash impact.'))+`<form id="business-form" class="business-form"><fieldset><legend>${tr('订单信息','Order')}</legend>${field('id',tr('订单号','Order number'),data.id,'text',`required pattern="[A-Za-z0-9_-]+" ${form.create?'':'readonly'}`)}${field('customer',tr('客户名称','Customer'),data.customer,'text','required')}${field('country',tr('客户国家或地区','Customer country'),data.country)}${field('goods',tr('货物','Goods'),data.goods,'text','required')}<label>${tr('币种','Currency')}<select name="currency">${currencies.map(c=>`<option ${data.currency===c?'selected':''}>${c}</option>`).join('')}</select></label><label>${tr('状态','Status')}<select name="status">${['preparing','shipped','completed','cancelled'].map(s=>`<option value="${s}" ${data.status===s?'selected':''}>${statusName(s)}</option>`).join('')}</select></label>${numberField('total',tr('订单总额','Order value'),data.total)}${numberField('received',tr('已收金额（已计入期初资金）','Already received (included in opening balances)'),data.received)}</fieldset>
-  <fieldset><legend>${tr('回款计划','Receipt plan')}</legend><p>${tr('只填写已明确的部分。日期未知时，预计金额填 0，余款暂不计入资金预测。','Enter the known portion. If its date is unknown, use 0 expected; the remainder stays unscheduled.')}</p>${numberField('expected',tr('下次预计收款金额','Next expected amount'),data.expected)}${field('receipt_date',tr('预计人民币可用日','Expected CNY availability date'),data.receipt_date,'date')}${field('fx_rate',tr('每单位外币可兑换的人民币','CNY per unit of order currency'),data.fx_rate,'number','min="0.000001" max="1000" step="0.000001" required')}<p>${tr('汇率为计划假设，人民币订单固定为 1；这里不会进行真实结汇。','This is a planning rate. CNY orders use 1; no currency exchange is executed.')}</p></fieldset>
+  <fieldset><legend>${tr('回款计划','Receipt plan')}</legend><p>${tr('只填写已明确的部分。日期未知时，预计金额填 0，余款暂不计入资金预测。','Enter the known portion. If its date is unknown, use 0 expected; the remainder stays unscheduled.')}</p>${numberField('expected',tr('下次预计收款金额','Next expected amount'),data.expected)}${field('receipt_date',tr('预计人民币可用日','Expected CNY availability date'),data.receipt_date,'date')}${field('fx_rate',tr('汇率 · 每单位订单币种对应人民币','Exchange rate · CNY per unit of order currency'),data.fx_rate,'number','min="0.000001" max="1000" step="0.000001" required')}<p>${tr('此汇率用于资金预测；人民币订单填写 1。','This exchange rate is used for cash-flow forecasting. Use 1 for CNY orders.')}</p></fieldset>
   <fieldset><legend>${tr('供应商付款','Supplier payment')}</legend>${field('supplier',tr('供应商','Supplier'),data.supplier)}${numberField('supplier_amount',tr('尚需支付金额 · CNY','Amount still payable · CNY'),data.supplier_amount)}${field('supplier_date',tr('到期日','Due date'),data.supplier_date,'date')}</fieldset>${formActions()}</form>`;
 }
 function formActions(){return `<div class="business-actions"><button type="button" class="tf-link" data-cancel-form>${tr('取消','Cancel')}</button><button class="tf-button primary" ${busy?'disabled':''}>${busy?tr('正在计算…','Calculating…'):tr('核对并继续','Review and continue')} →</button></div>`;}
@@ -88,7 +95,7 @@ function reviewPage(){
   const d=review.data;const company=form.kind==='company';
   const rows=company?[[tr('企业名称','Company'),d.name],[tr('国家','Country'),d.country],[tr('余额日期','Balance date'),d.planning_start],[tr('人民币余额','CNY balance'),amount(d.opening_cny)],[tr('美元余额','USD balance'),amount(d.opening_usd,'USD')]]:
     [[tr('订单','Order'),d.id],[tr('客户','Customer'),d.customer],[tr('货物','Goods'),d.goods],[tr('状态','Status'),statusName(d.status)],[tr('订单金额 / 已收','Order value / received'),amount(d.total,d.currency)+' / '+amount(d.received,d.currency)],
-     [tr('预计回款','Expected receipt'),amount(d.expected,d.currency)+' · '+(d.receipt_date || tr('未定','Unscheduled'))],[tr('结汇假设','Conversion assumption'),`1 ${d.currency} = ${d.fx_rate} CNY`],
+     [tr('预计回款','Expected receipt'),amount(d.expected,d.currency)+' · '+(d.receipt_date || tr('未定','Unscheduled'))],[tr('汇率','Exchange rate'),`1 ${d.currency} = ${d.fx_rate} CNY`],
      [tr('供应商 / 付款','Supplier / payment'),d.supplier+' · '+amount(d.supplier_amount)+' · '+(d.supplier_date || '—')]];
   return head(tr('确认后保存','Confirm and save'),tr('核对以下信息。确认前不会改变账本。','Review these details. The ledger changes only after confirmation.'))+`<dl class="business-facts">${rows.map(([a,b])=>`<div><dt>${a}</dt><dd>${esc(b)}</dd></div>`).join('')}</dl>${company?'':`<div class="business-impact"><strong>${tr('公司 56 天最大资金缺口','Company 56-day peak shortfall')}</strong><span>${amount(review.before.peak_shortfall_cny)} → ${amount(review.after.peak_shortfall_cny)}</span><p>${review.after.first_shortfall?tr('首次缺口：','First gap: ')+review.after.first_shortfall.date:tr('当前计划下无资金缺口。','No shortfall under the updated plan.')}</p>${review.after.outside_horizon.length?`<p>${tr('部分收付款在 56 天范围外，不计入本图。','Some cash movements fall outside the 56-day forecast.')}</p>`:''}</div>`}<div class="business-actions"><button class="tf-link" data-back-form>${tr('返回修改','Back to edit')}</button><button class="tf-button primary" data-confirm-save ${busy?'disabled':''}>${busy?tr('正在保存…','Saving…'):tr('确认并保存','Confirm and save')}</button></div>`;
 }
@@ -147,6 +154,7 @@ root.addEventListener('input',e=>{
 });
 root.addEventListener('change',e=>{
   if(e.target.name==='currency' && e.target.value==='CNY')root.querySelector('[name=fx_rate]').value='1';
+  if(e.target.id==='business-chat-history' && e.target.value){const t=chat.find(t=>t.id===e.target.value);selectedOrder=t.orderId;selectedDocument=t.documentId || '';chat.filter(item=>item.orderId===selectedOrder).forEach(item=>item.archived=false);render();saveView();}
   if(e.target.id==='business-order-scope'){selectedOrder=e.target.value;selectedDocument='';render();saveView();}
 });
 root.addEventListener('toggle',e=>{if(e.target.matches('.kb-progress')){const t=chat.find(t=>t.id===e.target.closest('[data-progress-turn]').dataset.progressTurn);t.progressOpen=e.target.open;saveView();}},true);
@@ -172,7 +180,7 @@ root.addEventListener('click',async e=>{
     if(b.hasAttribute('data-language')){lang=lang==='en'?'zh':'en';localStorage.setItem('cashweave-language',lang);render();saveView();}
     if(b.dataset.company)goCompany(b.dataset.company);
     if(b.dataset.order)selectOrder(b.dataset.order);
-    if(b.dataset.page){page=b.dataset.page;error='';if(page==='overview'||page==='orders')selectedOrder='';render();saveView();}
+    if(b.dataset.page){page=b.dataset.page;error='';render();saveView();}
     if(b.hasAttribute('data-new-company')){form={kind:'company',data:{name:'',country:'CN',planning_start:new Date().toISOString().slice(0,10),opening_cny:0,opening_usd:0}};page='form';render();}
     if(b.hasAttribute('data-new-order'))newOrder();
     if(b.hasAttribute('data-edit-order')){form={kind:'order',create:false,version:business.snapshot.version,data:{...currentOrder()}};review=null;page='form';render();}
@@ -193,6 +201,13 @@ root.addEventListener('click',async e=>{
     if(b.hasAttribute('data-new-chat')){chat.filter(t=>t.orderId===selectedOrder&&t.rag.status!=='pending').forEach(t=>t.archived=true);sessions={};draft='';render();saveView();}
     if(b.hasAttribute('data-active-run')){const t=taskToOpen();selectedOrder=t.orderId;selectedDocument=t.documentId;t.archived=false;page='assistant';render();saveView();}
     if(b.dataset.kbCite){const [id,ref]=b.dataset.kbCite.split(':');const source=chat.find(t=>t.id===id).rag.sources.find(s=>s.id===Number(ref));await knowledge.open(source.document_id,source.version,source);}
+    if(b.dataset.agentRetry){
+      b.disabled=true;
+      const previous=chat.find(t=>t.id===b.dataset.agentRetry);
+      const started=await knowledgeAPI('/agents/runs/'+previous.rag.run_id+'/retry',post({}));
+      const turn={...previous,id:crypto.randomUUID(),question:tr('重新分析已保存的资金情况。','Reanalyze the saved cash position.'),read:false,rag:{status:'pending',progress:started}};
+      chat.push(turn);render();saveView();await runTurn(turn);
+    }
     if(b.dataset.kbRetry){const t=chat.find(t=>t.id===b.dataset.kbRetry);t.rag.status='pending';render();await runTurn(t);}
     if(b.dataset.humanSkip)await answerHuman(chat.find(t=>t.id===b.dataset.humanSkip),true);
     if(b.dataset.agentConfirm){b.disabled=true;const result=await knowledgeAPI('/agents/proposals/'+b.dataset.agentConfirm+'/confirm',post({}));chat.filter(t=>t.rag.proposal?.id===result.proposal_id).forEach(t=>{t.rag.proposal.status='confirmed';});await refreshBusiness();render();saveView();await startChat(tr('已确认付款计划，请分析更新后的资金影响。','The payment plan is confirmed. Analyze the updated cash impact.'));}

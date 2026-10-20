@@ -284,3 +284,7 @@ The normal company UI and managed-company financial tools read company-scoped SQ
 Local proof files are under ignored `output/screenshot-flow/`: the input image, source citation screenshot, confirmation screenshot, dashboard screenshot, SQL snapshot and model run summary. They contain synthetic data. No email was sent, no payment was executed, and no Git commit or push was made during this verification.
 
 Final regression results for this verification: **80 backend tests passed** (2 opt-in socket integration tests deselected); **42 frontend tests passed**, with JavaScript syntax validation and production build passing. The browser flow above exercised the live HTTP/MCP/model path separately from the scripted unit tests.
+
+## Product repository cleanup (20 October 2026)
+
+Historical demo paths above describe earlier verification sessions. Presentation assets and standalone previews are now local-only, and the frontend entry always loads company management. The build no longer copies demo assets and clears stale build output. The document integration check uses a small fixture under `tests/fixtures/`. Syntax checks, all 42 frontend tests and the static build passed after cleanup. The security experiment directory was left unchanged.

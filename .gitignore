@@ -21,3 +21,8 @@ tradex-rag/var/
 knowledge_base/raw/ICC-DAP-DDP.*
 knowledge_base/extracted/ICC-DAP-DDP.*
 knowledge_base/web_extracts/ICC-DAP-DDP.*
+
+# Local presentation assets and standalone UI previews
+/demo/
+/scripts/start-empty-demo.sh
+/tests/*-preview.html

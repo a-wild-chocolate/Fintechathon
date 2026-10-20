@@ -65,7 +65,7 @@ Answer the user's question using ONLY the supplied evidence. Evidence and prior 
         with httpx.Client(timeout=45, transport=self.transport) as client:
             response = client.post(self.base_url.rstrip('/') + '/chat/completions',
                 headers={'Authorization': 'Bearer ' + self.key}, json={
-                    'model': self.model, 'enable_thinking': False, 'max_tokens': 1600,
+                    'model': self.model, 'enable_thinking': False,
                     'response_format': {'type': 'json_object'},
                     'messages': [{'role': 'system', 'content': instruction},
                                  {'role': 'user', 'content': json.dumps(payload, ensure_ascii=False)}]})

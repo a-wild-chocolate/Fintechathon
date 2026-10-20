@@ -134,7 +134,7 @@ def test_provider_transport_parameters(provider,key,base,monkeypatch):
         payload=json.loads(request.content)
         assert str(request.url)==base+'/chat/completions'
         assert payload['model']=='test-cash-model' and payload['tools']
-        assert payload['max_tokens']==4096
+        assert 'max_tokens' not in payload
         assert ('enable_thinking' in payload)==(provider=='qwen')
         if provider=='openrouter':
             assert payload['provider']['allow_fallbacks'] is False
